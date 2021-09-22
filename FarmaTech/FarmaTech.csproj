@@ -55,6 +55,87 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelaCadFiliais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCadFiliais.Designer.cs">
+      <DependentUpon>TelaCadFiliais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaCadFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCadFornecedores.Designer.cs">
+      <DependentUpon>TelaCadFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaCadUnidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCadUnidades.Designer.cs">
+      <DependentUpon>TelaCadUnidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaCadUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCadUsuarios.Designer.cs">
+      <DependentUpon>TelaCadUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaFormPag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaFormPag.Designer.cs">
+      <DependentUpon>TelaFormPag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaNovaFilial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaNovaFilial.Designer.cs">
+      <DependentUpon>TelaNovaFilial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaNovaFormaPag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaNovaFormaPag.Designer.cs">
+      <DependentUpon>TelaNovaFormaPag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaNovaUnidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaNovaUnidade.Designer.cs">
+      <DependentUpon>TelaNovaUnidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaNovoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaNovoUsuario.Designer.cs">
+      <DependentUpon>TelaNovoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPrincipal.Designer.cs">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaSair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaSair.Designer.cs">
+      <DependentUpon>TelaSair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaSobre.Designer.cs">
+      <DependentUpon>TelaSobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaVenda.Designer.cs">
+      <DependentUpon>TelaVenda.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,7 +144,47 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TelaCadFiliais.resx">
+      <DependentUpon>TelaCadFiliais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCadFornecedores.resx">
+      <DependentUpon>TelaCadFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCadUnidades.resx">
+      <DependentUpon>TelaCadUnidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCadUsuarios.resx">
+      <DependentUpon>TelaCadUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaFormPag.resx">
+      <DependentUpon>TelaFormPag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovaFilial.resx">
+      <DependentUpon>TelaNovaFilial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovaFormaPag.resx">
+      <DependentUpon>TelaNovaFormaPag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovaUnidade.resx">
+      <DependentUpon>TelaNovaUnidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaNovoUsuario.resx">
+      <DependentUpon>TelaNovoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaPrincipal.resx">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaSair.resx">
+      <DependentUpon>TelaSair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaSobre.resx">
+      <DependentUpon>TelaSobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaVenda.resx">
+      <DependentUpon>TelaVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,6 +197,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem01.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

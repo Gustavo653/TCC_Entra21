@@ -10,27 +10,26 @@ using System.Windows.Forms;
 
 namespace FarmaTech
 {
-    public partial class TelaLogin : Form
+    public partial class TelaCadFiliais : Form
     {
-        public TelaLogin()
+        public TelaCadFiliais()
         {
             InitializeComponent();
         }
 
-        private void btnSobre_Click(object sender, EventArgs e)
+        private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            new TelaSobre().Show();
+
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void TelaCadFiliais_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new TelaPrincipal().Show();
             this.Hide();
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
+        private void btnNovo_Click(object sender, EventArgs e)
         {
-            new TelaSair().Show();
+            new TelaNovaFilial().Show();
         }
     }
 }
