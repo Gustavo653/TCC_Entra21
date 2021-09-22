@@ -59,7 +59,7 @@ namespace FarmaTech
             this.btnSobre.Name = "btnSobre";
             this.btnSobre.Size = new System.Drawing.Size(160, 36);
             this.btnSobre.TabIndex = 16;
-            this.btnSobre.Text = "by NomeEquipe";
+            this.btnSobre.Text = "by QueryLab";
             this.btnSobre.UseVisualStyleBackColor = false;
             this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
             // 

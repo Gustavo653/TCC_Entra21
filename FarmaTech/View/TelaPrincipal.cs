@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmaTech.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,6 +51,16 @@ namespace FarmaTech
         private void MenuFornecedores_Click(object sender, EventArgs e)
         {
             new TelaCadFornecedores().Show();
+        }
+
+        private void MenuClientes_Click(object sender, EventArgs e)
+        {
+            new TelaCadCliente().Show();
+        }
+
+        private void MenuPdv_Click_1(object sender, EventArgs e)
+        {
+            new TelaVenda().Show();
         }
     }
 }

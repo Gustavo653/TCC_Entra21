@@ -35,11 +35,12 @@ namespace FarmaTech
             this.MenuFiliais = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuUnidades = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuSair = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuPdv = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuFormaPag = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuFornecedores = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuPdv = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSair = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@ namespace FarmaTech
             this.MenuUsuarios,
             this.MenuFiliais,
             this.configuraçõesToolStripMenuItem,
-            this.MenuFornecedores});
+            this.MenuFornecedores,
+            this.MenuClientes});
             this.MenuCadastros.Name = "MenuCadastros";
             this.MenuCadastros.Size = new System.Drawing.Size(111, 29);
             this.MenuCadastros.Text = "Cadastros";
@@ -103,12 +105,20 @@ namespace FarmaTech
             this.MenuUnidades.Text = "Unidades";
             this.MenuUnidades.Click += new System.EventHandler(this.MenuUnidades_Click);
             // 
-            // MenuSair
+            // MenuFormaPag
             // 
-            this.MenuSair.Name = "MenuSair";
-            this.MenuSair.Size = new System.Drawing.Size(58, 29);
-            this.MenuSair.Text = "Sair";
-            this.MenuSair.Click += new System.EventHandler(this.MenuSair_Click);
+            this.MenuFormaPag.Name = "MenuFormaPag";
+            this.MenuFormaPag.Size = new System.Drawing.Size(250, 26);
+            this.MenuFormaPag.Text = "Formas de Pagamento";
+            this.MenuFormaPag.Click += new System.EventHandler(this.MenuFormaPag_Click);
+            // 
+            // MenuFornecedores
+            // 
+            this.MenuFornecedores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuFornecedores.Name = "MenuFornecedores";
+            this.MenuFornecedores.Size = new System.Drawing.Size(192, 26);
+            this.MenuFornecedores.Text = "Fornecedores";
+            this.MenuFornecedores.Click += new System.EventHandler(this.MenuFornecedores_Click);
             // 
             // vendasToolStripMenuItem
             // 
@@ -124,21 +134,22 @@ namespace FarmaTech
             this.MenuPdv.Name = "MenuPdv";
             this.MenuPdv.Size = new System.Drawing.Size(180, 26);
             this.MenuPdv.Text = "PDV";
+            this.MenuPdv.Click += new System.EventHandler(this.MenuPdv_Click_1);
             // 
-            // MenuFormaPag
+            // MenuSair
             // 
-            this.MenuFormaPag.Name = "MenuFormaPag";
-            this.MenuFormaPag.Size = new System.Drawing.Size(250, 26);
-            this.MenuFormaPag.Text = "Formas de Pagamento";
-            this.MenuFormaPag.Click += new System.EventHandler(this.MenuFormaPag_Click);
+            this.MenuSair.Name = "MenuSair";
+            this.MenuSair.Size = new System.Drawing.Size(58, 29);
+            this.MenuSair.Text = "Sair";
+            this.MenuSair.Click += new System.EventHandler(this.MenuSair_Click);
             // 
-            // MenuFornecedores
+            // MenuClientes
             // 
-            this.MenuFornecedores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.MenuFornecedores.Name = "MenuFornecedores";
-            this.MenuFornecedores.Size = new System.Drawing.Size(192, 26);
-            this.MenuFornecedores.Text = "Fornecedores";
-            this.MenuFornecedores.Click += new System.EventHandler(this.MenuFornecedores_Click);
+            this.MenuClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuClientes.Name = "MenuClientes";
+            this.MenuClientes.Size = new System.Drawing.Size(192, 26);
+            this.MenuClientes.Text = "Clientes";
+            this.MenuClientes.Click += new System.EventHandler(this.MenuClientes_Click);
             // 
             // TelaPrincipal
             // 
@@ -176,5 +187,6 @@ namespace FarmaTech
         private System.Windows.Forms.ToolStripMenuItem MenuPdv;
         private System.Windows.Forms.ToolStripMenuItem MenuFormaPag;
         private System.Windows.Forms.ToolStripMenuItem MenuFornecedores;
+        private System.Windows.Forms.ToolStripMenuItem MenuClientes;
     }
 }

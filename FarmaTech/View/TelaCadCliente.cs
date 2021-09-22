@@ -1,5 +1,4 @@
-﻿using FarmaTech.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTech
+namespace FarmaTech.View
 {
-    public partial class TelaCadFornecedores : Form
+    public partial class TelaCadCliente : Form
     {
-        public TelaCadFornecedores()
+        public TelaCadCliente()
         {
             InitializeComponent();
         }
@@ -25,10 +24,10 @@ namespace FarmaTech
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            new TelaNovoFornecedor().Show();
+            new TelaNovoCliente().Show();
         }
 
-        private void TelaCadFornecedores_FormClosed(object sender, FormClosedEventArgs e)
+        private void TelaCadCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
         }

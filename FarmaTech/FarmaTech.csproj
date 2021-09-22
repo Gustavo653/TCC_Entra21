@@ -56,6 +56,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\TelaCadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TelaCadCliente.Designer.cs">
+      <DependentUpon>TelaCadCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaCadFiliais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,18 @@
     <Compile Include="View\TelaNovaUnidade.Designer.cs">
       <DependentUpon>TelaNovaUnidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TelaNovoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TelaNovoCliente.Designer.cs">
+      <DependentUpon>TelaNovoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TelaNovoFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TelaNovoFornecedor.Designer.cs">
+      <DependentUpon>TelaNovoFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaNovoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\TelaCadCliente.resx">
+      <DependentUpon>TelaCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\TelaCadFiliais.resx">
       <DependentUpon>TelaCadFiliais.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaNovaUnidade.resx">
       <DependentUpon>TelaNovaUnidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TelaNovoCliente.resx">
+      <DependentUpon>TelaNovoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TelaNovoFornecedor.resx">
+      <DependentUpon>TelaNovoFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TelaNovoUsuario.resx">
       <DependentUpon>TelaNovoUsuario.cs</DependentUpon>
@@ -204,6 +231,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Control\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CaixaRegistradora.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
