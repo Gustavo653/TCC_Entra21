@@ -1,0 +1,12 @@
+create table dbo.Vendas
+(
+idVenda int not null identity(1,1),
+idCliente int not null, //Mostrar nome cliente //Usar chave estrangeira?
+idUsuario int not null, //Mostrar nome usuario //Usar chave estrangeira?
+idProduto int not null, //Mostrar nome produto //Usar chave estrangeira?
+idConvenio int not null, //Mostrar ao usuario a lista de convenios disponiveis via combobox
+Quantidade int not null,
+DataVenda varchar(11) not null, //Formato: 01/01/2001
+FormaPagamento varchar(20) not null
+)
+

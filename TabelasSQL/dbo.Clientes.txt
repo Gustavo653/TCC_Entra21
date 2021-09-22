@@ -1,0 +1,13 @@
+create table dbo.Clientes
+(
+idCliente int not null identity(1,1),
+RazaoSocial varchar(50) not null,
+NomeFantasia varchar(50) not null,
+CadastroDePessoa varchar(15) not null, //Desconsiderando pontos e barras / CPF ou CNPJ
+Contato varchar(14) not null, //Telefone +55(47) 9 0000-0000
+Endereco varchar(50) not null,
+Numero varchar(6) not null,
+Complemento varchar(50) not null,
+Cidade varchar(25),
+Estado varchar(20) //Usar enum?
+)
