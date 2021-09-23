@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FarmaTech.Control;
+using FarmaTech.Model.Objetos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,8 +26,21 @@ namespace FarmaTech
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            new TelaPrincipal().Show();
-            this.Hide();
+            if (TelaLoginController.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
+            {
+                MessageBox.Show($"Nome: {UsuarioStatic.Nome}" +
+                    $"\nFilial: {UsuarioStatic.Filial}" +
+                    $"\nCargo: {UsuarioStatic.Cargo}" +
+                    $"\nContato: {UsuarioStatic.Contato}" +
+                    $"\nNivel de acesso: {UsuarioStatic.NivelAcesso}");
+                new TelaPrincipal().Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Login Inválido!");
+                txtSenha.Clear();
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)

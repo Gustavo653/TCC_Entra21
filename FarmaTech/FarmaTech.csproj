@@ -49,6 +49,7 @@
     <Compile Include="Control\TelaLoginController.cs" />
     <Compile Include="Model\Consultas\DBConnection.cs" />
     <Compile Include="Model\Consultas\HashLogin.cs" />
+    <Compile Include="Model\Objetos\UsuarioStatic.cs" />
     <Compile Include="Model\TelaLoginModel.cs" />
     <Compile Include="View\TelaLogin.cs">
       <SubType>Form</SubType>
@@ -233,7 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\Enums\" />
-    <Folder Include="Model\Objetos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CaixaRegistradora.jpg" />
