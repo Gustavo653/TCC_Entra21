@@ -28,6 +28,7 @@ namespace FarmaTech
         {
             if (TelaLoginController.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
             {
+                MessageBox.Show(DateTime.Now.ToString());
                 MessageBox.Show($"Nome: {UsuarioStatic.Nome}" +
                     $"\nFilial: {UsuarioStatic.Filial}" +
                     $"\nCargo: {UsuarioStatic.Cargo}" +

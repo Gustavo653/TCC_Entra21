@@ -4,7 +4,7 @@ idUsuario int not null identity(1,1),
 Nome varchar(50) not null,
 Filial int not null, //Puxa o id da filial
 Cargo varchar(30) not null,
-Contato varchar(14) not null, //Telefone +55(47) 9 0000-0000
+Contato varchar(14) not null, //Telefone 5547900000000
 NivelAcesso int not null, //Guarda valor do enum
 Login varchar(50) not null, //Coluna que será destinada ao usuario para login
 Senha varchar(128) not null //A senha gerada pelo HashLogin possui 128 caracteres

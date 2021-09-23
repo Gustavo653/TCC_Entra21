@@ -2,7 +2,7 @@ create table dbo.Produtos
 (
 idProduto int not null identity(1,1),
 Nome varchar(50) not null,
-Unidade int not null, //Puxa o id da filial em que este produto esta / ChavePrimaria?
+Unidade varchar(20) not null, //Quantos itens vem por produto
 Quantidade int not null,
 Codigo varchar(20) not null,
 Laboratorio varchar(50) not null,
