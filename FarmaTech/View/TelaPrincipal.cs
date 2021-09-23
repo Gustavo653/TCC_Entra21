@@ -62,5 +62,15 @@ namespace FarmaTech
         {
             new TelaVenda().Show();
         }
+
+        private void contasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new TelaContasAPagar().Show();
+        }
+
+        private void convêniosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new TelaConvenios().Show();
+        }
     }
 }
