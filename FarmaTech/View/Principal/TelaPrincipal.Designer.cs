@@ -45,6 +45,8 @@ namespace FarmaTech
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPdv = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSair = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblBemVindo = new System.Windows.Forms.Label();
+            this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.MenuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,6 +192,27 @@ namespace FarmaTech
             this.MenuSair.Text = "Sair";
             this.MenuSair.Click += new System.EventHandler(this.MenuSair_Click);
             // 
+            // lblBemVindo
+            // 
+            this.lblBemVindo.AutoSize = true;
+            this.lblBemVindo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBemVindo.Location = new System.Drawing.Point(511, 84);
+            this.lblBemVindo.Name = "lblBemVindo";
+            this.lblBemVindo.Size = new System.Drawing.Size(161, 24);
+            this.lblBemVindo.TabIndex = 1;
+            this.lblBemVindo.Text = "Seja Bem-Vindo";
+            this.lblBemVindo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNomeUsuario
+            // 
+            this.lblNomeUsuario.AutoSize = true;
+            this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeUsuario.Location = new System.Drawing.Point(687, 84);
+            this.lblNomeUsuario.Name = "lblNomeUsuario";
+            this.lblNomeUsuario.Size = new System.Drawing.Size(0, 24);
+            this.lblNomeUsuario.TabIndex = 2;
+            this.lblNomeUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +222,8 @@ namespace FarmaTech
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.ControlBox = false;
+            this.Controls.Add(this.lblNomeUsuario);
+            this.Controls.Add(this.lblBemVindo);
             this.Controls.Add(this.MenuPrincipal);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -209,6 +234,7 @@ namespace FarmaTech
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:FarmaTech:.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
             this.ResumeLayout(false);
@@ -234,5 +260,7 @@ namespace FarmaTech
         private System.Windows.Forms.ToolStripMenuItem MenuProdutos;
         private System.Windows.Forms.ToolStripMenuItem financeiroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuContasPagar;
+        private System.Windows.Forms.Label lblBemVindo;
+        private System.Windows.Forms.Label lblNomeUsuario;
     }
 }

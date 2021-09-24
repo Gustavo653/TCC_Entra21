@@ -1,4 +1,5 @@
-﻿using FarmaTech.View;
+﻿using FarmaTech.Model.Objetos;
+using FarmaTech.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,6 +78,11 @@ namespace FarmaTech
         private void MenuConvenios_Click(object sender, EventArgs e)
         {
             new TelaCadastroConvenios().Show();
+        }
+
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+            lblNomeUsuario.Text = UsuarioStatic.Nome;
         }
     }
 }
