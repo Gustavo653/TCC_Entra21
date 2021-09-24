@@ -318,6 +318,7 @@ namespace FarmaTech.View
             this.btnVoltar.TabIndex = 1;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnSalvar
             // 
@@ -327,6 +328,7 @@ namespace FarmaTech.View
             this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnAlterar
             // 
@@ -336,6 +338,7 @@ namespace FarmaTech.View
             this.btnAlterar.TabIndex = 58;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -345,6 +348,7 @@ namespace FarmaTech.View
             this.btnExcluir.TabIndex = 59;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnNovo
             // 
@@ -374,6 +378,7 @@ namespace FarmaTech.View
             this.Name = "TelaCadastroUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:Cadastro Usuários";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroUsuarios_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroUsuarios_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabUsuarios.ResumeLayout(false);

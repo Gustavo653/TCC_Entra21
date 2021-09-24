@@ -51,144 +51,99 @@
     <Compile Include="Model\Consultas\HashLogin.cs" />
     <Compile Include="Model\Objetos\UsuarioStatic.cs" />
     <Compile Include="Model\TelaLoginModel.cs" />
-    <Compile Include="View\TelaCadastroUsuarios.cs">
+    <Compile Include="View\Cadastros\TelaCadastroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaCadastroUsuarios.Designer.cs">
+    <Compile Include="View\Cadastros\TelaCadastroUsuarios.Designer.cs">
       <DependentUpon>TelaCadastroUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaLogin.cs">
+    <Compile Include="View\Cadastros\TelaCadastroFiliais.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaLogin.Designer.cs">
+    <Compile Include="View\Cadastros\TelaCadastroFiliais.Designer.cs">
+      <DependentUpon>TelaCadastroFiliais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\TelaCadCliente.cs">
+    <Compile Include="View\Cadastros\TelaCadastroUnidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaCadCliente.Designer.cs">
-      <DependentUpon>TelaCadCliente.cs</DependentUpon>
+    <Compile Include="View\Cadastros\TelaCadastroUnidades.Designer.cs">
+      <DependentUpon>TelaCadastroUnidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaCadFiliais.cs">
+    <Compile Include="View\Cadastros\TelaCadastroFormaPag.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaCadFiliais.Designer.cs">
-      <DependentUpon>TelaCadFiliais.cs</DependentUpon>
+    <Compile Include="View\Cadastros\TelaCadastroFormaPag.Designer.cs">
+      <DependentUpon>TelaCadastroFormaPag.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaCadFornecedores.cs">
+    <Compile Include="View\Cadastros\TelaCadastroFornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaCadFornecedores.Designer.cs">
-      <DependentUpon>TelaCadFornecedores.cs</DependentUpon>
+    <Compile Include="View\Cadastros\TelaCadastroFornecedores.Designer.cs">
+      <DependentUpon>TelaCadastroFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaCadUnidades.cs">
+    <Compile Include="View\Cadastros\TelaCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaCadUnidades.Designer.cs">
-      <DependentUpon>TelaCadUnidades.cs</DependentUpon>
+    <Compile Include="View\Cadastros\TelaCadastroCliente.Designer.cs">
+      <DependentUpon>TelaCadastroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaCadUsuarios.cs">
+    <Compile Include="View\Cadastros\TelaCadastroProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaCadUsuarios.Designer.cs">
-      <DependentUpon>TelaCadUsuarios.cs</DependentUpon>
+    <Compile Include="View\Cadastros\TelaCadastroProdutos.Designer.cs">
+      <DependentUpon>TelaCadastroProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaContasAPagar.cs">
+    <Compile Include="View\Cadastros\TelaCadastroContasPagar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaContasAPagar.Designer.cs">
-      <DependentUpon>TelaContasAPagar.cs</DependentUpon>
+    <Compile Include="View\Cadastros\TelaCadastroContasPagar.Designer.cs">
+      <DependentUpon>TelaCadastroContasPagar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaConvenios.cs">
+    <Compile Include="View\Cadastros\TelaCadastroConvenios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaConvenios.Designer.cs">
-      <DependentUpon>TelaConvenios.cs</DependentUpon>
+    <Compile Include="View\Cadastros\TelaCadastroConvenios.Designer.cs">
+      <DependentUpon>TelaCadastroConvenios.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaDeProdutos.cs">
+    <Compile Include="View\Principal\TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaDeProdutos.Designer.cs">
-      <DependentUpon>TelaDeProdutos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaFormPag.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaFormPag.Designer.cs">
-      <DependentUpon>TelaFormPag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaNovaFilial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaNovaFilial.Designer.cs">
-      <DependentUpon>TelaNovaFilial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaNovaFormaPag.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaNovaFormaPag.Designer.cs">
-      <DependentUpon>TelaNovaFormaPag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaNovaUnidade.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaNovaUnidade.Designer.cs">
-      <DependentUpon>TelaNovaUnidade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaNovoCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaNovoCliente.Designer.cs">
-      <DependentUpon>TelaNovoCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaNovoFornecedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaNovoFornecedor.Designer.cs">
-      <DependentUpon>TelaNovoFornecedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaNovoUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaNovoUsuario.Designer.cs">
-      <DependentUpon>TelaNovoUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaPrincipal.Designer.cs">
+    <Compile Include="View\Principal\TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaProdutos.cs">
+    <Compile Include="View\Principal\TelaSair.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaProdutos.Designer.cs">
-      <DependentUpon>TelaProdutos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TelaSair.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TelaSair.Designer.cs">
+    <Compile Include="View\Principal\TelaSair.Designer.cs">
       <DependentUpon>TelaSair.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaSobre.cs">
+    <Compile Include="View\Principal\TelaSobre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaSobre.Designer.cs">
+    <Compile Include="View\Principal\TelaSobre.Designer.cs">
       <DependentUpon>TelaSobre.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TelaVenda.cs">
+    <Compile Include="View\Venda\TelaVenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TelaVenda.Designer.cs">
+    <Compile Include="View\Venda\TelaVenda.Designer.cs">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\TelaCadastroUsuarios.resx">
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroUsuarios.resx">
       <DependentUpon>TelaCadastroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaLogin.resx">
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroFiliais.resx">
+      <DependentUpon>TelaCadastroFiliais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -201,64 +156,37 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\TelaCadCliente.resx">
-      <DependentUpon>TelaCadCliente.cs</DependentUpon>
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroUnidades.resx">
+      <DependentUpon>TelaCadastroUnidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaCadFiliais.resx">
-      <DependentUpon>TelaCadFiliais.cs</DependentUpon>
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroFormaPag.resx">
+      <DependentUpon>TelaCadastroFormaPag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaCadFornecedores.resx">
-      <DependentUpon>TelaCadFornecedores.cs</DependentUpon>
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroFornecedores.resx">
+      <DependentUpon>TelaCadastroFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaCadUnidades.resx">
-      <DependentUpon>TelaCadUnidades.cs</DependentUpon>
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroCliente.resx">
+      <DependentUpon>TelaCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaCadUsuarios.resx">
-      <DependentUpon>TelaCadUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroProdutos.resx">
+      <DependentUpon>TelaCadastroProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaContasAPagar.resx">
-      <DependentUpon>TelaContasAPagar.cs</DependentUpon>
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroContasPagar.resx">
+      <DependentUpon>TelaCadastroContasPagar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaConvenios.resx">
-      <DependentUpon>TelaConvenios.cs</DependentUpon>
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroConvenios.resx">
+      <DependentUpon>TelaCadastroConvenios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaDeProdutos.resx">
-      <DependentUpon>TelaDeProdutos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaFormPag.resx">
-      <DependentUpon>TelaFormPag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaNovaFilial.resx">
-      <DependentUpon>TelaNovaFilial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaNovaFormaPag.resx">
-      <DependentUpon>TelaNovaFormaPag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaNovaUnidade.resx">
-      <DependentUpon>TelaNovaUnidade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaNovoCliente.resx">
-      <DependentUpon>TelaNovoCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaNovoFornecedor.resx">
-      <DependentUpon>TelaNovoFornecedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaNovoUsuario.resx">
-      <DependentUpon>TelaNovoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaPrincipal.resx">
+    <EmbeddedResource Include="View\Principal\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaProdutos.resx">
-      <DependentUpon>TelaProdutos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaSair.resx">
+    <EmbeddedResource Include="View\Principal\TelaSair.resx">
       <DependentUpon>TelaSair.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaSobre.resx">
+    <EmbeddedResource Include="View\Principal\TelaSobre.resx">
       <DependentUpon>TelaSobre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TelaVenda.resx">
+    <EmbeddedResource Include="View\Venda\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -282,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CaixaRegistradora.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lab %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,33 +10,31 @@ using System.Windows.Forms;
 
 namespace FarmaTech.View
 {
-    public partial class TelaCadastroUsuarios : Form
+    public partial class TelaCadastroFiliais : Form
     {
-        public TelaCadastroUsuarios()
+        public TelaCadastroFiliais()
         {
             InitializeComponent();
         }
 
-        private void TelaCadastroUsuarios_Load(object sender, EventArgs e)
+        private void TelaCadastroFiliais_Load(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabNovoUsuario);
-        }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            tabControl1.TabPages.Add(tabNovoUsuario);
-            tabControl1.TabPages.Remove(tabUsuarios);
-            btnAlterar.Enabled = false;
-            btnExcluir.Enabled = false;
-            btnNovo.Enabled = false;
-
-
+            tabControl1.TabPages.Remove(tabNovoFilial);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-      
-            this.Hide();
+
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(tabNovoFilial);
+            tabControl1.TabPages.Remove(tabFiliais);
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnNovo.Enabled = false;
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -54,7 +52,7 @@ namespace FarmaTech.View
 
         }
 
-        private void TelaCadastroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
+        private void TelaCadastroFiliais_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
         }
