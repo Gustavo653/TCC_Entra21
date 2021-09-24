@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaTech.Model.Objetos
+namespace DAL.Model.Objetos
 {
-    class UsuarioStatic
+    public class UsuarioStatic
     {
         public static string Nome { get; set; }
         public static int Filial { get; set; }

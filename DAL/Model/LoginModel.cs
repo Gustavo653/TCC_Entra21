@@ -1,4 +1,5 @@
-﻿using FarmaTech.Model.Objetos;
+﻿using DAL.Model.Consultas;
+using DAL.Model.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,9 +8,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaTech.Model
+namespace DAL.Model
 {
-    class TelaLoginModel
+    public class LoginModel
     {
         private static readonly SqlConnection conn = DbConnection.conn;
         private static HashLogin hash = new HashLogin(SHA512.Create());

@@ -1,6 +1,4 @@
-﻿using FarmaTech.Control;
-using FarmaTech.Model.Objetos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BAL;
+using DAL;
+using FarmaTech;
 
 namespace FarmaTech
 {
@@ -26,14 +27,14 @@ namespace FarmaTech
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (TelaLoginController.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
+            if (BAL.Control.LoginController.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
             {
                 MessageBox.Show(DateTime.Now.ToString());
-                MessageBox.Show($"Nome: {UsuarioStatic.Nome}" +
-                    $"\nFilial: {UsuarioStatic.Filial}" +
-                    $"\nCargo: {UsuarioStatic.Cargo}" +
-                    $"\nContato: {UsuarioStatic.Contato}" +
-                    $"\nNivel de acesso: {UsuarioStatic.NivelAcesso}");
+                MessageBox.Show($"Nome: {DAL.Model.Objetos.UsuarioStatic.Nome}" +
+                    $"\nFilial: {DAL.Model.Objetos.UsuarioStatic.Filial}" +
+                    $"\nCargo: {DAL.Model.Objetos.UsuarioStatic.Cargo}" +
+                    $"\nContato: {DAL.Model.Objetos.UsuarioStatic.Contato}" +
+                    $"\nNivel de acesso: {DAL.Model.Objetos.UsuarioStatic.NivelAcesso}");
                 new TelaPrincipal().Show();
                 this.Hide();
             }

@@ -1,17 +1,18 @@
-﻿using FarmaTech.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
+using BAL;
 
-namespace FarmaTech.Control
+namespace BAL.Control
 {
-    class TelaLoginController
+    public class LoginController
     {
         public static bool ValidaCredenciais(string login, string senha)
         {
-            return TelaLoginModel.VerificaCredenciais(login, senha);
+            return DAL.Model.LoginModel.VerificaCredenciais(login, senha);
         }
     }
 }

@@ -46,11 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\TelaLoginController.cs" />
-    <Compile Include="Model\Consultas\DBConnection.cs" />
-    <Compile Include="Model\Consultas\HashLogin.cs" />
-    <Compile Include="Model\Objetos\UsuarioStatic.cs" />
-    <Compile Include="Model\TelaLoginModel.cs" />
     <Compile Include="View\Cadastros\TelaCadastroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,14 +200,22 @@
   <ItemGroup>
     <None Include="Resources\imagem01.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\CaixaRegistradora.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lab %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAL\BAL.csproj">
+      <Project>{01a709db-7f97-472e-aea9-9dc96234aa4a}</Project>
+      <Name>BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{6238ebcd-1ff8-4c6c-aa22-dd257489de09}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
