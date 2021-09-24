@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using BAL;
 
 namespace BAL.Control
 {
-    class LoginController
+    public class LoginController
     {
         public static bool ValidaCredenciais(string login, string senha)
         {
