@@ -20,7 +20,7 @@ namespace FarmaTech
 
         private void MenuUsuarios_Click(object sender, EventArgs e)
         {
-            new TelaCadUsuarios().Show();
+            new TelaCadastroUsuarios().Show();
         }
 
         private void MenuSair_Click(object sender, EventArgs e)

@@ -51,6 +51,12 @@
     <Compile Include="Model\Consultas\HashLogin.cs" />
     <Compile Include="Model\Objetos\UsuarioStatic.cs" />
     <Compile Include="Model\TelaLoginModel.cs" />
+    <Compile Include="View\TelaCadastroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TelaCadastroUsuarios.Designer.cs">
+      <DependentUpon>TelaCadastroUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     <Compile Include="View\TelaVenda.Designer.cs">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\TelaCadastroUsuarios.resx">
+      <DependentUpon>TelaCadastroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>

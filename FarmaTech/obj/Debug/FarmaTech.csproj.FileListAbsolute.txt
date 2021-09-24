@@ -99,3 +99,8 @@ C:\Users\Viv\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
 C:\Users\Viv\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaConvenios.resources
 C:\Users\Viv\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaDeProdutos.resources
 C:\Users\Viv\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaProdutos.resources
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaContasAPagar.resources
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaConvenios.resources
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaDeProdutos.resources
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaProdutos.resources

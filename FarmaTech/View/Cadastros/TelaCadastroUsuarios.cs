@@ -8,30 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTech
+namespace FarmaTech.View
 {
-    public partial class TelaCadUsuarios : Form
+    public partial class TelaCadastroUsuarios : Form
     {
-        public TelaCadUsuarios()
+        public TelaCadastroUsuarios()
         {
             InitializeComponent();
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void TelaCadastroUsuarios_Load(object sender, EventArgs e)
         {
-
+            tabControl1.TabPages.Remove(tabUsuarios);
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            new TelaNovoUsuario().Show();
+            tabControl1.TabPages.Add(tabNovoUsuario);
+            tabControl1.TabPages.Remove(tabUsuarios);
         }
-
-        private void TelaCadUsuarios_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Hide();
-        }
-
-        
     }
 }
