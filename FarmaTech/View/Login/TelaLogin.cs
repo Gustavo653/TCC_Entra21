@@ -1,6 +1,4 @@
-﻿using FarmaTech.Control;
-using FarmaTech.Model.Objetos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BAL;
+using DAL;
+using FarmaTech;
 
 namespace FarmaTech
 {

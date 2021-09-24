@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaTech", "FarmaTech.csproj", "{821D2E35-9A0C-4F78-8E69-2601671E5E63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{6238EBCD-1FF8-4C6C-AA22-DD257489DE09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "..\BAL\BAL.csproj", "{01A709DB-7F97-472E-AEA9-9DC96234AA4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{821D2E35-9A0C-4F78-8E69-2601671E5E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{821D2E35-9A0C-4F78-8E69-2601671E5E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{821D2E35-9A0C-4F78-8E69-2601671E5E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6238EBCD-1FF8-4C6C-AA22-DD257489DE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6238EBCD-1FF8-4C6C-AA22-DD257489DE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6238EBCD-1FF8-4C6C-AA22-DD257489DE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6238EBCD-1FF8-4C6C-AA22-DD257489DE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A709DB-7F97-472E-AEA9-9DC96234AA4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A709DB-7F97-472E-AEA9-9DC96234AA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A709DB-7F97-472E-AEA9-9DC96234AA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A709DB-7F97-472E-AEA9-9DC96234AA4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
