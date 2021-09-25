@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model
 {
-    public class LoginModel
+    public class LoginDAL
     {
         private static readonly SqlConnection conn = DbConnection.conn;
         private static HashLogin hash = new HashLogin(SHA512.Create());

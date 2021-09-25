@@ -33,9 +33,6 @@ namespace FarmaTech.View
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CargoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoUsuario = new System.Windows.Forms.TabPage();
             this.lblFilial = new System.Windows.Forms.Label();
@@ -101,33 +98,11 @@ namespace FarmaTech.View
             this.dgUsuarios.AllowUserToAddRows = false;
             this.dgUsuarios.AllowUserToDeleteRows = false;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol,
-            this.FilialCol,
-            this.CargoCol});
             this.dgUsuarios.Location = new System.Drawing.Point(40, 103);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
             this.dgUsuarios.Size = new System.Drawing.Size(950, 388);
             this.dgUsuarios.TabIndex = 14;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            // 
-            // FilialCol
-            // 
-            this.FilialCol.HeaderText = "Filial";
-            this.FilialCol.Name = "FilialCol";
-            this.FilialCol.ReadOnly = true;
-            // 
-            // CargoCol
-            // 
-            this.CargoCol.HeaderText = "Cargo";
-            this.CargoCol.Name = "CargoCol";
-            this.CargoCol.ReadOnly = true;
             // 
             // lblPesquisar
             // 
@@ -398,9 +373,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.TabPage tabNovoUsuario;
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.DataGridView dgUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FilialCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CargoCol;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.Label lblFilial;
         private System.Windows.Forms.Label lblNome;

@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\LoginController.cs" />
+    <Compile Include="Control\CRUD_Usuarios_BAL.cs" />
+    <Compile Include="Control\LoginBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

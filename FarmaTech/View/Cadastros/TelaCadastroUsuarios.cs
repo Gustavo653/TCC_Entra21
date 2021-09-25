@@ -19,6 +19,7 @@ namespace FarmaTech.View
 
         private void TelaCadastroUsuarios_Load(object sender, EventArgs e)
         {
+            
             tabControl1.TabPages.Remove(tabNovoUsuario);
         }
 
