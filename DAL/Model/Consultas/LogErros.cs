@@ -9,11 +9,11 @@ namespace DAL.Model.Consultas
 {
     public class LogErros
     {
-        public static void GerarErro(Exception e)
+        public static void GerarErro(Exception e, string localErro)
         {
-            string data = DateTime.Now.ToString().Replace("/", "-");
-            string nomeArquivo = "Erro - Horario e data: " + data;
-            string caminhoerro = @"C:\Users\Public\Documents\"+nomeArquivo+".txt";
+            string data = DateTime.Now.ToString().Replace(":", "-").Replace("/", "=");
+            string nomeArquivo = "Local do erro - "+ localErro +" - Horario e data - " + data;
+            string caminhoerro = @"C:\Users\Public\Documents\" + nomeArquivo + ".txt"; //Nao funciona
             StreamWriter erro;
             erro = File.CreateText(caminhoerro);
             erro.WriteLine("Erro detectado");

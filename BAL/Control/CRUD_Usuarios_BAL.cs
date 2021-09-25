@@ -18,15 +18,8 @@ namespace BAL.Control
         {
             return DAL.Model.CRUD_Usuarios_DAL.GetUsuariosPorNome(nome);
         }
-        public static int AdicionarUsuario(string nome, int filial, string cargo, string contato, int nivelAcesso, string login, string senha)
+        public static int AdicionarUsuario(string nome, string filial, string cargo, string contato, string nivelAcesso, string login, string senha)
         {
-            //Adicionar verificacao para saber se o usuario esta sendo atribuido a uma filial valida
-            //Adicionar verificacao para saber se o usuario esta sendo atribuido a uma filial valida
-            //Adicionar verificacao para saber se o usuario esta sendo atribuido a uma filial valida
-            //Adicionar verificacao para saber se o usuario esta sendo atribuido a uma filial valida
-            //Adicionar verificacao para saber se o usuario esta sendo atribuido a uma filial valida
-            //Adicionar verificacao para saber se o usuario esta sendo atribuido a uma filial valida
-            //Adicionar verificacao para saber se o usuario esta sendo atribuido a uma filial valida
             if (!string.IsNullOrEmpty(nome) &&
                 !string.IsNullOrEmpty(filial.ToString()) &&
                 !string.IsNullOrEmpty(cargo) &&
@@ -39,14 +32,18 @@ namespace BAL.Control
                 {
                     try
                     {
-                        DAL.Model.CRUD_Usuarios_DAL.InsereUsuario(nome, filial, cargo, contato, nivelAcesso, login, hash.CriptografarSenha(senha));
+                        DAL.Model.CRUD_Usuarios_DAL.InsereUsuario(nome, Convert.ToInt32(filial), cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha));
+                        return 0; //Deu tudo certo
+                    }
+                    catch (FormatException)
+                    {
+                        return 4; //Algum dado que o usuario inseriu nao pode ser convertido
                     }
                     catch (Exception e)
                     {
-                        DAL.Model.Consultas.LogErros.GerarErro(e);
+                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Adicionar");
                         return 3; //Algo inesperado ocorreu
                     }
-                    return 0; //Deu tudo certo
                 }
                 return 2; //Erro usuario ja existe
             }
@@ -56,12 +53,20 @@ namespace BAL.Control
         {
             if (!string.IsNullOrEmpty(contato))
             {
-                DAL.Model.CRUD_Usuarios_DAL.RemoveUsuario(contato);
-                return 0; //Deu tudo certo
+                try
+                {
+                    DAL.Model.CRUD_Usuarios_DAL.RemoveUsuario(contato);
+                    return 0; //Deu tudo certo
+                }
+                catch(Exception e)
+                {
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
+                    return 2; //Algo inesperado ocorreu
+                }
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaUsuario(string nome, int filial, string cargo, string contato, int nivelAcesso, string login, string senha)
+        public static int AtualizaUsuario(string nome, string filial, string cargo, string contato, string nivelAcesso, string login, string senha, string where)
         {
             if (!string.IsNullOrEmpty(nome) &&
               !string.IsNullOrEmpty(filial.ToString()) &&
@@ -73,8 +78,24 @@ namespace BAL.Control
             {
                 if (DAL.Model.CRUD_Usuarios_DAL.VerificaSeUsuarioRepete(contato))
                 {
-                    DAL.Model.CRUD_Usuarios_DAL.AtualizaUsuario(nome, filial, cargo, contato, nivelAcesso, login, hash.CriptografarSenha(senha));
-                    return 0; //Deu tudo certo
+                    if(!(Convert.ToInt32(nivelAcesso) > 3) || !(Convert.ToInt32(nivelAcesso) < 1))
+                    {
+                        return 4; //Algum dado que o usuario inseriu nao pode ser convertido
+                    }
+                    try
+                    {
+                        DAL.Model.CRUD_Usuarios_DAL.AtualizaUsuario(nome, Convert.ToInt32(filial), cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha), where);
+                        return 0; //Deu tudo certo
+                    }
+                    catch (FormatException)
+                    {
+                        return 4; //Algum dado que o usuario inseriu nao pode ser convertido
+                    }
+                    catch (Exception e)
+                    {
+                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
+                        return 3; //Algo inesperado ocorreu
+                    }
                 }
                 return 2; //Erro usuario ja existe
             }

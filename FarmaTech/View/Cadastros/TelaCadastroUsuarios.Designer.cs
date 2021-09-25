@@ -92,6 +92,7 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 15;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // dgUsuarios
             // 
@@ -169,7 +170,11 @@ namespace FarmaTech.View
             // 
             // cbUsuarioFilial
             // 
+            this.cbUsuarioFilial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuarioFilial.FormattingEnabled = true;
+            this.cbUsuarioFilial.Items.AddRange(new object[] {
+            "24",
+            "Adicionar DATASOURCE"});
             this.cbUsuarioFilial.Location = new System.Drawing.Point(568, 114);
             this.cbUsuarioFilial.Name = "cbUsuarioFilial";
             this.cbUsuarioFilial.Size = new System.Drawing.Size(299, 28);
@@ -228,6 +233,7 @@ namespace FarmaTech.View
             // 
             // cbUsuarioCargo
             // 
+            this.cbUsuarioCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuarioCargo.FormattingEnabled = true;
             this.cbUsuarioCargo.Items.AddRange(new object[] {
             "Gerente",
