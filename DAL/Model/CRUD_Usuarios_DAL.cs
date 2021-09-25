@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model
 {
-    class CRUD_Usuarios_DAL
+    public class CRUD_Usuarios_DAL
     {
         private static readonly SqlConnection conn = DbConnection.conn;
         public static List<Usuario> GetUsuarios()
@@ -57,6 +57,28 @@ namespace DAL.Model
             dr.Close();
             conn.Close();
             return lista;
+        }
+        public static void InsereUsuario(string nome, int filial, string cargo, string contato, int nivelAcesso, string login, string senha)
+        {
+            string insert = $"INSERT into dbo.Usuarios(Nome, Filial, Cargo, Contato, NivelAcesso, Login, Senha) values ('{nome}', {filial}, '{cargo}', '{contato}', {nivelAcesso}, '{login}', '{senha}'";
+            DbConnection.Execute(insert);
+        }
+        public static void RemoveUsuario(string contato)
+        {
+            string delete = $"DELETE from dbo.Usuarios WHERE Contato = '{contato}'";
+            DbConnection.Execute(delete);
+        }
+        public static void AtualizaUsuario(string nome, int filial, string cargo, string contato, int nivelAcesso, string login, string senha)
+        {
+            string update = $"UPDATE dbo.Usuarios Set Nome = '{nome}', Filial = {filial}, Cargo = '{cargo}', Contato = '{contato}', NivelAcesso = {nivelAcesso}, Login = '{login}', Senha = '{senha}' WHERE Contato = '{contato}'";
+            DbConnection.Execute(update);
+        }
+        public static bool VerificaSeUsuarioRepete(string contato)
+        {
+            List<string> lista = DbConnection.GenericSelectUnit("Contato", "Usuarios", $"Contato = {contato}");
+            if (lista.Contains(contato))
+                return true;
+            return false;
         }
     }
 }
