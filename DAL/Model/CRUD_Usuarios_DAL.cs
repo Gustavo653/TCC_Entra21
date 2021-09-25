@@ -75,7 +75,7 @@ namespace DAL.Model
         }
         public static bool VerificaSeUsuarioRepete(string contato)
         {
-            List<string> lista = DbConnection.GenericSelectUnit("Contato", "Usuarios", $"Contato = {contato}");
+            List<string> lista = DbConnection.GenericSelectUnit("Contato", "Usuarios");
             if (lista.Contains(contato))
                 return true;
             return false;

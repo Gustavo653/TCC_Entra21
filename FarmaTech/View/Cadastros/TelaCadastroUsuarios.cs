@@ -19,7 +19,7 @@ namespace FarmaTech.View
 
         private void TelaCadastroUsuarios_Load(object sender, EventArgs e)
         {
-            
+            dgUsuarios.DataSource = BAL.Control.CRUD_Usuarios_BAL.GetUsuarios();
             tabControl1.TabPages.Remove(tabNovoUsuario);
         }
 
@@ -42,7 +42,32 @@ namespace FarmaTech.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            int resultado = 3;
+            try
+            {
+                resultado = BAL.Control.CRUD_Usuarios_BAL.AdicionarUsuario(txtNome.Text, Convert.ToInt32(cbUsuarioFilial.Text), cbUsuarioCargo.Text, txtContato.Text, Convert.ToInt32(nUDNivelAcesso.Value), txtLogin.Text, txtSenha.Text);
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("gerando log");
+                //DAL.Model.Consultas.LogErros.GerarErro(erro); //Corrigir bug de caminho do arquivo
+            }
+            if(resultado == 0)
+            {
+                MessageBox.Show("Usuário cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if(resultado == 1)
+            {
+                MessageBox.Show("Preencha todos os campos!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (resultado == 2)
+            {
+                MessageBox.Show("Usuário já existente!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Houve um erro desconhecido!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)

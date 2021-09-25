@@ -35,9 +35,17 @@ namespace BAL.Control
                 !string.IsNullOrEmpty(login) &&
                 !string.IsNullOrEmpty(senha))
             {
-                if (DAL.Model.CRUD_Usuarios_DAL.VerificaSeUsuarioRepete(contato))
+                if (!DAL.Model.CRUD_Usuarios_DAL.VerificaSeUsuarioRepete(contato)) //Verificar se deu certo
                 {
-                    DAL.Model.CRUD_Usuarios_DAL.InsereUsuario(nome, filial, cargo, contato, nivelAcesso, login, hash.CriptografarSenha(senha));
+                    try
+                    {
+                        DAL.Model.CRUD_Usuarios_DAL.InsereUsuario(nome, filial, cargo, contato, nivelAcesso, login, hash.CriptografarSenha(senha));
+                    }
+                    catch (Exception e)
+                    {
+                        DAL.Model.Consultas.LogErros.GerarErro(e);
+                        return 3; //Algo inesperado ocorreu
+                    }
                     return 0; //Deu tudo certo
                 }
                 return 2; //Erro usuario ja existe
