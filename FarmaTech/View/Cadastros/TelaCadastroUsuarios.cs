@@ -78,7 +78,31 @@ namespace FarmaTech.View
             string nivelAcesso = Interaction.InputBox("Insira o nível de acesso", "Atualiza Usuario", "", 200, 200);
             string login = Interaction.InputBox("Insira o login", "Atualiza Usuario", "", 200, 200);
             string senha = Interaction.InputBox("Insira a senha", "Atualiza Usuario", "", 200, 200);
-            BAL.Control.CRUD_Usuarios_BAL.AtualizaUsuario(nome, filial, cargo, contato, nivelAcesso, login, senha, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            int resultado = 1;
+            if (!string.IsNullOrEmpty(filial) && !string.IsNullOrEmpty(nivelAcesso))
+            {
+                resultado = BAL.Control.CRUD_Usuarios_BAL.AtualizaUsuario(nome, filial, cargo, contato, nivelAcesso, login, senha, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            }
+            if (resultado == 0)
+            {
+                MessageBox.Show("Usuário atualizado com sucesso!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (resultado == 1)
+            {
+                MessageBox.Show("Preencha todos os campos!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (resultado == 2)
+            {
+                MessageBox.Show("Usuário já existente!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (resultado == 3)
+            {
+                MessageBox.Show("Houve um erro desconhecido!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (resultado == 4)
+            {
+                MessageBox.Show("Verifique se os dados inseridos estão no formato correto!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             AtualizaDG();
         }
 

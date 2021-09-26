@@ -76,9 +76,9 @@ namespace BAL.Control
               !string.IsNullOrEmpty(login) &&
               !string.IsNullOrEmpty(senha))
             {
-                if (DAL.Model.CRUD_Usuarios_DAL.VerificaSeUsuarioRepete(contato))
+                if (!DAL.Model.CRUD_Usuarios_DAL.VerificaSeUsuarioRepete(contato))
                 {
-                    if(!(Convert.ToInt32(nivelAcesso) > 3) || !(Convert.ToInt32(nivelAcesso) < 1))
+                    if(Convert.ToInt32(nivelAcesso) > 3 && Convert.ToInt32(nivelAcesso) < 1)
                     {
                         return 4; //Algum dado que o usuario inseriu nao pode ser convertido
                     }
