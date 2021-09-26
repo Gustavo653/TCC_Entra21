@@ -33,9 +33,6 @@ namespace FarmaTech.View
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CargoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoUsuario = new System.Windows.Forms.TabPage();
             this.lblFilial = new System.Windows.Forms.Label();
@@ -44,7 +41,7 @@ namespace FarmaTech.View
             this.cbUsuarioFilial = new System.Windows.Forms.ComboBox();
             this.lblContato = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nUDNivelAcesso = new System.Windows.Forms.NumericUpDown();
             this.txtContato = new System.Windows.Forms.TextBox();
             this.cbUsuarioCargo = new System.Windows.Forms.ComboBox();
             this.lblNivel = new System.Windows.Forms.Label();
@@ -61,7 +58,7 @@ namespace FarmaTech.View
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.tabNovoUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDNivelAcesso)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -95,39 +92,18 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 15;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // dgUsuarios
             // 
             this.dgUsuarios.AllowUserToAddRows = false;
             this.dgUsuarios.AllowUserToDeleteRows = false;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol,
-            this.FilialCol,
-            this.CargoCol});
             this.dgUsuarios.Location = new System.Drawing.Point(40, 103);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
             this.dgUsuarios.Size = new System.Drawing.Size(950, 388);
             this.dgUsuarios.TabIndex = 14;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            // 
-            // FilialCol
-            // 
-            this.FilialCol.HeaderText = "Filial";
-            this.FilialCol.Name = "FilialCol";
-            this.FilialCol.ReadOnly = true;
-            // 
-            // CargoCol
-            // 
-            this.CargoCol.HeaderText = "Cargo";
-            this.CargoCol.Name = "CargoCol";
-            this.CargoCol.ReadOnly = true;
             // 
             // lblPesquisar
             // 
@@ -148,7 +124,7 @@ namespace FarmaTech.View
             this.tabNovoUsuario.Controls.Add(this.cbUsuarioFilial);
             this.tabNovoUsuario.Controls.Add(this.lblContato);
             this.tabNovoUsuario.Controls.Add(this.lblCargo);
-            this.tabNovoUsuario.Controls.Add(this.numericUpDown1);
+            this.tabNovoUsuario.Controls.Add(this.nUDNivelAcesso);
             this.tabNovoUsuario.Controls.Add(this.txtContato);
             this.tabNovoUsuario.Controls.Add(this.cbUsuarioCargo);
             this.tabNovoUsuario.Controls.Add(this.lblNivel);
@@ -194,7 +170,11 @@ namespace FarmaTech.View
             // 
             // cbUsuarioFilial
             // 
+            this.cbUsuarioFilial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuarioFilial.FormattingEnabled = true;
+            this.cbUsuarioFilial.Items.AddRange(new object[] {
+            "24",
+            "Adicionar DATASOURCE"});
             this.cbUsuarioFilial.Location = new System.Drawing.Point(568, 114);
             this.cbUsuarioFilial.Name = "cbUsuarioFilial";
             this.cbUsuarioFilial.Size = new System.Drawing.Size(299, 28);
@@ -222,23 +202,23 @@ namespace FarmaTech.View
             this.lblCargo.TabIndex = 45;
             this.lblCargo.Text = "Cargo:";
             // 
-            // numericUpDown1
+            // nUDNivelAcesso
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(723, 186);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nUDNivelAcesso.Location = new System.Drawing.Point(723, 186);
+            this.nUDNivelAcesso.Maximum = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nUDNivelAcesso.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(144, 26);
-            this.numericUpDown1.TabIndex = 53;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nUDNivelAcesso.Name = "nUDNivelAcesso";
+            this.nUDNivelAcesso.Size = new System.Drawing.Size(144, 26);
+            this.nUDNivelAcesso.TabIndex = 53;
+            this.nUDNivelAcesso.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -253,6 +233,7 @@ namespace FarmaTech.View
             // 
             // cbUsuarioCargo
             // 
+            this.cbUsuarioCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuarioCargo.FormattingEnabled = true;
             this.cbUsuarioCargo.Items.AddRange(new object[] {
             "Gerente",
@@ -386,7 +367,7 @@ namespace FarmaTech.View
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.tabNovoUsuario.ResumeLayout(false);
             this.tabNovoUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDNivelAcesso)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,9 +379,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.TabPage tabNovoUsuario;
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.DataGridView dgUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FilialCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CargoCol;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.Label lblFilial;
         private System.Windows.Forms.Label lblNome;
@@ -408,7 +386,7 @@ namespace FarmaTech.View
         private System.Windows.Forms.ComboBox cbUsuarioFilial;
         private System.Windows.Forms.Label lblContato;
         private System.Windows.Forms.Label lblCargo;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nUDNivelAcesso;
         private System.Windows.Forms.TextBox txtContato;
         private System.Windows.Forms.ComboBox cbUsuarioCargo;
         private System.Windows.Forms.Label lblNivel;

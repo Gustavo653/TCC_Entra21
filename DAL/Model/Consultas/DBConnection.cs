@@ -14,7 +14,7 @@ namespace DAL.Model.Consultas
         internal static SqlConnection conn = new SqlConnection("workstation id=TCC-Entra21.mssql.somee.com;packet size=4096;user id=Gustavo10_SQLLogin_1;pwd=dg6kzsavsg;data source=TCC-Entra21.mssql.somee.com;persist security info=False;initial catalog=TCC-Entra21");
 
         //Funcoes genericas
-        private static void Execute(string command)
+        public static void Execute(string command)
         {
             SqlCommand cmd = new SqlCommand(command, conn);
             conn.Open();

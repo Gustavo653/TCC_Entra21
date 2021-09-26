@@ -8,11 +8,11 @@ using BAL;
 
 namespace BAL.Control
 {
-    public class LoginController
+    public class LoginBAL
     {
         public static bool ValidaCredenciais(string login, string senha)
         {
-            return DAL.Model.LoginModel.VerificaCredenciais(login, senha);
+            return DAL.Model.LoginDAL.VerificaCredenciais(login, senha);
         }
     }
 }
