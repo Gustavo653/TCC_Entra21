@@ -17,7 +17,8 @@ namespace DAL.Model
             string select = $"SELECT * from dbo.Usuarios";
             List<Usuario> lista = new List<Usuario>();
             SqlCommand cmd = new SqlCommand(select, conn);
-            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -40,7 +41,8 @@ namespace DAL.Model
             string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%'";
             List<Usuario> lista = new List<Usuario>();
             SqlCommand cmd = new SqlCommand(select, conn);
-            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {

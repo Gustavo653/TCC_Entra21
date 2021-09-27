@@ -36,11 +36,10 @@ namespace FarmaTech.View
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabFornecedores = new System.Windows.Forms.TabPage();
+            this.dgUsuarios = new System.Windows.Forms.DataGridView();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoFornecedor = new System.Windows.Forms.TabPage();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblContato = new System.Windows.Forms.Label();
             this.txtContato = new System.Windows.Forms.TextBox();
             this.txtNomeFantasia = new System.Windows.Forms.TextBox();
@@ -51,18 +50,18 @@ namespace FarmaTech.View
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtCompl = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
             this.lblCompl = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
+            this.cboEstados = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabFornecedores.SuspendLayout();
-            this.tabNovoFornecedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            this.tabNovoFornecedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNovo
@@ -139,6 +138,17 @@ namespace FarmaTech.View
             this.tabFornecedores.TabIndex = 0;
             this.tabFornecedores.Text = "Fornecedores";
             // 
+            // dgUsuarios
+            // 
+            this.dgUsuarios.AllowUserToAddRows = false;
+            this.dgUsuarios.AllowUserToDeleteRows = false;
+            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuarios.Location = new System.Drawing.Point(31, 91);
+            this.dgUsuarios.Name = "dgUsuarios";
+            this.dgUsuarios.ReadOnly = true;
+            this.dgUsuarios.Size = new System.Drawing.Size(810, 282);
+            this.dgUsuarios.TabIndex = 20;
+            // 
             // txtPesquisaUsuario
             // 
             this.txtPesquisaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +156,7 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 19;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -160,6 +171,7 @@ namespace FarmaTech.View
             // tabNovoFornecedor
             // 
             this.tabNovoFornecedor.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabNovoFornecedor.Controls.Add(this.cboEstados);
             this.tabNovoFornecedor.Controls.Add(this.lblContato);
             this.tabNovoFornecedor.Controls.Add(this.txtContato);
             this.tabNovoFornecedor.Controls.Add(this.txtNomeFantasia);
@@ -170,14 +182,13 @@ namespace FarmaTech.View
             this.tabNovoFornecedor.Controls.Add(this.txtCidade);
             this.tabNovoFornecedor.Controls.Add(this.txtCompl);
             this.tabNovoFornecedor.Controls.Add(this.txtNumero);
-            this.tabNovoFornecedor.Controls.Add(this.txtEstado);
             this.tabNovoFornecedor.Controls.Add(this.txtEndereco);
             this.tabNovoFornecedor.Controls.Add(this.lblCidade);
             this.tabNovoFornecedor.Controls.Add(this.lblEstado);
             this.tabNovoFornecedor.Controls.Add(this.lblNumero);
             this.tabNovoFornecedor.Controls.Add(this.lblCompl);
             this.tabNovoFornecedor.Controls.Add(this.lblEndereco);
-            this.tabNovoFornecedor.Controls.Add(this.txtNome);
+            this.tabNovoFornecedor.Controls.Add(this.txtRazaoSocial);
             this.tabNovoFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNovoFornecedor.Location = new System.Drawing.Point(4, 29);
             this.tabNovoFornecedor.Name = "tabNovoFornecedor";
@@ -185,25 +196,6 @@ namespace FarmaTech.View
             this.tabNovoFornecedor.Size = new System.Drawing.Size(916, 404);
             this.tabNovoFornecedor.TabIndex = 1;
             this.tabNovoFornecedor.Text = "Novo Fornecedor";
-            // 
-            // dgUsuarios
-            // 
-            this.dgUsuarios.AllowUserToAddRows = false;
-            this.dgUsuarios.AllowUserToDeleteRows = false;
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol});
-            this.dgUsuarios.Location = new System.Drawing.Point(31, 91);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.Size = new System.Drawing.Size(810, 282);
-            this.dgUsuarios.TabIndex = 20;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
             // 
             // lblContato
             // 
@@ -296,14 +288,6 @@ namespace FarmaTech.View
             this.txtNumero.Size = new System.Drawing.Size(133, 29);
             this.txtNumero.TabIndex = 92;
             // 
-            // txtEstado
-            // 
-            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(710, 259);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(136, 29);
-            this.txtEstado.TabIndex = 91;
-            // 
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -367,12 +351,21 @@ namespace FarmaTech.View
             this.lblEndereco.TabIndex = 84;
             this.lblEndereco.Text = "Endereço:";
             // 
-            // txtNome
+            // txtRazaoSocial
             // 
-            this.txtNome.Location = new System.Drawing.Point(201, 40);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(645, 26);
-            this.txtNome.TabIndex = 83;
+            this.txtRazaoSocial.Location = new System.Drawing.Point(201, 40);
+            this.txtRazaoSocial.Name = "txtRazaoSocial";
+            this.txtRazaoSocial.Size = new System.Drawing.Size(645, 26);
+            this.txtRazaoSocial.TabIndex = 83;
+            // 
+            // cboEstados
+            // 
+            this.cboEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstados.FormattingEnabled = true;
+            this.cboEstados.Location = new System.Drawing.Point(703, 257);
+            this.cboEstados.Name = "cboEstados";
+            this.cboEstados.Size = new System.Drawing.Size(121, 28);
+            this.cboEstados.TabIndex = 101;
             // 
             // TelaCadastroFornecedores
             // 
@@ -397,9 +390,9 @@ namespace FarmaTech.View
             this.tabControl1.ResumeLayout(false);
             this.tabFornecedores.ResumeLayout(false);
             this.tabFornecedores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.tabNovoFornecedor.ResumeLayout(false);
             this.tabNovoFornecedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,7 +410,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoFornecedor;
         private System.Windows.Forms.DataGridView dgUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
         private System.Windows.Forms.Label lblContato;
         private System.Windows.Forms.TextBox txtContato;
         private System.Windows.Forms.TextBox txtNomeFantasia;
@@ -428,13 +420,13 @@ namespace FarmaTech.View
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtCompl;
         private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label lblCompl;
         private System.Windows.Forms.Label lblEndereco;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtRazaoSocial;
+        private System.Windows.Forms.ComboBox cboEstados;
     }
 }

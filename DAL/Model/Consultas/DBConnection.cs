@@ -21,7 +21,6 @@ namespace DAL.Model.Consultas
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-
         /// <summary>
         /// Select all values from column from given table, table already includes dbo.
         /// </summary>
