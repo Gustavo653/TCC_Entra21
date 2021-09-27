@@ -1,11 +1,12 @@
 create table dbo.Enderecos
 (
 idEndereco int not null identity(1,1),
+enumEndereco int not null,
 RazaoSocial varchar(50) not null,
 NomeFantasia varchar(50) not null,
 Cnpj varchar(15) not null, //Desconsiderando pontos e barras
 Contato varchar(14) not null, //Telefone +55(47) 9 0000-0000
-Endereco varchar(50) not null,
+Rua varchar(50) not null,
 Numero varchar(6) not null,
 Complemento varchar(50) not null,
 Cidade varchar(25),

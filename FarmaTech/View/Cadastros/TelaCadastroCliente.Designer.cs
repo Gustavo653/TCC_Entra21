@@ -37,7 +37,6 @@ namespace FarmaTech.View
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabClientes = new System.Windows.Forms.TabPage();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoCliente = new System.Windows.Forms.TabPage();
@@ -146,19 +145,11 @@ namespace FarmaTech.View
             this.dgUsuarios.AllowUserToAddRows = false;
             this.dgUsuarios.AllowUserToDeleteRows = false;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol});
             this.dgUsuarios.Location = new System.Drawing.Point(49, 87);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
             this.dgUsuarios.Size = new System.Drawing.Size(819, 291);
             this.dgUsuarios.TabIndex = 24;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
             // 
             // txtPesquisaUsuario
             // 
@@ -447,7 +438,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoCliente;
         private System.Windows.Forms.DataGridView dgUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblContato;
         private System.Windows.Forms.TextBox txtCnpj;
