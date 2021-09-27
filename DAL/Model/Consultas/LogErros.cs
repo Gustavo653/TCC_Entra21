@@ -13,7 +13,7 @@ namespace DAL.Model.Consultas
         {
             string data = DateTime.Now.ToString().Replace(":", "-").Replace("/", "=");
             string nomeArquivo = "Local do erro - "+ localErro +" - Horario e data - " + data;
-            string caminhoerro = @"C:\Users\Public\Documents\" + nomeArquivo + ".txt"; //Nao funciona
+            string caminhoerro = @"C:\Users\Public\Documents\" + nomeArquivo + ".txt";
             StreamWriter erro;
             erro = File.CreateText(caminhoerro);
             erro.WriteLine("Erro detectado");

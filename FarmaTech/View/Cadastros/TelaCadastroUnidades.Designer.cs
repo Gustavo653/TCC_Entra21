@@ -31,24 +31,24 @@ namespace FarmaTech.View
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabUnidades = new System.Windows.Forms.TabPage();
+            this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
+            this.dgUnidades = new System.Windows.Forms.DataGridView();
+            this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovaUnidade = new System.Windows.Forms.TabPage();
+            this.txtAbreviacao = new System.Windows.Forms.TextBox();
+            this.lblAbreviacao = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblPesquisar = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblAbreviacao = new System.Windows.Forms.Label();
-            this.txtAbreviacao = new System.Windows.Forms.TextBox();
+            this.ColunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabUnidades.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUnidades)).BeginInit();
             this.tabNovaUnidade.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -66,7 +66,7 @@ namespace FarmaTech.View
             // 
             this.tabUnidades.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tabUnidades.Controls.Add(this.txtPesquisaUsuario);
-            this.tabUnidades.Controls.Add(this.dgUsuarios);
+            this.tabUnidades.Controls.Add(this.dgUnidades);
             this.tabUnidades.Controls.Add(this.lblPesquisar);
             this.tabUnidades.Location = new System.Drawing.Point(4, 29);
             this.tabUnidades.Name = "tabUnidades";
@@ -74,6 +74,37 @@ namespace FarmaTech.View
             this.tabUnidades.Size = new System.Drawing.Size(629, 404);
             this.tabUnidades.TabIndex = 0;
             this.tabUnidades.Text = "Unidades";
+            // 
+            // txtPesquisaUsuario
+            // 
+            this.txtPesquisaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisaUsuario.Location = new System.Drawing.Point(209, 25);
+            this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
+            this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
+            this.txtPesquisaUsuario.TabIndex = 19;
+            // 
+            // dgUnidades
+            // 
+            this.dgUnidades.AllowUserToAddRows = false;
+            this.dgUnidades.AllowUserToDeleteRows = false;
+            this.dgUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUnidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColunaNome});
+            this.dgUnidades.Location = new System.Drawing.Point(50, 77);
+            this.dgUnidades.Name = "dgUnidades";
+            this.dgUnidades.ReadOnly = true;
+            this.dgUnidades.Size = new System.Drawing.Size(515, 281);
+            this.dgUnidades.TabIndex = 18;
+            // 
+            // lblPesquisar
+            // 
+            this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesquisar.Location = new System.Drawing.Point(110, 28);
+            this.lblPesquisar.Name = "lblPesquisar";
+            this.lblPesquisar.Size = new System.Drawing.Size(93, 20);
+            this.lblPesquisar.TabIndex = 17;
+            this.lblPesquisar.Text = "Pesquisar:";
             // 
             // tabNovaUnidade
             // 
@@ -89,6 +120,44 @@ namespace FarmaTech.View
             this.tabNovaUnidade.Size = new System.Drawing.Size(629, 404);
             this.tabNovaUnidade.TabIndex = 1;
             this.tabNovaUnidade.Text = "Nova Unidade";
+            // 
+            // txtAbreviacao
+            // 
+            this.txtAbreviacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAbreviacao.Location = new System.Drawing.Point(129, 130);
+            this.txtAbreviacao.Name = "txtAbreviacao";
+            this.txtAbreviacao.Size = new System.Drawing.Size(93, 26);
+            this.txtAbreviacao.TabIndex = 49;
+            // 
+            // lblAbreviacao
+            // 
+            this.lblAbreviacao.AutoSize = true;
+            this.lblAbreviacao.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblAbreviacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbreviacao.Location = new System.Drawing.Point(20, 133);
+            this.lblAbreviacao.Name = "lblAbreviacao";
+            this.lblAbreviacao.Size = new System.Drawing.Size(103, 20);
+            this.lblAbreviacao.TabIndex = 48;
+            this.lblAbreviacao.Text = "Abreviação:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(129, 59);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(453, 26);
+            this.txtNome.TabIndex = 47;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(63, 62);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(60, 20);
+            this.lblNome.TabIndex = 46;
+            this.lblNome.Text = "Nome:";
             // 
             // btnNovo
             // 
@@ -140,80 +209,12 @@ namespace FarmaTech.View
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // txtPesquisaUsuario
+            // ColunaNome
             // 
-            this.txtPesquisaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisaUsuario.Location = new System.Drawing.Point(209, 25);
-            this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
-            this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
-            this.txtPesquisaUsuario.TabIndex = 19;
-            // 
-            // dgUsuarios
-            // 
-            this.dgUsuarios.AllowUserToAddRows = false;
-            this.dgUsuarios.AllowUserToDeleteRows = false;
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol});
-            this.dgUsuarios.Location = new System.Drawing.Point(50, 77);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.Size = new System.Drawing.Size(515, 281);
-            this.dgUsuarios.TabIndex = 18;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            // 
-            // lblPesquisar
-            // 
-            this.lblPesquisar.AutoSize = true;
-            this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesquisar.Location = new System.Drawing.Point(110, 28);
-            this.lblPesquisar.Name = "lblPesquisar";
-            this.lblPesquisar.Size = new System.Drawing.Size(93, 20);
-            this.lblPesquisar.TabIndex = 17;
-            this.lblPesquisar.Text = "Pesquisar:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(129, 59);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(453, 26);
-            this.txtNome.TabIndex = 47;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(63, 62);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(60, 20);
-            this.lblNome.TabIndex = 46;
-            this.lblNome.Text = "Nome:";
-            // 
-            // lblAbreviacao
-            // 
-            this.lblAbreviacao.AutoSize = true;
-            this.lblAbreviacao.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblAbreviacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAbreviacao.Location = new System.Drawing.Point(20, 133);
-            this.lblAbreviacao.Name = "lblAbreviacao";
-            this.lblAbreviacao.Size = new System.Drawing.Size(103, 20);
-            this.lblAbreviacao.TabIndex = 48;
-            this.lblAbreviacao.Text = "Abreviação:";
-            // 
-            // txtAbreviacao
-            // 
-            this.txtAbreviacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAbreviacao.Location = new System.Drawing.Point(129, 130);
-            this.txtAbreviacao.Name = "txtAbreviacao";
-            this.txtAbreviacao.Size = new System.Drawing.Size(93, 26);
-            this.txtAbreviacao.TabIndex = 49;
+            this.ColunaNome.HeaderText = "Nome";
+            this.ColunaNome.Name = "ColunaNome";
+            this.ColunaNome.ReadOnly = true;
+            this.ColunaNome.Width = 200;
             // 
             // TelaCadastroUnidades
             // 
@@ -238,9 +239,9 @@ namespace FarmaTech.View
             this.tabControl1.ResumeLayout(false);
             this.tabUnidades.ResumeLayout(false);
             this.tabUnidades.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUnidades)).EndInit();
             this.tabNovaUnidade.ResumeLayout(false);
             this.tabNovaUnidade.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,12 +257,12 @@ namespace FarmaTech.View
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
-        private System.Windows.Forms.DataGridView dgUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
+        private System.Windows.Forms.DataGridView dgUnidades;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TextBox txtAbreviacao;
         private System.Windows.Forms.Label lblAbreviacao;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColunaNome;
     }
 }

@@ -44,6 +44,7 @@
     <Compile Include="Model\Consultas\DBConnection.cs" />
     <Compile Include="Model\Consultas\HashLogin.cs" />
     <Compile Include="Model\Consultas\LogErros.cs" />
+    <Compile Include="Model\CRUD_Unidades_DAL.cs" />
     <Compile Include="Model\CRUD_Usuarios_DAL.cs" />
     <Compile Include="Model\Objetos\Usuario.cs" />
     <Compile Include="Model\Objetos\UsuarioStatic.cs" />
