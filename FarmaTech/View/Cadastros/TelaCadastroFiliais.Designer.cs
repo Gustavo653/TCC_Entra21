@@ -37,12 +37,10 @@ namespace FarmaTech.View
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabFiliais = new System.Windows.Forms.TabPage();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CargoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoFilial = new System.Windows.Forms.TabPage();
+            this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lblContato = new System.Windows.Forms.Label();
             this.txtContato = new System.Windows.Forms.TextBox();
             this.txtNomeFantasia = new System.Windows.Forms.TextBox();
@@ -53,14 +51,13 @@ namespace FarmaTech.View
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtCompl = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
             this.lblCompl = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabFiliais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -146,33 +143,11 @@ namespace FarmaTech.View
             this.dgUsuarios.AllowUserToAddRows = false;
             this.dgUsuarios.AllowUserToDeleteRows = false;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol,
-            this.FilialCol,
-            this.CargoCol});
             this.dgUsuarios.Location = new System.Drawing.Point(57, 106);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
             this.dgUsuarios.Size = new System.Drawing.Size(940, 368);
             this.dgUsuarios.TabIndex = 16;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            // 
-            // FilialCol
-            // 
-            this.FilialCol.HeaderText = "Filial";
-            this.FilialCol.Name = "FilialCol";
-            this.FilialCol.ReadOnly = true;
-            // 
-            // CargoCol
-            // 
-            this.CargoCol.HeaderText = "Cargo";
-            this.CargoCol.Name = "CargoCol";
-            this.CargoCol.ReadOnly = true;
             // 
             // txtPesquisaUsuario
             // 
@@ -181,6 +156,7 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 15;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -195,6 +171,7 @@ namespace FarmaTech.View
             // tabNovoFilial
             // 
             this.tabNovoFilial.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabNovoFilial.Controls.Add(this.cboEstados);
             this.tabNovoFilial.Controls.Add(this.lblContato);
             this.tabNovoFilial.Controls.Add(this.txtContato);
             this.tabNovoFilial.Controls.Add(this.txtNomeFantasia);
@@ -205,20 +182,28 @@ namespace FarmaTech.View
             this.tabNovoFilial.Controls.Add(this.txtCidade);
             this.tabNovoFilial.Controls.Add(this.txtCompl);
             this.tabNovoFilial.Controls.Add(this.txtNumero);
-            this.tabNovoFilial.Controls.Add(this.txtEstado);
             this.tabNovoFilial.Controls.Add(this.txtEndereco);
             this.tabNovoFilial.Controls.Add(this.lblCidade);
             this.tabNovoFilial.Controls.Add(this.lblEstado);
             this.tabNovoFilial.Controls.Add(this.lblNumero);
             this.tabNovoFilial.Controls.Add(this.lblCompl);
             this.tabNovoFilial.Controls.Add(this.lblEndereco);
-            this.tabNovoFilial.Controls.Add(this.txtNome);
+            this.tabNovoFilial.Controls.Add(this.txtRazaoSocial);
             this.tabNovoFilial.Location = new System.Drawing.Point(4, 29);
             this.tabNovoFilial.Name = "tabNovoFilial";
             this.tabNovoFilial.Padding = new System.Windows.Forms.Padding(3);
             this.tabNovoFilial.Size = new System.Drawing.Size(1034, 509);
             this.tabNovoFilial.TabIndex = 1;
             this.tabNovoFilial.Text = "Nova Filial";
+            // 
+            // cboEstados
+            // 
+            this.cboEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstados.FormattingEnabled = true;
+            this.cboEstados.Location = new System.Drawing.Point(773, 275);
+            this.cboEstados.Name = "cboEstados";
+            this.cboEstados.Size = new System.Drawing.Size(121, 28);
+            this.cboEstados.TabIndex = 102;
             // 
             // lblContato
             // 
@@ -311,14 +296,6 @@ namespace FarmaTech.View
             this.txtNumero.Size = new System.Drawing.Size(133, 29);
             this.txtNumero.TabIndex = 74;
             // 
-            // txtEstado
-            // 
-            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(780, 272);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(136, 29);
-            this.txtEstado.TabIndex = 73;
-            // 
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -382,12 +359,12 @@ namespace FarmaTech.View
             this.lblEndereco.TabIndex = 65;
             this.lblEndereco.Text = "Endereço:";
             // 
-            // txtNome
+            // txtRazaoSocial
             // 
-            this.txtNome.Location = new System.Drawing.Point(271, 53);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(645, 26);
-            this.txtNome.TabIndex = 47;
+            this.txtRazaoSocial.Location = new System.Drawing.Point(271, 53);
+            this.txtRazaoSocial.Name = "txtRazaoSocial";
+            this.txtRazaoSocial.Size = new System.Drawing.Size(645, 26);
+            this.txtRazaoSocial.TabIndex = 47;
             // 
             // TelaCadastroFiliais
             // 
@@ -431,11 +408,8 @@ namespace FarmaTech.View
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoFilial;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtRazaoSocial;
         private System.Windows.Forms.DataGridView dgUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FilialCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CargoCol;
         private System.Windows.Forms.TextBox txtNomeFantasia;
         private System.Windows.Forms.Label lblNomeFantasia;
         private System.Windows.Forms.Label lblRazaoSocial;
@@ -444,7 +418,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtCompl;
         private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblEstado;
@@ -453,5 +426,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Label lblContato;
         private System.Windows.Forms.TextBox txtContato;
+        private System.Windows.Forms.ComboBox cboEstados;
     }
 }

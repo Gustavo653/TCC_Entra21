@@ -17,7 +17,8 @@ namespace DAL.Model
             string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco}";
             List<Endereco> lista = new List<Endereco>();
             SqlCommand cmd = new SqlCommand(select, conn);
-            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -42,7 +43,8 @@ namespace DAL.Model
             string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
             List<Endereco> lista = new List<Endereco>();
             SqlCommand cmd = new SqlCommand(select, conn);
-            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -86,3 +88,4 @@ namespace DAL.Model
         }
     }
 }
+
