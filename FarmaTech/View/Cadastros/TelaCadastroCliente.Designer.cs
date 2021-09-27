@@ -40,7 +40,8 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoCliente = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboEstados = new System.Windows.Forms.ComboBox();
+            this.txtContato = new System.Windows.Forms.TextBox();
             this.lblContato = new System.Windows.Forms.Label();
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.txtNomeFantasia = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@ namespace FarmaTech.View
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtCompl = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -158,6 +158,7 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 19;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -172,7 +173,8 @@ namespace FarmaTech.View
             // tabNovoCliente
             // 
             this.tabNovoCliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabNovoCliente.Controls.Add(this.textBox1);
+            this.tabNovoCliente.Controls.Add(this.cboEstados);
+            this.tabNovoCliente.Controls.Add(this.txtContato);
             this.tabNovoCliente.Controls.Add(this.lblContato);
             this.tabNovoCliente.Controls.Add(this.txtCnpj);
             this.tabNovoCliente.Controls.Add(this.txtNomeFantasia);
@@ -180,7 +182,6 @@ namespace FarmaTech.View
             this.tabNovoCliente.Controls.Add(this.txtCidade);
             this.tabNovoCliente.Controls.Add(this.txtCompl);
             this.tabNovoCliente.Controls.Add(this.txtNumero);
-            this.tabNovoCliente.Controls.Add(this.txtEstado);
             this.tabNovoCliente.Controls.Add(this.txtEndereco);
             this.tabNovoCliente.Controls.Add(this.lblCidade);
             this.tabNovoCliente.Controls.Add(this.lblEstado);
@@ -200,13 +201,22 @@ namespace FarmaTech.View
             this.tabNovoCliente.TabIndex = 1;
             this.tabNovoCliente.Text = "Novo Cliente";
             // 
-            // textBox1
+            // cboEstados
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(631, 346);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 29);
-            this.textBox1.TabIndex = 114;
+            this.cboEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstados.FormattingEnabled = true;
+            this.cboEstados.Location = new System.Drawing.Point(548, 294);
+            this.cboEstados.Name = "cboEstados";
+            this.cboEstados.Size = new System.Drawing.Size(121, 28);
+            this.cboEstados.TabIndex = 115;
+            // 
+            // txtContato
+            // 
+            this.txtContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContato.Location = new System.Drawing.Point(631, 346);
+            this.txtContato.Name = "txtContato";
+            this.txtContato.Size = new System.Drawing.Size(233, 29);
+            this.txtContato.TabIndex = 114;
             // 
             // lblContato
             // 
@@ -269,14 +279,6 @@ namespace FarmaTech.View
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(142, 29);
             this.txtNumero.TabIndex = 107;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(562, 291);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(136, 29);
-            this.txtEstado.TabIndex = 106;
             // 
             // txtEndereco
             // 
@@ -438,7 +440,7 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoCliente;
         private System.Windows.Forms.DataGridView dgUsuarios;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtContato;
         private System.Windows.Forms.Label lblContato;
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.TextBox txtNomeFantasia;
@@ -446,7 +448,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtCompl;
         private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblEstado;
@@ -458,5 +459,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblCnpj;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.RadioButton rbFisica;
+        private System.Windows.Forms.ComboBox cboEstados;
     }
 }
