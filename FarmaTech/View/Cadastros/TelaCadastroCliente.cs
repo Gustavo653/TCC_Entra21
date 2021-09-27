@@ -38,29 +38,8 @@ namespace FarmaTech.View
             tabControl1.TabPages.Remove(tabClientes);
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
-            btnNovo.Enabled = false;
+            btnNovo.Enabled = false;    
             
-            
-            
-
-            if (rbJuridica.Checked)
-            {
-                lblRazaoSocial.Text = "Razão Social:";
-                lblNomeFantasia.Visible = true;
-                txtNomeFantasia.Visible = true;
-                lblCnpj.Text = "CNPJ:";
-            }
-            if(rbFisica.Checked)
-            {
-              
-                lblRazaoSocial.Text = "Nome:";
-                lblNomeFantasia.Visible = false;
-                txtNomeFantasia.Visible = false;
-                lblCnpj.Text = "CPF:";
-            }
-
-
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -76,6 +55,24 @@ namespace FarmaTech.View
         private void btnExcluir_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rbJuridica_CheckedChanged(object sender, EventArgs e)
+        {          
+                lblRazaoSocial.Text = "Razão Social:";
+                lblNomeFantasia.Visible = true;
+                txtNomeFantasia.Visible = true;
+                lblCnpj.Text = "CNPJ:";         
+           
+        }
+
+        private void rbFisica_CheckedChanged(object sender, EventArgs e)
+        {
+                lblRazaoSocial.Text = "Nome:";
+                lblNomeFantasia.Visible = false;
+                txtNomeFantasia.Visible = false;
+                lblCnpj.Text = "CPF:";
+           
         }
     }
 }

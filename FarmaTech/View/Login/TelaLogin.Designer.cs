@@ -37,6 +37,8 @@ namespace FarmaTech
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblFarmaTech = new System.Windows.Forms.Label();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnNaoVer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSair
@@ -127,6 +129,32 @@ namespace FarmaTech
             this.lblFarmaTech.Text = ".:FarmaTech:.";
             this.lblFarmaTech.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnVer
+            // 
+            this.btnVer.BackgroundImage = global::FarmaTech.Properties.Resources.SenhaSemMascara;
+            this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVer.FlatAppearance.BorderSize = 0;
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVer.Location = new System.Drawing.Point(419, 233);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(35, 29);
+            this.btnVer.TabIndex = 18;
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnNaoVer
+            // 
+            this.btnNaoVer.BackgroundImage = global::FarmaTech.Properties.Resources.SenhaMascarada;
+            this.btnNaoVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNaoVer.FlatAppearance.BorderSize = 0;
+            this.btnNaoVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNaoVer.Location = new System.Drawing.Point(419, 233);
+            this.btnNaoVer.Name = "btnNaoVer";
+            this.btnNaoVer.Size = new System.Drawing.Size(35, 29);
+            this.btnNaoVer.TabIndex = 19;
+            this.btnNaoVer.UseVisualStyleBackColor = true;
+            this.btnNaoVer.Click += new System.EventHandler(this.btnNaoVer_Click);
+            // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +163,7 @@ namespace FarmaTech
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1001, 636);
             this.ControlBox = false;
+            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnSobre);
             this.Controls.Add(this.btnEntrar);
@@ -143,6 +172,7 @@ namespace FarmaTech
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.lblFarmaTech);
+            this.Controls.Add(this.btnNaoVer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -164,6 +194,8 @@ namespace FarmaTech
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblFarmaTech;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnNaoVer;
     }
 }
 

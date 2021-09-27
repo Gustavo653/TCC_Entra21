@@ -49,5 +49,23 @@ namespace FarmaTech
         {
             new TelaSair().Show();
         }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            if (txtSenha.PasswordChar == '*')
+            {
+                btnNaoVer.BringToFront();
+                txtSenha.PasswordChar = '\0';
+            }
+        }
+
+        private void btnNaoVer_Click(object sender, EventArgs e)
+        {
+            if (txtSenha.PasswordChar == '\0')
+            {
+                btnVer.BringToFront();
+                txtSenha.PasswordChar = '*';
+            }
+        }
     }
 }

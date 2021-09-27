@@ -109,6 +109,12 @@
     <Compile Include="View\Cadastros\TelaCadastroConvenios.Designer.cs">
       <DependentUpon>TelaCadastroConvenios.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Venda\TelaAberturaDeCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\TelaAberturaDeCaixa.Designer.cs">
+      <DependentUpon>TelaAberturaDeCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Principal\TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     <EmbeddedResource Include="View\Principal\TelaSobre.resx">
       <DependentUpon>TelaSobre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\TelaAberturaDeCaixa.resx">
+      <DependentUpon>TelaAberturaDeCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,7 +210,9 @@
   <ItemGroup>
     <None Include="Resources\imagem01.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\SenhaMascarada.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CaixaRegistradora.jpg" />
   </ItemGroup>
@@ -217,6 +228,9 @@
       <Project>{6238ebcd-1ff8-4c6c-aa22-dd257489de09}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SenhaSemMascara.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
