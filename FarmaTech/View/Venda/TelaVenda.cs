@@ -20,8 +20,8 @@ namespace FarmaTech
 
         private void TelaVenda_Load(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabVenda);
-            
+            tabControl1.TabPages.Remove(tabVenda);       
+                                    
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -43,6 +43,18 @@ namespace FarmaTech
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void rbFisica_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCpf.Text = "CPF:";
+            lblNome.Text = "Nome:";
+        }
+
+        private void rbJuridica_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCpf.Text = "CNPJ:";
+            lblNome.Text = "Razão Social:";
         }
     }
 }

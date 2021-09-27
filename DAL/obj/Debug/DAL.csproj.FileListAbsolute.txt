@@ -10,3 +10,9 @@ C:\Users\Martha\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyRefere
 C:\Users\Martha\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Martha\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.dll
 C:\Users\Martha\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.pdb
+C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\bin\Debug\DAL.dll
+C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\bin\Debug\DAL.pdb
+C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.dll
+C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.pdb

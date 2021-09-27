@@ -30,6 +30,7 @@ namespace FarmaTech
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -40,9 +41,9 @@ namespace FarmaTech
             this.lblObservacao = new System.Windows.Forms.Label();
             this.txtCnpj = new System.Windows.Forms.TextBox();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
-            this.lblRazaoSocial = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.rbJuridica = new System.Windows.Forms.RadioButton();
-            this.lblCnpj = new System.Windows.Forms.Label();
+            this.lblCpf = new System.Windows.Forms.Label();
             this.rbFisica = new System.Windows.Forms.RadioButton();
             this.tabVenda = new System.Windows.Forms.TabPage();
             this.txtConvenio = new System.Windows.Forms.TextBox();
@@ -54,6 +55,7 @@ namespace FarmaTech
             this.txtValorParcial = new System.Windows.Forms.TextBox();
             this.lblValorParcial = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblValorTotalItem = new System.Windows.Forms.Label();
             this.txtQuant = new System.Windows.Forms.TextBox();
@@ -65,8 +67,6 @@ namespace FarmaTech
             this.lblData = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblVendedor = new System.Windows.Forms.Label();
-            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
@@ -84,6 +84,15 @@ namespace FarmaTech
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 110);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(301, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 75);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Confirma";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnConfirma
             // 
@@ -123,9 +132,9 @@ namespace FarmaTech
             this.tabCliente.Controls.Add(this.lblObservacao);
             this.tabCliente.Controls.Add(this.txtCnpj);
             this.tabCliente.Controls.Add(this.txtRazaoSocial);
-            this.tabCliente.Controls.Add(this.lblRazaoSocial);
+            this.tabCliente.Controls.Add(this.lblNome);
             this.tabCliente.Controls.Add(this.rbJuridica);
-            this.tabCliente.Controls.Add(this.lblCnpj);
+            this.tabCliente.Controls.Add(this.lblCpf);
             this.tabCliente.Controls.Add(this.rbFisica);
             this.tabCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCliente.Location = new System.Drawing.Point(4, 29);
@@ -190,51 +199,54 @@ namespace FarmaTech
             this.txtRazaoSocial.Size = new System.Drawing.Size(702, 29);
             this.txtRazaoSocial.TabIndex = 117;
             // 
-            // lblRazaoSocial
+            // lblNome
             // 
-            this.lblRazaoSocial.AutoSize = true;
-            this.lblRazaoSocial.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRazaoSocial.Location = new System.Drawing.Point(54, 158);
-            this.lblRazaoSocial.Name = "lblRazaoSocial";
-            this.lblRazaoSocial.Size = new System.Drawing.Size(120, 20);
-            this.lblRazaoSocial.TabIndex = 116;
-            this.lblRazaoSocial.Text = "Razão Social:";
+            this.lblNome.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(68, 158);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(60, 20);
+            this.lblNome.TabIndex = 116;
+            this.lblNome.Text = "Nome:";
             // 
             // rbJuridica
             // 
             this.rbJuridica.AutoSize = true;
-            this.rbJuridica.Checked = true;
             this.rbJuridica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbJuridica.Location = new System.Drawing.Point(462, 36);
             this.rbJuridica.Name = "rbJuridica";
             this.rbJuridica.Size = new System.Drawing.Size(89, 24);
             this.rbJuridica.TabIndex = 115;
-            this.rbJuridica.TabStop = true;
             this.rbJuridica.Text = "Jurídica";
             this.rbJuridica.UseVisualStyleBackColor = true;
+            this.rbJuridica.CheckedChanged += new System.EventHandler(this.rbJuridica_CheckedChanged);
             // 
-            // lblCnpj
+            // lblCpf
             // 
-            this.lblCnpj.AutoSize = true;
-            this.lblCnpj.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCnpj.Location = new System.Drawing.Point(124, 93);
-            this.lblCnpj.Name = "lblCnpj";
-            this.lblCnpj.Size = new System.Drawing.Size(50, 20);
-            this.lblCnpj.TabIndex = 113;
-            this.lblCnpj.Text = "Cnpj:";
+            this.lblCpf.AutoSize = true;
+            this.lblCpf.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCpf.Location = new System.Drawing.Point(124, 93);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(48, 20);
+            this.lblCpf.TabIndex = 113;
+            this.lblCpf.Text = "CPF:";
             // 
             // rbFisica
             // 
             this.rbFisica.AutoSize = true;
+            this.rbFisica.Checked = true;
             this.rbFisica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbFisica.Location = new System.Drawing.Point(364, 36);
             this.rbFisica.Name = "rbFisica";
             this.rbFisica.Size = new System.Drawing.Size(74, 24);
             this.rbFisica.TabIndex = 114;
+            this.rbFisica.TabStop = true;
             this.rbFisica.Text = "Física";
             this.rbFisica.UseVisualStyleBackColor = true;
+            this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
             // 
             // tabVenda
             // 
@@ -347,6 +359,12 @@ namespace FarmaTech
             this.dataGridView1.Size = new System.Drawing.Size(687, 184);
             this.dataGridView1.TabIndex = 44;
             // 
+            // DescricaoCol
+            // 
+            this.DescricaoCol.HeaderText = "Descrição";
+            this.DescricaoCol.Name = "DescricaoCol";
+            this.DescricaoCol.ReadOnly = true;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(402, 184);
@@ -444,21 +462,6 @@ namespace FarmaTech
             this.lblVendedor.TabIndex = 31;
             this.lblVendedor.Text = "Vendedor:";
             // 
-            // DescricaoCol
-            // 
-            this.DescricaoCol.HeaderText = "Descrição";
-            this.DescricaoCol.Name = "DescricaoCol";
-            this.DescricaoCol.ReadOnly = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(301, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 75);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Confirma";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -520,9 +523,9 @@ namespace FarmaTech
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.TextBox txtCnpj;
         private System.Windows.Forms.TextBox txtRazaoSocial;
-        private System.Windows.Forms.Label lblRazaoSocial;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.RadioButton rbJuridica;
-        private System.Windows.Forms.Label lblCnpj;
+        private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.RadioButton rbFisica;
         private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.Button btnPesquisar;

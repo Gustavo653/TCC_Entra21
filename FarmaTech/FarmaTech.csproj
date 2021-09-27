@@ -210,7 +210,9 @@
   <ItemGroup>
     <None Include="Resources\imagem01.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\SenhaMascarada.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CaixaRegistradora.jpg" />
   </ItemGroup>
@@ -226,6 +228,9 @@
       <Project>{6238ebcd-1ff8-4c6c-aa22-dd257489de09}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SenhaSemMascara.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

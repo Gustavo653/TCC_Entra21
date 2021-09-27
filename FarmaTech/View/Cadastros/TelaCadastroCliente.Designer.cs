@@ -370,6 +370,7 @@ namespace FarmaTech.View
             this.rbJuridica.TabStop = true;
             this.rbJuridica.Text = "Jurídica";
             this.rbJuridica.UseVisualStyleBackColor = true;
+            this.rbJuridica.CheckedChanged += new System.EventHandler(this.rbJuridica_CheckedChanged);
             // 
             // lblCnpj
             // 
@@ -403,6 +404,7 @@ namespace FarmaTech.View
             this.rbFisica.TabIndex = 96;
             this.rbFisica.Text = "Física";
             this.rbFisica.UseVisualStyleBackColor = true;
+            this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
             // 
             // TelaCadastroCliente
             // 
