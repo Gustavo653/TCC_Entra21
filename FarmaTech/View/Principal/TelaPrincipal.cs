@@ -1,4 +1,5 @@
 ﻿using FarmaTech.View;
+using FarmaTech.View.Principal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,7 +61,7 @@ namespace FarmaTech
 
         private void MenuPdv_Click_1(object sender, EventArgs e)
         {
-            new TelaVenda().Show();
+            new TelaAberturaDeCaixa().Show();
         }
 
 

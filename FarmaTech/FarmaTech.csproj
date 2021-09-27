@@ -109,6 +109,12 @@
     <Compile Include="View\Cadastros\TelaCadastroConvenios.Designer.cs">
       <DependentUpon>TelaCadastroConvenios.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Venda\TelaAberturaDeCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\TelaAberturaDeCaixa.Designer.cs">
+      <DependentUpon>TelaAberturaDeCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Principal\TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Principal\TelaSobre.resx">
       <DependentUpon>TelaSobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\TelaAberturaDeCaixa.resx">
+      <DependentUpon>TelaAberturaDeCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>
