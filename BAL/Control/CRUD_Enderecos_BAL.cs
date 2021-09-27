@@ -62,7 +62,7 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaEndereco(string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado)
+        public static int AtualizaEndereco(string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string where)
         {
             if (!string.IsNullOrEmpty(razaoSocial) &&
                !string.IsNullOrEmpty(nomeFantasia) &&
@@ -78,12 +78,12 @@ namespace BAL.Control
                 {
                     try
                     {
-                        DAL.Model.CRUD_Enderecos_DAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado);
+                        DAL.Model.CRUD_Enderecos_DAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, where);
                         return 0; //Deu tudo certo
                     }          
                     catch (Exception e)
                     {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Atualizar");
+                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Atualizar");                        
                         return 3; //Algo inesperado ocorreu
                     }
                 }

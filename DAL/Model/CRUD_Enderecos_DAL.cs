@@ -39,7 +39,7 @@ namespace DAL.Model
         }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco)
         {
-            string select = $"SELECT * from dbo.Usuarios WHERE enumEndereco = {enumEndereco} AND Nome LIKE '%{nome}%'";
+            string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
             List<Endereco> lista = new List<Endereco>();
             SqlCommand cmd = new SqlCommand(select, conn);
             conn.Open();
@@ -72,9 +72,9 @@ namespace DAL.Model
             string delete = $"DELETE from dbo.Enderecos WHERE Contato = '{contato}'";
             DbConnection.Execute(delete);
         }
-        public static void AtualizaEndereco(string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado)
+        public static void AtualizaEndereco(string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string where)
         {
-            string update = $"UPDATE dbo.Usuarios Set RazaoSocial = '{razaoSocial}', NomeFantasia = '{nomeFantasia}', Cnpj = '{cNPJCPF}', Contato = '{contato}', Rua = '{rua}', Numero = '{numero}', Complemento = '{complemento}', Cidade = '{cidade}', Estado = '{estado}' WHERE Contato = '{contato}'";
+            string update = $"UPDATE dbo.Enderecos Set RazaoSocial = '{razaoSocial}', NomeFantasia = '{nomeFantasia}', Cnpj = '{cNPJCPF}', Contato = '{contato}', Rua = '{rua}', Numero = '{numero}', Complemento = '{complemento}', Cidade = '{cidade}', Estado = '{estado}' WHERE Contato = '{where}'";
             DbConnection.Execute(update);
         }
         public static bool VerificaSeEnderecoRepete(string contato)
