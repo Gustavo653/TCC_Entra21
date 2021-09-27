@@ -7,3 +7,12 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.csproj.CoreCompile
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.csproj.CopyComplete
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.dll
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\bin\Debug\BAL.dll
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\bin\Debug\BAL.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\bin\Debug\DAL.dll
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\bin\Debug\DAL.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\obj\Debug\BAL.csproj.AssemblyReference.cache
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\obj\Debug\BAL.csproj.CoreCompileInputs.cache
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\obj\Debug\BAL.csproj.CopyComplete
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\obj\Debug\BAL.dll
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\BAL\obj\Debug\BAL.pdb
