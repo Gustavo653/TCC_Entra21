@@ -181,7 +181,7 @@ namespace FarmaTech
             // 
             this.MenuPdv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuPdv.Name = "MenuPdv";
-            this.MenuPdv.Size = new System.Drawing.Size(180, 26);
+            this.MenuPdv.Size = new System.Drawing.Size(115, 26);
             this.MenuPdv.Text = "PDV";
             this.MenuPdv.Click += new System.EventHandler(this.MenuPdv_Click_1);
             // 
@@ -217,7 +217,7 @@ namespace FarmaTech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::FarmaTech.Properties.Resources.lab__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1370, 749);
@@ -235,6 +235,7 @@ namespace FarmaTech
             this.Text = ".:FarmaTech:.";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaPrincipal_Paint);
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
             this.ResumeLayout(false);

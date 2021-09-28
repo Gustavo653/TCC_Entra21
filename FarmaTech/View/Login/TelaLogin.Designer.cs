@@ -85,6 +85,7 @@ namespace FarmaTech
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(287, 29);
             this.txtSenha.TabIndex = 14;
+            this.txtSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyUp);
             // 
             // txtLogin
             // 
