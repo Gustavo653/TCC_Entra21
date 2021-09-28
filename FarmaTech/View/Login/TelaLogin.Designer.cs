@@ -133,7 +133,6 @@ namespace FarmaTech
             // 
             this.btnVer.BackgroundImage = global::FarmaTech.Properties.Resources.SenhaSemMascara;
             this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVer.FlatAppearance.BorderSize = 0;
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Location = new System.Drawing.Point(419, 233);
             this.btnVer.Name = "btnVer";

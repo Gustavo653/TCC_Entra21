@@ -61,7 +61,17 @@ namespace FarmaTech
 
         private void MenuPdv_Click_1(object sender, EventArgs e)
         {
-            new TelaAberturaDeCaixa().Show();
+            bool caixaAberto = false;
+
+            if (!caixaAberto)
+            {
+                new TelaAberturaDeCaixa().Show();
+            }
+            else
+            {
+                new TelaVenda().Show();
+            }
+
         }
 
 
