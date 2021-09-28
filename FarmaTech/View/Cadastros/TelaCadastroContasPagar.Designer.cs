@@ -273,6 +273,7 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Contas a Pagar";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroContasPagar_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroContasPagar_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroContasPagar_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabContasPagar.ResumeLayout(false);
             this.tabContasPagar.PerformLayout();

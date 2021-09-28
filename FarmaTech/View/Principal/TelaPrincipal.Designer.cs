@@ -217,7 +217,7 @@ namespace FarmaTech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::FarmaTech.Properties.Resources.lab__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1370, 749);
@@ -232,6 +232,7 @@ namespace FarmaTech
             this.Text = ".:FarmaTech:.";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaPrincipal_Paint);
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
             this.ResumeLayout(false);

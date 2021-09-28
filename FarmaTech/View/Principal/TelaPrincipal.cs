@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,9 +96,18 @@ namespace FarmaTech
             lblNomeUsuario.Text = DAL.Model.Objetos.UsuarioStatic.Nome;
         }
 
-        private void TelaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        private void TelaPrincipal_Paint(object sender, PaintEventArgs e)
         {
-            new TelaSair().Show();
+            SetBackColorDegrade(sender, e);
         }
+
+        private void SetBackColorDegrade(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics; Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
+            //RGB vermelho verde azul
+            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(108, 226, 252), Color.FromArgb(103, 23, 205), 45f);
+            graphics.FillRectangle(br, gradient_rect);
+        }
+
     }
 }
