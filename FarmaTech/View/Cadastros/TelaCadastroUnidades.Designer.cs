@@ -33,6 +33,7 @@ namespace FarmaTech.View
             this.tabUnidades = new System.Windows.Forms.TabPage();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.dgUnidades = new System.Windows.Forms.DataGridView();
+            this.ColunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovaUnidade = new System.Windows.Forms.TabPage();
             this.txtAbreviacao = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@ namespace FarmaTech.View
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.ColunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabUnidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUnidades)).BeginInit();
@@ -95,6 +95,13 @@ namespace FarmaTech.View
             this.dgUnidades.ReadOnly = true;
             this.dgUnidades.Size = new System.Drawing.Size(515, 281);
             this.dgUnidades.TabIndex = 18;
+            // 
+            // ColunaNome
+            // 
+            this.ColunaNome.HeaderText = "Nome";
+            this.ColunaNome.Name = "ColunaNome";
+            this.ColunaNome.ReadOnly = true;
+            this.ColunaNome.Width = 200;
             // 
             // lblPesquisar
             // 
@@ -209,13 +216,6 @@ namespace FarmaTech.View
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // ColunaNome
-            // 
-            this.ColunaNome.HeaderText = "Nome";
-            this.ColunaNome.Name = "ColunaNome";
-            this.ColunaNome.ReadOnly = true;
-            this.ColunaNome.Width = 200;
-            // 
             // TelaCadastroUnidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +236,7 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Unidades";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroUnidades_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroUnidades_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroUnidades_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabUnidades.ResumeLayout(false);
             this.tabUnidades.PerformLayout();

@@ -40,6 +40,7 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoFornecedor = new System.Windows.Forms.TabPage();
+            this.cboEstados = new System.Windows.Forms.ComboBox();
             this.lblContato = new System.Windows.Forms.Label();
             this.txtContato = new System.Windows.Forms.TextBox();
             this.txtNomeFantasia = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@ namespace FarmaTech.View
             this.lblCompl = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
-            this.cboEstados = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabFornecedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -196,6 +196,15 @@ namespace FarmaTech.View
             this.tabNovoFornecedor.Size = new System.Drawing.Size(916, 404);
             this.tabNovoFornecedor.TabIndex = 1;
             this.tabNovoFornecedor.Text = "Novo Fornecedor";
+            // 
+            // cboEstados
+            // 
+            this.cboEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstados.FormattingEnabled = true;
+            this.cboEstados.Location = new System.Drawing.Point(703, 257);
+            this.cboEstados.Name = "cboEstados";
+            this.cboEstados.Size = new System.Drawing.Size(121, 28);
+            this.cboEstados.TabIndex = 101;
             // 
             // lblContato
             // 
@@ -358,15 +367,6 @@ namespace FarmaTech.View
             this.txtRazaoSocial.Size = new System.Drawing.Size(645, 26);
             this.txtRazaoSocial.TabIndex = 83;
             // 
-            // cboEstados
-            // 
-            this.cboEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEstados.FormattingEnabled = true;
-            this.cboEstados.Location = new System.Drawing.Point(703, 257);
-            this.cboEstados.Name = "cboEstados";
-            this.cboEstados.Size = new System.Drawing.Size(121, 28);
-            this.cboEstados.TabIndex = 101;
-            // 
             // TelaCadastroFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,6 +387,7 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Fornecedores";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroFornecedores_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroFornecedores_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroFornecedores_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabFornecedores.ResumeLayout(false);
             this.tabFornecedores.PerformLayout();

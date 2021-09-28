@@ -200,7 +200,6 @@ namespace FarmaTech.View
             this.tabNovoProduto.Size = new System.Drawing.Size(916, 404);
             this.tabNovoProduto.TabIndex = 1;
             this.tabNovoProduto.Text = "Novo Produto";
-   
             // 
             // textBox7
             // 
@@ -374,6 +373,7 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Produtos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroProdutos_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroProdutos_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroProdutos_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabProdutos.ResumeLayout(false);
             this.tabProdutos.PerformLayout();
