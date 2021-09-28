@@ -30,6 +30,7 @@ namespace FarmaTech.View.Principal
         private void btnConfirma_Click(object sender, EventArgs e)
         {
             new TelaVenda().Show();
+            this.Hide();
         }
     }
 }

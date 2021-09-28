@@ -20,6 +20,7 @@ namespace FarmaTech.View
         private void TelaCadastroContasPagar_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabNovoContaPagar);
+            btnSalvar.Enabled = false;
         }
 
         private void TelaCadastroContasPagar_FormClosed(object sender, FormClosedEventArgs e)
@@ -39,6 +40,7 @@ namespace FarmaTech.View
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             btnNovo.Enabled = false;
+            btnSalvar.Enabled = true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -48,7 +50,13 @@ namespace FarmaTech.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-
+            tabControl1.TabPages.Remove(tabContasPagar);
+            tabControl1.TabPages.Add(tabNovoContaPagar);
+            btnSalvar.Enabled = true;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnNovo.Enabled = false;
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

@@ -94,5 +94,10 @@ namespace FarmaTech
         {
             lblNomeUsuario.Text = DAL.Model.Objetos.UsuarioStatic.Nome;
         }
+
+        private void TelaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new TelaSair().Show();
+        }
     }
 }

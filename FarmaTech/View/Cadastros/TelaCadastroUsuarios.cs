@@ -21,6 +21,7 @@ namespace FarmaTech.View
         private void TelaCadastroUsuarios_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabNovoUsuario);
+            btnSalvar.Enabled = false;
             AtualizaDG();
         }
 
@@ -31,6 +32,7 @@ namespace FarmaTech.View
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             btnNovo.Enabled = false;
+            btnSalvar.Enabled = true;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -70,6 +72,14 @@ namespace FarmaTech.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Remove(tabUsuarios);
+            tabControl1.TabPages.Add(tabNovoUsuario);
+            btnSalvar.Enabled = true;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnNovo.Enabled = false;
+
+
             int indiceSelecionado = dgUsuarios.CurrentRow.Index;
             string nome = Interaction.InputBox("Insira o nome", "Atualiza Usuario", "", 200, 200);
             string filial = Interaction.InputBox("Insira a filial", "Atualiza Usuario", "", 200, 200);
