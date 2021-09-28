@@ -36,6 +36,9 @@ namespace FarmaTech.View
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabConvenios = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescontoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoConvenio = new System.Windows.Forms.TabPage();
@@ -43,13 +46,10 @@ namespace FarmaTech.View
             this.lblDesconto = new System.Windows.Forms.Label();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.lblFornecedor = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescontoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabConvenios.SuspendLayout();
-            this.tabNovoConvenio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabNovoConvenio.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNovo
@@ -126,6 +126,28 @@ namespace FarmaTech.View
             this.tabConvenios.TabIndex = 0;
             this.tabConvenios.Text = "Convênios";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeCol,
+            this.DescontoCol});
+            this.dataGridView1.Location = new System.Drawing.Point(49, 84);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(626, 282);
+            this.dataGridView1.TabIndex = 21;
+            // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.Width = 150;
+            // 
+            // DescontoCol
+            // 
+            this.DescontoCol.HeaderText = "Desconto";
+            this.DescontoCol.Name = "DescontoCol";
+            // 
             // txtPesquisaUsuario
             // 
             this.txtPesquisaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,28 +219,6 @@ namespace FarmaTech.View
             this.lblFornecedor.TabIndex = 65;
             this.lblFornecedor.Text = "Fornecedor:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol,
-            this.DescontoCol});
-            this.dataGridView1.Location = new System.Drawing.Point(49, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(626, 282);
-            this.dataGridView1.TabIndex = 21;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.Width = 150;
-            // 
-            // DescontoCol
-            // 
-            this.DescontoCol.HeaderText = "Desconto";
-            this.DescontoCol.Name = "DescontoCol";
-            // 
             // TelaCadastroConvenios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,12 +239,13 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Convênios";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroConvenios_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroConvenios_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroConvenios_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabConvenios.ResumeLayout(false);
             this.tabConvenios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabNovoConvenio.ResumeLayout(false);
             this.tabNovoConvenio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

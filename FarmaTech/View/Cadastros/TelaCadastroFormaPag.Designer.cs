@@ -235,6 +235,7 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Formas de Pagamento";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroFormaPag_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroFormaPag_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroFormaPag_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabFormasPag.ResumeLayout(false);
             this.tabFormasPag.PerformLayout();

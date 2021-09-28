@@ -29,6 +29,7 @@ namespace FarmaTech.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroFiliais));
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -106,12 +107,16 @@ namespace FarmaTech.View
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(41, 71);
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(27, 71);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 75);
+            this.btnVoltar.Size = new System.Drawing.Size(107, 85);
             this.btnVoltar.TabIndex = 62;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // tabControl1
@@ -386,6 +391,7 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Filiais";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroFiliais_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroFiliais_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroFiliais_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabFiliais.ResumeLayout(false);
             this.tabFiliais.PerformLayout();

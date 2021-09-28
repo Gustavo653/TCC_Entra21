@@ -361,6 +361,7 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Usuários";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroUsuarios_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroUsuarios_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroUsuarios_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabUsuarios.ResumeLayout(false);
             this.tabUsuarios.PerformLayout();
