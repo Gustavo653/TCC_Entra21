@@ -41,10 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\CRUD_Enderecos_BAL.cs" />
-    <Compile Include="Control\CRUD_Unidades_BAL.cs" />
-    <Compile Include="Control\CRUD_Usuarios_BAL.cs" />
-    <Compile Include="Control\LoginBAL.cs" />
+    <Compile Include="Control\Enderecos_BAL.cs" />
+    <Compile Include="Control\Unidades_BAL.cs" />
+    <Compile Include="Control\Usuarios_BAL.cs" />
+    <Compile Include="Control\Login_BAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

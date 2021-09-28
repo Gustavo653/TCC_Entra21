@@ -27,7 +27,7 @@ namespace FarmaTech
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {           
-            if (BAL.Control.LoginBAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
+            if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
             {
                 MessageBox.Show(DateTime.Now.ToString());
                 MessageBox.Show($"Nome: {DAL.Model.Objetos.UsuarioStatic.Nome}" +

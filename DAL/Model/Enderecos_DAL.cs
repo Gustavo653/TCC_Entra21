@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model
 {
-    public class CRUD_Enderecos_DAL
+    public class Enderecos_DAL
     {
         private static readonly SqlConnection conn = DbConnection.conn;
         public static List<Endereco> GetEnderecos(int enumEndereco)

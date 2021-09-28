@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model
 {
-    public class CRUD_Usuarios_DAL
+    public class Usuarios_DAL
     {
         private static readonly SqlConnection conn = DbConnection.conn;
         public static List<Usuario> GetUsuarios()

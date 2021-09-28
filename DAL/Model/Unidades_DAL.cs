@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model
 {
-    public class CRUD_Unidades_DAL
+    public class Unidades_DAL
     {
         private static readonly SqlConnection conn = DbConnection.conn;
         public static List<string> GetUnidades()

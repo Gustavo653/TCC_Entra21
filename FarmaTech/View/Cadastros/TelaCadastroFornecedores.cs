@@ -47,7 +47,7 @@ namespace FarmaTech.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            int resultado = BAL.Control.CRUD_Enderecos_BAL.AdicionarEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), txtRazaoSocial.Text, txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text);
+            int resultado = BAL.Control.Enderecos_BAL.AdicionarEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), txtRazaoSocial.Text, txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text);
             
             if (resultado == 0)
             {
@@ -84,7 +84,7 @@ namespace FarmaTech.View
             string complemento = Interaction.InputBox("Insira o complemento", "Atualiza Fornecedor", "", 200, 200);
             string cidade = Interaction.InputBox("Insira a cidade", "Atualiza Fornecedor", "", 200, 200);
             string estado = Interaction.InputBox("Insira o estado", "Atualiza Fornecedor", "", 200, 200);
-            int resultado = BAL.Control.CRUD_Enderecos_BAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            int resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
            
             if (resultado == 0)
             {
@@ -112,19 +112,19 @@ namespace FarmaTech.View
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             int indiceSelecionado = dgUsuarios.CurrentRow.Index;
-            BAL.Control.CRUD_Enderecos_BAL.RemoveEndereco(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            BAL.Control.Enderecos_BAL.RemoveEndereco(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
             AtualizaDG();
         }
         public void AtualizaDG()
         {
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
-                List<DAL.Model.Objetos.Endereco> lista = BAL.Control.CRUD_Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), txtPesquisaUsuario.Text);
+                List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), txtPesquisaUsuario.Text);
                 dgUsuarios.DataSource = lista;
             }
             else
             {
-                List<DAL.Model.Objetos.Endereco> lista = BAL.Control.CRUD_Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores));
+                List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores));
                 dgUsuarios.DataSource = lista;
             }
         }
