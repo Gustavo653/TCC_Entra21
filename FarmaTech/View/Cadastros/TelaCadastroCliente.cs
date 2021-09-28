@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -181,6 +182,21 @@ namespace FarmaTech.View
         private void rbCnpj_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void SetBackColorDegrade(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics; Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
+            //RGB vermelho verde azul
+            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(108, 226, 252), Color.FromArgb(103, 23, 205), 45f);
+            graphics.FillRectangle(br, gradient_rect);
+        }
+
+        private void TelaCadastroCliente_Paint(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
         }
     }
 }
