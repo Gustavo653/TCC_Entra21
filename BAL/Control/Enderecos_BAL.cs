@@ -74,8 +74,8 @@ namespace BAL.Control
                !string.IsNullOrEmpty(cidade) &&
                !string.IsNullOrEmpty(estado))
             {
-                if (!DAL.Model.Enderecos_DAL.VerificaSeEnderecoRepete(contato))
-                {
+                //if (!DAL.Model.Enderecos_DAL.VerificaSeEnderecoRepete(contato))
+                //{
                     try
                     {
                         DAL.Model.Enderecos_DAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, where);
@@ -86,8 +86,8 @@ namespace BAL.Control
                         DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Atualizar");                        
                         return 3; //Algo inesperado ocorreu
                     }
-                }
-                return 2; //Erro usuario ja existe
+                //}
+                //return 2; //Erro usuario ja existe
             }
             return 1; //Erro algum campo está vazio
         }

@@ -36,6 +36,8 @@ namespace FarmaTech.View
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabClientes = new System.Windows.Forms.TabPage();
+            this.rbCnpj = new System.Windows.Forms.RadioButton();
+            this.rbCpf = new System.Windows.Forms.RadioButton();
             this.dgClientes = new System.Windows.Forms.DataGridView();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@ namespace FarmaTech.View
             this.lblCnpj = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.rbFisica = new System.Windows.Forms.RadioButton();
-            this.rbCpf = new System.Windows.Forms.RadioButton();
-            this.rbCnpj = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
@@ -143,6 +143,30 @@ namespace FarmaTech.View
             this.tabClientes.Size = new System.Drawing.Size(916, 404);
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
+            // 
+            // rbCnpj
+            // 
+            this.rbCnpj.AutoSize = true;
+            this.rbCnpj.Checked = true;
+            this.rbCnpj.Location = new System.Drawing.Point(682, 34);
+            this.rbCnpj.Name = "rbCnpj";
+            this.rbCnpj.Size = new System.Drawing.Size(71, 24);
+            this.rbCnpj.TabIndex = 26;
+            this.rbCnpj.TabStop = true;
+            this.rbCnpj.Text = "CNPJ";
+            this.rbCnpj.UseVisualStyleBackColor = true;
+            this.rbCnpj.CheckedChanged += new System.EventHandler(this.rbCnpj_CheckedChanged);
+            // 
+            // rbCpf
+            // 
+            this.rbCpf.AutoSize = true;
+            this.rbCpf.Location = new System.Drawing.Point(591, 34);
+            this.rbCpf.Name = "rbCpf";
+            this.rbCpf.Size = new System.Drawing.Size(61, 24);
+            this.rbCpf.TabIndex = 25;
+            this.rbCpf.Text = "CPF";
+            this.rbCpf.UseVisualStyleBackColor = true;
+            this.rbCpf.CheckedChanged += new System.EventHandler(this.rbCpf_CheckedChanged);
             // 
             // dgClientes
             // 
@@ -402,30 +426,6 @@ namespace FarmaTech.View
             this.rbFisica.Text = "Física";
             this.rbFisica.UseVisualStyleBackColor = true;
             this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
-            // 
-            // rbCpf
-            // 
-            this.rbCpf.AutoSize = true;
-            this.rbCpf.Location = new System.Drawing.Point(591, 34);
-            this.rbCpf.Name = "rbCpf";
-            this.rbCpf.Size = new System.Drawing.Size(61, 24);
-            this.rbCpf.TabIndex = 25;
-            this.rbCpf.TabStop = true;
-            this.rbCpf.Text = "CPF";
-            this.rbCpf.UseVisualStyleBackColor = true;
-            this.rbCpf.CheckedChanged += new System.EventHandler(this.rbCpf_CheckedChanged);
-            // 
-            // rbCnpj
-            // 
-            this.rbCnpj.AutoSize = true;
-            this.rbCnpj.Location = new System.Drawing.Point(682, 34);
-            this.rbCnpj.Name = "rbCnpj";
-            this.rbCnpj.Size = new System.Drawing.Size(71, 24);
-            this.rbCnpj.TabIndex = 26;
-            this.rbCnpj.TabStop = true;
-            this.rbCnpj.Text = "CNPJ";
-            this.rbCnpj.UseVisualStyleBackColor = true;
-            this.rbCnpj.CheckedChanged += new System.EventHandler(this.rbCnpj_CheckedChanged);
             // 
             // TelaCadastroCliente
             // 
