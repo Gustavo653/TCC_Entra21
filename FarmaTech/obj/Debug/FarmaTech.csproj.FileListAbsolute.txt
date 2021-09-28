@@ -138,3 +138,4 @@ C:\Users\marcus.pinto\source\repos\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
 C:\Users\Martha\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources

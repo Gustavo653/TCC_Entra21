@@ -181,7 +181,7 @@ namespace FarmaTech
             // 
             this.MenuPdv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuPdv.Name = "MenuPdv";
-            this.MenuPdv.Size = new System.Drawing.Size(115, 26);
+            this.MenuPdv.Size = new System.Drawing.Size(180, 26);
             this.MenuPdv.Text = "PDV";
             this.MenuPdv.Click += new System.EventHandler(this.MenuPdv_Click_1);
             // 

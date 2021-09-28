@@ -36,7 +36,7 @@ namespace FarmaTech.View
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabClientes = new System.Windows.Forms.TabPage();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgClientes = new System.Windows.Forms.DataGridView();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoCliente = new System.Windows.Forms.TabPage();
@@ -60,9 +60,11 @@ namespace FarmaTech.View
             this.lblCnpj = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.rbFisica = new System.Windows.Forms.RadioButton();
+            this.rbCpf = new System.Windows.Forms.RadioButton();
+            this.rbCnpj = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.tabNovoCliente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,7 +132,9 @@ namespace FarmaTech.View
             // tabClientes
             // 
             this.tabClientes.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabClientes.Controls.Add(this.dgUsuarios);
+            this.tabClientes.Controls.Add(this.rbCnpj);
+            this.tabClientes.Controls.Add(this.rbCpf);
+            this.tabClientes.Controls.Add(this.dgClientes);
             this.tabClientes.Controls.Add(this.txtPesquisaUsuario);
             this.tabClientes.Controls.Add(this.lblPesquisar);
             this.tabClientes.Location = new System.Drawing.Point(4, 29);
@@ -140,21 +144,21 @@ namespace FarmaTech.View
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
             // 
-            // dgUsuarios
+            // dgClientes
             // 
-            this.dgUsuarios.AllowUserToAddRows = false;
-            this.dgUsuarios.AllowUserToDeleteRows = false;
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(49, 87);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.Size = new System.Drawing.Size(819, 291);
-            this.dgUsuarios.TabIndex = 24;
+            this.dgClientes.AllowUserToAddRows = false;
+            this.dgClientes.AllowUserToDeleteRows = false;
+            this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgClientes.Location = new System.Drawing.Point(49, 87);
+            this.dgClientes.Name = "dgClientes";
+            this.dgClientes.ReadOnly = true;
+            this.dgClientes.Size = new System.Drawing.Size(819, 291);
+            this.dgClientes.TabIndex = 24;
             // 
             // txtPesquisaUsuario
             // 
             this.txtPesquisaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisaUsuario.Location = new System.Drawing.Point(349, 32);
+            this.txtPesquisaUsuario.Location = new System.Drawing.Point(257, 31);
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 19;
@@ -164,7 +168,7 @@ namespace FarmaTech.View
             // 
             this.lblPesquisar.AutoSize = true;
             this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesquisar.Location = new System.Drawing.Point(250, 35);
+            this.lblPesquisar.Location = new System.Drawing.Point(158, 34);
             this.lblPesquisar.Name = "lblPesquisar";
             this.lblPesquisar.Size = new System.Drawing.Size(93, 20);
             this.lblPesquisar.TabIndex = 17;
@@ -399,6 +403,30 @@ namespace FarmaTech.View
             this.rbFisica.UseVisualStyleBackColor = true;
             this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
             // 
+            // rbCpf
+            // 
+            this.rbCpf.AutoSize = true;
+            this.rbCpf.Location = new System.Drawing.Point(591, 34);
+            this.rbCpf.Name = "rbCpf";
+            this.rbCpf.Size = new System.Drawing.Size(61, 24);
+            this.rbCpf.TabIndex = 25;
+            this.rbCpf.TabStop = true;
+            this.rbCpf.Text = "CPF";
+            this.rbCpf.UseVisualStyleBackColor = true;
+            this.rbCpf.CheckedChanged += new System.EventHandler(this.rbCpf_CheckedChanged);
+            // 
+            // rbCnpj
+            // 
+            this.rbCnpj.AutoSize = true;
+            this.rbCnpj.Location = new System.Drawing.Point(682, 34);
+            this.rbCnpj.Name = "rbCnpj";
+            this.rbCnpj.Size = new System.Drawing.Size(71, 24);
+            this.rbCnpj.TabIndex = 26;
+            this.rbCnpj.TabStop = true;
+            this.rbCnpj.Text = "CNPJ";
+            this.rbCnpj.UseVisualStyleBackColor = true;
+            this.rbCnpj.CheckedChanged += new System.EventHandler(this.rbCnpj_CheckedChanged);
+            // 
             // TelaCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,7 +450,7 @@ namespace FarmaTech.View
             this.tabControl1.ResumeLayout(false);
             this.tabClientes.ResumeLayout(false);
             this.tabClientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.tabNovoCliente.ResumeLayout(false);
             this.tabNovoCliente.PerformLayout();
             this.ResumeLayout(false);
@@ -441,7 +469,7 @@ namespace FarmaTech.View
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoCliente;
-        private System.Windows.Forms.DataGridView dgUsuarios;
+        private System.Windows.Forms.DataGridView dgClientes;
         private System.Windows.Forms.TextBox txtContato;
         private System.Windows.Forms.Label lblContato;
         private System.Windows.Forms.TextBox txtCnpj;
@@ -462,5 +490,7 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.RadioButton rbFisica;
         private System.Windows.Forms.ComboBox cboEstados;
+        private System.Windows.Forms.RadioButton rbCnpj;
+        private System.Windows.Forms.RadioButton rbCpf;
     }
 }

@@ -23,6 +23,9 @@ namespace FarmaTech.View
             tabControl1.TabPages.Remove(tabNovoCliente);
             cboEstados.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Estados));
             AtualizaDG();
+
+            btnSalvar.Enabled = false;
+
         }
 
         private void TelaCadastroCliente_FormClosed(object sender, FormClosedEventArgs e)
@@ -32,7 +35,7 @@ namespace FarmaTech.View
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -41,7 +44,8 @@ namespace FarmaTech.View
             tabControl1.TabPages.Remove(tabClientes);
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
-            btnNovo.Enabled = false;    
+            btnNovo.Enabled = false;
+            btnSalvar.Enabled = true;
             
         }
 
@@ -70,11 +74,29 @@ namespace FarmaTech.View
                 MessageBox.Show("Verifique se os dados inseridos estão no formato correto!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             AtualizaDG();
+
+            tabControl1.TabPages.Remove(tabNovoCliente);
+            tabControl1.TabPages.Add(tabClientes);
+            btnSalvar.Enabled = true;
+            btnNovo.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+
+
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            int indiceSelecionado = dgUsuarios.CurrentRow.Index;
+            tabControl1.TabPages.Remove(tabClientes);
+            tabControl1.TabPages.Add(tabNovoCliente);
+            btnNovo.Enabled = false;
+            btnSalvar.Enabled = true;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+
+
+            int indiceSelecionado = dgClientes.CurrentRow.Index;
             string razaoSocial = Interaction.InputBox("Insira a razão social", "Atualiza Fornecedor", "", 200, 200);
             string nomeFantasia = Interaction.InputBox("Insira o nome fantasia", "Atualiza Fornecedor", "", 200, 200);
             string cNPJCPF = Interaction.InputBox("Insira o cpf/cnpj", "Atualiza Fornecedor", "", 200, 200);
@@ -84,7 +106,7 @@ namespace FarmaTech.View
             string complemento = Interaction.InputBox("Insira o complemento", "Atualiza Fornecedor", "", 200, 200);
             string cidade = Interaction.InputBox("Insira a cidade", "Atualiza Fornecedor", "", 200, 200);
             string estado = Interaction.InputBox("Insira o estado", "Atualiza Fornecedor", "", 200, 200);
-            int resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            int resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, dgClientes.Rows[indiceSelecionado].Cells[3].Value.ToString());
 
             if (resultado == 0)
             {
@@ -111,8 +133,8 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int indiceSelecionado = dgUsuarios.CurrentRow.Index;
-            BAL.Control.Enderecos_BAL.RemoveEndereco(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            int indiceSelecionado = dgClientes.CurrentRow.Index;
+            BAL.Control.Enderecos_BAL.RemoveEndereco(dgClientes.Rows[indiceSelecionado].Cells[3].Value.ToString());
             AtualizaDG();
         }
         public void AtualizaDG()
@@ -120,12 +142,12 @@ namespace FarmaTech.View
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
                 List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), txtPesquisaUsuario.Text);
-                dgUsuarios.DataSource = lista;
+                dgClientes.DataSource = lista;
             }
             else
             {
                 List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes));
-                dgUsuarios.DataSource = lista;
+                dgClientes.DataSource = lista;
             }
         }
         private void txtPesquisaUsuario_TextChanged(object sender, EventArgs e)
@@ -149,6 +171,16 @@ namespace FarmaTech.View
                 txtNomeFantasia.Visible = false;
                 lblCnpj.Text = "CPF:";
            
+        }
+
+        private void rbCpf_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rbCnpj_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

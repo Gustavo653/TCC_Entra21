@@ -200,6 +200,7 @@ namespace FarmaTech.View
             this.tabNovoProduto.Size = new System.Drawing.Size(916, 404);
             this.tabNovoProduto.TabIndex = 1;
             this.tabNovoProduto.Text = "Novo Produto";
+   
             // 
             // textBox7
             // 
