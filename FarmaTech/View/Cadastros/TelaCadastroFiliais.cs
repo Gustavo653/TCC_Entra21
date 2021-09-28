@@ -21,8 +21,10 @@ namespace FarmaTech.View
         private void TelaCadastroFiliais_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabNovoFilial);
+            btnSalvar.Enabled = false;
             cboEstados.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Estados));
             AtualizaDG();
+
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace FarmaTech.View
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             btnNovo.Enabled = false;
+            btnSalvar.Enabled = true;
 
         }
 
@@ -69,6 +72,15 @@ namespace FarmaTech.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Remove(tabFiliais);
+            tabControl1.TabPages.Add(tabNovoFilial);
+            btnSalvar.Enabled = true;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnNovo.Enabled = false;
+
+
+
             int indiceSelecionado = dgUsuarios.CurrentRow.Index;
             string razaoSocial = Interaction.InputBox("Insira a razão social", "Atualiza Fornecedor", "", 200, 200);
             string nomeFantasia = Interaction.InputBox("Insira o nome fantasia", "Atualiza Fornecedor", "", 200, 200);

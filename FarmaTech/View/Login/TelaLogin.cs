@@ -27,10 +27,6 @@ namespace FarmaTech
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            VerificaLogin();
-        }
-        public void VerificaLogin()
-        {
             if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
             {
                 MessageBox.Show(DateTime.Now.ToString());
@@ -48,6 +44,7 @@ namespace FarmaTech
                 txtSenha.Clear();
             }
         }
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             new TelaSair().Show();
@@ -73,9 +70,25 @@ namespace FarmaTech
 
         private void txtSenha_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                VerificaLogin();
+
+                if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
+                {
+                    MessageBox.Show(DateTime.Now.ToString());
+                    MessageBox.Show($"Nome: {DAL.Model.Objetos.UsuarioStatic.Nome}" +
+                        $"\nFilial: {DAL.Model.Objetos.UsuarioStatic.Filial}" +
+                        $"\nCargo: {DAL.Model.Objetos.UsuarioStatic.Cargo}" +
+                        $"\nContato: {DAL.Model.Objetos.UsuarioStatic.Contato}" +
+                        $"\nNivel de acesso: {DAL.Model.Objetos.UsuarioStatic.NivelAcesso}");
+                    new TelaPrincipal().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Login Inválido!");
+                    txtSenha.Clear();
+                }
             }
         }
     }

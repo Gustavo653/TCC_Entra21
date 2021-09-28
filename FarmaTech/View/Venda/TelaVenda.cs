@@ -30,6 +30,8 @@ namespace FarmaTech
         {
             tabControl1.TabPages.Remove(tabCliente);
             tabControl1.TabPages.Add(tabVenda);
+
+            lblDataSitema.Text = DateTime.Now.ToString();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

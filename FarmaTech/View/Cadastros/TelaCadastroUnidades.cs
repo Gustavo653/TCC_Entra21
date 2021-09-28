@@ -21,6 +21,7 @@ namespace FarmaTech.View
         private void TelaCadastroUnidades_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabNovaUnidade);
+            btnSalvar.Enabled = false;
             AtualizaDG();
         }
 
@@ -41,6 +42,7 @@ namespace FarmaTech.View
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             btnNovo.Enabled = false;
+            btnSalvar.Enabled = true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -71,6 +73,14 @@ namespace FarmaTech.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Remove(tabUnidades);
+            tabControl1.TabPages.Add(tabNovaUnidade);
+            btnSalvar.Enabled = true;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnNovo.Enabled = false;
+
+
             int indiceSelecionado = dgUnidades.CurrentRow.Index;
             string nome = Interaction.InputBox("Insira o nome", "Atualiza Usuario", "", 200, 200);
             int resultado = BAL.Control.Unidades_BAL.AtualizaUnidade(nome, dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());

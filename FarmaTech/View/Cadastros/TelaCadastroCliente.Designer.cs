@@ -147,7 +147,6 @@ namespace FarmaTech.View
             // rbCnpj
             // 
             this.rbCnpj.AutoSize = true;
-            this.rbCnpj.Checked = true;
             this.rbCnpj.Location = new System.Drawing.Point(682, 34);
             this.rbCnpj.Name = "rbCnpj";
             this.rbCnpj.Size = new System.Drawing.Size(71, 24);
@@ -164,6 +163,7 @@ namespace FarmaTech.View
             this.rbCpf.Name = "rbCpf";
             this.rbCpf.Size = new System.Drawing.Size(61, 24);
             this.rbCpf.TabIndex = 25;
+            this.rbCpf.TabStop = true;
             this.rbCpf.Text = "CPF";
             this.rbCpf.UseVisualStyleBackColor = true;
             this.rbCpf.CheckedChanged += new System.EventHandler(this.rbCpf_CheckedChanged);
@@ -447,6 +447,7 @@ namespace FarmaTech.View
             this.Text = ".:Cadastro Clientes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaCadastroCliente_FormClosed);
             this.Load += new System.EventHandler(this.TelaCadastroCliente_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaCadastroCliente_Paint);
             this.tabControl1.ResumeLayout(false);
             this.tabClientes.ResumeLayout(false);
             this.tabClientes.PerformLayout();
