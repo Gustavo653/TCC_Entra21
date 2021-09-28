@@ -31,7 +31,7 @@ namespace FarmaTech.View
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)

@@ -109,6 +109,12 @@
     <Compile Include="View\Cadastros\TelaCadastroConvenios.Designer.cs">
       <DependentUpon>TelaCadastroConvenios.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Principal\TelaConfirmacaoCancelamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Principal\TelaConfirmacaoCancelamento.Designer.cs">
+      <DependentUpon>TelaConfirmacaoCancelamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Venda\TelaAberturaDeCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastros\TelaCadastroConvenios.resx">
       <DependentUpon>TelaCadastroConvenios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Principal\TelaConfirmacaoCancelamento.resx">
+      <DependentUpon>TelaConfirmacaoCancelamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Principal\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>

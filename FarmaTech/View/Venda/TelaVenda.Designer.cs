@@ -67,11 +67,29 @@ namespace FarmaTech
             this.lblData = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblVendedor = new System.Windows.Forms.Label();
+            this.tabFormaPagamento = new System.Windows.Forms.TabPage();
+            this.lblValorCompra = new System.Windows.Forms.Label();
+            this.lblFormaParcial = new System.Windows.Forms.Label();
+            this.lblFormaPagamento = new System.Windows.Forms.Label();
+            this.txtFormaConvenio = new System.Windows.Forms.TextBox();
+            this.lblFormaConvenio = new System.Windows.Forms.Label();
+            this.txtFormaValorTotal = new System.Windows.Forms.TextBox();
+            this.lblFormaValorTotal = new System.Windows.Forms.Label();
+            this.txtFormaDesconto = new System.Windows.Forms.TextBox();
+            this.lblFormaDesconto = new System.Windows.Forms.Label();
+            this.txtFormaValorCompra = new System.Windows.Forms.TextBox();
+            this.txtFormaValorParcial = new System.Windows.Forms.TextBox();
+            this.txtFormaPag = new System.Windows.Forms.TextBox();
+            this.btnVoltarVenda = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnContinarVenda = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
             this.tabVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabFormaPagamento.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,10 +135,11 @@ namespace FarmaTech
             // 
             this.tabControl1.Controls.Add(this.tabCliente);
             this.tabControl1.Controls.Add(this.tabVenda);
+            this.tabControl1.Controls.Add(this.tabFormaPagamento);
             this.tabControl1.Location = new System.Drawing.Point(65, 130);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1189, 504);
+            this.tabControl1.Size = new System.Drawing.Size(1262, 504);
             this.tabControl1.TabIndex = 2;
             // 
             // tabCliente
@@ -140,7 +159,7 @@ namespace FarmaTech
             this.tabCliente.Location = new System.Drawing.Point(4, 29);
             this.tabCliente.Name = "tabCliente";
             this.tabCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCliente.Size = new System.Drawing.Size(1181, 471);
+            this.tabCliente.Size = new System.Drawing.Size(1254, 471);
             this.tabCliente.TabIndex = 1;
             this.tabCliente.Text = "Cliente";
             // 
@@ -205,7 +224,7 @@ namespace FarmaTech
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(68, 158);
+            this.lblNome.Location = new System.Drawing.Point(114, 158);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(60, 20);
             this.lblNome.TabIndex = 116;
@@ -251,6 +270,8 @@ namespace FarmaTech
             // tabVenda
             // 
             this.tabVenda.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabVenda.Controls.Add(this.btnContinarVenda);
+            this.tabVenda.Controls.Add(this.btnCancelar);
             this.tabVenda.Controls.Add(this.txtConvenio);
             this.tabVenda.Controls.Add(this.lblConvenio);
             this.tabVenda.Controls.Add(this.textBox5);
@@ -274,7 +295,7 @@ namespace FarmaTech
             this.tabVenda.Location = new System.Drawing.Point(4, 29);
             this.tabVenda.Name = "tabVenda";
             this.tabVenda.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVenda.Size = new System.Drawing.Size(1181, 471);
+            this.tabVenda.Size = new System.Drawing.Size(1254, 471);
             this.tabVenda.TabIndex = 0;
             this.tabVenda.Text = "Venda";
             // 
@@ -462,12 +483,178 @@ namespace FarmaTech
             this.lblVendedor.TabIndex = 31;
             this.lblVendedor.Text = "Vendedor:";
             // 
+            // tabFormaPagamento
+            // 
+            this.tabFormaPagamento.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabFormaPagamento.Controls.Add(this.btnFinalizar);
+            this.tabFormaPagamento.Controls.Add(this.btnVoltarVenda);
+            this.tabFormaPagamento.Controls.Add(this.txtFormaPag);
+            this.tabFormaPagamento.Controls.Add(this.txtFormaValorParcial);
+            this.tabFormaPagamento.Controls.Add(this.txtFormaValorCompra);
+            this.tabFormaPagamento.Controls.Add(this.txtFormaConvenio);
+            this.tabFormaPagamento.Controls.Add(this.lblFormaConvenio);
+            this.tabFormaPagamento.Controls.Add(this.txtFormaValorTotal);
+            this.tabFormaPagamento.Controls.Add(this.lblFormaValorTotal);
+            this.tabFormaPagamento.Controls.Add(this.txtFormaDesconto);
+            this.tabFormaPagamento.Controls.Add(this.lblFormaDesconto);
+            this.tabFormaPagamento.Controls.Add(this.lblFormaPagamento);
+            this.tabFormaPagamento.Controls.Add(this.lblFormaParcial);
+            this.tabFormaPagamento.Controls.Add(this.lblValorCompra);
+            this.tabFormaPagamento.Location = new System.Drawing.Point(4, 29);
+            this.tabFormaPagamento.Name = "tabFormaPagamento";
+            this.tabFormaPagamento.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFormaPagamento.Size = new System.Drawing.Size(1254, 471);
+            this.tabFormaPagamento.TabIndex = 2;
+            this.tabFormaPagamento.Text = "Forma Pagamento";
+            // 
+            // lblValorCompra
+            // 
+            this.lblValorCompra.AutoSize = true;
+            this.lblValorCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorCompra.Location = new System.Drawing.Point(86, 40);
+            this.lblValorCompra.Name = "lblValorCompra";
+            this.lblValorCompra.Size = new System.Drawing.Size(176, 20);
+            this.lblValorCompra.TabIndex = 0;
+            this.lblValorCompra.Text = "Valor da Compra: R$";
+            // 
+            // lblFormaParcial
+            // 
+            this.lblFormaParcial.AutoSize = true;
+            this.lblFormaParcial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormaParcial.Location = new System.Drawing.Point(120, 151);
+            this.lblFormaParcial.Name = "lblFormaParcial";
+            this.lblFormaParcial.Size = new System.Drawing.Size(143, 20);
+            this.lblFormaParcial.TabIndex = 1;
+            this.lblFormaParcial.Text = "Valor Parcial: R$";
+            // 
+            // lblFormaPagamento
+            // 
+            this.lblFormaPagamento.AutoSize = true;
+            this.lblFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormaPagamento.Location = new System.Drawing.Point(76, 92);
+            this.lblFormaPagamento.Name = "lblFormaPagamento";
+            this.lblFormaPagamento.Size = new System.Drawing.Size(186, 20);
+            this.lblFormaPagamento.TabIndex = 2;
+            this.lblFormaPagamento.Text = "Forma de Pagamento:";
+            // 
+            // txtFormaConvenio
+            // 
+            this.txtFormaConvenio.Location = new System.Drawing.Point(275, 246);
+            this.txtFormaConvenio.Name = "txtFormaConvenio";
+            this.txtFormaConvenio.Size = new System.Drawing.Size(128, 26);
+            this.txtFormaConvenio.TabIndex = 60;
+            // 
+            // lblFormaConvenio
+            // 
+            this.lblFormaConvenio.AutoSize = true;
+            this.lblFormaConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormaConvenio.Location = new System.Drawing.Point(174, 249);
+            this.lblFormaConvenio.Name = "lblFormaConvenio";
+            this.lblFormaConvenio.Size = new System.Drawing.Size(88, 20);
+            this.lblFormaConvenio.TabIndex = 59;
+            this.lblFormaConvenio.Text = "Convênio:";
+            // 
+            // txtFormaValorTotal
+            // 
+            this.txtFormaValorTotal.Location = new System.Drawing.Point(275, 293);
+            this.txtFormaValorTotal.Name = "txtFormaValorTotal";
+            this.txtFormaValorTotal.Size = new System.Drawing.Size(128, 26);
+            this.txtFormaValorTotal.TabIndex = 58;
+            // 
+            // lblFormaValorTotal
+            // 
+            this.lblFormaValorTotal.AutoSize = true;
+            this.lblFormaValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormaValorTotal.Location = new System.Drawing.Point(134, 296);
+            this.lblFormaValorTotal.Name = "lblFormaValorTotal";
+            this.lblFormaValorTotal.Size = new System.Drawing.Size(129, 20);
+            this.lblFormaValorTotal.TabIndex = 57;
+            this.lblFormaValorTotal.Text = "Valor Total R$:";
+            // 
+            // txtFormaDesconto
+            // 
+            this.txtFormaDesconto.Location = new System.Drawing.Point(275, 199);
+            this.txtFormaDesconto.Name = "txtFormaDesconto";
+            this.txtFormaDesconto.Size = new System.Drawing.Size(128, 26);
+            this.txtFormaDesconto.TabIndex = 56;
+            // 
+            // lblFormaDesconto
+            // 
+            this.lblFormaDesconto.AutoSize = true;
+            this.lblFormaDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormaDesconto.Location = new System.Drawing.Point(171, 202);
+            this.lblFormaDesconto.Name = "lblFormaDesconto";
+            this.lblFormaDesconto.Size = new System.Drawing.Size(91, 20);
+            this.lblFormaDesconto.TabIndex = 55;
+            this.lblFormaDesconto.Text = "Desconto:";
+            // 
+            // txtFormaValorCompra
+            // 
+            this.txtFormaValorCompra.Location = new System.Drawing.Point(275, 34);
+            this.txtFormaValorCompra.Name = "txtFormaValorCompra";
+            this.txtFormaValorCompra.Size = new System.Drawing.Size(128, 26);
+            this.txtFormaValorCompra.TabIndex = 61;
+            // 
+            // txtFormaValorParcial
+            // 
+            this.txtFormaValorParcial.Location = new System.Drawing.Point(275, 148);
+            this.txtFormaValorParcial.Name = "txtFormaValorParcial";
+            this.txtFormaValorParcial.Size = new System.Drawing.Size(128, 26);
+            this.txtFormaValorParcial.TabIndex = 62;
+            // 
+            // txtFormaPag
+            // 
+            this.txtFormaPag.Location = new System.Drawing.Point(275, 89);
+            this.txtFormaPag.Name = "txtFormaPag";
+            this.txtFormaPag.Size = new System.Drawing.Size(128, 26);
+            this.txtFormaPag.TabIndex = 63;
+            // 
+            // btnVoltarVenda
+            // 
+            this.btnVoltarVenda.Location = new System.Drawing.Point(510, 34);
+            this.btnVoltarVenda.Name = "btnVoltarVenda";
+            this.btnVoltarVenda.Size = new System.Drawing.Size(148, 34);
+            this.btnVoltarVenda.TabIndex = 64;
+            this.btnVoltarVenda.Text = "Voltar";
+            this.btnVoltarVenda.UseVisualStyleBackColor = true;
+            this.btnVoltarVenda.Click += new System.EventHandler(this.btnVoltarVenda_Click);
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(510, 202);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(148, 83);
+            this.btnFinalizar.TabIndex = 65;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(1077, 238);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(128, 28);
+            this.btnCancelar.TabIndex = 55;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnContinarVenda
+            // 
+            this.btnContinarVenda.Location = new System.Drawing.Point(1077, 303);
+            this.btnContinarVenda.Name = "btnContinarVenda";
+            this.btnContinarVenda.Size = new System.Drawing.Size(128, 92);
+            this.btnContinarVenda.TabIndex = 56;
+            this.btnContinarVenda.Text = "Continuar";
+            this.btnContinarVenda.UseVisualStyleBackColor = true;
+            this.btnContinarVenda.Click += new System.EventHandler(this.btnContinarVenda_Click);
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1302, 682);
+            this.ClientSize = new System.Drawing.Size(1359, 682);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
@@ -487,6 +674,8 @@ namespace FarmaTech
             this.tabVenda.ResumeLayout(false);
             this.tabVenda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabFormaPagamento.ResumeLayout(false);
+            this.tabFormaPagamento.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -531,5 +720,22 @@ namespace FarmaTech
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoCol;
+        private System.Windows.Forms.TabPage tabFormaPagamento;
+        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button btnVoltarVenda;
+        private System.Windows.Forms.TextBox txtFormaPag;
+        private System.Windows.Forms.TextBox txtFormaValorParcial;
+        private System.Windows.Forms.TextBox txtFormaValorCompra;
+        private System.Windows.Forms.TextBox txtFormaConvenio;
+        private System.Windows.Forms.Label lblFormaConvenio;
+        private System.Windows.Forms.TextBox txtFormaValorTotal;
+        private System.Windows.Forms.Label lblFormaValorTotal;
+        private System.Windows.Forms.TextBox txtFormaDesconto;
+        private System.Windows.Forms.Label lblFormaDesconto;
+        private System.Windows.Forms.Label lblFormaPagamento;
+        private System.Windows.Forms.Label lblFormaParcial;
+        private System.Windows.Forms.Label lblValorCompra;
+        private System.Windows.Forms.Button btnContinarVenda;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

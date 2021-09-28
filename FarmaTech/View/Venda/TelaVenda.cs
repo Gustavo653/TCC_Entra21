@@ -1,4 +1,5 @@
 ﻿using FarmaTech.View;
+using FarmaTech.View.Principal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,8 @@ namespace FarmaTech
 
         private void TelaVenda_Load(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabVenda);       
+            tabControl1.TabPages.Remove(tabVenda);
+            tabControl1.TabPages.Remove(tabFormaPagamento);
                                     
         }
 
@@ -55,6 +57,31 @@ namespace FarmaTech
         {
             lblCpf.Text = "CNPJ:";
             lblNome.Text = "Razão Social:";
+            
+        }
+
+        private void btnVoltarVenda_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabFormaPagamento);
+            tabControl1.TabPages.Add(tabVenda);
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Venda Finalizada");
+            tabControl1.TabPages.Remove(tabFormaPagamento);
+            tabControl1.TabPages.Add(tabCliente);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            new TelaConfirmacaoCancelamento().Show();
+        }
+
+        private void btnContinarVenda_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabVenda);
+            tabControl1.TabPages.Add(tabFormaPagamento);
         }
     }
 }
