@@ -26,7 +26,7 @@ namespace FarmaTech
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
-        {           
+        {
             if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
             {
                 MessageBox.Show(DateTime.Now.ToString());
@@ -70,21 +70,25 @@ namespace FarmaTech
 
         private void txtSenha_KeyUp(object sender, KeyEventArgs e)
         {
-            if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
+            if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show(DateTime.Now.ToString());
-                MessageBox.Show($"Nome: {DAL.Model.Objetos.UsuarioStatic.Nome}" +
-                    $"\nFilial: {DAL.Model.Objetos.UsuarioStatic.Filial}" +
-                    $"\nCargo: {DAL.Model.Objetos.UsuarioStatic.Cargo}" +
-                    $"\nContato: {DAL.Model.Objetos.UsuarioStatic.Contato}" +
-                    $"\nNivel de acesso: {DAL.Model.Objetos.UsuarioStatic.NivelAcesso}");
-                new TelaPrincipal().Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Login Inválido!");
-                txtSenha.Clear();
+
+                if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
+                {
+                    MessageBox.Show(DateTime.Now.ToString());
+                    MessageBox.Show($"Nome: {DAL.Model.Objetos.UsuarioStatic.Nome}" +
+                        $"\nFilial: {DAL.Model.Objetos.UsuarioStatic.Filial}" +
+                        $"\nCargo: {DAL.Model.Objetos.UsuarioStatic.Cargo}" +
+                        $"\nContato: {DAL.Model.Objetos.UsuarioStatic.Contato}" +
+                        $"\nNivel de acesso: {DAL.Model.Objetos.UsuarioStatic.NivelAcesso}");
+                    new TelaPrincipal().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Login Inválido!");
+                    txtSenha.Clear();
+                }
             }
         }
     }
