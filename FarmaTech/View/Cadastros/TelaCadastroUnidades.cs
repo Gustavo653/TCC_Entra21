@@ -45,7 +45,7 @@ namespace FarmaTech.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            int resultado = BAL.Control.CRUD_Unidades_BAL.AdicionarUnidade(txtNome.Text);            
+            int resultado = BAL.Control.Unidades_BAL.AdicionarUnidade(txtNome.Text);            
             if (resultado == 0)
             {
                 MessageBox.Show("Unidade cadastrada com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -73,7 +73,7 @@ namespace FarmaTech.View
         {
             int indiceSelecionado = dgUnidades.CurrentRow.Index;
             string nome = Interaction.InputBox("Insira o nome", "Atualiza Usuario", "", 200, 200);
-            int resultado = BAL.Control.CRUD_Unidades_BAL.AtualizaUnidade(nome, dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());
+            int resultado = BAL.Control.Unidades_BAL.AtualizaUnidade(nome, dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());
             if (resultado == 0)
             {
                 MessageBox.Show("Usuário atualizado com sucesso!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -100,7 +100,7 @@ namespace FarmaTech.View
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             int indiceSelecionado = dgUnidades.CurrentRow.Index;
-            BAL.Control.CRUD_Unidades_BAL.RemoveUnidade(dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());
+            BAL.Control.Unidades_BAL.RemoveUnidade(dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());
             AtualizaDG();
         }
         public void AtualizaDG()
@@ -113,7 +113,7 @@ namespace FarmaTech.View
             }
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
-                List<string> lista = BAL.Control.CRUD_Unidades_BAL.GetUnidadesPorNome(txtPesquisaUsuario.Text);
+                List<string> lista = BAL.Control.Unidades_BAL.GetUnidadesPorNome(txtPesquisaUsuario.Text);
                 foreach (var item in lista)
                 {
                     dgUnidades.Rows.Add(item);
@@ -121,7 +121,7 @@ namespace FarmaTech.View
             }
             else
             {
-                List<string> lista = BAL.Control.CRUD_Unidades_BAL.GetUnidades();
+                List<string> lista = BAL.Control.Unidades_BAL.GetUnidades();
                 foreach (var item in lista)
                 {
                     dgUnidades.Rows.Add(item);

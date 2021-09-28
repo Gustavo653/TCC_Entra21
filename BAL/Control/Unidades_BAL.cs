@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace BAL.Control
 {
-    public class CRUD_Unidades_BAL
+    public class Unidades_BAL
     {
         public static List<string> GetUnidades()
         {
-            return DAL.Model.CRUD_Unidades_DAL.GetUnidades();
+            return DAL.Model.Unidades_DAL.GetUnidades();
         }
         public static List<string> GetUnidadesPorNome(string nome)
         {
-            return DAL.Model.CRUD_Unidades_DAL.GetUnidadesPorNome(nome);
+            return DAL.Model.Unidades_DAL.GetUnidadesPorNome(nome);
         }
         public static int AdicionarUnidade(string nome)
         {
             if (!string.IsNullOrEmpty(nome))
             {
-                if (!DAL.Model.CRUD_Unidades_DAL.VerificaSeUnidadeRepete(nome)) //Verificar se deu certo
+                if (!DAL.Model.Unidades_DAL.VerificaSeUnidadeRepete(nome)) //Verificar se deu certo
                 {
                     try
                     {
-                        DAL.Model.CRUD_Unidades_DAL.InsereUnidade(nome);
+                        DAL.Model.Unidades_DAL.InsereUnidade(nome);
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)
@@ -47,7 +47,7 @@ namespace BAL.Control
             {
                 try
                 {
-                    DAL.Model.CRUD_Unidades_DAL.RemoveUnidade(nome);
+                    DAL.Model.Unidades_DAL.RemoveUnidade(nome);
                     return 0; //Deu tudo certo
                 }
                 catch (Exception e)
@@ -62,11 +62,11 @@ namespace BAL.Control
         {
             if (!string.IsNullOrEmpty(nome))
             {
-                if (!DAL.Model.CRUD_Unidades_DAL.VerificaSeUnidadeRepete(nome))
+                if (!DAL.Model.Unidades_DAL.VerificaSeUnidadeRepete(nome))
                 {
                     try
                     {
-                        DAL.Model.CRUD_Unidades_DAL.AtualizaUnidade(nome, where);
+                        DAL.Model.Unidades_DAL.AtualizaUnidade(nome, where);
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)

@@ -43,7 +43,7 @@ namespace FarmaTech.View
             int resultado = 1;
             if (!string.IsNullOrEmpty(cbUsuarioFilial.Text) && !string.IsNullOrEmpty(nUDNivelAcesso.Value.ToString()))
             {
-                resultado = BAL.Control.CRUD_Usuarios_BAL.AdicionarUsuario(txtNome.Text, cbUsuarioFilial.Text, cbUsuarioCargo.Text, txtContato.Text, nUDNivelAcesso.Value.ToString(), txtLogin.Text, txtSenha.Text);
+                resultado = BAL.Control.Usuarios_BAL.AdicionarUsuario(txtNome.Text, cbUsuarioFilial.Text, cbUsuarioCargo.Text, txtContato.Text, nUDNivelAcesso.Value.ToString(), txtLogin.Text, txtSenha.Text);
             }
             if (resultado == 0)
             {
@@ -81,7 +81,7 @@ namespace FarmaTech.View
             int resultado = 1;
             if (!string.IsNullOrEmpty(filial) && !string.IsNullOrEmpty(nivelAcesso))
             {
-                resultado = BAL.Control.CRUD_Usuarios_BAL.AtualizaUsuario(nome, filial, cargo, contato, nivelAcesso, login, senha, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                resultado = BAL.Control.Usuarios_BAL.AtualizaUsuario(nome, filial, cargo, contato, nivelAcesso, login, senha, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
             }
             if (resultado == 0)
             {
@@ -109,7 +109,7 @@ namespace FarmaTech.View
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             int indiceSelecionado = dgUsuarios.CurrentRow.Index;
-            BAL.Control.CRUD_Usuarios_BAL.RemoveUsuario(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            BAL.Control.Usuarios_BAL.RemoveUsuario(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
             AtualizaDG();
         }
 
@@ -126,12 +126,12 @@ namespace FarmaTech.View
         {
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
-                List<DAL.Model.Objetos.Usuario> lista = BAL.Control.CRUD_Usuarios_BAL.GetUsuariosPorNome(txtPesquisaUsuario.Text);
+                List<DAL.Model.Objetos.Usuario> lista = BAL.Control.Usuarios_BAL.GetUsuariosPorNome(txtPesquisaUsuario.Text);
                 dgUsuarios.DataSource = lista;
             }
             else
             {
-                List<DAL.Model.Objetos.Usuario> lista = BAL.Control.CRUD_Usuarios_BAL.GetUsuarios();
+                List<DAL.Model.Objetos.Usuario> lista = BAL.Control.Usuarios_BAL.GetUsuarios();
                 dgUsuarios.DataSource = lista;
             }
         }

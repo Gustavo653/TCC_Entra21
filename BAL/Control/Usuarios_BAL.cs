@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace BAL.Control
 {
-    public class CRUD_Usuarios_BAL
+    public class Usuarios_BAL
     {
         public static DAL.Model.Consultas.HashLogin hash = new DAL.Model.Consultas.HashLogin(SHA512.Create());
         public static List<DAL.Model.Objetos.Usuario> GetUsuarios()
         {
-            return DAL.Model.CRUD_Usuarios_DAL.GetUsuarios();
+            return DAL.Model.Usuarios_DAL.GetUsuarios();
         }
         public static List<DAL.Model.Objetos.Usuario> GetUsuariosPorNome(string nome)
         {
-            return DAL.Model.CRUD_Usuarios_DAL.GetUsuariosPorNome(nome);
+            return DAL.Model.Usuarios_DAL.GetUsuariosPorNome(nome);
         }
         public static int AdicionarUsuario(string nome, string filial, string cargo, string contato, string nivelAcesso, string login, string senha)
         {
@@ -28,11 +28,11 @@ namespace BAL.Control
                 !string.IsNullOrEmpty(login) &&
                 !string.IsNullOrEmpty(senha))
             {
-                if (!DAL.Model.CRUD_Usuarios_DAL.VerificaSeUsuarioRepete(contato)) //Verificar se deu certo
+                if (!DAL.Model.Usuarios_DAL.VerificaSeUsuarioRepete(contato)) //Verificar se deu certo
                 {
                     try
                     {
-                        DAL.Model.CRUD_Usuarios_DAL.InsereUsuario(nome, Convert.ToInt32(filial), cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha));
+                        DAL.Model.Usuarios_DAL.InsereUsuario(nome, Convert.ToInt32(filial), cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha));
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)
@@ -55,7 +55,7 @@ namespace BAL.Control
             {
                 try
                 {
-                    DAL.Model.CRUD_Usuarios_DAL.RemoveUsuario(contato);
+                    DAL.Model.Usuarios_DAL.RemoveUsuario(contato);
                     return 0; //Deu tudo certo
                 }
                 catch(Exception e)
@@ -76,7 +76,7 @@ namespace BAL.Control
               !string.IsNullOrEmpty(login) &&
               !string.IsNullOrEmpty(senha))
             {
-                if (!DAL.Model.CRUD_Usuarios_DAL.VerificaSeUsuarioRepete(contato))
+                if (!DAL.Model.Usuarios_DAL.VerificaSeUsuarioRepete(contato))
                 {
                     if(Convert.ToInt32(nivelAcesso) > 3 && Convert.ToInt32(nivelAcesso) < 1)
                     {
@@ -84,7 +84,7 @@ namespace BAL.Control
                     }
                     try
                     {
-                        DAL.Model.CRUD_Usuarios_DAL.AtualizaUsuario(nome, Convert.ToInt32(filial), cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha), where);
+                        DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, Convert.ToInt32(filial), cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha), where);
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)

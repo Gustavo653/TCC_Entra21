@@ -16,3 +16,9 @@ C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.Assembly
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.dll
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\bin\Debug\DAL.dll
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\bin\Debug\DAL.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\obj\Debug\DAL.dll
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\obj\Debug\DAL.pdb
