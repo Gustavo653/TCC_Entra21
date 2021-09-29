@@ -18,15 +18,6 @@ C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.pdb
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.AssemblyReference.cache
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaCadFiliais.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaCadFornecedores.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaCadUnidades.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaCadUsuarios.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaFormPag.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaNovaFilial.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaNovaFormaPag.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaNovaUnidade.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaNovoUsuario.resources
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaPrincipal.resources
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSair.resources
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSobre.resources
@@ -169,3 +160,19 @@ C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\Fa
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFiliais.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFormaPag.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroContasPagar.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroConvenios.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete

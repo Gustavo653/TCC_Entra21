@@ -230,7 +230,7 @@ namespace FarmaTech
             this.Name = "TelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:FarmaTech:.";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaPrincipal_FormClosed);
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaPrincipal_Paint);
             this.MenuPrincipal.ResumeLayout(false);

@@ -206,7 +206,7 @@ namespace FarmaTech.View
             // 
             this.nUDNivelAcesso.Location = new System.Drawing.Point(723, 186);
             this.nUDNivelAcesso.Maximum = new decimal(new int[] {
-            5,
+            3,
             0,
             0,
             0});
