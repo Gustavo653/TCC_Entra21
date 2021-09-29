@@ -19,7 +19,7 @@ namespace BAL.Control
         }
         public static int AdicionarConvenio(string nome, string desconto)
         {
-            if (!string.IsNullOrEmpty(nome))
+            if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(desconto))
             {
                 if (!DAL.Model.Convenios_DAL.VerificaSeConvenioRepete(nome)) //Verificar se deu certo
                 {
@@ -61,7 +61,7 @@ namespace BAL.Control
         }
         public static int AtualizaConvenio(string nome, string desconto, string where)
         {
-            if (!string.IsNullOrEmpty(nome))
+            if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(desconto))
             {
                 //if (!DAL.Model.Convenios_DAL.VerificaSeConvenioRepete(nome))
                 //{
