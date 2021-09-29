@@ -63,8 +63,8 @@ namespace BAL.Control
         {
             if (!string.IsNullOrEmpty(nome))
             {
-                if (!DAL.Model.Convenios_DAL.VerificaSeConvenioRepete(nome))
-                {
+                //if (!DAL.Model.Convenios_DAL.VerificaSeConvenioRepete(nome))
+                //{
                     try
                     {
                         DAL.Model.Convenios_DAL.AtualizaConvenio(nome, desconto, where);
@@ -79,8 +79,8 @@ namespace BAL.Control
                         DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
                         return 3; //Algo inesperado ocorreu
                     }
-                }
-                return 2; //Erro usuario ja existe
+                //}
+                //return 2; //Erro usuario ja existe
             }
             return 1; //Erro algum campo está vazio
         }
