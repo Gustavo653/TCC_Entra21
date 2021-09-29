@@ -36,19 +36,17 @@ namespace FarmaTech.View
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabConvenios = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescontoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgConvenios = new System.Windows.Forms.DataGridView();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoConvenio = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
             this.lblDesconto = new System.Windows.Forms.Label();
-            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabConvenios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgConvenios)).BeginInit();
             this.tabNovoConvenio.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +114,7 @@ namespace FarmaTech.View
             // tabConvenios
             // 
             this.tabConvenios.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabConvenios.Controls.Add(this.dataGridView1);
+            this.tabConvenios.Controls.Add(this.dgConvenios);
             this.tabConvenios.Controls.Add(this.txtPesquisaUsuario);
             this.tabConvenios.Controls.Add(this.lblPesquisar);
             this.tabConvenios.Location = new System.Drawing.Point(4, 29);
@@ -126,27 +124,13 @@ namespace FarmaTech.View
             this.tabConvenios.TabIndex = 0;
             this.tabConvenios.Text = "Convênios";
             // 
-            // dataGridView1
+            // dgConvenios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol,
-            this.DescontoCol});
-            this.dataGridView1.Location = new System.Drawing.Point(49, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(626, 282);
-            this.dataGridView1.TabIndex = 21;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.Width = 150;
-            // 
-            // DescontoCol
-            // 
-            this.DescontoCol.HeaderText = "Desconto";
-            this.DescontoCol.Name = "DescontoCol";
+            this.dgConvenios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgConvenios.Location = new System.Drawing.Point(49, 84);
+            this.dgConvenios.Name = "dgConvenios";
+            this.dgConvenios.Size = new System.Drawing.Size(626, 282);
+            this.dgConvenios.TabIndex = 21;
             // 
             // txtPesquisaUsuario
             // 
@@ -155,6 +139,7 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 19;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -169,9 +154,9 @@ namespace FarmaTech.View
             // tabNovoConvenio
             // 
             this.tabNovoConvenio.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabNovoConvenio.Controls.Add(this.textBox1);
+            this.tabNovoConvenio.Controls.Add(this.txtDesconto);
             this.tabNovoConvenio.Controls.Add(this.lblDesconto);
-            this.tabNovoConvenio.Controls.Add(this.txtRazaoSocial);
+            this.tabNovoConvenio.Controls.Add(this.txtNome);
             this.tabNovoConvenio.Controls.Add(this.lblFornecedor);
             this.tabNovoConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNovoConvenio.Location = new System.Drawing.Point(4, 29);
@@ -181,13 +166,13 @@ namespace FarmaTech.View
             this.tabNovoConvenio.TabIndex = 1;
             this.tabNovoConvenio.Text = "Novo Convênio";
             // 
-            // textBox1
+            // txtDesconto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(164, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 29);
-            this.textBox1.TabIndex = 68;
+            this.txtDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesconto.Location = new System.Drawing.Point(164, 88);
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(134, 29);
+            this.txtDesconto.TabIndex = 68;
             // 
             // lblDesconto
             // 
@@ -200,13 +185,13 @@ namespace FarmaTech.View
             this.lblDesconto.TabIndex = 67;
             this.lblDesconto.Text = "Desconto:";
             // 
-            // txtRazaoSocial
+            // txtNome
             // 
-            this.txtRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazaoSocial.Location = new System.Drawing.Point(164, 34);
-            this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(482, 29);
-            this.txtRazaoSocial.TabIndex = 66;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(164, 34);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(482, 29);
+            this.txtNome.TabIndex = 66;
             // 
             // lblFornecedor
             // 
@@ -243,7 +228,7 @@ namespace FarmaTech.View
             this.tabControl1.ResumeLayout(false);
             this.tabConvenios.ResumeLayout(false);
             this.tabConvenios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgConvenios)).EndInit();
             this.tabNovoConvenio.ResumeLayout(false);
             this.tabNovoConvenio.PerformLayout();
             this.ResumeLayout(false);
@@ -262,12 +247,10 @@ namespace FarmaTech.View
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoConvenio;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.Label lblDesconto;
-        private System.Windows.Forms.TextBox txtRazaoSocial;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblFornecedor;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescontoCol;
+        private System.Windows.Forms.DataGridView dgConvenios;
     }
 }

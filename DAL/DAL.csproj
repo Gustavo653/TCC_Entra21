@@ -44,7 +44,9 @@
     <Compile Include="Model\Consultas\DBConnection.cs" />
     <Compile Include="Model\Consultas\HashLogin.cs" />
     <Compile Include="Model\Consultas\LogErros.cs" />
+    <Compile Include="Model\Convenios_DAL.cs" />
     <Compile Include="Model\Enderecos_DAL.cs" />
+    <Compile Include="Model\Objetos\Convenio.cs" />
     <Compile Include="Model\Unidades_DAL.cs" />
     <Compile Include="Model\Usuarios_DAL.cs" />
     <Compile Include="Model\Enums\Enderecos.cs" />

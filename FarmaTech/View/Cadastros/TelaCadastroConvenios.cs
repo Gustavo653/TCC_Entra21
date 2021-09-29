@@ -13,6 +13,7 @@ namespace FarmaTech.View
 {
     public partial class TelaCadastroConvenios : Form
     {
+        public static int ValorSalvar { get; set; }
         public TelaCadastroConvenios()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace FarmaTech.View
         {
             tabControl1.TabPages.Remove(tabNovoConvenio);
             btnSalvar.Enabled = false;
+            AtualizaDG();
         }
 
         private void TelaCadastroConvenios_FormClosed(object sender, FormClosedEventArgs e)
@@ -42,11 +44,65 @@ namespace FarmaTech.View
             btnExcluir.Enabled = false;
             btnNovo.Enabled = false;
             btnSalvar.Enabled = true;
+
+            ValorSalvar = 1;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
+            if (ValorSalvar == 1)
+            {
+                int resultado = BAL.Control.Convenios_BAL.AdicionarConvenio(txtNome.Text, txtDesconto.Text);
+
+                if (resultado == 0)
+                {
+                    MessageBox.Show("Convenio cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (resultado == 1)
+                {
+                    MessageBox.Show("Preencha todos os campos!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 2)
+                {
+                    MessageBox.Show("Convenio já existente!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 3)
+                {
+                    MessageBox.Show("Houve um erro desconhecido!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 4)
+                {
+                    MessageBox.Show("Verifique se os dados inseridos estão no formato correto!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                AtualizaDG();
+            }
+            else
+            {
+                int indiceSelecionado = dgConvenios.CurrentRow.Index;
+                int resultado = BAL.Control.Convenios_BAL.AtualizaConvenio(txtNome.Text, txtDesconto.Text, dgConvenios.Rows[indiceSelecionado].Cells[0].Value.ToString());
+
+                if (resultado == 0)
+                {
+                    MessageBox.Show("Convenio atualizado com sucesso!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (resultado == 1)
+                {
+                    MessageBox.Show("Preencha todos os campos!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 2)
+                {
+                    MessageBox.Show("Convenio já existente!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 3)
+                {
+                    MessageBox.Show("Houve um erro desconhecido!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 4)
+                {
+                    MessageBox.Show("Verifique se os dados inseridos estão no formato correto!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                AtualizaDG();
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -57,11 +113,20 @@ namespace FarmaTech.View
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             btnNovo.Enabled = false;
+
+            ValorSalvar = 0;
+
+            int indiceSelecionado = dgConvenios.CurrentRow.Index;
+            List<DAL.Model.Objetos.Convenio> convenio = BAL.Control.Convenios_BAL.GetConveniosPorNome(dgConvenios.Rows[indiceSelecionado].Cells[0].Value.ToString());
+            txtNome.Text = convenio[0].Nome;
+            txtDesconto.Text = convenio[0].Desconto;
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
+            int indiceSelecionado = dgConvenios.CurrentRow.Index;
+            BAL.Control.Convenios_BAL.RemoveConvenio(dgConvenios.Rows[indiceSelecionado].Cells[0].Value.ToString());
+            AtualizaDG();
         }
 
         private void TelaCadastroConvenios_Paint(object sender, PaintEventArgs e)
@@ -73,6 +138,24 @@ namespace FarmaTech.View
             Graphics graphics = e.Graphics; Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(108, 226, 252), Color.FromArgb(103, 23, 205), 45f);
             graphics.FillRectangle(br, gradient_rect);
+        }
+
+        private void txtPesquisaUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void AtualizaDG()
+        {
+            if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
+            {
+                List<DAL.Model.Objetos.Convenio> lista = BAL.Control.Convenios_BAL.GetConveniosPorNome(txtPesquisaUsuario.Text);
+                dgConvenios.DataSource = lista;
+            }
+            else
+            {
+                List<DAL.Model.Objetos.Convenio> lista = BAL.Control.Convenios_BAL.GetConvenios();
+                dgConvenios.DataSource = lista;
+            }
         }
     }
 }
