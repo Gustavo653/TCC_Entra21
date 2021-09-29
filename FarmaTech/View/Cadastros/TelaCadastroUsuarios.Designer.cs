@@ -172,9 +172,6 @@ namespace FarmaTech.View
             // 
             this.cbUsuarioFilial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuarioFilial.FormattingEnabled = true;
-            this.cbUsuarioFilial.Items.AddRange(new object[] {
-            "24",
-            "Adicionar DATASOURCE"});
             this.cbUsuarioFilial.Location = new System.Drawing.Point(568, 114);
             this.cbUsuarioFilial.Name = "cbUsuarioFilial";
             this.cbUsuarioFilial.Size = new System.Drawing.Size(299, 28);

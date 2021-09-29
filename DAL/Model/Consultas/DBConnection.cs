@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Consultas
 {
-    class DbConnection
+    public class DbConnection
     {
         //internal static SqlConnection conn = new SqlConnection("Data Source=BUE205D20;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
         //internal static SqlConnection conn = new SqlConnection("Data Source=DESKTOP-9OFNM36;Initial Catalog=master;Integrated Security=True");
@@ -66,6 +66,7 @@ namespace DAL.Model.Consultas
             conn.Close();
             return lista;
         }
+
 
         public static List<string[]> GenericSelectAll(string table)
         {

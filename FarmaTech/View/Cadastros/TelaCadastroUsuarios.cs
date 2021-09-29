@@ -25,6 +25,7 @@ namespace FarmaTech.View
             tabControl1.TabPages.Remove(tabNovoUsuario);
             btnSalvar.Enabled = false;
             AtualizaDG();
+            cbUsuarioFilial.DataSource = DAL.Model.Consultas.DbConnection.GenericSelectUnit("idFilial", "Filiais");
         }
 
         private void btnNovo_Click(object sender, EventArgs e)

@@ -64,9 +64,39 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
+        public static int RecebeIdEndereco()
+        {
+            string select = $"SELECT idEndereco FROM dbo.Enderecos";
+            List<int> lista = new List<int>();
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(Convert.ToInt32(dr["idEndereco"]));
+            }
+            dr.Close();
+            conn.Close();
+            int idEndereco = lista.LastOrDefault();
+            return idEndereco;
+        }
         public static void InsereEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado)
         {
             string insert = $"INSERT into dbo.Enderecos(enumEndereco, RazaoSocial, NomeFantasia, Cnpj, Contato, Rua, Numero, Complemento, Cidade, Estado) values ({enumEndereco}, '{razaoSocial}', '{nomeFantasia}', '{cNPJCPF}', '{contato}', '{rua}', '{numero}','{complemento}','{cidade}','{estado}')";
+            DbConnection.Execute(insert);
+            if (enumEndereco == 0)
+            {
+                insert = $"INSERT into dbo.Fornecedores(idEndereco) values ({RecebeIdEndereco()})";
+            }
+            else if (enumEndereco == 1)
+            {
+                insert = $"INSERT into dbo.Filiais(idEndereco) values ({RecebeIdEndereco()})";
+            }
+            else if (enumEndereco == 2)
+            {
+                insert = $"INSERT into dbo.Clientes(idEndereco) values ({RecebeIdEndereco()})";
+            }
             DbConnection.Execute(insert);
         }
         public static void RemoveEndereco(string contato)
