@@ -54,7 +54,7 @@ namespace FarmaTech.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (ValorSalvar == 1)
+            if (ValorSalvar == 0)
             {
                 int indiceSelecionado = dgUsuarios.CurrentRow.Index;
                 int resultado = 1;
