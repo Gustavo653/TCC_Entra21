@@ -28,3 +28,9 @@ C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\DAL\obj\Debug\DAL.cspr
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\DAL\obj\Debug\DAL.dll
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\DAL\obj\Debug\DAL.pdb
+C:\Users\Usuario\Source\Repos\TCC_Oficial\DAL\bin\Debug\DAL.dll
+C:\Users\Usuario\Source\Repos\TCC_Oficial\DAL\bin\Debug\DAL.pdb
+C:\Users\Usuario\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Usuario\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.dll
+C:\Users\Usuario\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.pdb

@@ -232,5 +232,17 @@
   <ItemGroup>
     <None Include="Resources\SenhaSemMascara.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoNovo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoSalvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoExcluir.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

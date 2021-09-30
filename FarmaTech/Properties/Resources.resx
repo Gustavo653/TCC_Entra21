@@ -118,22 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SenhaSemMascara" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SenhaSemMascara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lab (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lab (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imagem01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagem01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SenhaMascarada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SenhaMascarada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CaixaRegistradora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CaixaRegistradora.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SenhaMascarada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SenhaMascarada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotaoNovo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotaoNovo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imagem01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imagem01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SenhaSemMascara" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SenhaSemMascara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="consegui(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consegui(1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lab (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lab (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotaoHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoSalvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotaoSalvar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoExcluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotaoExcluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

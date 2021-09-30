@@ -50,7 +50,19 @@ namespace FarmaTech.View
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (tabControl1.TabPages.Contains(tabNovoUsuario))
+            {
+                tabControl1.TabPages.Remove(tabNovoUsuario);
+                tabControl1.TabPages.Add(tabUsuarios);
+                btnSalvar.Enabled = false;
+                btnAlterar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnNovo.Enabled = true;
+            }
+            else
+            {
+                this.Hide();
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -117,6 +129,9 @@ namespace FarmaTech.View
                 }
                 AtualizaDG();
             }
+
+            tabControl1.TabPages.Remove(tabNovoUsuario);
+            tabControl1.TabPages.Add(tabUsuarios);
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -143,14 +158,18 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int indiceSelecionado = dgUsuarios.CurrentRow.Index;
+            if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
 
-            if (dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
-                BAL.Control.Usuarios_BAL.RemoveUsuario(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
-            else
-                MessageBox.Show("Você não pode remover o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int indiceSelecionado = dgUsuarios.CurrentRow.Index;
 
-            AtualizaDG();
+                if (dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
+                    BAL.Control.Usuarios_BAL.RemoveUsuario(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                else
+                    MessageBox.Show("Você não pode remover o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                AtualizaDG();
+            }
         }
 
         private void TelaCadastroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
@@ -183,7 +202,7 @@ namespace FarmaTech.View
         private void SetBackColorDegrade(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics; Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
-            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(108, 226, 252), Color.FromArgb(103, 23, 205), 45f);
+            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(103, 23, 205), Color.FromArgb(108, 226, 252), 45f);
             graphics.FillRectangle(br, gradient_rect);
         }
     }
