@@ -2,7 +2,7 @@ create table dbo.Usuarios
 (
 idUsuario int not null identity(1,1),
 Nome varchar(50) not null,
-Filial int not null, //Puxa o id da filial
+Filial varchar(50) not null, //Puxa o id da filial
 Cargo varchar(30) not null,
 Contato varchar(14) not null, //Telefone 5547900000000
 NivelAcesso int not null, //Guarda valor do enum

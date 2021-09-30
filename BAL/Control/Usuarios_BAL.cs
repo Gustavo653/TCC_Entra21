@@ -32,7 +32,7 @@ namespace BAL.Control
                 {
                     try
                     {
-                        DAL.Model.Usuarios_DAL.InsereUsuario(nome, Convert.ToInt32(filial), cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha));
+                        DAL.Model.Usuarios_DAL.InsereUsuario(nome, filial, cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha));
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)
@@ -84,7 +84,7 @@ namespace BAL.Control
                     }
                     try
                     {
-                        DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, Convert.ToInt32(filial), cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha), where);
+                        DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, filial, cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha), where);
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)

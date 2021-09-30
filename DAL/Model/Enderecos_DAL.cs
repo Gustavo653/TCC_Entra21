@@ -85,19 +85,6 @@ namespace DAL.Model
         {
             string insert = $"INSERT into dbo.Enderecos(enumEndereco, RazaoSocial, NomeFantasia, Cnpj, Contato, Rua, Numero, Complemento, Cidade, Estado) values ({enumEndereco}, '{razaoSocial}', '{nomeFantasia}', '{cNPJCPF}', '{contato}', '{rua}', '{numero}','{complemento}','{cidade}','{estado}')";
             DbConnection.Execute(insert);
-            if (enumEndereco == 0)
-            {
-                insert = $"INSERT into dbo.Fornecedores(idEndereco) values ({RecebeIdEndereco()})";
-            }
-            else if (enumEndereco == 1)
-            {
-                insert = $"INSERT into dbo.Filiais(idEndereco) values ({RecebeIdEndereco()})";
-            }
-            else if (enumEndereco == 2)
-            {
-                insert = $"INSERT into dbo.Clientes(idEndereco) values ({RecebeIdEndereco()})";
-            }
-            DbConnection.Execute(insert);
         }
         public static void RemoveEndereco(string contato)
         {

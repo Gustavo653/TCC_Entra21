@@ -25,7 +25,8 @@ namespace FarmaTech.View
             tabControl1.TabPages.Remove(tabNovoUsuario);
             btnSalvar.Enabled = false;
             AtualizaDG();
-            cbUsuarioFilial.DataSource = DAL.Model.Consultas.DbConnection.GenericSelectUnit("idFilial", "Filiais");
+            IEnumerable<string> listaEnderecos = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia);
+            cbUsuarioFilial.DataSource = listaEnderecos.ToList();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace FarmaTech.View
                 int resultado = 1;
                 if (!string.IsNullOrEmpty(cbUsuarioFilial.Text) && !string.IsNullOrEmpty(nUDNivelAcesso.Value.ToString()))
                 {
-                    resultado = BAL.Control.Usuarios_BAL.AtualizaUsuario(txtNome.Text, cbUsuarioFilial.Text, cbUsuarioCargo.Text, txtContato.Text, nUDNivelAcesso.Value.ToString(), txtLogin.Text, txtSenha.Text, dgUsuarios.Rows[indiceSelecionado].Cells[0].Value.ToString());
+                    resultado = BAL.Control.Usuarios_BAL.AtualizaUsuario(txtNome.Text, cbUsuarioFilial.Text, cbUsuarioCargo.Text, txtContato.Text, nUDNivelAcesso.Value.ToString(), txtLogin.Text, txtSenha.Text, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
                 }
                 if (resultado == 0)
                 {

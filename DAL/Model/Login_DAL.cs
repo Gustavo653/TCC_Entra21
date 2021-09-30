@@ -24,7 +24,7 @@ namespace DAL.Model
             while (dr.Read())
             {
                 UsuarioStatic.Nome = dr["Nome"].ToString();
-                UsuarioStatic.Filial = Convert.ToInt32(dr["Filial"]);
+                UsuarioStatic.Filial = dr["Filial"].ToString();
                 UsuarioStatic.Cargo = dr["Cargo"].ToString();
                 UsuarioStatic.Contato = dr["Contato"].ToString();
                 UsuarioStatic.NivelAcesso = Convert.ToInt32(dr["NivelAcesso"]); //Preenche as informacoes do usuario

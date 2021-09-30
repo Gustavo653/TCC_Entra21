@@ -9,7 +9,7 @@ namespace DAL.Model.Objetos
     public class UsuarioStatic
     {
         public static string Nome { get; set; }
-        public static int Filial { get; set; }
+        public static string Filial { get; set; }
         public static string Cargo { get; set; }
         public static string Contato { get; set; }
         public static int NivelAcesso { get; set; }
