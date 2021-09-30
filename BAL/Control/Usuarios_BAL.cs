@@ -76,8 +76,8 @@ namespace BAL.Control
               !string.IsNullOrEmpty(login) &&
               !string.IsNullOrEmpty(senha))
             {
-                if (!DAL.Model.Usuarios_DAL.VerificaSeUsuarioRepete(contato))
-                {
+                //if (!DAL.Model.Usuarios_DAL.VerificaSeUsuarioRepete(contato))
+                //{
                     if(Convert.ToInt32(nivelAcesso) > 3 && Convert.ToInt32(nivelAcesso) < 1)
                     {
                         return 4; //Algum dado que o usuario inseriu nao pode ser convertido
@@ -96,8 +96,8 @@ namespace BAL.Control
                         DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
                         return 3; //Algo inesperado ocorreu
                     }
-                }
-                return 2; //Erro usuario ja existe
+                //}
+                //return 2; //Erro usuario ja existe
             }
             return 1; //Erro algum campo está vazio
         }

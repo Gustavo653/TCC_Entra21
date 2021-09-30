@@ -61,7 +61,10 @@ namespace FarmaTech.View
                 int resultado = 1;
                 if (!string.IsNullOrEmpty(cbUsuarioFilial.Text) && !string.IsNullOrEmpty(nUDNivelAcesso.Value.ToString()))
                 {
-                    resultado = BAL.Control.Usuarios_BAL.AtualizaUsuario(txtNome.Text, cbUsuarioFilial.Text, cbUsuarioCargo.Text, txtContato.Text, nUDNivelAcesso.Value.ToString(), txtLogin.Text, txtSenha.Text, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    if (dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
+                        resultado = BAL.Control.Usuarios_BAL.AtualizaUsuario(txtNome.Text, cbUsuarioFilial.Text, cbUsuarioCargo.Text, txtContato.Text, nUDNivelAcesso.Value.ToString(), txtLogin.Text, txtSenha.Text, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    else
+                        MessageBox.Show("Você não pode atualizar o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (resultado == 0)
                 {
@@ -141,7 +144,12 @@ namespace FarmaTech.View
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             int indiceSelecionado = dgUsuarios.CurrentRow.Index;
-            BAL.Control.Usuarios_BAL.RemoveUsuario(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+
+            if (dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
+                BAL.Control.Usuarios_BAL.RemoveUsuario(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            else
+                MessageBox.Show("Você não pode remover o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             AtualizaDG();
         }
 
