@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FarmaTech",
+    "\\FarmaTech\\View",
+    "\\FarmaTech\\View\\Venda"
   ],
-  "SelectedNode": "\\FarmaTech.sln",
+  "SelectedNode": "\\FarmaTech\\View\\Venda\\TelaVenda.cs",
   "PreviewInSolutionExplorer": false
 }

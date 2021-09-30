@@ -35,7 +35,6 @@ namespace FarmaTech
             this.MenuFiliais = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuUnidades = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuFormaPag = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuFornecedores = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuConvenios = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,8 +99,7 @@ namespace FarmaTech
             // configuraçõesToolStripMenuItem
             // 
             this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuUnidades,
-            this.MenuFormaPag});
+            this.MenuUnidades});
             this.configuraçõesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
             this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
@@ -110,16 +108,9 @@ namespace FarmaTech
             // MenuUnidades
             // 
             this.MenuUnidades.Name = "MenuUnidades";
-            this.MenuUnidades.Size = new System.Drawing.Size(250, 26);
+            this.MenuUnidades.Size = new System.Drawing.Size(180, 26);
             this.MenuUnidades.Text = "Unidades";
             this.MenuUnidades.Click += new System.EventHandler(this.MenuUnidades_Click);
-            // 
-            // MenuFormaPag
-            // 
-            this.MenuFormaPag.Name = "MenuFormaPag";
-            this.MenuFormaPag.Size = new System.Drawing.Size(250, 26);
-            this.MenuFormaPag.Text = "Formas de Pagamento";
-            this.MenuFormaPag.Click += new System.EventHandler(this.MenuFormaPag_Click);
             // 
             // MenuFornecedores
             // 
@@ -230,7 +221,6 @@ namespace FarmaTech
             this.Name = "TelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:FarmaTech:.";
-            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaPrincipal_Paint);
             this.MenuPrincipal.ResumeLayout(false);
@@ -251,7 +241,6 @@ namespace FarmaTech
         private System.Windows.Forms.ToolStripMenuItem MenuUnidades;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuPdv;
-        private System.Windows.Forms.ToolStripMenuItem MenuFormaPag;
         private System.Windows.Forms.ToolStripMenuItem MenuFornecedores;
         private System.Windows.Forms.ToolStripMenuItem MenuClientes;
         private System.Windows.Forms.ToolStripMenuItem MenuConvenios;

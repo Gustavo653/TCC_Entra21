@@ -73,12 +73,6 @@
     <Compile Include="View\Cadastros\TelaCadastroUnidades.Designer.cs">
       <DependentUpon>TelaCadastroUnidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Cadastros\TelaCadastroFormaPag.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Cadastros\TelaCadastroFormaPag.Designer.cs">
-      <DependentUpon>TelaCadastroFormaPag.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Cadastros\TelaCadastroFornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +160,6 @@
     </Compile>
     <EmbeddedResource Include="View\Cadastros\TelaCadastroUnidades.resx">
       <DependentUpon>TelaCadastroUnidades.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Cadastros\TelaCadastroFormaPag.resx">
-      <DependentUpon>TelaCadastroFormaPag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastros\TelaCadastroFornecedores.resx">
       <DependentUpon>TelaCadastroFornecedores.cs</DependentUpon>

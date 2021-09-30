@@ -45,11 +45,6 @@ namespace FarmaTech
             new TelaVenda().Show();
         }
 
-        private void MenuFormaPag_Click(object sender, EventArgs e)
-        {
-            new TelaCadastroFormaPag().Show();
-        }
-
         private void MenuFornecedores_Click(object sender, EventArgs e)
         {
             new TelaCadastroFornecedores().Show();

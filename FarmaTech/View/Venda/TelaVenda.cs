@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,7 +72,28 @@ namespace FarmaTech
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Venda Finalizada");
+            StreamWriter cupomText = new StreamWriter("C:\\Temp\\CupomText.txt");
+            cupomText.WriteLine("............................CUPOM FISCAL............................");
+            cupomText.WriteLine();
+            cupomText.WriteLine("Número: 00000");
+            cupomText.WriteLine();
+            cupomText.WriteLine("Fornecedor:  FarmaTech    " + "Filial:   " + "CNPJ: ");
+            cupomText.WriteLine("-------------------------------------------------------------------- ");
+            cupomText.WriteLine("-------------------------------------------------------------------- ");
+            cupomText.WriteLine("Cliente: " + txtRazaoSocial.Text + "\tCPF/CNPJ: " + txtCnpj.Text);
+            cupomText.WriteLine("=====================================================================");
+            cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
+            cupomText.WriteLine(txtProduto.Text + "\t" + txtQuant.Text + "\t" + txtValorParcial.Text);
+            cupomText.WriteLine();
+            cupomText.WriteLine("Valor Total: R$ " + txtFormaValorTotal.Text);
+            cupomText.WriteLine("Forma de Pagamento: " + txtFormaPag.Text);
+            cupomText.WriteLine("=====================================================================");
+            cupomText.WriteLine("Volte sempre - Obrigado");
+            cupomText.WriteLine("FarmaTech by Query Lab - 2021®");
+            cupomText.Close();         
+
+            Process.Start(@"C:\\Temp\\CupomText.txt");
+                        
             tabControl1.TabPages.Remove(tabFormaPagamento);
             tabControl1.TabPages.Add(tabCliente);
         }
