@@ -1,5 +1,6 @@
 ﻿using FarmaTech.View;
 using FarmaTech.View.Principal;
+using FarmaTech.View.Requisicoes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,8 @@ namespace FarmaTech
 
         private void MenuSair_Click(object sender, EventArgs e)
         {
-            new TelaSair().Show();
+            new TelaLogin().Show();
+            this.Hide();
         }
 
         private void MenuFiliais_Click(object sender, EventArgs e)
@@ -117,6 +119,16 @@ namespace FarmaTech
         private void MenuContasReceber_Click(object sender, EventArgs e)
         {
             new TelaCadastroContasReceber().Show();
+        }
+
+        private void MenuNovaRequisicao_Click(object sender, EventArgs e)
+        {
+            new TelaNovaRequisicao().Show();
+        }
+
+        private void MenuGraficos_Click(object sender, EventArgs e)
+        {
+            new TelaGraficos().Show();
         }
     }
 }

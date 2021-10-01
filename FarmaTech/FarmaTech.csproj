@@ -36,6 +36,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -121,6 +122,18 @@
     <Compile Include="View\Financeiro\TelaMovimentacaoFinanceira.Designer.cs">
       <DependentUpon>TelaMovimentacaoFinanceira.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Principal\TelaGraficos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Principal\TelaGraficos.Designer.cs">
+      <DependentUpon>TelaGraficos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Requisicoes\TelaNovaRequisicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Requisicoes\TelaNovaRequisicao.Designer.cs">
+      <DependentUpon>TelaNovaRequisicao.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Requisicoes\TelaRequisicoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,8 +216,14 @@
     <EmbeddedResource Include="View\Financeiro\TelaMovimentacaoFinanceira.resx">
       <DependentUpon>TelaMovimentacaoFinanceira.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Principal\TelaGraficos.resx">
+      <DependentUpon>TelaGraficos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Principal\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Requisicoes\TelaNovaRequisicao.resx">
+      <DependentUpon>TelaNovaRequisicao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Requisicoes\TelaRequisicoes.resx">
       <DependentUpon>TelaRequisicoes.cs</DependentUpon>

@@ -9,26 +9,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTech.View.Principal
+namespace FarmaTech.View.Requisicoes
 {
-    public partial class TelaRequisicoes : Form
+    public partial class TelaNovaRequisicao : Form
     {
-        public TelaRequisicoes()
+        public TelaNovaRequisicao()
         {
             InitializeComponent();
         }
 
-        private void TelaRequisicoes_FormClosed(object sender, FormClosedEventArgs e)
+        private void TelaNovaRequisicao_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TelaNovaRequisicao_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
         }
 
-        private void TelaRequisicoes_Paint(object sender, PaintEventArgs e)
+        private void TelaNovaRequisicao_Paint(object sender, PaintEventArgs e)
         {
             SetBackColorDegrade(sender, e);
 
         }
-
 
         private void SetBackColorDegrade(object sender, PaintEventArgs e)
         {
@@ -40,28 +44,12 @@ namespace FarmaTech.View.Principal
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tabResposta))
-            {
-                tabControl1.TabPages.Remove(tabResposta);
-                tabControl1.TabPages.Add(tabRequisicoes);
-           
-            }
-            else
-            {
-                this.Hide();
-            }
+            this.Hide();
         }
 
-
-        private void TelaRequisicoes_Load(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabResposta);
-        }
 
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-            tabControl1.TabPages.Remove(tabRequisicoes);
-            tabControl1.TabPages.Add(tabResposta);
         }
     }
 }

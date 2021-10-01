@@ -42,14 +42,17 @@ namespace FarmaTech
             this.requisiçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuRequisicao = new System.Windows.Forms.ToolStripMenuItem();
             this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuContasPagar = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuMovimentacaoFinanceira = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuContasPagar = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuContasReceber = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPdv = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
-            this.MenuContasReceber = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuNovaRequisicao = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuRelatorios = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuGraficos = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +64,7 @@ namespace FarmaTech
             this.MenuCadastros,
             this.requisiçõesToolStripMenuItem,
             this.financeiroToolStripMenuItem,
+            this.MenuRelatorios,
             this.vendasToolStripMenuItem,
             this.MenuSair});
             this.MenuPrincipal.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -152,7 +156,8 @@ namespace FarmaTech
             // requisiçõesToolStripMenuItem
             // 
             this.requisiçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuRequisicao});
+            this.MenuRequisicao,
+            this.MenuNovaRequisicao});
             this.requisiçõesToolStripMenuItem.Name = "requisiçõesToolStripMenuItem";
             this.requisiçõesToolStripMenuItem.Size = new System.Drawing.Size(127, 29);
             this.requisiçõesToolStripMenuItem.Text = "Requisições";
@@ -161,8 +166,8 @@ namespace FarmaTech
             // 
             this.MenuRequisicao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuRequisicao.Name = "MenuRequisicao";
-            this.MenuRequisicao.Size = new System.Drawing.Size(206, 26);
-            this.MenuRequisicao.Text = "Nova requisição";
+            this.MenuRequisicao.Size = new System.Drawing.Size(210, 26);
+            this.MenuRequisicao.Text = "Consulta";
             this.MenuRequisicao.Click += new System.EventHandler(this.MenuRequisicao_Click);
             // 
             // financeiroToolStripMenuItem
@@ -175,6 +180,14 @@ namespace FarmaTech
             this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(117, 29);
             this.financeiroToolStripMenuItem.Text = "Financeiro";
             // 
+            // MenuMovimentacaoFinanceira
+            // 
+            this.MenuMovimentacaoFinanceira.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuMovimentacaoFinanceira.Name = "MenuMovimentacaoFinanceira";
+            this.MenuMovimentacaoFinanceira.Size = new System.Drawing.Size(280, 26);
+            this.MenuMovimentacaoFinanceira.Text = "Movimentação Financeira";
+            this.MenuMovimentacaoFinanceira.Click += new System.EventHandler(this.MenuMovimentacaoFinanceira_Click);
+            // 
             // MenuContasPagar
             // 
             this.MenuContasPagar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -183,13 +196,13 @@ namespace FarmaTech
             this.MenuContasPagar.Text = "Contas a Pagar";
             this.MenuContasPagar.Click += new System.EventHandler(this.MenuContasPagar_Click);
             // 
-            // MenuMovimentacaoFinanceira
+            // MenuContasReceber
             // 
-            this.MenuMovimentacaoFinanceira.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.MenuMovimentacaoFinanceira.Name = "MenuMovimentacaoFinanceira";
-            this.MenuMovimentacaoFinanceira.Size = new System.Drawing.Size(280, 26);
-            this.MenuMovimentacaoFinanceira.Text = "Movimentação Financeira";
-            this.MenuMovimentacaoFinanceira.Click += new System.EventHandler(this.MenuMovimentacaoFinanceira_Click);
+            this.MenuContasReceber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuContasReceber.Name = "MenuContasReceber";
+            this.MenuContasReceber.Size = new System.Drawing.Size(280, 26);
+            this.MenuContasReceber.Text = "Contas a Receber";
+            this.MenuContasReceber.Click += new System.EventHandler(this.MenuContasReceber_Click);
             // 
             // vendasToolStripMenuItem
             // 
@@ -203,7 +216,7 @@ namespace FarmaTech
             // 
             this.MenuPdv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuPdv.Name = "MenuPdv";
-            this.MenuPdv.Size = new System.Drawing.Size(180, 26);
+            this.MenuPdv.Size = new System.Drawing.Size(115, 26);
             this.MenuPdv.Text = "PDV";
             this.MenuPdv.Click += new System.EventHandler(this.MenuPdv_Click_1);
             // 
@@ -235,13 +248,29 @@ namespace FarmaTech
             this.lblNomeUsuario.TabIndex = 2;
             this.lblNomeUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // MenuContasReceber
+            // MenuNovaRequisicao
             // 
-            this.MenuContasReceber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.MenuContasReceber.Name = "MenuContasReceber";
-            this.MenuContasReceber.Size = new System.Drawing.Size(280, 26);
-            this.MenuContasReceber.Text = "Contas a Receber";
-            this.MenuContasReceber.Click += new System.EventHandler(this.MenuContasReceber_Click);
+            this.MenuNovaRequisicao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuNovaRequisicao.Name = "MenuNovaRequisicao";
+            this.MenuNovaRequisicao.Size = new System.Drawing.Size(210, 26);
+            this.MenuNovaRequisicao.Text = "Nova Requisição";
+            this.MenuNovaRequisicao.Click += new System.EventHandler(this.MenuNovaRequisicao_Click);
+            // 
+            // MenuRelatorios
+            // 
+            this.MenuRelatorios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuGraficos});
+            this.MenuRelatorios.Name = "MenuRelatorios";
+            this.MenuRelatorios.Size = new System.Drawing.Size(113, 29);
+            this.MenuRelatorios.Text = "Relatórios";
+            // 
+            // MenuGraficos
+            // 
+            this.MenuGraficos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuGraficos.Name = "MenuGraficos";
+            this.MenuGraficos.Size = new System.Drawing.Size(180, 26);
+            this.MenuGraficos.Text = "Gráficos";
+            this.MenuGraficos.Click += new System.EventHandler(this.MenuGraficos_Click);
             // 
             // TelaPrincipal
             // 
@@ -292,5 +321,8 @@ namespace FarmaTech
         private System.Windows.Forms.ToolStripMenuItem MenuRequisicao;
         private System.Windows.Forms.ToolStripMenuItem MenuMovimentacaoFinanceira;
         private System.Windows.Forms.ToolStripMenuItem MenuContasReceber;
+        private System.Windows.Forms.ToolStripMenuItem MenuNovaRequisicao;
+        private System.Windows.Forms.ToolStripMenuItem MenuRelatorios;
+        private System.Windows.Forms.ToolStripMenuItem MenuGraficos;
     }
 }
