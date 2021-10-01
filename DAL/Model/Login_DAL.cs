@@ -28,24 +28,43 @@ namespace DAL.Model
                 UsuarioStatic.Cargo = dr["Cargo"].ToString();
                 UsuarioStatic.Contato = dr["Contato"].ToString();
                 UsuarioStatic.NivelAcesso = Convert.ToInt32(dr["NivelAcesso"]); //Preenche as informacoes do usuario
-
-
+                UsuarioStatic.NivelAcessoTemp = Convert.ToInt32(dr["NivelAcesso"]);
                 senhas.Add(dr["Senha"].ToString());
             }
             dr.Close();
             conn.Close();
 
-            
+
 
             foreach (var item in senhas)
             {
-                if(hash.VerificarSenha(senha, item))
+                if (hash.VerificarSenha(senha, item))
                 {
                     return true;
                 }
             }
 
             return false;
-        }      
+        }
+        public static bool VerificaNivelAcesso(string login, string senha)
+        {
+            string select = $"SELECT * from dbo.Usuarios WHERE Login = '{login}' AND Senha = '{hash.CriptografarSenha(senha)}'";
+            SqlCommand cmd = new SqlCommand(select, conn);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+
+                if (Convert.ToInt32(dr["NivelAcesso"]) > 1)
+                {
+                    dr.Close();
+                    conn.Close();
+                    return true;
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return false;
+        }
     }
 }

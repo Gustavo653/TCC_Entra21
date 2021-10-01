@@ -28,8 +28,7 @@ namespace FarmaTech
 
         private void MenuSair_Click(object sender, EventArgs e)
         {
-            new TelaLogin().Show();
-            this.Hide();
+            Application.Restart();
         }
 
         private void MenuFiliais_Click(object sender, EventArgs e)

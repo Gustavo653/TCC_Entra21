@@ -447,7 +447,7 @@ namespace FarmaTech.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 509);
+            this.ClientSize = new System.Drawing.Size(1080, 509);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);

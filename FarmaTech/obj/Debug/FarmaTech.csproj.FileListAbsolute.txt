@@ -84,7 +84,6 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.T
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
-C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFormaPag.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
@@ -208,3 +207,10 @@ C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Vie
 C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
 C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
 C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
