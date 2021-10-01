@@ -142,7 +142,7 @@ namespace FarmaTech.View
 
         private void txtPesquisaUsuario_TextChanged(object sender, EventArgs e)
         {
-
+            AtualizaDG();
         }
         public void AtualizaDG()
         {
