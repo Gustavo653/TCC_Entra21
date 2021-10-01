@@ -29,6 +29,7 @@ namespace FarmaTech.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
@@ -54,6 +55,7 @@ namespace FarmaTech.View
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -295,6 +297,7 @@ namespace FarmaTech.View
             this.btnAlterar.Size = new System.Drawing.Size(75, 75);
             this.btnAlterar.TabIndex = 58;
             this.btnAlterar.Text = "Alterar";
+            this.toolTip1.SetToolTip(this.btnAlterar, "Alterar");
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -309,6 +312,7 @@ namespace FarmaTech.View
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(95, 95);
             this.btnNovo.TabIndex = 60;
+            this.toolTip1.SetToolTip(this.btnNovo, "Novo");
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
@@ -323,6 +327,7 @@ namespace FarmaTech.View
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(95, 95);
             this.btnExcluir.TabIndex = 59;
+            this.toolTip1.SetToolTip(this.btnExcluir, "Excluir");
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
@@ -337,6 +342,7 @@ namespace FarmaTech.View
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(95, 95);
             this.btnSalvar.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar");
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -351,6 +357,7 @@ namespace FarmaTech.View
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 95);
             this.btnVoltar.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnVoltar, "Voltar");
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -412,5 +419,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

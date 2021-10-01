@@ -24,6 +24,7 @@ namespace FarmaTech.View
         {
             tabControl1.TabPages.Remove(tabNovoUsuario);
             btnSalvar.Enabled = false;
+            
             AtualizaDG();
             IEnumerable<string> listaEnderecos = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia);
             cbUsuarioFilial.DataSource = listaEnderecos.ToList();

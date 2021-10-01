@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -83,7 +84,7 @@ namespace FarmaTech
             cupomText.WriteLine("Cliente: " + txtRazaoSocial.Text + "\tCPF/CNPJ: " + txtCnpj.Text);
             cupomText.WriteLine("=====================================================================");
             cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
-            cupomText.WriteLine(txtProduto.Text + "\t" + txtQuant.Text + "\t" + txtValorParcial.Text);
+            cupomText.WriteLine(txtProduto.Text + "\t\t" + txtQuant.Text + "\t\t" + txtValorParcial.Text);
             cupomText.WriteLine();
             cupomText.WriteLine("Valor Total: R$ " + txtFormaValorTotal.Text);
             cupomText.WriteLine("Forma de Pagamento: " + txtFormaPag.Text);
@@ -108,5 +109,18 @@ namespace FarmaTech
             tabControl1.TabPages.Remove(tabVenda);
             tabControl1.TabPages.Add(tabFormaPagamento);
         }
+
+        private void TelaVenda_Paint(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
+        }
+        private void SetBackColorDegrade(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
+            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(103, 23, 205), Color.FromArgb(108, 226, 252), 45f);
+            graphics.FillRectangle(br, gradient_rect);
+        }
+    
     }
 }
