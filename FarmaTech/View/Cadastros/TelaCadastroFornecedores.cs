@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace FarmaTech.View
             btnSalvar.Enabled = false;
             cboEstados.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Estados));
             AtualizaDG();
+            
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

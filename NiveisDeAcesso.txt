@@ -1,0 +1,14 @@
+Nivel 1: 
+Venda
+Adicao de produtos
+Adicao de clientes
+Adicao de unidades
+CRUD dos 3 acima somente com permissao
+
+Nivel 2:
+Todos os anteriores
+Abertura de caixa
+Todos os CRUD da filial dele
+
+Nivel 3:
+Acesso irrestrito

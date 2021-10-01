@@ -13,7 +13,5 @@ namespace DAL.Model.Objetos
         public static string Cargo { get; set; }
         public static string Contato { get; set; }
         public static int NivelAcesso { get; set; }
-        //public string Login { get; set; }//Há a necessidade de guardar as credenciais?
-        //public string Senha { get; set; } //Há a necessidade de guardar as credenciais?
     }
 }
