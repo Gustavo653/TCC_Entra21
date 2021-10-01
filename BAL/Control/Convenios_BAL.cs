@@ -1,6 +1,7 @@
 ﻿using DAL.Model.Objetos;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,16 +12,46 @@ namespace BAL.Control
     {
         public static List<Convenio> GetConvenios()
         {
-            return DAL.Model.Convenios_DAL.GetConvenios();
+            List<Convenio> lista = DAL.Model.Convenios_DAL.GetConvenios();
+            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            foreach (var item in lista)
+            {
+
+                item.Desconto = (1.0 - Convert.ToDouble(item.Desconto)).ToString();
+                item.Desconto = item.Desconto.Replace("0.", "");
+                item.Desconto += "%";
+            }
+            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+            return lista;
         }
         public static List<Convenio> GetConveniosPorNome(string nome)
         {
-            return DAL.Model.Convenios_DAL.GetConveniosPorNome(nome);
+            List<Convenio> lista = DAL.Model.Convenios_DAL.GetConveniosPorNome(nome);
+            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            foreach (var item in lista)
+            {
+
+                item.Desconto = (1.0 - Convert.ToDouble(item.Desconto)).ToString();
+                item.Desconto = item.Desconto.Replace("0.", "");
+                item.Desconto += "%";
+            }
+            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+            return lista;
         }
         public static int AdicionarConvenio(string nome, string desconto)
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            desconto = desconto.Replace("%", "");
+            desconto = "0." + desconto;
+            desconto = (1.0 - Convert.ToDouble(desconto)).ToString();
+            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(desconto))
             {
+                if (desconto.Contains(".") || desconto.Contains(","))
+                {
+                    return 4;
+                }
                 if (!DAL.Model.Convenios_DAL.VerificaSeConvenioRepete(nome)) //Verificar se deu certo
                 {
                     try
@@ -63,24 +94,30 @@ namespace BAL.Control
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(desconto))
             {
-                //if (!DAL.Model.Convenios_DAL.VerificaSeConvenioRepete(nome))
-                //{
-                    try
-                    {
-                        DAL.Model.Convenios_DAL.AtualizaConvenio(nome, desconto, where);
-                        return 0; //Deu tudo certo
-                    }
-                    catch (FormatException)
-                    {
-                        return 4; //Algum dado que o usuario inseriu nao pode ser convertido
-                    }
-                    catch (Exception e)
-                    {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
-                        return 3; //Algo inesperado ocorreu
-                    }
-                //}
-                //return 2; //Erro usuario ja existe
+                if (desconto.Contains(".") || desconto.Contains(","))
+                {
+                    return 4;
+                }
+                System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+                desconto = desconto.Replace("%", "");
+                desconto = "0." + desconto;
+                desconto = (1.0 - Convert.ToDouble(desconto)).ToString();
+                System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+
+                try
+                {
+                    DAL.Model.Convenios_DAL.AtualizaConvenio(nome, desconto, where);
+                    return 0; //Deu tudo certo
+                }
+                catch (FormatException)
+                {
+                    return 4; //Algum dado que o usuario inseriu nao pode ser convertido
+                }
+                catch (Exception e)
+                {
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
+                    return 3; //Algo inesperado ocorreu
+                }
             }
             return 1; //Erro algum campo está vazio
         }
