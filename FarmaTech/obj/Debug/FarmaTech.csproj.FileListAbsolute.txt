@@ -203,3 +203,6 @@ C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.C
 C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
 C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
 C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources

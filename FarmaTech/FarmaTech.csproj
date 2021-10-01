@@ -109,6 +109,24 @@
     <Compile Include="View\Principal\TelaConfirmacaoCancelamento.Designer.cs">
       <DependentUpon>TelaConfirmacaoCancelamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Cadastros\TelaCadastroContasReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastros\TelaCadastroContasReceber.Designer.cs">
+      <DependentUpon>TelaCadastroContasReceber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Financeiro\TelaMovimentacaoFinanceira.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Financeiro\TelaMovimentacaoFinanceira.Designer.cs">
+      <DependentUpon>TelaMovimentacaoFinanceira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Requisicoes\TelaRequisicoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Requisicoes\TelaRequisicoes.Designer.cs">
+      <DependentUpon>TelaRequisicoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Venda\TelaAberturaDeCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,8 +197,17 @@
     <EmbeddedResource Include="View\Principal\TelaConfirmacaoCancelamento.resx">
       <DependentUpon>TelaConfirmacaoCancelamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastros\TelaCadastroContasReceber.resx">
+      <DependentUpon>TelaCadastroContasReceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Financeiro\TelaMovimentacaoFinanceira.resx">
+      <DependentUpon>TelaMovimentacaoFinanceira.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Principal\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Requisicoes\TelaRequisicoes.resx">
+      <DependentUpon>TelaRequisicoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Principal\TelaSair.resx">
       <DependentUpon>TelaSair.cs</DependentUpon>
