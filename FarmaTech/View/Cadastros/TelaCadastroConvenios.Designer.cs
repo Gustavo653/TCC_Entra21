@@ -126,9 +126,13 @@ namespace FarmaTech.View
             // 
             // dgConvenios
             // 
+            this.dgConvenios.AllowUserToAddRows = false;
+            this.dgConvenios.AllowUserToDeleteRows = false;
+            this.dgConvenios.AllowUserToOrderColumns = true;
             this.dgConvenios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgConvenios.Location = new System.Drawing.Point(49, 84);
             this.dgConvenios.Name = "dgConvenios";
+            this.dgConvenios.ReadOnly = true;
             this.dgConvenios.Size = new System.Drawing.Size(626, 282);
             this.dgConvenios.TabIndex = 21;
             // 
@@ -173,6 +177,7 @@ namespace FarmaTech.View
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(134, 29);
             this.txtDesconto.TabIndex = 68;
+            this.txtDesconto.Text = "20%";
             // 
             // lblDesconto
             // 
