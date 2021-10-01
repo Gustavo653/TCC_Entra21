@@ -104,5 +104,19 @@ namespace FarmaTech
             graphics.FillRectangle(br, gradient_rect);
         }
 
+        private void MenuRequisicao_Click(object sender, EventArgs e)
+        {
+            new TelaRequisicoes().Show();
+        }
+
+        private void MenuMovimentacaoFinanceira_Click(object sender, EventArgs e)
+        {
+            new TelaMovimentacaoFinanceira().Show();
+        }
+
+        private void MenuContasReceber_Click(object sender, EventArgs e)
+        {
+            new TelaCadastroContasReceber().Show();
+        }
     }
 }

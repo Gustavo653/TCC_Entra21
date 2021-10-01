@@ -39,13 +39,17 @@ namespace FarmaTech
             this.MenuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuConvenios = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProdutos = new System.Windows.Forms.ToolStripMenuItem();
+            this.requisiçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuRequisicao = new System.Windows.Forms.ToolStripMenuItem();
             this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuContasPagar = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuMovimentacaoFinanceira = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPdv = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
+            this.MenuContasReceber = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +59,7 @@ namespace FarmaTech
             this.MenuPrincipal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.MenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuCadastros,
+            this.requisiçõesToolStripMenuItem,
             this.financeiroToolStripMenuItem,
             this.vendasToolStripMenuItem,
             this.MenuSair});
@@ -108,7 +113,7 @@ namespace FarmaTech
             // MenuUnidades
             // 
             this.MenuUnidades.Name = "MenuUnidades";
-            this.MenuUnidades.Size = new System.Drawing.Size(180, 26);
+            this.MenuUnidades.Size = new System.Drawing.Size(152, 26);
             this.MenuUnidades.Text = "Unidades";
             this.MenuUnidades.Click += new System.EventHandler(this.MenuUnidades_Click);
             // 
@@ -144,10 +149,28 @@ namespace FarmaTech
             this.MenuProdutos.Text = "Produtos";
             this.MenuProdutos.Click += new System.EventHandler(this.MenuProdutos_Click);
             // 
+            // requisiçõesToolStripMenuItem
+            // 
+            this.requisiçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuRequisicao});
+            this.requisiçõesToolStripMenuItem.Name = "requisiçõesToolStripMenuItem";
+            this.requisiçõesToolStripMenuItem.Size = new System.Drawing.Size(127, 29);
+            this.requisiçõesToolStripMenuItem.Text = "Requisições";
+            // 
+            // MenuRequisicao
+            // 
+            this.MenuRequisicao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuRequisicao.Name = "MenuRequisicao";
+            this.MenuRequisicao.Size = new System.Drawing.Size(206, 26);
+            this.MenuRequisicao.Text = "Nova requisição";
+            this.MenuRequisicao.Click += new System.EventHandler(this.MenuRequisicao_Click);
+            // 
             // financeiroToolStripMenuItem
             // 
             this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuContasPagar});
+            this.MenuMovimentacaoFinanceira,
+            this.MenuContasPagar,
+            this.MenuContasReceber});
             this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
             this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(117, 29);
             this.financeiroToolStripMenuItem.Text = "Financeiro";
@@ -156,9 +179,17 @@ namespace FarmaTech
             // 
             this.MenuContasPagar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuContasPagar.Name = "MenuContasPagar";
-            this.MenuContasPagar.Size = new System.Drawing.Size(195, 26);
+            this.MenuContasPagar.Size = new System.Drawing.Size(280, 26);
             this.MenuContasPagar.Text = "Contas a Pagar";
             this.MenuContasPagar.Click += new System.EventHandler(this.MenuContasPagar_Click);
+            // 
+            // MenuMovimentacaoFinanceira
+            // 
+            this.MenuMovimentacaoFinanceira.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuMovimentacaoFinanceira.Name = "MenuMovimentacaoFinanceira";
+            this.MenuMovimentacaoFinanceira.Size = new System.Drawing.Size(280, 26);
+            this.MenuMovimentacaoFinanceira.Text = "Movimentação Financeira";
+            this.MenuMovimentacaoFinanceira.Click += new System.EventHandler(this.MenuMovimentacaoFinanceira_Click);
             // 
             // vendasToolStripMenuItem
             // 
@@ -172,7 +203,7 @@ namespace FarmaTech
             // 
             this.MenuPdv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuPdv.Name = "MenuPdv";
-            this.MenuPdv.Size = new System.Drawing.Size(115, 26);
+            this.MenuPdv.Size = new System.Drawing.Size(180, 26);
             this.MenuPdv.Text = "PDV";
             this.MenuPdv.Click += new System.EventHandler(this.MenuPdv_Click_1);
             // 
@@ -203,6 +234,14 @@ namespace FarmaTech
             this.lblNomeUsuario.Size = new System.Drawing.Size(0, 24);
             this.lblNomeUsuario.TabIndex = 2;
             this.lblNomeUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // MenuContasReceber
+            // 
+            this.MenuContasReceber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuContasReceber.Name = "MenuContasReceber";
+            this.MenuContasReceber.Size = new System.Drawing.Size(280, 26);
+            this.MenuContasReceber.Text = "Contas a Receber";
+            this.MenuContasReceber.Click += new System.EventHandler(this.MenuContasReceber_Click);
             // 
             // TelaPrincipal
             // 
@@ -249,5 +288,9 @@ namespace FarmaTech
         private System.Windows.Forms.ToolStripMenuItem MenuContasPagar;
         private System.Windows.Forms.Label lblBemVindo;
         private System.Windows.Forms.Label lblNomeUsuario;
+        private System.Windows.Forms.ToolStripMenuItem requisiçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuRequisicao;
+        private System.Windows.Forms.ToolStripMenuItem MenuMovimentacaoFinanceira;
+        private System.Windows.Forms.ToolStripMenuItem MenuContasReceber;
     }
 }
