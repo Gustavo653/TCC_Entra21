@@ -26,12 +26,6 @@ namespace FarmaTech
             new TelaCadastroUsuarios().Show();
         }
 
-        private void MenuSair_Click(object sender, EventArgs e)
-        {
-            new TelaLogin().Show();
-            this.Hide();
-        }
-
         private void MenuFiliais_Click(object sender, EventArgs e)
         {
             new TelaCadastroFiliais().Show();
@@ -101,8 +95,7 @@ namespace FarmaTech
         private void SetBackColorDegrade(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics; Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
-            //RGB vermelho verde azul
-            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(108, 226, 252), Color.FromArgb(103, 23, 205), 45f);
+            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(94, 221, 231), Color.FromArgb(139, 148, 250), 45f);
             graphics.FillRectangle(br, gradient_rect);
         }
 
@@ -130,5 +123,25 @@ namespace FarmaTech
         {
             new TelaGraficos().Show();
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new TelaLogin().Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new TelaSair().Show();
+            //Application.Exit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblData.Text = DateTime.Now.ToLongDateString();
+        }
+
+        
     }
 }
