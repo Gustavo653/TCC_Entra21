@@ -78,7 +78,10 @@ namespace FarmaTech.View
             }
             else
             {
-                DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
+                {
+                    DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
+                }
                 int indiceSelecionado = dgUnidades.CurrentRow.Index;
                 int resultado = BAL.Control.Unidades_BAL.AtualizaUnidade(txtNome.Text, dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());
                 if (resultado == 0)
@@ -109,8 +112,6 @@ namespace FarmaTech.View
         {
             if (dgUnidades.Rows.Count > 0)
             {
-
-
                 if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1 || DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
                 {
                     tabControl1.TabPages.Remove(tabUnidades);
@@ -146,7 +147,10 @@ namespace FarmaTech.View
             {
                 int indiceSelecionado = dgUnidades.CurrentRow.Index;
                 BAL.Control.Unidades_BAL.RemoveUnidade(dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());
-                DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
+                {
+                    DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
+                }
                 AtualizaDG();
             }
         }

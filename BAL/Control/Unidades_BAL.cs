@@ -10,10 +10,18 @@ namespace BAL.Control
     {
         public static List<string> GetUnidades()
         {
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+            {
+                return DAL.Model.Unidades_DAL.GetUnidades(DAL.Model.Objetos.UsuarioStatic.Filial);
+            }
             return DAL.Model.Unidades_DAL.GetUnidades();
         }
         public static List<string> GetUnidadesPorNome(string nome)
         {
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+            {
+                return DAL.Model.Unidades_DAL.GetUnidadesPorNome(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
+            }
             return DAL.Model.Unidades_DAL.GetUnidadesPorNome(nome);
         }
         public static int AdicionarUnidade(string nome)
@@ -24,7 +32,7 @@ namespace BAL.Control
                 {
                     try
                     {
-                        DAL.Model.Unidades_DAL.InsereUnidade(nome);
+                        DAL.Model.Unidades_DAL.InsereUnidade(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)
@@ -47,7 +55,14 @@ namespace BAL.Control
             {
                 try
                 {
-                    DAL.Model.Unidades_DAL.RemoveUnidade(nome);
+                    if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 2)
+                    {
+                        DAL.Model.Unidades_DAL.RemoveUnidade(nome);
+                    }
+                    else
+                    {
+                        DAL.Model.Unidades_DAL.RemoveUnidade(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
+                    }
                     return 0; //Deu tudo certo
                 }
                 catch (Exception e)
@@ -66,7 +81,14 @@ namespace BAL.Control
                 {
                     try
                     {
-                        DAL.Model.Unidades_DAL.AtualizaUnidade(nome, where);
+                        if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 2)
+                        {
+                            DAL.Model.Unidades_DAL.AtualizaUnidade(nome, where);
+                        }
+                        else
+                        {
+                            DAL.Model.Unidades_DAL.AtualizaUnidade(nome, where, DAL.Model.Objetos.UsuarioStatic.Filial);
+                        }
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)
