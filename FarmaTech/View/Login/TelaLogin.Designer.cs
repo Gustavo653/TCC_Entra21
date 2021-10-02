@@ -29,6 +29,7 @@ namespace FarmaTech
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLogin));
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSobre = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
@@ -36,16 +37,18 @@ namespace FarmaTech
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.lblFarmaTech = new System.Windows.Forms.Label();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnNaoVer = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.Silver;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(324, 296);
+            this.btnSair.Location = new System.Drawing.Point(331, 487);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(133, 42);
             this.btnSair.TabIndex = 17;
@@ -57,7 +60,7 @@ namespace FarmaTech
             // 
             this.btnSobre.BackColor = System.Drawing.Color.Silver;
             this.btnSobre.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSobre.Location = new System.Drawing.Point(52, 553);
+            this.btnSobre.Location = new System.Drawing.Point(324, 613);
             this.btnSobre.Name = "btnSobre";
             this.btnSobre.Size = new System.Drawing.Size(160, 36);
             this.btnSobre.TabIndex = 16;
@@ -69,7 +72,7 @@ namespace FarmaTech
             // 
             this.btnEntrar.BackColor = System.Drawing.Color.Silver;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(167, 296);
+            this.btnEntrar.Location = new System.Drawing.Point(174, 487);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(133, 42);
             this.btnEntrar.TabIndex = 15;
@@ -80,7 +83,7 @@ namespace FarmaTech
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(167, 233);
+            this.txtSenha.Location = new System.Drawing.Point(174, 396);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(287, 29);
@@ -90,7 +93,7 @@ namespace FarmaTech
             // txtLogin
             // 
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(167, 168);
+            this.txtLogin.Location = new System.Drawing.Point(177, 309);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(287, 29);
             this.txtLogin.TabIndex = 13;
@@ -100,7 +103,7 @@ namespace FarmaTech
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(90, 238);
+            this.lblSenha.Location = new System.Drawing.Point(170, 360);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(70, 24);
             this.lblSenha.TabIndex = 12;
@@ -111,31 +114,18 @@ namespace FarmaTech
             this.lblLogin.AutoSize = true;
             this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(98, 170);
+            this.lblLogin.Location = new System.Drawing.Point(173, 268);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(62, 24);
             this.lblLogin.TabIndex = 11;
             this.lblLogin.Text = "Login";
-            // 
-            // lblFarmaTech
-            // 
-            this.lblFarmaTech.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFarmaTech.AutoSize = true;
-            this.lblFarmaTech.BackColor = System.Drawing.Color.Transparent;
-            this.lblFarmaTech.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFarmaTech.Location = new System.Drawing.Point(81, 49);
-            this.lblFarmaTech.Name = "lblFarmaTech";
-            this.lblFarmaTech.Size = new System.Drawing.Size(445, 73);
-            this.lblFarmaTech.TabIndex = 10;
-            this.lblFarmaTech.Text = ".:FarmaTech:.";
-            this.lblFarmaTech.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnVer
             // 
             this.btnVer.BackgroundImage = global::FarmaTech.Properties.Resources.SenhaSemMascara;
             this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVer.Location = new System.Drawing.Point(419, 233);
+            this.btnVer.Location = new System.Drawing.Point(426, 396);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(35, 29);
             this.btnVer.TabIndex = 18;
@@ -148,21 +138,54 @@ namespace FarmaTech
             this.btnNaoVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNaoVer.FlatAppearance.BorderSize = 0;
             this.btnNaoVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNaoVer.Location = new System.Drawing.Point(419, 233);
+            this.btnNaoVer.Location = new System.Drawing.Point(426, 396);
             this.btnNaoVer.Name = "btnNaoVer";
             this.btnNaoVer.Size = new System.Drawing.Size(35, 29);
             this.btnNaoVer.TabIndex = 19;
             this.btnNaoVer.UseVisualStyleBackColor = true;
             this.btnNaoVer.Click += new System.EventHandler(this.btnNaoVer_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(101, 284);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(70, 73);
+            this.panel1.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Location = new System.Drawing.Point(101, 374);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(70, 73);
+            this.panel2.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(241, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 46);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "LOGO";
+            // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::FarmaTech.Properties.Resources.imagem01;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1001, 636);
+            this.ClientSize = new System.Drawing.Size(573, 696);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnSobre);
@@ -171,8 +194,8 @@ namespace FarmaTech
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.lblFarmaTech);
             this.Controls.Add(this.btnNaoVer);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -193,9 +216,11 @@ namespace FarmaTech
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.Label lblFarmaTech;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnNaoVer;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
