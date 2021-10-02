@@ -1,5 +1,6 @@
 create table dbo.Unidades
 (
 idUnidade int not null identity(1,1),
-Nome varchar(30) not null
+Nome varchar(30) not null,
+idFilial varchar(50)
 )

@@ -126,8 +126,7 @@ namespace FarmaTech
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new TelaLogin().Show();
-            this.Hide();
+            Application.Restart();
         }
 
         private void button1_Click(object sender, EventArgs e)
