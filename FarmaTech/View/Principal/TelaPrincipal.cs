@@ -85,6 +85,16 @@ namespace FarmaTech
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
             lblNomeUsuario.Text = DAL.Model.Objetos.UsuarioStatic.Nome;
+            List<DAL.Model.Objetos.Requisicao> lista = BAL.Control.Requisicoes_BAL.VerificaSeUsuarioTemRequisicaoRespondida();
+            if(lista != null)
+            {
+                MessageBox.Show($"Sua solicitacao foi respondida!" +
+                    $"\nData: {lista[0].Data}" +
+                    $"\nAssunto: {lista[0].Assunto}" +
+                    $"\nSolicitacao: {lista[0].Solicitacao}" +
+                    $"\nResposta: {lista[0].Resposta}");
+
+            }
         }
 
         private void TelaPrincipal_Paint(object sender, PaintEventArgs e)

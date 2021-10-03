@@ -8,6 +8,16 @@ namespace BAL.Control
 {
     public class Requisicoes_BAL
     {
+        public static List<DAL.Model.Objetos.Requisicao> VerificaSeUsuarioTemRequisicaoRespondida()
+        {
+            List<DAL.Model.Objetos.Requisicao> lista = DAL.Model.Requisicoes_DAL.VerificaSeUsuarioTemRequisicaoRespondida(DAL.Model.Objetos.UsuarioStatic.Nome, DAL.Model.Objetos.UsuarioStatic.Filial);
+            if (lista.Count > 0)
+            {
+                DAL.Model.Requisicoes_DAL.RemoveRequisicao(lista[0].Nome, lista[0].Assunto);
+                return lista;
+            }
+            return null;
+        }
         public static List<DAL.Model.Objetos.Requisicao> GetRequisicoes()
         {
             return DAL.Model.Requisicoes_DAL.GetRequisicoes();

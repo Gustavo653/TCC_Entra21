@@ -100,6 +100,7 @@ namespace FarmaTech.View.Principal
             {
                 MessageBox.Show("A mensagem é muito grande");
             }
+            AtualizaDG();
         }
 
         private void button2_Click(object sender, EventArgs e)
