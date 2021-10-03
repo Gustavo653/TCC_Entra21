@@ -56,12 +56,65 @@ namespace FarmaTech.View.Principal
         private void TelaRequisicoes_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabResposta);
+            AtualizaDG();
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabRequisicoes);
             tabControl1.TabPages.Add(tabResposta);
+        }
+        public void AtualizaDG()
+        {
+            if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
+            {
+                dgRequisicoes.DataSource = BAL.Control.Requisicoes_BAL.GetRequisicoesPorNome(txtPesquisaUsuario.Text);
+            }
+            else
+            {
+                dgRequisicoes.DataSource = BAL.Control.Requisicoes_BAL.GetRequisicoes();
+            }
+        }
+
+        private void txtPesquisaUsuario_TextChanged(object sender, EventArgs e)
+        {
+            AtualizaDG();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int resultado = BAL.Control.Requisicoes_BAL.RespondeRequisicao(txtResposta.Text, lblUsuario.Text, txtAssunto.Text);
+            if (resultado == 0)
+            {
+                MessageBox.Show("Requisicao respondida");
+            }
+            else if (resultado == 1)
+            {
+                MessageBox.Show("Preencha todos os campos");
+            }
+            else if (resultado == 2)
+            {
+                MessageBox.Show("Houve um erro desconhecido");
+            }
+            else
+            {
+                MessageBox.Show("A mensagem é muito grande");
+            }
+            AtualizaDG();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabRequisicoes);
+            tabControl1.TabPages.Add(tabResposta);
+
+            int indiceSelecionado = dgRequisicoes.CurrentRow.Index;
+            List<DAL.Model.Objetos.Requisicao> lista = BAL.Control.Requisicoes_BAL.GetRequisicoesPorNome(dgRequisicoes.Rows[indiceSelecionado].Cells[0].Value.ToString());
+            lblData.Text = lista[0].Data;
+            lblUsuario.Text = lista[0].Nome;
+            lblFilial.Text = lista[0].Filial;
+            txtAssunto.Text = lista[0].Assunto;
+            txtDescricao.Text = lista[0].Solicitacao;
         }
     }
 }

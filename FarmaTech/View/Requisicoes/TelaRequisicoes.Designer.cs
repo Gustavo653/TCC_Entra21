@@ -32,31 +32,25 @@ namespace FarmaTech.View.Principal
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DataCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsuarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AssuntoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RespostaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgRequisicoes = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabRequisicoes = new System.Windows.Forms.TabPage();
             this.tabResposta = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblResposta = new System.Windows.Forms.Label();
-            this.cbFilial = new System.Windows.Forms.ComboBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.lblFilial = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.txtResposta = new System.Windows.Forms.TextBox();
+            this.lblResposta = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtAssunto = new System.Windows.Forms.TextBox();
             this.lblAssunto = new System.Windows.Forms.Label();
-            this.cbUsuario = new System.Windows.Forms.ComboBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblDataSistema = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.btnExportar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgRequisicoes)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabRequisicoes.SuspendLayout();
             this.tabResposta.SuspendLayout();
@@ -83,6 +77,7 @@ namespace FarmaTech.View.Principal
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 95;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -94,59 +89,16 @@ namespace FarmaTech.View.Principal
             this.lblPesquisar.TabIndex = 94;
             this.lblPesquisar.Text = "Pesquisar:";
             // 
-            // dataGridView1
+            // dgRequisicoes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DataCol,
-            this.UsuarioCol,
-            this.FilialCol,
-            this.AssuntoCol,
-            this.DescricaoCol,
-            this.RespostaCol});
-            this.dataGridView1.Location = new System.Drawing.Point(63, 108);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 332);
-            this.dataGridView1.TabIndex = 93;
-            // 
-            // DataCol
-            // 
-            this.DataCol.HeaderText = "Data";
-            this.DataCol.Name = "DataCol";
-            this.DataCol.ReadOnly = true;
-            // 
-            // UsuarioCol
-            // 
-            this.UsuarioCol.HeaderText = "Usuario";
-            this.UsuarioCol.Name = "UsuarioCol";
-            this.UsuarioCol.ReadOnly = true;
-            // 
-            // FilialCol
-            // 
-            this.FilialCol.HeaderText = "Filial";
-            this.FilialCol.Name = "FilialCol";
-            this.FilialCol.ReadOnly = true;
-            // 
-            // AssuntoCol
-            // 
-            this.AssuntoCol.HeaderText = "Assunto";
-            this.AssuntoCol.Name = "AssuntoCol";
-            this.AssuntoCol.ReadOnly = true;
-            // 
-            // DescricaoCol
-            // 
-            this.DescricaoCol.HeaderText = "Descrição";
-            this.DescricaoCol.Name = "DescricaoCol";
-            this.DescricaoCol.ReadOnly = true;
-            // 
-            // RespostaCol
-            // 
-            this.RespostaCol.HeaderText = "Resposta";
-            this.RespostaCol.Name = "RespostaCol";
-            this.RespostaCol.ReadOnly = true;
+            this.dgRequisicoes.AllowUserToAddRows = false;
+            this.dgRequisicoes.AllowUserToDeleteRows = false;
+            this.dgRequisicoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgRequisicoes.Location = new System.Drawing.Point(63, 108);
+            this.dgRequisicoes.Name = "dgRequisicoes";
+            this.dgRequisicoes.ReadOnly = true;
+            this.dgRequisicoes.Size = new System.Drawing.Size(760, 332);
+            this.dgRequisicoes.TabIndex = 93;
             // 
             // button1
             // 
@@ -154,8 +106,9 @@ namespace FarmaTech.View.Principal
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 71);
             this.button1.TabIndex = 96;
-            this.button1.Text = "button1";
+            this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1
             // 
@@ -170,7 +123,7 @@ namespace FarmaTech.View.Principal
             // tabRequisicoes
             // 
             this.tabRequisicoes.BackColor = System.Drawing.Color.Lavender;
-            this.tabRequisicoes.Controls.Add(this.dataGridView1);
+            this.tabRequisicoes.Controls.Add(this.dgRequisicoes);
             this.tabRequisicoes.Controls.Add(this.txtPesquisaUsuario);
             this.tabRequisicoes.Controls.Add(this.lblPesquisar);
             this.tabRequisicoes.Location = new System.Drawing.Point(4, 22);
@@ -183,18 +136,18 @@ namespace FarmaTech.View.Principal
             // tabResposta
             // 
             this.tabResposta.BackColor = System.Drawing.Color.Lavender;
-            this.tabResposta.Controls.Add(this.textBox1);
-            this.tabResposta.Controls.Add(this.lblResposta);
-            this.tabResposta.Controls.Add(this.cbFilial);
+            this.tabResposta.Controls.Add(this.lblUsuario);
             this.tabResposta.Controls.Add(this.lblFilial);
+            this.tabResposta.Controls.Add(this.lblData);
+            this.tabResposta.Controls.Add(this.txtResposta);
+            this.tabResposta.Controls.Add(this.lblResposta);
+            this.tabResposta.Controls.Add(this.label25);
             this.tabResposta.Controls.Add(this.txtDescricao);
             this.tabResposta.Controls.Add(this.lblDescricao);
             this.tabResposta.Controls.Add(this.txtAssunto);
             this.tabResposta.Controls.Add(this.lblAssunto);
-            this.tabResposta.Controls.Add(this.cbUsuario);
-            this.tabResposta.Controls.Add(this.lblUsuario);
-            this.tabResposta.Controls.Add(this.lblDataSistema);
-            this.tabResposta.Controls.Add(this.lblData);
+            this.tabResposta.Controls.Add(this.label36);
+            this.tabResposta.Controls.Add(this.label4);
             this.tabResposta.Location = new System.Drawing.Point(4, 22);
             this.tabResposta.Name = "tabResposta";
             this.tabResposta.Padding = new System.Windows.Forms.Padding(3);
@@ -202,13 +155,40 @@ namespace FarmaTech.View.Principal
             this.tabResposta.TabIndex = 1;
             this.tabResposta.Text = "Resposta";
             // 
-            // textBox1
+            // lblUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(229, 343);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(527, 79);
-            this.textBox1.TabIndex = 31;
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(513, 31);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblUsuario.TabIndex = 34;
+            this.lblUsuario.Text = "label3";
+            // 
+            // lblFilial
+            // 
+            this.lblFilial.AutoSize = true;
+            this.lblFilial.Location = new System.Drawing.Point(195, 88);
+            this.lblFilial.Name = "lblFilial";
+            this.lblFilial.Size = new System.Drawing.Size(35, 13);
+            this.lblFilial.TabIndex = 33;
+            this.lblFilial.Text = "label2";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(196, 25);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(35, 13);
+            this.lblData.TabIndex = 32;
+            this.lblData.Text = "label1";
+            // 
+            // txtResposta
+            // 
+            this.txtResposta.Location = new System.Drawing.Point(229, 343);
+            this.txtResposta.Multiline = true;
+            this.txtResposta.Name = "txtResposta";
+            this.txtResposta.Size = new System.Drawing.Size(527, 79);
+            this.txtResposta.TabIndex = 31;
             // 
             // lblResposta
             // 
@@ -219,25 +199,18 @@ namespace FarmaTech.View.Principal
             this.lblResposta.TabIndex = 30;
             this.lblResposta.Text = "Resposta:";
             // 
-            // cbFilial
+            // label25
             // 
-            this.cbFilial.FormattingEnabled = true;
-            this.cbFilial.Location = new System.Drawing.Point(230, 85);
-            this.cbFilial.Name = "cbFilial";
-            this.cbFilial.Size = new System.Drawing.Size(184, 21);
-            this.cbFilial.TabIndex = 29;
-            // 
-            // lblFilial
-            // 
-            this.lblFilial.AutoSize = true;
-            this.lblFilial.Location = new System.Drawing.Point(159, 88);
-            this.lblFilial.Name = "lblFilial";
-            this.lblFilial.Size = new System.Drawing.Size(30, 13);
-            this.lblFilial.TabIndex = 28;
-            this.lblFilial.Text = "Filial:";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(159, 88);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(30, 13);
+            this.label25.TabIndex = 28;
+            this.label25.Text = "Filial:";
             // 
             // txtDescricao
             // 
+            this.txtDescricao.Enabled = false;
             this.txtDescricao.Location = new System.Drawing.Point(230, 202);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
@@ -255,6 +228,7 @@ namespace FarmaTech.View.Principal
             // 
             // txtAssunto
             // 
+            this.txtAssunto.Enabled = false;
             this.txtAssunto.Location = new System.Drawing.Point(230, 149);
             this.txtAssunto.Name = "txtAssunto";
             this.txtAssunto.Size = new System.Drawing.Size(527, 20);
@@ -269,56 +243,40 @@ namespace FarmaTech.View.Principal
             this.lblAssunto.TabIndex = 24;
             this.lblAssunto.Text = "Assunto:";
             // 
-            // cbUsuario
+            // label36
             // 
-            this.cbUsuario.FormattingEnabled = true;
-            this.cbUsuario.Location = new System.Drawing.Point(558, 28);
-            this.cbUsuario.Name = "cbUsuario";
-            this.cbUsuario.Size = new System.Drawing.Size(184, 21);
-            this.cbUsuario.TabIndex = 23;
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(461, 31);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(46, 13);
+            this.label36.TabIndex = 22;
+            this.label36.Text = "Usuário:";
             // 
-            // lblUsuario
+            // label4
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(461, 31);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
-            this.lblUsuario.TabIndex = 22;
-            this.lblUsuario.Text = "Usuário:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(157, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Data:";
             // 
-            // lblDataSistema
+            // button2
             // 
-            this.lblDataSistema.AutoSize = true;
-            this.lblDataSistema.Location = new System.Drawing.Point(226, 25);
-            this.lblDataSistema.Name = "lblDataSistema";
-            this.lblDataSistema.Size = new System.Drawing.Size(0, 13);
-            this.lblDataSistema.TabIndex = 21;
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(157, 25);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(33, 13);
-            this.lblData.TabIndex = 20;
-            this.lblData.Text = "Data:";
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.Location = new System.Drawing.Point(36, 308);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(75, 87);
-            this.btnExportar.TabIndex = 98;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            this.button2.Location = new System.Drawing.Point(36, 273);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 67);
+            this.button2.TabIndex = 98;
+            this.button2.Text = "Responder";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // TelaRequisicoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1139, 595);
-            this.Controls.Add(this.btnExportar);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.tabControl1);
@@ -330,7 +288,7 @@ namespace FarmaTech.View.Principal
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaRequisicoes_FormClosed);
             this.Load += new System.EventHandler(this.TelaRequisicoes_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaRequisicoes_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgRequisicoes)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabRequisicoes.ResumeLayout(false);
             this.tabRequisicoes.PerformLayout();
@@ -344,29 +302,23 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.Label lblPesquisar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FilialCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AssuntoCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoCol;
+        private System.Windows.Forms.DataGridView dgRequisicoes;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabRequisicoes;
         private System.Windows.Forms.TabPage tabResposta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RespostaCol;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtResposta;
         private System.Windows.Forms.Label lblResposta;
-        private System.Windows.Forms.ComboBox cbFilial;
-        private System.Windows.Forms.Label lblFilial;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox txtAssunto;
         private System.Windows.Forms.Label lblAssunto;
-        private System.Windows.Forms.ComboBox cbUsuario;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label lblDataSistema;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFilial;
         private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Button button2;
     }
 }

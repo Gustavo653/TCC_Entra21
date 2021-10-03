@@ -1,7 +1,7 @@
 create table dbo.Requisicoes
 (
 idRequisicao int not null identity(1,1),
-idUsuario int not null, //Mostrar nome do usuario
+NomeUsuario varchar(50) not null, //Mostrar nome do usuario
 DataRequisicao varchar(11) not null, //Guardar data em formato 01/01/2001
 Assunto varchar(100) not null,
 Solicitacao varchar(100) not null,
