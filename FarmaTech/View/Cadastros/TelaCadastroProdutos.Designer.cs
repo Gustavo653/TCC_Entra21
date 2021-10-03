@@ -36,30 +36,29 @@ namespace FarmaTech.View
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabProdutos = new System.Windows.Forms.TabPage();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProdutos = new System.Windows.Forms.DataGridView();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoProduto = new System.Windows.Forms.TabPage();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtGrupo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtPrecoUnitario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPrecoCusto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtLaboratorio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
+            this.cboUnidade = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabProdutos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
             this.tabNovoProduto.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +126,7 @@ namespace FarmaTech.View
             // tabProdutos
             // 
             this.tabProdutos.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabProdutos.Controls.Add(this.dgUsuarios);
+            this.tabProdutos.Controls.Add(this.dgProdutos);
             this.tabProdutos.Controls.Add(this.txtPesquisaUsuario);
             this.tabProdutos.Controls.Add(this.lblPesquisar);
             this.tabProdutos.Location = new System.Drawing.Point(4, 29);
@@ -137,24 +136,16 @@ namespace FarmaTech.View
             this.tabProdutos.TabIndex = 0;
             this.tabProdutos.Text = "Produtos";
             // 
-            // dgUsuarios
+            // dgProdutos
             // 
-            this.dgUsuarios.AllowUserToAddRows = false;
-            this.dgUsuarios.AllowUserToDeleteRows = false;
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeCol});
-            this.dgUsuarios.Location = new System.Drawing.Point(31, 91);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.Size = new System.Drawing.Size(810, 282);
-            this.dgUsuarios.TabIndex = 20;
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
+            this.dgProdutos.AllowUserToAddRows = false;
+            this.dgProdutos.AllowUserToDeleteRows = false;
+            this.dgProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProdutos.Location = new System.Drawing.Point(31, 91);
+            this.dgProdutos.Name = "dgProdutos";
+            this.dgProdutos.ReadOnly = true;
+            this.dgProdutos.Size = new System.Drawing.Size(852, 282);
+            this.dgProdutos.TabIndex = 20;
             // 
             // txtPesquisaUsuario
             // 
@@ -163,6 +154,7 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 19;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -177,21 +169,21 @@ namespace FarmaTech.View
             // tabNovoProduto
             // 
             this.tabNovoProduto.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabNovoProduto.Controls.Add(this.textBox7);
+            this.tabNovoProduto.Controls.Add(this.cboUnidade);
+            this.tabNovoProduto.Controls.Add(this.txtGrupo);
             this.tabNovoProduto.Controls.Add(this.label7);
-            this.tabNovoProduto.Controls.Add(this.textBox6);
+            this.tabNovoProduto.Controls.Add(this.txtPrecoUnitario);
             this.tabNovoProduto.Controls.Add(this.label6);
-            this.tabNovoProduto.Controls.Add(this.textBox3);
+            this.tabNovoProduto.Controls.Add(this.txtPrecoCusto);
             this.tabNovoProduto.Controls.Add(this.label3);
-            this.tabNovoProduto.Controls.Add(this.textBox4);
+            this.tabNovoProduto.Controls.Add(this.txtCodigo);
             this.tabNovoProduto.Controls.Add(this.label4);
-            this.tabNovoProduto.Controls.Add(this.textBox5);
+            this.tabNovoProduto.Controls.Add(this.txtLaboratorio);
             this.tabNovoProduto.Controls.Add(this.label5);
-            this.tabNovoProduto.Controls.Add(this.textBox2);
+            this.tabNovoProduto.Controls.Add(this.txtQuantidade);
             this.tabNovoProduto.Controls.Add(this.label2);
-            this.tabNovoProduto.Controls.Add(this.textBox1);
             this.tabNovoProduto.Controls.Add(this.label1);
-            this.tabNovoProduto.Controls.Add(this.txtRazaoSocial);
+            this.tabNovoProduto.Controls.Add(this.txtNome);
             this.tabNovoProduto.Controls.Add(this.lblRazaoSocial);
             this.tabNovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNovoProduto.Location = new System.Drawing.Point(4, 29);
@@ -201,13 +193,13 @@ namespace FarmaTech.View
             this.tabNovoProduto.TabIndex = 1;
             this.tabNovoProduto.Text = "Novo Produto";
             // 
-            // textBox7
+            // txtGrupo
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(725, 141);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(134, 29);
-            this.textBox7.TabIndex = 80;
+            this.txtGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGrupo.Location = new System.Drawing.Point(725, 141);
+            this.txtGrupo.Name = "txtGrupo";
+            this.txtGrupo.Size = new System.Drawing.Size(134, 29);
+            this.txtGrupo.TabIndex = 80;
             // 
             // label7
             // 
@@ -220,13 +212,13 @@ namespace FarmaTech.View
             this.label7.TabIndex = 79;
             this.label7.Text = "Grupo:";
             // 
-            // textBox6
+            // txtPrecoUnitario
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(466, 207);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(134, 29);
-            this.textBox6.TabIndex = 78;
+            this.txtPrecoUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoUnitario.Location = new System.Drawing.Point(466, 207);
+            this.txtPrecoUnitario.Name = "txtPrecoUnitario";
+            this.txtPrecoUnitario.Size = new System.Drawing.Size(134, 29);
+            this.txtPrecoUnitario.TabIndex = 78;
             // 
             // label6
             // 
@@ -239,13 +231,13 @@ namespace FarmaTech.View
             this.label6.TabIndex = 77;
             this.label6.Text = "Preço Unitário:";
             // 
-            // textBox3
+            // txtPrecoCusto
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(142, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 29);
-            this.textBox3.TabIndex = 76;
+            this.txtPrecoCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoCusto.Location = new System.Drawing.Point(142, 201);
+            this.txtPrecoCusto.Name = "txtPrecoCusto";
+            this.txtPrecoCusto.Size = new System.Drawing.Size(134, 29);
+            this.txtPrecoCusto.TabIndex = 76;
             // 
             // label3
             // 
@@ -258,13 +250,13 @@ namespace FarmaTech.View
             this.label3.TabIndex = 75;
             this.label3.Text = "Preço Custo:";
             // 
-            // textBox4
+            // txtCodigo
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(466, 138);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 29);
-            this.textBox4.TabIndex = 74;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(466, 138);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(160, 29);
+            this.txtCodigo.TabIndex = 74;
             // 
             // label4
             // 
@@ -277,13 +269,13 @@ namespace FarmaTech.View
             this.label4.TabIndex = 73;
             this.label4.Text = "Laboratório:";
             // 
-            // textBox5
+            // txtLaboratorio
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(142, 82);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(318, 29);
-            this.textBox5.TabIndex = 72;
+            this.txtLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLaboratorio.Location = new System.Drawing.Point(142, 82);
+            this.txtLaboratorio.Name = "txtLaboratorio";
+            this.txtLaboratorio.Size = new System.Drawing.Size(318, 29);
+            this.txtLaboratorio.TabIndex = 72;
             // 
             // label5
             // 
@@ -296,13 +288,13 @@ namespace FarmaTech.View
             this.label5.TabIndex = 71;
             this.label5.Text = "Código:";
             // 
-            // textBox2
+            // txtQuantidade
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(142, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 29);
-            this.textBox2.TabIndex = 70;
+            this.txtQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantidade.Location = new System.Drawing.Point(142, 141);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(211, 29);
+            this.txtQuantidade.TabIndex = 70;
             // 
             // label2
             // 
@@ -315,14 +307,6 @@ namespace FarmaTech.View
             this.label2.TabIndex = 69;
             this.label2.Text = "Em estoque:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(585, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 29);
-            this.textBox1.TabIndex = 68;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -334,13 +318,13 @@ namespace FarmaTech.View
             this.label1.TabIndex = 67;
             this.label1.Text = "Unidade:";
             // 
-            // txtRazaoSocial
+            // txtNome
             // 
-            this.txtRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazaoSocial.Location = new System.Drawing.Point(142, 33);
-            this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(691, 29);
-            this.txtRazaoSocial.TabIndex = 66;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(142, 33);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(691, 29);
+            this.txtNome.TabIndex = 66;
             // 
             // lblRazaoSocial
             // 
@@ -352,6 +336,15 @@ namespace FarmaTech.View
             this.lblRazaoSocial.Size = new System.Drawing.Size(60, 20);
             this.lblRazaoSocial.TabIndex = 65;
             this.lblRazaoSocial.Text = "Nome:";
+            // 
+            // cboUnidade
+            // 
+            this.cboUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUnidade.FormattingEnabled = true;
+            this.cboUnidade.Location = new System.Drawing.Point(585, 85);
+            this.cboUnidade.Name = "cboUnidade";
+            this.cboUnidade.Size = new System.Drawing.Size(248, 28);
+            this.cboUnidade.TabIndex = 81;
             // 
             // TelaCadastroProdutos
             // 
@@ -377,7 +370,7 @@ namespace FarmaTech.View
             this.tabControl1.ResumeLayout(false);
             this.tabProdutos.ResumeLayout(false);
             this.tabProdutos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).EndInit();
             this.tabNovoProduto.ResumeLayout(false);
             this.tabNovoProduto.PerformLayout();
             this.ResumeLayout(false);
@@ -393,26 +386,25 @@ namespace FarmaTech.View
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabProdutos;
-        private System.Windows.Forms.DataGridView dgUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
+        private System.Windows.Forms.DataGridView dgProdutos;
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoProduto;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtGrupo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPrecoUnitario;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPrecoCusto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtLaboratorio;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtRazaoSocial;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblRazaoSocial;
+        private System.Windows.Forms.ComboBox cboUnidade;
     }
 }

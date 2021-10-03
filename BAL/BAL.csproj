@@ -45,6 +45,7 @@
     <Compile Include="Control\Convenios_BAL.cs" />
     <Compile Include="Control\Enderecos_BAL.cs" />
     <Compile Include="Control\NivelAcessoUsuario_BAL.cs" />
+    <Compile Include="Control\Produtos_BAL.cs" />
     <Compile Include="Control\Unidades_BAL.cs" />
     <Compile Include="Control\Usuarios_BAL.cs" />
     <Compile Include="Control\Login_BAL.cs" />
