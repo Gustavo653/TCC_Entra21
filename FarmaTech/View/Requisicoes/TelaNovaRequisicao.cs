@@ -20,7 +20,9 @@ namespace FarmaTech.View.Requisicoes
 
         private void TelaNovaRequisicao_Load(object sender, EventArgs e)
         {
-
+            lblData.Text = DateTime.Now.ToString().Substring(0, 10);
+            lblFilial.Text = DAL.Model.Objetos.UsuarioStatic.Filial;
+            lblUsuario.Text = DAL.Model.Objetos.UsuarioStatic.Nome;
         }
 
         private void TelaNovaRequisicao_FormClosed(object sender, FormClosedEventArgs e)
@@ -49,7 +51,23 @@ namespace FarmaTech.View.Requisicoes
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            int resultado = BAL.Control.Requisicoes_BAL.AdicionaRequisicao(lblUsuario.Text, lblFilial.Text, lblData.Text, txtAssunto.Text, txtDescricao.Text);
+            if(resultado == 0)
+            {
+                MessageBox.Show("Requisicao registrada");
+            }
+            else if (resultado == 1)
+            {
+                MessageBox.Show("Preencha todos os campos");
+            }
+            else if(resultado == 2)
+            {
+                MessageBox.Show("Houve um erro desconhecido");
+            }
+            else
+            {
+                MessageBox.Show("A mensagem é muito grande");
+            }
         }
     }
 }
