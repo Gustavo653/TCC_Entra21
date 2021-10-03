@@ -49,6 +49,8 @@
     <Compile Include="Model\Enderecos_DAL.cs" />
     <Compile Include="Model\Objetos\ContasPagar.cs" />
     <Compile Include="Model\Objetos\Convenio.cs" />
+    <Compile Include="Model\Objetos\Produto.cs" />
+    <Compile Include="Model\Produtos_DAL.cs" />
     <Compile Include="Model\Unidades_DAL.cs" />
     <Compile Include="Model\Usuarios_DAL.cs" />
     <Compile Include="Model\Enums\Enderecos.cs" />

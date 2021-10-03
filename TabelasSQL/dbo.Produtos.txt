@@ -8,5 +8,6 @@ Codigo varchar(20) not null,
 Laboratorio varchar(50) not null,
 PrecoCusto varchar(8) not null, //varchar é melhor para guardar valor monetario
 PrecoUnitario varchar(8) not null, 
-Grupo int not null //Usar enum?
+Grupo int not null, //Usar enum?
+idFilial varchar(50)
 )
