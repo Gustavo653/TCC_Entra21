@@ -34,90 +34,123 @@ namespace FarmaTech.View
         {
             this.Hide();
         }
-                
+
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabClientes);
-            tabControl1.TabPages.Add(tabNovoCliente);
-            btnNovo.Enabled = false;
-            btnSalvar.Enabled = true;
-            btnAlterar.Enabled = false;
-            btnExcluir.Enabled = false;
-            ValorSalvar = 0;
+            if (dgClientes.Rows.Count > 0)
+            {
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1 || DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
+                {
+                    tabControl1.TabPages.Remove(tabClientes);
+                    tabControl1.TabPages.Add(tabNovoCliente);
+                    btnNovo.Enabled = false;
+                    btnSalvar.Enabled = true;
+                    btnAlterar.Enabled = false;
+                    btnExcluir.Enabled = false;
+                    ValorSalvar = 0;
 
-            int indiceSelecionado = dgClientes.CurrentRow.Index;
-            List<DAL.Model.Objetos.Endereco> endereco = new List<DAL.Model.Objetos.Endereco>();
-            if (rbCpf.Checked)
-            {
-                endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), dgClientes.Rows[indiceSelecionado].Cells[0].Value.ToString());
-                txtRazaoSocial.Text = endereco[0].NomeFantasia;
-                rbFisica.Checked = true;
-                rbJuridica.Checked = false;
+                    int indiceSelecionado = dgClientes.CurrentRow.Index;
+                    List<DAL.Model.Objetos.Endereco> endereco = new List<DAL.Model.Objetos.Endereco>();
+                    if (rbCpf.Checked)
+                    {
+                        endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), dgClientes.Rows[indiceSelecionado].Cells[0].Value.ToString());
+                        txtRazaoSocial.Text = endereco[0].NomeFantasia;
+                        rbFisica.Checked = true;
+                        rbJuridica.Checked = false;
+                    }
+                    else
+                    {
+                        endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), dgClientes.Rows[indiceSelecionado].Cells[1].Value.ToString());
+                        txtRazaoSocial.Text = endereco[0].RazaoSocial;
+                        rbFisica.Checked = false;
+                        rbJuridica.Checked = true;
+                    }
+                    txtNomeFantasia.Text = endereco[0].NomeFantasia;
+                    txtCnpj.Text = endereco[0].CNPJCPF;
+                    txtContato.Text = endereco[0].Contato;
+                    txtEndereco.Text = endereco[0].Rua;
+                    txtNumero.Text = endereco[0].Numero;
+                    txtCompl.Text = endereco[0].Complemento;
+                    txtCidade.Text = endereco[0].Cidade;
+                    cboEstados.Text = endereco[0].Estado;
+                }
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Deseja aumentar o nivel de acesso?", "Nivel Acesso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        string login = Interaction.InputBox("Insira seu login", "Login", "", 200, 200);
+                        string senha = Interaction.InputBox("Insira seu login", "Login", "", 200, 200);
+                        if (BAL.Control.NivelAcessoUsuario_BAL.VerificaPermissao(login, senha))
+                        {
+                            DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp++;
+                        }
+                    }
+                }
             }
-            else
-            {
-                endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), dgClientes.Rows[indiceSelecionado].Cells[1].Value.ToString());
-                txtRazaoSocial.Text = endereco[0].RazaoSocial;
-                rbFisica.Checked = false;
-                rbJuridica.Checked = true;
-            }
-            txtNomeFantasia.Text = endereco[0].NomeFantasia;
-            txtCnpj.Text = endereco[0].CNPJCPF;
-            txtContato.Text = endereco[0].Contato;
-            txtEndereco.Text = endereco[0].Rua;
-            txtNumero.Text = endereco[0].Numero;
-            txtCompl.Text = endereco[0].Complemento;
-            txtCidade.Text = endereco[0].Cidade;
-            cboEstados.Text = endereco[0].Estado;
         }
 
 
         public void AtualizaDG()
         {
-            if (rbCpf.Checked)
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1 || DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
             {
-                if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text)) //Filtrar por razao social
+                if (rbCpf.Checked)
                 {
-                    List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), txtPesquisaUsuario.Text);
-                    List<EnderecoParcial> listaParcial = new List<EnderecoParcial>();
-                    foreach (var item in lista)
+                    if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text)) //Filtrar por razao social
                     {
-                        if (item.RazaoSocial == "pessoaFisica")
+                        List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), txtPesquisaUsuario.Text);
+                        List<EnderecoParcial> listaParcial = new List<EnderecoParcial>();
+                        foreach (var item in lista)
                         {
-                            EnderecoParcial endereco = new EnderecoParcial(item.NomeFantasia, item.CNPJCPF, item.Contato, item.Rua, item.Numero, item.Complemento, item.Cidade, item.Estado);
-                            listaParcial.Add(endereco);
+                            if (item.RazaoSocial == "pessoaFisica")
+                            {
+                                EnderecoParcial endereco = new EnderecoParcial(item.NomeFantasia, item.CNPJCPF, item.Contato, item.Rua, item.Numero, item.Complemento, item.Cidade, item.Estado);
+                                listaParcial.Add(endereco);
+                            }
                         }
+                        dgClientes.DataSource = listaParcial;
                     }
-                    dgClientes.DataSource = listaParcial;
+                    else
+                    {
+                        List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes));
+                        List<EnderecoParcial> listaParcial = new List<EnderecoParcial>();
+                        foreach (var item in lista)
+                        {
+                            if (item.RazaoSocial == "pessoaFisica")
+                            {
+                                EnderecoParcial endereco = new EnderecoParcial(item.NomeFantasia, item.CNPJCPF, item.Contato, item.Rua, item.Numero, item.Complemento, item.Cidade, item.Estado);
+                                listaParcial.Add(endereco);
+                            }
+                        }
+                        dgClientes.DataSource = listaParcial;
+                    }
                 }
                 else
                 {
-                    List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes));
-                    List<EnderecoParcial> listaParcial = new List<EnderecoParcial>();
-                    foreach (var item in lista)
+                    if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text)) //Filtrar por razao social
                     {
-                        if (item.RazaoSocial == "pessoaFisica")
-                        {
-                            EnderecoParcial endereco = new EnderecoParcial(item.NomeFantasia, item.CNPJCPF, item.Contato, item.Rua, item.Numero, item.Complemento, item.Cidade, item.Estado);
-                            listaParcial.Add(endereco);
-                        }
+                        List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), txtPesquisaUsuario.Text);
+                        lista.RemoveAll(x => x.RazaoSocial == "pessoaFisica");
+                        dgClientes.DataSource = lista;
                     }
-                    dgClientes.DataSource = listaParcial;
+                    else
+                    {
+                        List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes));
+                        lista.RemoveAll(x => x.RazaoSocial == "pessoaFisica");
+                        dgClientes.DataSource = lista;
+                    }
                 }
             }
             else
             {
-                if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text)) //Filtrar por razao social
+                if (DialogResult.Yes == MessageBox.Show("Deseja aumentar o nivel de acesso?", "Nivel Acesso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), txtPesquisaUsuario.Text);
-                    lista.RemoveAll(x => x.RazaoSocial == "pessoaFisica");
-                    dgClientes.DataSource = lista;
-                }
-                else
-                {
-                    List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes));
-                    lista.RemoveAll(x => x.RazaoSocial == "pessoaFisica");
-                    dgClientes.DataSource = lista;
+                    string login = Interaction.InputBox("Insira seu login", "Login", "", 200, 200);
+                    string senha = Interaction.InputBox("Insira seu login", "Login", "", 200, 200);
+                    if (BAL.Control.NivelAcessoUsuario_BAL.VerificaPermissao(login, senha))
+                    {
+                        DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp++;
+                    }
                 }
             }
         }
@@ -186,12 +219,18 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (dgClientes.Rows.Count > 0)
             {
-                int indiceSelecionado = dgClientes.CurrentRow.Index;
-                BAL.Control.Enderecos_BAL.RemoveEndereco(dgClientes.Rows[indiceSelecionado].Cells[3].Value.ToString());
-                AtualizaDG();
-
+                if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int indiceSelecionado = dgClientes.CurrentRow.Index;
+                    BAL.Control.Enderecos_BAL.RemoveEndereco(dgClientes.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    if (DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
+                    {
+                        DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
+                    }
+                    AtualizaDG();
+                }
             }
         }
 
@@ -199,6 +238,10 @@ namespace FarmaTech.View
         {
             if (ValorSalvar == 0) //Alterar
             {
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
+                {
+                    DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
+                }
                 int indiceSelecionado = dgClientes.CurrentRow.Index;
 
                 int resultado = 1;
