@@ -455,7 +455,7 @@ namespace FarmaTech.View
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(16, 94);
+            this.btnVoltar.Location = new System.Drawing.Point(16, 96);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 95);
             this.btnVoltar.TabIndex = 82;
