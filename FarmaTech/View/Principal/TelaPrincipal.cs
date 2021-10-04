@@ -23,12 +23,26 @@ namespace FarmaTech
 
         private void MenuUsuarios_Click(object sender, EventArgs e)
         {
-            new TelaCadastroUsuarios().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaCadastroUsuarios().Show();
+            }
         }
 
         private void MenuFiliais_Click(object sender, EventArgs e)
         {
-            new TelaCadastroFiliais().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaCadastroFiliais().Show();
+            }
         }
 
         private void MenuUnidades_Click(object sender, EventArgs e)
@@ -43,7 +57,14 @@ namespace FarmaTech
 
         private void MenuFornecedores_Click(object sender, EventArgs e)
         {
-            new TelaCadastroFornecedores().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaCadastroFornecedores().Show();
+            }
         }
 
         private void MenuClientes_Click(object sender, EventArgs e)
@@ -57,7 +78,14 @@ namespace FarmaTech
 
             if (!caixaAberto)
             {
-                new TelaAberturaDeCaixa().Show();
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+                {
+                    MessageBox.Show("Você não é autorizado!");
+                }
+                else
+                {
+                    new TelaAberturaDeCaixa().Show();
+                }
             }
             else
             {
@@ -74,19 +102,33 @@ namespace FarmaTech
 
         private void MenuContasPagar_Click(object sender, EventArgs e)
         {
-            new TelaCadastroContasPagar().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaCadastroContasPagar().Show();
+            }
         }
 
         private void MenuConvenios_Click(object sender, EventArgs e)
         {
-            new TelaCadastroConvenios().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaCadastroConvenios().Show();
+            }
         }
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
             lblNomeUsuario.Text = DAL.Model.Objetos.UsuarioStatic.Nome;
             List<DAL.Model.Objetos.Requisicao> lista = BAL.Control.Requisicoes_BAL.VerificaSeUsuarioTemRequisicaoRespondida();
-            if(lista != null)
+            if (lista != null)
             {
                 MessageBox.Show($"Sua solicitacao foi respondida!" +
                     $"\nData: {lista[0].Data}" +
@@ -111,17 +153,38 @@ namespace FarmaTech
 
         private void MenuRequisicao_Click(object sender, EventArgs e)
         {
-            new TelaRequisicoes().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaRequisicoes().Show();
+            }
         }
 
         private void MenuMovimentacaoFinanceira_Click(object sender, EventArgs e)
         {
-            new TelaMovimentacaoFinanceira().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaMovimentacaoFinanceira().Show();
+            }
         }
 
         private void MenuContasReceber_Click(object sender, EventArgs e)
         {
-            new TelaCadastroContasReceber().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaCadastroContasReceber().Show();
+            }
         }
 
         private void MenuNovaRequisicao_Click(object sender, EventArgs e)
@@ -131,7 +194,14 @@ namespace FarmaTech
 
         private void MenuGraficos_Click(object sender, EventArgs e)
         {
-            new TelaGraficos().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaGraficos().Show();
+            }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,6 +222,6 @@ namespace FarmaTech
             lblData.Text = DateTime.Now.ToLongDateString();
         }
 
-        
+
     }
 }

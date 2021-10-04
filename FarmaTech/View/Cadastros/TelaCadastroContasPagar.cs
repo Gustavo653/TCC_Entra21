@@ -34,7 +34,7 @@ namespace FarmaTech.View
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-             this.Hide();
+            this.Hide();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace FarmaTech.View
         {
             if (ValorSalvar == 1)
             {
-                int resultado = BAL.Control.ContasPagar_BAL.AdicionarContasPagar(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0,10));
+                int resultado = BAL.Control.ContasPagar_BAL.AdicionarContasPagar(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0, 10));
 
                 if (resultado == 0)
                 {
@@ -80,7 +80,7 @@ namespace FarmaTech.View
             else
             {
                 int indiceSelecionado = dgContas.CurrentRow.Index;
-                int resultado = BAL.Control.ContasPagar_BAL.AtualizaContasPagar(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0,10), dgContas.Rows[indiceSelecionado].Cells[0].Value.ToString(), dgContas.Rows[indiceSelecionado].Cells[1].Value.ToString());
+                int resultado = BAL.Control.ContasPagar_BAL.AtualizaContasPagar(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0, 10), dgContas.Rows[indiceSelecionado].Cells[0].Value.ToString(), dgContas.Rows[indiceSelecionado].Cells[1].Value.ToString());
 
                 if (resultado == 0)
                 {
