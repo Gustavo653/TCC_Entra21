@@ -38,6 +38,32 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
+        public static List<Endereco> GetEnderecos(int enumEndereco, string idFilial)
+        {
+            string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
+            List<Endereco> lista = new List<Endereco>();
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Endereco endereco = new Endereco(
+                    dr["RazaoSocial"].ToString(),
+                    dr["NomeFantasia"].ToString(),
+                    dr["Cnpj"].ToString(),
+                    dr["Contato"].ToString(),
+                    dr["Rua"].ToString(),
+                    dr["Numero"].ToString(),
+                    dr["Complemento"].ToString(),
+                    dr["Cidade"].ToString(),
+                    dr["Estado"].ToString());
+                lista.Add(endereco);
+            }
+            dr.Close();
+            conn.Close();
+            return lista;
+        }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco)
         {
             string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
@@ -64,26 +90,35 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
-        public static int RecebeIdEndereco()
+        public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco, string idFilial)
         {
-            string select = $"SELECT idEndereco FROM dbo.Enderecos";
-            List<int> lista = new List<int>();
+            string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+            List<Endereco> lista = new List<Endereco>();
             SqlCommand cmd = new SqlCommand(select, conn);
             if (conn.State == System.Data.ConnectionState.Closed)
                 conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                lista.Add(Convert.ToInt32(dr["idEndereco"]));
+                Endereco endereco = new Endereco(
+                    dr["RazaoSocial"].ToString(),
+                    dr["NomeFantasia"].ToString(),
+                    dr["Cnpj"].ToString(),
+                    dr["Contato"].ToString(),
+                    dr["Rua"].ToString(),
+                    dr["Numero"].ToString(),
+                    dr["Complemento"].ToString(),
+                    dr["Cidade"].ToString(),
+                    dr["Estado"].ToString());
+                lista.Add(endereco);
             }
             dr.Close();
             conn.Close();
-            int idEndereco = lista.LastOrDefault();
-            return idEndereco;
+            return lista;
         }
-        public static void InsereEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado)
+        public static void InsereEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string idFilial)
         {
-            string insert = $"INSERT into dbo.Enderecos(enumEndereco, RazaoSocial, NomeFantasia, Cnpj, Contato, Rua, Numero, Complemento, Cidade, Estado) values ({enumEndereco}, '{razaoSocial}', '{nomeFantasia}', '{cNPJCPF}', '{contato}', '{rua}', '{numero}','{complemento}','{cidade}','{estado}')";
+            string insert = $"INSERT into dbo.Enderecos(enumEndereco, RazaoSocial, NomeFantasia, Cnpj, Contato, Rua, Numero, Complemento, Cidade, Estado, idFilial) values ({enumEndereco}, '{razaoSocial}', '{nomeFantasia}', '{cNPJCPF}', '{contato}', '{rua}', '{numero}','{complemento}','{cidade}','{estado}', '{idFilial}')";
             DbConnection.Execute(insert);
         }
         public static void RemoveEndereco(string contato)

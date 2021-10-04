@@ -50,7 +50,7 @@ namespace FarmaTech.View
                     ValorSalvar = 0;
 
                     int indiceSelecionado = dgClientes.CurrentRow.Index;
-                    List<DAL.Model.Objetos.Endereco> endereco = new List<DAL.Model.Objetos.Endereco>();
+                    List<DAL.Model.Objetos.Endereco> endereco;
                     if (rbCpf.Checked)
                     {
                         endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), dgClientes.Rows[indiceSelecionado].Cells[0].Value.ToString());

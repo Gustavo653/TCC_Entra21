@@ -23,7 +23,7 @@ namespace FarmaTech
 
         private void MenuUsuarios_Click(object sender, EventArgs e)
         {
-            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
                 MessageBox.Show("Você não é autorizado!");
             }
@@ -35,7 +35,7 @@ namespace FarmaTech
 
         private void MenuFiliais_Click(object sender, EventArgs e)
         {
-            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
                 MessageBox.Show("Você não é autorizado!");
             }

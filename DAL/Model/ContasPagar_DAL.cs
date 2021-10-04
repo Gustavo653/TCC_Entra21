@@ -29,6 +29,23 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
+        public static List<ContasPagar> GetContasPagar(string idFilial)
+        {
+            string select = $"SELECT * from dbo.ContasPagar WHERE idFilial = '{idFilial}'";
+            List<ContasPagar> lista = new List<ContasPagar>();
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ContasPagar ContasPagar = new ContasPagar(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                lista.Add(ContasPagar);
+            }
+            dr.Close();
+            conn.Close();
+            return lista;
+        }
         public static List<ContasPagar> GetContasPagarPorNome(string nome)
         {
             string select = $"SELECT * from dbo.ContasPagar WHERE NomeFornecedor LIKE '%{nome}%'";
@@ -46,9 +63,26 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
-        public static void InsereContasPagar(string nome, string valor, string vencimento)
+        public static List<ContasPagar> GetContasPagarPorNome(string nome, string idFilial)
         {
-            string insert = $"INSERT into dbo.ContasPagar(NomeFornecedor, Valor, Vencimento) values ('{nome}', '{valor}', '{vencimento}')";
+            string select = $"SELECT * from dbo.ContasPagar WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+            List<ContasPagar> lista = new List<ContasPagar>();
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ContasPagar ContasPagar = new ContasPagar(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                lista.Add(ContasPagar);
+            }
+            dr.Close();
+            conn.Close();
+            return lista;
+        }
+        public static void InsereContasPagar(string nome, string valor, string vencimento, string idFilial)
+        {
+            string insert = $"INSERT into dbo.ContasPagar(NomeFornecedor, Valor, Vencimento, idFilial) values ('{nome}', '{valor}', '{vencimento}', '{idFilial}')";
             DbConnection.Execute(insert);
         }
         public static void RemoveContasPagar(string nome, string valor, string vencimento)
