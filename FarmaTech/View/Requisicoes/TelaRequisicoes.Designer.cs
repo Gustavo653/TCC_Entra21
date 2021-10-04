@@ -29,6 +29,7 @@ namespace FarmaTech.View.Principal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaRequisicoes));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@ namespace FarmaTech.View.Principal
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(25, 71);
+            this.btnVoltar.Location = new System.Drawing.Point(26, 60);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 95);
             this.btnVoltar.TabIndex = 89;
@@ -102,12 +103,16 @@ namespace FarmaTech.View.Principal
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(36, 181);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(26, 172);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 71);
+            this.button1.Size = new System.Drawing.Size(95, 95);
             this.button1.TabIndex = 96;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1

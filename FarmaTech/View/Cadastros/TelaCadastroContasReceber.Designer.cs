@@ -29,6 +29,7 @@ namespace FarmaTech.View.Principal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroContasReceber));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabContasReceber = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -220,11 +221,11 @@ namespace FarmaTech.View.Principal
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoExcluir;
+            this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(24, 300);
+            this.btnExcluir.Location = new System.Drawing.Point(24, 380);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(95, 95);
             this.btnExcluir.TabIndex = 94;
@@ -238,7 +239,7 @@ namespace FarmaTech.View.Principal
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(24, 386);
+            this.btnSalvar.Location = new System.Drawing.Point(24, 209);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(95, 95);
             this.btnSalvar.TabIndex = 93;
@@ -248,7 +249,7 @@ namespace FarmaTech.View.Principal
             // btnVoltar
             // 
             this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -261,15 +262,19 @@ namespace FarmaTech.View.Principal
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(33, 219);
+            this.btnAlterar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(24, 299);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 75);
+            this.btnAlterar.Size = new System.Drawing.Size(95, 75);
             this.btnAlterar.TabIndex = 91;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // TelaContasReceber
+            // TelaCadastroContasReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -278,9 +283,9 @@ namespace FarmaTech.View.Principal
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.tabControl1);
-            this.Name = "TelaContasReceber";
+            this.Controls.Add(this.btnAlterar);
+            this.Name = "TelaCadastroContasReceber";
             this.Text = ".:Contas a Receber";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaContasReceber_FormClosed);
             this.Load += new System.EventHandler(this.TelaContasReceber_Load);

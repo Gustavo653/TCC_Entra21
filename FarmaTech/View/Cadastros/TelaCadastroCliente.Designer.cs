@@ -29,6 +29,8 @@ namespace FarmaTech.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroCliente));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabClientes = new System.Windows.Forms.TabPage();
             this.rbCnpj = new System.Windows.Forms.RadioButton();
@@ -62,10 +64,16 @@ namespace FarmaTech.View
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.lblData = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblCadastroClientes = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.tabNovoCliente.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -73,10 +81,10 @@ namespace FarmaTech.View
             this.tabControl1.Controls.Add(this.tabClientes);
             this.tabControl1.Controls.Add(this.tabNovoCliente);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(142, 39);
+            this.tabControl1.Location = new System.Drawing.Point(113, 67);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(924, 437);
+            this.tabControl1.Size = new System.Drawing.Size(942, 513);
             this.tabControl1.TabIndex = 78;
             // 
             // tabClientes
@@ -90,13 +98,15 @@ namespace FarmaTech.View
             this.tabClientes.Location = new System.Drawing.Point(4, 29);
             this.tabClientes.Name = "tabClientes";
             this.tabClientes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabClientes.Size = new System.Drawing.Size(916, 404);
+            this.tabClientes.Size = new System.Drawing.Size(934, 480);
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
+            this.tabClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.tabClientes_Paint);
             // 
             // rbCnpj
             // 
             this.rbCnpj.AutoSize = true;
+            this.rbCnpj.BackColor = System.Drawing.Color.Transparent;
             this.rbCnpj.Checked = true;
             this.rbCnpj.Location = new System.Drawing.Point(682, 34);
             this.rbCnpj.Name = "rbCnpj";
@@ -104,18 +114,19 @@ namespace FarmaTech.View
             this.rbCnpj.TabIndex = 26;
             this.rbCnpj.TabStop = true;
             this.rbCnpj.Text = "CNPJ";
-            this.rbCnpj.UseVisualStyleBackColor = true;
+            this.rbCnpj.UseVisualStyleBackColor = false;
             this.rbCnpj.CheckedChanged += new System.EventHandler(this.rbCnpj_CheckedChanged);
             // 
             // rbCpf
             // 
             this.rbCpf.AutoSize = true;
+            this.rbCpf.BackColor = System.Drawing.Color.Transparent;
             this.rbCpf.Location = new System.Drawing.Point(591, 34);
             this.rbCpf.Name = "rbCpf";
             this.rbCpf.Size = new System.Drawing.Size(61, 24);
             this.rbCpf.TabIndex = 25;
             this.rbCpf.Text = "CPF";
-            this.rbCpf.UseVisualStyleBackColor = true;
+            this.rbCpf.UseVisualStyleBackColor = false;
             this.rbCpf.CheckedChanged += new System.EventHandler(this.rbCpf_CheckedChanged);
             // 
             // dgClientes
@@ -141,6 +152,7 @@ namespace FarmaTech.View
             // lblPesquisar
             // 
             this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.BackColor = System.Drawing.Color.Transparent;
             this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPesquisar.Location = new System.Drawing.Point(158, 34);
             this.lblPesquisar.Name = "lblPesquisar";
@@ -175,9 +187,10 @@ namespace FarmaTech.View
             this.tabNovoCliente.Location = new System.Drawing.Point(4, 29);
             this.tabNovoCliente.Name = "tabNovoCliente";
             this.tabNovoCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNovoCliente.Size = new System.Drawing.Size(916, 404);
+            this.tabNovoCliente.Size = new System.Drawing.Size(934, 480);
             this.tabNovoCliente.TabIndex = 1;
             this.tabNovoCliente.Text = "Novo Cliente";
+            this.tabNovoCliente.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNovoCliente_Paint);
             // 
             // cboEstados
             // 
@@ -332,6 +345,7 @@ namespace FarmaTech.View
             // rbJuridica
             // 
             this.rbJuridica.AutoSize = true;
+            this.rbJuridica.BackColor = System.Drawing.Color.Transparent;
             this.rbJuridica.Checked = true;
             this.rbJuridica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbJuridica.Location = new System.Drawing.Point(444, 22);
@@ -340,7 +354,7 @@ namespace FarmaTech.View
             this.rbJuridica.TabIndex = 97;
             this.rbJuridica.TabStop = true;
             this.rbJuridica.Text = "Jurídica";
-            this.rbJuridica.UseVisualStyleBackColor = true;
+            this.rbJuridica.UseVisualStyleBackColor = false;
             this.rbJuridica.CheckedChanged += new System.EventHandler(this.rbJuridica_CheckedChanged);
             // 
             // lblCnpj
@@ -368,23 +382,28 @@ namespace FarmaTech.View
             // rbFisica
             // 
             this.rbFisica.AutoSize = true;
+            this.rbFisica.BackColor = System.Drawing.Color.Transparent;
             this.rbFisica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbFisica.Location = new System.Drawing.Point(346, 22);
             this.rbFisica.Name = "rbFisica";
             this.rbFisica.Size = new System.Drawing.Size(74, 24);
             this.rbFisica.TabIndex = 96;
             this.rbFisica.Text = "Física";
-            this.rbFisica.UseVisualStyleBackColor = true;
+            this.rbFisica.UseVisualStyleBackColor = false;
             this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(33, 212);
+            this.btnAlterar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(16, 382);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 75);
+            this.btnAlterar.Size = new System.Drawing.Size(95, 75);
             this.btnAlterar.TabIndex = 81;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
@@ -394,7 +413,7 @@ namespace FarmaTech.View
             this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Location = new System.Drawing.Point(24, 111);
+            this.btnNovo.Location = new System.Drawing.Point(16, 195);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(95, 95);
             this.btnNovo.TabIndex = 85;
@@ -404,11 +423,11 @@ namespace FarmaTech.View
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoExcluir;
+            this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(24, 293);
+            this.btnExcluir.Location = new System.Drawing.Point(16, 463);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(95, 95);
             this.btnExcluir.TabIndex = 84;
@@ -422,7 +441,7 @@ namespace FarmaTech.View
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(24, 379);
+            this.btnSalvar.Location = new System.Drawing.Point(16, 296);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(95, 95);
             this.btnSalvar.TabIndex = 83;
@@ -432,28 +451,82 @@ namespace FarmaTech.View
             // btnVoltar
             // 
             this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(24, 31);
+            this.btnVoltar.Location = new System.Drawing.Point(16, 94);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 95);
             this.btnVoltar.TabIndex = 82;
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.BackColor = System.Drawing.Color.Transparent;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblData.Location = new System.Drawing.Point(12, 9);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(34, 13);
+            this.lblData.TabIndex = 86;
+            this.lblData.Text = "Data";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblHora);
+            this.panel1.Controls.Add(this.lblData);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 607);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1080, 30);
+            this.panel1.TabIndex = 87;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblHora.Location = new System.Drawing.Point(993, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(34, 13);
+            this.lblHora.TabIndex = 87;
+            this.lblHora.Text = "Hora";
+            // 
+            // lblCadastroClientes
+            // 
+            this.lblCadastroClientes.AutoSize = true;
+            this.lblCadastroClientes.BackColor = System.Drawing.Color.Transparent;
+            this.lblCadastroClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastroClientes.Location = new System.Drawing.Point(740, 9);
+            this.lblCadastroClientes.Name = "lblCadastroClientes";
+            this.lblCadastroClientes.Size = new System.Drawing.Size(311, 36);
+            this.lblCadastroClientes.TabIndex = 88;
+            this.lblCadastroClientes.Text = "Cadastro de Clientes";
+            // 
             // TelaCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 509);
-            this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.btnExcluir);
+            this.ClientSize = new System.Drawing.Size(1080, 637);
+            this.Controls.Add(this.lblCadastroClientes);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -469,7 +542,10 @@ namespace FarmaTech.View
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.tabNovoCliente.ResumeLayout(false);
             this.tabNovoCliente.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -507,5 +583,10 @@ namespace FarmaTech.View
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblCadastroClientes;
     }
 }
