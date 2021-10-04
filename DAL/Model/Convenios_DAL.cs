@@ -29,7 +29,7 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
-        public static List<Convenio> GetConvenios(string idFilial)
+        public static List<Convenio> GetConveniosPorFilial(string idFilial)
         {
             string select = $"SELECT * from dbo.Convenios WHERE idFilial = '{idFilial}'";
             List<Convenio> lista = new List<Convenio>();
@@ -63,7 +63,7 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
-        public static List<Convenio> GetConveniosPorNome(string nome, string idFilial)
+        public static List<Convenio> GetConveniosPorNomePorFilial(string nome, string idFilial)
         {
             string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%' AND idFilial = '{idFilial}'";
             List<Convenio> lista = new List<Convenio>();

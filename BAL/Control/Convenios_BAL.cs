@@ -15,7 +15,7 @@ namespace BAL.Control
             List<Convenio> lista;
             if(UsuarioStatic.NivelAcesso == 2)
             {
-                lista = DAL.Model.Convenios_DAL.GetConvenios(UsuarioStatic.Filial);
+                lista = DAL.Model.Convenios_DAL.GetConveniosPorFilial(UsuarioStatic.Filial);
             }
             else
             {
@@ -38,7 +38,7 @@ namespace BAL.Control
             List<Convenio> lista;
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 2)
             {
-                lista = DAL.Model.Convenios_DAL.GetConveniosPorNome(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
+                lista = DAL.Model.Convenios_DAL.GetConveniosPorNomePorFilial(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
             }
             else
             {
