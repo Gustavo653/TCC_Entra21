@@ -62,6 +62,7 @@
     <Compile Include="Model\Objetos\Usuario.cs" />
     <Compile Include="Model\Objetos\UsuarioStatic.cs" />
     <Compile Include="Model\Login_DAL.cs" />
+    <Compile Include="Model\Vendas_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

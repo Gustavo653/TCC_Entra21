@@ -34,6 +34,7 @@ namespace FarmaTech
             this.button1 = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCliente = new System.Windows.Forms.TabPage();
             this.btnContinuar = new System.Windows.Forms.Button();
@@ -58,7 +59,7 @@ namespace FarmaTech
             this.lblValorParcial = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrecoUnitario = new System.Windows.Forms.TextBox();
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.txtQuant = new System.Windows.Forms.TextBox();
             this.lblQuant = new System.Windows.Forms.Label();
@@ -85,7 +86,7 @@ namespace FarmaTech
             this.lblFormaParcial = new System.Windows.Forms.Label();
             this.lblValorCompra = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnVoltar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
@@ -133,6 +134,21 @@ namespace FarmaTech
             this.btnConfirma.TabIndex = 13;
             this.btnConfirma.Text = "Confirma";
             this.btnConfirma.UseVisualStyleBackColor = true;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(51, 11);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(95, 95);
+            this.btnVoltar.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.btnVoltar, "Volta");
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // tabControl1
             // 
@@ -262,6 +278,7 @@ namespace FarmaTech
             // tabVenda
             // 
             this.tabVenda.BackColor = System.Drawing.Color.Lavender;
+            this.tabVenda.Controls.Add(this.button2);
             this.tabVenda.Controls.Add(this.btnContinarVenda);
             this.tabVenda.Controls.Add(this.btnCancelar);
             this.tabVenda.Controls.Add(this.txtConvenio);
@@ -273,7 +290,7 @@ namespace FarmaTech
             this.tabVenda.Controls.Add(this.txtValorParcial);
             this.tabVenda.Controls.Add(this.lblValorParcial);
             this.tabVenda.Controls.Add(this.dataGridView1);
-            this.tabVenda.Controls.Add(this.textBox1);
+            this.tabVenda.Controls.Add(this.txtPrecoUnitario);
             this.tabVenda.Controls.Add(this.lblPrecoUnitario);
             this.tabVenda.Controls.Add(this.txtQuant);
             this.tabVenda.Controls.Add(this.lblQuant);
@@ -398,12 +415,12 @@ namespace FarmaTech
             this.DescricaoCol.Name = "DescricaoCol";
             this.DescricaoCol.ReadOnly = true;
             // 
-            // textBox1
+            // txtPrecoUnitario
             // 
-            this.textBox1.Location = new System.Drawing.Point(436, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 26);
-            this.textBox1.TabIndex = 43;
+            this.txtPrecoUnitario.Location = new System.Drawing.Point(436, 115);
+            this.txtPrecoUnitario.Name = "txtPrecoUnitario";
+            this.txtPrecoUnitario.Size = new System.Drawing.Size(170, 26);
+            this.txtPrecoUnitario.TabIndex = 43;
             // 
             // lblPrecoUnitario
             // 
@@ -641,20 +658,15 @@ namespace FarmaTech
             this.lblValorCompra.TabIndex = 0;
             this.lblValorCompra.Text = "Valor da Compra: R$";
             // 
-            // btnVoltar
+            // button2
             // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
-            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(51, 11);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 95);
-            this.btnVoltar.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.btnVoltar, "Volta");
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            this.button2.Location = new System.Drawing.Point(709, 366);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 57;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // TelaVenda
             // 
@@ -704,7 +716,7 @@ namespace FarmaTech
         private System.Windows.Forms.TextBox txtValorParcial;
         private System.Windows.Forms.Label lblValorParcial;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPrecoUnitario;
         private System.Windows.Forms.Label lblPrecoUnitario;
         private System.Windows.Forms.TextBox txtQuant;
         private System.Windows.Forms.Label lblQuant;
@@ -745,5 +757,6 @@ namespace FarmaTech
         private System.Windows.Forms.Button btnContinarVenda;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button2;
     }
 }
