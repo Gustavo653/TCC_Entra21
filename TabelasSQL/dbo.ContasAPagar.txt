@@ -1,7 +1,8 @@
-create table dbo.ContasAPagar
+create table dbo.ContasPagar
 (
-idContaAPagar int not null identity(1,1),
+idContaPagar int not null identity(1,1),
 idFornecedor int not null, //Usar chave estrangeira?
 Valor varchar(12) not null, // 112.345.678,99 / Virgula conta
-Vencimento varchar(11) not null //Data formato: 01/01/2001
+Vencimento varchar(11) not null, //Data formato: 01/01/2001
+idFilial varchar(50) not null
 )

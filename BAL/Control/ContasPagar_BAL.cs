@@ -11,7 +11,11 @@ namespace BAL.Control
     {
         public static List<ContasPagar> GetContasPagar()
         {
-            return DAL.Model.ContasPagar_DAL.GetContasPagar();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+            {
+                return DAL.Model.ContasPagar_DAL.GetContasPagar();
+            }
+            return DAL.Model.ContasPagar_DAL.GetContasPagar(DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         public static List<ContasPagar> GetContasPagarPorNome(string nome)
         {
@@ -21,10 +25,14 @@ namespace BAL.Control
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(vencimento))
             {
+                if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
+                {
+                    return 3; //Usuario sem filial
+                }
                 try
                 {
                     valor = valor.Replace(",", ".");
-                    DAL.Model.ContasPagar_DAL.InsereContasPagar(nome, valor, vencimento);
+                    DAL.Model.ContasPagar_DAL.InsereContasPagar(nome, valor, vencimento, DAL.Model.Objetos.UsuarioStatic.Filial);
                     return 0; //Deu tudo certo
                 }
                 catch (Exception e)

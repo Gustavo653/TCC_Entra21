@@ -10,10 +10,18 @@ namespace BAL.Control
     {
         public static List<DAL.Model.Objetos.Endereco> GetEndereco(int enumEndereco)
         {
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+            {
+                return DAL.Model.Enderecos_DAL.GetEnderecos(enumEndereco, DAL.Model.Objetos.UsuarioStatic.Filial);
+            }
             return DAL.Model.Enderecos_DAL.GetEnderecos(enumEndereco);
         }
         public static List<DAL.Model.Objetos.Endereco> GetEnderecoPorNome(int enumEndereco, string nome)
         {
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+            {
+                return DAL.Model.Enderecos_DAL.GetEnderecosPorNome(nome, enumEndereco, DAL.Model.Objetos.UsuarioStatic.Filial);
+            }
             return DAL.Model.Enderecos_DAL.GetEnderecosPorNome(nome, enumEndereco);
         }
         public static int AdicionarEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado)
@@ -28,11 +36,15 @@ namespace BAL.Control
                 !string.IsNullOrEmpty(cidade) &&
                 !string.IsNullOrEmpty(estado))
             {
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
+                {
+                    return 3; //Usuario sem filial
+                }
                 if (!DAL.Model.Enderecos_DAL.VerificaSeEnderecoRepete(contato)) //Verificar se deu certo
                 {
                     try
                     {
-                        DAL.Model.Enderecos_DAL.InsereEndereco(enumEndereco, razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado);
+                        DAL.Model.Enderecos_DAL.InsereEndereco(enumEndereco, razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, DAL.Model.Objetos.UsuarioStatic.Filial);
                         return 0; //Deu tudo certo
                     }
                     catch (Exception e)
@@ -74,20 +86,16 @@ namespace BAL.Control
                !string.IsNullOrEmpty(cidade) &&
                !string.IsNullOrEmpty(estado))
             {
-                //if (!DAL.Model.Enderecos_DAL.VerificaSeEnderecoRepete(contato))
-                //{
-                    try
-                    {
-                        DAL.Model.Enderecos_DAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, where);
-                        return 0; //Deu tudo certo
-                    }          
-                    catch (Exception e)
-                    {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Atualizar");                        
-                        return 3; //Algo inesperado ocorreu
-                    }
-                //}
-                //return 2; //Erro usuario ja existe
+                try
+                {
+                    DAL.Model.Enderecos_DAL.AtualizaEndereco(razaoSocial, nomeFantasia, cNPJCPF, contato, rua, numero, complemento, cidade, estado, where);
+                    return 0; //Deu tudo certo
+                }
+                catch (Exception e)
+                {
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Atualizar");
+                    return 3; //Algo inesperado ocorreu
+                }
             }
             return 1; //Erro algum campo está vazio
         }

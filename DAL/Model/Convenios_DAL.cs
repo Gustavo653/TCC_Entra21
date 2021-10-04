@@ -29,9 +29,43 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
+        public static List<Convenio> GetConvenios(string idFilial)
+        {
+            string select = $"SELECT * from dbo.Convenios WHERE idFilial = '{idFilial}'";
+            List<Convenio> lista = new List<Convenio>();
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                lista.Add(convenio);
+            }
+            dr.Close();
+            conn.Close();
+            return lista;
+        }
         public static List<Convenio> GetConveniosPorNome(string nome)
         {
             string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%'";
+            List<Convenio> lista = new List<Convenio>();
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                lista.Add(convenio);
+            }
+            dr.Close();
+            conn.Close();
+            return lista;
+        }
+        public static List<Convenio> GetConveniosPorNome(string nome, string idFilial)
+        {
+            string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%' AND idFilial = '{idFilial}'";
             List<Convenio> lista = new List<Convenio>();
             SqlCommand cmd = new SqlCommand(select, conn);
             if (conn.State == System.Data.ConnectionState.Closed)
