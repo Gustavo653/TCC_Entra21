@@ -121,6 +121,11 @@ namespace FarmaTech
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(103, 23, 205), Color.FromArgb(108, 226, 252), 45f);
             graphics.FillRectangle(br, gradient_rect);
         }
-    
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtValorParcial.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(txtQuant.Text, txtPrecoUnitario.Text)).ToString();
+
+        }
     }
 }

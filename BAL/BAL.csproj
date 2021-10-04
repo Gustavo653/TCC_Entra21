@@ -50,6 +50,7 @@
     <Compile Include="Control\Unidades_BAL.cs" />
     <Compile Include="Control\Usuarios_BAL.cs" />
     <Compile Include="Control\Login_BAL.cs" />
+    <Compile Include="Control\Vendas_BAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
