@@ -13,9 +13,9 @@ namespace BAL.Control
         public static List<Convenio> GetConvenios()
         {
             List<Convenio> lista;
-            if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 2)
+            if(UsuarioStatic.NivelAcesso == 2)
             {
-                lista = DAL.Model.Convenios_DAL.GetConvenios(DAL.Model.Objetos.UsuarioStatic.Filial);
+                lista = DAL.Model.Convenios_DAL.GetConvenios(UsuarioStatic.Filial);
             }
             else
             {
