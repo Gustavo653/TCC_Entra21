@@ -46,13 +46,16 @@ namespace FarmaTech
             // 
             // btnSair
             // 
-            this.btnSair.BackColor = System.Drawing.Color.Silver;
+            this.btnSair.BackColor = System.Drawing.Color.Transparent;
+            this.btnSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSair.BackgroundImage")));
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(331, 487);
+            this.btnSair.Location = new System.Drawing.Point(337, 464);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(133, 42);
+            this.btnSair.Size = new System.Drawing.Size(95, 95);
             this.btnSair.TabIndex = 17;
-            this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
@@ -70,13 +73,16 @@ namespace FarmaTech
             // 
             // btnEntrar
             // 
-            this.btnEntrar.BackColor = System.Drawing.Color.Silver;
+            this.btnEntrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEntrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEntrar.BackgroundImage")));
+            this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEntrar.FlatAppearance.BorderSize = 0;
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(174, 487);
+            this.btnEntrar.Location = new System.Drawing.Point(176, 464);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(133, 42);
+            this.btnEntrar.Size = new System.Drawing.Size(95, 95);
             this.btnEntrar.TabIndex = 15;
-            this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
@@ -184,10 +190,10 @@ namespace FarmaTech
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(573, 696);
             this.ControlBox = false;
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnVer);
-            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnSobre);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);

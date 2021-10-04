@@ -30,6 +30,7 @@ namespace FarmaTech.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroUsuarios));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
@@ -292,13 +293,17 @@ namespace FarmaTech.View
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(47, 239);
+            this.btnAlterar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(45, 307);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 75);
+            this.btnAlterar.Size = new System.Drawing.Size(95, 95);
             this.btnAlterar.TabIndex = 58;
-            this.btnAlterar.Text = "Alterar";
             this.toolTip1.SetToolTip(this.btnAlterar, "Alterar");
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
@@ -308,7 +313,7 @@ namespace FarmaTech.View
             this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Location = new System.Drawing.Point(36, 138);
+            this.btnNovo.Location = new System.Drawing.Point(45, 138);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(95, 95);
             this.btnNovo.TabIndex = 60;
@@ -319,11 +324,11 @@ namespace FarmaTech.View
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
-            this.btnExcluir.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoExcluir;
+            this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(36, 320);
+            this.btnExcluir.Location = new System.Drawing.Point(45, 399);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(95, 95);
             this.btnExcluir.TabIndex = 59;
@@ -338,7 +343,7 @@ namespace FarmaTech.View
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(36, 406);
+            this.btnSalvar.Location = new System.Drawing.Point(45, 229);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(95, 95);
             this.btnSalvar.TabIndex = 2;
@@ -349,11 +354,11 @@ namespace FarmaTech.View
             // btnVoltar
             // 
             this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(36, 58);
+            this.btnVoltar.Location = new System.Drawing.Point(45, 58);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 95);
             this.btnVoltar.TabIndex = 1;

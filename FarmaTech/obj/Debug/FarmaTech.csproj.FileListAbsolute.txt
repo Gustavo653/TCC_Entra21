@@ -125,7 +125,6 @@ C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\Fa
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
-C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFormaPag.resources
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
@@ -218,8 +217,8 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.P
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
+C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
+C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
+C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
+C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
+C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources

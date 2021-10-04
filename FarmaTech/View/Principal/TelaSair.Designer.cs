@@ -29,10 +29,11 @@ namespace FarmaTech
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaSair));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSim = new System.Windows.Forms.Button();
             this.btnNao = new System.Windows.Forms.Button();
+            this.btnSim = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +48,36 @@ namespace FarmaTech
             this.panel1.Size = new System.Drawing.Size(443, 178);
             this.panel1.TabIndex = 0;
             // 
+            // btnNao
+            // 
+            this.btnNao.BackColor = System.Drawing.Color.Transparent;
+            this.btnNao.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNao.BackgroundImage")));
+            this.btnNao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNao.FlatAppearance.BorderSize = 0;
+            this.btnNao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNao.Location = new System.Drawing.Point(226, 61);
+            this.btnNao.Name = "btnNao";
+            this.btnNao.Size = new System.Drawing.Size(95, 95);
+            this.btnNao.TabIndex = 20;
+            this.btnNao.UseVisualStyleBackColor = false;
+            this.btnNao.Click += new System.EventHandler(this.btnNao_Click);
+            // 
+            // btnSim
+            // 
+            this.btnSim.BackColor = System.Drawing.Color.Transparent;
+            this.btnSim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSim.BackgroundImage")));
+            this.btnSim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSim.FlatAppearance.BorderSize = 0;
+            this.btnSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSim.Location = new System.Drawing.Point(108, 61);
+            this.btnSim.Name = "btnSim";
+            this.btnSim.Size = new System.Drawing.Size(95, 95);
+            this.btnSim.TabIndex = 19;
+            this.btnSim.UseVisualStyleBackColor = false;
+            this.btnSim.Click += new System.EventHandler(this.btnSim_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -56,30 +87,6 @@ namespace FarmaTech
             this.label1.Size = new System.Drawing.Size(201, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Deseja realmente sair?";
-            // 
-            // btnSim
-            // 
-            this.btnSim.BackColor = System.Drawing.Color.Silver;
-            this.btnSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSim.Location = new System.Drawing.Point(84, 88);
-            this.btnSim.Name = "btnSim";
-            this.btnSim.Size = new System.Drawing.Size(133, 42);
-            this.btnSim.TabIndex = 19;
-            this.btnSim.Text = "Sim";
-            this.btnSim.UseVisualStyleBackColor = false;
-            this.btnSim.Click += new System.EventHandler(this.btnSim_Click);
-            // 
-            // btnNao
-            // 
-            this.btnNao.BackColor = System.Drawing.Color.Silver;
-            this.btnNao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNao.Location = new System.Drawing.Point(223, 88);
-            this.btnNao.Name = "btnNao";
-            this.btnNao.Size = new System.Drawing.Size(133, 42);
-            this.btnNao.TabIndex = 20;
-            this.btnNao.Text = "Não";
-            this.btnNao.UseVisualStyleBackColor = false;
-            this.btnNao.Click += new System.EventHandler(this.btnNao_Click);
             // 
             // TelaSair
             // 
@@ -92,6 +99,7 @@ namespace FarmaTech
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "TelaSair";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaSair_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

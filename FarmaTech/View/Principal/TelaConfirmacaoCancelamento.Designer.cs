@@ -29,6 +29,7 @@ namespace FarmaTech.View.Principal
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaConfirmacaoCancelamento));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNao = new System.Windows.Forms.Button();
             this.btnSim = new System.Windows.Forms.Button();
@@ -49,25 +50,31 @@ namespace FarmaTech.View.Principal
             // 
             // btnNao
             // 
-            this.btnNao.BackColor = System.Drawing.Color.Silver;
+            this.btnNao.BackColor = System.Drawing.Color.Transparent;
+            this.btnNao.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNao.BackgroundImage")));
+            this.btnNao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNao.FlatAppearance.BorderSize = 0;
+            this.btnNao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNao.Location = new System.Drawing.Point(223, 88);
+            this.btnNao.Location = new System.Drawing.Point(225, 60);
             this.btnNao.Name = "btnNao";
-            this.btnNao.Size = new System.Drawing.Size(133, 42);
+            this.btnNao.Size = new System.Drawing.Size(95, 95);
             this.btnNao.TabIndex = 20;
-            this.btnNao.Text = "Não";
             this.btnNao.UseVisualStyleBackColor = false;
             this.btnNao.Click += new System.EventHandler(this.btnNao_Click);
             // 
             // btnSim
             // 
-            this.btnSim.BackColor = System.Drawing.Color.Silver;
+            this.btnSim.BackColor = System.Drawing.Color.Transparent;
+            this.btnSim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSim.BackgroundImage")));
+            this.btnSim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSim.FlatAppearance.BorderSize = 0;
+            this.btnSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSim.Location = new System.Drawing.Point(84, 88);
+            this.btnSim.Location = new System.Drawing.Point(109, 60);
             this.btnSim.Name = "btnSim";
-            this.btnSim.Size = new System.Drawing.Size(133, 42);
+            this.btnSim.Size = new System.Drawing.Size(95, 95);
             this.btnSim.TabIndex = 19;
-            this.btnSim.Text = "Sim";
             this.btnSim.UseVisualStyleBackColor = false;
             this.btnSim.Click += new System.EventHandler(this.btnSim_Click);
             // 
@@ -92,6 +99,7 @@ namespace FarmaTech.View.Principal
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "TelaConfirmacaoCancelamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaConfirmacaoCancelamento_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

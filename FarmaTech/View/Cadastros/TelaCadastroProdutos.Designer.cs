@@ -29,6 +29,7 @@ namespace FarmaTech.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroProdutos));
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@ namespace FarmaTech.View
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoProduto = new System.Windows.Forms.TabPage();
+            this.cboUnidade = new System.Windows.Forms.ComboBox();
             this.txtGrupo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPrecoUnitario = new System.Windows.Forms.TextBox();
@@ -55,7 +57,6 @@ namespace FarmaTech.View
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
-            this.cboUnidade = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
@@ -64,52 +65,72 @@ namespace FarmaTech.View
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(29, 127);
+            this.btnNovo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNovo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNovo.BackgroundImage")));
+            this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Location = new System.Drawing.Point(21, 115);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(75, 75);
+            this.btnNovo.Size = new System.Drawing.Size(95, 96);
             this.btnNovo.TabIndex = 83;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(29, 398);
+            this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
+            this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(21, 386);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 75);
+            this.btnExcluir.Size = new System.Drawing.Size(95, 96);
             this.btnExcluir.TabIndex = 82;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(29, 307);
+            this.btnAlterar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(21, 295);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 75);
+            this.btnAlterar.Size = new System.Drawing.Size(95, 96);
             this.btnAlterar.TabIndex = 81;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(29, 217);
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalvar.BackgroundImage")));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Location = new System.Drawing.Point(21, 205);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 75);
+            this.btnSalvar.Size = new System.Drawing.Size(95, 96);
             this.btnSalvar.TabIndex = 80;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(29, 36);
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(21, 24);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 75);
+            this.btnVoltar.Size = new System.Drawing.Size(95, 96);
             this.btnVoltar.TabIndex = 79;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // tabControl1
@@ -192,6 +213,15 @@ namespace FarmaTech.View
             this.tabNovoProduto.Size = new System.Drawing.Size(916, 404);
             this.tabNovoProduto.TabIndex = 1;
             this.tabNovoProduto.Text = "Novo Produto";
+            // 
+            // cboUnidade
+            // 
+            this.cboUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUnidade.FormattingEnabled = true;
+            this.cboUnidade.Location = new System.Drawing.Point(585, 85);
+            this.cboUnidade.Name = "cboUnidade";
+            this.cboUnidade.Size = new System.Drawing.Size(248, 28);
+            this.cboUnidade.TabIndex = 81;
             // 
             // txtGrupo
             // 
@@ -336,15 +366,6 @@ namespace FarmaTech.View
             this.lblRazaoSocial.Size = new System.Drawing.Size(60, 20);
             this.lblRazaoSocial.TabIndex = 65;
             this.lblRazaoSocial.Text = "Nome:";
-            // 
-            // cboUnidade
-            // 
-            this.cboUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUnidade.FormattingEnabled = true;
-            this.cboUnidade.Location = new System.Drawing.Point(585, 85);
-            this.cboUnidade.Name = "cboUnidade";
-            this.cboUnidade.Size = new System.Drawing.Size(248, 28);
-            this.cboUnidade.TabIndex = 81;
             // 
             // TelaCadastroProdutos
             // 

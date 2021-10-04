@@ -135,8 +135,9 @@ namespace FarmaTech.View
         }
         private void SetBackColorDegrade(object sender, PaintEventArgs e)
         {
-            Graphics graphics = e.Graphics; Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
-            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(108, 226, 252), Color.FromArgb(103, 23, 205), 45f);
+            Graphics graphics = e.Graphics;
+            Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
+            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(139, 148, 250), Color.FromArgb(94, 221, 231), 45f);
             graphics.FillRectangle(br, gradient_rect);
         }
 
