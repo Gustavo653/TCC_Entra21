@@ -10,5 +10,6 @@ Rua varchar(50) not null,
 Numero varchar(6) not null,
 Complemento varchar(50) not null,
 Cidade varchar(25),
-Estado varchar(2) //Exemplo: SC
+Estado varchar(2), //Exemplo: SC
+idFilial varchar(50) not null
 )

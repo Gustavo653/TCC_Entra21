@@ -12,7 +12,16 @@ namespace BAL.Control
     {
         public static List<Convenio> GetConvenios()
         {
-            List<Convenio> lista = DAL.Model.Convenios_DAL.GetConvenios();
+            List<Convenio> lista;
+            if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 2)
+            {
+                lista = DAL.Model.Convenios_DAL.GetConvenios(DAL.Model.Objetos.UsuarioStatic.Filial);
+            }
+            else
+            {
+                lista = DAL.Model.Convenios_DAL.GetConvenios();
+            }
+
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             foreach (var item in lista)
             {
@@ -26,7 +35,15 @@ namespace BAL.Control
         }
         public static List<Convenio> GetConveniosPorNome(string nome)
         {
-            List<Convenio> lista = DAL.Model.Convenios_DAL.GetConveniosPorNome(nome);
+            List<Convenio> lista;
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 2)
+            {
+                lista = DAL.Model.Convenios_DAL.GetConveniosPorNome(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
+            }
+            else
+            {
+                lista = DAL.Model.Convenios_DAL.GetConveniosPorNome(nome);
+            }
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             foreach (var item in lista)
             {
@@ -48,6 +65,10 @@ namespace BAL.Control
 
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(desconto))
             {
+                if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
+                {
+                    return 3;
+                }
                 if (desconto.Contains(".") || desconto.Contains(","))
                 {
                     return 4;

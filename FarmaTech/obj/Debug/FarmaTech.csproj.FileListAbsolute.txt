@@ -218,3 +218,8 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.P
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
