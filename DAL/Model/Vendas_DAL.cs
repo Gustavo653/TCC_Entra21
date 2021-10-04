@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DAL.Model.Consultas;
+using DAL.Model.Objetos;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +15,6 @@ namespace DAL.Model
         {
             double resultado = (Convert.ToDouble(quant) * Convert.ToDouble(precoUnitario));
             return resultado;
-
         }
-
     }
 }

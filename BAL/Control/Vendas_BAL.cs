@@ -10,11 +10,11 @@ namespace BAL.Control
     {
         public static double ValorTotalProduto(string quant, string precoUnitario)
         {
-            double teste=0;
+            double teste = 0;
             if (!string.IsNullOrEmpty(quant) && !string.IsNullOrEmpty(precoUnitario))
             {
                 try
-                {                                     
+                {
                     teste = DAL.Model.Vendas_DAL.ValorTotalProduto(quant, precoUnitario);
 
                 }
