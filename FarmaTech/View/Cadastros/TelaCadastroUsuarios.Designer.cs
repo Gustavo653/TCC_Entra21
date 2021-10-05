@@ -57,11 +57,17 @@ namespace FarmaTech.View
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblUsuarios = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.tabNovoUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDNivelAcesso)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -69,7 +75,7 @@ namespace FarmaTech.View
             this.tabControl1.Controls.Add(this.tabUsuarios);
             this.tabControl1.Controls.Add(this.tabNovoUsuario);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(178, 29);
+            this.tabControl1.Location = new System.Drawing.Point(171, 84);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1042, 542);
@@ -87,6 +93,7 @@ namespace FarmaTech.View
             this.tabUsuarios.Size = new System.Drawing.Size(1034, 509);
             this.tabUsuarios.TabIndex = 0;
             this.tabUsuarios.Text = "Usuários";
+            this.tabUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.tabUsuarios_Paint);
             // 
             // txtPesquisaUsuario
             // 
@@ -111,6 +118,7 @@ namespace FarmaTech.View
             // lblPesquisar
             // 
             this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.BackColor = System.Drawing.Color.Transparent;
             this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPesquisar.Location = new System.Drawing.Point(316, 45);
             this.lblPesquisar.Name = "lblPesquisar";
@@ -141,6 +149,7 @@ namespace FarmaTech.View
             this.tabNovoUsuario.Size = new System.Drawing.Size(1034, 509);
             this.tabNovoUsuario.TabIndex = 1;
             this.tabNovoUsuario.Text = "Novo Usuário";
+            this.tabNovoUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNovoUsuario_Paint);
             // 
             // lblFilial
             // 
@@ -298,7 +307,7 @@ namespace FarmaTech.View
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAlterar.FlatAppearance.BorderSize = 0;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Location = new System.Drawing.Point(45, 307);
+            this.btnAlterar.Location = new System.Drawing.Point(43, 385);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(95, 95);
             this.btnAlterar.TabIndex = 58;
@@ -313,7 +322,7 @@ namespace FarmaTech.View
             this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Location = new System.Drawing.Point(45, 138);
+            this.btnNovo.Location = new System.Drawing.Point(43, 216);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(95, 95);
             this.btnNovo.TabIndex = 60;
@@ -328,7 +337,7 @@ namespace FarmaTech.View
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(45, 399);
+            this.btnExcluir.Location = new System.Drawing.Point(43, 477);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(95, 95);
             this.btnExcluir.TabIndex = 59;
@@ -343,7 +352,7 @@ namespace FarmaTech.View
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(45, 229);
+            this.btnSalvar.Location = new System.Drawing.Point(43, 307);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(95, 95);
             this.btnSalvar.TabIndex = 2;
@@ -358,7 +367,7 @@ namespace FarmaTech.View
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(45, 58);
+            this.btnVoltar.Location = new System.Drawing.Point(43, 136);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 95);
             this.btnVoltar.TabIndex = 1;
@@ -366,11 +375,65 @@ namespace FarmaTech.View
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblHora);
+            this.panel1.Controls.Add(this.lblData);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 647);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1233, 30);
+            this.panel1.TabIndex = 91;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblHora.Location = new System.Drawing.Point(1095, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(34, 13);
+            this.lblHora.TabIndex = 87;
+            this.lblHora.Text = "Hora";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.BackColor = System.Drawing.Color.Transparent;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblData.Location = new System.Drawing.Point(12, 9);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(34, 13);
+            this.lblData.TabIndex = 86;
+            this.lblData.Text = "Data";
+            // 
+            // lblUsuarios
+            // 
+            this.lblUsuarios.AutoSize = true;
+            this.lblUsuarios.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarios.Location = new System.Drawing.Point(1015, 31);
+            this.lblUsuarios.Name = "lblUsuarios";
+            this.lblUsuarios.Size = new System.Drawing.Size(142, 36);
+            this.lblUsuarios.TabIndex = 92;
+            this.lblUsuarios.Text = "Usuários";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // TelaCadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 597);
+            this.ClientSize = new System.Drawing.Size(1233, 677);
+            this.Controls.Add(this.lblUsuarios);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
@@ -393,7 +456,10 @@ namespace FarmaTech.View
             this.tabNovoUsuario.ResumeLayout(false);
             this.tabNovoUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDNivelAcesso)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -425,5 +491,10 @@ namespace FarmaTech.View
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblUsuarios;
+        private System.Windows.Forms.Timer timer1;
     }
 }
