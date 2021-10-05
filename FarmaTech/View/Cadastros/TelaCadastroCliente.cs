@@ -367,11 +367,11 @@ namespace FarmaTech.View
             graphics.FillRectangle(br, gradient_rect);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblHora.Text = DateTime.Now.ToLongTimeString();
-            lblData.Text = DateTime.Now.ToLongDateString();
-        }
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    lblHora.Text = DateTime.Now.ToLongTimeString();
+        //    lblData.Text = DateTime.Now.ToLongDateString();
+        //}
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
@@ -385,6 +385,13 @@ namespace FarmaTech.View
         private void tabClientes_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblData.Text = DateTime.Now.ToLongDateString();
         }
     }
     public class EnderecoParcial

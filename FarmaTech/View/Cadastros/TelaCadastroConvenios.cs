@@ -33,7 +33,19 @@ namespace FarmaTech.View
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (tabControl1.TabPages.Contains(tabNovoConvenio))
+            {
+                tabControl1.TabPages.Remove(tabNovoConvenio);
+                tabControl1.TabPages.Add(tabConvenios);
+                btnSalvar.Enabled = false;
+                btnAlterar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnNovo.Enabled = true;
+            }
+            else
+            {
+                this.Hide();
+            }
 
             lblConv.Text = "Convênios";
         }
