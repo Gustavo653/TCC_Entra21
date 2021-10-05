@@ -32,19 +32,15 @@ namespace FarmaTech.View.Principal
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroContasReceber));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabContasReceber = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DataCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FornecedorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VencimentoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgContasReceber = new System.Windows.Forms.DataGridView();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoContaReceber = new System.Windows.Forms.TabPage();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
             this.lblVencimento = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
-            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
+            this.txtNomeFornecedor = new System.Windows.Forms.TextBox();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -53,7 +49,7 @@ namespace FarmaTech.View.Principal
             this.btnAlterar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabContasReceber.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgContasReceber)).BeginInit();
             this.tabNovoContaReceber.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +67,7 @@ namespace FarmaTech.View.Principal
             // tabContasReceber
             // 
             this.tabContasReceber.BackColor = System.Drawing.Color.Lavender;
-            this.tabContasReceber.Controls.Add(this.dataGridView1);
+            this.tabContasReceber.Controls.Add(this.dgContasReceber);
             this.tabContasReceber.Controls.Add(this.txtPesquisaUsuario);
             this.tabContasReceber.Controls.Add(this.lblPesquisar);
             this.tabContasReceber.Location = new System.Drawing.Point(4, 29);
@@ -81,39 +77,16 @@ namespace FarmaTech.View.Principal
             this.tabContasReceber.TabIndex = 0;
             this.tabContasReceber.Text = "Contas a Receber";
             // 
-            // dataGridView1
+            // dgContasReceber
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DataCol,
-            this.FornecedorCol,
-            this.ValorCol,
-            this.VencimentoCol});
-            this.dataGridView1.Location = new System.Drawing.Point(46, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(828, 293);
-            this.dataGridView1.TabIndex = 24;
-            // 
-            // DataCol
-            // 
-            this.DataCol.HeaderText = "Data";
-            this.DataCol.Name = "DataCol";
-            // 
-            // FornecedorCol
-            // 
-            this.FornecedorCol.HeaderText = "Fornecedor";
-            this.FornecedorCol.Name = "FornecedorCol";
-            this.FornecedorCol.Width = 150;
-            // 
-            // ValorCol
-            // 
-            this.ValorCol.HeaderText = "Valor";
-            this.ValorCol.Name = "ValorCol";
-            // 
-            // VencimentoCol
-            // 
-            this.VencimentoCol.HeaderText = "Vencimento";
-            this.VencimentoCol.Name = "VencimentoCol";
+            this.dgContasReceber.AllowUserToAddRows = false;
+            this.dgContasReceber.AllowUserToDeleteRows = false;
+            this.dgContasReceber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgContasReceber.Location = new System.Drawing.Point(46, 83);
+            this.dgContasReceber.Name = "dgContasReceber";
+            this.dgContasReceber.ReadOnly = true;
+            this.dgContasReceber.Size = new System.Drawing.Size(828, 293);
+            this.dgContasReceber.TabIndex = 24;
             // 
             // txtPesquisaUsuario
             // 
@@ -122,6 +95,7 @@ namespace FarmaTech.View.Principal
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 19;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -136,11 +110,11 @@ namespace FarmaTech.View.Principal
             // tabNovoContaReceber
             // 
             this.tabNovoContaReceber.BackColor = System.Drawing.Color.Lavender;
-            this.tabNovoContaReceber.Controls.Add(this.dateTimePicker1);
+            this.tabNovoContaReceber.Controls.Add(this.dtpVencimento);
             this.tabNovoContaReceber.Controls.Add(this.lblVencimento);
-            this.tabNovoContaReceber.Controls.Add(this.textBox1);
+            this.tabNovoContaReceber.Controls.Add(this.txtValor);
             this.tabNovoContaReceber.Controls.Add(this.lblValor);
-            this.tabNovoContaReceber.Controls.Add(this.txtRazaoSocial);
+            this.tabNovoContaReceber.Controls.Add(this.txtNomeFornecedor);
             this.tabNovoContaReceber.Controls.Add(this.lblFornecedor);
             this.tabNovoContaReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNovoContaReceber.Location = new System.Drawing.Point(4, 29);
@@ -150,12 +124,12 @@ namespace FarmaTech.View.Principal
             this.tabNovoContaReceber.TabIndex = 1;
             this.tabNovoContaReceber.Text = "Nova Conta a Receber";
             // 
-            // dateTimePicker1
+            // dtpVencimento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(532, 87);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 70;
+            this.dtpVencimento.Location = new System.Drawing.Point(532, 87);
+            this.dtpVencimento.Name = "dtpVencimento";
+            this.dtpVencimento.Size = new System.Drawing.Size(301, 26);
+            this.dtpVencimento.TabIndex = 70;
             // 
             // lblVencimento
             // 
@@ -166,13 +140,13 @@ namespace FarmaTech.View.Principal
             this.lblVencimento.TabIndex = 69;
             this.lblVencimento.Text = "Vencimento:";
             // 
-            // textBox1
+            // txtValor
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(215, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 29);
-            this.textBox1.TabIndex = 68;
+            this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValor.Location = new System.Drawing.Point(215, 82);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(134, 29);
+            this.txtValor.TabIndex = 68;
             // 
             // lblValor
             // 
@@ -185,13 +159,13 @@ namespace FarmaTech.View.Principal
             this.lblValor.TabIndex = 67;
             this.lblValor.Text = "Valor:";
             // 
-            // txtRazaoSocial
+            // txtNomeFornecedor
             // 
-            this.txtRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazaoSocial.Location = new System.Drawing.Point(215, 33);
-            this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(618, 29);
-            this.txtRazaoSocial.TabIndex = 66;
+            this.txtNomeFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeFornecedor.Location = new System.Drawing.Point(215, 33);
+            this.txtNomeFornecedor.Name = "txtNomeFornecedor";
+            this.txtNomeFornecedor.Size = new System.Drawing.Size(618, 29);
+            this.txtNomeFornecedor.TabIndex = 66;
             // 
             // lblFornecedor
             // 
@@ -293,7 +267,7 @@ namespace FarmaTech.View.Principal
             this.tabControl1.ResumeLayout(false);
             this.tabContasReceber.ResumeLayout(false);
             this.tabContasReceber.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgContasReceber)).EndInit();
             this.tabNovoContaReceber.ResumeLayout(false);
             this.tabNovoContaReceber.PerformLayout();
             this.ResumeLayout(false);
@@ -304,19 +278,15 @@ namespace FarmaTech.View.Principal
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabContasReceber;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FornecedorCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VencimentoCol;
+        private System.Windows.Forms.DataGridView dgContasReceber;
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoContaReceber;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpVencimento;
         private System.Windows.Forms.Label lblVencimento;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.TextBox txtRazaoSocial;
+        private System.Windows.Forms.TextBox txtNomeFornecedor;
         private System.Windows.Forms.Label lblFornecedor;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnExcluir;
