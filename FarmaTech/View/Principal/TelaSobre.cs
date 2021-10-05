@@ -35,5 +35,10 @@ namespace FarmaTech
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(94, 221, 231), Color.FromArgb(139, 148, 250), 45f);
             graphics.FillRectangle(br, gradient_rect);
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
+        }
     }
 }

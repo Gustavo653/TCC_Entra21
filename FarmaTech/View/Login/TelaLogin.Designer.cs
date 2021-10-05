@@ -52,22 +52,25 @@ namespace FarmaTech
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(337, 464);
+            this.btnSair.Location = new System.Drawing.Point(305, 457);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(95, 95);
+            this.btnSair.Size = new System.Drawing.Size(156, 118);
             this.btnSair.TabIndex = 17;
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnSobre
             // 
-            this.btnSobre.BackColor = System.Drawing.Color.Silver;
+            this.btnSobre.BackColor = System.Drawing.Color.Transparent;
+            this.btnSobre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSobre.BackgroundImage")));
+            this.btnSobre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSobre.FlatAppearance.BorderSize = 0;
+            this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSobre.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSobre.Location = new System.Drawing.Point(324, 613);
+            this.btnSobre.Location = new System.Drawing.Point(262, 590);
             this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(160, 36);
+            this.btnSobre.Size = new System.Drawing.Size(299, 94);
             this.btnSobre.TabIndex = 16;
-            this.btnSobre.Text = "by QueryLab";
             this.btnSobre.UseVisualStyleBackColor = false;
             this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
             // 
@@ -79,9 +82,9 @@ namespace FarmaTech
             this.btnEntrar.FlatAppearance.BorderSize = 0;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(176, 464);
+            this.btnEntrar.Location = new System.Drawing.Point(153, 431);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(95, 95);
+            this.btnEntrar.Size = new System.Drawing.Size(155, 170);
             this.btnEntrar.TabIndex = 15;
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);

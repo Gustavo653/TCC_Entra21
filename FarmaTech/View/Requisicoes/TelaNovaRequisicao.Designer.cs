@@ -29,6 +29,7 @@ namespace FarmaTech.View.Requisicoes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
@@ -38,12 +39,18 @@ namespace FarmaTech.View.Requisicoes
             this.lblDataSistema = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblFilial = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblFilial = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblNovaRec = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -132,6 +139,34 @@ namespace FarmaTech.View.Requisicoes
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 378);
             this.panel1.TabIndex = 20;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(437, 40);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblUsuario.TabIndex = 21;
+            this.lblUsuario.Text = "label3";
+            // 
+            // lblFilial
+            // 
+            this.lblFilial.AutoSize = true;
+            this.lblFilial.Location = new System.Drawing.Point(115, 97);
+            this.lblFilial.Name = "lblFilial";
+            this.lblFilial.Size = new System.Drawing.Size(35, 13);
+            this.lblFilial.TabIndex = 20;
+            this.lblFilial.Text = "label2";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(120, 34);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(35, 13);
+            this.lblData.TabIndex = 19;
+            this.lblData.Text = "label1";
             // 
             // btnSalvar
             // 
@@ -161,38 +196,65 @@ namespace FarmaTech.View.Requisicoes
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // lblData
+            // panel2
             // 
-            this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(120, 34);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(35, 13);
-            this.lblData.TabIndex = 19;
-            this.lblData.Text = "label1";
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lblHora);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 475);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(978, 30);
+            this.panel2.TabIndex = 93;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // lblFilial
+            // lblHora
             // 
-            this.lblFilial.AutoSize = true;
-            this.lblFilial.Location = new System.Drawing.Point(115, 97);
-            this.lblFilial.Name = "lblFilial";
-            this.lblFilial.Size = new System.Drawing.Size(35, 13);
-            this.lblFilial.TabIndex = 20;
-            this.lblFilial.Text = "label2";
+            this.lblHora.AutoSize = true;
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblHora.Location = new System.Drawing.Point(852, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(34, 13);
+            this.lblHora.TabIndex = 87;
+            this.lblHora.Text = "Hora";
             // 
-            // lblUsuario
+            // label1
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(437, 40);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
-            this.lblUsuario.TabIndex = 21;
-            this.lblUsuario.Text = "label3";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "Data";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblNovaRec
+            // 
+            this.lblNovaRec.AutoSize = true;
+            this.lblNovaRec.BackColor = System.Drawing.Color.Transparent;
+            this.lblNovaRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNovaRec.Location = new System.Drawing.Point(712, 9);
+            this.lblNovaRec.Name = "lblNovaRec";
+            this.lblNovaRec.Size = new System.Drawing.Size(174, 36);
+            this.lblNovaRec.TabIndex = 94;
+            this.lblNovaRec.Text = "Requisição";
             // 
             // TelaNovaRequisicao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 474);
+            this.ClientSize = new System.Drawing.Size(978, 505);
+            this.Controls.Add(this.lblNovaRec);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.panel1);
@@ -207,7 +269,10 @@ namespace FarmaTech.View.Requisicoes
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaNovaRequisicao_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -226,5 +291,10 @@ namespace FarmaTech.View.Requisicoes
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblFilial;
         private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblNovaRec;
     }
 }
