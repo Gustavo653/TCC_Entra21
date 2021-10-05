@@ -27,5 +27,24 @@ namespace BAL.Control
             return teste;
         }
 
+        public static double ValorTotal(string quant, string precoUnitario, string desconto)
+        {
+            double teste = 0;
+            if (!string.IsNullOrEmpty(quant) && !string.IsNullOrEmpty(precoUnitario))
+            {
+                try
+                {
+                    teste = DAL.Model.Vendas_DAL.ValorTotal(quant, precoUnitario, desconto);
+
+                }
+                catch (Exception e)
+                {
+                    //DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_ContasPagar_Adicionar");
+                    //return 3; 
+                }
+            }
+            return teste;
+        }
+
     }
 }

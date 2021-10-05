@@ -207,5 +207,7 @@ namespace FarmaTech.View
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(139, 148, 250), Color.FromArgb(94, 221, 231), 45f);
             graphics.FillRectangle(br, gradient_rect);
         }
+
+
     }
 }

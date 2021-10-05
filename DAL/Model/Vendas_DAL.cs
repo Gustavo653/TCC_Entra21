@@ -16,5 +16,12 @@ namespace DAL.Model
             double resultado = (Convert.ToDouble(quant) * Convert.ToDouble(precoUnitario));
             return resultado;
         }
+
+        public static double ValorTotal(string quant, string precoUnitario, string desconto)
+        {
+            double resultado = ((Convert.ToDouble(quant) * Convert.ToDouble(precoUnitario)) - (Convert.ToDouble(desconto)));
+            return resultado;
+        }
+
     }
 }

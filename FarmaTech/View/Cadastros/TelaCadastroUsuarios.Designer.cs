@@ -179,6 +179,7 @@ namespace FarmaTech.View
             this.cbUsuarioFilial.Name = "cbUsuarioFilial";
             this.cbUsuarioFilial.Size = new System.Drawing.Size(299, 28);
             this.cbUsuarioFilial.TabIndex = 51;
+    
             // 
             // lblContato
             // 

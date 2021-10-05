@@ -33,7 +33,7 @@ namespace FarmaTech.View.Principal
             this.lblDataSistema = new System.Windows.Forms.Label();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtValorAberturaCaixa = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.cbUsuario = new System.Windows.Forms.ComboBox();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@ namespace FarmaTech.View.Principal
             this.panel1.Controls.Add(this.lblDataSistema);
             this.panel1.Controls.Add(this.btnConfirma);
             this.panel1.Controls.Add(this.btnVoltar);
-            this.panel1.Controls.Add(this.txtValor);
+            this.panel1.Controls.Add(this.txtValorAberturaCaixa);
             this.panel1.Controls.Add(this.lblValor);
             this.panel1.Controls.Add(this.cbUsuario);
             this.panel1.Controls.Add(this.lblUsuario);
@@ -93,12 +93,12 @@ namespace FarmaTech.View.Principal
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // txtValor
+            // txtValorAberturaCaixa
             // 
-            this.txtValor.Location = new System.Drawing.Point(456, 193);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(132, 20);
-            this.txtValor.TabIndex = 8;
+            this.txtValorAberturaCaixa.Location = new System.Drawing.Point(456, 193);
+            this.txtValorAberturaCaixa.Name = "txtValorAberturaCaixa";
+            this.txtValorAberturaCaixa.Size = new System.Drawing.Size(132, 20);
+            this.txtValorAberturaCaixa.TabIndex = 8;
             // 
             // lblValor
             // 
@@ -189,7 +189,7 @@ namespace FarmaTech.View.Principal
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtValorAberturaCaixa;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.ComboBox cbUsuario;
         private System.Windows.Forms.Label lblUsuario;

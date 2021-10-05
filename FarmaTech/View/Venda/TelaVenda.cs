@@ -35,6 +35,12 @@ namespace FarmaTech
             tabControl1.TabPages.Add(tabVenda);
 
             lblDataSitema.Text = DateTime.Now.ToString();
+            cbVendedor.Text = DAL.Model.Objetos.UsuarioStatic.Nome;
+
+            IEnumerable<string> listaNome = BAL.Control.Produtos_BAL.GetProdutos().Select(x => x.Nome);
+
+            cbProdutoVenda.DataSource = listaNome.ToArray();
+            
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -63,6 +69,8 @@ namespace FarmaTech
             lblCpf.Text = "CNPJ:";
             lblNome.Text = "Razão Social:";
             
+
+            
         }
 
         private void btnVoltarVenda_Click(object sender, EventArgs e)
@@ -84,10 +92,10 @@ namespace FarmaTech
             cupomText.WriteLine("Cliente: " + txtRazaoSocial.Text + "\tCPF/CNPJ: " + txtCnpj.Text);
             cupomText.WriteLine("=====================================================================");
             cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
-            cupomText.WriteLine(txtProduto.Text + "\t\t" + txtQuant.Text + "\t\t" + txtValorParcial.Text);
+            cupomText.WriteLine(cbProdutoVenda.Text + "\t\t" + cbQuantidade.Text + "\t\t" + txtPrecoTotalProduto.Text);
             cupomText.WriteLine();
             cupomText.WriteLine("Valor Total: R$ " + txtFormaValorTotal.Text);
-            cupomText.WriteLine("Forma de Pagamento: " + txtFormaPag.Text);
+            cupomText.WriteLine("Forma de Pagamento: " + cbFormaPagamento.Text);
             cupomText.WriteLine("=====================================================================");
             cupomText.WriteLine("Volte sempre - Obrigado");
             cupomText.WriteLine("FarmaTech by Query Lab - 2021®");
@@ -108,6 +116,12 @@ namespace FarmaTech
         {
             tabControl1.TabPages.Remove(tabVenda);
             tabControl1.TabPages.Add(tabFormaPagamento);
+
+            txtValorCompra.Text = txtValorTotal.Text;
+
+            //cboConsole.DataSource = Enum.GetValues(typeof(TipoConsole)); //Adiciona o enum de console na combobox console
+
+            //cbFormaPagamento.DataSource = Enum.GetValues(typeof())
         }
 
         private void TelaVenda_Paint(object sender, PaintEventArgs e)
@@ -124,8 +138,20 @@ namespace FarmaTech
 
         private void button2_Click(object sender, EventArgs e)
         {
-            txtValorParcial.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(txtQuant.Text, txtPrecoUnitario.Text)).ToString();
+     
+            if(txtDesconto.Text == "")
+            {
+                txtDesconto.Text = 0.ToString("F2");
+            }
 
+            txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(cbQuantidade.Text, txtPrecoUnitario.Text)).ToString("F2");
+            txtValorTotal.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
+        }
+
+        private void cbProdutoVenda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<int> listaNome = BAL.Control.Produtos_BAL.GetProdutosPorNome(cbProdutoVenda.Text).Select(x => x.Quantidade);
+            cbQuantidade.DataSource = listaNome.ToList();            
         }
     }
 }
