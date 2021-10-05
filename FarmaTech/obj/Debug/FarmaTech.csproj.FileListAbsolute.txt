@@ -222,3 +222,42 @@ C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\Fa
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe.config
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.pdb
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.AssemblyReference.cache
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFiliais.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroContasPagar.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroConvenios.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaPrincipal.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSair.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSobre.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.GenerateResource.cache
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
+C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources

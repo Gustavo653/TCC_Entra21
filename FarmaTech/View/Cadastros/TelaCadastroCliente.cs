@@ -215,6 +215,8 @@ namespace FarmaTech.View
             {
                 this.Hide();
             }
+            lblCadastroClientes.Text = "Cadastro de clientes";
+
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -340,6 +342,8 @@ namespace FarmaTech.View
             txtCompl.Clear();
             txtCidade.Clear();
             cboEstados.SelectedIndex = 0;
+
+            lblCadastroClientes.Text = "Cadastro de\nnovo cliente";
         }
 
         private void tabNovoCliente_Paint(object sender, PaintEventArgs e)
@@ -375,6 +379,11 @@ namespace FarmaTech.View
             Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(139, 148, 250), Color.FromArgb(116, 186, 241), 45f);
             graphics.FillRectangle(br, gradient_rect);
+
+        }
+
+        private void tabClientes_Click(object sender, EventArgs e)
+        {
 
         }
     }

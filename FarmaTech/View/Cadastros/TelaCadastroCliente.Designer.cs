@@ -81,7 +81,7 @@ namespace FarmaTech.View
             this.tabControl1.Controls.Add(this.tabClientes);
             this.tabControl1.Controls.Add(this.tabNovoCliente);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(113, 67);
+            this.tabControl1.Location = new System.Drawing.Point(112, 101);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(942, 513);
@@ -101,6 +101,7 @@ namespace FarmaTech.View
             this.tabClientes.Size = new System.Drawing.Size(934, 480);
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
+            this.tabClientes.Click += new System.EventHandler(this.tabClientes_Click);
             this.tabClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.tabClientes_Paint);
             // 
             // rbCnpj
@@ -399,7 +400,7 @@ namespace FarmaTech.View
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAlterar.FlatAppearance.BorderSize = 0;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Location = new System.Drawing.Point(16, 382);
+            this.btnAlterar.Location = new System.Drawing.Point(15, 416);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(95, 75);
             this.btnAlterar.TabIndex = 81;
@@ -413,7 +414,7 @@ namespace FarmaTech.View
             this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Location = new System.Drawing.Point(16, 195);
+            this.btnNovo.Location = new System.Drawing.Point(15, 229);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(95, 95);
             this.btnNovo.TabIndex = 85;
@@ -427,7 +428,7 @@ namespace FarmaTech.View
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(16, 463);
+            this.btnExcluir.Location = new System.Drawing.Point(15, 497);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(95, 95);
             this.btnExcluir.TabIndex = 84;
@@ -441,7 +442,7 @@ namespace FarmaTech.View
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(16, 296);
+            this.btnSalvar.Location = new System.Drawing.Point(15, 330);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(95, 95);
             this.btnSalvar.TabIndex = 83;
@@ -455,7 +456,7 @@ namespace FarmaTech.View
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(16, 96);
+            this.btnVoltar.Location = new System.Drawing.Point(15, 130);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 95);
             this.btnVoltar.TabIndex = 82;
@@ -485,7 +486,7 @@ namespace FarmaTech.View
             this.panel1.Controls.Add(this.lblHora);
             this.panel1.Controls.Add(this.lblData);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 607);
+            this.panel1.Location = new System.Drawing.Point(0, 639);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 30);
             this.panel1.TabIndex = 87;
@@ -508,7 +509,7 @@ namespace FarmaTech.View
             this.lblCadastroClientes.AutoSize = true;
             this.lblCadastroClientes.BackColor = System.Drawing.Color.Transparent;
             this.lblCadastroClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroClientes.Location = new System.Drawing.Point(740, 9);
+            this.lblCadastroClientes.Location = new System.Drawing.Point(716, 30);
             this.lblCadastroClientes.Name = "lblCadastroClientes";
             this.lblCadastroClientes.Size = new System.Drawing.Size(311, 36);
             this.lblCadastroClientes.TabIndex = 88;
@@ -518,7 +519,7 @@ namespace FarmaTech.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 637);
+            this.ClientSize = new System.Drawing.Size(1080, 669);
             this.Controls.Add(this.lblCadastroClientes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSalvar);

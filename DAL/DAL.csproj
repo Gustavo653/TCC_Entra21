@@ -45,8 +45,10 @@
     <Compile Include="Model\Consultas\HashLogin.cs" />
     <Compile Include="Model\Consultas\LogErros.cs" />
     <Compile Include="Model\ContasPagar_DAL.cs" />
+    <Compile Include="Model\ContasReceber_DAL.cs" />
     <Compile Include="Model\Convenios_DAL.cs" />
     <Compile Include="Model\Enderecos_DAL.cs" />
+    <Compile Include="Model\Objetos\ContasReceber.cs" />
     <Compile Include="Model\Objetos\ContasPagar.cs" />
     <Compile Include="Model\Objetos\Convenio.cs" />
     <Compile Include="Model\Objetos\Produto.cs" />

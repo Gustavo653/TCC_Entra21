@@ -116,5 +116,22 @@ namespace FarmaTech.View.Principal
             txtAssunto.Text = lista[0].Assunto;
             txtDescricao.Text = lista[0].Solicitacao;
         }
+
+        private void tabRequisicoes_Paint(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
+        }
+
+        private void tabResposta_Paint(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblData.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }

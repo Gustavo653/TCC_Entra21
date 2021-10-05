@@ -29,6 +29,7 @@ namespace FarmaTech.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroConvenios));
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -45,10 +46,16 @@ namespace FarmaTech.View
             this.lblDesconto = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblFornecedor = new System.Windows.Forms.Label();
+            this.lblConv = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabConvenios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConvenios)).BeginInit();
             this.tabNovoConvenio.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNovo
@@ -58,7 +65,7 @@ namespace FarmaTech.View
             this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Location = new System.Drawing.Point(12, 128);
+            this.btnNovo.Location = new System.Drawing.Point(12, 167);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(95, 95);
             this.btnNovo.TabIndex = 95;
@@ -72,7 +79,7 @@ namespace FarmaTech.View
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(12, 399);
+            this.btnExcluir.Location = new System.Drawing.Point(12, 438);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(95, 95);
             this.btnExcluir.TabIndex = 94;
@@ -86,7 +93,7 @@ namespace FarmaTech.View
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAlterar.FlatAppearance.BorderSize = 0;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Location = new System.Drawing.Point(12, 308);
+            this.btnAlterar.Location = new System.Drawing.Point(12, 347);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(95, 95);
             this.btnAlterar.TabIndex = 93;
@@ -100,7 +107,7 @@ namespace FarmaTech.View
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(12, 218);
+            this.btnSalvar.Location = new System.Drawing.Point(12, 257);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(95, 95);
             this.btnSalvar.TabIndex = 92;
@@ -114,7 +121,7 @@ namespace FarmaTech.View
             this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(12, 37);
+            this.btnVoltar.Location = new System.Drawing.Point(12, 76);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 95);
             this.btnVoltar.TabIndex = 91;
@@ -126,7 +133,7 @@ namespace FarmaTech.View
             this.tabControl1.Controls.Add(this.tabConvenios);
             this.tabControl1.Controls.Add(this.tabNovoConvenio);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(125, 48);
+            this.tabControl1.Location = new System.Drawing.Point(125, 87);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(724, 437);
@@ -144,6 +151,7 @@ namespace FarmaTech.View
             this.tabConvenios.Size = new System.Drawing.Size(716, 404);
             this.tabConvenios.TabIndex = 0;
             this.tabConvenios.Text = "Convênios";
+            this.tabConvenios.Paint += new System.Windows.Forms.PaintEventHandler(this.tabConvenios_Paint);
             // 
             // dgConvenios
             // 
@@ -169,6 +177,7 @@ namespace FarmaTech.View
             // lblPesquisar
             // 
             this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.BackColor = System.Drawing.Color.Transparent;
             this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPesquisar.Location = new System.Drawing.Point(175, 35);
             this.lblPesquisar.Name = "lblPesquisar";
@@ -190,6 +199,7 @@ namespace FarmaTech.View
             this.tabNovoConvenio.Size = new System.Drawing.Size(716, 404);
             this.tabNovoConvenio.TabIndex = 1;
             this.tabNovoConvenio.Text = "Novo Convênio";
+            this.tabNovoConvenio.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNovoConvenio_Paint);
             // 
             // txtDesconto
             // 
@@ -203,7 +213,7 @@ namespace FarmaTech.View
             // lblDesconto
             // 
             this.lblDesconto.AutoSize = true;
-            this.lblDesconto.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblDesconto.BackColor = System.Drawing.Color.Transparent;
             this.lblDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesconto.Location = new System.Drawing.Point(57, 94);
             this.lblDesconto.Name = "lblDesconto";
@@ -222,7 +232,7 @@ namespace FarmaTech.View
             // lblFornecedor
             // 
             this.lblFornecedor.AutoSize = true;
-            this.lblFornecedor.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblFornecedor.BackColor = System.Drawing.Color.Transparent;
             this.lblFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFornecedor.Location = new System.Drawing.Point(42, 40);
             this.lblFornecedor.Name = "lblFornecedor";
@@ -230,12 +240,66 @@ namespace FarmaTech.View
             this.lblFornecedor.TabIndex = 65;
             this.lblFornecedor.Text = "Fornecedor:";
             // 
+            // lblConv
+            // 
+            this.lblConv.AutoSize = true;
+            this.lblConv.BackColor = System.Drawing.Color.Transparent;
+            this.lblConv.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConv.Location = new System.Drawing.Point(676, 21);
+            this.lblConv.Name = "lblConv";
+            this.lblConv.Size = new System.Drawing.Size(166, 36);
+            this.lblConv.TabIndex = 97;
+            this.lblConv.Text = "Convênios";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblHora);
+            this.panel1.Controls.Add(this.lblData);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 551);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(882, 30);
+            this.panel1.TabIndex = 98;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblHora.Location = new System.Drawing.Point(737, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(34, 13);
+            this.lblHora.TabIndex = 87;
+            this.lblHora.Text = "Hora";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.BackColor = System.Drawing.Color.Transparent;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblData.Location = new System.Drawing.Point(12, 9);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(34, 13);
+            this.lblData.TabIndex = 86;
+            this.lblData.Text = "Data";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // TelaCadastroConvenios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(891, 533);
+            this.ClientSize = new System.Drawing.Size(882, 581);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblConv);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
@@ -257,7 +321,10 @@ namespace FarmaTech.View
             ((System.ComponentModel.ISupportInitialize)(this.dgConvenios)).EndInit();
             this.tabNovoConvenio.ResumeLayout(false);
             this.tabNovoConvenio.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -278,5 +345,10 @@ namespace FarmaTech.View
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblFornecedor;
         private System.Windows.Forms.DataGridView dgConvenios;
+        private System.Windows.Forms.Label lblConv;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Timer timer1;
     }
 }
