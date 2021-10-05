@@ -83,7 +83,6 @@ namespace FarmaTech.View.Principal
             this.tabContasReceber.Size = new System.Drawing.Size(916, 404);
             this.tabContasReceber.TabIndex = 0;
             this.tabContasReceber.Text = "Contas a Receber";
-            this.tabContasReceber.Paint += new System.Windows.Forms.PaintEventHandler(this.tabContasReceber_Paint);
             // 
             // dgContasReceber
             // 
@@ -103,6 +102,7 @@ namespace FarmaTech.View.Principal
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 19;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
             // 
             // lblPesquisar
             // 
@@ -131,7 +131,6 @@ namespace FarmaTech.View.Principal
             this.tabNovoContaReceber.Size = new System.Drawing.Size(916, 404);
             this.tabNovoContaReceber.TabIndex = 1;
             this.tabNovoContaReceber.Text = "Nova Conta a Receber";
-            this.tabNovoContaReceber.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNovoContaReceber_Paint);
             // 
             // dtpVencimento
             // 
@@ -268,7 +267,6 @@ namespace FarmaTech.View.Principal
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1105, 30);
             this.panel1.TabIndex = 96;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblHora
             // 
@@ -297,7 +295,6 @@ namespace FarmaTech.View.Principal
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblContas
             // 
