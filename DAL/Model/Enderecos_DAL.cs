@@ -38,6 +38,7 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
+
         public static List<Endereco> GetEnderecos(int enumEndereco, string idFilial)
         {
             string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
@@ -63,6 +64,24 @@ namespace DAL.Model
             dr.Close();
             conn.Close();
             return lista;
+        }
+        public static string GetEnderecosPorContato(string contato)
+        {
+            string select = $"SELECT * from dbo.Enderecos WHERE Contato = '{contato}'";
+            string nomeFantasia = null;
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                nomeFantasia = dr["NomeFantasia"].ToString();
+                dr.Close();
+                conn.Close();
+            }
+            dr.Close();
+            conn.Close();
+            return nomeFantasia;
         }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco)
         {
@@ -126,9 +145,25 @@ namespace DAL.Model
             string delete = $"DELETE from dbo.Enderecos WHERE Contato = '{contato}'";
             DbConnection.Execute(delete);
         }
+        public static void AtualizaTodasTabelas(string idFilial, string contato)
+        {
+            string nomeFilial = GetEnderecosPorContato(contato);
+            List<string> lista = new List<string>();
+            lista.Add($"UPDATE dbo.Unidades Set idFilial = '{idFilial}' WHERE idFilial = '{nomeFilial}'");
+            lista.Add($"UPDATE dbo.Requisicoes Set Filial = '{idFilial}' WHERE Filial = '{nomeFilial}'");
+            lista.Add($"UPDATE dbo.Usuarios Set Filial = '{idFilial}' WHERE Filial = '{nomeFilial}'");
+            lista.Add($"UPDATE dbo.Produtos Set idFilial = '{idFilial}' WHERE idFilial = '{nomeFilial}'");
+            lista.Add($"UPDATE dbo.ContasPagar Set idFilial = '{idFilial}' WHERE idFilial = '{nomeFilial}'");
+            lista.Add($"UPDATE dbo.ContasReceber Set idFilial = '{idFilial}' WHERE idFilial = '{idFilial}'");
+            foreach (var item in lista)
+            {
+                DbConnection.Execute(item);
+            }
+        }
         public static void AtualizaEndereco(string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string where)
         {
             string update = $"UPDATE dbo.Enderecos Set RazaoSocial = '{razaoSocial}', NomeFantasia = '{nomeFantasia}', Cnpj = '{cNPJCPF}', Contato = '{contato}', Rua = '{rua}', Numero = '{numero}', Complemento = '{complemento}', Cidade = '{cidade}', Estado = '{estado}' WHERE Contato = '{where}'";
+            AtualizaTodasTabelas(nomeFantasia, where);
             DbConnection.Execute(update);
         }
         public static bool VerificaSeEnderecoRepete(string contato)

@@ -51,7 +51,7 @@ namespace FarmaTech.View.Requisicoes
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            int resultado = BAL.Control.Requisicoes_BAL.AdicionaRequisicao(lblUsuario.Text, lblFilial.Text, lblData.Text, txtAssunto.Text, txtDescricao.Text);
+            int resultado = BAL.Control.Requisicoes_BAL.AdicionaRequisicao(lblUsuario.Text, lblFilial.Text, DateTime.Now.ToString().Substring(0,10), txtAssunto.Text, txtDescricao.Text);
             if(resultado == 0)
             {
                 MessageBox.Show("Requisicao registrada");
