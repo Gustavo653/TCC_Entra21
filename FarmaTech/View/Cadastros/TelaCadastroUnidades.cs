@@ -34,7 +34,19 @@ namespace FarmaTech.View
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (tabControl1.TabPages.Contains(tabNovaUnidade))
+            {
+                tabControl1.TabPages.Remove(tabNovaUnidade);
+                tabControl1.TabPages.Add(tabUnidades);
+                btnSalvar.Enabled = false;
+                btnAlterar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnNovo.Enabled = true;
+            }
+            else
+            {
+                this.Hide();
+            }
             lblUnidades.Text = "Unidades";
         }
 

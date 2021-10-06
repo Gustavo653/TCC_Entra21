@@ -26,7 +26,7 @@ namespace FarmaTech
         {
             tabControl1.TabPages.Remove(tabVenda);
             tabControl1.TabPages.Remove(tabFormaPagamento);
-                                    
+
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace FarmaTech
             IEnumerable<string> listaNome = BAL.Control.Produtos_BAL.GetProdutos().Select(x => x.Nome);
 
             cbProdutoVenda.DataSource = listaNome.ToArray();
-            
+
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -68,9 +68,9 @@ namespace FarmaTech
         {
             lblCpf.Text = "CNPJ:";
             lblNome.Text = "Razão Social:";
-            
 
-            
+
+
         }
 
         private void btnVoltarVenda_Click(object sender, EventArgs e)
@@ -99,10 +99,10 @@ namespace FarmaTech
             cupomText.WriteLine("=====================================================================");
             cupomText.WriteLine("Volte sempre - Obrigado");
             cupomText.WriteLine("FarmaTech by Query Lab - 2021®");
-            cupomText.Close();         
+            cupomText.Close();
 
             Process.Start(@"C:\\Temp\\CupomText.txt");
-                        
+
             tabControl1.TabPages.Remove(tabFormaPagamento);
             tabControl1.TabPages.Add(tabCliente);
         }
@@ -138,8 +138,8 @@ namespace FarmaTech
 
         private void button2_Click(object sender, EventArgs e)
         {
-     
-            if(txtDesconto.Text == "")
+
+            if (txtDesconto.Text == "")
             {
                 txtDesconto.Text = 0.ToString("F2");
             }
@@ -151,7 +151,7 @@ namespace FarmaTech
         private void cbProdutoVenda_SelectedIndexChanged(object sender, EventArgs e)
         {
             IEnumerable<int> listaNome = BAL.Control.Produtos_BAL.GetProdutosPorNome(cbProdutoVenda.Text).Select(x => x.Quantidade);
-            cbQuantidade.DataSource = listaNome.ToList();            
+            cbQuantidade.DataSource = listaNome.ToList();
         }
 
         private void tabCliente_Paint(object sender, PaintEventArgs e)
@@ -186,6 +186,41 @@ namespace FarmaTech
         }
 
         private void tabVenda_Paint(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblDate.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
+            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(139, 148, 250), Color.FromArgb(116, 186, 241), 45f);
+            graphics.FillRectangle(br, gradient_rect);
+        }
+
+        private void tabCliente_Paint_1(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
+        }
+
+        private void tabVenda_Paint_1(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
+        }
+
+        private void tabFormaPagamento_Paint(object sender, PaintEventArgs e)
         {
             SetBackColorDegrade(sender, e);
         }

@@ -93,6 +93,7 @@ namespace FarmaTech.View
             this.tabUsuarios.Size = new System.Drawing.Size(1034, 509);
             this.tabUsuarios.TabIndex = 0;
             this.tabUsuarios.Text = "Usuários";
+            this.tabUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.tabUsuarios_Paint);
             // 
             // txtPesquisaUsuario
             // 
@@ -148,6 +149,7 @@ namespace FarmaTech.View
             this.tabNovoUsuario.Size = new System.Drawing.Size(1034, 509);
             this.tabNovoUsuario.TabIndex = 1;
             this.tabNovoUsuario.Text = "Novo Usuário";
+            this.tabNovoUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNovoUsuario_Paint);
             // 
             // lblFilial
             // 
@@ -186,7 +188,6 @@ namespace FarmaTech.View
             this.cbUsuarioFilial.Name = "cbUsuarioFilial";
             this.cbUsuarioFilial.Size = new System.Drawing.Size(299, 28);
             this.cbUsuarioFilial.TabIndex = 51;
-    
             // 
             // lblContato
             // 
@@ -384,6 +385,7 @@ namespace FarmaTech.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1233, 30);
             this.panel1.TabIndex = 91;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblHora
             // 
@@ -423,6 +425,7 @@ namespace FarmaTech.View
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // TelaCadastroUsuarios
             // 

@@ -47,6 +47,13 @@ namespace FarmaTech
             this.lblCpf = new System.Windows.Forms.Label();
             this.rbFisica = new System.Windows.Forms.RadioButton();
             this.tabVenda = new System.Windows.Forms.TabPage();
+            this.cbQuantidade = new System.Windows.Forms.ComboBox();
+            this.cbProdutoVenda = new System.Windows.Forms.ComboBox();
+            this.txtValorTotal = new System.Windows.Forms.MaskedTextBox();
+            this.txtDesconto = new System.Windows.Forms.MaskedTextBox();
+            this.txtPrecoTotalProduto = new System.Windows.Forms.MaskedTextBox();
+            this.txtPrecoUnitario = new System.Windows.Forms.MaskedTextBox();
+            this.lblDescontos = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnContinarVenda = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -54,6 +61,10 @@ namespace FarmaTech
             this.lblDesconto = new System.Windows.Forms.Label();
             this.lblPrecoTotalProduto = new System.Windows.Forms.Label();
             this.dgVenda = new System.Windows.Forms.DataGridView();
+            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoTotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.lblQuant = new System.Windows.Forms.Label();
             this.btnPesquisa = new System.Windows.Forms.Button();
@@ -63,6 +74,8 @@ namespace FarmaTech
             this.cbVendedor = new System.Windows.Forms.ComboBox();
             this.lblVendedor = new System.Windows.Forms.Label();
             this.tabFormaPagamento = new System.Windows.Forms.TabPage();
+            this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.cbConvenio = new System.Windows.Forms.ComboBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnVoltarVenda = new System.Windows.Forms.Button();
             this.txtFormaValorParcial = new System.Windows.Forms.TextBox();
@@ -74,25 +87,17 @@ namespace FarmaTech
             this.lblFormaParcial = new System.Windows.Forms.Label();
             this.lblValorCompra = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblDescontos = new System.Windows.Forms.Label();
-            this.txtPrecoUnitario = new System.Windows.Forms.MaskedTextBox();
-            this.txtPrecoTotalProduto = new System.Windows.Forms.MaskedTextBox();
-            this.txtDesconto = new System.Windows.Forms.MaskedTextBox();
-            this.txtValorTotal = new System.Windows.Forms.MaskedTextBox();
-            this.cbProdutoVenda = new System.Windows.Forms.ComboBox();
-            this.cbQuantidade = new System.Windows.Forms.ComboBox();
-            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoTotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbConvenio = new System.Windows.Forms.ComboBox();
-            this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
             this.tabVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVenda)).BeginInit();
             this.tabFormaPagamento.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,6 +111,7 @@ namespace FarmaTech
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(608, 111);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // button1
             // 
@@ -180,6 +186,7 @@ namespace FarmaTech
             this.tabCliente.Size = new System.Drawing.Size(825, 546);
             this.tabCliente.TabIndex = 1;
             this.tabCliente.Text = "Cliente";
+            this.tabCliente.Paint += new System.Windows.Forms.PaintEventHandler(this.tabCliente_Paint_1);
             // 
             // btnContinuar
             // 
@@ -241,13 +248,14 @@ namespace FarmaTech
             // rbJuridica
             // 
             this.rbJuridica.AutoSize = true;
+            this.rbJuridica.BackColor = System.Drawing.Color.Transparent;
             this.rbJuridica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbJuridica.Location = new System.Drawing.Point(580, 27);
             this.rbJuridica.Name = "rbJuridica";
             this.rbJuridica.Size = new System.Drawing.Size(89, 24);
             this.rbJuridica.TabIndex = 115;
             this.rbJuridica.Text = "Jurídica";
-            this.rbJuridica.UseVisualStyleBackColor = true;
+            this.rbJuridica.UseVisualStyleBackColor = false;
             this.rbJuridica.CheckedChanged += new System.EventHandler(this.rbJuridica_CheckedChanged);
             // 
             // lblCpf
@@ -264,6 +272,7 @@ namespace FarmaTech
             // rbFisica
             // 
             this.rbFisica.AutoSize = true;
+            this.rbFisica.BackColor = System.Drawing.Color.Transparent;
             this.rbFisica.Checked = true;
             this.rbFisica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbFisica.Location = new System.Drawing.Point(482, 27);
@@ -272,7 +281,7 @@ namespace FarmaTech
             this.rbFisica.TabIndex = 114;
             this.rbFisica.TabStop = true;
             this.rbFisica.Text = "Física";
-            this.rbFisica.UseVisualStyleBackColor = true;
+            this.rbFisica.UseVisualStyleBackColor = false;
             this.rbFisica.CheckedChanged += new System.EventHandler(this.rbFisica_CheckedChanged);
             // 
             // tabVenda
@@ -306,6 +315,71 @@ namespace FarmaTech
             this.tabVenda.Size = new System.Drawing.Size(825, 546);
             this.tabVenda.TabIndex = 0;
             this.tabVenda.Text = "Venda";
+            this.tabVenda.Paint += new System.Windows.Forms.PaintEventHandler(this.tabVenda_Paint_1);
+            // 
+            // cbQuantidade
+            // 
+            this.cbQuantidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuantidade.FormattingEnabled = true;
+            this.cbQuantidade.Location = new System.Drawing.Point(121, 115);
+            this.cbQuantidade.Name = "cbQuantidade";
+            this.cbQuantidade.Size = new System.Drawing.Size(92, 28);
+            this.cbQuantidade.TabIndex = 66;
+            // 
+            // cbProdutoVenda
+            // 
+            this.cbProdutoVenda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbProdutoVenda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbProdutoVenda.FormattingEnabled = true;
+            this.cbProdutoVenda.Location = new System.Drawing.Point(121, 69);
+            this.cbProdutoVenda.Name = "cbProdutoVenda";
+            this.cbProdutoVenda.Size = new System.Drawing.Size(432, 28);
+            this.cbProdutoVenda.TabIndex = 65;
+            this.cbProdutoVenda.SelectedIndexChanged += new System.EventHandler(this.cbProdutoVenda_SelectedIndexChanged);
+            // 
+            // txtValorTotal
+            // 
+            this.txtValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorTotal.ForeColor = System.Drawing.Color.Blue;
+            this.txtValorTotal.Location = new System.Drawing.Point(460, 399);
+            this.txtValorTotal.Name = "txtValorTotal";
+            this.txtValorTotal.Size = new System.Drawing.Size(143, 35);
+            this.txtValorTotal.TabIndex = 63;
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesconto.ForeColor = System.Drawing.Color.Red;
+            this.txtDesconto.Location = new System.Drawing.Point(136, 423);
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(128, 29);
+            this.txtDesconto.TabIndex = 61;
+            // 
+            // txtPrecoTotalProduto
+            // 
+            this.txtPrecoTotalProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoTotalProduto.Location = new System.Drawing.Point(675, 115);
+            this.txtPrecoTotalProduto.Name = "txtPrecoTotalProduto";
+            this.txtPrecoTotalProduto.Size = new System.Drawing.Size(118, 26);
+            this.txtPrecoTotalProduto.TabIndex = 60;
+            // 
+            // txtPrecoUnitario
+            // 
+            this.txtPrecoUnitario.Location = new System.Drawing.Point(381, 115);
+            this.txtPrecoUnitario.Name = "txtPrecoUnitario";
+            this.txtPrecoUnitario.Size = new System.Drawing.Size(126, 26);
+            this.txtPrecoUnitario.TabIndex = 59;
+            // 
+            // lblDescontos
+            // 
+            this.lblDescontos.AutoSize = true;
+            this.lblDescontos.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescontos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescontos.Location = new System.Drawing.Point(121, 366);
+            this.lblDescontos.Name = "lblDescontos";
+            this.lblDescontos.Size = new System.Drawing.Size(100, 20);
+            this.lblDescontos.TabIndex = 58;
+            this.lblDescontos.Text = "Descontos:";
             // 
             // button2
             // 
@@ -340,6 +414,7 @@ namespace FarmaTech
             // lblValorTotal
             // 
             this.lblValorTotal.AutoSize = true;
+            this.lblValorTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorTotal.Location = new System.Drawing.Point(331, 409);
             this.lblValorTotal.Name = "lblValorTotal";
@@ -350,6 +425,7 @@ namespace FarmaTech
             // lblDesconto
             // 
             this.lblDesconto.AutoSize = true;
+            this.lblDesconto.BackColor = System.Drawing.Color.Transparent;
             this.lblDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesconto.Location = new System.Drawing.Point(32, 426);
             this.lblDesconto.Name = "lblDesconto";
@@ -360,6 +436,7 @@ namespace FarmaTech
             // lblPrecoTotalProduto
             // 
             this.lblPrecoTotalProduto.AutoSize = true;
+            this.lblPrecoTotalProduto.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecoTotalProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecoTotalProduto.Location = new System.Drawing.Point(536, 118);
             this.lblPrecoTotalProduto.Name = "lblPrecoTotalProduto";
@@ -383,9 +460,37 @@ namespace FarmaTech
             this.dgVenda.Size = new System.Drawing.Size(777, 184);
             this.dgVenda.TabIndex = 44;
             // 
+            // DescricaoCol
+            // 
+            this.DescricaoCol.HeaderText = "Descrição";
+            this.DescricaoCol.Name = "DescricaoCol";
+            this.DescricaoCol.ReadOnly = true;
+            this.DescricaoCol.Width = 250;
+            // 
+            // UnidadeCol
+            // 
+            this.UnidadeCol.HeaderText = "Unid";
+            this.UnidadeCol.Name = "UnidadeCol";
+            this.UnidadeCol.ReadOnly = true;
+            // 
+            // PrecoUnitarioCol
+            // 
+            this.PrecoUnitarioCol.HeaderText = "Preço Unit.";
+            this.PrecoUnitarioCol.Name = "PrecoUnitarioCol";
+            this.PrecoUnitarioCol.ReadOnly = true;
+            this.PrecoUnitarioCol.Width = 130;
+            // 
+            // PrecoTotalProduto
+            // 
+            this.PrecoTotalProduto.HeaderText = "Valor Total";
+            this.PrecoTotalProduto.Name = "PrecoTotalProduto";
+            this.PrecoTotalProduto.ReadOnly = true;
+            this.PrecoTotalProduto.Width = 150;
+            // 
             // lblPrecoUnitario
             // 
             this.lblPrecoUnitario.AutoSize = true;
+            this.lblPrecoUnitario.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecoUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecoUnitario.Location = new System.Drawing.Point(219, 118);
             this.lblPrecoUnitario.Name = "lblPrecoUnitario";
@@ -396,6 +501,7 @@ namespace FarmaTech
             // lblQuant
             // 
             this.lblQuant.AutoSize = true;
+            this.lblQuant.BackColor = System.Drawing.Color.Transparent;
             this.lblQuant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuant.Location = new System.Drawing.Point(12, 118);
             this.lblQuant.Name = "lblQuant";
@@ -415,6 +521,7 @@ namespace FarmaTech
             // lblDataSitema
             // 
             this.lblDataSitema.AutoSize = true;
+            this.lblDataSitema.BackColor = System.Drawing.Color.Transparent;
             this.lblDataSitema.Location = new System.Drawing.Point(456, 26);
             this.lblDataSitema.Name = "lblDataSitema";
             this.lblDataSitema.Size = new System.Drawing.Size(51, 20);
@@ -424,6 +531,7 @@ namespace FarmaTech
             // lblProduto
             // 
             this.lblProduto.AutoSize = true;
+            this.lblProduto.BackColor = System.Drawing.Color.Transparent;
             this.lblProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduto.Location = new System.Drawing.Point(35, 72);
             this.lblProduto.Name = "lblProduto";
@@ -434,6 +542,7 @@ namespace FarmaTech
             // lblData
             // 
             this.lblData.AutoSize = true;
+            this.lblData.BackColor = System.Drawing.Color.Transparent;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.Location = new System.Drawing.Point(375, 26);
             this.lblData.Name = "lblData";
@@ -452,6 +561,7 @@ namespace FarmaTech
             // lblVendedor
             // 
             this.lblVendedor.AutoSize = true;
+            this.lblVendedor.BackColor = System.Drawing.Color.Transparent;
             this.lblVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVendedor.Location = new System.Drawing.Point(23, 26);
             this.lblVendedor.Name = "lblVendedor";
@@ -480,6 +590,23 @@ namespace FarmaTech
             this.tabFormaPagamento.Size = new System.Drawing.Size(825, 546);
             this.tabFormaPagamento.TabIndex = 2;
             this.tabFormaPagamento.Text = "Forma Pagamento";
+            this.tabFormaPagamento.Paint += new System.Windows.Forms.PaintEventHandler(this.tabFormaPagamento_Paint);
+            // 
+            // cbFormaPagamento
+            // 
+            this.cbFormaPagamento.FormattingEnabled = true;
+            this.cbFormaPagamento.Location = new System.Drawing.Point(228, 244);
+            this.cbFormaPagamento.Name = "cbFormaPagamento";
+            this.cbFormaPagamento.Size = new System.Drawing.Size(128, 28);
+            this.cbFormaPagamento.TabIndex = 67;
+            // 
+            // cbConvenio
+            // 
+            this.cbConvenio.FormattingEnabled = true;
+            this.cbConvenio.Location = new System.Drawing.Point(228, 82);
+            this.cbConvenio.Name = "cbConvenio";
+            this.cbConvenio.Size = new System.Drawing.Size(128, 28);
+            this.cbConvenio.TabIndex = 66;
             // 
             // btnFinalizar
             // 
@@ -520,6 +647,7 @@ namespace FarmaTech
             // lblFormaConvenio
             // 
             this.lblFormaConvenio.AutoSize = true;
+            this.lblFormaConvenio.BackColor = System.Drawing.Color.Transparent;
             this.lblFormaConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormaConvenio.Location = new System.Drawing.Point(128, 85);
             this.lblFormaConvenio.Name = "lblFormaConvenio";
@@ -537,6 +665,7 @@ namespace FarmaTech
             // lblFormaValorTotal
             // 
             this.lblFormaValorTotal.AutoSize = true;
+            this.lblFormaValorTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblFormaValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormaValorTotal.Location = new System.Drawing.Point(87, 179);
             this.lblFormaValorTotal.Name = "lblFormaValorTotal";
@@ -547,6 +676,7 @@ namespace FarmaTech
             // lblFormaPagamento
             // 
             this.lblFormaPagamento.AutoSize = true;
+            this.lblFormaPagamento.BackColor = System.Drawing.Color.Transparent;
             this.lblFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormaPagamento.Location = new System.Drawing.Point(30, 247);
             this.lblFormaPagamento.Name = "lblFormaPagamento";
@@ -557,6 +687,7 @@ namespace FarmaTech
             // lblFormaParcial
             // 
             this.lblFormaParcial.AutoSize = true;
+            this.lblFormaParcial.BackColor = System.Drawing.Color.Transparent;
             this.lblFormaParcial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormaParcial.Location = new System.Drawing.Point(73, 135);
             this.lblFormaParcial.Name = "lblFormaParcial";
@@ -567,6 +698,7 @@ namespace FarmaTech
             // lblValorCompra
             // 
             this.lblValorCompra.AutoSize = true;
+            this.lblValorCompra.BackColor = System.Drawing.Color.Transparent;
             this.lblValorCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorCompra.Location = new System.Drawing.Point(39, 34);
             this.lblValorCompra.Name = "lblValorCompra";
@@ -574,111 +706,46 @@ namespace FarmaTech
             this.lblValorCompra.TabIndex = 0;
             this.lblValorCompra.Text = "Valor da Compra: R$";
             // 
-            // lblDescontos
+            // panel2
             // 
-            this.lblDescontos.AutoSize = true;
-            this.lblDescontos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescontos.Location = new System.Drawing.Point(121, 366);
-            this.lblDescontos.Name = "lblDescontos";
-            this.lblDescontos.Size = new System.Drawing.Size(100, 20);
-            this.lblDescontos.TabIndex = 58;
-            this.lblDescontos.Text = "Descontos:";
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lblHora);
+            this.panel2.Controls.Add(this.lblDate);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 719);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(891, 30);
+            this.panel2.TabIndex = 102;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
-            // txtPrecoUnitario
+            // lblHora
             // 
-            this.txtPrecoUnitario.Location = new System.Drawing.Point(381, 115);
-            this.txtPrecoUnitario.Name = "txtPrecoUnitario";
-            this.txtPrecoUnitario.Size = new System.Drawing.Size(126, 26);
-            this.txtPrecoUnitario.TabIndex = 59;
+            this.lblHora.AutoSize = true;
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblHora.Location = new System.Drawing.Point(779, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(34, 13);
+            this.lblHora.TabIndex = 87;
+            this.lblHora.Text = "Hora";
             // 
-            // txtPrecoTotalProduto
+            // lblDate
             // 
-            this.txtPrecoTotalProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoTotalProduto.Location = new System.Drawing.Point(675, 115);
-            this.txtPrecoTotalProduto.Name = "txtPrecoTotalProduto";
-            this.txtPrecoTotalProduto.Size = new System.Drawing.Size(118, 26);
-            this.txtPrecoTotalProduto.TabIndex = 60;
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblDate.Location = new System.Drawing.Point(12, 9);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(34, 13);
+            this.lblDate.TabIndex = 86;
+            this.lblDate.Text = "Data";
             // 
-            // txtDesconto
+            // timer1
             // 
-            this.txtDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesconto.ForeColor = System.Drawing.Color.Red;
-            this.txtDesconto.Location = new System.Drawing.Point(136, 423);
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(128, 29);
-            this.txtDesconto.TabIndex = 61;
-            // 
-            // txtValorTotal
-            // 
-            this.txtValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorTotal.ForeColor = System.Drawing.Color.Blue;
-            this.txtValorTotal.Location = new System.Drawing.Point(460, 399);
-            this.txtValorTotal.Name = "txtValorTotal";
-            this.txtValorTotal.Size = new System.Drawing.Size(143, 35);
-            this.txtValorTotal.TabIndex = 63;
-            // 
-            // cbProdutoVenda
-            // 
-            this.cbProdutoVenda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbProdutoVenda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbProdutoVenda.FormattingEnabled = true;
-            this.cbProdutoVenda.Location = new System.Drawing.Point(121, 69);
-            this.cbProdutoVenda.Name = "cbProdutoVenda";
-            this.cbProdutoVenda.Size = new System.Drawing.Size(432, 28);
-            this.cbProdutoVenda.TabIndex = 65;
-            this.cbProdutoVenda.SelectedIndexChanged += new System.EventHandler(this.cbProdutoVenda_SelectedIndexChanged);
-            // 
-            // cbQuantidade
-            // 
-            this.cbQuantidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbQuantidade.FormattingEnabled = true;
-            this.cbQuantidade.Location = new System.Drawing.Point(121, 115);
-            this.cbQuantidade.Name = "cbQuantidade";
-            this.cbQuantidade.Size = new System.Drawing.Size(92, 28);
-            this.cbQuantidade.TabIndex = 66;
-            // 
-            // DescricaoCol
-            // 
-            this.DescricaoCol.HeaderText = "Descrição";
-            this.DescricaoCol.Name = "DescricaoCol";
-            this.DescricaoCol.ReadOnly = true;
-            this.DescricaoCol.Width = 250;
-            // 
-            // UnidadeCol
-            // 
-            this.UnidadeCol.HeaderText = "Unid";
-            this.UnidadeCol.Name = "UnidadeCol";
-            this.UnidadeCol.ReadOnly = true;
-            // 
-            // PrecoUnitarioCol
-            // 
-            this.PrecoUnitarioCol.HeaderText = "Preço Unit.";
-            this.PrecoUnitarioCol.Name = "PrecoUnitarioCol";
-            this.PrecoUnitarioCol.ReadOnly = true;
-            this.PrecoUnitarioCol.Width = 130;
-            // 
-            // PrecoTotalProduto
-            // 
-            this.PrecoTotalProduto.HeaderText = "Valor Total";
-            this.PrecoTotalProduto.Name = "PrecoTotalProduto";
-            this.PrecoTotalProduto.ReadOnly = true;
-            this.PrecoTotalProduto.Width = 150;
-            // 
-            // cbConvenio
-            // 
-            this.cbConvenio.FormattingEnabled = true;
-            this.cbConvenio.Location = new System.Drawing.Point(228, 82);
-            this.cbConvenio.Name = "cbConvenio";
-            this.cbConvenio.Size = new System.Drawing.Size(128, 28);
-            this.cbConvenio.TabIndex = 66;
-            // 
-            // cbFormaPagamento
-            // 
-            this.cbFormaPagamento.FormattingEnabled = true;
-            this.cbFormaPagamento.Location = new System.Drawing.Point(228, 244);
-            this.cbFormaPagamento.Name = "cbFormaPagamento";
-            this.cbFormaPagamento.Size = new System.Drawing.Size(128, 28);
-            this.cbFormaPagamento.TabIndex = 67;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // TelaVenda
             // 
@@ -686,6 +753,7 @@ namespace FarmaTech
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 749);
             this.ControlBox = false;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -707,6 +775,8 @@ namespace FarmaTech
             ((System.ComponentModel.ISupportInitialize)(this.dgVenda)).EndInit();
             this.tabFormaPagamento.ResumeLayout(false);
             this.tabFormaPagamento.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -770,5 +840,9 @@ namespace FarmaTech
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecoTotalProduto;
         private System.Windows.Forms.ComboBox cbFormaPagamento;
         private System.Windows.Forms.ComboBox cbConvenio;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Timer timer1;
     }
 }

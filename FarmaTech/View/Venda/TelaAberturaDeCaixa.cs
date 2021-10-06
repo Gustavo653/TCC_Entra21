@@ -65,7 +65,7 @@ namespace FarmaTech.View.Principal
         {
 
             lblHora.Text = DateTime.Now.ToLongTimeString();
-            lblData.Text = DateTime.Now.ToLongDateString();
+            lblDate.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
