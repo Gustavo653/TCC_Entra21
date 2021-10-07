@@ -1,5 +1,6 @@
 ﻿using FarmaTech.View;
 using FarmaTech.View.Principal;
+using FarmaTech.View.Venda;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,16 +42,6 @@ namespace FarmaTech
 
             cbProdutoVenda.DataSource = listaNome.ToArray();
 
-        }
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            new TelaCadastroCliente().Show();
-        }
-
-        private void btnPesquisa_Click(object sender, EventArgs e)
-        {
-            new TelaCadastroProdutos().Show();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -136,18 +127,6 @@ namespace FarmaTech
             graphics.FillRectangle(br, gradient_rect);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            if (txtDesconto.Text == "")
-            {
-                txtDesconto.Text = 0.ToString("F2");
-            }
-
-            txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(cbQuantidade.Text, txtPrecoUnitario.Text)).ToString("F2");
-            txtValorTotal.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
-        }
-
         private void cbProdutoVenda_SelectedIndexChanged(object sender, EventArgs e)
         {
             IEnumerable<int> listaNome = BAL.Control.Produtos_BAL.GetProdutosPorNome(cbProdutoVenda.Text).Select(x => x.Quantidade);
@@ -223,6 +202,53 @@ namespace FarmaTech
         private void tabFormaPagamento_Paint(object sender, PaintEventArgs e)
         {
             SetBackColorDegrade(sender, e);
+        }
+
+        private void btnPesquisaProduto_Click(object sender, EventArgs e)
+        {
+            new TelaCadastroProdutos().Show();
+        }
+
+        private void btnPesquisaCliente_Click(object sender, EventArgs e)
+        {
+            new TelaCadastroCliente().Show();
+        }
+
+        private void btnSangria_Click(object sender, EventArgs e)
+        {
+            new TelaSangria().Show();
+        }
+
+        private void btnAdiciona_Click(object sender, EventArgs e)
+        {
+            if (txtDesconto.Text == "")
+            {
+                txtDesconto.Text = 0.ToString("F2");
+            }
+
+            txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(cbQuantidade.Text, txtPrecoUnitario.Text)).ToString("F2");
+            txtValorTotal.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
+
+
+
+        }
+
+        private void txtDesconto_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txtDesconto.Text == "")
+            {
+                txtDesconto.Text = 0.ToString("F2");
+            }
+
+            txtPrecoTotalProduto.Text = BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text).ToString();
+
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
