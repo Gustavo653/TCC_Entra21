@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Caixa_DAL.cs" />
     <Compile Include="Model\Consultas\DBConnection.cs" />
     <Compile Include="Model\Consultas\HashLogin.cs" />
     <Compile Include="Model\Consultas\LogErros.cs" />
