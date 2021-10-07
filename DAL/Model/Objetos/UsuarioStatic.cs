@@ -10,7 +10,6 @@ namespace DAL.Model.Objetos
     {
         public static string Nome { get; set; }
         public static string Filial { get; set; }
-        public static string Cargo { get; set; }
         public static string Contato { get; set; }
         public static int NivelAcesso { get; set; }
         public static int NivelAcessoTemp { get; set; }

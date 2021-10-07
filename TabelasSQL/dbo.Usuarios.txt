@@ -3,12 +3,11 @@ create table dbo.Usuarios
 idUsuario int not null identity(1,1),
 Nome varchar(50) not null,
 Filial varchar(50) not null, //Puxa o id da filial
-Cargo varchar(30) not null,
 Contato varchar(14) not null, //Telefone 5547900000000
 NivelAcesso int not null, //Guarda valor do enum
 Login varchar(50) not null, //Coluna que será destinada ao usuario para login
 Senha varchar(128) not null //A senha gerada pelo HashLogin possui 128 caracteres
 )
 
-INSERT into dbo.Usuarios(Nome, Filial, Cargo, Contato, NivelAcesso, Login, Senha) values('Usuario1', 12, 'Funcionario', '5547900000000', 1, 'Admin', 'C94649567AEA10618C624BF8E8A3AF8DD443B33B928786C7BBFCD8AA5789BB6857B6585790C9BABCA576C8B94E7D38A3B87F42C972C2EE72A63C5870F09E60A5')
+INSERT into dbo.Usuarios(Nome, Filial, Contato, NivelAcesso, Login, Senha) values('Usuario1', 12, '5547900000000', 1, 'Admin', 'C94649567AEA10618C624BF8E8A3AF8DD443B33B928786C7BBFCD8AA5789BB6857B6585790C9BABCA576C8B94E7D38A3B87F42C972C2EE72A63C5870F09E60A5')
 //Senha: Senha

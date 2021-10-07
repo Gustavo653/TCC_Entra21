@@ -25,11 +25,9 @@ namespace DAL.Model
                 Usuario usuario = new Usuario(
                     dr["Nome"].ToString(),
                     dr["Filial"].ToString(),
-                    dr["Cargo"].ToString(),
                     dr["Contato"].ToString(),
                     Convert.ToInt32(dr["NivelAcesso"]),
-                    dr["Login"].ToString(),
-                    dr["Senha"].ToString());
+                    dr["Login"].ToString());
                 lista.Add(usuario);
             }
             dr.Close();
@@ -47,22 +45,20 @@ namespace DAL.Model
             while (dr.Read())
             {
                 Usuario usuario = new Usuario(
-                    dr["Nome"].ToString(),
-                    dr["Filial"].ToString(),
-                    dr["Cargo"].ToString(),
-                    dr["Contato"].ToString(),
-                    Convert.ToInt32(dr["NivelAcesso"]),
-                    dr["Login"].ToString(),
-                    dr["Senha"].ToString());
+                   dr["Nome"].ToString(),
+                   dr["Filial"].ToString(),
+                   dr["Contato"].ToString(),
+                   Convert.ToInt32(dr["NivelAcesso"]),
+                   dr["Login"].ToString());
                 lista.Add(usuario);
             }
             dr.Close();
             conn.Close();
             return lista;
         }
-        public static void InsereUsuario(string nome, string filial, string cargo, string contato, int nivelAcesso, string login, string senha)
+        public static void InsereUsuario(string nome, string filial, string contato, int nivelAcesso, string login, string senha)
         {
-            string insert = $"INSERT into dbo.Usuarios(Nome, Filial, Cargo, Contato, NivelAcesso, Login, Senha) values ('{nome}', '{filial}', '{cargo}', '{contato}', {nivelAcesso}, '{login}', '{senha}')";
+            string insert = $"INSERT into dbo.Usuarios(Nome, Filial, Contato, NivelAcesso, Login, Senha) values ('{nome}', '{filial}', '{contato}', {nivelAcesso}, '{login}', '{senha}')";
             DbConnection.Execute(insert);
         }
         public static void RemoveUsuario(string contato)
@@ -70,9 +66,9 @@ namespace DAL.Model
             string delete = $"DELETE from dbo.Usuarios WHERE Contato = '{contato}'";
             DbConnection.Execute(delete);
         }
-        public static void AtualizaUsuario(string nome, string filial, string cargo, string contato, int nivelAcesso, string login, string senha, string where)
+        public static void AtualizaUsuario(string nome, string filial, string contato, int nivelAcesso, string login, string senha, string where)
         {
-            string update = $"UPDATE dbo.Usuarios Set Nome = '{nome}', Filial = '{filial}', Cargo = '{cargo}', Contato = '{contato}', NivelAcesso = {nivelAcesso}, Login = '{login}', Senha = '{senha}' WHERE Contato = '{where}'";
+            string update = $"UPDATE dbo.Usuarios Set Nome = '{nome}', Filial = '{filial}', Contato = '{contato}', NivelAcesso = {nivelAcesso}, Login = '{login}', Senha = '{senha}' WHERE Contato = '{where}'";
             DbConnection.Execute(update);
         }
         public static bool VerificaSeUsuarioRepete(string contato)

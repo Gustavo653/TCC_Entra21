@@ -28,6 +28,8 @@ namespace FarmaTech.View
             AtualizaDG();
             IEnumerable<string> listaEnderecos = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia);
             cbUsuarioFilial.DataSource = listaEnderecos.ToList();
+            cbNivelAcesso.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.NivelAcesso));
+            cbNivelAcesso.SelectedIndex = 2;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -44,9 +46,8 @@ namespace FarmaTech.View
             txtLogin.Clear();
             txtSenha.Clear();
             txtContato.Clear();
-            cbUsuarioCargo.SelectedIndex = 0;
+            cbNivelAcesso.SelectedIndex = 0;
             cbUsuarioFilial.SelectedIndex = 0;
-            nUDNivelAcesso.Value = 1;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -72,10 +73,10 @@ namespace FarmaTech.View
             {
                 int indiceSelecionado = dgUsuarios.CurrentRow.Index;
                 int resultado = 1;
-                if (!string.IsNullOrEmpty(cbUsuarioFilial.Text) && !string.IsNullOrEmpty(nUDNivelAcesso.Value.ToString()))
+                if (!string.IsNullOrEmpty(cbUsuarioFilial.Text))
                 {
                     if (dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
-                        resultado = BAL.Control.Usuarios_BAL.AtualizaUsuario(txtNome.Text, cbUsuarioFilial.Text, cbUsuarioCargo.Text, txtContato.Text, nUDNivelAcesso.Value.ToString(), txtLogin.Text, txtSenha.Text, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                        resultado = BAL.Control.Usuarios_BAL.AtualizaUsuario(txtNome.Text, cbUsuarioFilial.Text, txtContato.Text, cbNivelAcesso.Text, txtLogin.Text, txtSenha.Text, dgUsuarios.Rows[indiceSelecionado].Cells[2].Value.ToString());
                     else
                         MessageBox.Show("Você não pode atualizar o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -104,9 +105,9 @@ namespace FarmaTech.View
             else
             {
                 int resultado = 1;
-                if (!string.IsNullOrEmpty(cbUsuarioFilial.Text) && !string.IsNullOrEmpty(nUDNivelAcesso.Value.ToString()))
+                if (!string.IsNullOrEmpty(cbUsuarioFilial.Text))
                 {
-                    resultado = BAL.Control.Usuarios_BAL.AdicionarUsuario(txtNome.Text, cbUsuarioFilial.Text, cbUsuarioCargo.Text, txtContato.Text, nUDNivelAcesso.Value.ToString(), txtLogin.Text, txtSenha.Text);
+                    resultado = BAL.Control.Usuarios_BAL.AdicionarUsuario(txtNome.Text, cbUsuarioFilial.Text, txtContato.Text , cbNivelAcesso.Text, txtLogin.Text, txtSenha.Text);
                 }
                 if (resultado == 0)
                 {
@@ -152,9 +153,8 @@ namespace FarmaTech.View
             txtLogin.Text = lista[0].Login;
             txtSenha.Clear();
             txtContato.Text = lista[0].Contato;
-            cbUsuarioCargo.SelectedItem = lista[0].Cargo;
+            cbNivelAcesso.SelectedIndex = 2;
             cbUsuarioFilial.SelectedItem = lista[0].Filial.ToString();
-            nUDNivelAcesso.Value = lista[0].NivelAcesso;
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

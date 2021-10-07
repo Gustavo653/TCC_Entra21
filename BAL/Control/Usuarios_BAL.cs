@@ -18,21 +18,42 @@ namespace BAL.Control
         {
             return DAL.Model.Usuarios_DAL.GetUsuariosPorNome(nome);
         }
-        public static int AdicionarUsuario(string nome, string filial, string cargo, string contato, string nivelAcesso, string login, string senha)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="AccesLevel"></param>
+        /// <returns></returns>
+        private static int ConfereNivelAcesso(string AccesLevel)
+        {
+            if (AccesLevel == "Funcionario")
+            {
+                return 2;
+            }
+            else if (AccesLevel == "Supervisor")
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            } 
+        }
+
+        public static int AdicionarUsuario(string nome, string filial, string contato, string nivelAcesso, string login, string senha)
         {
             if (!string.IsNullOrEmpty(nome) &&
-                !string.IsNullOrEmpty(filial.ToString()) &&
-                !string.IsNullOrEmpty(cargo) &&
+                !string.IsNullOrEmpty(filial) &&
                 !string.IsNullOrEmpty(contato) &&
-                !string.IsNullOrEmpty(nivelAcesso.ToString()) &&
+                !string.IsNullOrEmpty(nivelAcesso) &&
                 !string.IsNullOrEmpty(login) &&
                 !string.IsNullOrEmpty(senha))
             {
                 if (!DAL.Model.Usuarios_DAL.VerificaSeUsuarioRepete(contato)) //Verificar se deu certo
                 {
+                    
                     try
                     {
-                        DAL.Model.Usuarios_DAL.InsereUsuario(nome, filial, cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha));
+                        DAL.Model.Usuarios_DAL.InsereUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, hash.CriptografarSenha(senha));
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)
@@ -66,11 +87,10 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaUsuario(string nome, string filial, string cargo, string contato, string nivelAcesso, string login, string senha, string where)
+        public static int AtualizaUsuario(string nome, string filial, string contato, string nivelAcesso, string login, string senha, string where)
         {
             if (!string.IsNullOrEmpty(nome) &&
               !string.IsNullOrEmpty(filial.ToString()) &&
-              !string.IsNullOrEmpty(cargo) &&
               !string.IsNullOrEmpty(contato) &&
               !string.IsNullOrEmpty(nivelAcesso.ToString()) &&
               !string.IsNullOrEmpty(login) &&
@@ -78,13 +98,13 @@ namespace BAL.Control
             {
                 //if (!DAL.Model.Usuarios_DAL.VerificaSeUsuarioRepete(contato))
                 //{
-                    if(Convert.ToInt32(nivelAcesso) > 3 && Convert.ToInt32(nivelAcesso) < 1)
+                    if(ConfereNivelAcesso(nivelAcesso) > 3 && ConfereNivelAcesso(nivelAcesso) < 1)
                     {
                         return 4; //Algum dado que o usuario inseriu nao pode ser convertido
                     }
                     try
                     {
-                        DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, filial, cargo, contato, Convert.ToInt32(nivelAcesso), login, hash.CriptografarSenha(senha), where);
+                        DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, hash.CriptografarSenha(senha), where);
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)
