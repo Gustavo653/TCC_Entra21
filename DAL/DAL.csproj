@@ -48,6 +48,7 @@
     <Compile Include="Model\ContasReceber_DAL.cs" />
     <Compile Include="Model\Convenios_DAL.cs" />
     <Compile Include="Model\Enderecos_DAL.cs" />
+    <Compile Include="Model\Enums\NivelAcesso.cs" />
     <Compile Include="Model\Objetos\ContasPagar.cs" />
     <Compile Include="Model\Objetos\ContasReceber.cs" />
     <Compile Include="Model\Objetos\Convenio.cs" />

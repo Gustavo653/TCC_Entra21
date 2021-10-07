@@ -43,10 +43,8 @@ namespace FarmaTech.View
             this.cbUsuarioFilial = new System.Windows.Forms.ComboBox();
             this.lblContato = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
-            this.nUDNivelAcesso = new System.Windows.Forms.NumericUpDown();
             this.txtContato = new System.Windows.Forms.TextBox();
-            this.cbUsuarioCargo = new System.Windows.Forms.ComboBox();
-            this.lblNivel = new System.Windows.Forms.Label();
+            this.cbNivelAcesso = new System.Windows.Forms.ComboBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -66,7 +64,6 @@ namespace FarmaTech.View
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.tabNovoUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nUDNivelAcesso)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,10 +132,8 @@ namespace FarmaTech.View
             this.tabNovoUsuario.Controls.Add(this.cbUsuarioFilial);
             this.tabNovoUsuario.Controls.Add(this.lblContato);
             this.tabNovoUsuario.Controls.Add(this.lblCargo);
-            this.tabNovoUsuario.Controls.Add(this.nUDNivelAcesso);
             this.tabNovoUsuario.Controls.Add(this.txtContato);
-            this.tabNovoUsuario.Controls.Add(this.cbUsuarioCargo);
-            this.tabNovoUsuario.Controls.Add(this.lblNivel);
+            this.tabNovoUsuario.Controls.Add(this.cbNivelAcesso);
             this.tabNovoUsuario.Controls.Add(this.txtLogin);
             this.tabNovoUsuario.Controls.Add(this.lblLogin);
             this.tabNovoUsuario.Controls.Add(this.txtSenha);
@@ -211,28 +206,6 @@ namespace FarmaTech.View
             this.lblCargo.TabIndex = 45;
             this.lblCargo.Text = "Cargo:";
             // 
-            // nUDNivelAcesso
-            // 
-            this.nUDNivelAcesso.Location = new System.Drawing.Point(723, 186);
-            this.nUDNivelAcesso.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.nUDNivelAcesso.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nUDNivelAcesso.Name = "nUDNivelAcesso";
-            this.nUDNivelAcesso.Size = new System.Drawing.Size(144, 26);
-            this.nUDNivelAcesso.TabIndex = 53;
-            this.nUDNivelAcesso.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // txtContato
             // 
             this.txtContato.Location = new System.Drawing.Point(222, 186);
@@ -240,29 +213,18 @@ namespace FarmaTech.View
             this.txtContato.Size = new System.Drawing.Size(294, 26);
             this.txtContato.TabIndex = 52;
             // 
-            // cbUsuarioCargo
+            // cbNivelAcesso
             // 
-            this.cbUsuarioCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUsuarioCargo.FormattingEnabled = true;
-            this.cbUsuarioCargo.Items.AddRange(new object[] {
+            this.cbNivelAcesso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNivelAcesso.FormattingEnabled = true;
+            this.cbNivelAcesso.Items.AddRange(new object[] {
             "Gerente",
             "Funcionario",
             "Admin"});
-            this.cbUsuarioCargo.Location = new System.Drawing.Point(222, 119);
-            this.cbUsuarioCargo.Name = "cbUsuarioCargo";
-            this.cbUsuarioCargo.Size = new System.Drawing.Size(205, 28);
-            this.cbUsuarioCargo.TabIndex = 48;
-            // 
-            // lblNivel
-            // 
-            this.lblNivel.AutoSize = true;
-            this.lblNivel.BackColor = System.Drawing.Color.Transparent;
-            this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNivel.Location = new System.Drawing.Point(586, 189);
-            this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(121, 20);
-            this.lblNivel.TabIndex = 49;
-            this.lblNivel.Text = "Nível Acesso: ";
+            this.cbNivelAcesso.Location = new System.Drawing.Point(222, 119);
+            this.cbNivelAcesso.Name = "cbNivelAcesso";
+            this.cbNivelAcesso.Size = new System.Drawing.Size(205, 28);
+            this.cbNivelAcesso.TabIndex = 48;
             // 
             // txtLogin
             // 
@@ -455,7 +417,6 @@ namespace FarmaTech.View
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.tabNovoUsuario.ResumeLayout(false);
             this.tabNovoUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nUDNivelAcesso)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -477,10 +438,8 @@ namespace FarmaTech.View
         private System.Windows.Forms.ComboBox cbUsuarioFilial;
         private System.Windows.Forms.Label lblContato;
         private System.Windows.Forms.Label lblCargo;
-        private System.Windows.Forms.NumericUpDown nUDNivelAcesso;
         private System.Windows.Forms.TextBox txtContato;
-        private System.Windows.Forms.ComboBox cbUsuarioCargo;
-        private System.Windows.Forms.Label lblNivel;
+        private System.Windows.Forms.ComboBox cbNivelAcesso;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TextBox txtSenha;

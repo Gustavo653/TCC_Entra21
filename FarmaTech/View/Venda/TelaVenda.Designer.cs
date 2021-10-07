@@ -31,9 +31,9 @@ namespace FarmaTech
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnConfirma = new System.Windows.Forms.Button();
+            this.btnPesquisaProduto = new System.Windows.Forms.Button();
+            this.btnPesquisaCliente = new System.Windows.Forms.Button();
+            this.btnSangria = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCliente = new System.Windows.Forms.TabPage();
@@ -54,7 +54,7 @@ namespace FarmaTech
             this.txtPrecoTotalProduto = new System.Windows.Forms.MaskedTextBox();
             this.txtPrecoUnitario = new System.Windows.Forms.MaskedTextBox();
             this.lblDescontos = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAdiciona = new System.Windows.Forms.Button();
             this.btnContinarVenda = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblValorTotal = new System.Windows.Forms.Label();
@@ -67,7 +67,6 @@ namespace FarmaTech
             this.PrecoTotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.lblQuant = new System.Windows.Forms.Label();
-            this.btnPesquisa = new System.Windows.Forms.Button();
             this.lblDataSitema = new System.Windows.Forms.Label();
             this.lblProduto = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
@@ -91,6 +90,7 @@ namespace FarmaTech
             this.lblHora = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnRemover = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
@@ -103,9 +103,9 @@ namespace FarmaTech
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnPesquisar);
-            this.panel1.Controls.Add(this.btnConfirma);
+            this.panel1.Controls.Add(this.btnPesquisaProduto);
+            this.panel1.Controls.Add(this.btnPesquisaCliente);
+            this.panel1.Controls.Add(this.btnSangria);
             this.panel1.Controls.Add(this.btnVoltar);
             this.panel1.Location = new System.Drawing.Point(130, 12);
             this.panel1.Name = "panel1";
@@ -113,33 +113,35 @@ namespace FarmaTech
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
-            // button1
+            // btnPesquisaProduto
             // 
-            this.button1.Location = new System.Drawing.Point(301, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 75);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Confirma";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPesquisaProduto.Location = new System.Drawing.Point(301, 21);
+            this.btnPesquisaProduto.Name = "btnPesquisaProduto";
+            this.btnPesquisaProduto.Size = new System.Drawing.Size(75, 75);
+            this.btnPesquisaProduto.TabIndex = 14;
+            this.btnPesquisaProduto.Text = "Pesquisa Produto";
+            this.btnPesquisaProduto.UseVisualStyleBackColor = true;
+            this.btnPesquisaProduto.Click += new System.EventHandler(this.btnPesquisaProduto_Click);
             // 
-            // btnPesquisar
+            // btnPesquisaCliente
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(425, 21);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 75);
-            this.btnPesquisar.TabIndex = 121;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            this.btnPesquisaCliente.Location = new System.Drawing.Point(425, 21);
+            this.btnPesquisaCliente.Name = "btnPesquisaCliente";
+            this.btnPesquisaCliente.Size = new System.Drawing.Size(75, 75);
+            this.btnPesquisaCliente.TabIndex = 121;
+            this.btnPesquisaCliente.Text = "Pesquisa Cliente";
+            this.btnPesquisaCliente.UseVisualStyleBackColor = true;
+            this.btnPesquisaCliente.Click += new System.EventHandler(this.btnPesquisaCliente_Click);
             // 
-            // btnConfirma
+            // btnSangria
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(190, 21);
-            this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(75, 75);
-            this.btnConfirma.TabIndex = 13;
-            this.btnConfirma.Text = "Confirma";
-            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnSangria.Location = new System.Drawing.Point(190, 21);
+            this.btnSangria.Name = "btnSangria";
+            this.btnSangria.Size = new System.Drawing.Size(75, 75);
+            this.btnSangria.TabIndex = 13;
+            this.btnSangria.Text = "Sangria";
+            this.btnSangria.UseVisualStyleBackColor = true;
+            this.btnSangria.Click += new System.EventHandler(this.btnSangria_Click);
             // 
             // btnVoltar
             // 
@@ -287,6 +289,7 @@ namespace FarmaTech
             // tabVenda
             // 
             this.tabVenda.BackColor = System.Drawing.Color.Lavender;
+            this.tabVenda.Controls.Add(this.btnRemover);
             this.tabVenda.Controls.Add(this.cbQuantidade);
             this.tabVenda.Controls.Add(this.cbProdutoVenda);
             this.tabVenda.Controls.Add(this.txtValorTotal);
@@ -294,7 +297,7 @@ namespace FarmaTech
             this.tabVenda.Controls.Add(this.txtPrecoTotalProduto);
             this.tabVenda.Controls.Add(this.txtPrecoUnitario);
             this.tabVenda.Controls.Add(this.lblDescontos);
-            this.tabVenda.Controls.Add(this.button2);
+            this.tabVenda.Controls.Add(this.btnAdiciona);
             this.tabVenda.Controls.Add(this.btnContinarVenda);
             this.tabVenda.Controls.Add(this.btnCancelar);
             this.tabVenda.Controls.Add(this.lblValorTotal);
@@ -303,7 +306,6 @@ namespace FarmaTech
             this.tabVenda.Controls.Add(this.dgVenda);
             this.tabVenda.Controls.Add(this.lblPrecoUnitario);
             this.tabVenda.Controls.Add(this.lblQuant);
-            this.tabVenda.Controls.Add(this.btnPesquisa);
             this.tabVenda.Controls.Add(this.lblDataSitema);
             this.tabVenda.Controls.Add(this.lblProduto);
             this.tabVenda.Controls.Add(this.lblData);
@@ -354,6 +356,7 @@ namespace FarmaTech
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(128, 29);
             this.txtDesconto.TabIndex = 61;
+            this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             // 
             // txtPrecoTotalProduto
             // 
@@ -381,15 +384,16 @@ namespace FarmaTech
             this.lblDescontos.TabIndex = 58;
             this.lblDescontos.Text = "Descontos:";
             // 
-            // button2
+            // btnAdiciona
             // 
-            this.button2.Location = new System.Drawing.Point(709, 366);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 57;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAdiciona.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdiciona.Location = new System.Drawing.Point(593, 45);
+            this.btnAdiciona.Name = "btnAdiciona";
+            this.btnAdiciona.Size = new System.Drawing.Size(54, 58);
+            this.btnAdiciona.TabIndex = 57;
+            this.btnAdiciona.Text = "+";
+            this.btnAdiciona.UseVisualStyleBackColor = true;
+            this.btnAdiciona.Click += new System.EventHandler(this.btnAdiciona_Click);
             // 
             // btnContinarVenda
             // 
@@ -508,15 +512,6 @@ namespace FarmaTech
             this.lblQuant.Size = new System.Drawing.Size(107, 20);
             this.lblQuant.TabIndex = 40;
             this.lblQuant.Text = "Quantidade:";
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Location = new System.Drawing.Point(577, 69);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(30, 26);
-            this.btnPesquisa.TabIndex = 38;
-            this.btnPesquisa.UseVisualStyleBackColor = true;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // lblDataSitema
             // 
@@ -747,6 +742,17 @@ namespace FarmaTech
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // btnRemover
+            // 
+            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Location = new System.Drawing.Point(657, 45);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(54, 58);
+            this.btnRemover.TabIndex = 67;
+            this.btnRemover.Text = "-";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -784,7 +790,7 @@ namespace FarmaTech
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnConfirma;
+        private System.Windows.Forms.Button btnSangria;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabCliente;
@@ -795,7 +801,6 @@ namespace FarmaTech
         private System.Windows.Forms.DataGridView dgVenda;
         private System.Windows.Forms.Label lblPrecoUnitario;
         private System.Windows.Forms.Label lblQuant;
-        private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.Label lblDataSitema;
         private System.Windows.Forms.Label lblProduto;
         private System.Windows.Forms.Label lblData;
@@ -810,8 +815,8 @@ namespace FarmaTech
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.RadioButton rbFisica;
         private System.Windows.Forms.Button btnContinuar;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPesquisaCliente;
+        private System.Windows.Forms.Button btnPesquisaProduto;
         private System.Windows.Forms.TabPage tabFormaPagamento;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Button btnVoltarVenda;
@@ -826,7 +831,7 @@ namespace FarmaTech
         private System.Windows.Forms.Button btnContinarVenda;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAdiciona;
         private System.Windows.Forms.Label lblDescontos;
         private System.Windows.Forms.MaskedTextBox txtValorTotal;
         private System.Windows.Forms.MaskedTextBox txtDesconto;
@@ -844,5 +849,6 @@ namespace FarmaTech
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnRemover;
     }
 }

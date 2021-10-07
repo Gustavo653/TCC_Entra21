@@ -10,20 +10,16 @@ namespace DAL.Model.Objetos
     {
         public string Nome { get; set; }
         public string Filial { get; set; }
-        public string Cargo { get; set; }
         public string Contato { get; set; }
         public int NivelAcesso { get; set; }
         public string Login { get; set; }
-        public string Senha { get; set; }
-        public Usuario(string nome, string filial, string cargo, string contato, int nivelAcesso, string login, string senha)
+        public Usuario(string nome, string filial, string contato, int nivelAcesso, string login)
         {
             Nome = nome;
             Filial = filial;
-            Cargo = cargo;
             Contato = contato;
             NivelAcesso = nivelAcesso;
             Login = login;
-            Senha = senha;
         }
     }
 }

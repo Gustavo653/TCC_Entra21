@@ -13,6 +13,7 @@ namespace FarmaTech.View.Principal
 {
     public partial class TelaCadastroContasReceber : Form
     {
+        public static int ValorSalvar { get; set; }
         public TelaCadastroContasReceber()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace FarmaTech.View.Principal
         {
             tabControl1.TabPages.Remove(tabNovoContaReceber);
             btnSalvar.Enabled = false;
+            dtpVencimento.Value = DateTime.Now.Date;
+            AtualizaDG();
         }
 
         private void TelaContasReceber_FormClosed(object sender, FormClosedEventArgs e)
@@ -59,7 +62,6 @@ namespace FarmaTech.View.Principal
             {
                 this.Hide();
             }
-            lblContas.Text = "Contas a receber";
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -70,7 +72,11 @@ namespace FarmaTech.View.Principal
             btnExcluir.Enabled = false;
             btnNovo.Enabled = false;
             btnSalvar.Enabled = true;
-            lblContas.Text = "Nova Conta";
+            txtNomeFornecedor.Clear();
+            txtValor.Clear();
+            dtpVencimento.Value = DateTime.Now.Date;
+
+            ValorSalvar = 1;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -81,13 +87,22 @@ namespace FarmaTech.View.Principal
             btnSalvar.Enabled = true;
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
+
+            ValorSalvar = 0;
+            int indiceSelecionado = dgContasReceber.CurrentRow.Index;
+            List<DAL.Model.Objetos.ContasReceber> contas = BAL.Control.ContasReceber_BAL.GetContasReceberPorNome(dgContasReceber.Rows[indiceSelecionado].Cells[0].Value.ToString());
+            txtNomeFornecedor.Text = contas[0].NomeFornecedor;
+            txtValor.Text = contas[0].Valor;
+            dtpVencimento.Value = Convert.ToDateTime(contas[0].Vencimento);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {           
-
+            {
+                int indiceSelecionado = dgContasReceber.CurrentRow.Index;
+                BAL.Control.ContasReceber_BAL.RemoveContasReceber(dgContasReceber.Rows[indiceSelecionado].Cells[0].Value.ToString(), dgContasReceber.Rows[indiceSelecionado].Cells[1].Value.ToString(), dgContasReceber.Rows[indiceSelecionado].Cells[2].Value.ToString());
+                AtualizaDG();
             }
         }
 
@@ -100,33 +115,77 @@ namespace FarmaTech.View.Principal
             btnNovo.Enabled = true;
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
+            if (ValorSalvar == 1)
+            {
+                int resultado = BAL.Control.ContasReceber_BAL.AdicionarContasReceber(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0, 10));
+
+                if (resultado == 0)
+                {
+                    MessageBox.Show("Conta a receber cadastrada com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (resultado == 1)
+                {
+                    MessageBox.Show("Preencha todos os campos!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 2)
+                {
+                    MessageBox.Show("Conta a receber já existente!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 3)
+                {
+                    MessageBox.Show("Houve um erro desconhecido!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 4)
+                {
+                    MessageBox.Show("Verifique se os dados inseridos estão no formato correto!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                AtualizaDG();
+            }
+            else
+            {
+                int indiceSelecionado = dgContasReceber.CurrentRow.Index;
+                int resultado = BAL.Control.ContasReceber_BAL.AtualizaContasReceber(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0, 10), dgContasReceber.Rows[indiceSelecionado].Cells[0].Value.ToString(), dgContasReceber.Rows[indiceSelecionado].Cells[1].Value.ToString());
+
+                if (resultado == 0)
+                {
+                    MessageBox.Show("Conta a receber atualizada com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (resultado == 1)
+                {
+                    MessageBox.Show("Preencha todos os campos!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 2)
+                {
+                    MessageBox.Show("Conta a receber já existente!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 3)
+                {
+                    MessageBox.Show("Houve um erro desconhecido!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (resultado == 4)
+                {
+                    MessageBox.Show("Verifique se os dados inseridos estão no formato correto!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                AtualizaDG();
+
+            }
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void txtPesquisaUsuario_TextChanged(object sender, EventArgs e)
         {
-
-            lblHora.Text = DateTime.Now.ToLongTimeString();
-            lblData.Text = DateTime.Now.ToLongDateString();
+            AtualizaDG();
         }
-
-        private void tabContasReceber_Paint(object sender, PaintEventArgs e)
+        public void AtualizaDG()
         {
-            SetBackColorDegrade(sender, e);
-        }
-
-        private void tabNovoContaReceber_Paint(object sender, PaintEventArgs e)
-        {
-
-            SetBackColorDegrade(sender, e);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-            Graphics graphics = e.Graphics;
-            Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
-            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(139, 148, 250), Color.FromArgb(116, 186, 241), 45f);
-            graphics.FillRectangle(br, gradient_rect);
+            if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
+            {
+                List<DAL.Model.Objetos.ContasReceber> lista = BAL.Control.ContasReceber_BAL.GetContasReceberPorNome(txtPesquisaUsuario.Text);
+                dgContasReceber.DataSource = lista;
+            }
+            else
+            {
+                List<DAL.Model.Objetos.ContasReceber> lista = BAL.Control.ContasReceber_BAL.GetContasReceber();
+                dgContasReceber.DataSource = lista;
+            }
         }
     }
 }

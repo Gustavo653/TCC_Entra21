@@ -76,7 +76,13 @@ namespace FarmaTech
             }
         }
 
-
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (BAL.Control.Login_BAL.ValidaCredenciais("Admin", "Senha"))
+            {
+                new TelaPrincipal().Show();
+                this.Hide();
+            }
+        }
     }
 }

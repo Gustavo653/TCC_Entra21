@@ -164,6 +164,12 @@
     <Compile Include="View\Principal\TelaSobre.Designer.cs">
       <DependentUpon>TelaSobre.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Venda\TelaSangria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\TelaSangria.Designer.cs">
+      <DependentUpon>TelaSangria.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Venda\TelaVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\TelaAberturaDeCaixa.resx">
       <DependentUpon>TelaAberturaDeCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\TelaSangria.resx">
+      <DependentUpon>TelaSangria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>
