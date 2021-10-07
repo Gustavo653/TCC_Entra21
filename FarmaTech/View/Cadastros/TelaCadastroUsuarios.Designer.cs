@@ -225,6 +225,7 @@ namespace FarmaTech.View
             this.cbNivelAcesso.Name = "cbNivelAcesso";
             this.cbNivelAcesso.Size = new System.Drawing.Size(205, 28);
             this.cbNivelAcesso.TabIndex = 48;
+            this.cbNivelAcesso.SelectedIndexChanged += new System.EventHandler(this.cbNivelAcesso_SelectedIndexChanged);
             // 
             // txtLogin
             // 

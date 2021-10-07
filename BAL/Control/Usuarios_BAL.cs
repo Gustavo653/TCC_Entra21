@@ -12,11 +12,19 @@ namespace BAL.Control
         public static DAL.Model.Consultas.HashLogin hash = new DAL.Model.Consultas.HashLogin(SHA512.Create());
         public static List<DAL.Model.Objetos.Usuario> GetUsuarios()
         {
-            return DAL.Model.Usuarios_DAL.GetUsuarios();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 2)
+            {
+                return DAL.Model.Usuarios_DAL.GetUsuarios();
+            }
+            return DAL.Model.Usuarios_DAL.GetUsuarios(DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         public static List<DAL.Model.Objetos.Usuario> GetUsuariosPorNome(string nome)
         {
+            if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 2)
+            {
             return DAL.Model.Usuarios_DAL.GetUsuariosPorNome(nome);
+            }
+            return DAL.Model.Usuarios_DAL.GetUsuariosPorNome(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         /// <summary>
         /// 
@@ -36,7 +44,7 @@ namespace BAL.Control
             else
             {
                 return 0;
-            } 
+            }
         }
 
         public static int AdicionarUsuario(string nome, string filial, string contato, string nivelAcesso, string login, string senha)
@@ -50,7 +58,7 @@ namespace BAL.Control
             {
                 if (!DAL.Model.Usuarios_DAL.VerificaSeUsuarioRepete(contato)) //Verificar se deu certo
                 {
-                    
+
                     try
                     {
                         DAL.Model.Usuarios_DAL.InsereUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, hash.CriptografarSenha(senha));
@@ -79,7 +87,7 @@ namespace BAL.Control
                     DAL.Model.Usuarios_DAL.RemoveUsuario(contato);
                     return 0; //Deu tudo certo
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
                     return 2; //Algo inesperado ocorreu
@@ -98,24 +106,24 @@ namespace BAL.Control
             {
                 //if (!DAL.Model.Usuarios_DAL.VerificaSeUsuarioRepete(contato))
                 //{
-                    if(ConfereNivelAcesso(nivelAcesso) > 3 && ConfereNivelAcesso(nivelAcesso) < 1)
-                    {
-                        return 4; //Algum dado que o usuario inseriu nao pode ser convertido
-                    }
-                    try
-                    {
-                        DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, hash.CriptografarSenha(senha), where);
-                        return 0; //Deu tudo certo
-                    }
-                    catch (FormatException)
-                    {
-                        return 4; //Algum dado que o usuario inseriu nao pode ser convertido
-                    }
-                    catch (Exception e)
-                    {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
-                        return 3; //Algo inesperado ocorreu
-                    }
+                if (ConfereNivelAcesso(nivelAcesso) > 3 && ConfereNivelAcesso(nivelAcesso) < 1)
+                {
+                    return 4; //Algum dado que o usuario inseriu nao pode ser convertido
+                }
+                try
+                {
+                    DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, hash.CriptografarSenha(senha), where);
+                    return 0; //Deu tudo certo
+                }
+                catch (FormatException)
+                {
+                    return 4; //Algum dado que o usuario inseriu nao pode ser convertido
+                }
+                catch (Exception e)
+                {
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
+                    return 3; //Algo inesperado ocorreu
+                }
                 //}
                 //return 2; //Erro usuario ja existe
             }

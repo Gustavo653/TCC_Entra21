@@ -34,9 +34,53 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
+        public static List<Usuario> GetUsuarios(string filial)
+        {
+            string select = $"SELECT * from dbo.Usuarios WHERE Filial = '{filial}'";
+            List<Usuario> lista = new List<Usuario>();
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Usuario usuario = new Usuario(
+                    dr["Nome"].ToString(),
+                    dr["Filial"].ToString(),
+                    dr["Contato"].ToString(),
+                    Convert.ToInt32(dr["NivelAcesso"]),
+                    dr["Login"].ToString());
+                lista.Add(usuario);
+            }
+            dr.Close();
+            conn.Close();
+            return lista;
+        }
         public static List<Usuario> GetUsuariosPorNome(string nome)
         {
             string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%'";
+            List<Usuario> lista = new List<Usuario>();
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Usuario usuario = new Usuario(
+                   dr["Nome"].ToString(),
+                   dr["Filial"].ToString(),
+                   dr["Contato"].ToString(),
+                   Convert.ToInt32(dr["NivelAcesso"]),
+                   dr["Login"].ToString());
+                lista.Add(usuario);
+            }
+            dr.Close();
+            conn.Close();
+            return lista;
+        }
+        public static List<Usuario> GetUsuariosPorNome(string nome, string filial)
+        {
+            string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%' AND Filial = '{filial}'";
             List<Usuario> lista = new List<Usuario>();
             SqlCommand cmd = new SqlCommand(select, conn);
             if (conn.State == System.Data.ConnectionState.Closed)

@@ -231,5 +231,17 @@ namespace FarmaTech.View
         {
             SetBackColorDegrade(sender, e);
         }
+
+        private void cbNivelAcesso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbNivelAcesso.SelectedIndex < 1)
+            {
+                if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+                {
+                    MessageBox.Show("Você não pode inserir um usuário com nível maior que 2!");
+                    cbNivelAcesso.SelectedIndex = 2;
+                }
+            }
+        }
     }
 }
