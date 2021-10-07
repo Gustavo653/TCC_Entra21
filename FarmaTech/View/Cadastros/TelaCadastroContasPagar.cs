@@ -34,7 +34,19 @@ namespace FarmaTech.View
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (tabControl1.TabPages.Contains(tabNovoContaPagar))
+            {
+                tabControl1.TabPages.Remove(tabNovoContaPagar);
+                tabControl1.TabPages.Add(tabContasPagar);
+                btnSalvar.Enabled = false;
+                btnAlterar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnNovo.Enabled = true;
+            }
+            else
+            {
+                this.Hide();
+            }
             lblContas.Text = "Contas a pagar";
         }
 

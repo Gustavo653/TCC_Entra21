@@ -56,9 +56,10 @@ namespace FarmaTech.View.Requisicoes
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(83, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 18;
             this.label3.Text = "Filial:";
             // 
@@ -73,9 +74,10 @@ namespace FarmaTech.View.Requisicoes
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblDescricao.Location = new System.Drawing.Point(40, 214);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(58, 13);
+            this.lblDescricao.Size = new System.Drawing.Size(94, 20);
             this.lblDescricao.TabIndex = 16;
             this.lblDescricao.Text = "Descrição:";
             // 
@@ -89,18 +91,20 @@ namespace FarmaTech.View.Requisicoes
             // lblAssunto
             // 
             this.lblAssunto.AutoSize = true;
+            this.lblAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblAssunto.Location = new System.Drawing.Point(54, 161);
             this.lblAssunto.Name = "lblAssunto";
-            this.lblAssunto.Size = new System.Drawing.Size(48, 13);
+            this.lblAssunto.Size = new System.Drawing.Size(80, 20);
             this.lblAssunto.TabIndex = 14;
             this.lblAssunto.Text = "Assunto:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(385, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.Size = new System.Drawing.Size(76, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Usuário:";
             // 
@@ -115,9 +119,10 @@ namespace FarmaTech.View.Requisicoes
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(81, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Data:";
             // 
@@ -144,27 +149,30 @@ namespace FarmaTech.View.Requisicoes
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(437, 40);
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblUsuario.Location = new System.Drawing.Point(467, 40);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(57, 20);
             this.lblUsuario.TabIndex = 21;
             this.lblUsuario.Text = "label3";
             // 
             // lblFilial
             // 
             this.lblFilial.AutoSize = true;
-            this.lblFilial.Location = new System.Drawing.Point(115, 97);
+            this.lblFilial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFilial.Location = new System.Drawing.Point(140, 97);
             this.lblFilial.Name = "lblFilial";
-            this.lblFilial.Size = new System.Drawing.Size(35, 13);
+            this.lblFilial.Size = new System.Drawing.Size(57, 20);
             this.lblFilial.TabIndex = 20;
             this.lblFilial.Text = "label2";
             // 
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(120, 34);
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblData.Location = new System.Drawing.Point(140, 34);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(35, 13);
+            this.lblData.Size = new System.Drawing.Size(57, 20);
             this.lblData.TabIndex = 19;
             this.lblData.Text = "label1";
             // 

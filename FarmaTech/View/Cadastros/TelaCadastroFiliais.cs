@@ -31,7 +31,19 @@ namespace FarmaTech.View
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            if (tabControl1.TabPages.Contains(tabNovoFilial))
+            {
+                tabControl1.TabPages.Remove(tabNovoFilial);
+                tabControl1.TabPages.Add(tabFiliais);
+                btnSalvar.Enabled = false;
+                btnAlterar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnNovo.Enabled = true;
+            }
+            else
+            {
+                this.Hide();
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)

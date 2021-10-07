@@ -81,7 +81,7 @@ namespace FarmaTech.View.Principal
             // txtPesquisaUsuario
             // 
             this.txtPesquisaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisaUsuario.Location = new System.Drawing.Point(346, 30);
+            this.txtPesquisaUsuario.Location = new System.Drawing.Point(243, 39);
             this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
             this.txtPesquisaUsuario.Size = new System.Drawing.Size(300, 26);
             this.txtPesquisaUsuario.TabIndex = 95;
@@ -91,7 +91,7 @@ namespace FarmaTech.View.Principal
             // 
             this.lblPesquisar.AutoSize = true;
             this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesquisar.Location = new System.Drawing.Point(247, 33);
+            this.lblPesquisar.Location = new System.Drawing.Point(144, 42);
             this.lblPesquisar.Name = "lblPesquisar";
             this.lblPesquisar.Size = new System.Drawing.Size(93, 20);
             this.lblPesquisar.TabIndex = 94;
@@ -137,6 +137,7 @@ namespace FarmaTech.View.Principal
             this.tabRequisicoes.BackColor = System.Drawing.Color.Lavender;
             this.tabRequisicoes.Controls.Add(this.dgRequisicoes);
             this.tabRequisicoes.Controls.Add(this.txtPesquisaUsuario);
+            this.tabRequisicoes.Controls.Add(this.button2);
             this.tabRequisicoes.Controls.Add(this.lblPesquisar);
             this.tabRequisicoes.Location = new System.Drawing.Point(4, 22);
             this.tabRequisicoes.Name = "tabRequisicoes";
@@ -277,12 +278,16 @@ namespace FarmaTech.View.Principal
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(36, 273);
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(587, -12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 67);
+            this.button2.Size = new System.Drawing.Size(143, 142);
             this.button2.TabIndex = 98;
-            this.button2.Text = "Responder";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblNovaRec
@@ -343,7 +348,6 @@ namespace FarmaTech.View.Principal
             this.ClientSize = new System.Drawing.Size(1139, 626);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblNovaRec);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.tabControl1);
