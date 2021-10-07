@@ -65,10 +65,10 @@ namespace FarmaTech.View
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.lblData = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblCadastroClientes = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
@@ -475,11 +475,6 @@ namespace FarmaTech.View
             this.lblData.TabIndex = 86;
             this.lblData.Text = "Data";
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -514,6 +509,11 @@ namespace FarmaTech.View
             this.lblCadastroClientes.Size = new System.Drawing.Size(311, 36);
             this.lblCadastroClientes.TabIndex = 88;
             this.lblCadastroClientes.Text = "Cadastro de Clientes";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // TelaCadastroCliente
             // 
@@ -585,9 +585,9 @@ namespace FarmaTech.View
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblCadastroClientes;
+        private System.Windows.Forms.Timer timer1;
     }
 }

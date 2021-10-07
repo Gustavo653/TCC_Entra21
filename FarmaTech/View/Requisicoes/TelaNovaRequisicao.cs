@@ -51,8 +51,8 @@ namespace FarmaTech.View.Requisicoes
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            int resultado = BAL.Control.Requisicoes_BAL.AdicionaRequisicao(lblUsuario.Text, lblFilial.Text, lblData.Text, txtAssunto.Text, txtDescricao.Text);
-            if(resultado == 0)
+            int resultado = BAL.Control.Requisicoes_BAL.AdicionaRequisicao(lblUsuario.Text, lblFilial.Text, DateTime.Now.ToString().Substring(0, 10), txtAssunto.Text, txtDescricao.Text);
+            if (resultado == 0)
             {
                 MessageBox.Show("Requisicao registrada");
             }
@@ -60,7 +60,7 @@ namespace FarmaTech.View.Requisicoes
             {
                 MessageBox.Show("Preencha todos os campos");
             }
-            else if(resultado == 2)
+            else if (resultado == 2)
             {
                 MessageBox.Show("Houve um erro desconhecido");
             }
@@ -86,7 +86,9 @@ namespace FarmaTech.View.Requisicoes
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToLongTimeString();
-            lblData.Text = DateTime.Now.ToLongDateString();
+            lblDate.Text = DateTime.Now.ToLongDateString();
         }
+
+    
     }
 }

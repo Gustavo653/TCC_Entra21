@@ -324,6 +324,7 @@ namespace FarmaTech.View.Principal
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnAlterar);
             this.Name = "TelaCadastroContasReceber";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:Contas a Receber";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaContasReceber_FormClosed);
             this.Load += new System.EventHandler(this.TelaContasReceber_Load);

@@ -47,7 +47,6 @@ namespace FarmaTech.View
             cbUsuarioCargo.SelectedIndex = 0;
             cbUsuarioFilial.SelectedIndex = 0;
             nUDNivelAcesso.Value = 1;
-            lblUsuarios.Text = "Novo\nUsuário";
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -65,7 +64,6 @@ namespace FarmaTech.View
             {
                 this.Hide();
             }
-            lblUsuarios.Text = "Usuários";
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -215,11 +213,6 @@ namespace FarmaTech.View
             SetBackColorDegrade(sender, e);
         }
 
-        private void tabNovoUsuario_Paint(object sender, PaintEventArgs e)
-        {
-            SetBackColorDegrade(sender, e);
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
@@ -230,9 +223,13 @@ namespace FarmaTech.View
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             lblHora.Text = DateTime.Now.ToLongTimeString();
             lblData.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void tabNovoUsuario_Paint(object sender, PaintEventArgs e)
+        {
+            SetBackColorDegrade(sender, e);
         }
     }
 }
