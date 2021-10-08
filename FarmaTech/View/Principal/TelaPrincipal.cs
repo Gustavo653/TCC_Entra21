@@ -74,9 +74,7 @@ namespace FarmaTech
 
         private void MenuPdv_Click_1(object sender, EventArgs e)
         {
-            bool caixaAberto = false;
-
-            if (!caixaAberto)
+            if (!BAL.Control.Caixa_BAL.GetEstadoCaixa())
             {
                 if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
                 {
@@ -91,10 +89,7 @@ namespace FarmaTech
             {
                 new TelaVenda().Show();
             }
-
         }
-
-
         private void MenuProdutos_Click(object sender, EventArgs e)
         {
             new TelaCadastroProdutos().Show();

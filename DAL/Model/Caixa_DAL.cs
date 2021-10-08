@@ -11,6 +11,23 @@ namespace DAL.Model
     public class Caixa_DAL
     {
         private static readonly SqlConnection conn = DbConnection.conn;
+        public static int GetCaixa(string data)
+        {
+            int caixa = 1;
+            string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}'";
+            SqlCommand cmd = new SqlCommand(select, conn);
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                caixa = Convert.ToInt32(dr["Caixa"]);
+                caixa++;
+            }
+            dr.Close();
+            conn.Close();
+            return caixa;
+        }
         public static bool VerificaEstadoCaixa(string data)
         {
             string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}'";

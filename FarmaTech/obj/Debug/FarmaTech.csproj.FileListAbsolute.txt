@@ -296,6 +296,5 @@ C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Ve
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.GenerateResource.cache
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
-C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb

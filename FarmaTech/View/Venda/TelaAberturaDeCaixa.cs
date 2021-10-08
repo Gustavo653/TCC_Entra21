@@ -26,8 +26,20 @@ namespace FarmaTech.View.Principal
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            new TelaVenda().Show();
-            this.Hide();
+            int resultado = BAL.Control.Caixa_BAL.AbreCaixa(DateTime.Now.ToString().Substring(0, 10), lblNumCaixa.Text, cbUsuario.Text, txtValorAberturaCaixa.Text);
+            if (resultado == 0)
+            {
+                new TelaVenda().Show();
+                this.Hide();
+            }
+            else if (resultado == 1)
+            {
+                MessageBox.Show("Verifique se tudo esta preenchido");
+            }
+            else
+            {
+                MessageBox.Show("Erro desconhecido!");
+            }
         }
 
         private void TelaAberturaDeCaixa_Paint(object sender, PaintEventArgs e)
@@ -44,7 +56,10 @@ namespace FarmaTech.View.Principal
 
         private void TelaAberturaDeCaixa_Load(object sender, EventArgs e)
         {
-            cbUsuario.DataSource = BAL.Control.Usuarios_BAL.GetUsuarios();
+            lblNumCaixa.Text = BAL.Control.Caixa_BAL.GetCaixa().ToString();
+            IEnumerable<string> nomesUsuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Select(x => x.Nome);
+            cbUsuario.DataSource = nomesUsuarios.ToArray();
+            cbUsuario.SelectedItem = DAL.Model.Objetos.UsuarioStatic.Nome;
             lblDataSistema.Text = DateTime.Now.ToString();
         }
 

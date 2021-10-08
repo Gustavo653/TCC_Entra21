@@ -121,6 +121,7 @@ namespace FarmaTech.View.Principal
             // 
             // cbUsuario
             // 
+            this.cbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuario.FormattingEnabled = true;
             this.cbUsuario.Location = new System.Drawing.Point(166, 195);
             this.cbUsuario.Name = "cbUsuario";

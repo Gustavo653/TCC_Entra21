@@ -84,5 +84,23 @@ namespace FarmaTech
                 this.Hide();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (BAL.Control.Login_BAL.ValidaCredenciais("a2", "a2"))
+            {
+                new TelaPrincipal().Show();
+                this.Hide();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (BAL.Control.Login_BAL.ValidaCredenciais("a", "a"))
+            {
+                new TelaPrincipal().Show();
+                this.Hide();
+            }
+        }
     }
 }
