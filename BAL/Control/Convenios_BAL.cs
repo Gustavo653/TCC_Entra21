@@ -13,7 +13,7 @@ namespace BAL.Control
         public static List<Convenio> GetConvenios()
         {
             List<Convenio> lista;
-            if(UsuarioStatic.NivelAcesso == 2)
+            if (UsuarioStatic.NivelAcesso == 2)
             {
                 lista = DAL.Model.Convenios_DAL.GetConveniosPorFilial(UsuarioStatic.Filial);
             }
@@ -27,7 +27,7 @@ namespace BAL.Control
             {
 
                 item.Desconto = (1.0 - Convert.ToDouble(item.Desconto)).ToString();
-                item.Desconto = item.Desconto.Replace("0.", "");
+                item.Desconto = (Convert.ToDouble(item.Desconto) * 100).ToString();
                 item.Desconto += "%";
             }
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
@@ -49,7 +49,7 @@ namespace BAL.Control
             {
 
                 item.Desconto = (1.0 - Convert.ToDouble(item.Desconto)).ToString();
-                item.Desconto = item.Desconto.Replace("0.", "");
+                item.Desconto = (Convert.ToDouble(item.Desconto) * 100).ToString();
                 item.Desconto += "%";
             }
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
@@ -57,6 +57,10 @@ namespace BAL.Control
         }
         public static int AdicionarConvenio(string nome, string desconto)
         {
+            if (desconto.Contains(".") || desconto.Contains(","))
+            {
+                return 4;
+            }
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             desconto = desconto.Replace("%", "");
             desconto = "0." + desconto;
@@ -65,19 +69,15 @@ namespace BAL.Control
 
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(desconto))
             {
-                if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
                 {
                     return 3;
-                }
-                if (desconto.Contains(".") || desconto.Contains(","))
-                {
-                    return 4;
                 }
                 if (!DAL.Model.Convenios_DAL.VerificaSeConvenioRepete(nome)) //Verificar se deu certo
                 {
                     try
                     {
-                        DAL.Model.Convenios_DAL.InsereConvenio(nome, desconto);
+                        DAL.Model.Convenios_DAL.InsereConvenio(nome, desconto, DAL.Model.Objetos.UsuarioStatic.Filial);
                         return 0; //Deu tudo certo
                     }
                     catch (FormatException)
@@ -127,7 +127,7 @@ namespace BAL.Control
 
                 try
                 {
-                    DAL.Model.Convenios_DAL.AtualizaConvenio(nome, desconto, where);
+                    DAL.Model.Convenios_DAL.AtualizaConvenio(nome, desconto, DAL.Model.Objetos.UsuarioStatic.Filial, where);
                     return 0; //Deu tudo certo
                 }
                 catch (FormatException)

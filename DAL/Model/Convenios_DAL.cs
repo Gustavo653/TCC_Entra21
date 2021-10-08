@@ -80,9 +80,9 @@ namespace DAL.Model
             conn.Close();
             return lista;
         }
-        public static void InsereConvenio(string nome, string desconto)
+        public static void InsereConvenio(string nome, string desconto, string idFilial)
         {
-            string insert = $"INSERT into dbo.Convenios(Nome, Desconto) values ('{nome}', '{desconto}')";
+            string insert = $"INSERT into dbo.Convenios(Nome, Desconto, idFilial) values ('{nome}', '{desconto}', '{idFilial}')";
             DbConnection.Execute(insert);
         }
         public static void RemoveConvenio(string nome)
@@ -90,9 +90,9 @@ namespace DAL.Model
             string delete = $"DELETE from dbo.Convenios WHERE Nome = '{nome}'";
             DbConnection.Execute(delete);
         }
-        public static void AtualizaConvenio(string nome, string desconto, string where)
+        public static void AtualizaConvenio(string nome, string desconto, string idFilial, string where)
         {
-            string update = $"UPDATE dbo.Convenios Set Nome = '{nome}', Desconto = '{desconto}' WHERE Nome = '{where}'";
+            string update = $"UPDATE dbo.Convenios Set Nome = '{nome}', Desconto = '{desconto}' WHERE Nome = '{where}' AND idFilial = '{idFilial}'";
             DbConnection.Execute(update);
         }
         public static bool VerificaSeConvenioRepete(string nome)
