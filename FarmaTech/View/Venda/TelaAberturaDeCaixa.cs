@@ -44,6 +44,7 @@ namespace FarmaTech.View.Principal
 
         private void TelaAberturaDeCaixa_Load(object sender, EventArgs e)
         {
+            cbUsuario.DataSource = BAL.Control.Usuarios_BAL.GetUsuarios();
             lblDataSistema.Text = DateTime.Now.ToString();
         }
 

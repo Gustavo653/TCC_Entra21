@@ -31,14 +31,19 @@ namespace DAL.Model
             conn.Close();
             return false;
         }
-        public static void InsereCaixa(string data, string caixa, string usuario, string valor)
+        public static void AbreCaixa(string data, string caixa, string usuario, string valor)
         {
             string insert = $"INSERT into dbo.Caixa (Data, Caixa, Usuario, Valor, EstadoCaixa) values ('{data}', '{caixa}', '{usuario}', '{valor}', '1')";
             DbConnection.Execute(insert);
         }
         public static void AtualizaCaixa(string data, string caixa, string valor)
         {
-            string update = $"UPDATE dbo.Caixa Set Valor = '{valor}' Set EstadoCaixa = '0' WHERE Data = '{data}' AND Caixa = '{caixa}'";
+            string update = $"UPDATE dbo.Caixa Set Valor = '{valor}' WHERE Data = '{data}' AND Caixa = '{caixa}'";
+            DbConnection.Execute(update);
+        }
+        public static void FechaCaixa(string data, string caixa)
+        {
+            string update = $"UPDATE dbo.Caixa Set EstadoCaixa = '0' WHERE Data = '{data}' AND Caixa = '{caixa}'";
             DbConnection.Execute(update);
         }
     }

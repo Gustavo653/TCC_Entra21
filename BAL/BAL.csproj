@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\Caixa_BAL.cs" />
     <Compile Include="Control\ContasReceber_BAL.cs" />
     <Compile Include="Control\ContasPagar_BAL.cs" />
     <Compile Include="Control\Convenios_BAL.cs" />

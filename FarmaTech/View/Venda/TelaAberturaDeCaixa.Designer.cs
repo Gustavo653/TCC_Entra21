@@ -38,7 +38,6 @@ namespace FarmaTech.View.Principal
             this.lblValor = new System.Windows.Forms.Label();
             this.cbUsuario = new System.Windows.Forms.ComboBox();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.txtCaixa = new System.Windows.Forms.TextBox();
             this.lblCaixa = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.lblAbertura = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@ namespace FarmaTech.View.Principal
             this.lblHora = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblNumCaixa = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +53,7 @@ namespace FarmaTech.View.Principal
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
+            this.panel1.Controls.Add(this.lblNumCaixa);
             this.panel1.Controls.Add(this.lblDataSistema);
             this.panel1.Controls.Add(this.btnConfirma);
             this.panel1.Controls.Add(this.btnVoltar);
@@ -60,7 +61,6 @@ namespace FarmaTech.View.Principal
             this.panel1.Controls.Add(this.lblValor);
             this.panel1.Controls.Add(this.cbUsuario);
             this.panel1.Controls.Add(this.lblUsuario);
-            this.panel1.Controls.Add(this.txtCaixa);
             this.panel1.Controls.Add(this.lblCaixa);
             this.panel1.Controls.Add(this.lblData);
             this.panel1.Controls.Add(this.lblAbertura);
@@ -138,13 +138,6 @@ namespace FarmaTech.View.Principal
             this.lblUsuario.TabIndex = 5;
             this.lblUsuario.Text = "Usuário:";
             // 
-            // txtCaixa
-            // 
-            this.txtCaixa.Location = new System.Drawing.Point(456, 121);
-            this.txtCaixa.Name = "txtCaixa";
-            this.txtCaixa.Size = new System.Drawing.Size(132, 20);
-            this.txtCaixa.TabIndex = 4;
-            // 
             // lblCaixa
             // 
             this.lblCaixa.AutoSize = true;
@@ -219,6 +212,17 @@ namespace FarmaTech.View.Principal
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblNumCaixa
+            // 
+            this.lblNumCaixa.AutoSize = true;
+            this.lblNumCaixa.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumCaixa.Location = new System.Drawing.Point(452, 121);
+            this.lblNumCaixa.Name = "lblNumCaixa";
+            this.lblNumCaixa.Size = new System.Drawing.Size(51, 20);
+            this.lblNumCaixa.TabIndex = 12;
+            this.lblNumCaixa.Text = "label1";
+            // 
             // TelaAberturaDeCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +254,6 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.ComboBox cbUsuario;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.TextBox txtCaixa;
         private System.Windows.Forms.Label lblCaixa;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblAbertura;
@@ -261,5 +264,6 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblNumCaixa;
     }
 }
