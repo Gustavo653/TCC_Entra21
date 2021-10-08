@@ -92,8 +92,8 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\Index.css" />
-    <Content Include="View\Index.html" />
+    <Content Include="CSS\Home.css" />
+    <Content Include="View\Home.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
