@@ -34,5 +34,29 @@ namespace BAL.Control
             }
             return 1;
         }
+        public static int AtualizaCaixa(string data, string inserir, string retirada)
+        {
+            retirada = retirada.Replace(",", ".");
+            inserir = inserir.Replace(",", ".");
+            if (!string.IsNullOrEmpty(retirada) && !string.IsNullOrEmpty(inserir))
+            {
+                try
+                {
+                    string valor = (Convert.ToDouble(inserir) - Convert.ToDouble(retirada)).ToString();
+                    DAL.Model.Caixa_DAL.AtualizaCaixa(data, valor);
+                    return 0;
+                }
+                catch (FormatException)
+                {
+                    return 1;
+                }
+                catch (Exception e)
+                {
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "CAIXA_Atualizar");
+                    return 2;
+                }
+            }
+            return 1;
+        }
     }
 }

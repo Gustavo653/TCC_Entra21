@@ -1,9 +1,9 @@
-create dbo.Caixa
+create table dbo.Caixa
 (
 idCaixa int not null identity(1,1),
 Data varchar(10) not null,
 Caixa varchar(3) not null,
-Usuario vachar(50) not null,
+Usuario varchar(50) not null,
 Valor varchar(8) not null,
-EstadoCaixa bit not null
+EstadoCaixa int not null
 )

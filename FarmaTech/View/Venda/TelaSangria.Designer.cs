@@ -31,7 +31,7 @@ namespace FarmaTech.View.Venda
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtInserir = new System.Windows.Forms.TextBox();
             this.lblInserir = new System.Windows.Forms.Label();
             this.lblDataSistema = new System.Windows.Forms.Label();
             this.btnConfirma = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@ namespace FarmaTech.View.Venda
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtInserir);
             this.panel1.Controls.Add(this.lblInserir);
             this.panel1.Controls.Add(this.lblDataSistema);
             this.panel1.Controls.Add(this.btnConfirma);
@@ -70,12 +70,12 @@ namespace FarmaTech.View.Venda
             this.panel1.TabIndex = 102;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // textBox1
+            // txtInserir
             // 
-            this.textBox1.Location = new System.Drawing.Point(510, 193);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 20);
-            this.textBox1.TabIndex = 13;
+            this.txtInserir.Location = new System.Drawing.Point(510, 193);
+            this.txtInserir.Name = "txtInserir";
+            this.txtInserir.Size = new System.Drawing.Size(132, 20);
+            this.txtInserir.TabIndex = 13;
             // 
             // lblInserir
             // 
@@ -139,6 +139,7 @@ namespace FarmaTech.View.Venda
             // 
             // cbUsuario
             // 
+            this.cbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuario.FormattingEnabled = true;
             this.cbUsuario.Location = new System.Drawing.Point(482, 120);
             this.cbUsuario.Name = "cbUsuario";
@@ -251,7 +252,7 @@ namespace FarmaTech.View.Venda
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtInserir;
         private System.Windows.Forms.Label lblInserir;
         private System.Windows.Forms.Timer timer1;
     }

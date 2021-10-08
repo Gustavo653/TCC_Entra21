@@ -25,7 +25,19 @@ namespace FarmaTech.View.Venda
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            int resultado = BAL.Control.Caixa_BAL.AtualizaCaixa(DateTime.Now.ToString().Substring(0, 10), txtInserir.Text, txtRetirada.Text);
+            if (resultado == 0)
+            {
+                this.Hide();
+            }
+            else if (resultado == 1)
+            {
+                MessageBox.Show("Verifique se tudo esta preenchido corretamente");
+            }
+            else
+            {
+                MessageBox.Show("Erro desconhecido!");
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -64,6 +76,9 @@ namespace FarmaTech.View.Venda
         private void TelaSangria_Load(object sender, EventArgs e)
         {
             lblDataSistema.Text = DateTime.Now.ToString();
+            IEnumerable<string> nomesUsuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Select(x => x.Nome);
+            cbUsuario.DataSource = nomesUsuarios.ToArray();
+            cbUsuario.SelectedItem = DAL.Model.Objetos.UsuarioStatic.Nome;
         }
     }
 }
