@@ -8,7 +8,8 @@
 
 body {
     /*background: linear-gradient(0deg, rgba(96, 219, 231) 0%, rgba(136, 152, 215) 100%);*/
-    
+
+    background-image: url(https://i.imgur.com/mPBAXs6.jpg);
 }
 
 /*não esquecer de escolher um hover legal!!!!!*/
@@ -20,13 +21,20 @@ body {
     justify-content: center;
     position: fixed;
     width: 100%;
-    font-family: 'Source Sans Pro' !important;
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 200;
     font-display: swap;
     border: none;
-}
+    color: #7c8ece;
 
+}
+#navbar a{
+    text-decoration: none !important;
+    position:relative;
+    left:400px;
+   
+}
 
 #navbar {
     border: 0 solid;
@@ -39,12 +47,11 @@ body {
 }
 
     #navbar:hover {
-        border: 1px solid;
         outline-color: rgba(255, 255, 255, 0);
         outline-offset: 15px;
     }
 
-    /*Mudar o hover depois*/
+/*Mudar o hover depois*/
 
 
 
@@ -71,32 +78,35 @@ body {
 
 /*Imagem fundo (talvez a logo do entra 21? ver com o grupo sobre isso)*/
 
-#showcase {
-    height: 100vh; /*" vh = ocupa a tela toda"*/
+#resumo {
+    position: relative;
+    top: 120px;
+    left: 408px;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-image: url(https://i.imgur.com/mPBAXs6.jpg);
-    /*JOGAR AQUI A IMAGEM PARA O FUNDO DA PAGINA INICIAL*/
+    text-align: center;
+    color: #fff;
 }
 
-.showcase-container {
+.resumo p{
+    font-size:12px;
+    color:#fff;
+}
+
+.resumo-container h2 {
+    border: 30px solid transparent;
+    font-size: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: #fff;
 }
 
-    .showcase-container h2 {
-        font-size: 5rem;
-    }
 
-    .showcase-container p {
-        font-family: 'Source Sans Pro' !important;
-        font-style: normal;
-        font-weight: 200;
-        font-display: swap;
-        /* escolher uma fonte e arrumar a descrição inicial*/
-    }
+
 
 
 
