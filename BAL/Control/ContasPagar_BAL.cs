@@ -9,25 +9,25 @@ namespace BAL.Control
 {
     public class ContasPagar_BAL
     {
-        public static List<ContasPagar> GetContasPagar()
+        public static List<ContasPagar> GetContasPagar() //Obtem todas as contas a pagar
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
-                return DAL.Model.ContasPagar_DAL.GetContasPagar();
+                return DAL.Model.ContasPagar_DAL.GetContasPagar(); //De todas as filiais
             }
-            return DAL.Model.ContasPagar_DAL.GetContasPagar(DAL.Model.Objetos.UsuarioStatic.Filial);
+            return DAL.Model.ContasPagar_DAL.GetContasPagar(DAL.Model.Objetos.UsuarioStatic.Filial); //De uma filial
         }
-        public static List<ContasPagar> GetContasPagarPorNome(string nome)
+        public static List<ContasPagar> GetContasPagarPorNome(string nome) //Obtem contas a pagar (pesquisando) por nome
         {
             return DAL.Model.ContasPagar_DAL.GetContasPagarPorNome(nome);
         }
-        public static int AdicionarContasPagar(string nome, string valor, string vencimento)
+        public static int AdicionarContasPagar(string nome, string valor, string vencimento) //Adiciona uma conta a pagar caso todos os dados sejam coerentes
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(vencimento))
             {
                 if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
                 {
-                    return 3; //Usuario sem filial
+                    return 2; //Usuario sem filial
                 }
                 try
                 {
@@ -43,7 +43,7 @@ namespace BAL.Control
             }
             return 1; //Erro algum campo está vazio
         }
-        public static int RemoveContasPagar(string nome, string valor, string vencimento)
+        public static int RemoveContasPagar(string nome, string valor, string vencimento) //Remove conta a pagar caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(vencimento))
             {
@@ -60,7 +60,7 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaContasPagar(string nome, string valor, string vencimento, string whereNome, string whereValor)
+        public static int AtualizaContasPagar(string nome, string valor, string vencimento, string whereNome, string whereValor) //Atualiza contas a pagar
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(vencimento))
             {     

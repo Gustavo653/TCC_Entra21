@@ -9,25 +9,25 @@ namespace BAL.Control
 {
     public class ContasReceber_BAL
     {
-        public static List<ContasReceber> GetContasReceber()
+        public static List<ContasReceber> GetContasReceber() //Obtem todas as contas a receber
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
-                return DAL.Model.ContasReceber_DAL.GetContasReceber();
+                return DAL.Model.ContasReceber_DAL.GetContasReceber(); //De todas as filiais
             }
-            return DAL.Model.ContasReceber_DAL.GetContasReceber(DAL.Model.Objetos.UsuarioStatic.Filial);
+            return DAL.Model.ContasReceber_DAL.GetContasReceber(DAL.Model.Objetos.UsuarioStatic.Filial); //De uma filial
         }
-        public static List<ContasReceber> GetContasReceberPorNome(string nome)
+        public static List<ContasReceber> GetContasReceberPorNome(string nome) //Obtem todas as contas a receber (pesquisando) por nome
         {
             return DAL.Model.ContasReceber_DAL.GetContasReceberPorNome(nome);
         }
-        public static int AdicionarContasReceber(string nome, string valor, string vencimento)
+        public static int AdicionarContasReceber(string nome, string valor, string vencimento) //Adiciona contas a receber caso as informacoes sejam coerentes
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(vencimento))
             {
                 if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
                 {
-                    return 3; //Usuario sem filial
+                    return 2; //Usuario sem filial
                 }
                 try
                 {

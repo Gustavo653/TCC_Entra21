@@ -14,7 +14,7 @@ namespace FarmaTech.View
 {
     public partial class TelaCadastroCliente : Form
     {
-        public static int ValorSalvar { get; set; }
+        public static int ValorSalvar { get; set; } //Propriedade guarda o que o usuario deseja fazer
         public TelaCadastroCliente()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace FarmaTech.View
         private void TelaCadastroCliente_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabNovoCliente);
-            cboEstados.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Estados));
+            cboEstados.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Estados)); 
             AtualizaDG();
 
             btnSalvar.Enabled = false;
@@ -37,9 +37,9 @@ namespace FarmaTech.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (dgClientes.Rows.Count > 0)
+            if (dgClientes.Rows.Count > 0) //Caso o usuario nao tenha permissao, nao consegue editar
             {
-                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1 || DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1 || DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso) //So acontece se o usuario tiver permissao
                 {
                     tabControl1.TabPages.Remove(tabClientes);
                     tabControl1.TabPages.Add(tabNovoCliente);
@@ -51,7 +51,7 @@ namespace FarmaTech.View
 
                     int indiceSelecionado = dgClientes.CurrentRow.Index;
                     List<DAL.Model.Objetos.Endereco> endereco;
-                    if (rbCpf.Checked)
+                    if (rbCpf.Checked) //Verifica se é pessoa fisica ou juridica
                     {
                         endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Clientes), dgClientes.Rows[indiceSelecionado].Cells[0].Value.ToString());
                         txtRazaoSocial.Text = endereco[0].NomeFantasia;
@@ -72,7 +72,7 @@ namespace FarmaTech.View
                     txtNumero.Text = endereco[0].Numero;
                     txtCompl.Text = endereco[0].Complemento;
                     txtCidade.Text = endereco[0].Cidade;
-                    cboEstados.Text = endereco[0].Estado;
+                    cboEstados.Text = endereco[0].Estado; //Traz os dados do BD, do item que esta a ser alterado
                 }
                 else
                 {
@@ -80,7 +80,7 @@ namespace FarmaTech.View
                     {
                         string login = Interaction.InputBox("Insira seu login", "Login", "", 200, 200);
                         string senha = Interaction.InputBox("Insira seu login", "Login", "", 200, 200);
-                        if (BAL.Control.NivelAcessoUsuario_BAL.VerificaPermissao(login, senha))
+                        if (BAL.Control.NivelAcessoUsuario_BAL.VerificaPermissao(login, senha)) //Verificacao de credencial para aumentar a permissao
                         {
                             DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp++;
                         }
@@ -90,7 +90,7 @@ namespace FarmaTech.View
         }
 
 
-        public void AtualizaDG()
+        public void AtualizaDG() //Traz todos os registros do BD, dependendo de pessoa fisica ou juridica, e se o usuario tem acesso
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1 || DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
             {
@@ -221,7 +221,7 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (dgClientes.Rows.Count > 0)
+            if (dgClientes.Rows.Count > 0) //Caso nao haja nenhum item, o usuario nao possui permissao de excluir
             {
                 if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

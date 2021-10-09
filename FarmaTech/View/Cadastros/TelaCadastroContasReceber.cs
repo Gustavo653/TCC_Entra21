@@ -129,7 +129,7 @@ namespace FarmaTech.View.Principal
                 }
                 else if (resultado == 2)
                 {
-                    MessageBox.Show("Conta a receber já existente!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Usuário sem filial!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (resultado == 3)
                 {

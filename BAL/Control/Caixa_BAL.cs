@@ -8,15 +8,15 @@ namespace BAL.Control
 {
     public class Caixa_BAL
     {
-        public static int GetCaixa()
+        public static int GetCaixa() //Obtem o numero do caixa
         {
             return DAL.Model.Caixa_DAL.GetCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
         }
-        public static bool GetEstadoCaixa()
+        public static bool GetEstadoCaixa() //Obtem o estado do caixa(aberto ou fechado)
         {
             return DAL.Model.Caixa_DAL.VerificaEstadoCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
         }
-        public static int AbreCaixa(string data, string caixa, string usuario, string valor)
+        public static int AbreCaixa(string data, string caixa, string usuario, string valor) //Abre o caixa, caso todas as informacoes sejam coerentes
         {
             if (!string.IsNullOrEmpty(caixa) && !string.IsNullOrEmpty(valor) && Convert.ToDouble(valor) > 0)
             {
@@ -34,7 +34,7 @@ namespace BAL.Control
             }
             return 1;
         }
-        public static int AtualizaCaixa(string data, string inserir, string retirada)
+        public static int AtualizaCaixa(string data, string inserir, string retirada) //Atualiza o caixa, caso todas as informacoes sejam coerentes
         {
             retirada = retirada.Replace(",", ".");
             inserir = inserir.Replace(",", ".");

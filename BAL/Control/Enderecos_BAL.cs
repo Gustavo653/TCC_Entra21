@@ -8,7 +8,7 @@ namespace BAL.Control
 {
     public class Enderecos_BAL
     {
-        public static List<DAL.Model.Objetos.Endereco> GetEndereco(int enumEndereco)
+        public static List<DAL.Model.Objetos.Endereco> GetEndereco(int enumEndereco) //Obtem os enderecos, por filial ou todos
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
@@ -16,7 +16,7 @@ namespace BAL.Control
             }
             return DAL.Model.Enderecos_DAL.GetEnderecos(enumEndereco);
         }
-        public static List<DAL.Model.Objetos.Endereco> GetEnderecoPorNome(int enumEndereco, string nome)
+        public static List<DAL.Model.Objetos.Endereco> GetEnderecoPorNome(int enumEndereco, string nome) //Obtem os enderecos(pesquisando por nome), por filial ou todos
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
@@ -38,7 +38,7 @@ namespace BAL.Control
             {
                 if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
                 {
-                    return 3; //Usuario sem filial
+                    return 1; //Usuario sem filial
                 }
                 if (!DAL.Model.Enderecos_DAL.VerificaSeEnderecoRepete(contato)) //Verificar se deu certo
                 {
