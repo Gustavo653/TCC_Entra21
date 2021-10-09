@@ -153,7 +153,7 @@ namespace FarmaTech.View
             txtLogin.Text = lista[0].Login;
             txtSenha.Clear();
             txtContato.Text = lista[0].Contato;
-            cbNivelAcesso.SelectedIndex = 2;
+            cbNivelAcesso.SelectedIndex = 0;
             cbUsuarioFilial.SelectedItem = lista[0].Filial.ToString();
         }
 
