@@ -36,7 +36,7 @@ namespace BAL.Control
                 !string.IsNullOrEmpty(cidade) &&
                 !string.IsNullOrEmpty(estado))
             {
-                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3 && enumEndereco != 1)
                 {
                     return 1; //Usuario sem filial
                 }
@@ -69,6 +69,23 @@ namespace BAL.Control
                 catch (Exception e)
                 {
                     DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Remover");
+                    return 2; //Algo inesperado ocorreu
+                }
+            }
+            return 1; //Erro contato vazio
+        }
+        public static int RemoveEnderecoTodasTabelas(string idFilial)
+        {
+            if (!string.IsNullOrEmpty(idFilial))
+            {
+                try
+                {
+                    DAL.Model.Enderecos_DAL.RemoveTodasTabelas(idFilial);
+                    return 0; //Deu tudo certo
+                }
+                catch (Exception e)
+                {
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_RemoverTodasTabelas");
                     return 2; //Algo inesperado ocorreu
                 }
             }

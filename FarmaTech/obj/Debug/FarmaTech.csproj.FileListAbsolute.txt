@@ -298,4 +298,3 @@ C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
-C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete

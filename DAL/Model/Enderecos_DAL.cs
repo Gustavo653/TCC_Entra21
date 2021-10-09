@@ -41,7 +41,15 @@ namespace DAL.Model
 
         public static List<Endereco> GetEnderecos(int enumEndereco, string idFilial)
         {
-            string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
+            string select;
+            if (enumEndereco == 1)
+            {
+                select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia = '{idFilial}'";
+            }
+            else
+            {
+                select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
+            }
             List<Endereco> lista = new List<Endereco>();
             SqlCommand cmd = new SqlCommand(select, conn);
             if (conn.State == System.Data.ConnectionState.Closed)
@@ -156,6 +164,21 @@ namespace DAL.Model
             lista.Add($"UPDATE dbo.ContasPagar Set idFilial = '{idFilial}' WHERE idFilial = '{nomeFilial}'");
             lista.Add($"UPDATE dbo.ContasReceber Set idFilial = '{idFilial}' WHERE idFilial = '{idFilial}'");
             lista.Add($"UPDATE dbo.Caixa Set idFilial = '{idFilial}' WHERE idFilial = '{idFilial}'");
+            foreach (var item in lista)
+            {
+                DbConnection.Execute(item);
+            }
+        }
+        public static void RemoveTodasTabelas(string idFilial)
+        {
+            List<string> lista = new List<string>();
+            lista.Add($"DELETE from dbo.Unidades WHERE idFilial = '{idFilial}'");
+            lista.Add($"DELETE from dbo.Requisicoes WHERE Filial = '{idFilial}'");
+            lista.Add($"DELETE from dbo.Usuarios WHERE Filial = '{idFilial}'");
+            lista.Add($"DELETE from dbo.Produtos WHERE idFilial = '{idFilial}'");
+            lista.Add($"DELETE from dbo.ContasPagar WHERE idFilial = '{idFilial}'");
+            lista.Add($"DELETE from dbo.ContasReceber WHERE idFilial = '{idFilial}'");
+            lista.Add($"DELETE from dbo.Caixa WHERE idFilial = '{idFilial}'");
             foreach (var item in lista)
             {
                 DbConnection.Execute(item);

@@ -69,7 +69,7 @@ namespace FarmaTech.View
 
                 if (resultado == 0)
                 {
-                    MessageBox.Show("Fornecedor cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Filial cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (resultado == 1)
                 {
@@ -77,7 +77,7 @@ namespace FarmaTech.View
                 }
                 else if (resultado == 2)
                 {
-                    MessageBox.Show("Usuário já existente!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Filial já existente!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (resultado == 3)
                 {
@@ -96,7 +96,7 @@ namespace FarmaTech.View
 
                 if (resultado == 0)
                 {
-                    MessageBox.Show("Fornecedor atualizado com sucesso!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Filial atualizado com sucesso!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (resultado == 1)
                 {
@@ -104,7 +104,7 @@ namespace FarmaTech.View
                 }
                 else if (resultado == 2)
                 {
-                    MessageBox.Show("Fornecedor já existente!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Filial já existente!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (resultado == 3)
                 {
@@ -146,6 +146,7 @@ namespace FarmaTech.View
         {
             int indiceSelecionado = dgUsuarios.CurrentRow.Index;
             BAL.Control.Enderecos_BAL.RemoveEndereco(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+            BAL.Control.Enderecos_BAL.RemoveEnderecoTodasTabelas(dgUsuarios.Rows[indiceSelecionado].Cells[1].Value.ToString());
             AtualizaDG();
         }
         public void AtualizaDG()

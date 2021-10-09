@@ -29,7 +29,7 @@ namespace FarmaTech.View
             IEnumerable<string> listaEnderecos = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia);
             cbUsuarioFilial.DataSource = listaEnderecos.ToList();
             cbNivelAcesso.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.NivelAcesso));
-            cbNivelAcesso.SelectedIndex = 2;
+            cbNivelAcesso.SelectedIndex = 0;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -231,12 +231,12 @@ namespace FarmaTech.View
 
         private void cbNivelAcesso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbNivelAcesso.SelectedIndex < 1)
+            if(cbNivelAcesso.SelectedIndex > 1)
             {
                 if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
                 {
                     MessageBox.Show("Você não pode inserir um usuário com nível maior que 2!");
-                    cbNivelAcesso.SelectedIndex = 2;
+                    cbNivelAcesso.SelectedIndex = 0;
                 }
             }
         }
