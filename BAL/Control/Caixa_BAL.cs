@@ -10,11 +10,11 @@ namespace BAL.Control
     {
         public static int GetCaixa()
         {
-            return DAL.Model.Caixa_DAL.GetCaixa(DateTime.Now.ToString().Substring(0, 10));
+            return DAL.Model.Caixa_DAL.GetCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         public static bool GetEstadoCaixa()
         {
-            return DAL.Model.Caixa_DAL.VerificaEstadoCaixa(DateTime.Now.ToString().Substring(0, 10));
+            return DAL.Model.Caixa_DAL.VerificaEstadoCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         public static int AbreCaixa(string data, string caixa, string usuario, string valor)
         {
@@ -23,7 +23,7 @@ namespace BAL.Control
                 valor = valor.Replace(",", ".");
                 try
                 {
-                    DAL.Model.Caixa_DAL.AbreCaixa(data, caixa, usuario, valor);
+                    DAL.Model.Caixa_DAL.AbreCaixa(data, caixa, usuario, valor, DAL.Model.Objetos.UsuarioStatic.Filial);
                     return 0;
                 }
                 catch (Exception e)
@@ -43,7 +43,7 @@ namespace BAL.Control
                 try
                 {
                     string valor = (Convert.ToDouble(inserir) - Convert.ToDouble(retirada)).ToString();
-                    DAL.Model.Caixa_DAL.AtualizaCaixa(data, valor);
+                    DAL.Model.Caixa_DAL.AtualizaCaixa(data, valor, DAL.Model.Objetos.UsuarioStatic.Filial);
                     return 0;
                 }
                 catch (FormatException)

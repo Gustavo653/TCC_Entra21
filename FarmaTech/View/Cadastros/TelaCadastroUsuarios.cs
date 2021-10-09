@@ -75,7 +75,7 @@ namespace FarmaTech.View
                 int resultado = 1;
                 if (!string.IsNullOrEmpty(cbUsuarioFilial.Text))
                 {
-                    if (dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
+                    if (dgUsuarios.Rows[indiceSelecionado].Cells[2].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
                         resultado = BAL.Control.Usuarios_BAL.AtualizaUsuario(txtNome.Text, cbUsuarioFilial.Text, txtContato.Text, cbNivelAcesso.Text, txtLogin.Text, txtSenha.Text, dgUsuarios.Rows[indiceSelecionado].Cells[2].Value.ToString());
                     else
                         MessageBox.Show("Você não pode atualizar o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -161,14 +161,11 @@ namespace FarmaTech.View
         {
             if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
                 int indiceSelecionado = dgUsuarios.CurrentRow.Index;
-
-                if (dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
-                    BAL.Control.Usuarios_BAL.RemoveUsuario(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                if (dgUsuarios.Rows[indiceSelecionado].Cells[2].Value.ToString() != DAL.Model.Objetos.UsuarioStatic.Contato)
+                    BAL.Control.Usuarios_BAL.RemoveUsuario(dgUsuarios.Rows[indiceSelecionado].Cells[2].Value.ToString());
                 else
                     MessageBox.Show("Você não pode remover o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 AtualizaDG();
             }
         }

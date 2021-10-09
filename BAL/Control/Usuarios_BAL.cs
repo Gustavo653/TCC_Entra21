@@ -35,15 +35,15 @@ namespace BAL.Control
         {
             if (AccesLevel == "Funcionario")
             {
-                return 2;
+                return 1;
             }
             else if (AccesLevel == "Supervisor")
             {
-                return 1;
+                return 2;
             }
             else
             {
-                return 0;
+                return 3;
             }
         }
 
@@ -89,7 +89,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Remover");
                     return 2; //Algo inesperado ocorreu
                 }
             }

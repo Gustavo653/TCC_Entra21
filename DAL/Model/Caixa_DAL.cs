@@ -11,10 +11,10 @@ namespace DAL.Model
     public class Caixa_DAL
     {
         private static readonly SqlConnection conn = DbConnection.conn;
-        public static string GetValorCaixa(string data)
+        public static string GetValorCaixa(string data, string filial)
         {
             string valor = null;
-            string select = $"SELECT Valor from dbo.Caixa WHERE Data = '{data}'";
+            string select = $"SELECT Valor from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{filial}'";
             SqlCommand cmd = new SqlCommand(select, conn);
             if (conn.State == System.Data.ConnectionState.Closed)
                 conn.Open();
@@ -27,10 +27,10 @@ namespace DAL.Model
             conn.Close();
             return valor;
         }
-        public static int GetCaixa(string data)
+        public static int GetCaixa(string data, string idFilial)
         {
             int caixa = 1;
-            string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}'";
+            string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
             SqlCommand cmd = new SqlCommand(select, conn);
             if (conn.State == System.Data.ConnectionState.Closed)
                 conn.Open();
@@ -44,9 +44,9 @@ namespace DAL.Model
             conn.Close();
             return caixa;
         }
-        public static bool VerificaEstadoCaixa(string data)
+        public static bool VerificaEstadoCaixa(string data, string idFilial)
         {
-            string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}'";
+            string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
             SqlCommand cmd = new SqlCommand(select, conn);
             if (conn.State == System.Data.ConnectionState.Closed)
                 conn.Open();
@@ -64,39 +64,39 @@ namespace DAL.Model
             conn.Close();
             return false;
         }
-        public static void AbreCaixa(string data, string caixa, string usuario, string valor)
+        public static void AbreCaixa(string data, string caixa, string usuario, string valor, string idFilial)
         {
             string operacao;
             if (caixa == 1.ToString())
             {
-                operacao = $"INSERT into dbo.Caixa (Data, Caixa, Usuario, Valor, EstadoCaixa) values ('{data}', '{caixa}', '{usuario}', '{valor}', '1')";
+                operacao = $"INSERT into dbo.Caixa (Data, Caixa, Usuario, Valor, EstadoCaixa, idFilial) values ('{data}', '{caixa}', '{usuario}', '{valor}', '1', '{idFilial}')";
             }
             else
             {
-                operacao = $"UPDATE dbo.Caixa Set Valor = '{valor}', Caixa = '{GetCaixa(data)}', EstadoCaixa = '1' WHERE Data = '{data}'";
+                operacao = $"UPDATE dbo.Caixa Set Valor = '{valor}', Caixa = '{GetCaixa(data, idFilial)}', EstadoCaixa = '1' WHERE Data = '{data}' AND idFilial = '{idFilial}'";
             }
             DbConnection.Execute(operacao);
         }
-        public static void AtualizaCaixa(string data, string valor)
+        public static void AtualizaCaixa(string data, string valor, string idFilial)
         {
-            string valorCaixa = GetValorCaixa(data);
+            string valorCaixa = GetValorCaixa(data, idFilial);
             string update;
             if (Convert.ToDouble(valor) < 0)
             {
                 valor = valor.Replace("-", "");
                 valor = valor.Replace(",", ".");
-                update = $"UPDATE dbo.Caixa Set Valor = '{Convert.ToDouble(valorCaixa) - Convert.ToDouble(valor)}' WHERE Data = '{data}'";
+                update = $"UPDATE dbo.Caixa Set Valor = '{Convert.ToDouble(valorCaixa) - Convert.ToDouble(valor)}' WHERE Data = '{data}' AND idFilial = '{idFilial}'";
             }
             else
             {
                 valor = valor.Replace(",", ".");
-                update = $"UPDATE dbo.Caixa Set Valor = '{Convert.ToDouble(valorCaixa) + Convert.ToDouble(valor)}' WHERE Data = '{data}'";
+                update = $"UPDATE dbo.Caixa Set Valor = '{Convert.ToDouble(valorCaixa) + Convert.ToDouble(valor)}' WHERE Data = '{data}' AND idFilial = '{idFilial}'";
             }
             DbConnection.Execute(update);
         }
-        public static void FechaCaixa(string data, string caixa)
+        public static void FechaCaixa(string data, string caixa, string idFilial)
         {
-            string update = $"UPDATE dbo.Caixa Set EstadoCaixa = '0' WHERE Data = '{data}' AND Caixa = '{caixa}'";
+            string update = $"UPDATE dbo.Caixa Set EstadoCaixa = '0' WHERE Data = '{data}' AND Caixa = '{caixa}' AND idFilial = '{idFilial}'";
             DbConnection.Execute(update);
         }
     }

@@ -8,8 +8,8 @@ namespace DAL.Model.Enums
 {
     public enum NivelAcesso
     {
-        Admin,
-        Supervisor,
-        Funcionario
+        Admin = 3,
+        Supervisor = 2,
+        Funcionario = 1
     }
 }
