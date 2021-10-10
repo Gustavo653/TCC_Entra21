@@ -24,7 +24,7 @@ namespace BAL.Control
             }
             return DAL.Model.Enderecos_DAL.GetEnderecosPorNome(nome, enumEndereco);
         }
-        public static int AdicionarEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado)
+        public static int AdicionarEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado) //Adiciona um endereco caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(razaoSocial) &&
                 !string.IsNullOrEmpty(nomeFantasia) &&
@@ -57,7 +57,7 @@ namespace BAL.Control
             }
             return 1; //Erro algum campo está vazio
         }
-        public static int RemoveEndereco(string contato)
+        public static int RemoveEndereco(string contato) //Remove um endereco caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(contato))
             {
@@ -74,7 +74,7 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int RemoveEnderecoTodasTabelas(string idFilial)
+        public static int RemoveEnderecoTodasTabelas(string idFilial) //Remove todas as referencias de um endereco
         {
             if (!string.IsNullOrEmpty(idFilial))
             {
@@ -91,7 +91,7 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaEndereco(string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string where)
+        public static int AtualizaEndereco(string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string where) //Atualiza um endereco
         {
             if (!string.IsNullOrEmpty(razaoSocial) &&
                !string.IsNullOrEmpty(nomeFantasia) &&

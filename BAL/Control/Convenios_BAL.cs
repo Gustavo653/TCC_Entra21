@@ -10,7 +10,7 @@ namespace BAL.Control
 {
     public class Convenios_BAL
     {
-        public static List<Convenio> GetConvenios()
+        public static List<Convenio> GetConvenios() //Obtem todos os convenios (por filial ou por todas as filiais)
         {
             List<Convenio> lista;
             if (UsuarioStatic.NivelAcesso == 2)
@@ -33,7 +33,7 @@ namespace BAL.Control
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
             return lista;
         }
-        public static List<Convenio> GetConveniosPorNome(string nome)
+        public static List<Convenio> GetConveniosPorNome(string nome) //Obtem todos os convenios por nome (por filial ou por todas as filiais)
         {
             List<Convenio> lista;
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 2)
@@ -55,7 +55,7 @@ namespace BAL.Control
             System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
             return lista;
         }
-        public static int AdicionarConvenio(string nome, string desconto)
+        public static int AdicionarConvenio(string nome, string desconto) //Adiciona um convenio caso tudo esteja coerente
         {
             if (desconto.Contains(".") || desconto.Contains(","))
             {
@@ -94,7 +94,7 @@ namespace BAL.Control
             }
             return 1; //Erro algum campo está vazio
         }
-        public static int RemoveConvenio(string nome)
+        public static int RemoveConvenio(string nome) //Remove um convenio caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(nome))
             {
@@ -111,7 +111,7 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaConvenio(string nome, string desconto, string where)
+        public static int AtualizaConvenio(string nome, string desconto, string where) //Atualiza um convenio caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(desconto))
             {

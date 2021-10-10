@@ -43,7 +43,7 @@ namespace BAL.Control
             }
             return 1; //Erro algum campo está vazio
         }
-        public static int RemoveContasReceber(string nome, string valor, string vencimento)
+        public static int RemoveContasReceber(string nome, string valor, string vencimento) //Remove contas a receber caso as informacoes sejam coerentes
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(vencimento))
             {
@@ -60,7 +60,7 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaContasReceber(string nome, string valor, string vencimento, string whereNome, string whereValor)
+        public static int AtualizaContasReceber(string nome, string valor, string vencimento, string whereNome, string whereValor) //Atualiza conta a receber caso a informacao seja coerente
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(vencimento))
             {     

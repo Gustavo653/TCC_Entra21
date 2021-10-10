@@ -8,11 +8,11 @@ namespace BAL.Control
 {
     public class NivelAcessoUsuario_BAL
     {
-        public static bool VerificaPermissao(string login, string senha)
+        public static bool VerificaPermissao(string login, string senha) //Verifica se o login possui uma permissao
         {
             return DAL.Model.Login_DAL.VerificaNivelAcesso(login, senha);
         }
-        public static bool VerificaDiferencaPermissao()
+        public static bool VerificaDiferencaPermissao() //Verifica a diferenca de permissao
         {
             if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso != DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp)
             {

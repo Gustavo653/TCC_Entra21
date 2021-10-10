@@ -8,7 +8,7 @@ namespace BAL.Control
 {
     public class Unidades_BAL
     {
-        public static List<string> GetUnidades()
+        public static List<string> GetUnidades() //Obtem todas as unidades (por filial ou por todas as filiais)
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
@@ -16,7 +16,7 @@ namespace BAL.Control
             }
             return DAL.Model.Unidades_DAL.GetUnidades();
         }
-        public static List<string> GetUnidadesPorNome(string nome)
+        public static List<string> GetUnidadesPorNome(string nome) //Obtem todas as unidades por nome (por filial ou por todas as filiais)
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
@@ -24,7 +24,7 @@ namespace BAL.Control
             }
             return DAL.Model.Unidades_DAL.GetUnidadesPorNome(nome);
         }
-        public static int AdicionarUnidade(string nome)
+        public static int AdicionarUnidade(string nome) //Adiciona uma unidade caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(nome))
             {
@@ -49,7 +49,7 @@ namespace BAL.Control
             }
             return 1; //Erro algum campo está vazio
         }
-        public static int RemoveUnidade(string nome)
+        public static int RemoveUnidade(string nome) //Remove uma unidade caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(nome))
             {
@@ -73,7 +73,7 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaUnidade(string nome, string where)
+        public static int AtualizaUnidade(string nome, string where) //Atualiza uma unidade caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(nome))
             {
@@ -90,10 +90,6 @@ namespace BAL.Control
                             DAL.Model.Unidades_DAL.AtualizaUnidade(nome, where, DAL.Model.Objetos.UsuarioStatic.Filial);
                         }
                         return 0; //Deu tudo certo
-                    }
-                    catch (FormatException)
-                    {
-                        return 4; //Algum dado que o usuario inseriu nao pode ser convertido
                     }
                     catch (Exception e)
                     {

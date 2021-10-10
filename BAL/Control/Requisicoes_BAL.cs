@@ -8,7 +8,7 @@ namespace BAL.Control
 {
     public class Requisicoes_BAL
     {
-        public static List<DAL.Model.Objetos.Requisicao> VerificaSeUsuarioTemRequisicaoRespondida()
+        public static List<DAL.Model.Objetos.Requisicao> VerificaSeUsuarioTemRequisicaoRespondida() //Retorna a requisicao respondida ao usuario, e em seguida a remove
         {
             List<DAL.Model.Objetos.Requisicao> lista = DAL.Model.Requisicoes_DAL.VerificaSeUsuarioTemRequisicaoRespondida(DAL.Model.Objetos.UsuarioStatic.Nome, DAL.Model.Objetos.UsuarioStatic.Filial);
             if (lista.Count > 0)
@@ -18,15 +18,15 @@ namespace BAL.Control
             }
             return null;
         }
-        public static List<DAL.Model.Objetos.Requisicao> GetRequisicoes()
+        public static List<DAL.Model.Objetos.Requisicao> GetRequisicoes() //Obtem todas as requisicoes
         {
             return DAL.Model.Requisicoes_DAL.GetRequisicoes();
         }
-        public static List<DAL.Model.Objetos.Requisicao> GetRequisicoesPorNome(string nome)
+        public static List<DAL.Model.Objetos.Requisicao> GetRequisicoesPorNome(string nome) //Obtem requisicoes por nome
         {
             return DAL.Model.Requisicoes_DAL.GetRequisicoesPorNome(nome);
         }
-        public static int AdicionaRequisicao(string usuario, string filial, string data, string assunto, string solicitacao)
+        public static int AdicionaRequisicao(string usuario, string filial, string data, string assunto, string solicitacao) //Adiciona uma nova requisicao
         {
             if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(data) && !string.IsNullOrEmpty(assunto) && !string.IsNullOrEmpty(solicitacao))
             {
@@ -47,7 +47,7 @@ namespace BAL.Control
             }
             return 1;
         }
-        public static int RespondeRequisicao(string resposta, string usuario, string assunto)
+        public static int RespondeRequisicao(string resposta, string usuario, string assunto) //Responde uma requisicao
         {
             if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(resposta) && !string.IsNullOrEmpty(assunto))
             {

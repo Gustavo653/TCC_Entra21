@@ -10,7 +10,7 @@ namespace BAL.Control
 {
     public class Login_BAL
     {
-        public static bool ValidaCredenciais(string login, string senha)
+        public static bool ValidaCredenciais(string login, string senha) //Valida a credencial inserida
         {
             return DAL.Model.Login_DAL.VerificaCredenciais(login, senha);
         }

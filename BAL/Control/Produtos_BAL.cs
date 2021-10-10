@@ -8,11 +8,11 @@ namespace BAL.Control
 {
     public class Produtos_BAL
     {
-        public static List<string> GetUnidades()
+        public static List<string> GetUnidades() //Obtem todas as unidades
         {
             return DAL.Model.Produtos_DAL.GetUnidades(DAL.Model.Objetos.UsuarioStatic.Filial);
         }
-        public static List<DAL.Model.Objetos.Produto> GetProdutos()
+        public static List<DAL.Model.Objetos.Produto> GetProdutos() //Obtem todos os produtos (por filial ou por todas as filiais)
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
@@ -20,7 +20,7 @@ namespace BAL.Control
             }
             return DAL.Model.Produtos_DAL.GetProdutos();
         }
-        public static List<DAL.Model.Objetos.Produto> GetProdutosPorNome(string nome)
+        public static List<DAL.Model.Objetos.Produto> GetProdutosPorNome(string nome) //Obtem todos os produtos por nome (por filial ou por todas as filiais)
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
             {
@@ -28,7 +28,7 @@ namespace BAL.Control
             }
             return DAL.Model.Produtos_DAL.GetProdutosPorNome(nome);
         }
-        public static int AdicionarProduto(string nome, string unidade, string quantidade, string codigo, string laboratorio, string precoCusto, string precoUnitario, string grupo)
+        public static int AdicionarProduto(string nome, string unidade, string quantidade, string codigo, string laboratorio, string precoCusto, string precoUnitario, string grupo) //Adicioa um produto caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(unidade) && !string.IsNullOrEmpty(quantidade.ToString()) && !string.IsNullOrEmpty(laboratorio) && !string.IsNullOrEmpty(precoCusto) && !string.IsNullOrEmpty(precoUnitario) && !string.IsNullOrEmpty(grupo.ToString()))
             {
@@ -49,7 +49,7 @@ namespace BAL.Control
             }
             return 1; //Erro algum campo está vazio
         }
-        public static int RemoveProduto(string codigo)
+        public static int RemoveProduto(string codigo) //Remove um produto caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(codigo))
             {
@@ -73,7 +73,7 @@ namespace BAL.Control
             }
             return 1; //Erro contato vazio
         }
-        public static int AtualizaProduto(string nome, string unidade, string quantidade, string codigo, string laboratorio, string precoCusto, string precoUnitario, string grupo)
+        public static int AtualizaProduto(string nome, string unidade, string quantidade, string codigo, string laboratorio, string precoCusto, string precoUnitario, string grupo) //Atualiza um produto caso tudo esteja coerente
         {
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(unidade) && !string.IsNullOrEmpty(quantidade) && !string.IsNullOrEmpty(laboratorio) && !string.IsNullOrEmpty(precoCusto) && !string.IsNullOrEmpty(precoUnitario) && !string.IsNullOrEmpty(grupo))
             {
