@@ -11,14 +11,13 @@ namespace DAL.Model
 {
     public class ContasPagar_DAL
     {
-        private static readonly SqlConnection conn = DbConnection.conn;
         public static List<ContasPagar> GetContasPagar()
         {
             string select = $"SELECT * from dbo.ContasPagar";
             List<ContasPagar> lista = new List<ContasPagar>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -26,16 +25,16 @@ namespace DAL.Model
                 lista.Add(ContasPagar);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<ContasPagar> GetContasPagar(string idFilial)
         {
             string select = $"SELECT * from dbo.ContasPagar WHERE idFilial = '{idFilial}'";
             List<ContasPagar> lista = new List<ContasPagar>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -43,16 +42,16 @@ namespace DAL.Model
                 lista.Add(ContasPagar);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<ContasPagar> GetContasPagarPorNome(string nome)
         {
             string select = $"SELECT * from dbo.ContasPagar WHERE NomeFornecedor LIKE '%{nome}%'";
             List<ContasPagar> lista = new List<ContasPagar>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -60,16 +59,16 @@ namespace DAL.Model
                 lista.Add(ContasPagar);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<ContasPagar> GetContasPagarPorNome(string nome, string idFilial)
         {
             string select = $"SELECT * from dbo.ContasPagar WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
             List<ContasPagar> lista = new List<ContasPagar>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -77,7 +76,7 @@ namespace DAL.Model
                 lista.Add(ContasPagar);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static void InsereContasPagar(string nome, string valor, string vencimento, string idFilial)

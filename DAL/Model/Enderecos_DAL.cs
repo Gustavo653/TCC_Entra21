@@ -11,14 +11,13 @@ namespace DAL.Model
 {
     public class Enderecos_DAL
     {
-        private static readonly SqlConnection conn = DbConnection.conn;
         public static List<Endereco> GetEnderecos(int enumEndereco)
         {
             string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco}";
             List<Endereco> lista = new List<Endereco>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -35,7 +34,7 @@ namespace DAL.Model
                 lista.Add(endereco);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
 
@@ -51,9 +50,9 @@ namespace DAL.Model
                 select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
             }
             List<Endereco> lista = new List<Endereco>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -70,34 +69,34 @@ namespace DAL.Model
                 lista.Add(endereco);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static string GetEnderecosPorContato(string contato)
         {
             string select = $"SELECT * from dbo.Enderecos WHERE Contato = '{contato}'";
             string nomeFantasia = null;
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 nomeFantasia = dr["NomeFantasia"].ToString();
                 dr.Close();
-                conn.Close();
+                DbConnection.conn.Close();
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return nomeFantasia;
         }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco)
         {
             string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
             List<Endereco> lista = new List<Endereco>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -114,16 +113,16 @@ namespace DAL.Model
                 lista.Add(endereco);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco, string idFilial)
         {
             string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%' AND idFilial = '{idFilial}'";
             List<Endereco> lista = new List<Endereco>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -140,7 +139,7 @@ namespace DAL.Model
                 lista.Add(endereco);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static void InsereEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string idFilial)

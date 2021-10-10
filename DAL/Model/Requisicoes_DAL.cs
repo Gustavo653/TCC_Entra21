@@ -11,14 +11,13 @@ namespace DAL.Model
 {
     public class Requisicoes_DAL
     {
-        private static readonly SqlConnection conn = DbConnection.conn;
         public static List<Requisicao> GetRequisicoes()
         {
             string select = $"SELECT * from dbo.Requisicoes";
             List<Requisicao> lista = new List<Requisicao>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -26,16 +25,16 @@ namespace DAL.Model
                 lista.Add(requisicao);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Requisicao> GetRequisicoesPorNome(string nome)
         {
             string select = $"SELECT * from dbo.Requisicoes WHERE NomeUsuario LIKE '%{nome}%'";
             List<Requisicao> lista = new List<Requisicao>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -43,16 +42,16 @@ namespace DAL.Model
                 lista.Add(requisicao);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Requisicao> VerificaSeUsuarioTemRequisicaoRespondida(string nome, string filial)
         {
             string select = $"SELECT * from dbo.Requisicoes WHERE NomeUsuario = '{nome}' AND Filial = '{filial}' AND RespostaRequisicao NOT LIKE 'SemResposta'";
             List<Requisicao> lista = new List<Requisicao>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -60,7 +59,7 @@ namespace DAL.Model
                 lista.Add(requisicao);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static void RemoveRequisicao(string usuario, string assunto)

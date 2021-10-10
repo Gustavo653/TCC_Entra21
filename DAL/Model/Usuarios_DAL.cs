@@ -11,14 +11,13 @@ namespace DAL.Model
 {
     public class Usuarios_DAL
     {
-        private static readonly SqlConnection conn = DbConnection.conn;
         public static List<Usuario> GetUsuarios()
         {
             string select = $"SELECT * from dbo.Usuarios";
             List<Usuario> lista = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -31,16 +30,16 @@ namespace DAL.Model
                 lista.Add(usuario);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Usuario> GetUsuarios(string filial)
         {
             string select = $"SELECT * from dbo.Usuarios WHERE Filial = '{filial}'";
             List<Usuario> lista = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -53,16 +52,16 @@ namespace DAL.Model
                 lista.Add(usuario);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Usuario> GetUsuariosPorNome(string nome)
         {
             string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%'";
             List<Usuario> lista = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -75,16 +74,16 @@ namespace DAL.Model
                 lista.Add(usuario);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Usuario> GetUsuariosPorNome(string nome, string filial)
         {
             string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%' AND Filial = '{filial}'";
             List<Usuario> lista = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -97,7 +96,7 @@ namespace DAL.Model
                 lista.Add(usuario);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static void InsereUsuario(string nome, string filial, string contato, int nivelAcesso, string login, string senha)

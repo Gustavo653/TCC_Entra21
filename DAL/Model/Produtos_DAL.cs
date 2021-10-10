@@ -11,30 +11,29 @@ namespace DAL.Model
 {
     public class Produtos_DAL
     {
-        private static readonly SqlConnection conn = DbConnection.conn;
         public static List<string> GetUnidades(string filial)
         {
             string select = $"SELECT * from dbo.Unidades WHERE idFilial = '{filial}'";
             List<string> lista = new List<string>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 lista.Add(dr["Nome"].ToString());
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Produto> GetProdutos()
         {
             string select = $"SELECT * from dbo.Produtos";
             List<Produto> lista = new List<Produto>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -42,16 +41,16 @@ namespace DAL.Model
                 lista.Add(produto);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Produto> GetProdutos(string filial)
         {
             string select = $"SELECT * from dbo.Produtos WHERE idFilial = '{filial}'";
             List<Produto> lista = new List<Produto>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -59,16 +58,16 @@ namespace DAL.Model
                 lista.Add(produto);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Produto> GetProdutosPorNome(string nome)
         {
             string select = $"SELECT * from dbo.Produtos WHERE Nome LIKE '%{nome}%'";
             List<Produto> lista = new List<Produto>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -76,16 +75,16 @@ namespace DAL.Model
                 lista.Add(produto);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static List<Produto> GetProdutosPorNome(string nome, string filial)
         {
             string select = $"SELECT * from dbo.Produtos WHERE Nome LIKE '%{nome}%' AND idFilial = '{filial}'";
             List<Produto> lista = new List<Produto>();
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -93,7 +92,7 @@ namespace DAL.Model
                 lista.Add(produto);
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return lista;
         }
         public static void InsereProduto(string nome, string unidade, int quantidade, string codigo, string laboratorio, string precoCusto, string precoUnitario, int grupo, string filial)

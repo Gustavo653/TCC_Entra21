@@ -12,14 +12,13 @@ namespace DAL.Model
 {
     public class Login_DAL
     {
-        private static readonly SqlConnection conn = DbConnection.conn;
         private static HashLogin hash = new HashLogin(SHA512.Create());
         public static bool VerificaCredenciais(string login, string senha)
         {
             List<string> senhas = new List<string>();
             string select = $"SELECT * from dbo.Usuarios WHERE Login = '{login}'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -31,7 +30,7 @@ namespace DAL.Model
                 senhas.Add(dr["Senha"].ToString());
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
 
 
 
@@ -48,8 +47,8 @@ namespace DAL.Model
         public static bool VerificaNivelAcesso(string login, string senha)
         {
             string select = $"SELECT * from dbo.Usuarios WHERE Login = '{login}' AND Senha = '{hash.CriptografarSenha(senha)}'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -57,12 +56,12 @@ namespace DAL.Model
                 if (Convert.ToInt32(dr["NivelAcesso"]) > 1)
                 {
                     dr.Close();
-                    conn.Close();
+                    DbConnection.conn.Close();
                     return true;
                 }
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return false;
         }
     }
