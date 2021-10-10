@@ -20,8 +20,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    //DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_ContasPagar_Adicionar");
-                    //return 3; 
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_ValorTotalPedido");
                 }
             }
             return teste;
@@ -39,8 +38,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    //DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_ContasPagar_Adicionar");
-                    //return 3; 
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_ValorTotal");
                 }
             }
             return teste;
