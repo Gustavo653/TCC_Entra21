@@ -20,7 +20,7 @@ namespace FarmaTech.View.Principal
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-
+            //Gerar log de fechamento
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

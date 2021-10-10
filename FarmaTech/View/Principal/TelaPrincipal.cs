@@ -220,7 +220,11 @@ namespace FarmaTech
 
         private void MenuFechamentoCaixa_Click(object sender, EventArgs e)
         {
-            new TelaFechamentoCaixa().Show();
+            bool estadoCaixa = BAL.Control.Caixa_BAL.GetEstadoCaixa();
+            if (estadoCaixa && DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1)
+                new TelaFechamentoCaixa().Show();
+            else
+                MessageBox.Show("Você não possui autorizacao");
         }
     }
 }
