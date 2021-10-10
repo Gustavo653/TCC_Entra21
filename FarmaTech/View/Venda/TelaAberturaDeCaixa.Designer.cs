@@ -31,6 +31,7 @@ namespace FarmaTech.View.Principal
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNumCaixa = new System.Windows.Forms.Label();
             this.lblDataSistema = new System.Windows.Forms.Label();
             this.btnConfirma = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@ namespace FarmaTech.View.Principal
             this.lblHora = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblNumCaixa = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,17 @@ namespace FarmaTech.View.Principal
             this.panel1.Size = new System.Drawing.Size(713, 366);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblNumCaixa
+            // 
+            this.lblNumCaixa.AutoSize = true;
+            this.lblNumCaixa.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumCaixa.Location = new System.Drawing.Point(452, 121);
+            this.lblNumCaixa.Name = "lblNumCaixa";
+            this.lblNumCaixa.Size = new System.Drawing.Size(51, 20);
+            this.lblNumCaixa.TabIndex = 12;
+            this.lblNumCaixa.Text = "label1";
             // 
             // lblDataSistema
             // 
@@ -212,17 +223,6 @@ namespace FarmaTech.View.Principal
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblNumCaixa
-            // 
-            this.lblNumCaixa.AutoSize = true;
-            this.lblNumCaixa.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumCaixa.Location = new System.Drawing.Point(452, 121);
-            this.lblNumCaixa.Name = "lblNumCaixa";
-            this.lblNumCaixa.Size = new System.Drawing.Size(51, 20);
-            this.lblNumCaixa.TabIndex = 12;
-            this.lblNumCaixa.Text = "label1";
             // 
             // TelaAberturaDeCaixa
             // 

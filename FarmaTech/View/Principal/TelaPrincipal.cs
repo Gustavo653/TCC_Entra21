@@ -218,6 +218,9 @@ namespace FarmaTech
             lblData.Text = DateTime.Now.ToLongDateString();
         }
 
-
+        private void MenuFechamentoCaixa_Click(object sender, EventArgs e)
+        {
+            new TelaFechamentoCaixa().Show();
+        }
     }
 }

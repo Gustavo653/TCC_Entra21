@@ -298,3 +298,10 @@ C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
+C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
+C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
+C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
+C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
+C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
+C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaSangria.resources
+C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources

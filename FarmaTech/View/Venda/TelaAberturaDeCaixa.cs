@@ -79,7 +79,6 @@ namespace FarmaTech.View.Principal
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             lblHora.Text = DateTime.Now.ToLongTimeString();
             lblDate.Text = DateTime.Now.ToLongDateString();
         }

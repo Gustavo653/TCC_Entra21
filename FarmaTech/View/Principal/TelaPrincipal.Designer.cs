@@ -52,6 +52,7 @@ namespace FarmaTech
             this.MenuGraficos = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPdv = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuFechamentoCaixa = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
@@ -92,7 +93,7 @@ namespace FarmaTech
             this.MenuPrincipal.Margin = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.MenuPrincipal.Name = "MenuPrincipal";
             this.MenuPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.MenuPrincipal.Size = new System.Drawing.Size(130, 189);
+            this.MenuPrincipal.Size = new System.Drawing.Size(130, 208);
             this.MenuPrincipal.Stretch = false;
             this.MenuPrincipal.TabIndex = 0;
             this.MenuPrincipal.Text = "MenuCadastros";
@@ -253,7 +254,8 @@ namespace FarmaTech
             // vendasToolStripMenuItem
             // 
             this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuPdv});
+            this.MenuPdv,
+            this.MenuFechamentoCaixa});
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(126, 29);
             this.vendasToolStripMenuItem.Text = "Vendas";
@@ -262,9 +264,17 @@ namespace FarmaTech
             // 
             this.MenuPdv.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuPdv.Name = "MenuPdv";
-            this.MenuPdv.Size = new System.Drawing.Size(115, 26);
+            this.MenuPdv.Size = new System.Drawing.Size(245, 26);
             this.MenuPdv.Text = "PDV";
             this.MenuPdv.Click += new System.EventHandler(this.MenuPdv_Click_1);
+            // 
+            // MenuFechamentoCaixa
+            // 
+            this.MenuFechamentoCaixa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuFechamentoCaixa.Name = "MenuFechamentoCaixa";
+            this.MenuFechamentoCaixa.Size = new System.Drawing.Size(245, 26);
+            this.MenuFechamentoCaixa.Text = "Fechamento de Caixa";
+            this.MenuFechamentoCaixa.Click += new System.EventHandler(this.MenuFechamentoCaixa_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -415,7 +425,7 @@ namespace FarmaTech
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::FarmaTech.Properties.Resources.lab__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1044, 749);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -478,5 +488,6 @@ namespace FarmaTech
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.ToolStripMenuItem MenuFechamentoCaixa;
     }
 }
