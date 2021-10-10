@@ -10,30 +10,29 @@ namespace DAL.Model
 {
     public class Caixa_DAL
     {
-        private static readonly SqlConnection conn = DbConnection.conn;
         public static string GetValorCaixa(string data, string filial)
         {
             string valor = null;
             string select = $"SELECT Valor from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{filial}'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 valor = dr["Valor"].ToString();
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return valor;
         }
         public static int GetCaixa(string data, string idFilial)
         {
             int caixa = 1;
             string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -41,27 +40,27 @@ namespace DAL.Model
                 caixa++;
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return caixa;
         }
         public static bool VerificaEstadoCaixa(string data, string idFilial)
         {
             string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
-            SqlCommand cmd = new SqlCommand(select, conn);
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 if (dr["EstadoCaixa"].ToString() == "1")
                 {
                     dr.Close();
-                    conn.Close();
+                    DbConnection.conn.Close();
                     return true;
                 }
             }
             dr.Close();
-            conn.Close();
+            DbConnection.conn.Close();
             return false;
         }
         public static void AbreCaixa(string data, string caixa, string usuario, string valor, string idFilial)
