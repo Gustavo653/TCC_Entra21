@@ -43,6 +43,22 @@ namespace DAL.Model
             DbConnection.conn.Close();
             return caixa;
         }
+        public static int GetCaixaFechamento(string data, string idFilial)
+        {
+            int caixa = 1;
+            string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                caixa = Convert.ToInt32(dr["Caixa"]);
+            }
+            dr.Close();
+            DbConnection.conn.Close();
+            return caixa;
+        }
         public static bool VerificaEstadoCaixa(string data, string idFilial)
         {
             string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
@@ -68,7 +84,7 @@ namespace DAL.Model
             string operacao;
             if (caixa == 1.ToString())
             {
-                operacao = $"INSERT into dbo.Caixa (Data, Caixa, Usuario, Valor, EstadoCaixa, idFilial) values ('{data}', '{caixa}', '{usuario}', '{valor}', '1', '{idFilial}')";
+                operacao = $"INSERT into dbo.Caixa (Data, Caixa, Usuario, Valor, EstadoCaixa, idFilial, ValorCredito, ValorDebito) values ('{data}', '{caixa}', '{usuario}', '{valor}', '1', '{idFilial}', '0', '0')";
             }
             else
             {
@@ -93,9 +109,9 @@ namespace DAL.Model
             }
             DbConnection.Execute(update);
         }
-        public static void FechaCaixa(string data, string caixa, string idFilial)
+        public static void FechaCaixa(string data, string caixa, string valor, string valorCredito, string valorDebito, string idFilial)
         {
-            string update = $"UPDATE dbo.Caixa Set EstadoCaixa = '0' WHERE Data = '{data}' AND Caixa = '{caixa}' AND idFilial = '{idFilial}'";
+            string update = $"UPDATE dbo.Caixa Set EstadoCaixa = '0', Valor = '{valor}', ValorCredito = '{valorCredito}', ValorDebito = '{valorDebito}' WHERE Data = '{data}' AND Caixa = '{caixa}' AND idFilial = '{idFilial}'";
             DbConnection.Execute(update);
         }
     }

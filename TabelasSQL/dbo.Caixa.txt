@@ -6,5 +6,7 @@ Caixa varchar(3) not null,
 Usuario varchar(50) not null,
 Valor varchar(8) not null,
 EstadoCaixa int not null,
-idFilial varchar(50) not null
+idFilial varchar(50) not null,
+ValorCredito varchar(8) not null,
+ValorDebito varchar(8) not null
 )
