@@ -221,8 +221,11 @@ namespace FarmaTech
         private void MenuFechamentoCaixa_Click(object sender, EventArgs e)
         {
             bool estadoCaixa = BAL.Control.Caixa_BAL.GetEstadoCaixa();
-            if (estadoCaixa && DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1)
-                new TelaFechamentoCaixa().Show();
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1)
+                if (estadoCaixa)
+                    new TelaFechamentoCaixa().Show();
+                else
+                    MessageBox.Show("O caixa nao esta aberto");
             else
                 MessageBox.Show("Você não possui autorizacao");
         }

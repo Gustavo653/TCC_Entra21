@@ -62,7 +62,7 @@ namespace BAL.Control
             }
             return 1;
         }
-        public static int FecharCaixa(string valor, string valorCredito, string valorDebito)
+        public static int FecharCaixa(string caixa, string valor, string valorCredito, string valorDebito)
         {
             if (!string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(valorCredito) && !string.IsNullOrEmpty(valorDebito))
             {
@@ -73,7 +73,7 @@ namespace BAL.Control
                     valorDebito = valorDebito.Replace(",", ".");
                     if (Convert.ToDouble(valor) >= 0 && Convert.ToDouble(valorCredito) >= 0 && Convert.ToDouble(valorDebito) >= 0)
                     {
-                        DAL.Model.Caixa_DAL.FechaCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Caixa_DAL.GetCaixaFechamento(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial).ToString(), valor, valorCredito, valorDebito, DAL.Model.Objetos.UsuarioStatic.Filial);
+                        DAL.Model.Caixa_DAL.FechaCaixa(DateTime.Now.ToString().Substring(0, 10), caixa, valor, valorCredito, valorDebito, DAL.Model.Objetos.UsuarioStatic.Filial);
                         return 0;
                     }
                     return 2;

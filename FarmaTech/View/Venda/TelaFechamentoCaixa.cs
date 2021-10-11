@@ -20,7 +20,7 @@ namespace FarmaTech.View.Principal
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            int resultado = BAL.Control.Caixa_BAL.FecharCaixa(txtValorDinheiro.Text, txtValorCredito.Text, txtValorDebito.Text);
+            int resultado = BAL.Control.Caixa_BAL.FecharCaixa(lblNumCaixa.Text ,txtValorDinheiro.Text, txtValorCredito.Text, txtValorDebito.Text);
             if(resultado == 0)
             {
                 MessageBox.Show("Caixa fechado com sucesso");
