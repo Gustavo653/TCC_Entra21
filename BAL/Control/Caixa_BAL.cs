@@ -8,17 +8,13 @@ namespace BAL.Control
 {
     public class Caixa_BAL
     {
-        public static int GetCaixa() //Obtem o numero do caixa
+        public static int GetCaixa(int entradaSaida) //Obtem o numero do caixa
         {
-            return DAL.Model.Caixa_DAL.GetCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
+            return DAL.Model.Caixa_DAL.GetCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial, entradaSaida);
         }
         public static bool GetEstadoCaixa() //Obtem o estado do caixa(aberto ou fechado)
         {
             return DAL.Model.Caixa_DAL.VerificaEstadoCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
-        }
-        public static int GetFechamentoCaixa() //Obtem o estado do caixa(aberto ou fechado)
-        {
-            return DAL.Model.Caixa_DAL.GetCaixaFechamento(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         public static int AbreCaixa(string data, string caixa, string usuario, string valor) //Abre o caixa, caso todas as informacoes sejam coerentes
         {

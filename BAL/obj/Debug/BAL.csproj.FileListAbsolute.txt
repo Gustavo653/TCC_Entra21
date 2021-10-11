@@ -78,3 +78,4 @@ C:\Users\Acer\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.csproj.CoreCompileI
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.dll
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.pdb
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.csproj.CopyComplete
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.csproj.CopyComplete
