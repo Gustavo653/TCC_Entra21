@@ -1,0 +1,10 @@
+create table dbo.Cupom
+(
+idCupom int not null identity(1,1),
+Data varchar(10) not null,
+CodigoCupom varchar(50) not null,
+FormaPagamento int not null,
+Vendedor varchar(50) not null,
+Cliente varchar(50) not null,
+ValorTotal varchar(8) not null
+)

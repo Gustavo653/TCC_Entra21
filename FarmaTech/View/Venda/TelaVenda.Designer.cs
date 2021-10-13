@@ -40,13 +40,12 @@ namespace FarmaTech
             this.btnContinuar = new System.Windows.Forms.Button();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.lblObservacao = new System.Windows.Forms.Label();
-            this.txtCnpj = new System.Windows.Forms.TextBox();
-            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.rbJuridica = new System.Windows.Forms.RadioButton();
             this.lblCpf = new System.Windows.Forms.Label();
             this.rbFisica = new System.Windows.Forms.RadioButton();
             this.tabVenda = new System.Windows.Forms.TabPage();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.cbQuantidade = new System.Windows.Forms.ComboBox();
             this.cbProdutoVenda = new System.Windows.Forms.ComboBox();
             this.txtValorTotal = new System.Windows.Forms.MaskedTextBox();
@@ -90,7 +89,8 @@ namespace FarmaTech
             this.lblHora = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnRemover = new System.Windows.Forms.Button();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.cbNomeCliente = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
@@ -172,11 +172,11 @@ namespace FarmaTech
             // tabCliente
             // 
             this.tabCliente.BackColor = System.Drawing.Color.Lavender;
+            this.tabCliente.Controls.Add(this.cbNomeCliente);
+            this.tabCliente.Controls.Add(this.cbCliente);
             this.tabCliente.Controls.Add(this.btnContinuar);
             this.tabCliente.Controls.Add(this.txtObservacao);
             this.tabCliente.Controls.Add(this.lblObservacao);
-            this.tabCliente.Controls.Add(this.txtCnpj);
-            this.tabCliente.Controls.Add(this.txtRazaoSocial);
             this.tabCliente.Controls.Add(this.lblNome);
             this.tabCliente.Controls.Add(this.rbJuridica);
             this.tabCliente.Controls.Add(this.lblCpf);
@@ -218,22 +218,6 @@ namespace FarmaTech
             this.lblObservacao.Size = new System.Drawing.Size(109, 20);
             this.lblObservacao.TabIndex = 119;
             this.lblObservacao.Text = "Observação:";
-            // 
-            // txtCnpj
-            // 
-            this.txtCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCnpj.Location = new System.Drawing.Point(138, 27);
-            this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(311, 29);
-            this.txtCnpj.TabIndex = 118;
-            // 
-            // txtRazaoSocial
-            // 
-            this.txtRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazaoSocial.Location = new System.Drawing.Point(138, 85);
-            this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(531, 29);
-            this.txtRazaoSocial.TabIndex = 117;
             // 
             // lblNome
             // 
@@ -318,6 +302,17 @@ namespace FarmaTech
             this.tabVenda.TabIndex = 0;
             this.tabVenda.Text = "Venda";
             this.tabVenda.Paint += new System.Windows.Forms.PaintEventHandler(this.tabVenda_Paint_1);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Location = new System.Drawing.Point(657, 45);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(54, 58);
+            this.btnRemover.TabIndex = 67;
+            this.btnRemover.Text = "-";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // cbQuantidade
             // 
@@ -742,16 +737,27 @@ namespace FarmaTech
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // btnRemover
+            // cbCliente
             // 
-            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(657, 45);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(54, 58);
-            this.btnRemover.TabIndex = 67;
-            this.btnRemover.Text = "-";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            this.cbCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(138, 30);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(259, 28);
+            this.cbCliente.TabIndex = 123;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
+            // 
+            // cbNomeCliente
+            // 
+            this.cbNomeCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbNomeCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbNomeCliente.FormattingEnabled = true;
+            this.cbNomeCliente.Location = new System.Drawing.Point(138, 88);
+            this.cbNomeCliente.Name = "cbNomeCliente";
+            this.cbNomeCliente.Size = new System.Drawing.Size(531, 28);
+            this.cbNomeCliente.TabIndex = 124;
+            this.cbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.cbNomeCliente_SelectedIndexChanged);
             // 
             // TelaVenda
             // 
@@ -808,8 +814,6 @@ namespace FarmaTech
         private System.Windows.Forms.Label lblVendedor;
         private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.Label lblObservacao;
-        private System.Windows.Forms.TextBox txtCnpj;
-        private System.Windows.Forms.TextBox txtRazaoSocial;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.RadioButton rbJuridica;
         private System.Windows.Forms.Label lblCpf;
@@ -850,5 +854,7 @@ namespace FarmaTech
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.ComboBox cbCliente;
+        private System.Windows.Forms.ComboBox cbNomeCliente;
     }
 }

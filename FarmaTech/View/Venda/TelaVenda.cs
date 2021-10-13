@@ -27,7 +27,12 @@ namespace FarmaTech
         {
             tabControl1.TabPages.Remove(tabVenda);
             tabControl1.TabPages.Remove(tabFormaPagamento);
+
             cbFormaPagamento.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.FormaPagamento));
+
+            IEnumerable<DAL.Model.Objetos.Endereco> listaClientes = BAL.Control.Enderecos_BAL.GetEndereco(2);
+            cbNomeCliente.DataSource = listaClientes.Select(x => x.NomeFantasia).ToList();
+            cbCliente.DataSource = listaClientes.Select(x => x.CNPJCPF).ToList();
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -59,9 +64,6 @@ namespace FarmaTech
         {
             lblCpf.Text = "CNPJ:";
             lblNome.Text = "Razão Social:";
-
-
-
         }
 
         private void btnVoltarVenda_Click(object sender, EventArgs e)
@@ -80,7 +82,7 @@ namespace FarmaTech
             cupomText.WriteLine("Fornecedor:  FarmaTech    " + "Filial:   " + "CNPJ: ");
             cupomText.WriteLine("-------------------------------------------------------------------- ");
             cupomText.WriteLine("-------------------------------------------------------------------- ");
-            cupomText.WriteLine("Cliente: " + txtRazaoSocial.Text + "\tCPF/CNPJ: " + txtCnpj.Text);
+            cupomText.WriteLine("Cliente: " + cbNomeCliente.Text + "\tCPF/CNPJ: " + cbCliente.Text);
             cupomText.WriteLine("=====================================================================");
             cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
             cupomText.WriteLine(cbProdutoVenda.Text + "\t\t" + cbQuantidade.Text + "\t\t" + txtPrecoTotalProduto.Text);
@@ -130,7 +132,12 @@ namespace FarmaTech
         private void cbProdutoVenda_SelectedIndexChanged(object sender, EventArgs e)
         {
             IEnumerable<int> listaNome = BAL.Control.Produtos_BAL.GetProdutosPorNome(cbProdutoVenda.Text).Select(x => x.Quantidade);
-            cbQuantidade.DataSource = listaNome.ToList();
+            List<int> quantidades = new List<int>();
+            for (int i = 1; i <= listaNome.ElementAt(0); i++)
+            {
+                quantidades.Add(i);
+            }
+            cbQuantidade.DataSource = quantidades;
         }
 
         private void tabCliente_Paint(object sender, PaintEventArgs e)
@@ -249,6 +256,17 @@ namespace FarmaTech
         private void btnRemover_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbNomeCliente.SelectedIndex = cbCliente.SelectedIndex;
+        }
+
+        private void cbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCliente.Items.Count > 0)
+                cbCliente.SelectedIndex = cbNomeCliente.SelectedIndex;
         }
     }
 }
