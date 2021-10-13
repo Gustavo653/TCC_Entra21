@@ -38,7 +38,7 @@ namespace FarmaTech.View
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabFiliais = new System.Windows.Forms.TabPage();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgFiliais = new System.Windows.Forms.DataGridView();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoFilial = new System.Windows.Forms.TabPage();
@@ -65,9 +65,16 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.lblFiliais = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.NomeFantasiaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CnpjCpfCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RuaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabFiliais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFiliais)).BeginInit();
             this.tabNovoFilial.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -156,7 +163,7 @@ namespace FarmaTech.View
             // tabFiliais
             // 
             this.tabFiliais.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabFiliais.Controls.Add(this.dgUsuarios);
+            this.tabFiliais.Controls.Add(this.dgFiliais);
             this.tabFiliais.Controls.Add(this.txtPesquisaUsuario);
             this.tabFiliais.Controls.Add(this.lblPesquisar);
             this.tabFiliais.Location = new System.Drawing.Point(4, 29);
@@ -167,16 +174,24 @@ namespace FarmaTech.View
             this.tabFiliais.Text = "Filiais";
             this.tabFiliais.Paint += new System.Windows.Forms.PaintEventHandler(this.tabFiliais_Paint);
             // 
-            // dgUsuarios
+            // dgFiliais
             // 
-            this.dgUsuarios.AllowUserToAddRows = false;
-            this.dgUsuarios.AllowUserToDeleteRows = false;
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(57, 106);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.Size = new System.Drawing.Size(940, 368);
-            this.dgUsuarios.TabIndex = 16;
+            this.dgFiliais.AllowUserToAddRows = false;
+            this.dgFiliais.AllowUserToDeleteRows = false;
+            this.dgFiliais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFiliais.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeFantasiaCol,
+            this.CnpjCpfCol,
+            this.ContatoCol,
+            this.RuaCol,
+            this.NumeroCol,
+            this.CidadeCol,
+            this.EstadoCol});
+            this.dgFiliais.Location = new System.Drawing.Point(57, 106);
+            this.dgFiliais.Name = "dgFiliais";
+            this.dgFiliais.ReadOnly = true;
+            this.dgFiliais.Size = new System.Drawing.Size(940, 368);
+            this.dgFiliais.TabIndex = 16;
             // 
             // txtPesquisaUsuario
             // 
@@ -449,6 +464,54 @@ namespace FarmaTech.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // NomeFantasiaCol
+            // 
+            this.NomeFantasiaCol.HeaderText = "Nome Fantasia";
+            this.NomeFantasiaCol.Name = "NomeFantasiaCol";
+            this.NomeFantasiaCol.ReadOnly = true;
+            this.NomeFantasiaCol.Width = 200;
+            // 
+            // CnpjCpfCol
+            // 
+            this.CnpjCpfCol.HeaderText = "Cnpj / Cpf";
+            this.CnpjCpfCol.Name = "CnpjCpfCol";
+            this.CnpjCpfCol.ReadOnly = true;
+            this.CnpjCpfCol.Width = 150;
+            // 
+            // ContatoCol
+            // 
+            this.ContatoCol.HeaderText = "Contato";
+            this.ContatoCol.Name = "ContatoCol";
+            this.ContatoCol.ReadOnly = true;
+            this.ContatoCol.Width = 150;
+            // 
+            // RuaCol
+            // 
+            this.RuaCol.HeaderText = "Endereço";
+            this.RuaCol.Name = "RuaCol";
+            this.RuaCol.ReadOnly = true;
+            this.RuaCol.Width = 200;
+            // 
+            // NumeroCol
+            // 
+            this.NumeroCol.HeaderText = "Nº";
+            this.NumeroCol.Name = "NumeroCol";
+            this.NumeroCol.ReadOnly = true;
+            this.NumeroCol.Width = 50;
+            // 
+            // CidadeCol
+            // 
+            this.CidadeCol.HeaderText = "Cidade";
+            this.CidadeCol.Name = "CidadeCol";
+            this.CidadeCol.ReadOnly = true;
+            // 
+            // EstadoCol
+            // 
+            this.EstadoCol.HeaderText = "Estado";
+            this.EstadoCol.Name = "EstadoCol";
+            this.EstadoCol.ReadOnly = true;
+            this.EstadoCol.Width = 50;
+            // 
             // TelaCadastroFiliais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,7 +538,7 @@ namespace FarmaTech.View
             this.tabControl1.ResumeLayout(false);
             this.tabFiliais.ResumeLayout(false);
             this.tabFiliais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFiliais)).EndInit();
             this.tabNovoFilial.ResumeLayout(false);
             this.tabNovoFilial.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -498,7 +561,7 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoFilial;
         private System.Windows.Forms.TextBox txtRazaoSocial;
-        private System.Windows.Forms.DataGridView dgUsuarios;
+        private System.Windows.Forms.DataGridView dgFiliais;
         private System.Windows.Forms.TextBox txtNomeFantasia;
         private System.Windows.Forms.Label lblNomeFantasia;
         private System.Windows.Forms.Label lblRazaoSocial;
@@ -521,5 +584,12 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblFiliais;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeFantasiaCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CnpjCpfCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContatoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RuaCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CidadeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCol;
     }
 }
