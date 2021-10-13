@@ -584,6 +584,7 @@ namespace FarmaTech
             // 
             // cbFormaPagamento
             // 
+            this.cbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFormaPagamento.FormattingEnabled = true;
             this.cbFormaPagamento.Location = new System.Drawing.Point(228, 244);
             this.cbFormaPagamento.Name = "cbFormaPagamento";
@@ -620,6 +621,7 @@ namespace FarmaTech
             // 
             // txtFormaValorParcial
             // 
+            this.txtFormaValorParcial.Enabled = false;
             this.txtFormaValorParcial.Location = new System.Drawing.Point(228, 132);
             this.txtFormaValorParcial.Name = "txtFormaValorParcial";
             this.txtFormaValorParcial.Size = new System.Drawing.Size(128, 26);
@@ -627,6 +629,7 @@ namespace FarmaTech
             // 
             // txtValorCompra
             // 
+            this.txtValorCompra.Enabled = false;
             this.txtValorCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorCompra.ForeColor = System.Drawing.Color.Blue;
             this.txtValorCompra.Location = new System.Drawing.Point(228, 28);
@@ -647,6 +650,7 @@ namespace FarmaTech
             // 
             // txtFormaValorTotal
             // 
+            this.txtFormaValorTotal.Enabled = false;
             this.txtFormaValorTotal.Location = new System.Drawing.Point(228, 176);
             this.txtFormaValorTotal.Name = "txtFormaValorTotal";
             this.txtFormaValorTotal.Size = new System.Drawing.Size(128, 26);

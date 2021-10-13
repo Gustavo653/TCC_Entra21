@@ -88,7 +88,6 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
-C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
 C:\Users\Martha\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
 C:\Users\Martha\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
 C:\Users\Martha\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb

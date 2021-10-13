@@ -54,7 +54,7 @@ namespace BAL.Control
             {
                 try
                 {
-                    if (Cupom == "CupomLivre")
+                    if (Cupom == null)
                     {
                         Cupom = DAL.Model.Vendas_DAL.GeraCupom();
                     }
@@ -78,9 +78,25 @@ namespace BAL.Control
               !string.IsNullOrEmpty(valorTotal) &&
               !string.IsNullOrEmpty(formaPagamento.ToString()))
             {
-                DAL.Model.Vendas_DAL.InsereCupom(DateTime.Now.ToString().Substring(0, 10), Cupom, Convert.ToInt32(formaPagamento), vendedor, cliente, valorTotal);
-                Cupom = "CupomLivre";
-                return 0;
+                for (int i = 0; i < 5; i++)
+                {
+                    if(formaPagamento == ((DAL.Model.Enums.FormaPagamento)i).ToString())
+                    {
+                        formaPagamento = i.ToString();
+                        break;
+                    }
+                }
+                try
+                {
+                    DAL.Model.Vendas_DAL.InsereCupom(DateTime.Now.ToString().Substring(0, 10), Cupom, Convert.ToInt32(formaPagamento), vendedor, cliente, valorTotal);
+                    Cupom = null;
+                    return 0;
+                }
+                catch (Exception e)
+                {
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_BAL_InsereCupom");
+                    return 2; //Erro inesperado
+                }
             }
             return 1;
         }

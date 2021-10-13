@@ -29,11 +29,14 @@ namespace FarmaTech
             tabControl1.TabPages.Remove(tabFormaPagamento);
 
             cbFormaPagamento.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.FormaPagamento));
+            cbConvenio.DataSource = BAL.Control.Convenios_BAL.GetConvenios().Select(x=>x.Nome).ToList();
 
             IEnumerable<DAL.Model.Objetos.Endereco> listaClientes = BAL.Control.Enderecos_BAL.GetEndereco(2);
             cbNomeCliente.DataSource = listaClientes.Select(x => x.NomeFantasia).ToList();
             cbCliente.DataSource = listaClientes.Select(x => x.CNPJCPF).ToList();
             cbVendedor.DataSource = BAL.Control.Usuarios_BAL.GetUsuarios().Select(x => x.Nome).ToList();
+            txtDesconto.Text = "0,00";
+            txtValorTotal.Text = "0,00";
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -81,28 +84,40 @@ namespace FarmaTech
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            StreamWriter cupomText = new StreamWriter("C:\\Temp\\CupomText.txt");
-            cupomText.WriteLine("............................CUPOM FISCAL............................");
-            cupomText.WriteLine();
-            cupomText.WriteLine("Número: 00000");
-            cupomText.WriteLine();
-            cupomText.WriteLine("Fornecedor:  FarmaTech    " + "Filial:   " + "CNPJ: ");
-            cupomText.WriteLine("-------------------------------------------------------------------- ");
-            cupomText.WriteLine("-------------------------------------------------------------------- ");
-            cupomText.WriteLine("Cliente: " + cbNomeCliente.Text + "\tCPF/CNPJ: " + cbCliente.Text);
-            cupomText.WriteLine("=====================================================================");
-            cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
-            cupomText.WriteLine(cbProdutoVenda.Text + "\t\t" + cbQuantidade.Text + "\t\t" + txtPrecoTotalProduto.Text);
-            cupomText.WriteLine();
-            cupomText.WriteLine("Valor Total: R$ " + txtFormaValorTotal.Text);
-            cupomText.WriteLine("Forma de Pagamento: " + cbFormaPagamento.Text);
-            cupomText.WriteLine("=====================================================================");
-            cupomText.WriteLine("Volte sempre - Obrigado");
-            cupomText.WriteLine("FarmaTech by Query Lab - 2021®");
-            cupomText.Close();
+            //StreamWriter cupomText = new StreamWriter("C:\\Temp\\CupomText.txt");
+            //cupomText.WriteLine("............................CUPOM FISCAL............................");
+            //cupomText.WriteLine();
+            //cupomText.WriteLine("Número: 00000");
+            //cupomText.WriteLine();
+            //cupomText.WriteLine("Fornecedor:  FarmaTech    " + "Filial:   " + "CNPJ: ");
+            //cupomText.WriteLine("-------------------------------------------------------------------- ");
+            //cupomText.WriteLine("-------------------------------------------------------------------- ");
+            //cupomText.WriteLine("Cliente: " + cbNomeCliente.Text + "\tCPF/CNPJ: " + cbCliente.Text);
+            //cupomText.WriteLine("=====================================================================");
+            //cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
+            //cupomText.WriteLine(cbProdutoVenda.Text + "\t\t" + cbQuantidade.Text + "\t\t" + txtPrecoTotalProduto.Text);
+            //cupomText.WriteLine();
+            //cupomText.WriteLine("Valor Total: R$ " + txtFormaValorTotal.Text);
+            //cupomText.WriteLine("Forma de Pagamento: " + cbFormaPagamento.Text);
+            //cupomText.WriteLine("=====================================================================");
+            //cupomText.WriteLine("Volte sempre - Obrigado");
+            //cupomText.WriteLine("FarmaTech by Query Lab - 2021®");
+            //cupomText.Close();
+            //Process.Start(@"C:\\Temp\\CupomText.txt");
 
-            Process.Start(@"C:\\Temp\\CupomText.txt");
-
+            int resultado = BAL.Control.Vendas_BAL.InsereCupom(cbVendedor.Text, cbNomeCliente.Text, txtValorTotal.Text, cbFormaPagamento.Text);
+            if (resultado == 0)
+            {
+                MessageBox.Show("Cupom finalizado");
+            }
+            else if (resultado == 1)
+            {
+                MessageBox.Show("preencha todos os campos");
+            }
+            else if (resultado == 2)
+            {
+                MessageBox.Show("houve algum erro inesperado!");
+            }
             tabControl1.TabPages.Remove(tabFormaPagamento);
             tabControl1.TabPages.Add(tabCliente);
         }
@@ -256,12 +271,13 @@ namespace FarmaTech
             }
             else
             {
-                txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(cbQuantidade.Text, txtPrecoUnitario.Text)).ToString("F2");
+                txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
                 int resultado = BAL.Control.Vendas_BAL.InsereVenda(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoTotalProduto.Text);
                 if(resultado == 0)
                 {
-                    MessageBox.Show("item adicionado");
                     dgVenda.Rows.Add(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text, txtPrecoTotalProduto.Text);
+                    txtValorTotal.Text = (Convert.ToDouble(txtValorTotal.Text) + Convert.ToDouble(txtPrecoTotalProduto.Text)).ToString();
+                    MessageBox.Show("item adicionado");
                 }
                 else if (resultado == 1)
                 {
