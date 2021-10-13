@@ -11,7 +11,7 @@ namespace BAL.Control
     {
         public static List<ContasPagar> GetContasPagar() //Obtem todas as contas a pagar
         {
-            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
             {
                 return DAL.Model.ContasPagar_DAL.GetContasPagar(); //De todas as filiais
             }

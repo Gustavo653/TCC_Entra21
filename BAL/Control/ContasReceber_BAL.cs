@@ -11,7 +11,7 @@ namespace BAL.Control
     {
         public static List<ContasReceber> GetContasReceber() //Obtem todas as contas a receber
         {
-            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 3)
             {
                 return DAL.Model.ContasReceber_DAL.GetContasReceber(); //De todas as filiais
             }
