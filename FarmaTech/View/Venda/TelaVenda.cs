@@ -27,7 +27,7 @@ namespace FarmaTech
         {
             tabControl1.TabPages.Remove(tabVenda);
             tabControl1.TabPages.Remove(tabFormaPagamento);
-
+            cbFormaPagamento.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.FormaPagamento));
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
