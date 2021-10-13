@@ -56,7 +56,7 @@ namespace FarmaTech.View.Principal
 
         private void TelaAberturaDeCaixa_Load(object sender, EventArgs e)
         {
-            lblNumCaixa.Text = BAL.Control.Caixa_BAL.GetCaixa(1, cbUsuario.Text).ToString();
+            lblNumCaixa.Text = BAL.Control.Caixa_BAL.GetCaixa(1, DAL.Model.Objetos.UsuarioStatic.Filial).ToString();
             IEnumerable<string> nomesUsuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Select(x => x.Nome);
             cbUsuario.DataSource = nomesUsuarios.ToArray();
             cbUsuario.SelectedItem = DAL.Model.Objetos.UsuarioStatic.Nome;
