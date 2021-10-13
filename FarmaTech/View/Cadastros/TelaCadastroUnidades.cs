@@ -120,6 +120,13 @@ namespace FarmaTech.View
                 }
                 AtualizaDG();
             }
+
+            tabControl1.TabPages.Remove(tabNovaUnidade);
+            tabControl1.TabPages.Add(tabUnidades);
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnNovo.Enabled = true;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -157,15 +164,18 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (dgUnidades.Rows.Count > 0)
+            if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int indiceSelecionado = dgUnidades.CurrentRow.Index;
-                BAL.Control.Unidades_BAL.RemoveUnidade(dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());
-                if (DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
+                if (dgUnidades.Rows.Count > 0)
                 {
-                    DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
+                    int indiceSelecionado = dgUnidades.CurrentRow.Index;
+                    BAL.Control.Unidades_BAL.RemoveUnidade(dgUnidades.Rows[indiceSelecionado].Cells[0].Value.ToString());
+                    if (DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
+                    {
+                        DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
+                    }
+                    AtualizaDG();
                 }
-                AtualizaDG();
             }
         }
         public void AtualizaDG()
