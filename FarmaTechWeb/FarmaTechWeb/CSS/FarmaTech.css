@@ -36,6 +36,8 @@ nav {
     font-display: swap;
     background-color: rgba(248,248,255,0.3);
     height: 8vh;
+    position: relative;
+    z-index: 999;
 }
 
 main {
@@ -116,6 +118,7 @@ main {
 .nav-list.active {
     width: 100vw;
     transform: translateX(0%);
+  
 }
 
 @keyframes navLinkFade {
@@ -230,7 +233,7 @@ section.TextoConteudo {
         right: 0px;
         width: 0px;
         height: 92vh;
-        background-color: rgba(248,248,255,0.3);
+        background-image: linear-gradient(to bottom, #b0d7ee, #88a6dc);
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -240,11 +243,13 @@ section.TextoConteudo {
         .nav-list li {
             margin-left: 0px;
             opacity: 0;
+            
         }
 
 
     .mobile-menu {
         display: block;
+      
     }
 
     section.TextoConteudo {
