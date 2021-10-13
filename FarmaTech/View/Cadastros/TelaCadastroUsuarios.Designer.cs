@@ -60,6 +60,11 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.lblUsuarios = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NivelAcessoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoginCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -106,6 +111,12 @@ namespace FarmaTech.View
             this.dgUsuarios.AllowUserToAddRows = false;
             this.dgUsuarios.AllowUserToDeleteRows = false;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeCol,
+            this.FilialCol,
+            this.ContatoCol,
+            this.NivelAcessoCol,
+            this.LoginCol});
             this.dgUsuarios.Location = new System.Drawing.Point(40, 103);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.ReadOnly = true;
@@ -390,6 +401,40 @@ namespace FarmaTech.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 250;
+            // 
+            // FilialCol
+            // 
+            this.FilialCol.HeaderText = "Filial";
+            this.FilialCol.Name = "FilialCol";
+            this.FilialCol.ReadOnly = true;
+            this.FilialCol.Width = 200;
+            // 
+            // ContatoCol
+            // 
+            this.ContatoCol.HeaderText = "Contato";
+            this.ContatoCol.Name = "ContatoCol";
+            this.ContatoCol.ReadOnly = true;
+            this.ContatoCol.Width = 150;
+            // 
+            // NivelAcessoCol
+            // 
+            this.NivelAcessoCol.HeaderText = "Nível Acesso";
+            this.NivelAcessoCol.Name = "NivelAcessoCol";
+            this.NivelAcessoCol.ReadOnly = true;
+            // 
+            // LoginCol
+            // 
+            this.LoginCol.HeaderText = "Login";
+            this.LoginCol.Name = "LoginCol";
+            this.LoginCol.ReadOnly = true;
+            this.LoginCol.Width = 150;
+            // 
             // TelaCadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,5 +501,10 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblUsuarios;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FilialCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContatoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NivelAcessoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoginCol;
     }
 }

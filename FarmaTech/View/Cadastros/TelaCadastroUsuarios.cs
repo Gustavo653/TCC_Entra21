@@ -134,6 +134,8 @@ namespace FarmaTech.View
 
             tabControl1.TabPages.Remove(tabNovoUsuario);
             tabControl1.TabPages.Add(tabUsuarios);
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -181,15 +183,30 @@ namespace FarmaTech.View
         }
         public void AtualizaDG()
         {
+            while (dgUsuarios.Rows.Count > 0)
+            {
+                dgUsuarios.Rows.RemoveAt(0);
+            }
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
                 List<DAL.Model.Objetos.Usuario> lista = BAL.Control.Usuarios_BAL.GetUsuariosPorNome(txtPesquisaUsuario.Text);
-                dgUsuarios.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login);                 
+                }
+                
             }
             else
             {
                 List<DAL.Model.Objetos.Usuario> lista = BAL.Control.Usuarios_BAL.GetUsuarios();
-                dgUsuarios.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login);
+                }
+
+               
             }
         }
 

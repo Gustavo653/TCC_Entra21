@@ -307,3 +307,4 @@ C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Ven
 C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
+C:\Users\marcus.pinto\source\repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources

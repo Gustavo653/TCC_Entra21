@@ -93,7 +93,7 @@ namespace FarmaTech
             this.MenuPrincipal.Margin = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.MenuPrincipal.Name = "MenuPrincipal";
             this.MenuPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.MenuPrincipal.Size = new System.Drawing.Size(130, 208);
+            this.MenuPrincipal.Size = new System.Drawing.Size(130, 189);
             this.MenuPrincipal.Stretch = false;
             this.MenuPrincipal.TabIndex = 0;
             this.MenuPrincipal.Text = "MenuCadastros";
@@ -117,7 +117,7 @@ namespace FarmaTech
             this.MenuUsuarios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuUsuarios.Name = "MenuUsuarios";
             this.MenuUsuarios.Size = new System.Drawing.Size(192, 26);
-            this.MenuUsuarios.Text = "Usuarios";
+            this.MenuUsuarios.Text = "Usuários";
             this.MenuUsuarios.Click += new System.EventHandler(this.MenuUsuarios_Click);
             // 
             // MenuFiliais
@@ -425,7 +425,7 @@ namespace FarmaTech
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::FarmaTech.Properties.Resources.lab__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1044, 749);
+            this.ClientSize = new System.Drawing.Size(1238, 749);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.flowLayoutPanel1);
