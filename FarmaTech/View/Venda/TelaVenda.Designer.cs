@@ -62,10 +62,6 @@ namespace FarmaTech
             this.lblDesconto = new System.Windows.Forms.Label();
             this.lblPrecoTotalProduto = new System.Windows.Forms.Label();
             this.dgVenda = new System.Windows.Forms.DataGridView();
-            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoTotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.lblQuant = new System.Windows.Forms.Label();
             this.lblDataSitema = new System.Windows.Forms.Label();
@@ -91,6 +87,10 @@ namespace FarmaTech
             this.lblHora = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoTotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
@@ -375,6 +375,8 @@ namespace FarmaTech
             this.txtDesconto.Size = new System.Drawing.Size(128, 29);
             this.txtDesconto.TabIndex = 61;
             this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
+            this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
+            this.txtDesconto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDesconto_KeyUp);
             // 
             // txtPrecoTotalProduto
             // 
@@ -474,8 +476,8 @@ namespace FarmaTech
             this.dgVenda.AllowUserToDeleteRows = false;
             this.dgVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DescricaoCol,
-            this.UnidadeCol,
+            this.NomeCol,
+            this.QuantidadeCol,
             this.PrecoUnitarioCol,
             this.PrecoTotalProduto});
             this.dgVenda.Location = new System.Drawing.Point(16, 161);
@@ -483,33 +485,6 @@ namespace FarmaTech
             this.dgVenda.ReadOnly = true;
             this.dgVenda.Size = new System.Drawing.Size(777, 184);
             this.dgVenda.TabIndex = 44;
-            // 
-            // DescricaoCol
-            // 
-            this.DescricaoCol.HeaderText = "Descrição";
-            this.DescricaoCol.Name = "DescricaoCol";
-            this.DescricaoCol.ReadOnly = true;
-            this.DescricaoCol.Width = 250;
-            // 
-            // UnidadeCol
-            // 
-            this.UnidadeCol.HeaderText = "Unid";
-            this.UnidadeCol.Name = "UnidadeCol";
-            this.UnidadeCol.ReadOnly = true;
-            // 
-            // PrecoUnitarioCol
-            // 
-            this.PrecoUnitarioCol.HeaderText = "Preço Unit.";
-            this.PrecoUnitarioCol.Name = "PrecoUnitarioCol";
-            this.PrecoUnitarioCol.ReadOnly = true;
-            this.PrecoUnitarioCol.Width = 130;
-            // 
-            // PrecoTotalProduto
-            // 
-            this.PrecoTotalProduto.HeaderText = "Valor Total";
-            this.PrecoTotalProduto.Name = "PrecoTotalProduto";
-            this.PrecoTotalProduto.ReadOnly = true;
-            this.PrecoTotalProduto.Width = 150;
             // 
             // lblPrecoUnitario
             // 
@@ -762,6 +737,33 @@ namespace FarmaTech
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 250;
+            // 
+            // QuantidadeCol
+            // 
+            this.QuantidadeCol.HeaderText = "Quantidade";
+            this.QuantidadeCol.Name = "QuantidadeCol";
+            this.QuantidadeCol.ReadOnly = true;
+            // 
+            // PrecoUnitarioCol
+            // 
+            this.PrecoUnitarioCol.HeaderText = "Preço Unit.";
+            this.PrecoUnitarioCol.Name = "PrecoUnitarioCol";
+            this.PrecoUnitarioCol.ReadOnly = true;
+            this.PrecoUnitarioCol.Width = 130;
+            // 
+            // PrecoTotalProduto
+            // 
+            this.PrecoTotalProduto.HeaderText = "Valor Total";
+            this.PrecoTotalProduto.Name = "PrecoTotalProduto";
+            this.PrecoTotalProduto.ReadOnly = true;
+            this.PrecoTotalProduto.Width = 150;
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -846,10 +848,6 @@ namespace FarmaTech
         private System.Windows.Forms.MaskedTextBox txtPrecoUnitario;
         private System.Windows.Forms.ComboBox cbProdutoVenda;
         private System.Windows.Forms.ComboBox cbQuantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UnidadeCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecoUnitarioCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecoTotalProduto;
         private System.Windows.Forms.ComboBox cbFormaPagamento;
         private System.Windows.Forms.ComboBox cbConvenio;
         private System.Windows.Forms.Panel panel2;
@@ -859,5 +857,9 @@ namespace FarmaTech
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.ComboBox cbCliente;
         private System.Windows.Forms.ComboBox cbNomeCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecoUnitarioCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecoTotalProduto;
     }
 }

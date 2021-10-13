@@ -246,25 +246,33 @@ namespace FarmaTech
 
         private void btnAdiciona_Click(object sender, EventArgs e)
         {
+            if (txtDesconto.Text == "")
+            {
+                txtDesconto.Text = 0.ToString("F2");
+            }
             if (cbQuantidade.Items.Count == 0 || cbQuantidade.Text == "0")
             {
                 MessageBox.Show("Este produto nao pode ser vendido, pois sua quantidade é 0");
             }
             else
             {
-                if (txtDesconto.Text == "")
-                {
-                    txtDesconto.Text = 0.ToString("F2");
-                }
-
                 txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(cbQuantidade.Text, txtPrecoUnitario.Text)).ToString("F2");
-                txtValorTotal.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
+                int resultado = BAL.Control.Vendas_BAL.InsereVenda(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoTotalProduto.Text);
+                if(resultado == 0)
+                {
+                    MessageBox.Show("item adicionado");
+                    dgVenda.Rows.Add(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text, txtPrecoTotalProduto.Text);
+                }
+                else if (resultado == 1)
+                {
+                    MessageBox.Show("preencha todos os campos");
+                }
+                else if(resultado == 2)
+                {
+                    MessageBox.Show("houve algum erro inesperado!");
+                }
             }
-
-
-
         }
-
         private void txtDesconto_TextChanged(object sender, EventArgs e)
         {
 
@@ -292,6 +300,16 @@ namespace FarmaTech
         {
             if (cbCliente.Items.Count > 0)
                 cbCliente.SelectedIndex = cbNomeCliente.SelectedIndex;
+        }
+        private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Char.IsLetter(e.KeyChar)) || (Char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void txtDesconto_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtDesconto.Text = txtDesconto.Text.Replace("-", "");
         }
     }
 }
