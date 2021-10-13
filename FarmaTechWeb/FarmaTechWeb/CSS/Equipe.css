@@ -36,6 +36,8 @@ nav {
     font-display: swap;
     background-color: rgba(248,248,255,0.3);
     height: 8vh;
+    position: relative;
+    z-index: 999;
 }
 
 main {
@@ -153,9 +155,8 @@ main {
     height: 70%;
     border: none;
     position: relative;
-    padding:20px;
     top: 0px;
-    border-radius: 100%;
+    padding:60px;
 }
 
 .TextoConteudo h1 {
@@ -202,7 +203,7 @@ section.TextoConteudo {
     border-radius: 0px 0px 20px 20px;
     background-color: rgba(248,248,255,0.3);
     padding-bottom: 40px;
-    padding-top: 230px;
+    padding-top: 10px;
     width: 700px;
     margin-bottom: 20px;
     margin-left: 20px;
@@ -232,7 +233,7 @@ section.TextoConteudo {
         right: 0px;
         width: 0px;
         height: 92vh;
-        background-color: rgba(248,248,255,0.3);
+        background-image: linear-gradient(to bottom, #b0d7ee, #88a6dc);
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -261,7 +262,7 @@ section.TextoConteudo {
         border-radius: 0px 0px 20px 20px;
         background-color: rgba(248,248,255,0.3);
         padding-bottom: 40px;
-        padding-top: 230px;
+        padding-top: 10px;
         width: auto;
         margin-bottom: 20px;
         margin-left: 20px;
