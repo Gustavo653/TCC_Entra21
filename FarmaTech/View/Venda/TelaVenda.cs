@@ -33,20 +33,27 @@ namespace FarmaTech
             IEnumerable<DAL.Model.Objetos.Endereco> listaClientes = BAL.Control.Enderecos_BAL.GetEndereco(2);
             cbNomeCliente.DataSource = listaClientes.Select(x => x.NomeFantasia).ToList();
             cbCliente.DataSource = listaClientes.Select(x => x.CNPJCPF).ToList();
+            cbVendedor.DataSource = BAL.Control.Usuarios_BAL.GetUsuarios().Select(x => x.Nome).ToList();
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabCliente);
-            tabControl1.TabPages.Add(tabVenda);
+            if (cbCliente.Text != "" && cbNomeCliente.Text != "")
+            {
+                tabControl1.TabPages.Remove(tabCliente);
+                tabControl1.TabPages.Add(tabVenda);
 
-            lblDataSitema.Text = DateTime.Now.ToString();
-            cbVendedor.Text = DAL.Model.Objetos.UsuarioStatic.Nome;
+                lblDataSitema.Text = DateTime.Now.ToString();
+                cbVendedor.Text = DAL.Model.Objetos.UsuarioStatic.Nome;
 
-            IEnumerable<string> listaNome = BAL.Control.Produtos_BAL.GetProdutos().Select(x => x.Nome);
+                IEnumerable<string> listaNome = BAL.Control.Produtos_BAL.GetProdutos().Select(x => x.Nome);
 
-            cbProdutoVenda.DataSource = listaNome.ToArray();
-
+                cbProdutoVenda.DataSource = listaNome.ToArray();
+            }
+            else
+            {
+                MessageBox.Show("Preencha um cliente");
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -131,12 +138,23 @@ namespace FarmaTech
 
         private void cbProdutoVenda_SelectedIndexChanged(object sender, EventArgs e)
         {
-            IEnumerable<int> listaNome = BAL.Control.Produtos_BAL.GetProdutosPorNome(cbProdutoVenda.Text).Select(x => x.Quantidade);
+            IEnumerable<DAL.Model.Objetos.Produto> produtos = BAL.Control.Produtos_BAL.GetProdutosPorNome(cbProdutoVenda.Text);
             List<int> quantidades = new List<int>();
-            for (int i = 1; i <= listaNome.ElementAt(0); i++)
+            if (produtos.Select(x => x.Quantidade).ElementAt(0) < 30)
             {
-                quantidades.Add(i);
+                for (int i = 1; i <= produtos.Select(x => x.Quantidade).ElementAt(0); i++)
+                {
+                    quantidades.Add(i);
+                }
             }
+            else
+            {
+                for (int i = 1; i <= 30; i++)
+                {
+                    quantidades.Add(i);
+                }
+            }
+            txtPrecoUnitario.Text = produtos.Select(x => x.PrecoUnitario).ElementAt(0);
             cbQuantidade.DataSource = quantidades;
         }
 
@@ -228,13 +246,20 @@ namespace FarmaTech
 
         private void btnAdiciona_Click(object sender, EventArgs e)
         {
-            if (txtDesconto.Text == "")
+            if (cbQuantidade.Items.Count == 0 || cbQuantidade.Text == "0")
             {
-                txtDesconto.Text = 0.ToString("F2");
+                MessageBox.Show("Este produto nao pode ser vendido, pois sua quantidade é 0");
             }
+            else
+            {
+                if (txtDesconto.Text == "")
+                {
+                    txtDesconto.Text = 0.ToString("F2");
+                }
 
-            txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(cbQuantidade.Text, txtPrecoUnitario.Text)).ToString("F2");
-            txtValorTotal.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
+                txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotalProduto(cbQuantidade.Text, txtPrecoUnitario.Text)).ToString("F2");
+                txtValorTotal.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
+            }
 
 
 

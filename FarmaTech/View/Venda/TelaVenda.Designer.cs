@@ -37,6 +37,8 @@ namespace FarmaTech
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCliente = new System.Windows.Forms.TabPage();
+            this.cbNomeCliente = new System.Windows.Forms.ComboBox();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.lblObservacao = new System.Windows.Forms.Label();
@@ -89,8 +91,6 @@ namespace FarmaTech
             this.lblHora = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cbCliente = new System.Windows.Forms.ComboBox();
-            this.cbNomeCliente = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
@@ -189,6 +189,28 @@ namespace FarmaTech
             this.tabCliente.TabIndex = 1;
             this.tabCliente.Text = "Cliente";
             this.tabCliente.Paint += new System.Windows.Forms.PaintEventHandler(this.tabCliente_Paint_1);
+            // 
+            // cbNomeCliente
+            // 
+            this.cbNomeCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbNomeCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbNomeCliente.FormattingEnabled = true;
+            this.cbNomeCliente.Location = new System.Drawing.Point(138, 88);
+            this.cbNomeCliente.Name = "cbNomeCliente";
+            this.cbNomeCliente.Size = new System.Drawing.Size(531, 28);
+            this.cbNomeCliente.TabIndex = 124;
+            this.cbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.cbNomeCliente_SelectedIndexChanged);
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(138, 30);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(259, 28);
+            this.cbCliente.TabIndex = 123;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
             // 
             // btnContinuar
             // 
@@ -336,6 +358,7 @@ namespace FarmaTech
             // 
             // txtValorTotal
             // 
+            this.txtValorTotal.Enabled = false;
             this.txtValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorTotal.ForeColor = System.Drawing.Color.Blue;
             this.txtValorTotal.Location = new System.Drawing.Point(460, 399);
@@ -355,6 +378,7 @@ namespace FarmaTech
             // 
             // txtPrecoTotalProduto
             // 
+            this.txtPrecoTotalProduto.Enabled = false;
             this.txtPrecoTotalProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoTotalProduto.Location = new System.Drawing.Point(675, 115);
             this.txtPrecoTotalProduto.Name = "txtPrecoTotalProduto";
@@ -363,6 +387,7 @@ namespace FarmaTech
             // 
             // txtPrecoUnitario
             // 
+            this.txtPrecoUnitario.Enabled = false;
             this.txtPrecoUnitario.Location = new System.Drawing.Point(381, 115);
             this.txtPrecoUnitario.Name = "txtPrecoUnitario";
             this.txtPrecoUnitario.Size = new System.Drawing.Size(126, 26);
@@ -736,28 +761,6 @@ namespace FarmaTech
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
-            // cbCliente
-            // 
-            this.cbCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(138, 30);
-            this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(259, 28);
-            this.cbCliente.TabIndex = 123;
-            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
-            // 
-            // cbNomeCliente
-            // 
-            this.cbNomeCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbNomeCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbNomeCliente.FormattingEnabled = true;
-            this.cbNomeCliente.Location = new System.Drawing.Point(138, 88);
-            this.cbNomeCliente.Name = "cbNomeCliente";
-            this.cbNomeCliente.Size = new System.Drawing.Size(531, 28);
-            this.cbNomeCliente.TabIndex = 124;
-            this.cbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.cbNomeCliente_SelectedIndexChanged);
             // 
             // TelaVenda
             // 
