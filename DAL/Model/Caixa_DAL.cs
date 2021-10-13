@@ -44,6 +44,10 @@ namespace DAL.Model
             caixas.Sort();
             caixas.Reverse();
 
+            if(caixas.Count == 0)
+            {
+                return 1;
+            }
             if (entradaSaida == 1)
             {
                 int caixa = caixas[0] + 1;
@@ -74,9 +78,9 @@ namespace DAL.Model
             DbConnection.conn.Close();
             return false;
         }
-        public static void AbreCaixa(string data, string caixa, string usuario, string valor, string idFilial)
+        public static void AbreCaixa(string data, string usuario, string valor, string idFilial)
         {
-            string operacao = $"INSERT into dbo.Caixa (Data, Caixa, Usuario, Valor, EstadoCaixa, idFilial, ValorCredito, ValorDebito) values ('{data}', '{GetCaixa(data, idFilial, 1)}', '{usuario}', '{valor}', '1', '{idFilial}', '0', '0')";
+            string operacao = $"INSERT into dbo.Caixa (Data, Caixa, UsuarioAbertura, UsuarioFechamento, Valor, EstadoCaixa, idFilial, ValorDinheiro, ValorCredito, ValorDebito) values ('{data}', '{GetCaixa(data, idFilial, 1)}', '{usuario}', 'Vazio', '{valor}', '1', '{idFilial}', '0', '0', '0')";
             DbConnection.Execute(operacao);
         }
         public static void AtualizaCaixa(string data, string valor, string idFilial)
@@ -96,9 +100,9 @@ namespace DAL.Model
             }
             DbConnection.Execute(update);
         }
-        public static void FechaCaixa(string data, string caixa, string valor, string valorCredito, string valorDebito, string idFilial)
+        public static void FechaCaixa(string data, string caixa, string valorDinheiro, string valorCredito, string valorDebito, string idFilial, string usuarioFechamento)
         {
-            string update = $"UPDATE dbo.Caixa Set EstadoCaixa = '0', Valor = '{valor}', ValorCredito = '{valorCredito}', ValorDebito = '{valorDebito}' WHERE Data = '{data}' AND Caixa = '{caixa}' AND idFilial = '{idFilial}'";
+            string update = $"UPDATE dbo.Caixa Set UsuarioFechamento = '{usuarioFechamento}', EstadoCaixa = '0', ValorDinheiro = '{valorDinheiro}', ValorCredito = '{valorCredito}', ValorDebito = '{valorDebito}' WHERE Data = '{data}' AND Caixa = '{caixa}' AND idFilial = '{idFilial}'";
             DbConnection.Execute(update);
         }
     }

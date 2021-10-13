@@ -74,7 +74,7 @@ namespace FarmaTech
 
         private void MenuPdv_Click_1(object sender, EventArgs e)
         {
-            bool estadoCaixa = BAL.Control.Caixa_BAL.GetEstadoCaixa();
+            bool estadoCaixa = BAL.Control.Caixa_BAL.GetEstadoCaixa(DAL.Model.Objetos.UsuarioStatic.Filial);
             if (!estadoCaixa)
             {
                 if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
@@ -220,7 +220,7 @@ namespace FarmaTech
 
         private void MenuFechamentoCaixa_Click(object sender, EventArgs e)
         {
-            bool estadoCaixa = BAL.Control.Caixa_BAL.GetEstadoCaixa();
+            bool estadoCaixa = BAL.Control.Caixa_BAL.GetEstadoCaixa(DAL.Model.Objetos.UsuarioStatic.Filial);
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1)
                 if (estadoCaixa)
                     new TelaFechamentoCaixa().Show();

@@ -8,22 +8,22 @@ namespace BAL.Control
 {
     public class Caixa_BAL
     {
-        public static int GetCaixa(int entradaSaida) //Obtem o numero do caixa
+        public static int GetCaixa(int entradaSaida, string usuario) //Obtem o numero do caixa
         {
-            return DAL.Model.Caixa_DAL.GetCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial, entradaSaida);
+            return DAL.Model.Caixa_DAL.GetCaixa(DateTime.Now.ToString().Substring(0, 10), usuario, entradaSaida);
         }
-        public static bool GetEstadoCaixa() //Obtem o estado do caixa(aberto ou fechado)
+        public static bool GetEstadoCaixa(string filial) //Obtem o estado do caixa(aberto ou fechado)
         {
-            return DAL.Model.Caixa_DAL.VerificaEstadoCaixa(DateTime.Now.ToString().Substring(0, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
+            return DAL.Model.Caixa_DAL.VerificaEstadoCaixa(DateTime.Now.ToString().Substring(0, 10), filial);
         }
-        public static int AbreCaixa(string data, string caixa, string usuario, string valor) //Abre o caixa, caso todas as informacoes sejam coerentes
+        public static int AbreCaixa(string data, string caixa, string usuario, string valor, string idFilial) //Abre o caixa, caso todas as informacoes sejam coerentes
         {
             if (!string.IsNullOrEmpty(caixa) && !string.IsNullOrEmpty(valor) && Convert.ToDouble(valor) > 0)
             {
                 valor = valor.Replace(",", ".");
                 try
                 {
-                    DAL.Model.Caixa_DAL.AbreCaixa(data, caixa, usuario, valor, DAL.Model.Objetos.UsuarioStatic.Filial);
+                    DAL.Model.Caixa_DAL.AbreCaixa(data, usuario, valor, idFilial);
                     return 0;
                 }
                 catch (Exception e)
@@ -34,7 +34,7 @@ namespace BAL.Control
             }
             return 1;
         }
-        public static int AtualizaCaixa(string data, string inserir, string retirada) //Atualiza o caixa, caso todas as informacoes sejam coerentes
+        public static int AtualizaCaixa(string data, string inserir, string retirada, string usuario) //Atualiza o caixa, caso todas as informacoes sejam coerentes
         {
             retirada = retirada.Replace(",", ".");
             inserir = inserir.Replace(",", ".");
@@ -43,7 +43,7 @@ namespace BAL.Control
                 try
                 {
                     string valor = (Convert.ToDouble(inserir) - Convert.ToDouble(retirada)).ToString();
-                    DAL.Model.Caixa_DAL.AtualizaCaixa(data, valor, DAL.Model.Objetos.UsuarioStatic.Filial);
+                    DAL.Model.Caixa_DAL.AtualizaCaixa(data, valor, usuario);
                     return 0;
                 }
                 catch (FormatException)
@@ -58,7 +58,7 @@ namespace BAL.Control
             }
             return 1;
         }
-        public static int FecharCaixa(string caixa, string valor, string valorCredito, string valorDebito)
+        public static int FecharCaixa(string caixa, string valor, string valorCredito, string valorDebito, string idFilial, string usuarioFechamento)
         {
             if (!string.IsNullOrEmpty(valor) && !string.IsNullOrEmpty(valorCredito) && !string.IsNullOrEmpty(valorDebito))
             {
@@ -69,7 +69,7 @@ namespace BAL.Control
                     valorDebito = valorDebito.Replace(",", ".");
                     if (Convert.ToDouble(valor) >= 0 && Convert.ToDouble(valorCredito) >= 0 && Convert.ToDouble(valorDebito) >= 0)
                     {
-                        DAL.Model.Caixa_DAL.FechaCaixa(DateTime.Now.ToString().Substring(0, 10), caixa, valor, valorCredito, valorDebito, DAL.Model.Objetos.UsuarioStatic.Filial);
+                        DAL.Model.Caixa_DAL.FechaCaixa(DateTime.Now.ToString().Substring(0, 10), caixa, valor, valorCredito, valorDebito, idFilial, usuarioFechamento);
                         return 0;
                     }
                     return 2;

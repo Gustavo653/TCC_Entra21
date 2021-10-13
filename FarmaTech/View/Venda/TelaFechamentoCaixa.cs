@@ -20,7 +20,7 @@ namespace FarmaTech.View.Principal
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            int resultado = BAL.Control.Caixa_BAL.FecharCaixa(lblNumCaixa.Text ,txtValorDinheiro.Text, txtValorCredito.Text, txtValorDebito.Text);
+            int resultado = BAL.Control.Caixa_BAL.FecharCaixa(lblNumCaixa.Text ,txtValorDinheiro.Text, txtValorCredito.Text, txtValorDebito.Text, DAL.Model.Objetos.UsuarioStatic.Filial, cbUsuario.Text);
             if(resultado == 0)
             {
                 MessageBox.Show("Caixa fechado com sucesso");
@@ -73,7 +73,7 @@ namespace FarmaTech.View.Principal
 
         private void TelaFechamentoCaixa_Load(object sender, EventArgs e)
         {
-            lblNumCaixa.Text = BAL.Control.Caixa_BAL.GetCaixa(0).ToString();
+            lblNumCaixa.Text = BAL.Control.Caixa_BAL.GetCaixa(0, cbUsuario.Text).ToString();
             IEnumerable<string> nomesUsuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Select(x => x.Nome);
             cbUsuario.DataSource = nomesUsuarios.ToArray();
             cbUsuario.SelectedItem = DAL.Model.Objetos.UsuarioStatic.Nome;

@@ -26,7 +26,7 @@ namespace FarmaTech.View.Principal
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            int resultado = BAL.Control.Caixa_BAL.AbreCaixa(DateTime.Now.ToString().Substring(0, 10), lblNumCaixa.Text, cbUsuario.Text, txtValorAberturaCaixa.Text);
+            int resultado = BAL.Control.Caixa_BAL.AbreCaixa(DateTime.Now.ToString().Substring(0, 10), lblNumCaixa.Text, cbUsuario.Text, txtValorAberturaCaixa.Text, DAL.Model.Objetos.UsuarioStatic.Filial);
             if (resultado == 0)
             {
                 new TelaVenda().Show();
@@ -56,7 +56,7 @@ namespace FarmaTech.View.Principal
 
         private void TelaAberturaDeCaixa_Load(object sender, EventArgs e)
         {
-            lblNumCaixa.Text = BAL.Control.Caixa_BAL.GetCaixa(1).ToString();
+            lblNumCaixa.Text = BAL.Control.Caixa_BAL.GetCaixa(1, cbUsuario.Text).ToString();
             IEnumerable<string> nomesUsuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Select(x => x.Nome);
             cbUsuario.DataSource = nomesUsuarios.ToArray();
             cbUsuario.SelectedItem = DAL.Model.Objetos.UsuarioStatic.Nome;

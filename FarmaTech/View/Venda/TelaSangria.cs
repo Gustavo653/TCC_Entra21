@@ -25,7 +25,7 @@ namespace FarmaTech.View.Venda
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-            int resultado = BAL.Control.Caixa_BAL.AtualizaCaixa(DateTime.Now.ToString().Substring(0, 10), txtInserir.Text, txtRetirada.Text);
+            int resultado = BAL.Control.Caixa_BAL.AtualizaCaixa(DateTime.Now.ToString().Substring(0, 10), txtInserir.Text, txtRetirada.Text, cbUsuario.Text);
             if (resultado == 0)
             {
                 this.Hide();
