@@ -264,7 +264,7 @@ namespace FarmaTech
             else
             {
                 txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
-                int resultado = BAL.Control.Vendas_BAL.InsereVenda(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoTotalProduto.Text);
+                int resultado = BAL.Control.Vendas_BAL.InsereVenda(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text);
                 if (resultado == 0)
                 {
                     dgVenda.Rows.Add(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text, txtPrecoTotalProduto.Text);

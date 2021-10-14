@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace FarmaTech.View.Principal
 {
-    public partial class TelaGraficos : Form
+    public partial class TelaGraficosAdmin : Form
     {
-        public TelaGraficos()
+        public TelaGraficosAdmin()
         {
             InitializeComponent();
         }
@@ -49,11 +49,6 @@ namespace FarmaTech.View.Principal
             Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(139, 148, 250), Color.FromArgb(116, 186, 241), 45f);
             graphics.FillRectangle(br, gradient_rect);
-        }
-
-        private void TelaGraficos_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }
