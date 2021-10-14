@@ -115,5 +115,35 @@ namespace BAL.Control
             }
             return 1;
         }
+        public static int CancelaVenda(string quantidade, string nomeProduto)
+        {
+            if (!string.IsNullOrEmpty(quantidade) && !string.IsNullOrEmpty(nomeProduto))
+            {
+                try
+                {
+                    List<DAL.Model.Objetos.Produto> produtos = BAL.Control.Produtos_BAL.GetProdutosPorNome(nomeProduto);
+                    DAL.Model.Vendas_DAL.CancelaVenda(Convert.ToInt32(quantidade), Cupom, produtos[0].Codigo);
+                    return 0; //Deu tudo certo
+                }
+                catch (Exception e)
+                {
+                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_BAL_CancelaVenda");
+                    return 2; //Erro inesperado
+                }
+            }
+            return 1; //Algo nao estava preenchido
+        }
+        public static void CancelaCupom()
+        {
+            try
+            {
+                DAL.Model.Vendas_DAL.CancelaCupom(Cupom);
+                Cupom = null;
+            }
+            catch (Exception e)
+            {
+                DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_BAL_CancelaCupom");
+            }
+        }
     }
 }

@@ -124,7 +124,21 @@ namespace FarmaTech
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            new TelaConfirmacaoCancelamento().Show();
+            if (DialogResult.Yes == MessageBox.Show("Deseja cancelar a venda?", "Cancelar Venda", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                foreach (DataGridViewRow dataGridViewRow in dgVenda.Rows)
+                {
+                    BAL.Control.Vendas_BAL.CancelaVenda(dataGridViewRow.Cells["QuantidadeCol"].Value.ToString(), dataGridViewRow.Cells["NomeCol"].Value.ToString());
+                }
+                while (dgVenda.Rows.Count > 0)
+                {
+                    dgVenda.Rows.RemoveAt(0);
+                }
+                BAL.Control.Vendas_BAL.CancelaCupom();
+                tabControl1.TabPages.Remove(tabVenda);
+                tabControl1.TabPages.Add(tabCliente);
+                txtValorTotal.Text = "0,00";
+            }
         }
 
         private void btnContinarVenda_Click(object sender, EventArgs e)
@@ -301,7 +315,29 @@ namespace FarmaTech
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-
+            if (dgVenda.Rows.Count != 0)
+            {
+                int indiceSelecionado = dgVenda.CurrentRow.Index;
+                int resultado = BAL.Control.Vendas_BAL.CancelaVenda(dgVenda.Rows[indiceSelecionado].Cells[1].Value.ToString(), dgVenda.Rows[indiceSelecionado].Cells[0].Value.ToString());
+                if (resultado == 0)
+                {
+                    txtValorTotal.Text = (Convert.ToDouble(txtValorTotal.Text) - Convert.ToDouble(dgVenda.Rows[indiceSelecionado].Cells[3].Value.ToString())).ToString();
+                    dgVenda.Rows.RemoveAt(indiceSelecionado);
+                    MessageBox.Show("item removido");
+                }
+                else if (resultado == 1)
+                {
+                    MessageBox.Show("preencha todos os campos");
+                }
+                else if (resultado == 2)
+                {
+                    MessageBox.Show("houve algum erro inesperado!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não há nenhuma venda para excluir!");
+            }
         }
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
