@@ -307,6 +307,7 @@ C:\Users\Usuario\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Pri
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
+<<<<<<< Updated upstream
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\bin\Debug\FarmaTech.exe.config
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\bin\Debug\FarmaTech.exe
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\bin\Debug\FarmaTech.pdb
@@ -343,3 +344,6 @@ C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\Fa
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\FarmaTech.exe
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\FarmaTech.pdb
+=======
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficosAdmin.resources
+>>>>>>> Stashed changes

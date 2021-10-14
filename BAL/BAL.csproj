@@ -46,6 +46,7 @@
     <Compile Include="Control\ContasPagar_BAL.cs" />
     <Compile Include="Control\Convenios_BAL.cs" />
     <Compile Include="Control\Enderecos_BAL.cs" />
+    <Compile Include="Control\Graficos_BAL.cs" />
     <Compile Include="Control\NivelAcessoUsuario_BAL.cs" />
     <Compile Include="Control\Produtos_BAL.cs" />
     <Compile Include="Control\Requisicoes_BAL.cs" />
