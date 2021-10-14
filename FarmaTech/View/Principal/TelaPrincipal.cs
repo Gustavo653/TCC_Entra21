@@ -215,7 +215,9 @@ namespace FarmaTech
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToLongTimeString();
-            lblData.Text = DateTime.Now.ToLongDateString();
+            lblData.Text = DateTime.Now.ToShortDateString();
+            lblDataCaixa.Text = DateTime.Now.ToLongDateString();
+
         }
 
         private void MenuFechamentoCaixa_Click(object sender, EventArgs e)
@@ -228,6 +230,18 @@ namespace FarmaTech
                     MessageBox.Show("O caixa nao esta aberto");
             else
                 MessageBox.Show("Você não possui autorizacao");
+        }
+
+        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics graphics = e.Graphics; Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
+            Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(113, 190, 239), Color.FromArgb(137, 152, 249), 45f);
+            graphics.FillRectangle(br, gradient_rect);
         }
     }
 }
