@@ -53,7 +53,24 @@ namespace FarmaTech.View.Principal
 
         private void TelaGraficos_Load(object sender, EventArgs e)
         {
-            
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 2)
+            {
+                cbFilial.Text = DAL.Model.Objetos.UsuarioStatic.Filial;
+            }
+            else
+            {
+                cbFilial.DataSource = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia).ToList();
+            }
+            txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(DateTime.Now.ToString().Substring(2, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
+        }
+        private void cbFilial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, cbFilial.Text);
+        }
+
+        private void txtData_TextChanged(object sender, EventArgs e)
+        {
+            txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, DAL.Model.Objetos.UsuarioStatic.Filial);
         }
     }
 }

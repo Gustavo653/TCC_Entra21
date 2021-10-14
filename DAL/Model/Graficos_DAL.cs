@@ -10,20 +10,43 @@ namespace DAL.Model
 {
     public class Graficos_DAL
     {
-        public static List<string> GetVendedorECodigoCupom(string data)
+        public static List<string> GetCupons(List<DAL.Model.Objetos.Usuario> usuarios, string data)
         {
-            string select = $"SELECT * from dbo.Cupom WHERE Data = '{data}'";
             List<string> lista = new List<string>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            usuarios.Distinct();
+            for (int i = 0; i < usuarios.Count; i++)
             {
-                lista.Add(dr["Nome"].ToString());
+                string select = $"SELECT CodigoCupom from dbo.Cupom WHERE Vendedor = '{usuarios[i].Nome}' AND Data LIKE '%{data}%'";
+                SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+                if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                    DbConnection.conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lista.Add(dr["CodigoCupom"].ToString());
+                }
+                dr.Close();
+                DbConnection.conn.Close();
             }
-            dr.Close();
-            DbConnection.conn.Close();
+            return lista;
+        }
+        public static List<Objetos.Produto> GetCodigosProduto(List<string> cupons)
+        {
+            List<Objetos.Produto> lista = new List<Objetos.Produto>();
+            for (int i = 0; i < cupons.Count; i++)
+            {
+                string select = $"SELECT CodigoProduto, Quantidade from dbo.Vendas WHERE CodigoCupom = '{cupons[i]}'";
+                SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+                if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                    DbConnection.conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lista.Add(new Objetos.Produto(Convert.ToInt32(dr["Quantidade"]), dr["CodigoProduto"].ToString()));
+                }
+                dr.Close();
+                DbConnection.conn.Close();
+            }
             return lista;
         }
     }

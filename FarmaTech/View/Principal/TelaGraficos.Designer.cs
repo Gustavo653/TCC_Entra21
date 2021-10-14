@@ -30,9 +30,9 @@ namespace FarmaTech.View.Principal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
@@ -43,25 +43,29 @@ namespace FarmaTech.View.Principal
             this.label3 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.cbFilial = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtReceitaFuncionario = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtData = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(15, 12);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(795, 574);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -110,7 +114,7 @@ namespace FarmaTech.View.Principal
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(816, 12);
+            this.label1.Location = new System.Drawing.Point(815, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 98;
@@ -119,7 +123,7 @@ namespace FarmaTech.View.Principal
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(816, 41);
+            this.label2.Location = new System.Drawing.Point(815, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 13);
             this.label2.TabIndex = 99;
@@ -128,7 +132,7 @@ namespace FarmaTech.View.Principal
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(817, 68);
+            this.label3.Location = new System.Drawing.Point(816, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 13);
             this.label3.TabIndex = 100;
@@ -151,15 +155,6 @@ namespace FarmaTech.View.Principal
             this.label4.TabIndex = 102;
             this.label4.Text = "Produtos mais vendidos";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(897, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 103;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -177,14 +172,60 @@ namespace FarmaTech.View.Principal
             this.listBox2.Size = new System.Drawing.Size(217, 95);
             this.listBox2.TabIndex = 104;
             // 
+            // cbFilial
+            // 
+            this.cbFilial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilial.FormattingEnabled = true;
+            this.cbFilial.Location = new System.Drawing.Point(896, 18);
+            this.cbFilial.Name = "cbFilial";
+            this.cbFilial.Size = new System.Drawing.Size(121, 21);
+            this.cbFilial.TabIndex = 107;
+            this.cbFilial.SelectedIndexChanged += new System.EventHandler(this.cbFilial_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(815, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 106;
+            this.label6.Text = "Filtrar por filial:";
+            // 
+            // txtReceitaFuncionario
+            // 
+            this.txtReceitaFuncionario.Enabled = false;
+            this.txtReceitaFuncionario.Location = new System.Drawing.Point(939, 74);
+            this.txtReceitaFuncionario.Name = "txtReceitaFuncionario";
+            this.txtReceitaFuncionario.Size = new System.Drawing.Size(94, 20);
+            this.txtReceitaFuncionario.TabIndex = 108;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(972, 101);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(61, 20);
+            this.textBox2.TabIndex = 109;
+            // 
+            // txtData
+            // 
+            this.txtData.Location = new System.Drawing.Point(896, 45);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(121, 20);
+            this.txtData.TabIndex = 110;
+            this.txtData.TextChanged += new System.EventHandler(this.txtData_TextChanged);
+            // 
             // TelaGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 622);
+            this.Controls.Add(this.txtData);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtReceitaFuncionario);
+            this.Controls.Add(this.cbFilial);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label3);
@@ -218,8 +259,12 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ComboBox cbFilial;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtReceitaFuncionario;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtData;
     }
 }
