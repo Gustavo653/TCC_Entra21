@@ -343,3 +343,4 @@ C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\Fa
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\FarmaTech.exe
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\FarmaTech.pdb
+C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaCliente.resources

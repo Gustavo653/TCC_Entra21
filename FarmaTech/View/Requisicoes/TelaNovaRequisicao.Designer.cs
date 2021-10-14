@@ -58,7 +58,7 @@ namespace FarmaTech.View.Requisicoes
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(83, 97);
+            this.label3.Location = new System.Drawing.Point(509, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 18;
@@ -66,10 +66,11 @@ namespace FarmaTech.View.Requisicoes
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(154, 211);
+            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Location = new System.Drawing.Point(154, 148);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(527, 118);
+            this.txtDescricao.Size = new System.Drawing.Size(527, 191);
             this.txtDescricao.TabIndex = 17;
             // 
             // lblDescricao
@@ -77,7 +78,7 @@ namespace FarmaTech.View.Requisicoes
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.BackColor = System.Drawing.Color.Transparent;
             this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDescricao.Location = new System.Drawing.Point(40, 214);
+            this.lblDescricao.Location = new System.Drawing.Point(40, 151);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(94, 20);
             this.lblDescricao.TabIndex = 16;
@@ -85,9 +86,10 @@ namespace FarmaTech.View.Requisicoes
             // 
             // txtAssunto
             // 
-            this.txtAssunto.Location = new System.Drawing.Point(154, 158);
+            this.txtAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAssunto.Location = new System.Drawing.Point(154, 91);
             this.txtAssunto.Name = "txtAssunto";
-            this.txtAssunto.Size = new System.Drawing.Size(527, 20);
+            this.txtAssunto.Size = new System.Drawing.Size(527, 26);
             this.txtAssunto.TabIndex = 15;
             // 
             // lblAssunto
@@ -95,7 +97,7 @@ namespace FarmaTech.View.Requisicoes
             this.lblAssunto.AutoSize = true;
             this.lblAssunto.BackColor = System.Drawing.Color.Transparent;
             this.lblAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAssunto.Location = new System.Drawing.Point(54, 161);
+            this.lblAssunto.Location = new System.Drawing.Point(54, 94);
             this.lblAssunto.Name = "lblAssunto";
             this.lblAssunto.Size = new System.Drawing.Size(80, 20);
             this.lblAssunto.TabIndex = 14;
@@ -106,7 +108,7 @@ namespace FarmaTech.View.Requisicoes
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(385, 40);
+            this.label5.Location = new System.Drawing.Point(280, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 20);
             this.label5.TabIndex = 12;
@@ -125,7 +127,7 @@ namespace FarmaTech.View.Requisicoes
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(81, 34);
+            this.label2.Location = new System.Drawing.Point(54, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 10;
@@ -156,7 +158,7 @@ namespace FarmaTech.View.Requisicoes
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblUsuario.Location = new System.Drawing.Point(467, 40);
+            this.lblUsuario.Location = new System.Drawing.Point(362, 35);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(57, 20);
             this.lblUsuario.TabIndex = 21;
@@ -167,7 +169,7 @@ namespace FarmaTech.View.Requisicoes
             this.lblFilial.AutoSize = true;
             this.lblFilial.BackColor = System.Drawing.Color.Transparent;
             this.lblFilial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFilial.Location = new System.Drawing.Point(140, 97);
+            this.lblFilial.Location = new System.Drawing.Point(566, 34);
             this.lblFilial.Name = "lblFilial";
             this.lblFilial.Size = new System.Drawing.Size(57, 20);
             this.lblFilial.TabIndex = 20;
@@ -178,7 +180,7 @@ namespace FarmaTech.View.Requisicoes
             this.lblData.AutoSize = true;
             this.lblData.BackColor = System.Drawing.Color.Transparent;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblData.Location = new System.Drawing.Point(140, 34);
+            this.lblData.Location = new System.Drawing.Point(113, 35);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(57, 20);
             this.lblData.TabIndex = 19;
@@ -258,11 +260,11 @@ namespace FarmaTech.View.Requisicoes
             this.lblNovaRec.AutoSize = true;
             this.lblNovaRec.BackColor = System.Drawing.Color.Transparent;
             this.lblNovaRec.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNovaRec.Location = new System.Drawing.Point(712, 9);
+            this.lblNovaRec.Location = new System.Drawing.Point(670, 9);
             this.lblNovaRec.Name = "lblNovaRec";
-            this.lblNovaRec.Size = new System.Drawing.Size(174, 36);
+            this.lblNovaRec.Size = new System.Drawing.Size(257, 36);
             this.lblNovaRec.TabIndex = 94;
-            this.lblNovaRec.Text = "Requisição";
+            this.lblNovaRec.Text = "Nova Requisição";
             // 
             // TelaNovaRequisicao
             // 

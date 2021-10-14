@@ -89,6 +89,5 @@ namespace FarmaTech.View.Requisicoes
             lblDate.Text = DateTime.Now.ToLongDateString();
         }
 
-    
     }
 }

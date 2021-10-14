@@ -66,13 +66,28 @@ namespace FarmaTech.View.Principal
         }
         public void AtualizaDG()
         {
+            while (dgRequisicoes.Rows.Count > 0)
+            {
+                dgRequisicoes.Rows.RemoveAt(0);
+            }
+
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
-                dgRequisicoes.DataSource = BAL.Control.Requisicoes_BAL.GetRequisicoesPorNome(txtPesquisaUsuario.Text);
+                List<DAL.Model.Objetos.Requisicao> lista = BAL.Control.Requisicoes_BAL.GetRequisicoesPorNome(txtPesquisaUsuario.Text);
+
+                foreach (var item in lista)
+                {
+                    dgRequisicoes.Rows.Add(item.Nome, item.Filial, item.Data, item.Assunto, item.Resposta);
+                }               
             }
             else
             {
-                dgRequisicoes.DataSource = BAL.Control.Requisicoes_BAL.GetRequisicoes();
+                List<DAL.Model.Objetos.Requisicao> lista = BAL.Control.Requisicoes_BAL.GetRequisicoes();
+
+                foreach (var item in lista)
+                {
+                    dgRequisicoes.Rows.Add(item.Nome, item.Filial, item.Data, item.Assunto, item.Resposta);
+                }               
             }
         }
 

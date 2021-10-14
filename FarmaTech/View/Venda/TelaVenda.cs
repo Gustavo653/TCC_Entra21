@@ -243,7 +243,7 @@ namespace FarmaTech
 
         private void btnPesquisaCliente_Click(object sender, EventArgs e)
         {
-            new TelaCadastroCliente().Show();
+            new TelaConsultaCliente().Show();
         }
 
         private void btnSangria_Click(object sender, EventArgs e)

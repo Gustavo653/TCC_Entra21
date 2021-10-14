@@ -122,6 +122,12 @@
     <Compile Include="View\Financeiro\TelaMovimentacaoFinanceira.Designer.cs">
       <DependentUpon>TelaMovimentacaoFinanceira.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Venda\TelaConsultaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Venda\TelaConsultaCliente.Designer.cs">
+      <DependentUpon>TelaConsultaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Venda\TelaFechamentoCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Financeiro\TelaMovimentacaoFinanceira.resx">
       <DependentUpon>TelaMovimentacaoFinanceira.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Venda\TelaConsultaCliente.resx">
+      <DependentUpon>TelaConsultaCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Venda\TelaFechamentoCaixa.resx">
       <DependentUpon>TelaFechamentoCaixa.cs</DependentUpon>
