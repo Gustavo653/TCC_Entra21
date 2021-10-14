@@ -116,6 +116,10 @@ namespace FarmaTech.View.Principal
                 MessageBox.Show("A mensagem é muito grande");
             }
             AtualizaDG();
+
+            tabControl1.TabPages.Remove(tabResposta);
+            tabControl1.TabPages.Add(tabRequisicoes);
+
         }
 
         private void button2_Click(object sender, EventArgs e)

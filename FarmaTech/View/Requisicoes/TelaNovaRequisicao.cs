@@ -68,6 +68,10 @@ namespace FarmaTech.View.Requisicoes
             {
                 MessageBox.Show("A mensagem é muito grande");
             }
+
+            txtAssunto.Clear();
+            txtDescricao.Clear();
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
