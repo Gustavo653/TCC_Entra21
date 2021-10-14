@@ -87,4 +87,3 @@ C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\BAL\obj\Debug\BAL.cspr
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\BAL\obj\Debug\BAL.csproj.CopyComplete
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\BAL\obj\Debug\BAL.dll
 C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\BAL\obj\Debug\BAL.pdb
-C:\Users\ujipe\Documents\GitHub\TCC_Oficial\BAL\obj\Debug\BAL.csproj.CopyComplete

@@ -75,6 +75,12 @@ namespace FarmaTech.View.Principal
         {
             txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, cbFilial.Text);
             txtFuncionarioMaisVendas.Text = BAL.Control.Graficos_BAL.FuncionarioComMaisVendas(txtData.Text, cbFilial.Text);
+            Dictionary<string, int> produtosMaisVendidos = BAL.Control.Graficos_BAL.ProdutosMaisVendidos(txtData.Text, cbFilial.Text);
+            lstProdMaisVendidos.Items.Clear();
+            foreach (var item in produtosMaisVendidos)
+            {
+                lstProdMaisVendidos.Items.Add("Nome: " + item.Key + " - Quantidade: " + item.Value);
+            }
         }
     }
 }

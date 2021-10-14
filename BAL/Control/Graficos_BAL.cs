@@ -52,10 +52,36 @@ namespace BAL.Control
             }
             return null;
         }
-        public static List<string> ProdutosMaisVendidos()
+        public static Dictionary<string, int> ProdutosMaisVendidos(string data, string idFilial)
         {
             //Selecionar todas as vendas da dbo.Vendas e mostrar produtos mais vendidos (somar todas as quantidades)
-            return null;
+            Dictionary<string, int> produtos = new Dictionary<string, int>();
+            Dictionary<string, int> produtosNome = new Dictionary<string, int>();
+            List<DAL.Model.Objetos.Usuario> usuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Where(x => x.Filial == idFilial).ToList();
+            List<string> cupons = DAL.Model.Graficos_DAL.GetCupons(usuarios, data);
+            List<DAL.Model.Objetos.Produto> codigosProdutos = DAL.Model.Graficos_DAL.GetCodigosProduto(cupons);
+            List<DAL.Model.Objetos.Produto> produtosEstoque = DAL.Model.Produtos_DAL.GetProdutos();
+            for (int i = 0; i < codigosProdutos.Count; i++)
+            {
+                if (!produtos.ContainsKey(codigosProdutos[i].Codigo))
+                {
+                    produtos.Add(codigosProdutos[i].Codigo, codigosProdutos[i].Quantidade);
+                }
+                else
+                {
+                    produtos[codigosProdutos[i].Codigo] += codigosProdutos[i].Quantidade;
+                }
+            }
+            produtos.OrderBy(x => x.Value);
+            foreach (var item in produtos)
+            {
+                string codigoProduto = item.Key;
+                DAL.Model.Objetos.Produto prodSelecionado = produtosEstoque.Where(x => x.Codigo == codigoProduto).ElementAt(0);
+                codigoProduto = prodSelecionado.Nome;
+                int quantidadeProduto = produtos[item.Key];
+                produtosNome.Add(codigoProduto, quantidadeProduto);
+            }
+            return produtosNome;
         }
         public static void RelacaoCompraVenda()
         {

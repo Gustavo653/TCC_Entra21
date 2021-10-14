@@ -30,9 +30,9 @@ namespace FarmaTech.View.Principal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
@@ -41,10 +41,10 @@ namespace FarmaTech.View.Principal
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstProdMaisVendidos = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lstReceitaFuncionario = new System.Windows.Forms.ListBox();
             this.cbFilial = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtReceitaFuncionario = new System.Windows.Forms.TextBox();
@@ -56,16 +56,16 @@ namespace FarmaTech.View.Principal
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(15, 12);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(795, 574);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -138,13 +138,13 @@ namespace FarmaTech.View.Principal
             this.label3.TabIndex = 100;
             this.label3.Text = "Funcionario com mais vendas: ";
             // 
-            // listBox1
+            // lstProdMaisVendidos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(819, 477);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(217, 95);
-            this.listBox1.TabIndex = 101;
+            this.lstProdMaisVendidos.FormattingEnabled = true;
+            this.lstProdMaisVendidos.Location = new System.Drawing.Point(819, 477);
+            this.lstProdMaisVendidos.Name = "lstProdMaisVendidos";
+            this.lstProdMaisVendidos.Size = new System.Drawing.Size(217, 95);
+            this.lstProdMaisVendidos.TabIndex = 101;
             // 
             // label4
             // 
@@ -164,13 +164,13 @@ namespace FarmaTech.View.Principal
             this.label5.TabIndex = 105;
             this.label5.Text = "Receita de cada funcionario";
             // 
-            // listBox2
+            // lstReceitaFuncionario
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(816, 339);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(217, 95);
-            this.listBox2.TabIndex = 104;
+            this.lstReceitaFuncionario.FormattingEnabled = true;
+            this.lstReceitaFuncionario.Location = new System.Drawing.Point(816, 339);
+            this.lstReceitaFuncionario.Name = "lstReceitaFuncionario";
+            this.lstReceitaFuncionario.Size = new System.Drawing.Size(217, 95);
+            this.lstReceitaFuncionario.TabIndex = 104;
             // 
             // cbFilial
             // 
@@ -224,9 +224,9 @@ namespace FarmaTech.View.Principal
             this.Controls.Add(this.cbFilial);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.lstReceitaFuncionario);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstProdMaisVendidos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -256,10 +256,10 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstProdMaisVendidos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lstReceitaFuncionario;
         private System.Windows.Forms.ComboBox cbFilial;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtReceitaFuncionario;
