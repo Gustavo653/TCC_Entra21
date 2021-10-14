@@ -17,7 +17,7 @@ namespace BAL.Control
             //Separar cada produto vendido por 1 funcionario do dbo.Vendas
             //Obter PrecoUnitario - PrecoCusto da tabela dbo.Produtos baseado no produto vendido
             List<DAL.Model.Objetos.Usuario> usuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Where(x => x.Filial == idFilial).ToList();
-            List<string> cupons = DAL.Model.Graficos_DAL.GetCupons(usuarios, data);        
+            List<string> cupons = DAL.Model.Graficos_DAL.GetCupons(usuarios, data);
             List<DAL.Model.Objetos.Produto> codigosProdutos = DAL.Model.Graficos_DAL.GetCodigosProduto(cupons);
             List<DAL.Model.Objetos.Produto> produtos = BAL.Control.Produtos_BAL.GetProdutos();
             foreach (var item in codigosProdutos)
@@ -31,10 +31,25 @@ namespace BAL.Control
 
             return lucroFuncionario.ToString();
         }
-        public static string FuncionarioComMaisVendas()
+        public static string FuncionarioComMaisVendas(string data, string idFilial)
         {
             //Pegar NomeFuncionario e CodigoCupom do dbo.Cupom
             //Contar qual funcionario tem mais cupons
+            int usuarioComMaisVendas = 0;
+            int quantidadeVendas = 0;
+            List<DAL.Model.Objetos.Usuario> usuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Where(x => x.Filial == idFilial).ToList();
+
+            for (int i = 0; i < usuarios.Count; i++)
+            {
+                if (DAL.Model.Graficos_DAL.GetCupons(usuarios[i], data).Count > quantidadeVendas)
+                {
+                    usuarioComMaisVendas = i;
+                }
+            }
+            if (usuarios.Count > 0)
+            {
+                return usuarios[usuarioComMaisVendas].Nome;
+            }
             return null;
         }
         public static List<string> ProdutosMaisVendidos()

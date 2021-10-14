@@ -61,16 +61,20 @@ namespace FarmaTech.View.Principal
             {
                 cbFilial.DataSource = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia).ToList();
             }
-            txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(DateTime.Now.ToString().Substring(2, 10), DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         private void cbFilial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, cbFilial.Text);
+            AtualizaControles();
         }
 
         private void txtData_TextChanged(object sender, EventArgs e)
         {
-            txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, DAL.Model.Objetos.UsuarioStatic.Filial);
+            AtualizaControles();
+        }
+        public void AtualizaControles()
+        {
+            txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, cbFilial.Text);
+            txtFuncionarioMaisVendas.Text = BAL.Control.Graficos_BAL.FuncionarioComMaisVendas(txtData.Text, cbFilial.Text);
         }
     }
 }
