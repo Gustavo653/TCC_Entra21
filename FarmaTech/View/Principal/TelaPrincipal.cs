@@ -232,10 +232,7 @@ namespace FarmaTech
                 MessageBox.Show("Você não possui autorizacao");
         }
 
-        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+     
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {

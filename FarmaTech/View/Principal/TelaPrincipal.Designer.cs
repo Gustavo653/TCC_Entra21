@@ -453,7 +453,6 @@ namespace FarmaTech
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(197, 749);
             this.flowLayoutPanel4.TabIndex = 6;
-            this.flowLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel4_Paint);
             // 
             // panel4
             // 
