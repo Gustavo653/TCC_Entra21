@@ -84,26 +84,7 @@ namespace FarmaTech
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            //StreamWriter cupomText = new StreamWriter("C:\\Temp\\CupomText.txt");
-            //cupomText.WriteLine("............................CUPOM FISCAL............................");
-            //cupomText.WriteLine();
-            //cupomText.WriteLine("Número: 00000");
-            //cupomText.WriteLine();
-            //cupomText.WriteLine("Fornecedor:  FarmaTech    " + "Filial:   " + "CNPJ: ");
-            //cupomText.WriteLine("-------------------------------------------------------------------- ");
-            //cupomText.WriteLine("-------------------------------------------------------------------- ");
-            //cupomText.WriteLine("Cliente: " + cbNomeCliente.Text + "\tCPF/CNPJ: " + cbCliente.Text);
-            //cupomText.WriteLine("=====================================================================");
-            //cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
-            //cupomText.WriteLine(cbProdutoVenda.Text + "\t\t" + cbQuantidade.Text + "\t\t" + txtPrecoTotalProduto.Text);
-            //cupomText.WriteLine();
-            //cupomText.WriteLine("Valor Total: R$ " + txtFormaValorTotal.Text);
-            //cupomText.WriteLine("Forma de Pagamento: " + cbFormaPagamento.Text);
-            //cupomText.WriteLine("=====================================================================");
-            //cupomText.WriteLine("Volte sempre - Obrigado");
-            //cupomText.WriteLine("FarmaTech by Query Lab - 2021®");
-            //cupomText.Close();
-            //Process.Start(@"C:\\Temp\\CupomText.txt");
+            DAL.Model.Consultas.LogErros.GerarCupom(BAL.Control.Vendas_BAL.Cupom, "Vendas_GerarCupom", cbNomeCliente.Text, cbCliente.Text, cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text, txtPrecoTotalProduto.Text, txtValorTotal.Text, cbFormaPagamento.Text);
 
             int resultado = BAL.Control.Vendas_BAL.InsereCupom(cbVendedor.Text, cbNomeCliente.Text, txtFormaValorTotal.Text, cbFormaPagamento.Text);
             if (resultado == 0)
