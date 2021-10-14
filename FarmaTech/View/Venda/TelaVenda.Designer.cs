@@ -62,6 +62,10 @@ namespace FarmaTech
             this.lblDesconto = new System.Windows.Forms.Label();
             this.lblPrecoTotalProduto = new System.Windows.Forms.Label();
             this.dgVenda = new System.Windows.Forms.DataGridView();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoTotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.lblQuant = new System.Windows.Forms.Label();
             this.lblDataSitema = new System.Windows.Forms.Label();
@@ -87,10 +91,6 @@ namespace FarmaTech
             this.lblHora = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoTotalProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabCliente.SuspendLayout();
@@ -486,6 +486,33 @@ namespace FarmaTech
             this.dgVenda.Size = new System.Drawing.Size(777, 184);
             this.dgVenda.TabIndex = 44;
             // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 250;
+            // 
+            // QuantidadeCol
+            // 
+            this.QuantidadeCol.HeaderText = "Quantidade";
+            this.QuantidadeCol.Name = "QuantidadeCol";
+            this.QuantidadeCol.ReadOnly = true;
+            // 
+            // PrecoUnitarioCol
+            // 
+            this.PrecoUnitarioCol.HeaderText = "Preço Unit.";
+            this.PrecoUnitarioCol.Name = "PrecoUnitarioCol";
+            this.PrecoUnitarioCol.ReadOnly = true;
+            this.PrecoUnitarioCol.Width = 130;
+            // 
+            // PrecoTotalProduto
+            // 
+            this.PrecoTotalProduto.HeaderText = "Valor Total";
+            this.PrecoTotalProduto.Name = "PrecoTotalProduto";
+            this.PrecoTotalProduto.ReadOnly = true;
+            this.PrecoTotalProduto.Width = 150;
+            // 
             // lblPrecoUnitario
             // 
             this.lblPrecoUnitario.AutoSize = true;
@@ -593,11 +620,13 @@ namespace FarmaTech
             // 
             // cbConvenio
             // 
+            this.cbConvenio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConvenio.FormattingEnabled = true;
             this.cbConvenio.Location = new System.Drawing.Point(228, 82);
             this.cbConvenio.Name = "cbConvenio";
             this.cbConvenio.Size = new System.Drawing.Size(128, 28);
             this.cbConvenio.TabIndex = 66;
+            this.cbConvenio.SelectedIndexChanged += new System.EventHandler(this.cbConvenio_SelectedIndexChanged);
             // 
             // btnFinalizar
             // 
@@ -740,33 +769,6 @@ namespace FarmaTech
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            this.NomeCol.Width = 250;
-            // 
-            // QuantidadeCol
-            // 
-            this.QuantidadeCol.HeaderText = "Quantidade";
-            this.QuantidadeCol.Name = "QuantidadeCol";
-            this.QuantidadeCol.ReadOnly = true;
-            // 
-            // PrecoUnitarioCol
-            // 
-            this.PrecoUnitarioCol.HeaderText = "Preço Unit.";
-            this.PrecoUnitarioCol.Name = "PrecoUnitarioCol";
-            this.PrecoUnitarioCol.ReadOnly = true;
-            this.PrecoUnitarioCol.Width = 130;
-            // 
-            // PrecoTotalProduto
-            // 
-            this.PrecoTotalProduto.HeaderText = "Valor Total";
-            this.PrecoTotalProduto.Name = "PrecoTotalProduto";
-            this.PrecoTotalProduto.ReadOnly = true;
-            this.PrecoTotalProduto.Width = 150;
             // 
             // TelaVenda
             // 

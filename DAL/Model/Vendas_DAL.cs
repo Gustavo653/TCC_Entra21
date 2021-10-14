@@ -51,7 +51,11 @@ namespace DAL.Model
                     return codigo;
                 }
             }
-        }        
+        }     
+        public static string CalculaTotalConvenio(string subTotal, string convenio)
+        {
+            return (Convert.ToDouble(subTotal) * Convert.ToDouble(convenio)).ToString();
+        }
         public static void InsereVenda(string codigoCupom, string codigoProduto, int quantidade, string valorUnitario)
         {
             string insert = $"INSERT into dbo.Vendas(CodigoCupom, CodigoProduto, Quantidade, ValorUnitario) values ('{codigoCupom}', '{codigoProduto}', {quantidade}, '{valorUnitario}')";

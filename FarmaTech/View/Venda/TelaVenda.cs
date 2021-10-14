@@ -29,7 +29,7 @@ namespace FarmaTech
             tabControl1.TabPages.Remove(tabFormaPagamento);
 
             cbFormaPagamento.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.FormaPagamento));
-            cbConvenio.DataSource = BAL.Control.Convenios_BAL.GetConvenios().Select(x=>x.Nome).ToList();
+            cbConvenio.DataSource = BAL.Control.Convenios_BAL.GetConvenios().Select(x => x.Nome).ToList();
 
             IEnumerable<DAL.Model.Objetos.Endereco> listaClientes = BAL.Control.Enderecos_BAL.GetEndereco(2);
             cbNomeCliente.DataSource = listaClientes.Select(x => x.NomeFantasia).ToList();
@@ -105,7 +105,7 @@ namespace FarmaTech
             //cupomText.Close();
             //Process.Start(@"C:\\Temp\\CupomText.txt");
 
-            int resultado = BAL.Control.Vendas_BAL.InsereCupom(cbVendedor.Text, cbNomeCliente.Text, txtValorTotal.Text, cbFormaPagamento.Text);
+            int resultado = BAL.Control.Vendas_BAL.InsereCupom(cbVendedor.Text, cbNomeCliente.Text, txtFormaValorTotal.Text, cbFormaPagamento.Text);
             if (resultado == 0)
             {
                 MessageBox.Show("Cupom finalizado");
@@ -133,10 +133,7 @@ namespace FarmaTech
             tabControl1.TabPages.Add(tabFormaPagamento);
 
             txtValorCompra.Text = txtValorTotal.Text;
-
-            //cboConsole.DataSource = Enum.GetValues(typeof(TipoConsole)); //Adiciona o enum de console na combobox console
-
-            //cbFormaPagamento.DataSource = Enum.GetValues(typeof())
+            txtFormaValorParcial.Text = txtValorTotal.Text;
         }
 
         private void TelaVenda_Paint(object sender, PaintEventArgs e)
@@ -273,7 +270,7 @@ namespace FarmaTech
             {
                 txtPrecoTotalProduto.Text = Convert.ToDouble(BAL.Control.Vendas_BAL.ValorTotal(cbQuantidade.Text, txtPrecoUnitario.Text, txtDesconto.Text)).ToString("F2");
                 int resultado = BAL.Control.Vendas_BAL.InsereVenda(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoTotalProduto.Text);
-                if(resultado == 0)
+                if (resultado == 0)
                 {
                     dgVenda.Rows.Add(cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text, txtPrecoTotalProduto.Text);
                     txtValorTotal.Text = (Convert.ToDouble(txtValorTotal.Text) + Convert.ToDouble(txtPrecoTotalProduto.Text)).ToString();
@@ -283,7 +280,7 @@ namespace FarmaTech
                 {
                     MessageBox.Show("preencha todos os campos");
                 }
-                else if(resultado == 2)
+                else if (resultado == 2)
                 {
                     MessageBox.Show("houve algum erro inesperado!");
                 }
@@ -326,6 +323,15 @@ namespace FarmaTech
         private void txtDesconto_KeyUp(object sender, KeyEventArgs e)
         {
             txtDesconto.Text = txtDesconto.Text.Replace("-", "");
+        }
+
+        private void cbConvenio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string valorTotalConvenio = BAL.Control.Vendas_BAL.CalculaTotalConvenio(txtFormaValorParcial.Text, cbConvenio.Text);
+            if (valorTotalConvenio == null)
+                MessageBox.Show("Houve um erro inesperado!");
+            else
+                txtFormaValorTotal.Text = BAL.Control.Vendas_BAL.CalculaTotalConvenio(txtFormaValorParcial.Text, cbConvenio.Text);
         }
     }
 }

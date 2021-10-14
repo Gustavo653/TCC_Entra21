@@ -46,6 +46,21 @@ namespace BAL.Control
             }
             return teste;
         }
+        public static string CalculaTotalConvenio(string subTotal, string convenio)
+        {
+            try
+            {
+                double desconto = Convert.ToDouble(BAL.Control.Convenios_BAL.GetConveniosPorNome(convenio).Select(x => x.Desconto).ElementAt(0).Replace("%", ""));
+                desconto /= 100;
+                desconto = 1 - desconto;
+                return DAL.Model.Vendas_DAL.CalculaTotalConvenio(subTotal, desconto.ToString());
+            }
+            catch (Exception e)
+            {
+                DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_CalculaTotalConvenio");
+                return null;
+            }
+        }
         public static int InsereVenda(string nomeProduto, string quantidade, string valorUnitario)
         {
             if (!string.IsNullOrEmpty(nomeProduto) &&
@@ -80,7 +95,7 @@ namespace BAL.Control
             {
                 for (int i = 0; i < 5; i++)
                 {
-                    if(formaPagamento == ((DAL.Model.Enums.FormaPagamento)i).ToString())
+                    if (formaPagamento == ((DAL.Model.Enums.FormaPagamento)i).ToString())
                     {
                         formaPagamento = i.ToString();
                         break;
