@@ -54,6 +54,7 @@
     <Compile Include="Model\Objetos\ContasPagar.cs" />
     <Compile Include="Model\Objetos\ContasReceber.cs" />
     <Compile Include="Model\Objetos\Convenio.cs" />
+    <Compile Include="Model\Objetos\Grafico.cs" />
     <Compile Include="Model\Objetos\Produto.cs" />
     <Compile Include="Model\Objetos\Requisicao.cs" />
     <Compile Include="Model\Produtos_DAL.cs" />
