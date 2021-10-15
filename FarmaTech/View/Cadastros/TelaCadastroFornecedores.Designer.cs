@@ -38,7 +38,7 @@ namespace FarmaTech.View
             this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabFornecedores = new System.Windows.Forms.TabPage();
-            this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgFornecedores = new System.Windows.Forms.DataGridView();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoFornecedor = new System.Windows.Forms.TabPage();
@@ -65,9 +65,15 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.lblFornecedores = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CnpjCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnderecoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabFornecedores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).BeginInit();
             this.tabNovoFornecedor.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -156,7 +162,7 @@ namespace FarmaTech.View
             // tabFornecedores
             // 
             this.tabFornecedores.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabFornecedores.Controls.Add(this.dgUsuarios);
+            this.tabFornecedores.Controls.Add(this.dgFornecedores);
             this.tabFornecedores.Controls.Add(this.txtPesquisaUsuario);
             this.tabFornecedores.Controls.Add(this.lblPesquisar);
             this.tabFornecedores.Location = new System.Drawing.Point(4, 29);
@@ -167,16 +173,23 @@ namespace FarmaTech.View
             this.tabFornecedores.Text = "Fornecedores";
             this.tabFornecedores.Paint += new System.Windows.Forms.PaintEventHandler(this.tabFornecedores_Paint);
             // 
-            // dgUsuarios
+            // dgFornecedores
             // 
-            this.dgUsuarios.AllowUserToAddRows = false;
-            this.dgUsuarios.AllowUserToDeleteRows = false;
-            this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(31, 91);
-            this.dgUsuarios.Name = "dgUsuarios";
-            this.dgUsuarios.ReadOnly = true;
-            this.dgUsuarios.Size = new System.Drawing.Size(810, 282);
-            this.dgUsuarios.TabIndex = 20;
+            this.dgFornecedores.AllowUserToAddRows = false;
+            this.dgFornecedores.AllowUserToDeleteRows = false;
+            this.dgFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeCol,
+            this.CnpjCol,
+            this.EnderecoCol,
+            this.NumeroCol,
+            this.CidadeCol,
+            this.EstadoCol});
+            this.dgFornecedores.Location = new System.Drawing.Point(31, 91);
+            this.dgFornecedores.Name = "dgFornecedores";
+            this.dgFornecedores.ReadOnly = true;
+            this.dgFornecedores.Size = new System.Drawing.Size(810, 282);
+            this.dgFornecedores.TabIndex = 20;
             // 
             // txtPesquisaUsuario
             // 
@@ -450,6 +463,45 @@ namespace FarmaTech.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 200;
+            // 
+            // CnpjCol
+            // 
+            this.CnpjCol.HeaderText = "Cnpj";
+            this.CnpjCol.Name = "CnpjCol";
+            this.CnpjCol.ReadOnly = true;
+            this.CnpjCol.Width = 150;
+            // 
+            // EnderecoCol
+            // 
+            this.EnderecoCol.HeaderText = "Endereço";
+            this.EnderecoCol.Name = "EnderecoCol";
+            this.EnderecoCol.ReadOnly = true;
+            this.EnderecoCol.Width = 150;
+            // 
+            // NumeroCol
+            // 
+            this.NumeroCol.HeaderText = "Número";
+            this.NumeroCol.Name = "NumeroCol";
+            this.NumeroCol.ReadOnly = true;
+            // 
+            // CidadeCol
+            // 
+            this.CidadeCol.HeaderText = "Cidade";
+            this.CidadeCol.Name = "CidadeCol";
+            this.CidadeCol.ReadOnly = true;
+            // 
+            // EstadoCol
+            // 
+            this.EstadoCol.HeaderText = "Estado";
+            this.EstadoCol.Name = "EstadoCol";
+            this.EstadoCol.ReadOnly = true;
+            // 
             // TelaCadastroFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,7 +528,7 @@ namespace FarmaTech.View
             this.tabControl1.ResumeLayout(false);
             this.tabFornecedores.ResumeLayout(false);
             this.tabFornecedores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).EndInit();
             this.tabNovoFornecedor.ResumeLayout(false);
             this.tabNovoFornecedor.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -498,7 +550,7 @@ namespace FarmaTech.View
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TabPage tabNovoFornecedor;
-        private System.Windows.Forms.DataGridView dgUsuarios;
+        private System.Windows.Forms.DataGridView dgFornecedores;
         private System.Windows.Forms.Label lblContato;
         private System.Windows.Forms.TextBox txtContato;
         private System.Windows.Forms.TextBox txtNomeFantasia;
@@ -522,5 +574,11 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblFornecedores;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CnpjCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EnderecoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CidadeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCol;
     }
 }
