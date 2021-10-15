@@ -52,6 +52,32 @@ namespace BAL.Control
             }
             return null;
         }
+        public static Dictionary<string, string> ReceitaPorFuncionario(string data, string idFilial)
+        {
+            Dictionary<string, string> funcionarios = new Dictionary<string, string>();
+            List<DAL.Model.Objetos.Usuario> usuarios = BAL.Control.Usuarios_BAL.GetUsuarios().Where(x => x.Filial == idFilial).ToList();
+            foreach (var item2 in usuarios)
+            {
+                List<string> cupons = DAL.Model.Graficos_DAL.GetCupons(item2, data);
+                List<DAL.Model.Objetos.Produto> codigosProdutos = DAL.Model.Graficos_DAL.GetCodigosProduto(cupons);
+                List<DAL.Model.Objetos.Produto> produtos = BAL.Control.Produtos_BAL.GetProdutos();
+                foreach (var item in codigosProdutos)
+                {
+                    DAL.Model.Objetos.Produto precoCusto = produtos.Where(x => x.Codigo == item.Codigo).ElementAt(0);
+                    DAL.Model.Objetos.Produto precoUnitario = produtos.Where(x => x.Codigo == item.Codigo).ElementAt(0);
+                    double lucroProduto = item.Quantidade * (Convert.ToDouble(precoUnitario.PrecoUnitario) - Convert.ToDouble(precoCusto.PrecoCusto));
+                    if (funcionarios.ContainsKey(item2.Nome))
+                    {
+                        funcionarios[item2.Nome] = (Convert.ToDouble(funcionarios[item2.Nome]) + lucroProduto).ToString();
+                    }
+                    else
+                    {
+                        funcionarios.Add(item2.Nome, lucroProduto.ToString());
+                    }
+                }
+            }
+            return funcionarios;
+        }
         public static Dictionary<string, int> ProdutosMaisVendidos(string data, string idFilial)
         {
             //Selecionar todas as vendas da dbo.Vendas e mostrar produtos mais vendidos (somar todas as quantidades)

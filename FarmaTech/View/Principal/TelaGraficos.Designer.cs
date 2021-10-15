@@ -50,6 +50,7 @@ namespace FarmaTech.View.Principal
             this.txtReceitaFuncionario = new System.Windows.Forms.TextBox();
             this.txtFuncionarioMaisVendas = new System.Windows.Forms.TextBox();
             this.txtData = new System.Windows.Forms.TextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -179,7 +180,6 @@ namespace FarmaTech.View.Principal
             this.cbFilial.Name = "cbFilial";
             this.cbFilial.Size = new System.Drawing.Size(121, 21);
             this.cbFilial.TabIndex = 107;
-            this.cbFilial.SelectedIndexChanged += new System.EventHandler(this.cbFilial_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -211,13 +211,26 @@ namespace FarmaTech.View.Principal
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(121, 20);
             this.txtData.TabIndex = 110;
-            this.txtData.TextChanged += new System.EventHandler(this.txtData_TextChanged);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.Cyan;
+            this.btnPesquisar.Location = new System.Drawing.Point(819, 143);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(217, 159);
+            this.btnPesquisar.TabIndex = 111;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // TelaGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 622);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtData);
             this.Controls.Add(this.txtFuncionarioMaisVendas);
             this.Controls.Add(this.txtReceitaFuncionario);
@@ -265,5 +278,6 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.TextBox txtReceitaFuncionario;
         private System.Windows.Forms.TextBox txtFuncionarioMaisVendas;
         private System.Windows.Forms.TextBox txtData;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

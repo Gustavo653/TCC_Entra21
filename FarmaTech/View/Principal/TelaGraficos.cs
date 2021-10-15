@@ -53,6 +53,7 @@ namespace FarmaTech.View.Principal
 
         private void TelaGraficos_Load(object sender, EventArgs e)
         {
+            txtData.Text = DateTime.Now.ToString().Substring(0, 10);
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 2)
             {
                 cbFilial.Text = DAL.Model.Objetos.UsuarioStatic.Filial;
@@ -61,15 +62,6 @@ namespace FarmaTech.View.Principal
             {
                 cbFilial.DataSource = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia).ToList();
             }
-        }
-        private void cbFilial_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            AtualizaControles();
-        }
-
-        private void txtData_TextChanged(object sender, EventArgs e)
-        {
-            AtualizaControles();
         }
         public void AtualizaControles()
         {
@@ -81,6 +73,17 @@ namespace FarmaTech.View.Principal
             {
                 lstProdMaisVendidos.Items.Add("Nome: " + item.Key + " - Quantidade: " + item.Value);
             }
+            Dictionary<string, string> receitaFuncionarios = BAL.Control.Graficos_BAL.ReceitaPorFuncionario(txtData.Text, cbFilial.Text);
+            lstReceitaFuncionario.Items.Clear();
+            foreach (var item in receitaFuncionarios)
+            {
+                lstReceitaFuncionario.Items.Add("Nome: " + item.Key + " - Receita: R$" + item.Value);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            AtualizaControles();
         }
     }
 }
