@@ -8,6 +8,7 @@ namespace BAL.Control
 {
     public class Enderecos_BAL
     {
+        public static string Nome { get; set; }
         public static List<DAL.Model.Objetos.Endereco> GetEndereco(int enumEndereco) //Obtem os enderecos, por filial ou todos
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)

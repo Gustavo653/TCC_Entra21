@@ -68,6 +68,7 @@ namespace FarmaTech.View
                     if (endereco.Count > 0)
                     {
                         txtNomeFantasia.Text = endereco[0].NomeFantasia;
+                        BAL.Control.Enderecos_BAL.Nome = endereco[0].NomeFantasia;
                         txtCnpj.Text = endereco[0].CNPJCPF;
                         txtContato.Text = endereco[0].Contato;
                         txtEndereco.Text = endereco[0].Rua;
@@ -229,7 +230,7 @@ namespace FarmaTech.View
                 if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int indiceSelecionado = dgClientes.CurrentRow.Index;
-                    BAL.Control.Enderecos_BAL.RemoveEndereco(dgClientes.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    BAL.Control.Enderecos_BAL.RemoveEndereco(dgClientes.Rows[indiceSelecionado].Cells[2].Value.ToString());
                     if (DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
                     {
                         DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
@@ -252,11 +253,11 @@ namespace FarmaTech.View
                 int resultado = 1;
                 if (rbJuridica.Checked)
                 {
-                    resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(txtRazaoSocial.Text, txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgClientes.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(txtRazaoSocial.Text, txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgClientes.Rows[indiceSelecionado].Cells[2].Value.ToString());
                 }
                 if (rbFisica.Checked)
                 {
-                    resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco("pessoaFisica", txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgClientes.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco("pessoaFisica", txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgClientes.Rows[indiceSelecionado].Cells[2].Value.ToString());
                 }
 
                 if (resultado == 0)
