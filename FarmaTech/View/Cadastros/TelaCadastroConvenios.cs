@@ -133,8 +133,11 @@ namespace FarmaTech.View
 
             int indiceSelecionado = dgConvenios.CurrentRow.Index;
             List<DAL.Model.Objetos.Convenio> convenio = BAL.Control.Convenios_BAL.GetConveniosPorNome(dgConvenios.Rows[indiceSelecionado].Cells[0].Value.ToString());
-            txtNome.Text = convenio[0].Nome;
-            txtDesconto.Text = convenio[0].Desconto;
+            if (convenio.Count > 0)
+            {
+                txtNome.Text = convenio[0].Nome;
+                txtDesconto.Text = convenio[0].Desconto;
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

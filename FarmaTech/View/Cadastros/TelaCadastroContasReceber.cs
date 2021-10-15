@@ -91,9 +91,12 @@ namespace FarmaTech.View.Principal
             ValorSalvar = 0;
             int indiceSelecionado = dgContasReceber.CurrentRow.Index;
             List<DAL.Model.Objetos.ContasReceber> contas = BAL.Control.ContasReceber_BAL.GetContasReceberPorNome(dgContasReceber.Rows[indiceSelecionado].Cells[0].Value.ToString());
-            txtNomeFornecedor.Text = contas[0].NomeFornecedor;
-            txtValor.Text = contas[0].Valor;
-            dtpVencimento.Value = Convert.ToDateTime(contas[0].Vencimento);
+            if (contas.Count > 0)
+            {
+                txtNomeFornecedor.Text = contas[0].NomeFornecedor;
+                txtValor.Text = contas[0].Valor;
+                dtpVencimento.Value = Convert.ToDateTime(contas[0].Vencimento);
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

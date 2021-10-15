@@ -23,7 +23,7 @@ namespace FarmaTech.View
         private void TelaCadastroCliente_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabNovoCliente);
-            cboEstados.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Estados)); 
+            cboEstados.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Estados));
             AtualizaDG();
 
             btnSalvar.Enabled = false;
@@ -65,14 +65,17 @@ namespace FarmaTech.View
                         rbFisica.Checked = false;
                         rbJuridica.Checked = true;
                     }
-                    txtNomeFantasia.Text = endereco[0].NomeFantasia;
-                    txtCnpj.Text = endereco[0].CNPJCPF;
-                    txtContato.Text = endereco[0].Contato;
-                    txtEndereco.Text = endereco[0].Rua;
-                    txtNumero.Text = endereco[0].Numero;
-                    txtCompl.Text = endereco[0].Complemento;
-                    txtCidade.Text = endereco[0].Cidade;
-                    cboEstados.Text = endereco[0].Estado; //Traz os dados do BD, do item que esta a ser alterado
+                    if (endereco.Count > 0)
+                    {
+                        txtNomeFantasia.Text = endereco[0].NomeFantasia;
+                        txtCnpj.Text = endereco[0].CNPJCPF;
+                        txtContato.Text = endereco[0].Contato;
+                        txtEndereco.Text = endereco[0].Rua;
+                        txtNumero.Text = endereco[0].Numero;
+                        txtCompl.Text = endereco[0].Complemento;
+                        txtCidade.Text = endereco[0].Cidade;
+                        cboEstados.Text = endereco[0].Estado; //Traz os dados do BD, do item que esta a ser alterado
+                    }
                 }
                 else
                 {

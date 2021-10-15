@@ -138,15 +138,18 @@ namespace FarmaTech.View
 
             int indiceSelecionado = dgFiliais.CurrentRow.Index;
             List<DAL.Model.Objetos.Endereco> endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais), dgFiliais.Rows[indiceSelecionado].Cells[1].Value.ToString());
-            txtRazaoSocial.Text = endereco[0].RazaoSocial;
-            txtNomeFantasia.Text = endereco[0].NomeFantasia;
-            txtCnpj.Text = endereco[0].CNPJCPF;
-            txtContato.Text = endereco[0].Contato;
-            txtEndereco.Text = endereco[0].Rua;
-            txtNumero.Text = endereco[0].Numero;
-            txtCompl.Text = endereco[0].Complemento;
-            txtCidade.Text = endereco[0].Cidade;
-            cboEstados.Text = endereco[0].Estado;
+            if (endereco.Count > 0)
+            {
+                txtRazaoSocial.Text = endereco[0].RazaoSocial;
+                txtNomeFantasia.Text = endereco[0].NomeFantasia;
+                txtCnpj.Text = endereco[0].CNPJCPF;
+                txtContato.Text = endereco[0].Contato;
+                txtEndereco.Text = endereco[0].Rua;
+                txtNumero.Text = endereco[0].Numero;
+                txtCompl.Text = endereco[0].Complemento;
+                txtCidade.Text = endereco[0].Cidade;
+                cboEstados.Text = endereco[0].Estado;
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

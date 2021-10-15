@@ -24,7 +24,7 @@ namespace FarmaTech.View
         {
             tabControl1.TabPages.Remove(tabNovoUsuario);
             btnSalvar.Enabled = false;
-            
+
             AtualizaDG();
             IEnumerable<string> listaEnderecos = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia);
             cbUsuarioFilial.DataSource = listaEnderecos.ToList();
@@ -107,7 +107,7 @@ namespace FarmaTech.View
                 int resultado = 1;
                 if (!string.IsNullOrEmpty(cbUsuarioFilial.Text))
                 {
-                    resultado = BAL.Control.Usuarios_BAL.AdicionarUsuario(txtNome.Text, cbUsuarioFilial.Text, txtContato.Text , cbNivelAcesso.Text, txtLogin.Text, txtSenha.Text);
+                    resultado = BAL.Control.Usuarios_BAL.AdicionarUsuario(txtNome.Text, cbUsuarioFilial.Text, txtContato.Text, cbNivelAcesso.Text, txtLogin.Text, txtSenha.Text);
                 }
                 if (resultado == 0)
                 {
@@ -151,12 +151,15 @@ namespace FarmaTech.View
             int indiceSelecionado = dgUsuarios.CurrentRow.Index;
             List<DAL.Model.Objetos.Usuario> lista = BAL.Control.Usuarios_BAL.GetUsuariosPorNome(dgUsuarios.Rows[indiceSelecionado].Cells[0].Value.ToString());
 
-            txtNome.Text = lista[0].Nome;
-            txtLogin.Text = lista[0].Login;
-            txtSenha.Clear();
-            txtContato.Text = lista[0].Contato;
-            cbNivelAcesso.SelectedIndex = 0;
-            cbUsuarioFilial.SelectedItem = lista[0].Filial.ToString();
+            if (lista.Count > 0)
+            {
+                txtNome.Text = lista[0].Nome;
+                txtLogin.Text = lista[0].Login;
+                txtSenha.Clear();
+                txtContato.Text = lista[0].Contato;
+                cbNivelAcesso.SelectedIndex = 0;
+                cbUsuarioFilial.SelectedItem = lista[0].Filial.ToString();
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -193,9 +196,9 @@ namespace FarmaTech.View
 
                 foreach (var item in lista)
                 {
-                    dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login);                 
+                    dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login);
                 }
-                
+
             }
             else
             {
@@ -206,7 +209,7 @@ namespace FarmaTech.View
                     dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login);
                 }
 
-               
+
             }
         }
 
@@ -248,9 +251,9 @@ namespace FarmaTech.View
 
         private void cbNivelAcesso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbNivelAcesso.SelectedIndex > 1)
+            if (cbNivelAcesso.SelectedIndex > 1)
             {
-                if(DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 3)
                 {
                     MessageBox.Show("Você não pode inserir um usuário com nível maior que 2!");
                     cbNivelAcesso.SelectedIndex = 0;

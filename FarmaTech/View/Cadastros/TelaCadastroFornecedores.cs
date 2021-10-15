@@ -32,7 +32,7 @@ namespace FarmaTech.View
             btnSalvar.Enabled = false;
             cboEstados.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Estados));
             AtualizaDG();
-            
+
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace FarmaTech.View
             else
             {
                 int indiceSelecionado = dgFornecedores.CurrentRow.Index;
-                int resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(txtRazaoSocial.Text, txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgFornecedores.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                int resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(txtRazaoSocial.Text, txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgFornecedores.Rows[indiceSelecionado].Cells[6].Value.ToString());
 
                 if (resultado == 0)
                 {
@@ -145,16 +145,19 @@ namespace FarmaTech.View
             ValorSalvar = 0;
 
             int indiceSelecionado = dgFornecedores.CurrentRow.Index;
-            List<DAL.Model.Objetos.Endereco> endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), dgFornecedores.Rows[indiceSelecionado].Cells[1].Value.ToString());
-            txtRazaoSocial.Text = endereco[0].RazaoSocial;
-            txtNomeFantasia.Text = endereco[0].NomeFantasia;
-            txtCnpj.Text = endereco[0].CNPJCPF;
-            txtContato.Text = endereco[0].Contato;
-            txtEndereco.Text = endereco[0].Rua;
-            txtNumero.Text = endereco[0].Numero;
-            txtCompl.Text = endereco[0].Complemento;
-            txtCidade.Text = endereco[0].Cidade;
-            cboEstados.Text = endereco[0].Estado;
+            List<DAL.Model.Objetos.Endereco> endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), dgFornecedores.Rows[indiceSelecionado].Cells[0].Value.ToString());
+            if (endereco.Count > 0)
+            {
+                txtRazaoSocial.Text = endereco[0].RazaoSocial;
+                txtNomeFantasia.Text = endereco[0].NomeFantasia;
+                txtCnpj.Text = endereco[0].CNPJCPF;
+                txtContato.Text = endereco[0].Contato;
+                txtEndereco.Text = endereco[0].Rua;
+                txtNumero.Text = endereco[0].Numero;
+                txtCompl.Text = endereco[0].Complemento;
+                txtCidade.Text = endereco[0].Cidade;
+                cboEstados.Text = endereco[0].Estado;
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -164,7 +167,7 @@ namespace FarmaTech.View
                 if (dgFornecedores.Rows.Count > 0)
                 {
                     int indiceSelecionado = dgFornecedores.CurrentRow.Index;
-                    BAL.Control.Enderecos_BAL.RemoveEndereco(dgFornecedores.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    BAL.Control.Enderecos_BAL.RemoveEndereco(dgFornecedores.Rows[indiceSelecionado].Cells[6].Value.ToString());
                     AtualizaDG();
                 }
             }
@@ -182,7 +185,7 @@ namespace FarmaTech.View
 
                 foreach (var item in lista)
                 {
-                    dgFornecedores.Rows.Add(item.NomeFantasia, item.CNPJCPF, item.Rua, item.Numero, item.Cidade, item.Estado);
+                    dgFornecedores.Rows.Add(item.NomeFantasia, item.CNPJCPF, item.Rua, item.Numero, item.Cidade, item.Estado, item.Contato);
                 }
                 //dgFornecedores.DataSource = lista;
             }
@@ -192,9 +195,9 @@ namespace FarmaTech.View
 
                 foreach (var item in lista)
                 {
-                    dgFornecedores.Rows.Add(item.NomeFantasia, item.CNPJCPF, item.Rua, item.Numero, item.Cidade, item.Estado);
+                    dgFornecedores.Rows.Add(item.NomeFantasia, item.CNPJCPF, item.Rua, item.Numero, item.Cidade, item.Estado, item.Contato);
                 }
-                
+
                 //dgFornecedores.DataSource = lista;
             }
         }
@@ -206,7 +209,7 @@ namespace FarmaTech.View
 
         private void TelaCadastroFornecedores_Paint(object sender, PaintEventArgs e)
         {
-            SetBackColorDegrade( sender, e);
+            SetBackColorDegrade(sender, e);
         }
         private void SetBackColorDegrade(object sender, PaintEventArgs e)
         {

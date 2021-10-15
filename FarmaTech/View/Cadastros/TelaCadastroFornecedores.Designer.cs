@@ -39,6 +39,12 @@ namespace FarmaTech.View
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabFornecedores = new System.Windows.Forms.TabPage();
             this.dgFornecedores = new System.Windows.Forms.DataGridView();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CnpjCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnderecoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoFornecedor = new System.Windows.Forms.TabPage();
@@ -65,12 +71,7 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.lblFornecedores = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CnpjCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EnderecoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabFornecedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).BeginInit();
@@ -184,12 +185,52 @@ namespace FarmaTech.View
             this.EnderecoCol,
             this.NumeroCol,
             this.CidadeCol,
-            this.EstadoCol});
+            this.EstadoCol,
+            this.ContatoCol});
             this.dgFornecedores.Location = new System.Drawing.Point(31, 91);
             this.dgFornecedores.Name = "dgFornecedores";
             this.dgFornecedores.ReadOnly = true;
             this.dgFornecedores.Size = new System.Drawing.Size(810, 282);
             this.dgFornecedores.TabIndex = 20;
+            // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 200;
+            // 
+            // CnpjCol
+            // 
+            this.CnpjCol.HeaderText = "Cnpj";
+            this.CnpjCol.Name = "CnpjCol";
+            this.CnpjCol.ReadOnly = true;
+            this.CnpjCol.Width = 150;
+            // 
+            // EnderecoCol
+            // 
+            this.EnderecoCol.HeaderText = "Endereço";
+            this.EnderecoCol.Name = "EnderecoCol";
+            this.EnderecoCol.ReadOnly = true;
+            this.EnderecoCol.Width = 150;
+            // 
+            // NumeroCol
+            // 
+            this.NumeroCol.HeaderText = "Número";
+            this.NumeroCol.Name = "NumeroCol";
+            this.NumeroCol.ReadOnly = true;
+            // 
+            // CidadeCol
+            // 
+            this.CidadeCol.HeaderText = "Cidade";
+            this.CidadeCol.Name = "CidadeCol";
+            this.CidadeCol.ReadOnly = true;
+            // 
+            // EstadoCol
+            // 
+            this.EstadoCol.HeaderText = "Estado";
+            this.EstadoCol.Name = "EstadoCol";
+            this.EstadoCol.ReadOnly = true;
             // 
             // txtPesquisaUsuario
             // 
@@ -463,44 +504,11 @@ namespace FarmaTech.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // NomeCol
+            // ContatoCol
             // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            this.NomeCol.Width = 200;
-            // 
-            // CnpjCol
-            // 
-            this.CnpjCol.HeaderText = "Cnpj";
-            this.CnpjCol.Name = "CnpjCol";
-            this.CnpjCol.ReadOnly = true;
-            this.CnpjCol.Width = 150;
-            // 
-            // EnderecoCol
-            // 
-            this.EnderecoCol.HeaderText = "Endereço";
-            this.EnderecoCol.Name = "EnderecoCol";
-            this.EnderecoCol.ReadOnly = true;
-            this.EnderecoCol.Width = 150;
-            // 
-            // NumeroCol
-            // 
-            this.NumeroCol.HeaderText = "Número";
-            this.NumeroCol.Name = "NumeroCol";
-            this.NumeroCol.ReadOnly = true;
-            // 
-            // CidadeCol
-            // 
-            this.CidadeCol.HeaderText = "Cidade";
-            this.CidadeCol.Name = "CidadeCol";
-            this.CidadeCol.ReadOnly = true;
-            // 
-            // EstadoCol
-            // 
-            this.EstadoCol.HeaderText = "Estado";
-            this.EstadoCol.Name = "EstadoCol";
-            this.EstadoCol.ReadOnly = true;
+            this.ContatoCol.HeaderText = "Contato";
+            this.ContatoCol.Name = "ContatoCol";
+            this.ContatoCol.ReadOnly = true;
             // 
             // TelaCadastroFornecedores
             // 
@@ -580,5 +588,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn CidadeCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContatoCol;
     }
 }

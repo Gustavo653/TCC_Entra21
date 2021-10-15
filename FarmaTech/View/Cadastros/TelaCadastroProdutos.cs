@@ -48,7 +48,7 @@ namespace FarmaTech.View
             {
                 this.Hide();
                 lblProd.Text = "Produtos";
-            } 
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -148,14 +148,17 @@ namespace FarmaTech.View
                     int indiceSelecionado = dgProdutos.CurrentRow.Index;
                     List<DAL.Model.Objetos.Produto> produtos = new List<DAL.Model.Objetos.Produto>();
                     produtos = BAL.Control.Produtos_BAL.GetProdutosPorNome(dgProdutos.Rows[indiceSelecionado].Cells[0].Value.ToString());
-                    txtCodigo.Text = produtos[0].Codigo;
-                    txtGrupo.Text = produtos[0].Grupo.ToString();
-                    txtLaboratorio.Text = produtos[0].Laboratorio;
-                    txtNome.Text = produtos[0].Nome;
-                    txtPrecoCusto.Text = produtos[0].PrecoCusto;
-                    txtPrecoUnitario.Text = produtos[0].PrecoUnitario;
-                    txtQuantidade.Text = produtos[0].Quantidade.ToString();
-                    cboUnidade.SelectedItem = produtos[0].Unidade;
+                    if (produtos.Count > 0)
+                    {
+                        txtCodigo.Text = produtos[0].Codigo;
+                        txtGrupo.Text = produtos[0].Grupo.ToString();
+                        txtLaboratorio.Text = produtos[0].Laboratorio;
+                        txtNome.Text = produtos[0].Nome;
+                        txtPrecoCusto.Text = produtos[0].PrecoCusto;
+                        txtPrecoUnitario.Text = produtos[0].PrecoUnitario;
+                        txtQuantidade.Text = produtos[0].Quantidade.ToString();
+                        cboUnidade.SelectedItem = produtos[0].Unidade;
+                    }
                 }
                 else
                 {
