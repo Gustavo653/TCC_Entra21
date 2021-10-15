@@ -11,6 +11,29 @@ namespace DAL.Model
 {
     public class Usuarios_DAL
     {
+        public static string GetUsuarioPorContato(string contato)
+        {
+            string select = $"SELECT Nome from dbo.Usuarios WHERE Contato = '{contato}'";
+            List<string> lista = new List<string>();
+            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
+            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
+                DbConnection.conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                lista.Add(dr["Nome"].ToString());
+            }
+            dr.Close();
+            DbConnection.conn.Close();
+            if (lista.Count > 0)
+            {
+                return lista[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
         public static List<Usuario> GetUsuarios()
         {
             string select = $"SELECT * from dbo.Usuarios";
@@ -111,8 +134,15 @@ namespace DAL.Model
         }
         public static void AtualizaUsuario(string nome, string filial, string contato, int nivelAcesso, string login, string senha, string where)
         {
-            string update = $"UPDATE dbo.Usuarios Set Nome = '{nome}', Filial = '{filial}', Contato = '{contato}', NivelAcesso = {nivelAcesso}, Login = '{login}', Senha = '{senha}' WHERE Contato = '{where}'";
-            DbConnection.Execute(update);
+            string nomeUsuario = GetUsuarioPorContato(contato);
+            List<string> comandos = new List<string>();
+            comandos.Add($"UPDATE dbo.Caixa Set UsuarioAbertura = '{nome}', UsuarioFechamento = '{nome}' WHERE UsuarioAbertura = '{nomeUsuario}' OR UsuarioFechamento = '{nomeUsuario}'");
+            comandos.Add($"UPDATE dbo.Cupom Set Vendedor = '{nome}' WHERE Vendedor = '{nomeUsuario}'");
+            comandos.Add($"UPDATE dbo.Usuarios Set Nome = '{nome}', Filial = '{filial}', Contato = '{contato}', NivelAcesso = {nivelAcesso}, Login = '{login}', Senha = '{senha}' WHERE Contato = '{where}'");
+            foreach (var item in comandos)
+            {
+                DbConnection.Execute(item);
+            }
         }
         public static bool VerificaSeUsuarioRepete(string contato)
         {

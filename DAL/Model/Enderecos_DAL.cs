@@ -161,9 +161,9 @@ namespace DAL.Model
             lista.Add($"UPDATE dbo.Usuarios Set Filial = '{idFilial}' WHERE Filial = '{nomeFilial}'");
             lista.Add($"UPDATE dbo.Produtos Set idFilial = '{idFilial}' WHERE idFilial = '{nomeFilial}'");
             lista.Add($"UPDATE dbo.ContasPagar Set idFilial = '{idFilial}' WHERE idFilial = '{nomeFilial}'");
-            lista.Add($"UPDATE dbo.ContasReceber Set idFilial = '{idFilial}' WHERE idFilial = '{idFilial}'");
-            lista.Add($"UPDATE dbo.Caixa Set idFilial = '{idFilial}' WHERE idFilial = '{idFilial}'");
-            lista.Add($"UPDATE dbo.Cupom Set Cliente = '{idFilial}' WHERE Cliente = '{idFilial}'");
+            lista.Add($"UPDATE dbo.ContasReceber Set idFilial = '{idFilial}' WHERE idFilial = '{nomeFilial}'");
+            lista.Add($"UPDATE dbo.Caixa Set idFilial = '{idFilial}' WHERE idFilial = '{nomeFilial}'");
+            lista.Add($"UPDATE dbo.Cupom Set Cliente = '{idFilial}' WHERE Cliente = '{nomeFilial}'");
             foreach (var item in lista)
             {
                 DbConnection.Execute(item);

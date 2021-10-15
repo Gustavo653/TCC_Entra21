@@ -257,7 +257,7 @@ namespace FarmaTech.View
                 }
                 if (rbFisica.Checked)
                 {
-                    resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco("pessoaFisica", txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgClientes.Rows[indiceSelecionado].Cells[2].Value.ToString());
+                    resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco("pessoaFisica", txtRazaoSocial.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgClientes.Rows[indiceSelecionado].Cells[2].Value.ToString());
                 }
 
                 if (resultado == 0)
