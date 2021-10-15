@@ -92,8 +92,13 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\Index.css" />
-    <Content Include="View\Index.html" />
+    <Content Include="CSS\Equipe.css" />
+    <Content Include="CSS\FarmaTech.css" />
+    <Content Include="CSS\Sobre.css" />
+    <Content Include="HTML\Equipe.html" />
+    <Content Include="HTML\FarmaTech.html" />
+    <Content Include="HTML\Sobre.html" />
+    <Content Include="JS\FarmaTech.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
