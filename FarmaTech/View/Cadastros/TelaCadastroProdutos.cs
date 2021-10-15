@@ -259,5 +259,30 @@ namespace FarmaTech.View
             graphics.FillRectangle(br, gradient_rect);
 
         }
+
+        private void lblProd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPesquisar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblHora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -238,7 +238,7 @@ namespace FarmaTech
 
         private void btnPesquisaProduto_Click(object sender, EventArgs e)
         {
-            new TelaCadastroProdutos().Show();
+            new TelaConsultaProduto().Show();
         }
 
         private void btnPesquisaCliente_Click(object sender, EventArgs e)
