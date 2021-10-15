@@ -11,7 +11,8 @@ namespace DAL.Model.Consultas
     {
         //internal static SqlConnection conn = new SqlConnection("Data Source=BUE205D20;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
         //internal static SqlConnection conn = new SqlConnection("Data Source=DESKTOP-9OFNM36;Initial Catalog=master;Integrated Security=True");
-        public static SqlConnection conn = new SqlConnection("workstation id=TCC-Entra21.mssql.somee.com;packet size=4096;user id=Gustavo10_SQLLogin_1;pwd=dg6kzsavsg;data source=TCC-Entra21.mssql.somee.com;persist security info=False;initial catalog=TCC-Entra21");
+        //public static SqlConnection conn = new SqlConnection("workstation id=TCC-Entra21.mssql.somee.com;packet size=4096;user id=Gustavo10_SQLLogin_1;pwd=dg6kzsavsg;data source=TCC-Entra21.mssql.somee.com;persist security info=False;initial catalog=TCC-Entra21");
+        public static SqlConnection conn = new SqlConnection("Data Source = SQL5103.site4now.net; Initial Catalog = db_a7b1f2_querylab; User Id = db_a7b1f2_querylab_admin; Password=Farma123");
 
         //Funcoes genericas
         public static void Execute(string command)

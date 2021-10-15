@@ -4,6 +4,7 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyRef
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.dll
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.pdb
+<<<<<<< Updated upstream
 C:\Users\Martha\Source\Repos\TCC_Oficial\DAL\bin\Debug\DAL.dll
 C:\Users\Martha\Source\Repos\TCC_Oficial\DAL\bin\Debug\DAL.pdb
 C:\Users\Martha\Source\Repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
@@ -16,12 +17,16 @@ C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.Assembly
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.dll
 C:\Users\marcus.pinto\source\repos\TCC_Oficial\DAL\obj\Debug\DAL.pdb
+=======
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+>>>>>>> Stashed changes
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\bin\Debug\DAL.dll
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\bin\Debug\DAL.pdb
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\obj\Debug\DAL.dll
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\DAL\obj\Debug\DAL.pdb
+<<<<<<< Updated upstream
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\DAL\bin\Debug\DAL.dll
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\DAL\bin\Debug\DAL.pdb
 C:\Users\viviane.santos3\Documents\Nova pasta\TCC_Oficial\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
@@ -46,3 +51,5 @@ C:\Users\Acer\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyRefe
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.dll
 C:\Users\Acer\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.pdb
+=======
+>>>>>>> Stashed changes
