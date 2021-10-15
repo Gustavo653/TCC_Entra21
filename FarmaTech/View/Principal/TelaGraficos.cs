@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FarmaTech.View.Principal
 {
@@ -53,7 +54,47 @@ namespace FarmaTech.View.Principal
 
         private void TelaGraficos_Load(object sender, EventArgs e)
         {
-            
+            txtData.Text = DateTime.Now.ToString().Substring(0, 10);
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso == 2)
+            {
+                cbFilial.Text = DAL.Model.Objetos.UsuarioStatic.Filial;
+            }
+            else
+            {
+                cbFilial.DataSource = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Filiais)).Select(x => x.NomeFantasia).ToList();
+            }
+        }
+        public void AtualizaControles()
+        {
+            txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, cbFilial.Text);
+            txtFuncionarioMaisVendas.Text = BAL.Control.Graficos_BAL.FuncionarioComMaisVendas(txtData.Text, cbFilial.Text);
+            Dictionary<string, int> produtosMaisVendidos = BAL.Control.Graficos_BAL.ProdutosMaisVendidos(txtData.Text, cbFilial.Text);
+            lstProdMaisVendidos.Items.Clear();
+            foreach (var item in produtosMaisVendidos)
+            {
+                lstProdMaisVendidos.Items.Add("Nome: " + item.Key + " - Quantidade: " + item.Value);
+            }
+            Dictionary<string, string> receitaFuncionarios = BAL.Control.Graficos_BAL.ReceitaPorFuncionario(txtData.Text, cbFilial.Text);
+            lstReceitaFuncionario.Items.Clear();
+            foreach (var item in receitaFuncionarios)
+            {
+                lstReceitaFuncionario.Items.Add("Nome: " + item.Key + " - Receita: R$" + item.Value);
+            }
+
+            double[] valores = new double[3];
+            valores = BAL.Control.Graficos_BAL.RelacaoCompraVenda(txtData.Text, cbFilial.Text);
+            string[] nomes = new string[3];
+            nomes[0] = "Custo - R$" + valores[0];
+            nomes[1] = "Venda - R$" + valores[1];
+            nomes[2] = "Receita - R$" + valores[2];
+            graficoCustoVenda.Series[0].Points.DataBindXY(nomes, valores);
+            graficoCustoVenda.Series[0].ChartType = SeriesChartType.Pie;
+
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            AtualizaControles();
         }
     }
 }

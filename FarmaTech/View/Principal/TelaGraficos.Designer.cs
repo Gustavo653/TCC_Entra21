@@ -33,7 +33,7 @@ namespace FarmaTech.View.Principal
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.graficoCustoVenda = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
@@ -41,28 +41,34 @@ namespace FarmaTech.View.Principal
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstProdMaisVendidos = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lstReceitaFuncionario = new System.Windows.Forms.ListBox();
+            this.cbFilial = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtReceitaFuncionario = new System.Windows.Forms.TextBox();
+            this.txtFuncionarioMaisVendas = new System.Windows.Forms.TextBox();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoCustoVenda)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // chart1
+            // graficoCustoVenda
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.graficoCustoVenda.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(15, 12);
-            this.chart1.Name = "chart1";
+            this.graficoCustoVenda.Legends.Add(legend1);
+            this.graficoCustoVenda.Location = new System.Drawing.Point(15, 12);
+            this.graficoCustoVenda.Name = "graficoCustoVenda";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(795, 574);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.graficoCustoVenda.Series.Add(series1);
+            this.graficoCustoVenda.Size = new System.Drawing.Size(795, 574);
+            this.graficoCustoVenda.TabIndex = 0;
             // 
             // panel1
             // 
@@ -108,7 +114,7 @@ namespace FarmaTech.View.Principal
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(816, 12);
+            this.label1.Location = new System.Drawing.Point(815, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 98;
@@ -117,28 +123,28 @@ namespace FarmaTech.View.Principal
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(816, 41);
+            this.label2.Location = new System.Drawing.Point(815, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 13);
+            this.label2.Size = new System.Drawing.Size(120, 13);
             this.label2.TabIndex = 99;
-            this.label2.Text = "Lucro por funcionario:";
+            this.label2.Text = "Receita por funcionario:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(817, 68);
+            this.label3.Location = new System.Drawing.Point(816, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 13);
             this.label3.TabIndex = 100;
             this.label3.Text = "Funcionario com mais vendas: ";
             // 
-            // listBox1
+            // lstProdMaisVendidos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(819, 477);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(217, 95);
-            this.listBox1.TabIndex = 101;
+            this.lstProdMaisVendidos.FormattingEnabled = true;
+            this.lstProdMaisVendidos.Location = new System.Drawing.Point(819, 477);
+            this.lstProdMaisVendidos.Name = "lstProdMaisVendidos";
+            this.lstProdMaisVendidos.Size = new System.Drawing.Size(217, 95);
+            this.lstProdMaisVendidos.TabIndex = 101;
             // 
             // label4
             // 
@@ -149,35 +155,102 @@ namespace FarmaTech.View.Principal
             this.label4.TabIndex = 102;
             this.label4.Text = "Produtos mais vendidos";
             // 
-            // comboBox1
+            // label5
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(897, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 103;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(813, 314);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 13);
+            this.label5.TabIndex = 105;
+            this.label5.Text = "Receita de cada funcionario";
+            // 
+            // lstReceitaFuncionario
+            // 
+            this.lstReceitaFuncionario.FormattingEnabled = true;
+            this.lstReceitaFuncionario.Location = new System.Drawing.Point(816, 339);
+            this.lstReceitaFuncionario.Name = "lstReceitaFuncionario";
+            this.lstReceitaFuncionario.Size = new System.Drawing.Size(217, 95);
+            this.lstReceitaFuncionario.TabIndex = 104;
+            // 
+            // cbFilial
+            // 
+            this.cbFilial.FormattingEnabled = true;
+            this.cbFilial.Location = new System.Drawing.Point(896, 18);
+            this.cbFilial.Name = "cbFilial";
+            this.cbFilial.Size = new System.Drawing.Size(121, 21);
+            this.cbFilial.TabIndex = 107;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(815, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 106;
+            this.label6.Text = "Filtrar por filial:";
+            // 
+            // txtReceitaFuncionario
+            // 
+            this.txtReceitaFuncionario.Enabled = false;
+            this.txtReceitaFuncionario.Location = new System.Drawing.Point(939, 74);
+            this.txtReceitaFuncionario.Name = "txtReceitaFuncionario";
+            this.txtReceitaFuncionario.Size = new System.Drawing.Size(94, 20);
+            this.txtReceitaFuncionario.TabIndex = 108;
+            // 
+            // txtFuncionarioMaisVendas
+            // 
+            this.txtFuncionarioMaisVendas.Location = new System.Drawing.Point(972, 101);
+            this.txtFuncionarioMaisVendas.Name = "txtFuncionarioMaisVendas";
+            this.txtFuncionarioMaisVendas.Size = new System.Drawing.Size(61, 20);
+            this.txtFuncionarioMaisVendas.TabIndex = 109;
+            // 
+            // txtData
+            // 
+            this.txtData.Location = new System.Drawing.Point(896, 45);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(121, 20);
+            this.txtData.TabIndex = 110;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.Cyan;
+            this.btnPesquisar.Location = new System.Drawing.Point(819, 143);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(217, 159);
+            this.btnPesquisar.TabIndex = 111;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // TelaGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 622);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.txtData);
+            this.Controls.Add(this.txtFuncionarioMaisVendas);
+            this.Controls.Add(this.txtReceitaFuncionario);
+            this.Controls.Add(this.cbFilial);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lstReceitaFuncionario);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstProdMaisVendidos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.graficoCustoVenda);
             this.Name = "TelaGraficos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:Gráficos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaGraficos_FormClosed);
             this.Load += new System.EventHandler(this.TelaGraficos_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaGraficos_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoCustoVenda)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -187,7 +260,7 @@ namespace FarmaTech.View.Principal
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graficoCustoVenda;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblData;
@@ -195,8 +268,15 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstProdMaisVendidos;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox lstReceitaFuncionario;
+        private System.Windows.Forms.ComboBox cbFilial;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtReceitaFuncionario;
+        private System.Windows.Forms.TextBox txtFuncionarioMaisVendas;
+        private System.Windows.Forms.TextBox txtData;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

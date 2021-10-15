@@ -27,5 +27,11 @@ namespace DAL.Model.Objetos
             PrecoUnitario = precoUnitario;
             Grupo = grupo;
         }
+
+        public Produto(int quantidade, string codigo)
+        {
+            Quantidade = quantidade;
+            Codigo = codigo;
+        }
     }
 }
