@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url(https://i.imgur.com/AEHdL5S.png) no-repeat center top, url(https://i.imgur.com/A3rUmGa.jpg) no-repeat center top fixed;
+    background: url(https://i.imgur.com/2OwkrPb.png) no-repeat center top fixed, url(https://i.imgur.com/A3rUmGa.jpg) no-repeat center top fixed;
     background-size: cover;
     height: auto;
     overflow-x: hidden;
@@ -118,7 +118,6 @@ main {
 .nav-list.active {
     width: 100vw;
     transform: translateX(0%);
-  
 }
 
 @keyframes navLinkFade {
@@ -243,13 +242,11 @@ section.TextoConteudo {
         .nav-list li {
             margin-left: 0px;
             opacity: 0;
-            
         }
 
 
     .mobile-menu {
         display: block;
-      
     }
 
     section.TextoConteudo {

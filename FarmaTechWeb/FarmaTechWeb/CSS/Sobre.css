@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url(https://i.imgur.com/AEHdL5S.png) no-repeat center top, url(https://i.imgur.com/A3rUmGa.jpg) no-repeat center top fixed;
+    background: url(https://i.imgur.com/2OwkrPb.png) no-repeat center top fixed, url(https://i.imgur.com/A3rUmGa.jpg) no-repeat center top fixed;
     background-size: cover;
     height: auto;
     overflow-x: hidden;
@@ -148,7 +148,20 @@ main {
 /*-----------------------------------------------------------------------------------------------------------
     CONTEUDO DO SITE
 */
-
+#mais, #maisVendas, #maisRel, #maisReq {
+    display: none;
+}
+#btnLeiaMais, #btnLeiaMaisVendas, #btnLeiaMaisRelatorios, #btnLeiaMaisReq {
+    background-color: transparent;
+    border: none;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    word-spacing: 1.3px !important;
+    color: #100f0f;
+    box-shadow: inset 0px -6px #758fd0;
+}
 
 .TextoConteudo #Logoimg {
     width: 70%;
@@ -176,6 +189,7 @@ main {
     position: relative;
     left: 06px;
 }
+
 
 #TextoConteudo {
     color: #ffff;
@@ -211,13 +225,10 @@ section.TextoConteudo {
 }
 
 
-
 /*-----------------------------------------------------------------------------------------------------------
     EDIÇÃO MOBILE
 */
-
 @media (max-width:999px) {
-
     body {
         background: url(https://i.imgur.com/A3rUmGa.jpg) no-repeat center top fixed;
         background-size: cover;

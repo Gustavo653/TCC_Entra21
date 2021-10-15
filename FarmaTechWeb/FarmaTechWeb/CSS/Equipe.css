@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url(https://i.imgur.com/AEHdL5S.png) no-repeat center top, url(https://i.imgur.com/A3rUmGa.jpg) no-repeat center top fixed;
+    background: url(https://i.imgur.com/2OwkrPb.png) no-repeat center top fixed, url(https://i.imgur.com/A3rUmGa.jpg) no-repeat center top fixed;
     background-size: cover;
     height: auto;
     overflow-x: hidden;
@@ -149,14 +149,30 @@ main {
     CONTEUDO DO SITE
 */
 
+.btnLinkedin {
+    background: url(https://i.imgur.com/Iuy9VU3.png);
+    width: 107px;
+    height: 28px;
+    animation: borderPulse 1000ms infinite ease-out;
+    border-radius: 10px;
+}
+
+.btnIntagram {
+    background: url(https://i.imgur.com/G9q1jJF.png);
+    width: 121px;
+    height: 28px;
+    animation: borderPulse 1000ms infinite ease-out;
+    border-radius: 10px;
+}
 
 .TextoConteudo #Logoimg {
     width: 70%;
     height: 70%;
     border: none;
+    border-radius: 100%;
     position: relative;
     top: 0px;
-    padding:60px;
+    padding: 60px;
 }
 
 .TextoConteudo h1 {
@@ -251,6 +267,7 @@ section.TextoConteudo {
     }
 
     section.TextoConteudo {
+        float: none;
         font-family: 'Montserrat';
         font-size: 14px;
         font-style: normal;
