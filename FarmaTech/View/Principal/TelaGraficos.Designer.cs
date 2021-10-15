@@ -30,9 +30,9 @@ namespace FarmaTech.View.Principal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.graficoCustoVenda = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@ namespace FarmaTech.View.Principal
             this.txtFuncionarioMaisVendas = new System.Windows.Forms.TextBox();
             this.txtData = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.chkTodasFiliais = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.graficoCustoVenda)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,16 +60,16 @@ namespace FarmaTech.View.Principal
             // 
             this.graficoCustoVenda.BackColor = System.Drawing.Color.Transparent;
             this.graficoCustoVenda.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.graficoCustoVenda.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.graficoCustoVenda.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.graficoCustoVenda.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.graficoCustoVenda.Legends.Add(legend1);
             this.graficoCustoVenda.Location = new System.Drawing.Point(15, 12);
             this.graficoCustoVenda.Name = "graficoCustoVenda";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.graficoCustoVenda.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.graficoCustoVenda.Series.Add(series1);
             this.graficoCustoVenda.Size = new System.Drawing.Size(795, 574);
             this.graficoCustoVenda.TabIndex = 0;
             // 
@@ -218,19 +219,30 @@ namespace FarmaTech.View.Principal
             this.btnPesquisar.BackColor = System.Drawing.Color.NavajoWhite;
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisar.ForeColor = System.Drawing.Color.Cyan;
-            this.btnPesquisar.Location = new System.Drawing.Point(819, 143);
+            this.btnPesquisar.Location = new System.Drawing.Point(819, 157);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(217, 159);
+            this.btnPesquisar.Size = new System.Drawing.Size(217, 145);
             this.btnPesquisar.TabIndex = 111;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // chkTodasFiliais
+            // 
+            this.chkTodasFiliais.AutoSize = true;
+            this.chkTodasFiliais.Location = new System.Drawing.Point(819, 131);
+            this.chkTodasFiliais.Name = "chkTodasFiliais";
+            this.chkTodasFiliais.Size = new System.Drawing.Size(81, 17);
+            this.chkTodasFiliais.TabIndex = 112;
+            this.chkTodasFiliais.Text = "Todas filiais";
+            this.chkTodasFiliais.UseVisualStyleBackColor = true;
             // 
             // TelaGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 622);
+            this.Controls.Add(this.chkTodasFiliais);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtData);
             this.Controls.Add(this.txtFuncionarioMaisVendas);
@@ -280,5 +292,6 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.TextBox txtFuncionarioMaisVendas;
         private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.CheckBox chkTodasFiliais;
     }
 }
