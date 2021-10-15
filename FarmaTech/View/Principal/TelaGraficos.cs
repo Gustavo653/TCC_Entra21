@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FarmaTech.View.Principal
 {
@@ -79,6 +80,16 @@ namespace FarmaTech.View.Principal
             {
                 lstReceitaFuncionario.Items.Add("Nome: " + item.Key + " - Receita: R$" + item.Value);
             }
+
+            double[] valores = new double[3];
+            valores = BAL.Control.Graficos_BAL.RelacaoCompraVenda(txtData.Text, cbFilial.Text);
+            string[] nomes = new string[3];
+            nomes[0] = "Custo - R$" + valores[0];
+            nomes[1] = "Venda - R$" + valores[1];
+            nomes[2] = "Receita - R$" + valores[2];
+            graficoCustoVenda.Series[0].Points.DataBindXY(nomes, valores);
+            graficoCustoVenda.Series[0].ChartType = SeriesChartType.Pie;
+
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

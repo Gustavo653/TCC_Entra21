@@ -30,10 +30,10 @@ namespace FarmaTech.View.Principal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.graficoCustoVenda = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
@@ -51,25 +51,24 @@ namespace FarmaTech.View.Principal
             this.txtFuncionarioMaisVendas = new System.Windows.Forms.TextBox();
             this.txtData = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoCustoVenda)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // chart1
+            // graficoCustoVenda
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(15, 12);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(795, 574);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            chartArea1.Name = "ChartArea1";
+            this.graficoCustoVenda.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.graficoCustoVenda.Legends.Add(legend1);
+            this.graficoCustoVenda.Location = new System.Drawing.Point(15, 12);
+            this.graficoCustoVenda.Name = "graficoCustoVenda";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.graficoCustoVenda.Series.Add(series1);
+            this.graficoCustoVenda.Size = new System.Drawing.Size(795, 574);
+            this.graficoCustoVenda.TabIndex = 0;
             // 
             // panel1
             // 
@@ -244,14 +243,14 @@ namespace FarmaTech.View.Principal
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.graficoCustoVenda);
             this.Name = "TelaGraficos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:Gráficos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TelaGraficos_FormClosed);
             this.Load += new System.EventHandler(this.TelaGraficos_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaGraficos_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoCustoVenda)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -261,7 +260,7 @@ namespace FarmaTech.View.Principal
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graficoCustoVenda;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblData;
