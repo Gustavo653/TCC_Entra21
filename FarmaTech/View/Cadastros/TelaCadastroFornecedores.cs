@@ -97,8 +97,8 @@ namespace FarmaTech.View
             }
             else
             {
-                int indiceSelecionado = dgUsuarios.CurrentRow.Index;
-                int resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(txtRazaoSocial.Text, txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                int indiceSelecionado = dgFornecedores.CurrentRow.Index;
+                int resultado = BAL.Control.Enderecos_BAL.AtualizaEndereco(txtRazaoSocial.Text, txtNomeFantasia.Text, txtCnpj.Text, txtContato.Text, txtEndereco.Text, txtNumero.Text, txtCompl.Text, txtCidade.Text, cboEstados.Text, dgFornecedores.Rows[indiceSelecionado].Cells[3].Value.ToString());
 
                 if (resultado == 0)
                 {
@@ -122,6 +122,14 @@ namespace FarmaTech.View
                 }
                 AtualizaDG();
             }
+
+            tabControl1.TabPages.Remove(tabNovoFornecedor);
+            tabControl1.TabPages.Add(tabFornecedores);
+            btnNovo.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -136,8 +144,8 @@ namespace FarmaTech.View
 
             ValorSalvar = 0;
 
-            int indiceSelecionado = dgUsuarios.CurrentRow.Index;
-            List<DAL.Model.Objetos.Endereco> endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), dgUsuarios.Rows[indiceSelecionado].Cells[1].Value.ToString());
+            int indiceSelecionado = dgFornecedores.CurrentRow.Index;
+            List<DAL.Model.Objetos.Endereco> endereco = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), dgFornecedores.Rows[indiceSelecionado].Cells[1].Value.ToString());
             txtRazaoSocial.Text = endereco[0].RazaoSocial;
             txtNomeFantasia.Text = endereco[0].NomeFantasia;
             txtCnpj.Text = endereco[0].CNPJCPF;
@@ -151,21 +159,43 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int indiceSelecionado = dgUsuarios.CurrentRow.Index;
-            BAL.Control.Enderecos_BAL.RemoveEndereco(dgUsuarios.Rows[indiceSelecionado].Cells[3].Value.ToString());
-            AtualizaDG();
+            if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (dgFornecedores.Rows.Count > 0)
+                {
+                    int indiceSelecionado = dgFornecedores.CurrentRow.Index;
+                    BAL.Control.Enderecos_BAL.RemoveEndereco(dgFornecedores.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    AtualizaDG();
+                }
+            }
         }
         public void AtualizaDG()
         {
+            while (dgFornecedores.Rows.Count > 0)
+            {
+                dgFornecedores.Rows.RemoveAt(0);
+            }
+
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
                 List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEnderecoPorNome(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores), txtPesquisaUsuario.Text);
-                dgUsuarios.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgFornecedores.Rows.Add(item.NomeFantasia, item.CNPJCPF, item.Rua, item.Numero, item.Cidade, item.Estado);
+                }
+                //dgFornecedores.DataSource = lista;
             }
             else
             {
                 List<DAL.Model.Objetos.Endereco> lista = BAL.Control.Enderecos_BAL.GetEndereco(Convert.ToInt32(DAL.Model.Enums.Enderecos.Fornecedores));
-                dgUsuarios.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgFornecedores.Rows.Add(item.NomeFantasia, item.CNPJCPF, item.Rua, item.Numero, item.Cidade, item.Estado);
+                }
+                
+                //dgFornecedores.DataSource = lista;
             }
         }
 
