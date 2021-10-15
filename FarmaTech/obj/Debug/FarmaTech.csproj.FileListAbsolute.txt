@@ -349,3 +349,5 @@ C:\Users\viviane.santos3\Desktop\Nova pasta\FarmaTech.sln\FarmaTech\obj\Debug\Fa
 C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaCliente.resources
 C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficosAdmin.resources
 C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaProduto.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaCliente.resources
+C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaProduto.resources

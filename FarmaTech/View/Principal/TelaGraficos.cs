@@ -67,13 +67,16 @@ namespace FarmaTech.View.Principal
         public void AtualizaControles()
         {
             txtReceitaFuncionario.Text = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, cbFilial.Text);
+
             txtFuncionarioMaisVendas.Text = BAL.Control.Graficos_BAL.FuncionarioComMaisVendas(txtData.Text, cbFilial.Text);
+
             Dictionary<string, int> produtosMaisVendidos = BAL.Control.Graficos_BAL.ProdutosMaisVendidos(txtData.Text, cbFilial.Text);
             lstProdMaisVendidos.Items.Clear();
             foreach (var item in produtosMaisVendidos)
             {
                 lstProdMaisVendidos.Items.Add("Nome: " + item.Key + " - Quantidade: " + item.Value);
             }
+
             Dictionary<string, string> receitaFuncionarios = BAL.Control.Graficos_BAL.ReceitaPorFuncionario(txtData.Text, cbFilial.Text);
             lstReceitaFuncionario.Items.Clear();
             foreach (var item in receitaFuncionarios)
@@ -89,7 +92,6 @@ namespace FarmaTech.View.Principal
             nomes[2] = "Receita - R$" + valores[2];
             graficoCustoVenda.Series[0].Points.DataBindXY(nomes, valores);
             graficoCustoVenda.Series[0].ChartType = SeriesChartType.Pie;
-
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
