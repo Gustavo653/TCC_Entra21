@@ -8,7 +8,7 @@ namespace BAL.Control
 {
     public class Graficos_BAL
     {
-        //1 Filial
+        //1 Filial 
         public static string LucroPorFuncionario(string data, string idFilial)
         {
             double lucroFuncionario = 0;
@@ -130,6 +130,5 @@ namespace BAL.Control
             }
             return produtosNome;
         }
-        //TodasFiliais
     }
 }
