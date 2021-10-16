@@ -11,7 +11,8 @@ namespace DAL.Model.Consultas
 {
     public class DBHibrido
     {
-        public static void GerarDBTabelas()
+        public static int VerificaInternet { get; set; }
+        public static void GerarDBTabelas() //Cria o database e as tabelas
         {          
             if (!File.Exists(DbConnection.nomeArquivoBD))
             {
@@ -33,12 +34,25 @@ namespace DAL.Model.Consultas
                 tabelas.Add("create table dbo.ContasReceber(idContaReceber int not null identity(1, 1),NomeFornecedor VARCHAR(50) not null,Valor varchar(12) not null,Vencimento varchar(11) not null,idFilial varchar(50) not null)");
                 foreach (var item in tabelas)
                 {
-                    cn.Open();
-                    SqlCeCommand cmd = new SqlCeCommand(item, cn);
-                    cmd.ExecuteNonQuery();
-                    cn.Close();
+                    Execute(cn, item);
                 }     
             }
+        }
+        public static void ClonarOnlineLocal() //Clona do online para o local
+        {
+            SqlCeConnection cn = new SqlCeConnection(DbConnection.connLocalString);
+            
+        }
+        public static void ClonarLocalOnline() //Clona do local para o online
+        {
+
+        }
+        public static void Execute(SqlCeConnection cn, string sql)
+        {
+            cn.Open();
+            SqlCeCommand cmd = new SqlCeCommand(sql, cn);
+            cmd.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }

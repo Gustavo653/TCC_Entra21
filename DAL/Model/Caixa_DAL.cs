@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,71 +13,148 @@ namespace DAL.Model
     {
         public static string GetValorCaixa(string data, string filial)
         {
-            string valor = null;
-            string select = $"SELECT Valor from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{filial}'";
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                valor = dr["Valor"].ToString();
-            }
-            dr.Close();
-            DbConnection.conn.Close();
-            return valor;
-        }
-        public static int GetCaixa(string data, string idFilial, int entradaSaida)
-        {
-            List<int> caixas = new List<int>();
-            string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                caixas.Add(Convert.ToInt32(dr["Caixa"]));
-            }
-            dr.Close();
-            DbConnection.conn.Close();
-
-            caixas.Sort();
-            caixas.Reverse();
-
-            if(caixas.Count == 0)
-            {
-                return 1;
-            }
-            if (entradaSaida == 1)
-            {
-                int caixa = caixas[0] + 1;
-                return caixa;
+                string valor = null;
+                string select = $"SELECT Valor from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{filial}'";
+                SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
+                if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    valor = dr["Valor"].ToString();
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connLocal.Close();
+                return valor;
             }
             else
             {
-                return caixas[0];
+                string valor = null;
+                string select = $"SELECT Valor from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{filial}'";
+                SqlCommand cmd = new SqlCommand(select, Objetos.ConnectionStatic.connRemoto);
+                if (Objetos.ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    valor = dr["Valor"].ToString();
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connRemoto.Close();
+                return valor;
+            }
+        }
+        public static int GetCaixa(string data, string idFilial, int entradaSaida)
+        {
+            if (DBHibrido.VerificaInternet == 1)
+            {
+                List<int> caixas = new List<int>();
+                string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
+                SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
+                if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    caixas.Add(Convert.ToInt32(dr["Caixa"]));
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connLocal.Close();
+
+                caixas.Sort();
+                caixas.Reverse();
+
+                if (caixas.Count == 0)
+                {
+                    return 1;
+                }
+                if (entradaSaida == 1)
+                {
+                    int caixa = caixas[0] + 1;
+                    return caixa;
+                }
+                else
+                {
+                    return caixas[0];
+                }
+            }
+            else
+            {
+                List<int> caixas = new List<int>();
+                string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
+                SqlCommand cmd = new SqlCommand(select, Objetos.ConnectionStatic.connRemoto);
+                if (Objetos.ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    caixas.Add(Convert.ToInt32(dr["Caixa"]));
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connRemoto.Close();
+
+                caixas.Sort();
+                caixas.Reverse();
+
+                if (caixas.Count == 0)
+                {
+                    return 1;
+                }
+                if (entradaSaida == 1)
+                {
+                    int caixa = caixas[0] + 1;
+                    return caixa;
+                }
+                else
+                {
+                    return caixas[0];
+                }
             }
         }
         public static bool VerificaEstadoCaixa(string data, string idFilial)
         {
-            string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}' AND EstadoCaixa = '1'";
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                if (dr["EstadoCaixa"].ToString() == "1")
+                string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}' AND EstadoCaixa = '1'";
+                SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
+                if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
                 {
-                    dr.Close();
-                    DbConnection.conn.Close();
-                    return true;
+                    if (dr["EstadoCaixa"].ToString() == "1")
+                    {
+                        dr.Close();
+                        Objetos.ConnectionStatic.connLocal.Close();
+                        return true;
+                    }
                 }
+                dr.Close();
+                Objetos.ConnectionStatic.connLocal.Close();
+                return false;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return false;
+            else
+            {
+                string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}' AND EstadoCaixa = '1'";
+                SqlCommand cmd = new SqlCommand(select, Objetos.ConnectionStatic.connRemoto);
+                if (Objetos.ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    if (dr["EstadoCaixa"].ToString() == "1")
+                    {
+                        dr.Close();
+                        Objetos.ConnectionStatic.connRemoto.Close();
+                        return true;
+                    }
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connRemoto.Close();
+                return false;
+            }
         }
         public static void AbreCaixa(string data, string usuario, string valor, string idFilial)
         {

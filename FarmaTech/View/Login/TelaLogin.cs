@@ -54,6 +54,7 @@ namespace FarmaTech
         }
         public void VerificaLogin()
         {
+            DAL.Model.Consultas.DbConnection.SetConnectionString();
             if (!string.IsNullOrEmpty(txtLogin.Text) && !string.IsNullOrEmpty(txtSenha.Text))
             {
                 if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
@@ -81,7 +82,7 @@ namespace FarmaTech
             if (BAL.Control.Login_BAL.ValidaCredenciais("Admin", "Senha"))
             {
                 new TelaPrincipal().Show();
-                DAL.Model.Consultas.DBHibrido.GerarDataBase();
+                DAL.Model.Consultas.DBHibrido.GerarDBTabelas();
                 this.Hide();
             }
         }

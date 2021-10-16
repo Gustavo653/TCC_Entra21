@@ -31,9 +31,6 @@ namespace DAL.Model
             }
             dr.Close();
             DbConnection.conn.Close();
-
-
-
             foreach (var item in senhas)
             {
                 if (hash.VerificarSenha(senha, item))
