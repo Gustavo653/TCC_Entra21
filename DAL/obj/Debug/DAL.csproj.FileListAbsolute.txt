@@ -68,3 +68,4 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CoreCompile
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.dll
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.pdb
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\DAL\obj\Debug\DAL.csproj.CopyComplete

@@ -27,36 +27,7 @@ namespace DAL.Model.Consultas
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                command = command.Replace("dbo.", "");
-                //command = command.Replace("'", "");
-                //string cmd2 = null;
-                //if (command.Contains("INSERT"))
-                //{
-                //    int cont = 0;
-                //    cmd2 = "";
-                //    for (int i = 0; i < command.Length; i++)
-                //    {
-                //        if (cont == 1)
-                //        {
-                //            if (command[i - 1] == '(')
-                //            {
-                //                cmd2.Append('\'');
-                //            }
-                //            if (command[i + 1] == ')')
-                //            {
-                //                cmd2.Append('\'');
-                //            }
-                //        }
-                //        if (command[i] == '(')
-                //        {
-                //            cont++;
-                //        }
-                //        if (command[i].ToString() != @"\")
-                //            cmd2 += command[i];
-                //    }
-                //}
-                //if (cmd2 != null)
-                //    command = cmd2;
+                command = command.Replace("dbo.", "");               
                 SqlCeCommand cmd = new SqlCeCommand(command, Objetos.ConnectionStatic.connLocal);
                 Objetos.ConnectionStatic.connLocal.Open();
                 cmd.ExecuteNonQuery();
