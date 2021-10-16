@@ -16,7 +16,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT Nome from dbo.Usuarios WHERE Contato = '{contato}'";
+                string select = $"SELECT Nome from Usuarios WHERE Contato = '{contato}'";
                 List<string> lista = new List<string>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -65,7 +65,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Usuarios";
+                string select = $"SELECT * from Usuarios";
                 List<Usuario> lista = new List<Usuario>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -112,7 +112,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Usuarios WHERE Filial = '{filial}'";
+                string select = $"SELECT * from Usuarios WHERE Filial = '{filial}'";
                 List<Usuario> lista = new List<Usuario>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -159,7 +159,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%'";
+                string select = $"SELECT * from Usuarios WHERE Nome LIKE '%{nome}%'";
                 List<Usuario> lista = new List<Usuario>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -206,7 +206,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%' AND Filial = '{filial}'";
+                string select = $"SELECT * from Usuarios WHERE Nome LIKE '%{nome}%' AND Filial = '{filial}'";
                 List<Usuario> lista = new List<Usuario>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)

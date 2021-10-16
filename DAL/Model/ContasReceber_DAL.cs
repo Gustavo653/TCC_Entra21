@@ -16,7 +16,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.ContasReceber";
+                string select = $"SELECT * from ContasReceber";
                 List<ContasReceber> lista = new List<ContasReceber>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -53,7 +53,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.ContasReceber WHERE idFilial = '{idFilial}'";
+                string select = $"SELECT * from ContasReceber WHERE idFilial = '{idFilial}'";
                 List<ContasReceber> lista = new List<ContasReceber>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -90,7 +90,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.ContasReceber WHERE NomeFornecedor LIKE '%{nome}%'";
+                string select = $"SELECT * from ContasReceber WHERE NomeFornecedor LIKE '%{nome}%'";
                 List<ContasReceber> lista = new List<ContasReceber>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -127,7 +127,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.ContasReceber WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                string select = $"SELECT * from ContasReceber WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
                 List<ContasReceber> lista = new List<ContasReceber>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)

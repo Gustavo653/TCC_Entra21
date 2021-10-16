@@ -32,7 +32,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT CodigoCupom from dbo.Cupom";
+                string select = $"SELECT CodigoCupom from Cupom";
                 List<string> lista = new List<string>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)

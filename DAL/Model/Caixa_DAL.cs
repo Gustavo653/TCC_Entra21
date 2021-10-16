@@ -16,7 +16,7 @@ namespace DAL.Model
             if (DBHibrido.VerificaInternet == 1)
             {
                 string valor = null;
-                string select = $"SELECT Valor from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{filial}'";
+                string select = $"SELECT Valor from Caixa WHERE Data = '{data}' AND idFilial = '{filial}'";
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
                     Objetos.ConnectionStatic.connLocal.Open();
@@ -51,7 +51,7 @@ namespace DAL.Model
             if (DBHibrido.VerificaInternet == 1)
             {
                 List<int> caixas = new List<int>();
-                string select = $"SELECT Caixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
+                string select = $"SELECT Caixa from Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
                     Objetos.ConnectionStatic.connLocal.Open();
@@ -117,7 +117,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT EstadoCaixa from dbo.Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}' AND EstadoCaixa = '1'";
+                string select = $"SELECT EstadoCaixa from Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}' AND EstadoCaixa = '1'";
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
                     Objetos.ConnectionStatic.connLocal.Open();

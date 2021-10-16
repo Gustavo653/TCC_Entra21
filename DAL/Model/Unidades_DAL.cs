@@ -15,7 +15,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Unidades";
+                string select = $"SELECT * from Unidades";
                 List<string> lista = new List<string>();
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -50,7 +50,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Unidades WHERE idFilial = '{filial}'";
+                string select = $"SELECT * from Unidades WHERE idFilial = '{filial}'";
                 List<string> lista = new List<string>();
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -85,7 +85,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Unidades WHERE Nome LIKE '%{nome}%'";
+                string select = $"SELECT * from Unidades WHERE Nome LIKE '%{nome}%'";
                 List<string> lista = new List<string>();
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -120,7 +120,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Unidades WHERE Nome LIKE '%{nome}%' AND idFilial = '{filial}'";
+                string select = $"SELECT * from Unidades WHERE Nome LIKE '%{nome}%' AND idFilial = '{filial}'";
                 List<string> lista = new List<string>();
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)

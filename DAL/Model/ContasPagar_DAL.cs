@@ -16,7 +16,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.ContasPagar";
+                string select = $"SELECT * from ContasPagar";
                 List<ContasPagar> lista = new List<ContasPagar>();
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -53,7 +53,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.ContasPagar WHERE idFilial = '{idFilial}'";
+                string select = $"SELECT * from ContasPagar WHERE idFilial = '{idFilial}'";
                 List<ContasPagar> lista = new List<ContasPagar>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -90,7 +90,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.ContasPagar WHERE NomeFornecedor LIKE '%{nome}%'";
+                string select = $"SELECT * from ContasPagar WHERE NomeFornecedor LIKE '%{nome}%'";
                 List<ContasPagar> lista = new List<ContasPagar>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -127,7 +127,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.ContasPagar WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                string select = $"SELECT * from ContasPagar WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
                 List<ContasPagar> lista = new List<ContasPagar>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)

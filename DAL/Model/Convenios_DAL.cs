@@ -16,7 +16,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Convenios";
+                string select = $"SELECT * from Convenios";
                 List<Convenio> lista = new List<Convenio>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -53,7 +53,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Convenios WHERE idFilial = '{idFilial}'";
+                string select = $"SELECT * from Convenios WHERE idFilial = '{idFilial}'";
                 List<Convenio> lista = new List<Convenio>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -90,7 +90,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%'";
+                string select = $"SELECT * from Convenios WHERE Nome LIKE '%{nome}%'";
                 List<Convenio> lista = new List<Convenio>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -127,7 +127,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                string select = $"SELECT * from Convenios WHERE Nome LIKE '%{nome}%' AND idFilial = '{idFilial}'";
                 List<Convenio> lista = new List<Convenio>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)

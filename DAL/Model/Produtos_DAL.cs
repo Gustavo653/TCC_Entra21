@@ -16,7 +16,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Unidades WHERE idFilial = '{filial}'";
+                string select = $"SELECT * from Unidades WHERE idFilial = '{filial}'";
                 List<string> lista = new List<string>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -51,7 +51,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Produtos";
+                string select = $"SELECT * from Produtos";
                 List<Produto> lista = new List<Produto>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -88,7 +88,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Produtos WHERE idFilial = '{filial}'";
+                string select = $"SELECT * from Produtos WHERE idFilial = '{filial}'";
                 List<Produto> lista = new List<Produto>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -126,7 +126,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Produtos WHERE Nome LIKE '%{nome}%'";
+                string select = $"SELECT * from Produtos WHERE Nome LIKE '%{nome}%'";
                 List<Produto> lista = new List<Produto>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -163,7 +163,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Produtos WHERE Nome LIKE '%{nome}%' AND idFilial = '{filial}'";
+                string select = $"SELECT * from Produtos WHERE Nome LIKE '%{nome}%' AND idFilial = '{filial}'";
                 List<Produto> lista = new List<Produto>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)

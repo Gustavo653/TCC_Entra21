@@ -19,7 +19,7 @@ namespace DAL.Model
             if(DBHibrido.VerificaInternet == 1)
             {
                 List<string> senhas = new List<string>();
-                string select = $"SELECT * from dbo.Usuarios WHERE Login = '{login}'";
+                string select = $"SELECT * from Usuarios WHERE Login = '{login}'";
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 ConnectionStatic.connLocal.Open();
                 SqlCeDataReader dr = cmd.ExecuteReader();
@@ -77,7 +77,7 @@ namespace DAL.Model
         {
             if(DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Usuarios WHERE Login = '{login}' AND Senha = '{hash.CriptografarSenha(senha)}'";
+                string select = $"SELECT * from Usuarios WHERE Login = '{login}' AND Senha = '{hash.CriptografarSenha(senha)}'";
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 ConnectionStatic.connLocal.Open();
                 SqlCeDataReader dr = cmd.ExecuteReader();

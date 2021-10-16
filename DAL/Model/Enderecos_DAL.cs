@@ -16,7 +16,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco}";
+                string select = $"SELECT * from Enderecos WHERE enumEndereco = {enumEndereco}";
                 List<Endereco> lista = new List<Endereco>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -75,11 +75,11 @@ namespace DAL.Model
                 string select;
                 if (enumEndereco == 1)
                 {
-                    select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia = '{idFilial}'";
+                    select = $"SELECT * from Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia = '{idFilial}'";
                 }
                 else
                 {
-                    select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
+                    select = $"SELECT * from Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
                 }
                 List<Endereco> lista = new List<Endereco>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
@@ -143,7 +143,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Enderecos WHERE Contato = '{contato}'";
+                string select = $"SELECT * from Enderecos WHERE Contato = '{contato}'";
                 string nomeFantasia = null;
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -183,7 +183,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
+                string select = $"SELECT * from Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
                 List<Endereco> lista = new List<Endereco>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
@@ -238,7 +238,7 @@ namespace DAL.Model
         {
             if (DBHibrido.VerificaInternet == 1)
             {
-                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                string select = $"SELECT * from Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%' AND idFilial = '{idFilial}'";
                 List<Endereco> lista = new List<Endereco>();
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)

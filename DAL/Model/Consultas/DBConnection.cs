@@ -26,7 +26,10 @@ namespace DAL.Model.Consultas
         public static void Execute(string command)
         {
             if (DBHibrido.VerificaInternet == 1)
-            {
+            {              
+                command = command.Replace("dbo.", "");
+                command = command.Replace("'", "\"");
+
                 SqlCeCommand cmd = new SqlCeCommand(command, Objetos.ConnectionStatic.connLocal);
                 Objetos.ConnectionStatic.connLocal.Open();
                 cmd.ExecuteNonQuery();

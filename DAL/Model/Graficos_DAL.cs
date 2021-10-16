@@ -20,7 +20,7 @@ namespace DAL.Model
                 usuarios.Distinct();
                 for (int i = 0; i < usuarios.Count; i++)
                 {
-                    string select = $"SELECT CodigoCupom from dbo.Cupom WHERE Vendedor = '{usuarios[i].Nome}' AND Data LIKE '%{data}%'";
+                    string select = $"SELECT CodigoCupom from Cupom WHERE Vendedor = '{usuarios[i].Nome}' AND Data LIKE '%{data}%'";
                     SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                     if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
                         ConnectionStatic.connLocal.Open();
@@ -60,7 +60,7 @@ namespace DAL.Model
             if (DBHibrido.VerificaInternet == 1)
             {
                 List<string> lista = new List<string>();
-                string select = $"SELECT CodigoCupom from dbo.Cupom WHERE Vendedor = '{usuarios.Nome}' AND Data LIKE '%{data}%'";
+                string select = $"SELECT CodigoCupom from Cupom WHERE Vendedor = '{usuarios.Nome}' AND Data LIKE '%{data}%'";
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
                     ConnectionStatic.connLocal.Open();
@@ -99,7 +99,7 @@ namespace DAL.Model
                 List<Objetos.Produto> lista = new List<Objetos.Produto>();
                 for (int i = 0; i < cupons.Count; i++)
                 {
-                    string select = $"SELECT CodigoProduto, Quantidade from dbo.Vendas WHERE CodigoCupom = '{cupons[i]}'";
+                    string select = $"SELECT CodigoProduto, Quantidade from Vendas WHERE CodigoCupom = '{cupons[i]}'";
                     SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                     if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
                         ConnectionStatic.connLocal.Open();
