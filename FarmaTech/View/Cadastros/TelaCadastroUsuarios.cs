@@ -47,7 +47,8 @@ namespace FarmaTech.View
             txtSenha.Clear();
             txtContato.Clear();
             cbNivelAcesso.SelectedIndex = 0;
-            cbUsuarioFilial.SelectedIndex = 0;
+            if (cbUsuarioFilial.Items.Count > 0)
+                cbUsuarioFilial.SelectedIndex = 0;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

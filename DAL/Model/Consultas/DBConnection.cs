@@ -52,7 +52,7 @@ namespace DAL.Model.Consultas
             if (DBHibrido.VerificaInternet == 1)
             {
                 List<string> lista = new List<string>();
-                string select = $"SELECT {column} from dbo.{table}";
+                string select = $"SELECT {column} from {table}";
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
                 Objetos.ConnectionStatic.connLocal.Open();
                 SqlCeDataReader dr = cmd.ExecuteReader();
