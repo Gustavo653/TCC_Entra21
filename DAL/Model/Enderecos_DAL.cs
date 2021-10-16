@@ -3,6 +3,7 @@ using DAL.Model.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,134 +14,280 @@ namespace DAL.Model
     {
         public static List<Endereco> GetEnderecos(int enumEndereco)
         {
-            string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco}";
-            List<Endereco> lista = new List<Endereco>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                Endereco endereco = new Endereco(
-                    dr["RazaoSocial"].ToString(),
-                    dr["NomeFantasia"].ToString(),
-                    dr["Cnpj"].ToString(),
-                    dr["Contato"].ToString(),
-                    dr["Rua"].ToString(),
-                    dr["Numero"].ToString(),
-                    dr["Complemento"].ToString(),
-                    dr["Cidade"].ToString(),
-                    dr["Estado"].ToString());
-                lista.Add(endereco);
+                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco}";
+                List<Endereco> lista = new List<Endereco>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco}";
+                List<Endereco> lista = new List<Endereco>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
 
         public static List<Endereco> GetEnderecos(int enumEndereco, string idFilial)
         {
-            string select;
-            if (enumEndereco == 1)
+            if (DBHibrido.VerificaInternet == 1)
             {
-                select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia = '{idFilial}'";
+                string select;
+                if (enumEndereco == 1)
+                {
+                    select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia = '{idFilial}'";
+                }
+                else
+                {
+                    select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
+                }
+                List<Endereco> lista = new List<Endereco>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
             else
             {
-                select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
+                string select;
+                if (enumEndereco == 1)
+                {
+                    select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia = '{idFilial}'";
+                }
+                else
+                {
+                    select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND idFilial = '{idFilial}'";
+                }
+                List<Endereco> lista = new List<Endereco>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
             }
-            List<Endereco> lista = new List<Endereco>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                Endereco endereco = new Endereco(
-                    dr["RazaoSocial"].ToString(),
-                    dr["NomeFantasia"].ToString(),
-                    dr["Cnpj"].ToString(),
-                    dr["Contato"].ToString(),
-                    dr["Rua"].ToString(),
-                    dr["Numero"].ToString(),
-                    dr["Complemento"].ToString(),
-                    dr["Cidade"].ToString(),
-                    dr["Estado"].ToString());
-                lista.Add(endereco);
-            }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
         }
         public static string GetEnderecosPorContato(string contato)
         {
-            string select = $"SELECT * from dbo.Enderecos WHERE Contato = '{contato}'";
-            string nomeFantasia = null;
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                nomeFantasia = dr["NomeFantasia"].ToString();
+                string select = $"SELECT * from dbo.Enderecos WHERE Contato = '{contato}'";
+                string nomeFantasia = null;
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    nomeFantasia = dr["NomeFantasia"].ToString();
+                    dr.Close();
+                    ConnectionStatic.connLocal.Close();
+                }
                 dr.Close();
-                DbConnection.conn.Close();
+                ConnectionStatic.connLocal.Close();
+                return nomeFantasia;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return nomeFantasia;
+            else
+            {
+                string select = $"SELECT * from dbo.Enderecos WHERE Contato = '{contato}'";
+                string nomeFantasia = null;
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    nomeFantasia = dr["NomeFantasia"].ToString();
+                    dr.Close();
+                    ConnectionStatic.connRemoto.Close();
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return nomeFantasia;
+            }
+
         }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco)
         {
-            string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
-            List<Endereco> lista = new List<Endereco>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                Endereco endereco = new Endereco(
-                    dr["RazaoSocial"].ToString(),
-                    dr["NomeFantasia"].ToString(),
-                    dr["Cnpj"].ToString(),
-                    dr["Contato"].ToString(),
-                    dr["Rua"].ToString(),
-                    dr["Numero"].ToString(),
-                    dr["Complemento"].ToString(),
-                    dr["Cidade"].ToString(),
-                    dr["Estado"].ToString());
-                lista.Add(endereco);
+                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
+                List<Endereco> lista = new List<Endereco>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
+                List<Endereco> lista = new List<Endereco>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco, string idFilial)
         {
-            string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%' AND idFilial = '{idFilial}'";
-            List<Endereco> lista = new List<Endereco>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                Endereco endereco = new Endereco(
-                    dr["RazaoSocial"].ToString(),
-                    dr["NomeFantasia"].ToString(),
-                    dr["Cnpj"].ToString(),
-                    dr["Contato"].ToString(),
-                    dr["Rua"].ToString(),
-                    dr["Numero"].ToString(),
-                    dr["Complemento"].ToString(),
-                    dr["Cidade"].ToString(),
-                    dr["Estado"].ToString());
-                lista.Add(endereco);
+                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                List<Endereco> lista = new List<Endereco>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                List<Endereco> lista = new List<Endereco>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static void InsereEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string idFilial)
         {

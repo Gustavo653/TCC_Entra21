@@ -3,6 +3,7 @@ using DAL.Model.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -29,27 +30,56 @@ namespace DAL.Model
         }
         public static string GeraCupom()
         {
-            string select = $"SELECT CodigoCupom from dbo.Cupom";
-            List<string> lista = new List<string>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if(DBHibrido.VerificaInternet == 1)
             {
-                lista.Add(dr["CodigoCupom"].ToString());
-            }
-            dr.Close();
-            DbConnection.conn.Close();
-            Random ran = new Random();
-            while (true)
-            {
-                string codigo = ran.Next(0, 1000).ToString();
-                codigo += ran.Next(0, 1000).ToString();
-                if (!lista.Contains(codigo))
+                string select = $"SELECT CodigoCupom from dbo.Cupom";
+                List<string> lista = new List<string>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    return codigo;
+                    lista.Add(dr["CodigoCupom"].ToString());
                 }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                Random ran = new Random();
+                while (true)
+                {
+                    string codigo = ran.Next(0, 1000).ToString();
+                    codigo += ran.Next(0, 1000).ToString();
+                    if (!lista.Contains(codigo))
+                    {
+                        return codigo;
+                    }
+                }
+            }
+            else
+            {
+                string select = $"SELECT CodigoCupom from dbo.Cupom";
+                List<string> lista = new List<string>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lista.Add(dr["CodigoCupom"].ToString());
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                Random ran = new Random();
+                while (true)
+                {
+                    string codigo = ran.Next(0, 1000).ToString();
+                    codigo += ran.Next(0, 1000).ToString();
+                    if (!lista.Contains(codigo))
+                    {
+                        return codigo;
+                    }
+                }
+
             }
         }     
         public static string CalculaTotalConvenio(string subTotal, string convenio)

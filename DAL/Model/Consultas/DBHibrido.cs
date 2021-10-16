@@ -11,7 +11,7 @@ namespace DAL.Model.Consultas
 {
     public class DBHibrido
     {
-        public static int VerificaInternet { get; set; }
+        public static int VerificaInternet { get; set; } = 0;//Inserir try catch para alterar seu valor
         public static void GerarDBTabelas() //Cria o database e as tabelas
         {          
             if (!File.Exists(DbConnection.nomeArquivoBD))

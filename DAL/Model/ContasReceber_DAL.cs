@@ -3,6 +3,7 @@ using DAL.Model.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,71 +14,151 @@ namespace DAL.Model
     {
         public static List<ContasReceber> GetContasReceber()
         {
-            string select = $"SELECT * from dbo.ContasReceber";
-            List<ContasReceber> lista = new List<ContasReceber>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
-                lista.Add(ContasReceber);
+                string select = $"SELECT * from dbo.ContasReceber";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.ContasReceber";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<ContasReceber> GetContasReceber(string idFilial)
         {
-            string select = $"SELECT * from dbo.ContasReceber WHERE idFilial = '{idFilial}'";
-            List<ContasReceber> lista = new List<ContasReceber>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
-                lista.Add(ContasReceber);
+                string select = $"SELECT * from dbo.ContasReceber WHERE idFilial = '{idFilial}'";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.ContasReceber WHERE idFilial = '{idFilial}'";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<ContasReceber> GetContasReceberPorNome(string nome)
         {
-            string select = $"SELECT * from dbo.ContasReceber WHERE NomeFornecedor LIKE '%{nome}%'";
-            List<ContasReceber> lista = new List<ContasReceber>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
-                lista.Add(ContasReceber);
+                string select = $"SELECT * from dbo.ContasReceber WHERE NomeFornecedor LIKE '%{nome}%'";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.ContasReceber WHERE NomeFornecedor LIKE '%{nome}%'";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<ContasReceber> GetContasReceberPorNome(string nome, string idFilial)
         {
-            string select = $"SELECT * from dbo.ContasReceber WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
-            List<ContasReceber> lista = new List<ContasReceber>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if(DBHibrido.VerificaInternet == 1)
             {
-                ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
-                lista.Add(ContasReceber);
+                string select = $"SELECT * from dbo.ContasReceber WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.ContasReceber WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static void InsereContasReceber(string nome, string valor, string vencimento, string idFilial)
         {

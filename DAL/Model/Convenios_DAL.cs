@@ -3,6 +3,7 @@ using DAL.Model.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,71 +14,151 @@ namespace DAL.Model
     {
         public static List<Convenio> GetConvenios()
         {
-            string select = $"SELECT * from dbo.Convenios";
-            List<Convenio> lista = new List<Convenio>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
-                lista.Add(convenio);
+                string select = $"SELECT * from dbo.Convenios";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Convenios";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<Convenio> GetConveniosPorFilial(string idFilial)
         {
-            string select = $"SELECT * from dbo.Convenios WHERE idFilial = '{idFilial}'";
-            List<Convenio> lista = new List<Convenio>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
-                lista.Add(convenio);
+                string select = $"SELECT * from dbo.Convenios WHERE idFilial = '{idFilial}'";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Convenios WHERE idFilial = '{idFilial}'";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<Convenio> GetConveniosPorNome(string nome)
         {
-            string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%'";
-            List<Convenio> lista = new List<Convenio>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if(DBHibrido.VerificaInternet == 1)
             {
-                Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
-                lista.Add(convenio);
+                string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%'";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%'";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<Convenio> GetConveniosPorNomePorFilial(string nome, string idFilial)
         {
-            string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%' AND idFilial = '{idFilial}'";
-            List<Convenio> lista = new List<Convenio>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if(DBHibrido.VerificaInternet == 1)
             {
-                Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
-                lista.Add(convenio);
+                string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Convenios WHERE Nome LIKE '%{nome}%' AND idFilial = '{idFilial}'";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static void InsereConvenio(string nome, string desconto, string idFilial)
         {

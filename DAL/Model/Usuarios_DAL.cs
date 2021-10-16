@@ -3,6 +3,7 @@ using DAL.Model.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,114 +14,241 @@ namespace DAL.Model
     {
         public static string GetUsuarioPorContato(string contato)
         {
-            string select = $"SELECT Nome from dbo.Usuarios WHERE Contato = '{contato}'";
-            List<string> lista = new List<string>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                lista.Add(dr["Nome"].ToString());
-            }
-            dr.Close();
-            DbConnection.conn.Close();
-            if (lista.Count > 0)
-            {
-                return lista[0];
+                string select = $"SELECT Nome from dbo.Usuarios WHERE Contato = '{contato}'";
+                List<string> lista = new List<string>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    lista.Add(dr["Nome"].ToString());
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                if (lista.Count > 0)
+                {
+                    return lista[0];
+                }
+                else
+                {
+                    return null;
+                }
             }
             else
             {
-                return null;
+                string select = $"SELECT Nome from dbo.Usuarios WHERE Contato = '{contato}'";
+                List<string> lista = new List<string>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    lista.Add(dr["Nome"].ToString());
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                if (lista.Count > 0)
+                {
+                    return lista[0];
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
         public static List<Usuario> GetUsuarios()
         {
-            string select = $"SELECT * from dbo.Usuarios";
-            List<Usuario> lista = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                Usuario usuario = new Usuario(
-                    dr["Nome"].ToString(),
-                    dr["Filial"].ToString(),
-                    dr["Contato"].ToString(),
-                    Convert.ToInt32(dr["NivelAcesso"]),
-                    dr["Login"].ToString());
-                lista.Add(usuario);
+                string select = $"SELECT * from dbo.Usuarios";
+                List<Usuario> lista = new List<Usuario>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Usuario usuario = new Usuario(
+                        dr["Nome"].ToString(),
+                        dr["Filial"].ToString(),
+                        dr["Contato"].ToString(),
+                        Convert.ToInt32(dr["NivelAcesso"]),
+                        dr["Login"].ToString());
+                    lista.Add(usuario);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Usuarios";
+                List<Usuario> lista = new List<Usuario>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Usuario usuario = new Usuario(
+                        dr["Nome"].ToString(),
+                        dr["Filial"].ToString(),
+                        dr["Contato"].ToString(),
+                        Convert.ToInt32(dr["NivelAcesso"]),
+                        dr["Login"].ToString());
+                    lista.Add(usuario);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<Usuario> GetUsuarios(string filial)
         {
-            string select = $"SELECT * from dbo.Usuarios WHERE Filial = '{filial}'";
-            List<Usuario> lista = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (DBHibrido.VerificaInternet == 1)
             {
-                Usuario usuario = new Usuario(
-                    dr["Nome"].ToString(),
-                    dr["Filial"].ToString(),
-                    dr["Contato"].ToString(),
-                    Convert.ToInt32(dr["NivelAcesso"]),
-                    dr["Login"].ToString());
-                lista.Add(usuario);
+                string select = $"SELECT * from dbo.Usuarios WHERE Filial = '{filial}'";
+                List<Usuario> lista = new List<Usuario>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Usuario usuario = new Usuario(
+                        dr["Nome"].ToString(),
+                        dr["Filial"].ToString(),
+                        dr["Contato"].ToString(),
+                        Convert.ToInt32(dr["NivelAcesso"]),
+                        dr["Login"].ToString());
+                    lista.Add(usuario);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Usuarios WHERE Filial = '{filial}'";
+                List<Usuario> lista = new List<Usuario>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Usuario usuario = new Usuario(
+                        dr["Nome"].ToString(),
+                        dr["Filial"].ToString(),
+                        dr["Contato"].ToString(),
+                        Convert.ToInt32(dr["NivelAcesso"]),
+                        dr["Login"].ToString());
+                    lista.Add(usuario);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
         }
         public static List<Usuario> GetUsuariosPorNome(string nome)
         {
-            string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%'";
-            List<Usuario> lista = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if(DBHibrido.VerificaInternet == 1)
             {
-                Usuario usuario = new Usuario(
-                   dr["Nome"].ToString(),
-                   dr["Filial"].ToString(),
-                   dr["Contato"].ToString(),
-                   Convert.ToInt32(dr["NivelAcesso"]),
-                   dr["Login"].ToString());
-                lista.Add(usuario);
+                string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%'";
+                List<Usuario> lista = new List<Usuario>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Usuario usuario = new Usuario(
+                       dr["Nome"].ToString(),
+                       dr["Filial"].ToString(),
+                       dr["Contato"].ToString(),
+                       Convert.ToInt32(dr["NivelAcesso"]),
+                       dr["Login"].ToString());
+                    lista.Add(usuario);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%'";
+                List<Usuario> lista = new List<Usuario>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Usuario usuario = new Usuario(
+                       dr["Nome"].ToString(),
+                       dr["Filial"].ToString(),
+                       dr["Contato"].ToString(),
+                       Convert.ToInt32(dr["NivelAcesso"]),
+                       dr["Login"].ToString());
+                    lista.Add(usuario);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }        
         }
         public static List<Usuario> GetUsuariosPorNome(string nome, string filial)
         {
-            string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%' AND Filial = '{filial}'";
-            List<Usuario> lista = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand(select, DbConnection.conn);
-            if (DbConnection.conn.State == System.Data.ConnectionState.Closed)
-                DbConnection.conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if(DBHibrido.VerificaInternet == 1)
             {
-                Usuario usuario = new Usuario(
-                   dr["Nome"].ToString(),
-                   dr["Filial"].ToString(),
-                   dr["Contato"].ToString(),
-                   Convert.ToInt32(dr["NivelAcesso"]),
-                   dr["Login"].ToString());
-                lista.Add(usuario);
+                string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%' AND Filial = '{filial}'";
+                List<Usuario> lista = new List<Usuario>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Usuario usuario = new Usuario(
+                       dr["Nome"].ToString(),
+                       dr["Filial"].ToString(),
+                       dr["Contato"].ToString(),
+                       Convert.ToInt32(dr["NivelAcesso"]),
+                       dr["Login"].ToString());
+                    lista.Add(usuario);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
             }
-            dr.Close();
-            DbConnection.conn.Close();
-            return lista;
+            else
+            {
+                string select = $"SELECT * from dbo.Usuarios WHERE Nome LIKE '%{nome}%' AND Filial = '{filial}'";
+                List<Usuario> lista = new List<Usuario>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Usuario usuario = new Usuario(
+                       dr["Nome"].ToString(),
+                       dr["Filial"].ToString(),
+                       dr["Contato"].ToString(),
+                       Convert.ToInt32(dr["NivelAcesso"]),
+                       dr["Login"].ToString());
+                    lista.Add(usuario);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
+      
         }
         public static void InsereUsuario(string nome, string filial, string contato, int nivelAcesso, string login, string senha)
         {
