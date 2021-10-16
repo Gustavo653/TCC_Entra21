@@ -1,5 +1,0 @@
-create table dbo.Clientes
-(
-idCliente int not null identity(1,1),
-idEndereco int not null
-)

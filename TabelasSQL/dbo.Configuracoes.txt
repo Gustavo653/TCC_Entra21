@@ -1,5 +1,0 @@
-create table dbo.Configuracoes
-(
-idConfig int not null identity(1,1),
-FormaPagamento varchar(20) not null
-)

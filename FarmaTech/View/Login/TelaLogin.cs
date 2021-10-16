@@ -81,6 +81,7 @@ namespace FarmaTech
             if (BAL.Control.Login_BAL.ValidaCredenciais("Admin", "Senha"))
             {
                 new TelaPrincipal().Show();
+                DAL.Model.Consultas.DBHibrido.GerarDataBase();
                 this.Hide();
             }
         }

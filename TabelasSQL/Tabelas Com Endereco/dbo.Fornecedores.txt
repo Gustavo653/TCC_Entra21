@@ -1,5 +1,0 @@
-create table dbo.Fornecedores
-(
-idFornecedor int not null identity(1,1),
-idEndereco int not null
-)
