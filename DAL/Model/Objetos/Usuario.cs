@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Objetos
 {
-    public class Usuario
+    public class Usuario : IEquatable<Usuario>
     {
         public string Nome { get; set; }
         public string Filial { get; set; }
@@ -23,6 +23,10 @@ namespace DAL.Model.Objetos
             NivelAcesso = nivelAcesso;
             Login = login;
             Senha = senha;
+        }
+        public bool Equals(Usuario u)
+        {
+            return this.Contato == u.Contato;
         }
     }
 }

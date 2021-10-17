@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Objetos
 {
-    public class Requisicao
+    public class Requisicao : IEquatable<Requisicao>
     {
         public string Nome { get; set; }
         public string Filial { get; set; }
@@ -23,6 +23,10 @@ namespace DAL.Model.Objetos
             Assunto = assunto;
             Solicitacao = solicitacao;
             Resposta = resposta;
+        }
+        public bool Equals(Requisicao r)
+        {
+            return this.Filial == r.Filial && this.Data == r.Data && this.Assunto == r.Assunto;
         }
     }
 }

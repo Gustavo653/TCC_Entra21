@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Objetos
 {
-    public class Convenio
+    public class Convenio : IEquatable<Convenio>
     {
         public string Nome { get; set; }
         public string Desconto { get; set; }
@@ -21,6 +21,10 @@ namespace DAL.Model.Objetos
         public Convenio(string nome, string desconto, string idFilial) : this(nome, desconto)
         {
             this.idFilial = idFilial;
+        }
+        public bool Equals(Convenio c)
+        {
+            return this.idFilial == c.idFilial && this.Nome == c.Nome;
         }
     }
 }

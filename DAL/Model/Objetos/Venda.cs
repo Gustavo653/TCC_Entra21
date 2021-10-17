@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Objetos
 {
-    public class Venda
+    public class Venda : IEquatable<Venda>
     {
         public string CodigoCupom { get; set; }
         public string CodigoProduto { get; set; }
@@ -19,6 +19,10 @@ namespace DAL.Model.Objetos
             CodigoProduto = codigoProduto;
             Quantidade = quantidade;
             ValorUnitario = valorUnitario;
+        }
+        public bool Equals(Venda v)
+        {
+            return this.CodigoCupom == v.CodigoCupom;
         }
     }
 }

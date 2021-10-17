@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Objetos
 {
-    public class Produto
+    public class Produto : IEquatable<Produto>
     {
         public string Nome { get; set; }
         public string Unidade { get; set; }
@@ -38,6 +38,10 @@ namespace DAL.Model.Objetos
         {
             Quantidade = quantidade;
             Codigo = codigo;
+        }
+        public bool Equals(Produto p)
+        {
+            return this.Codigo == p.Codigo && this.idFilial == p.idFilial;
         }
     }
 }

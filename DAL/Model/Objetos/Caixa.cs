@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Objetos
 {
-    public class Caixa
+    public class Caixa : IEquatable<Caixa>
     {
         public string Data { get; set; }
         public string NumCaixa { get; set; }
@@ -31,6 +31,10 @@ namespace DAL.Model.Objetos
             ValorDinheiro = valorDinheiro;
             ValorCredito = valorCredito;
             ValorDebito = valorDebito;
+        }
+        public bool Equals(Caixa c)
+        {
+            return this.Data == c.Data && this.ValorCredito == c.ValorCredito && this.idFilial == c.idFilial && this.Valor == c.Valor;
         }
     }
 }

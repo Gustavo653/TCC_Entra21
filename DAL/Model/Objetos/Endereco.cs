@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Objetos
 {
-    public class Endereco
+    public class Endereco : IEquatable<Endereco>
     {
         public int enumEndereco { get; set; }
         public string RazaoSocial { get; set; }
@@ -46,6 +46,10 @@ namespace DAL.Model.Objetos
             Cidade = cidade;
             Estado = estado;
             this.idFilial = idFilial;
+        }
+        public bool Equals(Endereco e)
+        {
+            return this.idFilial == e.idFilial && this.CNPJCPF == e.CNPJCPF && this.Contato == e.Contato;
         }
     }
 }
