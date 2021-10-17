@@ -14,29 +14,30 @@ namespace DAL.Model.Consultas
         public static int VerificaInternet { get; set; } = 2;//Inserir try catch para alterar seu valor
         public static void GerarDBTabelas() //Cria o database e as tabelas
         {
-            if (File.Exists(DbConnection.nomeArquivoBD))
-                File.Delete(DbConnection.nomeArquivoBD);
-
-            SqlCeEngine SqlEng = new SqlCeEngine(DbConnection.connLocalString);
-            SqlEng.CreateDatabase();
-
-            List<string> tabelas = new List<string>();
-            tabelas.Add("create table Enderecos(idEndereco int not null identity(1, 1),enumEndereco int not null,RazaoSocial nvarchar(50) not null,NomeFantasia nvarchar(50) not null,Cnpj nvarchar(15) not null, Contato nvarchar(14) not null, Rua nvarchar(50) not null,Numero nvarchar(6) not null,Complemento nvarchar(50) not null,Cidade nvarchar(25),Estado nvarchar(2), idFilial nvarchar(50) not null)");
-            tabelas.Add("create table Caixa(idCaixa int not null identity(1, 1),Data nvarchar(10) not null,Caixa nvarchar(3) not null,UsuarioAbertura nvarchar(50) not null,UsuarioFechamento nvarchar(50) not null,Valor nvarchar(8) not null,EstadoCaixa int not null,idFilial nvarchar(50) not null,ValorDinheiro nvarchar(8) not null,ValorCredito nvarchar(8) not null,ValorDebito nvarchar(8) not null)");
-            tabelas.Add("create table Vendas(idVendas int not null identity(1, 1),CodigoCupom nvarchar(50) not null,CodigoProduto nvarchar(50) not null,Quantidade int not null,ValorUnitario nvarchar(8) not null)");
-            tabelas.Add("create table Usuarios(idUsuario int not null identity(1, 1),Nome nvarchar(50) not null,Filial nvarchar(50) not null,Contato nvarchar(14) not null,NivelAcesso int not null,Login nvarchar(50) not null,Senha nvarchar(128) not null)");
-            tabelas.Add("create table Unidades(idUnidade int not null identity(1, 1),Nome nvarchar(30) not null,idFilial nvarchar(50))");
-            tabelas.Add("create table Requisicoes(idRequisicao int not null identity(1, 1),NomeUsuario nvarchar(50) not null,Filial nvarchar(50) not null,DataRequisicao nvarchar(11) not null,Assunto nvarchar(100) not null,Solicitacao nvarchar(100) not null,RespostaRequisicao nvarchar(100) not null)");
-            tabelas.Add("create table Produtos(idProduto int not null identity(1, 1),Nome nvarchar(50) not null,Unidade nvarchar(20) not null,Quantidade int not null,Codigo nvarchar(20) not null,Laboratorio nvarchar(50) not null,PrecoCusto nvarchar(8) not null,PrecoUnitario nvarchar(8) not null,Grupo int not null,idFilial nvarchar(50))");
-            tabelas.Add("create table Cupom(idCupom int not null identity(1, 1),Data nvarchar(10) not null,CodigoCupom nvarchar(50) not null,FormaPagamento int not null,Vendedor nvarchar(50) not null,Cliente nvarchar(50) not null,ValorTotal nvarchar(8) not null)");
-            tabelas.Add("create table Convenios(idConvenio int not null identity(1, 1),Nome nvarchar(30) not null,Desconto nvarchar(5) not null, idFilial nvarchar(50))");
-            tabelas.Add("create table ContasPagar(idContaPagar int not null identity(1, 1),NomeFornecedor nvarchar(50) not null,Valor nvarchar(12) not null,Vencimento nvarchar(11) not null,idFilial nvarchar(50) not null)");
-            tabelas.Add("create table ContasReceber(idContaReceber int not null identity(1, 1),NomeFornecedor nvarchar(50) not null,Valor nvarchar(12) not null,Vencimento nvarchar(11) not null,idFilial nvarchar(50) not null)");
-            foreach (var item in tabelas)
+            //if (File.Exists(DbConnection.nomeArquivoBD))
+            //    File.Delete(DbConnection.nomeArquivoBD);
+            if (!File.Exists(DbConnection.nomeArquivoBD))
             {
-                DbConnection.Execute(item);
-            }
+                SqlCeEngine SqlEng = new SqlCeEngine(DbConnection.connLocalString);
+                SqlEng.CreateDatabase();
 
+                List<string> tabelas = new List<string>();
+                tabelas.Add("create table Enderecos(idEndereco int not null identity(1, 1),enumEndereco int not null,RazaoSocial nvarchar(50) not null,NomeFantasia nvarchar(50) not null,Cnpj nvarchar(15) not null, Contato nvarchar(14) not null, Rua nvarchar(50) not null,Numero nvarchar(6) not null,Complemento nvarchar(50) not null,Cidade nvarchar(25),Estado nvarchar(2), idFilial nvarchar(50) not null)");
+                tabelas.Add("create table Caixa(idCaixa int not null identity(1, 1),Data nvarchar(10) not null,Caixa nvarchar(3) not null,UsuarioAbertura nvarchar(50) not null,UsuarioFechamento nvarchar(50) not null,Valor nvarchar(8) not null,EstadoCaixa int not null,idFilial nvarchar(50) not null,ValorDinheiro nvarchar(8) not null,ValorCredito nvarchar(8) not null,ValorDebito nvarchar(8) not null)");
+                tabelas.Add("create table Vendas(idVendas int not null identity(1, 1),CodigoCupom nvarchar(50) not null,CodigoProduto nvarchar(50) not null,Quantidade int not null,ValorUnitario nvarchar(8) not null)");
+                tabelas.Add("create table Usuarios(idUsuario int not null identity(1, 1),Nome nvarchar(50) not null,Filial nvarchar(50) not null,Contato nvarchar(14) not null,NivelAcesso int not null,Login nvarchar(50) not null,Senha nvarchar(128) not null)");
+                tabelas.Add("create table Unidades(idUnidade int not null identity(1, 1),Nome nvarchar(30) not null,idFilial nvarchar(50))");
+                tabelas.Add("create table Requisicoes(idRequisicao int not null identity(1, 1),NomeUsuario nvarchar(50) not null,Filial nvarchar(50) not null,DataRequisicao nvarchar(11) not null,Assunto nvarchar(100) not null,Solicitacao nvarchar(100) not null,RespostaRequisicao nvarchar(100) not null)");
+                tabelas.Add("create table Produtos(idProduto int not null identity(1, 1),Nome nvarchar(50) not null,Unidade nvarchar(20) not null,Quantidade int not null,Codigo nvarchar(20) not null,Laboratorio nvarchar(50) not null,PrecoCusto nvarchar(8) not null,PrecoUnitario nvarchar(8) not null,Grupo int not null,idFilial nvarchar(50))");
+                tabelas.Add("create table Cupom(idCupom int not null identity(1, 1),Data nvarchar(10) not null,CodigoCupom nvarchar(50) not null,FormaPagamento int not null,Vendedor nvarchar(50) not null,Cliente nvarchar(50) not null,ValorTotal nvarchar(8) not null)");
+                tabelas.Add("create table Convenios(idConvenio int not null identity(1, 1),Nome nvarchar(30) not null,Desconto nvarchar(5) not null, idFilial nvarchar(50))");
+                tabelas.Add("create table ContasPagar(idContaPagar int not null identity(1, 1),NomeFornecedor nvarchar(50) not null,Valor nvarchar(12) not null,Vencimento nvarchar(11) not null,idFilial nvarchar(50) not null)");
+                tabelas.Add("create table ContasReceber(idContaReceber int not null identity(1, 1),NomeFornecedor nvarchar(50) not null,Valor nvarchar(12) not null,Vencimento nvarchar(11) not null,idFilial nvarchar(50) not null)");
+                foreach (var item in tabelas)
+                {
+                    DbConnection.Execute(item);
+                }
+            }
         }
         public static void ReceberDados() //Clona do online para o local
         {
@@ -52,50 +53,96 @@ namespace DAL.Model.Consultas
             List<Objetos.Usuario> usuariosOnline = Usuarios_DAL.GetUsuarios();
             List<Objetos.Cupom> cupomOnline = Vendas_DAL.GetCupoms();
             List<Objetos.Venda> vendaOnline = Vendas_DAL.GetVendas();
+
             VerificaInternet = 1;
-            foreach (var item in caixasOnline)
+            List<Objetos.Caixa> caixasLocal = Caixa_DAL.GetTodosOsCaixas();
+            List<Objetos.ContasPagar> contasPagarLocal = ContasPagar_DAL.GetTodasContasPagar();
+            List<Objetos.ContasReceber> contasReceberLocal = ContasReceber_DAL.GetTodasContasReceber();
+            List<Objetos.Convenio> conveniosLocal = Convenios_DAL.GetTodosConvenios();
+            List<Objetos.Endereco> enderecosLocal = Enderecos_DAL.GetTodosEnderecos();
+            List<Objetos.Produto> produtosLocal = Produtos_DAL.GetProdutos();
+            List<Objetos.Requisicao> requisicoesLocal = Requisicoes_DAL.GetRequisicoes();
+            List<Objetos.Unidades> unidadesLocal = Unidades_DAL.GetTodasUnidades();
+            List<Objetos.Usuario> usuariosLocal = Usuarios_DAL.GetUsuarios();
+            List<Objetos.Cupom> cupomLocal = Vendas_DAL.GetCupoms();
+            List<Objetos.Venda> vendaLocal = Vendas_DAL.GetVendas();
+
+            for (int i = 0; i < caixasOnline.Count; i++)
             {
-                Caixa_DAL.InsertCaixa(item.Data, item.NumCaixa, item.UsuarioAbertura, item.UsuarioFechamento, item.Valor, item.EstadoCaixa, item.idFilial, item.ValorDinheiro, item.ValorCredito, item.ValorDebito);
+                if (!caixasLocal.Contains(caixasOnline[i]))
+                {                 
+                    Caixa_DAL.InsertCaixa(caixasOnline[i].Data, caixasOnline[i].NumCaixa, caixasOnline[i].UsuarioAbertura, caixasOnline[i].UsuarioFechamento, caixasOnline[i].Valor, caixasOnline[i].EstadoCaixa, caixasOnline[i].idFilial, caixasOnline[i].ValorDinheiro, caixasOnline[i].ValorCredito, caixasOnline[i].ValorDebito);
+                }
             }
-            foreach (var item in contasPagarOnline)
+            for (int i = 0; i < contasPagarOnline.Count; i++)
             {
-                ContasPagar_DAL.InsereContasPagar(item.NomeFornecedor, item.Valor, item.Vencimento, item.idFilial);
+                if (!contasPagarLocal.Contains(contasPagarOnline[i]))
+                {
+                    ContasPagar_DAL.InsereContasPagar(contasPagarOnline[i].NomeFornecedor, contasPagarOnline[i].Valor, contasPagarOnline[i].Vencimento, contasPagarOnline[i].idFilial);
+                }
             }
-            foreach (var item in contasReceberOnline)
+            for (int i = 0; i < contasReceberOnline.Count; i++)
             {
-                ContasPagar_DAL.InsereContasPagar(item.NomeFornecedor, item.Valor, item.Vencimento, item.idFilial);
+                if (!contasReceberLocal.Contains(contasReceberOnline[i]))
+                {
+                    ContasReceber_DAL.InsereContasReceber(contasReceberOnline[i].NomeFornecedor, contasReceberOnline[i].Valor, contasReceberOnline[i].Vencimento, contasReceberOnline[i].idFilial);
+                }
             }
-            foreach (var item in conveniosOnline)
+            for (int i = 0; i < conveniosOnline.Count; i++)
             {
-                Convenios_DAL.InsereConvenio(item.Nome, item.Desconto, item.idFilial);
+                if (!conveniosLocal.Contains(conveniosOnline[i]))
+                {
+                    Convenios_DAL.InsereConvenio(conveniosOnline[i].Nome, conveniosOnline[i].Desconto, conveniosOnline[i].idFilial);
+                }
             }
-            foreach (var item in enderecosOnline)
+            for (int i = 0; i < enderecosOnline.Count; i++)
             {
-                Enderecos_DAL.InsereEndereco(item.enumEndereco, item.RazaoSocial, item.NomeFantasia, item.CNPJCPF, item.Contato, item.Rua, item.Numero, item.Complemento, item.Cidade, item.Estado, item.idFilial);
+                if (!enderecosLocal.Contains(enderecosOnline[i]))
+                {
+                    Enderecos_DAL.InsereEndereco(enderecosOnline[i].enumEndereco, enderecosOnline[i].RazaoSocial, enderecosOnline[i].NomeFantasia, enderecosOnline[i].CNPJCPF, enderecosOnline[i].Contato, enderecosOnline[i].Rua, enderecosOnline[i].Numero, enderecosOnline[i].Complemento, enderecosOnline[i].Cidade, enderecosOnline[i].Estado, enderecosOnline[i].idFilial);
+                }
             }
-            foreach (var item in produtosOnline)
+            for (int i = 0; i < produtosOnline.Count; i++)
             {
-                Produtos_DAL.InsereProduto(item.Nome, item.Unidade, item.Quantidade, item.Codigo, item.Laboratorio, item.PrecoCusto, item.PrecoUnitario, item.Grupo, item.idFilial);
+                if (!produtosLocal.Contains(produtosOnline[i]))
+                {
+                    Produtos_DAL.InsereProduto(produtosOnline[i].Nome, produtosOnline[i].Unidade, produtosOnline[i].Quantidade, produtosOnline[i].Codigo, produtosOnline[i].Laboratorio, produtosOnline[i].PrecoCusto, produtosOnline[i].PrecoUnitario, produtosOnline[i].Grupo, produtosOnline[i].idFilial);
+                }
             }
-            foreach (var item in requisicoesOnline)
+            for (int i = 0; i < requisicoesOnline.Count; i++)
             {
-                Requisicoes_DAL.InsertRequisicao(item.Nome, item.Filial, item.Data, item.Assunto, item.Solicitacao, item.Resposta);
+                if (!requisicoesLocal.Contains(requisicoesOnline[i]))
+                {
+                    Requisicoes_DAL.InsertRequisicao(requisicoesOnline[i].Nome, requisicoesOnline[i].Filial, requisicoesOnline[i].Data, requisicoesOnline[i].Assunto, requisicoesOnline[i].Solicitacao, requisicoesOnline[i].Resposta);
+                }
             }
-            foreach (var item in unidadesOnline)
+            for (int i = 0; i < unidadesOnline.Count; i++)
             {
-                Unidades_DAL.InsereUnidade(item.Nome, item.idFilial);
+                if (!unidadesLocal.Contains(unidadesOnline[i]))
+                {
+                    Unidades_DAL.InsereUnidade(unidadesOnline[i].Nome, unidadesOnline[i].idFilial);
+                }
             }
-            foreach (var item in cupomOnline)
+            for (int i = 0; i < cupomOnline.Count; i++)
             {
-                Vendas_DAL.InsereCupom(item.Data, item.CodigoCupom, item.FormaPagamento, item.Vendedor, item.Cliente, item.ValorTotal);
+                if (!cupomLocal.Contains(cupomOnline[i]))
+                {
+                    Vendas_DAL.InsereCupom(cupomOnline[i].Data, cupomOnline[i].CodigoCupom, cupomOnline[i].FormaPagamento, cupomOnline[i].Vendedor, cupomOnline[i].Cliente, cupomOnline[i].ValorTotal);
+                }
             }
-            foreach (var item in vendaOnline)
+            for (int i = 0; i < vendaOnline.Count; i++)
             {
-                Vendas_DAL.InsertVenda(item.CodigoCupom, item.CodigoProduto, item.Quantidade, item.ValorUnitario);
+                if (!vendaLocal.Contains(vendaOnline[i]))
+                {
+                    Vendas_DAL.InsertVenda(vendaOnline[i].CodigoCupom, vendaOnline[i].CodigoProduto, vendaOnline[i].Quantidade, vendaOnline[i].ValorUnitario);
+                }
             }
-            foreach (var item in usuariosOnline)
+            for (int i = 0; i < usuariosOnline.Count; i++)
             {
-                Usuarios_DAL.InsereUsuario(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login, item.Senha);
+                if (!usuariosLocal.Contains(usuariosOnline[i]))
+                {
+                    Usuarios_DAL.InsereUsuario(usuariosOnline[i].Nome, usuariosOnline[i].Filial, usuariosOnline[i].Contato, usuariosOnline[i].NivelAcesso, usuariosOnline[i].Login, usuariosOnline[i].Senha);
+                }
             }
         }
         public static void EnviarDados() //Clona do local para o online
