@@ -212,6 +212,11 @@ namespace DAL.Model
             string update = $"UPDATE dbo.ContasPagar Set NomeFornecedor = '{nome}', Valor = '{valor}', Vencimento = '{vencimento}' WHERE NomeFornecedor = '{whereNome}' AND Valor = '{whereValor}'";
             DbConnection.Execute(update);
         }
+        public static void UpdateContasPagar(string nome, string valor, string vencimento, string idFilial, string whereNome, string whereValor, string whereidFilial)
+        {
+            string update = $"UPDATE dbo.ContasPagar Set NomeFornecedor = '{nome}', Valor = '{valor}', Vencimento = '{vencimento}', idFilial = '{idFilial}' WHERE NomeFornecedor = '{whereNome}' AND Valor = '{whereValor}'";
+            DbConnection.Execute(update);
+        }
         public static bool VerificaSeContasPagarRepete(string nome)
         {
             List<string> lista = DbConnection.GenericSelectUnit("NomeFornecedor", "ContasPagar");

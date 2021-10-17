@@ -2,5 +2,6 @@ create table dbo.Convenios
 (
 idConvenio int not null identity(1,1),
 Nome varchar(30) not null,
-Desconto varchar(5) not null //Guardar em formato: 12.34
+Desconto varchar(5) not null, //Guardar em formato: 12.34
+idFIlial varchar(50) not null
 )

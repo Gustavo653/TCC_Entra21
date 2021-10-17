@@ -258,5 +258,10 @@ namespace DAL.Model
             string update = $"UPDATE dbo.Produtos Set Nome = '{nome}', Unidade = '{unidade}', Quantidade = {quantidade}, Codigo = '{codigo}', Laboratorio = '{laboratorio}', PrecoCusto = '{precoCusto}', PrecoUnitario = '{precoUnitario}', Grupo = {grupo} WHERE Codigo = '{whereCodigo}' AND idFilial = '{whereFilial}'";
             DbConnection.Execute(update);
         }
+        public static void UpdateProduto(string nome, string unidade, int quantidade, string codigo, string laboratorio, string precoCusto, string precoUnitario, int grupo, string idFilial, string whereCodigo, string whereFilial)
+        {
+            string update = $"UPDATE dbo.Produtos Set Nome = '{nome}', Unidade = '{unidade}', Quantidade = {quantidade}, Codigo = '{codigo}', Laboratorio = '{laboratorio}', PrecoCusto = '{precoCusto}', PrecoUnitario = '{precoUnitario}', Grupo = {grupo}, idFilial = '{idFilial}' WHERE Codigo = '{whereCodigo}' AND idFilial = '{whereFilial}'";
+            DbConnection.Execute(update);
+        }
     }
 }

@@ -58,8 +58,8 @@ namespace FarmaTech
             string selecaoBD = Interaction.InputBox("Qual BD você deseja? \n1 - local, 2 - online", "Seleção de BD", "2", 400, 400);
             DAL.Model.Consultas.DBHibrido.VerificaInternet = Convert.ToInt32(selecaoBD);
             DAL.Model.Consultas.DbConnection.SetConnectionString();
-            DAL.Model.Consultas.DBHibrido.GerarDBTabelas();
-            DAL.Model.Consultas.DBHibrido.ReceberDados();
+            DAL.Model.Consultas.DBHibrido.GerarDBTabelas(selecaoBD);
+            DAL.Model.Consultas.DBHibrido.ReceberDados(selecaoBD);
             if (!string.IsNullOrEmpty(txtLogin.Text) && !string.IsNullOrEmpty(txtSenha.Text))
             {
                 if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))

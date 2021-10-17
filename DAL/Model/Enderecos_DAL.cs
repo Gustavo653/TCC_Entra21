@@ -396,6 +396,12 @@ namespace DAL.Model
             AtualizaTodasTabelas(nomeFantasia, where);
             DbConnection.Execute(update);
         }
+        public static void UpdateEndereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string idFilial, string whereContato, int whereenumEndereco)
+        {
+            string update = $"UPDATE dbo.Enderecos Set enumEndereco = '{enumEndereco}', RazaoSocial = '{razaoSocial}', NomeFantasia = '{nomeFantasia}', Cnpj = '{cNPJCPF}', Contato = '{contato}', Rua = '{rua}', Numero = '{numero}', Complemento = '{complemento}', Cidade = '{cidade}', Estado = '{estado}', idFilial = '{idFilial}' WHERE Contato = '{whereContato}' AND enumEndereco = {whereenumEndereco}";
+            AtualizaTodasTabelas(nomeFantasia, whereContato);
+            DbConnection.Execute(update);
+        }
         public static bool VerificaSeEnderecoRepete(string contato)
         {
             List<string> lista = DbConnection.GenericSelectUnit("Contato", "Enderecos");

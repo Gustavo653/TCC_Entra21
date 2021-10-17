@@ -208,6 +208,11 @@ namespace DAL.Model
             string update = $"UPDATE dbo.Unidades Set Nome = '{nome}' WHERE Nome = '{whereNome}'";
             DbConnection.Execute(update);
         }
+        public static void AtualizaTodasUnidades(string nome, string idFilial, string whereNome, string whereFilial)
+        {
+            string update = $"UPDATE dbo.Unidades Set Nome = '{nome}', idFilial = '{idFilial}' WHERE Nome = '{whereNome}' AND idFilial = '{idFilial}'";
+            DbConnection.Execute(update);
+        }
         public static void AtualizaUnidade(string nome, string whereNome, string whereFilial)
         {
             string update = $"UPDATE dbo.Unidades Set Nome = '{nome}' WHERE Nome = '{whereNome}' AND idFilial = '{whereFilial}'";

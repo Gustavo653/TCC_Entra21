@@ -143,5 +143,10 @@ namespace DAL.Model
             string update = $"UPDATE dbo.Requisicoes Set RespostaRequisicao = '{resposta}' WHERE NomeUsuario = '{usuario}' AND Assunto = '{assunto}'";
             Consultas.DbConnection.Execute(update);
         }
+        public static void UpdateRequisicao(string nomeUsuario, string filial, string dataRequisicao, string assunto, string solicitacao, string respostaRequisicao, string whereNome, string whereFilial, string whereData, string whereAssunto)
+        {
+            string update = $"UPDATE dbo.Requisicoes Set NomeUsuario = '{nomeUsuario}', Filial = '{filial}', DataRequisicao = '{dataRequisicao}', Assunto = '{assunto}', Solicitacao = '{solicitacao}', RespostaRequisicao = '{respostaRequisicao}' WHERE NomeUsuario = '{whereNome}' AND Filial = '{whereFilial}' AND DataRequisicao = '{whereData}' AND Assunto = '{whereAssunto}'";
+            Consultas.DbConnection.Execute(update);
+        }
     }
 }

@@ -212,6 +212,11 @@ namespace DAL.Model
             string update = $"UPDATE dbo.Convenios Set Nome = '{nome}', Desconto = '{desconto}' WHERE Nome = '{where}' AND idFilial = '{idFilial}'";
             DbConnection.Execute(update);
         }
+        public static void UpdateConvenio(string nome, string desconto, string idFilial, string whereNome, string whereidFilial)
+        {
+            string update = $"UPDATE dbo.Convenios Set Nome = '{nome}', Desconto = '{desconto}', idFilial = '{idFilial}' WHERE Nome = '{whereNome}' AND idFilial = '{whereidFilial}'";
+            DbConnection.Execute(update);
+        }
         public static bool VerificaSeConvenioRepete(string nome)
         {
             List<string> lista = DbConnection.GenericSelectUnit("Nome", "Convenios");

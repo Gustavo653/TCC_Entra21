@@ -240,5 +240,11 @@ namespace FarmaTech
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(113, 190, 239), Color.FromArgb(137, 152, 249), 45f);
             graphics.FillRectangle(br, gradient_rect);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DAL.Model.Consultas.DBHibrido.EnviarDados();
+            MessageBox.Show("OK");
+        }
     }
 }

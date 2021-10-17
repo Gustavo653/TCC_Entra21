@@ -74,11 +74,12 @@ namespace FarmaTech
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblDataCaixa = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.MenuPrincipal.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,6 +95,7 @@ namespace FarmaTech
             this.MenuPrincipal.Dock = System.Windows.Forms.DockStyle.None;
             this.MenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.MenuPrincipal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.MenuPrincipal.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.MenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuCadastros,
             this.requisiçõesToolStripMenuItem,
@@ -278,7 +280,7 @@ namespace FarmaTech
             this.MenuGraficos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.MenuGraficos.ForeColor = System.Drawing.SystemColors.Highlight;
             this.MenuGraficos.Name = "MenuGraficos";
-            this.MenuGraficos.Size = new System.Drawing.Size(180, 26);
+            this.MenuGraficos.Size = new System.Drawing.Size(144, 26);
             this.MenuGraficos.Text = "Gráficos";
             this.MenuGraficos.Click += new System.EventHandler(this.MenuGraficos_Click);
             // 
@@ -547,29 +549,17 @@ namespace FarmaTech
             this.panel3.Size = new System.Drawing.Size(725, 29);
             this.panel3.TabIndex = 10;
             // 
-            // label1
+            // lblDataCaixa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(3, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 25);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "PDV: 001";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(103, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 25);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "ABERTURA: 01";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDataCaixa.AutoSize = true;
+            this.lblDataCaixa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblDataCaixa.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblDataCaixa.Location = new System.Drawing.Point(383, 4);
+            this.lblDataCaixa.Name = "lblDataCaixa";
+            this.lblDataCaixa.Size = new System.Drawing.Size(61, 25);
+            this.lblDataCaixa.TabIndex = 14;
+            this.lblDataCaixa.Text = "DATA";
+            this.lblDataCaixa.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label3
             // 
@@ -583,17 +573,29 @@ namespace FarmaTech
             this.label3.Text = "DATA CAIXA:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblDataCaixa
+            // label2
             // 
-            this.lblDataCaixa.AutoSize = true;
-            this.lblDataCaixa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblDataCaixa.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblDataCaixa.Location = new System.Drawing.Point(383, 4);
-            this.lblDataCaixa.Name = "lblDataCaixa";
-            this.lblDataCaixa.Size = new System.Drawing.Size(61, 25);
-            this.lblDataCaixa.TabIndex = 14;
-            this.lblDataCaixa.Text = "DATA";
-            this.lblDataCaixa.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(103, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 25);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "ABERTURA: 01";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "PDV: 001";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel7
             // 
@@ -604,6 +606,16 @@ namespace FarmaTech
             this.panel7.Size = new System.Drawing.Size(742, 459);
             this.panel7.TabIndex = 11;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(580, 623);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "SIncronizar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,6 +624,7 @@ namespace FarmaTech
             this.BackgroundImage = global::FarmaTech.Properties.Resources.lab__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1238, 749);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -693,5 +706,6 @@ namespace FarmaTech
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button button6;
     }
 }

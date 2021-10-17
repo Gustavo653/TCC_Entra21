@@ -287,5 +287,10 @@ namespace DAL.Model
                 return true;
             return false;
         }
+        public static void UpdateUsuario(string nome, string filial, string contato, int nivelAcesso, string login, string senha, string whereContato, string whereLogin)
+        {
+            string update = $"UPDATE dbo.Usuarios Set Nome = '{nome}', Filial = '{filial}', Contato = '{contato}', NivelAcesso = {nivelAcesso}, Login = '{login}', Senha = '{senha}' WHERE Contato = '{whereContato}' AND Login = '{whereLogin}'";
+            DbConnection.Execute(update);
+        }
     }
 }

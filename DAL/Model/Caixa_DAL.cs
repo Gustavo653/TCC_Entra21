@@ -202,6 +202,10 @@ namespace DAL.Model
             string operacao = $"INSERT into dbo.Caixa (Data, Caixa, UsuarioAbertura, UsuarioFechamento, Valor, EstadoCaixa, idFilial, ValorDinheiro, ValorCredito, ValorDebito) values ('{data}', '{caixa}', '{usuarioAbertura}', '{usuarioFechamento}', '{valor}', {estadoCaixa}, '{idFilial}', '{valorDinheiro}', '{valorCredito}', '{valorDebito}')";
             DbConnection.Execute(operacao);
         }
+        public static void UpdateCaixa(string data, string caixa, string usuarioAbertura, string usuarioFechamento, string valor, int estadoCaixa, string idFilial, string valorDinheiro, string valorCredito, string valorDebito, string whereData, string whereidFilial, string whereValor)
+        {
+            string update = $"UPDATE dbo.Caixa Set Data = '{data}', Caixa = '{caixa}', UsuarioAbertura = '{usuarioAbertura}', UsuarioFechamento = '{usuarioFechamento}', Valor = '{valor}', EstadoCaixa = {estadoCaixa}, idFilial = '{idFilial}', ValorDinheiro = '{valorDinheiro}', ValorCredito = '{valorCredito}', ValorDebito = '{valorDebito}' WHERE Data = '{whereData}' AND idFilial = '{whereidFilial}' AND Valor = '{whereValor}'";
+        }
         public static void AtualizaCaixa(string data, string valor, string idFilial)
         {
             string valorCaixa = GetValorCaixa(data, idFilial);
