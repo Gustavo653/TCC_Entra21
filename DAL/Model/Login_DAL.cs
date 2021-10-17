@@ -34,12 +34,9 @@ namespace DAL.Model
 
 
 
-            foreach (var item in senhas)
+            if (senhas.Contains(senha))
             {
-                if (hash.VerificarSenha(senha, item))
-                {
-                    return true;
-                }
+                return true;
             }
 
             return false;
