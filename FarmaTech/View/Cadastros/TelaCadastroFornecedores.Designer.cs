@@ -45,6 +45,7 @@ namespace FarmaTech.View
             this.NumeroCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoFornecedor = new System.Windows.Forms.TabPage();
@@ -71,7 +72,6 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.lblFornecedores = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabFornecedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).BeginInit();
@@ -231,6 +231,12 @@ namespace FarmaTech.View
             this.EstadoCol.HeaderText = "Estado";
             this.EstadoCol.Name = "EstadoCol";
             this.EstadoCol.ReadOnly = true;
+            // 
+            // ContatoCol
+            // 
+            this.ContatoCol.HeaderText = "Contato";
+            this.ContatoCol.Name = "ContatoCol";
+            this.ContatoCol.ReadOnly = true;
             // 
             // txtPesquisaUsuario
             // 
@@ -460,7 +466,7 @@ namespace FarmaTech.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 569);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1113, 30);
+            this.panel1.Size = new System.Drawing.Size(1028, 30);
             this.panel1.TabIndex = 89;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -504,18 +510,12 @@ namespace FarmaTech.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // ContatoCol
-            // 
-            this.ContatoCol.HeaderText = "Contato";
-            this.ContatoCol.Name = "ContatoCol";
-            this.ContatoCol.ReadOnly = true;
-            // 
             // TelaCadastroFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1113, 599);
+            this.ClientSize = new System.Drawing.Size(1028, 599);
             this.Controls.Add(this.lblFornecedores);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);

@@ -94,8 +94,8 @@ namespace FarmaTech.View
             }
             else
             {
-                int indiceSelecionado = dgContas.CurrentRow.Index;
-                int resultado = BAL.Control.ContasPagar_BAL.AtualizaContasPagar(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0, 10), dgContas.Rows[indiceSelecionado].Cells[0].Value.ToString(), dgContas.Rows[indiceSelecionado].Cells[1].Value.ToString());
+                int indiceSelecionado = dgContasPagar.CurrentRow.Index;
+                int resultado = BAL.Control.ContasPagar_BAL.AtualizaContasPagar(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0, 10), dgContasPagar.Rows[indiceSelecionado].Cells[0].Value.ToString(), dgContasPagar.Rows[indiceSelecionado].Cells[1].Value.ToString());
 
                 if (resultado == 0)
                 {
@@ -119,6 +119,12 @@ namespace FarmaTech.View
                 }
                 AtualizaDG();
             }
+            tabControl1.TabPages.Remove(tabNovoContaPagar);
+            tabControl1.TabPages.Add(tabContasPagar);
+            btnNovo.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -132,8 +138,8 @@ namespace FarmaTech.View
 
             ValorSalvar = 0;
 
-            int indiceSelecionado = dgContas.CurrentRow.Index;
-            List<DAL.Model.Objetos.ContasPagar> contas = BAL.Control.ContasPagar_BAL.GetContasPagarPorNome(dgContas.Rows[indiceSelecionado].Cells[0].Value.ToString());
+            int indiceSelecionado = dgContasPagar.CurrentRow.Index;
+            List<DAL.Model.Objetos.ContasPagar> contas = BAL.Control.ContasPagar_BAL.GetContasPagarPorNome(dgContasPagar.Rows[indiceSelecionado].Cells[0].Value.ToString());
             if (contas.Count > 0)
             {
                 txtNomeFornecedor.Text = contas[0].NomeFornecedor;
@@ -144,9 +150,12 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int indiceSelecionado = dgContas.CurrentRow.Index;
-            BAL.Control.ContasPagar_BAL.RemoveContasPagar(dgContas.Rows[indiceSelecionado].Cells[0].Value.ToString(), dgContas.Rows[indiceSelecionado].Cells[1].Value.ToString(), dgContas.Rows[indiceSelecionado].Cells[2].Value.ToString());
-            AtualizaDG();
+            if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int indiceSelecionado = dgContasPagar.CurrentRow.Index;
+                BAL.Control.ContasPagar_BAL.RemoveContasPagar(dgContasPagar.Rows[indiceSelecionado].Cells[0].Value.ToString(), dgContasPagar.Rows[indiceSelecionado].Cells[1].Value.ToString(), dgContasPagar.Rows[indiceSelecionado].Cells[2].Value.ToString());
+                AtualizaDG();
+            }
         }
 
         private void TelaCadastroContasPagar_Paint(object sender, PaintEventArgs e)
@@ -167,15 +176,30 @@ namespace FarmaTech.View
         }
         public void AtualizaDG()
         {
+            // ao pesquisar está trazendo contas de outra filial *************
+
+            while (dgContasPagar.Rows.Count > 0)
+            {
+                dgContasPagar.Rows.RemoveAt(0);
+            }
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
                 List<DAL.Model.Objetos.ContasPagar> lista = BAL.Control.ContasPagar_BAL.GetContasPagarPorNome(txtPesquisaUsuario.Text);
-                dgContas.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgContasPagar.Rows.Add(item.NomeFornecedor, item.Valor, item.Vencimento);
+                }
+                
             }
             else
             {
                 List<DAL.Model.Objetos.ContasPagar> lista = BAL.Control.ContasPagar_BAL.GetContasPagar();
-                dgContas.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgContasPagar.Rows.Add(item.NomeFornecedor, item.Valor, item.Vencimento);
+                }
             }
         }
 
@@ -193,17 +217,6 @@ namespace FarmaTech.View
             lblHora.Text = DateTime.Now.ToLongTimeString();
             lblData.Text = DateTime.Now.ToLongDateString();
         }
-
-        private void lblCadastroClientes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabContasPagar_Paint(object sender, PaintEventArgs e)
         {
             SetBackColorDegrade(sender, e);

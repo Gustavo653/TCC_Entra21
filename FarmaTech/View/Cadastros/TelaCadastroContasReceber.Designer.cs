@@ -265,7 +265,7 @@ namespace FarmaTech.View.Principal
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 567);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1105, 30);
+            this.panel1.Size = new System.Drawing.Size(1028, 30);
             this.panel1.TabIndex = 96;
             // 
             // lblHora
@@ -311,7 +311,7 @@ namespace FarmaTech.View.Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 597);
+            this.ClientSize = new System.Drawing.Size(1028, 597);
             this.Controls.Add(this.lblContas);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);
@@ -320,6 +320,9 @@ namespace FarmaTech.View.Principal
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnAlterar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TelaCadastroContasReceber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:Contas a Receber";

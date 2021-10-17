@@ -39,6 +39,13 @@ namespace FarmaTech.View
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabFiliais = new System.Windows.Forms.TabPage();
             this.dgFiliais = new System.Windows.Forms.DataGridView();
+            this.NomeFantasiaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CnpjCpfCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RuaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoFilial = new System.Windows.Forms.TabPage();
@@ -65,13 +72,6 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.lblFiliais = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.NomeFantasiaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CnpjCpfCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RuaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabFiliais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFiliais)).BeginInit();
@@ -192,6 +192,54 @@ namespace FarmaTech.View
             this.dgFiliais.ReadOnly = true;
             this.dgFiliais.Size = new System.Drawing.Size(940, 368);
             this.dgFiliais.TabIndex = 16;
+            // 
+            // NomeFantasiaCol
+            // 
+            this.NomeFantasiaCol.HeaderText = "Nome Fantasia";
+            this.NomeFantasiaCol.Name = "NomeFantasiaCol";
+            this.NomeFantasiaCol.ReadOnly = true;
+            this.NomeFantasiaCol.Width = 200;
+            // 
+            // CnpjCpfCol
+            // 
+            this.CnpjCpfCol.HeaderText = "Cnpj / Cpf";
+            this.CnpjCpfCol.Name = "CnpjCpfCol";
+            this.CnpjCpfCol.ReadOnly = true;
+            this.CnpjCpfCol.Width = 150;
+            // 
+            // ContatoCol
+            // 
+            this.ContatoCol.HeaderText = "Contato";
+            this.ContatoCol.Name = "ContatoCol";
+            this.ContatoCol.ReadOnly = true;
+            this.ContatoCol.Width = 150;
+            // 
+            // RuaCol
+            // 
+            this.RuaCol.HeaderText = "Endereço";
+            this.RuaCol.Name = "RuaCol";
+            this.RuaCol.ReadOnly = true;
+            this.RuaCol.Width = 200;
+            // 
+            // NumeroCol
+            // 
+            this.NumeroCol.HeaderText = "Nº";
+            this.NumeroCol.Name = "NumeroCol";
+            this.NumeroCol.ReadOnly = true;
+            this.NumeroCol.Width = 50;
+            // 
+            // CidadeCol
+            // 
+            this.CidadeCol.HeaderText = "Cidade";
+            this.CidadeCol.Name = "CidadeCol";
+            this.CidadeCol.ReadOnly = true;
+            // 
+            // EstadoCol
+            // 
+            this.EstadoCol.HeaderText = "Estado";
+            this.EstadoCol.Name = "EstadoCol";
+            this.EstadoCol.ReadOnly = true;
+            this.EstadoCol.Width = 50;
             // 
             // txtPesquisaUsuario
             // 
@@ -420,7 +468,7 @@ namespace FarmaTech.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 649);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1252, 30);
+            this.panel1.Size = new System.Drawing.Size(1028, 30);
             this.panel1.TabIndex = 88;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -464,60 +512,12 @@ namespace FarmaTech.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // NomeFantasiaCol
-            // 
-            this.NomeFantasiaCol.HeaderText = "Nome Fantasia";
-            this.NomeFantasiaCol.Name = "NomeFantasiaCol";
-            this.NomeFantasiaCol.ReadOnly = true;
-            this.NomeFantasiaCol.Width = 200;
-            // 
-            // CnpjCpfCol
-            // 
-            this.CnpjCpfCol.HeaderText = "Cnpj / Cpf";
-            this.CnpjCpfCol.Name = "CnpjCpfCol";
-            this.CnpjCpfCol.ReadOnly = true;
-            this.CnpjCpfCol.Width = 150;
-            // 
-            // ContatoCol
-            // 
-            this.ContatoCol.HeaderText = "Contato";
-            this.ContatoCol.Name = "ContatoCol";
-            this.ContatoCol.ReadOnly = true;
-            this.ContatoCol.Width = 150;
-            // 
-            // RuaCol
-            // 
-            this.RuaCol.HeaderText = "Endereço";
-            this.RuaCol.Name = "RuaCol";
-            this.RuaCol.ReadOnly = true;
-            this.RuaCol.Width = 200;
-            // 
-            // NumeroCol
-            // 
-            this.NumeroCol.HeaderText = "Nº";
-            this.NumeroCol.Name = "NumeroCol";
-            this.NumeroCol.ReadOnly = true;
-            this.NumeroCol.Width = 50;
-            // 
-            // CidadeCol
-            // 
-            this.CidadeCol.HeaderText = "Cidade";
-            this.CidadeCol.Name = "CidadeCol";
-            this.CidadeCol.ReadOnly = true;
-            // 
-            // EstadoCol
-            // 
-            this.EstadoCol.HeaderText = "Estado";
-            this.EstadoCol.Name = "EstadoCol";
-            this.EstadoCol.ReadOnly = true;
-            this.EstadoCol.Width = 50;
-            // 
             // TelaCadastroFiliais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1252, 679);
+            this.ClientSize = new System.Drawing.Size(1028, 679);
             this.Controls.Add(this.lblFiliais);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);

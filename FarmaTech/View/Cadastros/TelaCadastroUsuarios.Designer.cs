@@ -35,6 +35,11 @@ namespace FarmaTech.View
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NivelAcessoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoginCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoUsuario = new System.Windows.Forms.TabPage();
             this.lblFilial = new System.Windows.Forms.Label();
@@ -60,11 +65,6 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.lblUsuarios = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NivelAcessoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoginCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -122,6 +122,40 @@ namespace FarmaTech.View
             this.dgUsuarios.ReadOnly = true;
             this.dgUsuarios.Size = new System.Drawing.Size(950, 388);
             this.dgUsuarios.TabIndex = 14;
+            // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 250;
+            // 
+            // FilialCol
+            // 
+            this.FilialCol.HeaderText = "Filial";
+            this.FilialCol.Name = "FilialCol";
+            this.FilialCol.ReadOnly = true;
+            this.FilialCol.Width = 200;
+            // 
+            // ContatoCol
+            // 
+            this.ContatoCol.HeaderText = "Contato";
+            this.ContatoCol.Name = "ContatoCol";
+            this.ContatoCol.ReadOnly = true;
+            this.ContatoCol.Width = 150;
+            // 
+            // NivelAcessoCol
+            // 
+            this.NivelAcessoCol.HeaderText = "Nível Acesso";
+            this.NivelAcessoCol.Name = "NivelAcessoCol";
+            this.NivelAcessoCol.ReadOnly = true;
+            // 
+            // LoginCol
+            // 
+            this.LoginCol.HeaderText = "Login";
+            this.LoginCol.Name = "LoginCol";
+            this.LoginCol.ReadOnly = true;
+            this.LoginCol.Width = 150;
             // 
             // lblPesquisar
             // 
@@ -357,7 +391,7 @@ namespace FarmaTech.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 647);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1233, 30);
+            this.panel1.Size = new System.Drawing.Size(1028, 30);
             this.panel1.TabIndex = 91;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -401,45 +435,11 @@ namespace FarmaTech.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            this.NomeCol.Width = 250;
-            // 
-            // FilialCol
-            // 
-            this.FilialCol.HeaderText = "Filial";
-            this.FilialCol.Name = "FilialCol";
-            this.FilialCol.ReadOnly = true;
-            this.FilialCol.Width = 200;
-            // 
-            // ContatoCol
-            // 
-            this.ContatoCol.HeaderText = "Contato";
-            this.ContatoCol.Name = "ContatoCol";
-            this.ContatoCol.ReadOnly = true;
-            this.ContatoCol.Width = 150;
-            // 
-            // NivelAcessoCol
-            // 
-            this.NivelAcessoCol.HeaderText = "Nível Acesso";
-            this.NivelAcessoCol.Name = "NivelAcessoCol";
-            this.NivelAcessoCol.ReadOnly = true;
-            // 
-            // LoginCol
-            // 
-            this.LoginCol.HeaderText = "Login";
-            this.LoginCol.Name = "LoginCol";
-            this.LoginCol.ReadOnly = true;
-            this.LoginCol.Width = 150;
-            // 
             // TelaCadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 677);
+            this.ClientSize = new System.Drawing.Size(1028, 677);
             this.Controls.Add(this.lblUsuarios);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);

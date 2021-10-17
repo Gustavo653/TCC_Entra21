@@ -134,6 +134,8 @@ namespace FarmaTech.View
 
             tabControl1.TabPages.Remove(tabNovoUsuario);
             tabControl1.TabPages.Add(tabUsuarios);
+            btnNovo.Enabled = true;
+            btnSalvar.Enabled = false;
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
         }
@@ -173,6 +175,7 @@ namespace FarmaTech.View
                     MessageBox.Show("Você não pode remover o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 AtualizaDG();
             }
+           
         }
 
         private void TelaCadastroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
