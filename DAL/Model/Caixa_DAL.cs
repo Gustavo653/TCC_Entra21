@@ -11,6 +11,42 @@ namespace DAL.Model
 {
     public class Caixa_DAL
     {
+        public static List<Objetos.Caixa> GetTodosOsCaixas()
+        {
+            List<Objetos.Caixa> caixas = new List<Objetos.Caixa>();
+            if (DBHibrido.VerificaInternet == 1)
+            {
+                string select = $"SELECT * from Caixa";
+                SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
+                if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Objetos.Caixa caixa = new Objetos.Caixa(dr["Data"].ToString(), dr["Caixa"].ToString(), dr["UsuarioAbertura"].ToString(), dr["UsuarioFechamento"].ToString(), dr["Valor"].ToString(), Convert.ToInt32(dr["EstadoCaixa"]), dr["idFilial"].ToString(), dr["ValorDinheiro"].ToString(), dr["ValorCredito"].ToString(), dr["ValorDebito"].ToString());
+                    caixas.Add(caixa);
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connLocal.Close();
+                return caixas;
+            }
+            else
+            {
+                string select = $"SELECT * from dbo.Caixa";
+                SqlCommand cmd = new SqlCommand(select, Objetos.ConnectionStatic.connRemoto);
+                if (Objetos.ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Objetos.Caixa caixa = new Objetos.Caixa(dr["Data"].ToString(), dr["Caixa"].ToString(), dr["UsuarioAbertura"].ToString(), dr["UsuarioFechamento"].ToString(), dr["Valor"].ToString(), Convert.ToInt32(dr["EstadoCaixa"]), dr["idFilial"].ToString(), dr["ValorDinheiro"].ToString(), dr["ValorCredito"].ToString(), dr["ValorDebito"].ToString());
+                    caixas.Add(caixa);
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connRemoto.Close();
+                return caixas;
+            }
+        }
         public static string GetValorCaixa(string data, string filial)
         {
             if (DBHibrido.VerificaInternet == 1)
@@ -159,6 +195,11 @@ namespace DAL.Model
         public static void AbreCaixa(string data, string usuario, string valor, string idFilial)
         {
             string operacao = $"INSERT into dbo.Caixa (Data, Caixa, UsuarioAbertura, UsuarioFechamento, Valor, EstadoCaixa, idFilial, ValorDinheiro, ValorCredito, ValorDebito) values ('{data}', '{GetCaixa(data, idFilial, 1)}', '{usuario}', 'Vazio', '{valor}', '1', '{idFilial}', '0', '0', '0')";
+            DbConnection.Execute(operacao);
+        }
+        public static void InsertCaixa(string data, string caixa, string usuarioAbertura, string usuarioFechamento, string valor, int estadoCaixa, string idFilial, string valorDinheiro, string valorCredito, string valorDebito)
+        {
+            string operacao = $"INSERT into dbo.Caixa (Data, Caixa, UsuarioAbertura, UsuarioFechamento, Valor, EstadoCaixa, idFilial, ValorDinheiro, ValorCredito, ValorDebito) values ('{data}', '{caixa}', '{usuarioAbertura}', '{usuarioFechamento}', '{valor}', {estadoCaixa}, '{idFilial}', '{valorDinheiro}', '{valorCredito}', '{valorDebito}')";
             DbConnection.Execute(operacao);
         }
         public static void AtualizaCaixa(string data, string valor, string idFilial)

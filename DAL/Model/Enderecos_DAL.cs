@@ -12,6 +12,65 @@ namespace DAL.Model
 {
     public class Enderecos_DAL
     {
+        public static List<Endereco> GetTodosEnderecos()
+        {
+            if (DBHibrido.VerificaInternet == 1)
+            {
+                string select = $"SELECT * from Enderecos";
+                List<Endereco> lista = new List<Endereco>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        Convert.ToInt32(dr["enumEndereco"]),
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString(),
+                        dr["idFilial"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
+            }
+            else
+            {
+                string select = $"SELECT * from dbo.Enderecos";
+                List<Endereco> lista = new List<Endereco>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Endereco endereco = new Endereco(
+                        Convert.ToInt32(dr["enumEndereco"]),
+                        dr["RazaoSocial"].ToString(),
+                        dr["NomeFantasia"].ToString(),
+                        dr["Cnpj"].ToString(),
+                        dr["Contato"].ToString(),
+                        dr["Rua"].ToString(),
+                        dr["Numero"].ToString(),
+                        dr["Complemento"].ToString(),
+                        dr["Cidade"].ToString(),
+                        dr["Estado"].ToString(),
+                        dr["idFilial"].ToString());
+                    lista.Add(endereco);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
+        }
         public static List<Endereco> GetEnderecos(int enumEndereco)
         {
             if (DBHibrido.VerificaInternet == 1)

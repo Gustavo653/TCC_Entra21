@@ -12,6 +12,43 @@ namespace DAL.Model
 {
     public class Convenios_DAL
     {
+        public static List<Convenio> GetTodosConvenios()
+        {
+            if (DBHibrido.VerificaInternet == 1)
+            {
+                string select = $"SELECT * from Convenios";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString(), dr["idFilial"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
+            }
+            else
+            {
+                string select = $"SELECT * from dbo.Convenios";
+                List<Convenio> lista = new List<Convenio>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Convenio convenio = new Convenio(dr["Nome"].ToString(), dr["Desconto"].ToString(), dr["idFilial"].ToString());
+                    lista.Add(convenio);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
+        }
         public static List<Convenio> GetConvenios()
         {
             if (DBHibrido.VerificaInternet == 1)

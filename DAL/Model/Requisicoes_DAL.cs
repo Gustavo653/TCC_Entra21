@@ -133,6 +133,11 @@ namespace DAL.Model
             string insert = $"INSERT into dbo.Requisicoes(NomeUsuario, Filial, DataRequisicao, Assunto, Solicitacao, RespostaRequisicao) values ('{usuario}', '{filial}', '{data}', '{assunto}', '{solicitacao}', 'SemResposta')";
             Consultas.DbConnection.Execute(insert);
         }
+        public static void InsertRequisicao(string usuario, string filial, string data, string assunto, string solicitacao, string resposta)
+        {
+            string insert = $"INSERT into dbo.Requisicoes(NomeUsuario, Filial, DataRequisicao, Assunto, Solicitacao, RespostaRequisicao) values ('{usuario}', '{filial}', '{data}', '{assunto}', '{solicitacao}', '{resposta}')";
+            Consultas.DbConnection.Execute(insert);
+        }
         public static void ResponderRequisicao(string resposta, string usuario, string assunto)
         {
             string update = $"UPDATE dbo.Requisicoes Set RespostaRequisicao = '{resposta}' WHERE NomeUsuario = '{usuario}' AND Assunto = '{assunto}'";

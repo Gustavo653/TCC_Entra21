@@ -78,7 +78,8 @@ namespace DAL.Model
                         dr["Filial"].ToString(),
                         dr["Contato"].ToString(),
                         Convert.ToInt32(dr["NivelAcesso"]),
-                        dr["Login"].ToString());
+                        dr["Login"].ToString(), 
+                        dr["Senha"].ToString());
                     lista.Add(usuario);
                 }
                 dr.Close();
@@ -96,11 +97,12 @@ namespace DAL.Model
                 while (dr.Read())
                 {
                     Usuario usuario = new Usuario(
-                        dr["Nome"].ToString(),
-                        dr["Filial"].ToString(),
-                        dr["Contato"].ToString(),
-                        Convert.ToInt32(dr["NivelAcesso"]),
-                        dr["Login"].ToString());
+                       dr["Nome"].ToString(),
+                       dr["Filial"].ToString(),
+                       dr["Contato"].ToString(),
+                       Convert.ToInt32(dr["NivelAcesso"]),
+                       dr["Login"].ToString(),
+                       dr["Senha"].ToString());
                     lista.Add(usuario);
                 }
                 dr.Close();
@@ -121,11 +123,12 @@ namespace DAL.Model
                 while (dr.Read())
                 {
                     Usuario usuario = new Usuario(
-                        dr["Nome"].ToString(),
-                        dr["Filial"].ToString(),
-                        dr["Contato"].ToString(),
-                        Convert.ToInt32(dr["NivelAcesso"]),
-                        dr["Login"].ToString());
+                                dr["Nome"].ToString(),
+                                dr["Filial"].ToString(),
+                                dr["Contato"].ToString(),
+                                Convert.ToInt32(dr["NivelAcesso"]),
+                                dr["Login"].ToString(),
+                                dr["Senha"].ToString());
                     lista.Add(usuario);
                 }
                 dr.Close();
@@ -143,11 +146,12 @@ namespace DAL.Model
                 while (dr.Read())
                 {
                     Usuario usuario = new Usuario(
-                        dr["Nome"].ToString(),
-                        dr["Filial"].ToString(),
-                        dr["Contato"].ToString(),
-                        Convert.ToInt32(dr["NivelAcesso"]),
-                        dr["Login"].ToString());
+                         dr["Nome"].ToString(),
+                         dr["Filial"].ToString(),
+                         dr["Contato"].ToString(),
+                         Convert.ToInt32(dr["NivelAcesso"]),
+                         dr["Login"].ToString(),
+                         dr["Senha"].ToString());
                     lista.Add(usuario);
                 }
                 dr.Close();
@@ -168,11 +172,12 @@ namespace DAL.Model
                 while (dr.Read())
                 {
                     Usuario usuario = new Usuario(
-                       dr["Nome"].ToString(),
-                       dr["Filial"].ToString(),
-                       dr["Contato"].ToString(),
-                       Convert.ToInt32(dr["NivelAcesso"]),
-                       dr["Login"].ToString());
+                          dr["Nome"].ToString(),
+                          dr["Filial"].ToString(),
+                          dr["Contato"].ToString(),
+                          Convert.ToInt32(dr["NivelAcesso"]),
+                          dr["Login"].ToString(),
+                          dr["Senha"].ToString());
                     lista.Add(usuario);
                 }
                 dr.Close();
@@ -190,11 +195,12 @@ namespace DAL.Model
                 while (dr.Read())
                 {
                     Usuario usuario = new Usuario(
-                       dr["Nome"].ToString(),
-                       dr["Filial"].ToString(),
-                       dr["Contato"].ToString(),
-                       Convert.ToInt32(dr["NivelAcesso"]),
-                       dr["Login"].ToString());
+                         dr["Nome"].ToString(),
+                         dr["Filial"].ToString(),
+                         dr["Contato"].ToString(),
+                         Convert.ToInt32(dr["NivelAcesso"]),
+                         dr["Login"].ToString(),
+                         dr["Senha"].ToString());
                     lista.Add(usuario);
                 }
                 dr.Close();
@@ -215,11 +221,12 @@ namespace DAL.Model
                 while (dr.Read())
                 {
                     Usuario usuario = new Usuario(
-                       dr["Nome"].ToString(),
-                       dr["Filial"].ToString(),
-                       dr["Contato"].ToString(),
-                       Convert.ToInt32(dr["NivelAcesso"]),
-                       dr["Login"].ToString());
+                        dr["Nome"].ToString(),
+                        dr["Filial"].ToString(),
+                        dr["Contato"].ToString(),
+                        Convert.ToInt32(dr["NivelAcesso"]),
+                        dr["Login"].ToString(),
+                        dr["Senha"].ToString());
                     lista.Add(usuario);
                 }
                 dr.Close();
@@ -237,11 +244,12 @@ namespace DAL.Model
                 while (dr.Read())
                 {
                     Usuario usuario = new Usuario(
-                       dr["Nome"].ToString(),
-                       dr["Filial"].ToString(),
-                       dr["Contato"].ToString(),
-                       Convert.ToInt32(dr["NivelAcesso"]),
-                       dr["Login"].ToString());
+                        dr["Nome"].ToString(),
+                        dr["Filial"].ToString(),
+                        dr["Contato"].ToString(),
+                        Convert.ToInt32(dr["NivelAcesso"]),
+                        dr["Login"].ToString(),
+                        dr["Senha"].ToString());
                     lista.Add(usuario);
                 }
                 dr.Close();

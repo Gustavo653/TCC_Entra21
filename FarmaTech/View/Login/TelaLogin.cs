@@ -59,6 +59,7 @@ namespace FarmaTech
             DAL.Model.Consultas.DBHibrido.VerificaInternet = Convert.ToInt32(selecaoBD);
             DAL.Model.Consultas.DbConnection.SetConnectionString();
             DAL.Model.Consultas.DBHibrido.GerarDBTabelas();
+            DAL.Model.Consultas.DBHibrido.ReceberDados();
             if (!string.IsNullOrEmpty(txtLogin.Text) && !string.IsNullOrEmpty(txtSenha.Text))
             {
                 if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))

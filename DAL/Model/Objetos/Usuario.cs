@@ -13,13 +13,16 @@ namespace DAL.Model.Objetos
         public string Contato { get; set; }
         public int NivelAcesso { get; set; }
         public string Login { get; set; }
-        public Usuario(string nome, string filial, string contato, int nivelAcesso, string login)
+        public string Senha { get; set; }
+
+        public Usuario(string nome, string filial, string contato, int nivelAcesso, string login, string senha)
         {
             Nome = nome;
             Filial = filial;
             Contato = contato;
             NivelAcesso = nivelAcesso;
             Login = login;
+            Senha = senha;
         }
     }
 }

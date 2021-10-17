@@ -84,6 +84,43 @@ namespace DAL.Model
                 return lista;
             }
         }
+        public static List<Produto> GetTodosProdutos()
+        {
+            if (DBHibrido.VerificaInternet == 1)
+            {
+                string select = $"SELECT * from Produtos";
+                List<Produto> lista = new List<Produto>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Produto produto = new Produto(dr["Nome"].ToString(), dr["Unidade"].ToString(), Convert.ToInt32(dr["Quantidade"]), dr["Codigo"].ToString(), dr["Laboratorio"].ToString(), dr["PrecoCusto"].ToString(), dr["PrecoUnitario"].ToString(), Convert.ToInt32(dr["Grupo"]), dr["idFilial"].ToString());
+                    lista.Add(produto);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
+            }
+            else
+            {
+                string select = $"SELECT * from dbo.Produtos";
+                List<Produto> lista = new List<Produto>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Produto produto = new Produto(dr["Nome"].ToString(), dr["Unidade"].ToString(), Convert.ToInt32(dr["Quantidade"]), dr["Codigo"].ToString(), dr["Laboratorio"].ToString(), dr["PrecoCusto"].ToString(), dr["PrecoUnitario"].ToString(), Convert.ToInt32(dr["Grupo"]), dr["idFilial"].ToString());
+                    lista.Add(produto);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
+        }
         public static List<Produto> GetProdutos(string filial)
         {
             if(DBHibrido.VerificaInternet == 1)

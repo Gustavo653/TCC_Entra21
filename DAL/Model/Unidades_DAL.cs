@@ -11,6 +11,43 @@ namespace DAL.Model
 {
     public class Unidades_DAL
     {
+        public static List<Objetos.Unidades> GetTodasUnidades()
+        {
+            if (DBHibrido.VerificaInternet == 1)
+            {
+                string select = $"SELECT * from Unidades";
+                List<Objetos.Unidades> lista = new List<Objetos.Unidades>();
+                SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
+                if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Objetos.Unidades unidades = new Objetos.Unidades(dr["Nome"].ToString(), dr["idFilial"].ToString());
+                    lista.Add(unidades);
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connLocal.Close();
+                return lista;
+            }
+            else
+            {
+                string select = $"SELECT * from dbo.Unidades";
+                List<Objetos.Unidades> lista = new List<Objetos.Unidades>();
+                SqlCommand cmd = new SqlCommand(select, Objetos.ConnectionStatic.connRemoto);
+                if (Objetos.ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Objetos.Unidades unidades = new Objetos.Unidades(dr["Nome"].ToString(), dr["idFilial"].ToString());
+                    lista.Add(unidades);
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
+        }
         public static List<string> GetUnidades()
         {
             if(DBHibrido.VerificaInternet == 1)

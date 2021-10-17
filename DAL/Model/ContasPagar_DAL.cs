@@ -12,6 +12,43 @@ namespace DAL.Model
 {
     public class ContasPagar_DAL
     {
+        public static List<ContasPagar> GetTodasContasPagar()
+        {
+            if (DBHibrido.VerificaInternet == 1)
+            {
+                string select = $"SELECT * from ContasPagar";
+                List<ContasPagar> lista = new List<ContasPagar>();
+                SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
+                if (Objetos.ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasPagar ContasPagar = new ContasPagar(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString(), dr["idFilial"].ToString());
+                    lista.Add(ContasPagar);
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connLocal.Close();
+                return lista;
+            }
+            else
+            {
+                string select = $"SELECT * from dbo.ContasPagar";
+                List<ContasPagar> lista = new List<ContasPagar>();
+                SqlCommand cmd = new SqlCommand(select, Objetos.ConnectionStatic.connRemoto);
+                if (Objetos.ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    Objetos.ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasPagar ContasPagar = new ContasPagar(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString(), dr["idFilial"].ToString());
+                    lista.Add(ContasPagar);
+                }
+                dr.Close();
+                Objetos.ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
+        }
         public static List<ContasPagar> GetContasPagar()
         {
             if (DBHibrido.VerificaInternet == 1)

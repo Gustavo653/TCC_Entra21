@@ -12,6 +12,43 @@ namespace DAL.Model
 {
     public class ContasReceber_DAL
     {
+        public static List<ContasReceber> GetTodasContasReceber()
+        {
+            if (DBHibrido.VerificaInternet == 1)
+            {
+                string select = $"SELECT * from ContasReceber";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
+                if (ConnectionStatic.connLocal.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connLocal.Open();
+                SqlCeDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString(), dr["idFilial"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connLocal.Close();
+                return lista;
+            }
+            else
+            {
+                string select = $"SELECT * from dbo.ContasReceber";
+                List<ContasReceber> lista = new List<ContasReceber>();
+                SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
+                if (ConnectionStatic.connRemoto.State == System.Data.ConnectionState.Closed)
+                    ConnectionStatic.connRemoto.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ContasReceber ContasReceber = new ContasReceber(dr["NomeFornecedor"].ToString(), dr["Valor"].ToString(), dr["Vencimento"].ToString(), dr["idFilial"].ToString());
+                    lista.Add(ContasReceber);
+                }
+                dr.Close();
+                ConnectionStatic.connRemoto.Close();
+                return lista;
+            }
+        }
         public static List<ContasReceber> GetContasReceber()
         {
             if (DBHibrido.VerificaInternet == 1)

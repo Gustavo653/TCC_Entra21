@@ -8,6 +8,7 @@ namespace DAL.Model.Objetos
 {
     public class Endereco
     {
+        public int enumEndereco { get; set; }
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
         public string CNPJCPF { get; set; }
@@ -17,6 +18,7 @@ namespace DAL.Model.Objetos
         public string Complemento { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
+        public string idFilial { get; set; }
 
         public Endereco(string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado)
         {
@@ -29,6 +31,21 @@ namespace DAL.Model.Objetos
             Complemento = complemento;
             Cidade = cidade;
             Estado = estado;
+        }
+
+        public Endereco(int enumEndereco, string razaoSocial, string nomeFantasia, string cNPJCPF, string contato, string rua, string numero, string complemento, string cidade, string estado, string idFilial)
+        {
+            this.enumEndereco = enumEndereco;
+            RazaoSocial = razaoSocial;
+            NomeFantasia = nomeFantasia;
+            CNPJCPF = cNPJCPF;
+            Contato = contato;
+            Rua = rua;
+            Numero = numero;
+            Complemento = complemento;
+            Cidade = cidade;
+            Estado = estado;
+            this.idFilial = idFilial;
         }
     }
 }
