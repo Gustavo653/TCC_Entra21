@@ -53,6 +53,9 @@ namespace FarmaTech.View.Principal
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblContas = new System.Windows.Forms.Label();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VencimentoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabContasReceber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgContasReceber)).BeginInit();
@@ -89,6 +92,10 @@ namespace FarmaTech.View.Principal
             this.dgContasReceber.AllowUserToAddRows = false;
             this.dgContasReceber.AllowUserToDeleteRows = false;
             this.dgContasReceber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgContasReceber.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeCol,
+            this.ValorCol,
+            this.VencimentoCol});
             this.dgContasReceber.Location = new System.Drawing.Point(46, 83);
             this.dgContasReceber.Name = "dgContasReceber";
             this.dgContasReceber.ReadOnly = true;
@@ -307,6 +314,26 @@ namespace FarmaTech.View.Principal
             this.lblContas.TabIndex = 97;
             this.lblContas.Text = "Contas a receber";
             // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 200;
+            // 
+            // ValorCol
+            // 
+            this.ValorCol.HeaderText = "Valor";
+            this.ValorCol.Name = "ValorCol";
+            this.ValorCol.ReadOnly = true;
+            // 
+            // VencimentoCol
+            // 
+            this.VencimentoCol.HeaderText = "Vencimento";
+            this.VencimentoCol.Name = "VencimentoCol";
+            this.VencimentoCol.ReadOnly = true;
+            this.VencimentoCol.Width = 150;
+            // 
             // TelaCadastroContasReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,5 +393,8 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblContas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VencimentoCol;
     }
 }

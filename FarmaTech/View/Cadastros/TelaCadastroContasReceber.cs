@@ -110,14 +110,7 @@ namespace FarmaTech.View.Principal
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
-        {
-
-            tabControl1.TabPages.Remove(tabNovoContaReceber);
-            tabControl1.TabPages.Add(tabContasReceber);
-            btnSalvar.Enabled = true;
-            btnNovo.Enabled = true;
-            btnAlterar.Enabled = true;
-            btnExcluir.Enabled = true;
+        {          
             if (ValorSalvar == 1)
             {
                 int resultado = BAL.Control.ContasReceber_BAL.AdicionarContasReceber(txtNomeFornecedor.Text, txtValor.Text, dtpVencimento.Value.ToString().Substring(0, 10));
@@ -170,8 +163,13 @@ namespace FarmaTech.View.Principal
                     MessageBox.Show("Verifique se os dados inseridos estão no formato correto!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 AtualizaDG();
-
             }
+            tabControl1.TabPages.Remove(tabNovoContaReceber);
+            tabControl1.TabPages.Add(tabContasReceber);
+            btnSalvar.Enabled = false;
+            btnNovo.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
         private void txtPesquisaUsuario_TextChanged(object sender, EventArgs e)
         {
@@ -179,15 +177,29 @@ namespace FarmaTech.View.Principal
         }
         public void AtualizaDG()
         {
+            // ao pesquisar está trazendo contas de outra filial *************
+
+            while (dgContasReceber.Rows.Count > 0)
+            {
+                dgContasReceber.Rows.RemoveAt(0);
+            }
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
                 List<DAL.Model.Objetos.ContasReceber> lista = BAL.Control.ContasReceber_BAL.GetContasReceberPorNome(txtPesquisaUsuario.Text);
-                dgContasReceber.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgContasReceber.Rows.Add(item.NomeFornecedor, item.Valor, item.Vencimento);
+                }
             }
             else
             {
                 List<DAL.Model.Objetos.ContasReceber> lista = BAL.Control.ContasReceber_BAL.GetContasReceber();
-                dgContasReceber.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgContasReceber.Rows.Add(item.NomeFornecedor, item.Valor, item.Vencimento);
+                }
             }
         }
     }
