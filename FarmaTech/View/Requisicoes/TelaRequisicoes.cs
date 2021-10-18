@@ -56,6 +56,7 @@ namespace FarmaTech.View.Principal
         private void TelaRequisicoes_Load(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabResposta);
+            btnSalvar.Visible = false;
             AtualizaDG();
         }
 
@@ -96,7 +97,7 @@ namespace FarmaTech.View.Principal
             AtualizaDG();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             int resultado = BAL.Control.Requisicoes_BAL.RespondeRequisicao(txtResposta.Text, lblUsuario.Text, txtAssunto.Text);
             if (resultado == 0)
@@ -119,13 +120,15 @@ namespace FarmaTech.View.Principal
 
             tabControl1.TabPages.Remove(tabResposta);
             tabControl1.TabPages.Add(tabRequisicoes);
+            btnSalvar.Visible = false;
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnResponder_Click(object sender, EventArgs e)
         {
             tabControl1.TabPages.Remove(tabRequisicoes);
             tabControl1.TabPages.Add(tabResposta);
+            btnSalvar.Visible = true;
 
             int indiceSelecionado = dgRequisicoes.CurrentRow.Index;
             List<DAL.Model.Objetos.Requisicao> lista = BAL.Control.Requisicoes_BAL.GetRequisicoesPorNome(dgRequisicoes.Rows[indiceSelecionado].Cells[0].Value.ToString());

@@ -129,6 +129,12 @@ namespace FarmaTech.View
                 }
                 AtualizaDG();
             }
+            tabControl1.TabPages.Remove(tabNovoProduto);
+            tabControl1.TabPages.Add(tabProdutos);
+            btnNovo.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -177,6 +183,8 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            // NÃO ESTÁ EXCLUINDO ************************
+
             if (dgProdutos.Rows.Count > 0)
             {
                 if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -210,18 +218,30 @@ namespace FarmaTech.View
         }
         public void AtualizaDG()
         {
+            while (dgProdutos.Rows.Count > 0)
+            {
+                dgProdutos.Rows.RemoveAt(0);
+            }
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 1 || DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
             {
 
                 if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text)) //Filtrar por razao social
                 {
                     List<DAL.Model.Objetos.Produto> lista = BAL.Control.Produtos_BAL.GetProdutosPorNome(txtPesquisaUsuario.Text);
-                    dgProdutos.DataSource = lista;
+
+                    foreach (var item in lista)
+                    {
+                        dgProdutos.Rows.Add(item.Nome, item.Laboratorio, item.Quantidade, item.PrecoUnitario);
+                    }                  
                 }
                 else
                 {
                     List<DAL.Model.Objetos.Produto> lista = BAL.Control.Produtos_BAL.GetProdutos();
-                    dgProdutos.DataSource = lista;
+
+                    foreach (var item in lista)
+                    {
+                        dgProdutos.Rows.Add(item.Nome, item.Laboratorio, item.Quantidade, item.PrecoUnitario);
+                    }                    
                 }
             }
             else

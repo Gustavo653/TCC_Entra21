@@ -51,6 +51,8 @@ namespace FarmaTech.View
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescontoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabConvenios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConvenios)).BeginInit();
@@ -159,6 +161,9 @@ namespace FarmaTech.View
             this.dgConvenios.AllowUserToDeleteRows = false;
             this.dgConvenios.AllowUserToOrderColumns = true;
             this.dgConvenios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgConvenios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeCol,
+            this.DescontoCol});
             this.dgConvenios.Location = new System.Drawing.Point(49, 84);
             this.dgConvenios.Name = "dgConvenios";
             this.dgConvenios.ReadOnly = true;
@@ -292,6 +297,19 @@ namespace FarmaTech.View
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 200;
+            // 
+            // DescontoCol
+            // 
+            this.DescontoCol.HeaderText = "Desconto";
+            this.DescontoCol.Name = "DescontoCol";
+            this.DescontoCol.ReadOnly = true;
+            // 
             // TelaCadastroConvenios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,5 +368,7 @@ namespace FarmaTech.View
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescontoCol;
     }
 }

@@ -118,6 +118,12 @@ namespace FarmaTech.View
                 }
                 AtualizaDG();
             }
+            tabControl1.TabPages.Remove(tabNovoConvenio);
+            tabControl1.TabPages.Add(tabConvenios);
+            btnNovo.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -142,9 +148,13 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int indiceSelecionado = dgConvenios.CurrentRow.Index;
-            BAL.Control.Convenios_BAL.RemoveConvenio(dgConvenios.Rows[indiceSelecionado].Cells[0].Value.ToString());
-            AtualizaDG();
+            if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int indiceSelecionado = dgConvenios.CurrentRow.Index;
+                BAL.Control.Convenios_BAL.RemoveConvenio(dgConvenios.Rows[indiceSelecionado].Cells[0].Value.ToString());
+                AtualizaDG();
+            }
+
         }
 
         private void TelaCadastroConvenios_Paint(object sender, PaintEventArgs e)
@@ -165,15 +175,29 @@ namespace FarmaTech.View
         }
         public void AtualizaDG()
         {
+            while (dgConvenios.Rows.Count > 0)
+            {
+                dgConvenios.Rows.RemoveAt(0);
+            }
             if (!string.IsNullOrEmpty(txtPesquisaUsuario.Text))
             {
                 List<DAL.Model.Objetos.Convenio> lista = BAL.Control.Convenios_BAL.GetConveniosPorNome(txtPesquisaUsuario.Text);
-                dgConvenios.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgConvenios.Rows.Add(item.Nome, item.Desconto);
+                }
+              
             }
             else
             {
                 List<DAL.Model.Objetos.Convenio> lista = BAL.Control.Convenios_BAL.GetConvenios();
-                dgConvenios.DataSource = lista;
+
+                foreach (var item in lista)
+                {
+                    dgConvenios.Rows.Add(item.Nome, item.Desconto);
+                }
+               
             }
         }
 

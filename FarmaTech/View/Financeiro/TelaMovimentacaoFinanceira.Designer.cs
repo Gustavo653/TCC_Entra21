@@ -35,11 +35,7 @@ namespace FarmaTech.View.Principal
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnContasPagar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DataCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PagarCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgMovimentacao = new System.Windows.Forms.DataGridView();
             this.rbPagar = new System.Windows.Forms.RadioButton();
             this.rbReceber = new System.Windows.Forms.RadioButton();
             this.rbTudo = new System.Windows.Forms.RadioButton();
@@ -52,8 +48,12 @@ namespace FarmaTech.View.Principal
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PagarCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMovimentacao)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@ namespace FarmaTech.View.Principal
             this.panel1.Controls.Add(this.btnRelatorio);
             this.panel1.Controls.Add(this.btnContasPagar);
             this.panel1.Controls.Add(this.btnVoltar);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgMovimentacao);
             this.panel1.Controls.Add(this.rbPagar);
             this.panel1.Controls.Add(this.rbReceber);
             this.panel1.Controls.Add(this.rbTudo);
@@ -73,9 +73,9 @@ namespace FarmaTech.View.Principal
             this.panel1.Controls.Add(this.lblAte);
             this.panel1.Controls.Add(this.lblPeriodo);
             this.panel1.Controls.Add(this.lblMovimentacaoFinanceira);
-            this.panel1.Location = new System.Drawing.Point(54, 46);
+            this.panel1.Location = new System.Drawing.Point(41, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1099, 625);
+            this.panel1.Size = new System.Drawing.Size(955, 631);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -123,87 +123,60 @@ namespace FarmaTech.View.Principal
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // dataGridView1
+            // dgMovimentacao
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DataCol,
+            this.dgMovimentacao.AllowUserToAddRows = false;
+            this.dgMovimentacao.AllowUserToDeleteRows = false;
+            this.dgMovimentacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMovimentacao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DescricaoCol,
             this.ReceberCol,
             this.PagarCol,
-            this.DescricaoCol});
-            this.dataGridView1.Location = new System.Drawing.Point(61, 175);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(968, 317);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // DataCol
-            // 
-            this.DataCol.HeaderText = "Data";
-            this.DataCol.Name = "DataCol";
-            this.DataCol.ReadOnly = true;
-            // 
-            // ReceberCol
-            // 
-            this.ReceberCol.HeaderText = "Receber";
-            this.ReceberCol.Name = "ReceberCol";
-            this.ReceberCol.ReadOnly = true;
-            // 
-            // PagarCol
-            // 
-            this.PagarCol.HeaderText = "Pagar";
-            this.PagarCol.Name = "PagarCol";
-            this.PagarCol.ReadOnly = true;
-            // 
-            // DescricaoCol
-            // 
-            this.DescricaoCol.HeaderText = "Descrição";
-            this.DescricaoCol.Name = "DescricaoCol";
-            this.DescricaoCol.ReadOnly = true;
+            this.DataCol});
+            this.dgMovimentacao.Location = new System.Drawing.Point(37, 162);
+            this.dgMovimentacao.Name = "dgMovimentacao";
+            this.dgMovimentacao.ReadOnly = true;
+            this.dgMovimentacao.Size = new System.Drawing.Size(831, 302);
+            this.dgMovimentacao.TabIndex = 8;
             // 
             // rbPagar
             // 
             this.rbPagar.AutoSize = true;
             this.rbPagar.BackColor = System.Drawing.Color.Transparent;
             this.rbPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPagar.Location = new System.Drawing.Point(878, 122);
+            this.rbPagar.Location = new System.Drawing.Point(773, 124);
             this.rbPagar.Name = "rbPagar";
             this.rbPagar.Size = new System.Drawing.Size(74, 24);
             this.rbPagar.TabIndex = 7;
             this.rbPagar.TabStop = true;
             this.rbPagar.Text = "Pagar";
             this.rbPagar.UseVisualStyleBackColor = false;
-            this.rbPagar.CheckedChanged += new System.EventHandler(this.rbPagar_CheckedChanged);
             // 
             // rbReceber
             // 
             this.rbReceber.AutoSize = true;
             this.rbReceber.BackColor = System.Drawing.Color.Transparent;
             this.rbReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbReceber.Location = new System.Drawing.Point(878, 80);
+            this.rbReceber.Location = new System.Drawing.Point(773, 82);
             this.rbReceber.Name = "rbReceber";
             this.rbReceber.Size = new System.Drawing.Size(95, 24);
             this.rbReceber.TabIndex = 6;
             this.rbReceber.TabStop = true;
             this.rbReceber.Text = "Receber";
             this.rbReceber.UseVisualStyleBackColor = false;
-            this.rbReceber.CheckedChanged += new System.EventHandler(this.rbReceber_CheckedChanged);
             // 
             // rbTudo
             // 
             this.rbTudo.AutoSize = true;
             this.rbTudo.BackColor = System.Drawing.Color.Transparent;
             this.rbTudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTudo.Location = new System.Drawing.Point(878, 35);
+            this.rbTudo.Location = new System.Drawing.Point(773, 37);
             this.rbTudo.Name = "rbTudo";
             this.rbTudo.Size = new System.Drawing.Size(157, 24);
             this.rbTudo.TabIndex = 5;
             this.rbTudo.TabStop = true;
             this.rbTudo.Text = "Receber / Pagar";
             this.rbTudo.UseVisualStyleBackColor = false;
-            this.rbTudo.CheckedChanged += new System.EventHandler(this.rbTudo_CheckedChanged);
             // 
             // dateTimePicker2
             // 
@@ -260,7 +233,7 @@ namespace FarmaTech.View.Principal
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 703);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1208, 30);
+            this.panel2.Size = new System.Drawing.Size(1028, 30);
             this.panel2.TabIndex = 92;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -293,14 +266,43 @@ namespace FarmaTech.View.Principal
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // DescricaoCol
+            // 
+            this.DescricaoCol.HeaderText = "Descrição";
+            this.DescricaoCol.Name = "DescricaoCol";
+            this.DescricaoCol.ReadOnly = true;
+            this.DescricaoCol.Width = 200;
+            // 
+            // ReceberCol
+            // 
+            this.ReceberCol.HeaderText = "Receber";
+            this.ReceberCol.Name = "ReceberCol";
+            this.ReceberCol.ReadOnly = true;
+            this.ReceberCol.Width = 150;
+            // 
+            // PagarCol
+            // 
+            this.PagarCol.HeaderText = "Pagar";
+            this.PagarCol.Name = "PagarCol";
+            this.PagarCol.ReadOnly = true;
+            this.PagarCol.Width = 150;
+            // 
+            // DataCol
+            // 
+            this.DataCol.HeaderText = "Data";
+            this.DataCol.Name = "DataCol";
+            this.DataCol.ReadOnly = true;
+            this.DataCol.Width = 150;
+            // 
             // TelaMovimentacaoFinanceira
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1208, 733);
+            this.ClientSize = new System.Drawing.Size(1028, 733);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -312,7 +314,7 @@ namespace FarmaTech.View.Principal
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaMovimentacaoFinanceira_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMovimentacao)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -322,7 +324,7 @@ namespace FarmaTech.View.Principal
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgMovimentacao;
         private System.Windows.Forms.RadioButton rbPagar;
         private System.Windows.Forms.RadioButton rbReceber;
         private System.Windows.Forms.RadioButton rbTudo;
@@ -331,10 +333,6 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label lblAte;
         private System.Windows.Forms.Label lblPeriodo;
         private System.Windows.Forms.Label lblMovimentacaoFinanceira;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReceberCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PagarCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoCol;
         private System.Windows.Forms.Button btnContasReceber;
         private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Button btnContasPagar;
@@ -343,5 +341,9 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReceberCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PagarCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataCol;
     }
 }

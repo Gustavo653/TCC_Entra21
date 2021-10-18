@@ -35,10 +35,15 @@ namespace FarmaTech.View.Principal
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.dgRequisicoes = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssuntoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RespostaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabRequisicoes = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnResponder = new System.Windows.Forms.Button();
             this.tabResposta = new System.Windows.Forms.TabPage();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblFilial = new System.Windows.Forms.Label();
@@ -57,11 +62,6 @@ namespace FarmaTech.View.Principal
             this.lblHora = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FilialCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AssuntoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RespostaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgRequisicoes)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabRequisicoes.SuspendLayout();
@@ -120,19 +120,52 @@ namespace FarmaTech.View.Principal
             this.dgRequisicoes.Size = new System.Drawing.Size(760, 332);
             this.dgRequisicoes.TabIndex = 93;
             // 
-            // button1
+            // NomeCol
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(26, 172);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 95);
-            this.button1.TabIndex = 96;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 150;
+            // 
+            // FilialCol
+            // 
+            this.FilialCol.HeaderText = "Filial";
+            this.FilialCol.Name = "FilialCol";
+            this.FilialCol.ReadOnly = true;
+            this.FilialCol.Width = 150;
+            // 
+            // DataCol
+            // 
+            this.DataCol.HeaderText = "Data";
+            this.DataCol.Name = "DataCol";
+            this.DataCol.ReadOnly = true;
+            // 
+            // AssuntoCol
+            // 
+            this.AssuntoCol.HeaderText = "Assunto";
+            this.AssuntoCol.Name = "AssuntoCol";
+            this.AssuntoCol.ReadOnly = true;
+            this.AssuntoCol.Width = 200;
+            // 
+            // RespostaCol
+            // 
+            this.RespostaCol.HeaderText = "Resposta";
+            this.RespostaCol.Name = "RespostaCol";
+            this.RespostaCol.ReadOnly = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalvar.BackgroundImage")));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Location = new System.Drawing.Point(26, 172);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(95, 95);
+            this.btnSalvar.TabIndex = 96;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // tabControl1
             // 
@@ -149,7 +182,7 @@ namespace FarmaTech.View.Principal
             this.tabRequisicoes.BackColor = System.Drawing.Color.Lavender;
             this.tabRequisicoes.Controls.Add(this.dgRequisicoes);
             this.tabRequisicoes.Controls.Add(this.txtPesquisaUsuario);
-            this.tabRequisicoes.Controls.Add(this.button2);
+            this.tabRequisicoes.Controls.Add(this.btnResponder);
             this.tabRequisicoes.Controls.Add(this.lblPesquisar);
             this.tabRequisicoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.tabRequisicoes.Location = new System.Drawing.Point(4, 22);
@@ -160,19 +193,19 @@ namespace FarmaTech.View.Principal
             this.tabRequisicoes.Text = "Requisições";
             this.tabRequisicoes.Paint += new System.Windows.Forms.PaintEventHandler(this.tabRequisicoes_Paint);
             // 
-            // button2
+            // btnResponder
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(587, -12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 142);
-            this.button2.TabIndex = 98;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnResponder.BackColor = System.Drawing.Color.Transparent;
+            this.btnResponder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnResponder.BackgroundImage")));
+            this.btnResponder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnResponder.FlatAppearance.BorderSize = 0;
+            this.btnResponder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResponder.Location = new System.Drawing.Point(587, -12);
+            this.btnResponder.Name = "btnResponder";
+            this.btnResponder.Size = new System.Drawing.Size(143, 142);
+            this.btnResponder.TabIndex = 98;
+            this.btnResponder.UseVisualStyleBackColor = false;
+            this.btnResponder.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // tabResposta
             // 
@@ -322,7 +355,7 @@ namespace FarmaTech.View.Principal
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 596);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1139, 30);
+            this.panel2.Size = new System.Drawing.Size(1028, 30);
             this.panel2.TabIndex = 100;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -355,49 +388,17 @@ namespace FarmaTech.View.Principal
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            this.NomeCol.Width = 150;
-            // 
-            // FilialCol
-            // 
-            this.FilialCol.HeaderText = "Filial";
-            this.FilialCol.Name = "FilialCol";
-            this.FilialCol.ReadOnly = true;
-            this.FilialCol.Width = 150;
-            // 
-            // DataCol
-            // 
-            this.DataCol.HeaderText = "Data";
-            this.DataCol.Name = "DataCol";
-            this.DataCol.ReadOnly = true;
-            // 
-            // AssuntoCol
-            // 
-            this.AssuntoCol.HeaderText = "Assunto";
-            this.AssuntoCol.Name = "AssuntoCol";
-            this.AssuntoCol.ReadOnly = true;
-            this.AssuntoCol.Width = 200;
-            // 
-            // RespostaCol
-            // 
-            this.RespostaCol.HeaderText = "Resposta";
-            this.RespostaCol.Name = "RespostaCol";
-            this.RespostaCol.ReadOnly = true;
-            // 
             // TelaRequisicoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 626);
+            this.ClientSize = new System.Drawing.Size(1028, 626);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblNovaRec);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TelaRequisicoes";
@@ -424,7 +425,7 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.TextBox txtPesquisaUsuario;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.DataGridView dgRequisicoes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabRequisicoes;
         private System.Windows.Forms.TabPage tabResposta;
@@ -440,7 +441,7 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Label lblFilial;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnResponder;
         private System.Windows.Forms.Label lblNovaRec;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblHora;
