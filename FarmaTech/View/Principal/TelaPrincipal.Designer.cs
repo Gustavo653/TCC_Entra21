@@ -37,6 +37,7 @@ namespace FarmaTech
             this.MenuFiliais = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuUnidades = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuBancoDados = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuFornecedores = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuConvenios = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,7 +80,6 @@ namespace FarmaTech
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.MenuBancoDados = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,7 +108,7 @@ namespace FarmaTech
             this.MenuPrincipal.Margin = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.MenuPrincipal.Name = "MenuPrincipal";
             this.MenuPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.MenuPrincipal.Size = new System.Drawing.Size(657, 33);
+            this.MenuPrincipal.Size = new System.Drawing.Size(777, 33);
             this.MenuPrincipal.Stretch = false;
             this.MenuPrincipal.TabIndex = 0;
             this.MenuPrincipal.Text = "MenuCadastros";
@@ -164,6 +164,14 @@ namespace FarmaTech
             this.MenuUnidades.Size = new System.Drawing.Size(202, 26);
             this.MenuUnidades.Text = "Unidades";
             this.MenuUnidades.Click += new System.EventHandler(this.MenuUnidades_Click);
+            // 
+            // MenuBancoDados
+            // 
+            this.MenuBancoDados.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.MenuBancoDados.Name = "MenuBancoDados";
+            this.MenuBancoDados.Size = new System.Drawing.Size(202, 26);
+            this.MenuBancoDados.Text = "Banco de Dados";
+            this.MenuBancoDados.Click += new System.EventHandler(this.MenuBancoDados_Click);
             // 
             // MenuFornecedores
             // 
@@ -606,14 +614,6 @@ namespace FarmaTech
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(742, 459);
             this.panel7.TabIndex = 11;
-            // 
-            // MenuBancoDados
-            // 
-            this.MenuBancoDados.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.MenuBancoDados.Name = "MenuBancoDados";
-            this.MenuBancoDados.Size = new System.Drawing.Size(202, 26);
-            this.MenuBancoDados.Text = "Banco de Dados";
-            this.MenuBancoDados.Click += new System.EventHandler(this.MenuBancoDados_Click);
             // 
             // TelaPrincipal
             // 

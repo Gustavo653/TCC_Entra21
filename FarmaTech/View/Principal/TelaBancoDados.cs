@@ -21,16 +21,27 @@ namespace FarmaTech.View.Principal
 
         private async void btnSincronizar_Click(object sender, EventArgs e)
         {
-            DAL.Model.Consultas.DBHibrido.EnviarDados();
-            MessageBox.Show("OK");
 
-            progressBar1.Value = 0;
-            var progress = new Progress<int>(percent =>
+            if (DAL.Model.Consultas.DBHibrido.VerificaConexaoInternet(10000000))
             {
-                progressBar1.Value = percent;
+                progressBar1.Value = 0;
+                var progress = new Progress<int>(percent =>
+                {
+                    progressBar1.Value = percent;
 
-            });
-            await Task.Run(() => DoSomething(progress));
+                });
+                await Task.Run(() => DoSomething(progress));
+
+                DAL.Model.Consultas.DBHibrido.EnviarDados();
+                DAL.Model.Consultas.DBHibrido.ReceberDados();
+                MessageBox.Show("OK");
+
+            }
+            else
+            {
+                MessageBox.Show("O computador está sem internet!!!");
+            }
+
 
 
         }
@@ -39,7 +50,7 @@ namespace FarmaTech.View.Principal
         {
             for (int i = 1; i <= 100; i++)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(20);
                 if (progress != null)
                     progress.Report(i);
             }
@@ -59,6 +70,27 @@ namespace FarmaTech.View.Principal
             graphics.FillRectangle(br, gradient_rect);
         }
 
+        private void TelaBancoDados_Load(object sender, EventArgs e)
+        {
+            if(DAL.Model.Consultas.DBHibrido.EscolhaBD == 1)
+            {
+                rbLocal.Checked = true;
+            }
+            else
+            {
+                rbRemoto.Checked = true;
+            }
+        }
+
+        private void rbLocal_CheckedChanged(object sender, EventArgs e)
+        {
+            DAL.Model.Consultas.DBHibrido.EscolhaBD = 1;
+        }
+
+        private void rbRemoto_CheckedChanged(object sender, EventArgs e)
+        {
+            DAL.Model.Consultas.DBHibrido.EscolhaBD = 2;
+        }
     }
 
 }

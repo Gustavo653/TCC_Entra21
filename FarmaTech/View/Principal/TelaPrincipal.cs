@@ -241,18 +241,9 @@ namespace FarmaTech
             graphics.FillRectangle(br, gradient_rect);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void MenuBancoDados_Click(object sender, EventArgs e)
         {
-            if (DAL.Model.Consultas.DBHibrido.VerificaConexaoInternet(10000000))
-            {
-                DAL.Model.Consultas.DBHibrido.EnviarDados();
-                DAL.Model.Consultas.DBHibrido.ReceberDados();
-                MessageBox.Show("OK");
-            }
-            else
-            {
-                MessageBox.Show("O mamaco ficou sem internet!");
-            }       
+            new TelaBancoDados().Show();
         }
     }
 }

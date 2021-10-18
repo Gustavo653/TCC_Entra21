@@ -32,8 +32,8 @@ namespace FarmaTech.View.Principal
             this.label1 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnSincronizar = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbLocal = new System.Windows.Forms.RadioButton();
+            this.rbRemoto = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -70,31 +70,31 @@ namespace FarmaTech.View.Principal
             this.btnSincronizar.UseVisualStyleBackColor = false;
             this.btnSincronizar.Click += new System.EventHandler(this.btnSincronizar_Click);
             // 
-            // radioButton1
+            // rbLocal
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(206, 379);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(78, 28);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Local";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.rbLocal.AutoSize = true;
+            this.rbLocal.BackColor = System.Drawing.Color.Transparent;
+            this.rbLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLocal.Location = new System.Drawing.Point(206, 379);
+            this.rbLocal.Name = "rbLocal";
+            this.rbLocal.Size = new System.Drawing.Size(78, 28);
+            this.rbLocal.TabIndex = 4;
+            this.rbLocal.Text = "Local";
+            this.rbLocal.UseVisualStyleBackColor = false;
+            this.rbLocal.CheckedChanged += new System.EventHandler(this.rbLocal_CheckedChanged);
             // 
-            // radioButton2
+            // rbRemoto
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(351, 379);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(100, 28);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Remoto";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.rbRemoto.AutoSize = true;
+            this.rbRemoto.BackColor = System.Drawing.Color.Transparent;
+            this.rbRemoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRemoto.Location = new System.Drawing.Point(351, 379);
+            this.rbRemoto.Name = "rbRemoto";
+            this.rbRemoto.Size = new System.Drawing.Size(100, 28);
+            this.rbRemoto.TabIndex = 5;
+            this.rbRemoto.Text = "Remoto";
+            this.rbRemoto.UseVisualStyleBackColor = false;
+            this.rbRemoto.CheckedChanged += new System.EventHandler(this.rbRemoto_CheckedChanged);
             // 
             // label2
             // 
@@ -113,8 +113,8 @@ namespace FarmaTech.View.Principal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 467);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbRemoto);
+            this.Controls.Add(this.rbLocal);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSincronizar);
@@ -123,6 +123,7 @@ namespace FarmaTech.View.Principal
             this.Name = "TelaBancoDados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaBancoDados";
+            this.Load += new System.EventHandler(this.TelaBancoDados_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaBancoDados_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,8 +135,8 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.Button btnSincronizar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbLocal;
+        private System.Windows.Forms.RadioButton rbRemoto;
         private System.Windows.Forms.Label label2;
     }
 }
