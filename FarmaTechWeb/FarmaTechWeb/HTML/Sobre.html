@@ -4,7 +4,7 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>FarmaTech</title>
-    <link href="../CSS/Sobre.css" rel="stylesheet" />
+    <link href="../CSS/Style.css" rel="stylesheet" />
 
 </head>
 
@@ -23,6 +23,7 @@
             <ul class="nav-list">
                 <li><a href="Sobre.html">Sobre o Projeto</a></li>
                 <li><a href="Equipe.html">Equipe</a></li>
+                <li><a href="FarmaTech.html">Home</a></li>
             </ul>
 
         </nav>
@@ -37,9 +38,8 @@
     <section class="TextoConteudo">
 
         <div>
-            <img id="Logoimg" src="https://i.imgur.com/AsOGs3e.png" alt="FarmaTech" style="height:200px;width:200px;" />
-            <br />
-            <h1 class="Titulo">FarmaTech</h1>
+
+            <h1 class="TituloSobre">Conheça mais sobre o projeto</h1>
             <h2 class="Equipe">by QueryLab</h2><br />
         </div>
         <h3 class="tituloPrincipal">Tecnologias Usadas</h3>
@@ -47,22 +47,55 @@
         <table width="100%">
             <tr>
                 <td class="textoBg1">
+                    <section class="BoxTexto">
+                        • C#<br />
+                        • Microsoft SQL Server<br />
+                        • Windows Forms<br />
+                        • GitHub<br />
+                        • JavaScript<br />
+                        • HTML e CSS<br />
 
-                    • C#<br />
-                    • Microsoft SQL Server<br />
-                    • Windows Forms<br />
-                    • GitHub<br />
-                    • JavaScript<br />
-                    • HTML e CSS<br />
-
-                    <br />
-
+                        <br />
+                    </section>
                 </td>
             </tr>
         </table>
         <br />
-        <br />
-        <br />
+        <br /> <h3 class="tituloPrincipal">Sobre os níveis de acesso</h3>
+
+        <table width="100%">
+            <tr>
+                <td class="textoBg1">
+
+                    <h4>Nivel 1:</h4>
+                    <section class="BoxTexto">
+                        • Venda<br />
+                        • Adição de produtos<br />
+                        • Adição de clientes<br />
+                        • Adição de unidades<br />
+                        • CRUD dos 3 acima somente com permissão<br /><br />
+                    </section>
+
+                    <h4>Nivel 2:</h4>
+                    <section class="BoxTexto">
+                        • Venda<br />
+                        • Adição de produtos<br />
+                        • Adição de clientes<br />
+                        • Adição de unidades<br />
+                        • CRUD dos 3 acima somente com permissão<br />
+                        • Abertura de caixa<br />
+                        • Todos os CRUD da filial dele<br /><br />
+                    </section>
+
+                    <h4>Nivel 3:</h4>
+                    <section class="BoxTexto">
+                        • Acesso irrestrito.<br /><br />
+                    </section>
+
+                </td>
+            </tr>
+        </table>
+        <br /><br />
 
         <h3 class="tituloPrincipal">Telas em Destaque</h3>
         <br />
@@ -70,22 +103,23 @@
         <table width="100%">
             <tr>
                 <td class="textoBg1">
-                    <h3 class="tituloPrincipal">Principal</h3>
+                    <h4 class="tituloPrincipal">Principal</h4>
                     <br /><br />
                     <img id="TelaImg" src="https://static.vecteezy.com/ti/vetor-gratis/t2/265967-sob-o-projeto-de-construcao-design-de-desenvolvimento-de-site-ilustracao-vetor.jpg" alt="Tela" style="height:200px;width:200px;" />
                     <br /><br />
-                    <p>
-                        Sendo os pilares do FarmaTech a simplicidade, agilidade e confiança.<br />
-                        A tela principal do programa apresenta não somente as informações habituais, como também <span id="pontos">...</span><span id="mais">
-                            conta com atalhos para as funções mais utilizadas no decorrer do dia a dia de uma farmácia com o intuito de agilizar o atendimento.
-                            Entretanto, não se limitando somente ao foco no atendimento, a tela é organizada com os menus separados por classificações, apresentando também o usuário logado juntamente com seu nível de acesso - existindo três níveis - aos quais podem restringir o acesso a determinadas telas dependendo do nível em questão.
-                        </span>
-                    </p>
+                          <section class="BoxDescri">
+                              <p>
+                                  Sendo os pilares do FarmaTech a simplicidade, agilidade e confiança.<br />
+                                  A tela principal do programa apresenta não somente as informações habituais, como também <span id="pontos">...</span><span id="mais">
+                                      conta com atalhos para as funções mais utilizadas no decorrer do dia a dia de uma farmácia com o intuito de agilizar o atendimento.
+                                      Entretanto, não se limitando somente ao foco no atendimento, a tela é organizada com os menus separados por classificações, apresentando também o usuário logado juntamente com seu nível de acesso - existindo três níveis - aos quais podem restringir o acesso a determinadas telas dependendo do nível em questão.
+                                  </span>
+                              </p>
+                          </section>
+                        <button onclick="LeiaMais()" id="btnLeiaMais">Leia Mais</button>
+                        <script type="text/javascript" src="FarmaTech.js"></script>
 
-                    <button onclick="LeiaMais()" id="btnLeiaMais">Leia Mais</button>
-                    <script type="text/javascript" src="FarmaTech.js"></script>
-
-                    <br />
+                        <br />
 
                 </td>
             </tr>
@@ -97,22 +131,23 @@
         <table width="100%">
             <tr>
                 <td class="textoBg1">
-                    <h3 class="tituloPrincipal">Vendas</h3>
+                    <h4 class="tituloPrincipal">Vendas</h4>
                     <br /><br />
                     <img id="TelaImg" src="https://static.vecteezy.com/ti/vetor-gratis/t2/265967-sob-o-projeto-de-construcao-design-de-desenvolvimento-de-site-ilustracao-vetor.jpg" alt="Tela" style="height:200px;width:200px;" />
                     <br /><br />
-                    <p>
+                          <section class="BoxDescri">
+                              <p>
 
 
-                        Projetada visando a usabilidade, a tela de vendas realiza as principais funções de um caixa como <span id="pontosVendas">...</span><span id="maisVendas">
-                            sangria, pesquisas por produtos e clientes, adição e remoção de itens.
-                        </span>
-                    </p>
+                                  Projetada visando a usabilidade, a tela de vendas realiza as principais funções de um caixa como <span id="pontosVendas">...</span><span id="maisVendas">
+                                      sangria, pesquisas por produtos e clientes, adição e remoção de itens.
+                                  </span>
+                              </p>
+                          </section>
+                        <button onclick="LeiaMaisVendas()" id="btnLeiaMaisVendas">Leia Mais</button>
+                        <script type="text/javascript" src="FarmaTech.js"></script>
 
-                    <button onclick="LeiaMaisVendas()" id="btnLeiaMaisVendas">Leia Mais</button>
-                    <script type="text/javascript" src="FarmaTech.js"></script>
-
-                    <br />
+                        <br />
                 </td>
             </tr>
         </table>
@@ -124,22 +159,23 @@
             <tr>
                 <td class="textoBg1">
 
-                    <h3 class="tituloPrincipal">Relatórios</h3>
+                    <h4 class="tituloPrincipal">Relatórios</h4>
                     <br /><br />
                     <img id="TelaImg" src="https://static.vecteezy.com/ti/vetor-gratis/t2/265967-sob-o-projeto-de-construcao-design-de-desenvolvimento-de-site-ilustracao-vetor.jpg" alt="Tela" style="height:200px;width:200px;" />
                     <br /><br />
-                    <p>
+                          <section class="BoxDescri">
+                              <p>
 
-                        Visando satisfazer as principais necessidades do gestor, a tela de relatórios foi desenvolvida para facilitar o acesso aos <span id="pontosRel">...</span><span id="maisRel">
-                            indicadores de seu negócio, permitindo a fácil visualização de lucros por filiais - podendo determinar o período desejado para análise - indicando qual de suas filiais mais faturou entre outros indicadores.
+                                  Visando satisfazer as principais necessidades do gestor, a tela de relatórios foi desenvolvida para facilitar o acesso aos <span id="pontosRel">...</span><span id="maisRel">
+                                      indicadores de seu negócio, permitindo a fácil visualização de lucros por filiais - podendo determinar o período desejado para análise - indicando qual de suas filiais mais faturou entre outros indicadores.
 
-                        </span>
-                    </p>
+                                  </span>
+                              </p>
+                          </section>
+                        <button onclick="LeiaMaisRelatorios()" id="btnLeiaMaisRelatorios">Leia Mais</button>
+                        <script type="text/javascript" src="FarmaTech.js"></script>
 
-                    <button onclick="LeiaMaisRelatorios()" id="btnLeiaMaisRelatorios">Leia Mais</button>
-                    <script type="text/javascript" src="FarmaTech.js"></script>
-
-                    <br />
+                        <br />
 
 
                 </td>
@@ -150,22 +186,23 @@
         <table width="100%">
             <tr>
                 <td class="textoBg1">
-                    <h3 class="tituloPrincipal">Requisições</h3>
+                    <h4 class="tituloPrincipal">Requisições</h4>
                     <br /><br />
                     <img id="TelaImg" src="https://static.vecteezy.com/ti/vetor-gratis/t2/265967-sob-o-projeto-de-construcao-design-de-desenvolvimento-de-site-ilustracao-vetor.jpg" alt="Tela" style="height:200px;width:200px;" />
                     <br /><br />
-                    <p>
+                          <section class="BoxDescri">
+                              <p>
 
 
-                        Em busca da redução de custos pelo deslocamento entre filiais para a <span id="pontosReq">...</span><span id="maisReq">
-                            comunicação, a tela de requisições possibilita a interação entre funcionário e gestor de forma rápida e eficaz, notificando tanto o recebimento de novas requisições quanto suas respostas, de forma que agora, o tempo antes perdido nesse processo é eliminado, permitindo que o funcionário permaneça em sua filial enquanto trata de determinado assunto com o gestor, tendo também a certeza de que somente ambos terão acesso ao conteúdo da requisição, uma vez que seu conteúdo é ligado ao seu usuário, permitindo que somente este e seu gestor tenham acesso a tal.
-                        </span>
-                    </p>
+                                  Em busca da redução de custos pelo deslocamento entre filiais para a <span id="pontosReq">...</span><span id="maisReq">
+                                      comunicação, a tela de requisições possibilita a interação entre funcionário e gestor de forma rápida e eficaz, notificando tanto o recebimento de novas requisições quanto suas respostas, de forma que agora, o tempo antes perdido nesse processo é eliminado, permitindo que o funcionário permaneça em sua filial enquanto trata de determinado assunto com o gestor, tendo também a certeza de que somente ambos terão acesso ao conteúdo da requisição, uma vez que seu conteúdo é ligado ao seu usuário, permitindo que somente este e seu gestor tenham acesso a tal.
+                                  </span>
+                              </p>
+                          </section>
+                        <button onclick="LeiaMaisReq()" id="btnLeiaMaisReq">Leia Mais</button>
+                        <script type="text/javascript" src="FarmaTech.js"></script>
 
-                    <button onclick="LeiaMaisReq()" id="btnLeiaMaisReq">Leia Mais</button>
-                    <script type="text/javascript" src="FarmaTech.js"></script>
-
-                    <br />
+                        <br />
 
                 </td>
             </tr>

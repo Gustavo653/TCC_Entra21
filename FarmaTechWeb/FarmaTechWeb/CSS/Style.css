@@ -144,10 +144,14 @@ main {
     transform: rotate(-45deg) translate(-8px, 8px);
 }
 
-
 /*-----------------------------------------------------------------------------------------------------------
-    CONTEUDO DO SITE
+    CONTEUDO DE EQUIPE
 */
+.TituloEquipe {
+    font-size: 35px !important;
+}
+
+
 
 .btnLinkedin {
     background: url(https://i.imgur.com/Iuy9VU3.png);
@@ -165,14 +169,50 @@ main {
     border-radius: 10px;
 }
 
-.TextoConteudo #Logoimg {
+.TextoConteudo #Foto {
     width: 70%;
     height: 70%;
     border: none;
     border-radius: 100%;
     position: relative;
     top: 0px;
-    padding: 60px;
+    padding: 30px;
+}
+/*-----------------------------------------------------------------------------------------------------------
+    CONTEUDO DE SOBRE
+*/
+
+.TituloSobre {
+    font-size: 35px !important;
+}
+
+#mais, #maisVendas, #maisRel, #maisReq {
+    display: none;
+}
+
+#btnLeiaMais, #btnLeiaMaisVendas, #btnLeiaMaisRelatorios, #btnLeiaMaisReq {
+    background-color: transparent;
+    border: none;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    word-spacing: 1.3px !important;
+    color: #100f0f;
+    box-shadow: inset 0px -6px #758fd0;
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+    CONTEUDO DO SITE
+*/
+
+
+.TextoConteudo #Logoimg {
+    width: 70%;
+    height: 70%;
+    border: none;
+    position: relative;
+    top: -180px;
 }
 
 .TextoConteudo h1 {
@@ -193,6 +233,12 @@ main {
     position: relative;
     left: 06px;
 }
+.TextoConteudo h4 {
+    border-bottom: 20px solid transparent;
+    font-size: 20px !important;
+    position: relative;
+    left: 06px;
+}
 
 #TextoConteudo {
     color: #ffff;
@@ -204,6 +250,7 @@ main {
     position: relative;
     text-align: center;
     margin-left: 800px;
+    margin-right:200px;
 }
 
 section.TextoConteudo {
@@ -219,14 +266,26 @@ section.TextoConteudo {
     border-radius: 0px 0px 20px 20px;
     background-color: rgba(248,248,255,0.3);
     padding-bottom: 40px;
-    padding-top: 10px;
+    padding-top: 230px;
     width: 700px;
     margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px !important;
+    margin-left: 50px;
+    margin-right: 50px !important;
     text-align: center;
 }
+section.BoxTexto {
+    display: flex;
+    text-align:left;
+    align-items: center;
+    justify-content: center;
+}
 
+section.BoxDescri {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /*-----------------------------------------------------------------------------------------------------------
@@ -279,7 +338,7 @@ section.TextoConteudo {
         border-radius: 0px 0px 20px 20px;
         background-color: rgba(248,248,255,0.3);
         padding-bottom: 40px;
-        padding-top: 10px;
+        padding-top: 230px;
         width: auto;
         margin-bottom: 20px;
         margin-left: 20px;
