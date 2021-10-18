@@ -14,7 +14,7 @@ namespace DAL.Model
     {
         public static List<Convenio> GetTodosConvenios()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Convenios";
                 List<Convenio> lista = new List<Convenio>();
@@ -51,7 +51,7 @@ namespace DAL.Model
         }
         public static List<Convenio> GetConvenios()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Convenios";
                 List<Convenio> lista = new List<Convenio>();
@@ -88,7 +88,7 @@ namespace DAL.Model
         }
         public static List<Convenio> GetConveniosPorFilial(string idFilial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Convenios WHERE idFilial = '{idFilial}'";
                 List<Convenio> lista = new List<Convenio>();
@@ -125,7 +125,7 @@ namespace DAL.Model
         }
         public static List<Convenio> GetConveniosPorNome(string nome)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Convenios WHERE Nome LIKE '%{nome}%'";
                 List<Convenio> lista = new List<Convenio>();
@@ -162,7 +162,7 @@ namespace DAL.Model
         }
         public static List<Convenio> GetConveniosPorNomePorFilial(string nome, string idFilial)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Convenios WHERE Nome LIKE '%{nome}%' AND idFilial = '{idFilial}'";
                 List<Convenio> lista = new List<Convenio>();

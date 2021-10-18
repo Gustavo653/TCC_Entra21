@@ -16,7 +16,7 @@ namespace DAL.Model
         private static HashLogin hash = new HashLogin(SHA512.Create());
         public static bool VerificaCredenciais(string login, string senha)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 List<string> senhas = new List<string>();
                 string select = $"SELECT * from Usuarios WHERE Login = '{login}'";
@@ -75,7 +75,7 @@ namespace DAL.Model
         }
         public static bool VerificaNivelAcesso(string login, string senha)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Usuarios WHERE Login = '{login}' AND Senha = '{hash.CriptografarSenha(senha)}'";
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);

@@ -14,7 +14,7 @@ namespace DAL.Model
     {
         public static List<string> GetCupons(List<DAL.Model.Objetos.Usuario> usuarios, string data)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 List<string> lista = new List<string>();
                 usuarios.Distinct();
@@ -57,7 +57,7 @@ namespace DAL.Model
         }
         public static List<string> GetCupons(DAL.Model.Objetos.Usuario usuarios, string data)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 List<string> lista = new List<string>();
                 string select = $"SELECT CodigoCupom from Cupom WHERE Vendedor = '{usuarios.Nome}' AND Data LIKE '%{data}%'";
@@ -94,7 +94,7 @@ namespace DAL.Model
         }
         public static List<Objetos.Produto> GetCodigosProduto(List<string> cupons)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 List<Objetos.Produto> lista = new List<Objetos.Produto>();
                 for (int i = 0; i < cupons.Count; i++)
