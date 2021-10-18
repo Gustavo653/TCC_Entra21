@@ -21,7 +21,7 @@ namespace FarmaTech.View.Principal
 
         private async void btnSincronizar_Click(object sender, EventArgs e)
         {
-
+            //
             if (DAL.Model.Consultas.DBHibrido.VerificaConexaoInternet(10000000))
             {
                 progressBar1.Value = 0;
