@@ -25,6 +25,10 @@ namespace FarmaTech
 
         private void btnSim_Click(object sender, EventArgs e)
         {
+            if (DAL.Model.Objetos.UsuarioStatic.Contato != null)
+            {
+                DAL.Model.Consultas.DBHibrido.EnviarDados();
+            }
             MessageBox.Show("Obrigado por utilizar FarmaTech.");
             Application.Exit();
         }

@@ -67,6 +67,7 @@ namespace FarmaTech.View
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.CodigoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
@@ -108,7 +109,8 @@ namespace FarmaTech.View
             this.NomeCol,
             this.LaboratorioCol,
             this.QuantidadeCol,
-            this.PrecoUnitarioCol});
+            this.PrecoUnitarioCol,
+            this.CodigoCol});
             this.dgProdutos.Location = new System.Drawing.Point(31, 91);
             this.dgProdutos.Name = "dgProdutos";
             this.dgProdutos.ReadOnly = true;
@@ -471,6 +473,12 @@ namespace FarmaTech.View
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // CodigoCol
+            // 
+            this.CodigoCol.HeaderText = "Código";
+            this.CodigoCol.Name = "CodigoCol";
+            this.CodigoCol.ReadOnly = true;
+            // 
             // TelaCadastroProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,5 +553,6 @@ namespace FarmaTech.View
         private System.Windows.Forms.DataGridViewTextBoxColumn LaboratorioCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecoUnitarioCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoCol;
     }
 }

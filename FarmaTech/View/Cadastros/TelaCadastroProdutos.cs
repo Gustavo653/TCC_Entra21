@@ -190,7 +190,7 @@ namespace FarmaTech.View
                 if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int indiceSelecionado = dgProdutos.CurrentRow.Index;
-                    BAL.Control.Produtos_BAL.RemoveProduto(dgProdutos.Rows[indiceSelecionado].Cells[3].Value.ToString());
+                    BAL.Control.Produtos_BAL.RemoveProduto(dgProdutos.Rows[indiceSelecionado].Cells[4].Value.ToString());
                     if (DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp != DAL.Model.Objetos.UsuarioStatic.NivelAcesso)
                     {
                         DAL.Model.Objetos.UsuarioStatic.NivelAcessoTemp--;
@@ -231,7 +231,7 @@ namespace FarmaTech.View
 
                     foreach (var item in lista)
                     {
-                        dgProdutos.Rows.Add(item.Nome, item.Laboratorio, item.Quantidade, item.PrecoUnitario);
+                        dgProdutos.Rows.Add(item.Nome, item.Laboratorio, item.Quantidade, item.PrecoUnitario, item.Codigo);
                     }                  
                 }
                 else
@@ -240,7 +240,7 @@ namespace FarmaTech.View
 
                     foreach (var item in lista)
                     {
-                        dgProdutos.Rows.Add(item.Nome, item.Laboratorio, item.Quantidade, item.PrecoUnitario);
+                        dgProdutos.Rows.Add(item.Nome, item.Laboratorio, item.Quantidade, item.PrecoUnitario, item.Codigo);
                     }                    
                 }
             }
