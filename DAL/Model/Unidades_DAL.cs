@@ -13,7 +13,7 @@ namespace DAL.Model
     {
         public static List<Objetos.Unidades> GetTodasUnidades()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Unidades";
                 List<Objetos.Unidades> lista = new List<Objetos.Unidades>();
@@ -50,7 +50,7 @@ namespace DAL.Model
         }
         public static List<string> GetUnidades()
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Unidades";
                 List<string> lista = new List<string>();
@@ -85,7 +85,7 @@ namespace DAL.Model
         }
         public static List<string> GetUnidades(string filial)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Unidades WHERE idFilial = '{filial}'";
                 List<string> lista = new List<string>();
@@ -120,7 +120,7 @@ namespace DAL.Model
         }
         public static List<string> GetUnidadesPorNome(string nome)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Unidades WHERE Nome LIKE '%{nome}%'";
                 List<string> lista = new List<string>();
@@ -155,7 +155,7 @@ namespace DAL.Model
         }
         public static List<string> GetUnidadesPorNome(string nome, string filial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Unidades WHERE Nome LIKE '%{nome}%' AND idFilial = '{filial}'";
                 List<string> lista = new List<string>();

@@ -16,7 +16,7 @@ namespace DAL.Model
         public static List<Objetos.Cupom> GetCupoms()
         {
             List<Objetos.Cupom> cupoms = new List<Cupom>();
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Cupom";
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
@@ -51,7 +51,7 @@ namespace DAL.Model
         public static List<Objetos.Venda> GetVendas()
         {
             List<Objetos.Venda> vendas = new List<Venda>();
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Vendas";
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
@@ -100,7 +100,7 @@ namespace DAL.Model
         }
         public static string GeraCupom()
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT CodigoCupom from Cupom";
                 List<string> lista = new List<string>();

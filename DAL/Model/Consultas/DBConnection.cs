@@ -25,7 +25,7 @@ namespace DAL.Model.Consultas
         //Funcoes genericas
         public static void Execute(string command)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 if (command.Contains("DELETE") && EstadoPrograma != 0)
                 {
@@ -57,7 +57,7 @@ namespace DAL.Model.Consultas
         /// <returns></returns>
         public static List<string> GenericSelectUnit(string column, string table)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 List<string> lista = new List<string>();
                 string select = $"SELECT {column} from {table}";

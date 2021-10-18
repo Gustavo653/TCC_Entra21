@@ -14,7 +14,7 @@ namespace DAL.Model
     {
         public static List<ContasReceber> GetTodasContasReceber()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasReceber";
                 List<ContasReceber> lista = new List<ContasReceber>();
@@ -51,7 +51,7 @@ namespace DAL.Model
         }
         public static List<ContasReceber> GetContasReceber()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasReceber";
                 List<ContasReceber> lista = new List<ContasReceber>();
@@ -88,7 +88,7 @@ namespace DAL.Model
         }
         public static List<ContasReceber> GetContasReceber(string idFilial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasReceber WHERE idFilial = '{idFilial}'";
                 List<ContasReceber> lista = new List<ContasReceber>();
@@ -125,7 +125,7 @@ namespace DAL.Model
         }
         public static List<ContasReceber> GetContasReceberPorNome(string nome)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasReceber WHERE NomeFornecedor LIKE '%{nome}%'";
                 List<ContasReceber> lista = new List<ContasReceber>();
@@ -162,7 +162,7 @@ namespace DAL.Model
         }
         public static List<ContasReceber> GetContasReceberPorNome(string nome, string idFilial)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasReceber WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
                 List<ContasReceber> lista = new List<ContasReceber>();

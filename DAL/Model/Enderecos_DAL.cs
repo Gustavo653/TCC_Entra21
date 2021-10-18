@@ -14,7 +14,7 @@ namespace DAL.Model
     {
         public static List<Endereco> GetTodosEnderecos()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Enderecos";
                 List<Endereco> lista = new List<Endereco>();
@@ -73,7 +73,7 @@ namespace DAL.Model
         }
         public static List<Endereco> GetEnderecos(int enumEndereco)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Enderecos WHERE enumEndereco = {enumEndereco}";
                 List<Endereco> lista = new List<Endereco>();
@@ -129,7 +129,7 @@ namespace DAL.Model
 
         public static List<Endereco> GetEnderecos(int enumEndereco, string idFilial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select;
                 if (enumEndereco == 1)
@@ -200,7 +200,7 @@ namespace DAL.Model
         }
         public static string GetEnderecosPorContato(string contato)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Enderecos WHERE Contato = '{contato}'";
                 string nomeFantasia = null;
@@ -240,7 +240,7 @@ namespace DAL.Model
         }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%'";
                 List<Endereco> lista = new List<Endereco>();
@@ -295,7 +295,7 @@ namespace DAL.Model
         }
         public static List<Endereco> GetEnderecosPorNome(string nome, int enumEndereco, string idFilial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Enderecos WHERE enumEndereco = {enumEndereco} AND NomeFantasia LIKE '%{nome}%' AND idFilial = '{idFilial}'";
                 List<Endereco> lista = new List<Endereco>();
