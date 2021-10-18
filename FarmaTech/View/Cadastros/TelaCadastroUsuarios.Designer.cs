@@ -391,7 +391,7 @@ namespace FarmaTech.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 647);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 30);
+            this.panel1.Size = new System.Drawing.Size(1256, 30);
             this.panel1.TabIndex = 91;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -424,11 +424,12 @@ namespace FarmaTech.View
             this.lblUsuarios.AutoSize = true;
             this.lblUsuarios.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarios.Location = new System.Drawing.Point(1015, 31);
+            this.lblUsuarios.Location = new System.Drawing.Point(987, 28);
             this.lblUsuarios.Name = "lblUsuarios";
             this.lblUsuarios.Size = new System.Drawing.Size(142, 36);
             this.lblUsuarios.TabIndex = 92;
             this.lblUsuarios.Text = "Usuários";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click);
             // 
             // timer1
             // 
@@ -439,7 +440,7 @@ namespace FarmaTech.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 677);
+            this.ClientSize = new System.Drawing.Size(1256, 677);
             this.Controls.Add(this.lblUsuarios);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);

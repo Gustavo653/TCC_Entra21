@@ -39,6 +39,9 @@ namespace FarmaTech.View
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabContasPagar = new System.Windows.Forms.TabPage();
             this.dgContasPagar = new System.Windows.Forms.DataGridView();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VencimentoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoContaPagar = new System.Windows.Forms.TabPage();
@@ -53,9 +56,6 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblContas = new System.Windows.Forms.Label();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VencimentoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabContasPagar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgContasPagar)).BeginInit();
@@ -143,7 +143,6 @@ namespace FarmaTech.View
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(924, 437);
             this.tabControl1.TabIndex = 84;
-
             // 
             // tabContasPagar
             // 
@@ -174,6 +173,26 @@ namespace FarmaTech.View
             this.dgContasPagar.ReadOnly = true;
             this.dgContasPagar.Size = new System.Drawing.Size(828, 293);
             this.dgContasPagar.TabIndex = 24;
+            // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 200;
+            // 
+            // ValorCol
+            // 
+            this.ValorCol.HeaderText = "Valor";
+            this.ValorCol.Name = "ValorCol";
+            this.ValorCol.ReadOnly = true;
+            // 
+            // VencimentoCol
+            // 
+            this.VencimentoCol.HeaderText = "Vencimento";
+            this.VencimentoCol.Name = "VencimentoCol";
+            this.VencimentoCol.ReadOnly = true;
+            this.VencimentoCol.Width = 150;
             // 
             // txtPesquisaUsuario
             // 
@@ -277,7 +296,7 @@ namespace FarmaTech.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 577);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 30);
+            this.panel1.Size = new System.Drawing.Size(1109, 30);
             this.panel1.TabIndex = 90;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -320,34 +339,13 @@ namespace FarmaTech.View
             this.lblContas.Size = new System.Drawing.Size(231, 36);
             this.lblContas.TabIndex = 91;
             this.lblContas.Text = "Contas a pagar";
-  
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            this.NomeCol.Width = 200;
-            // 
-            // ValorCol
-            // 
-            this.ValorCol.HeaderText = "Valor";
-            this.ValorCol.Name = "ValorCol";
-            this.ValorCol.ReadOnly = true;
-            // 
-            // VencimentoCol
-            // 
-            this.VencimentoCol.HeaderText = "Vencimento";
-            this.VencimentoCol.Name = "VencimentoCol";
-            this.VencimentoCol.ReadOnly = true;
-            this.VencimentoCol.Width = 150;
             // 
             // TelaCadastroContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1028, 607);
+            this.ClientSize = new System.Drawing.Size(1109, 607);
             this.Controls.Add(this.lblContas);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);

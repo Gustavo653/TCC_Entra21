@@ -380,7 +380,7 @@ namespace FarmaTech
             this.lblNomeUsuario.AutoSize = true;
             this.lblNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeUsuario.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNomeUsuario.Location = new System.Drawing.Point(50, 52);
+            this.lblNomeUsuario.Location = new System.Drawing.Point(22, 52);
             this.lblNomeUsuario.Name = "lblNomeUsuario";
             this.lblNomeUsuario.Size = new System.Drawing.Size(0, 24);
             this.lblNomeUsuario.TabIndex = 2;
@@ -608,12 +608,16 @@ namespace FarmaTech
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(580, 623);
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(613, 618);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(119, 57);
             this.button6.TabIndex = 0;
-            this.button6.Text = "SIncronizar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // TelaPrincipal
@@ -624,6 +628,7 @@ namespace FarmaTech
             this.BackgroundImage = global::FarmaTech.Properties.Resources.lab__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1238, 749);
+            this.ControlBox = false;
             this.Controls.Add(this.button6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
