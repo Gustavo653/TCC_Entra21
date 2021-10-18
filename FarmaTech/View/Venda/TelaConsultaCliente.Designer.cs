@@ -31,19 +31,19 @@ namespace FarmaTech.View.Venda
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaConsultaCliente));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rbCnpj = new System.Windows.Forms.RadioButton();
+            this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.rbCpf = new System.Windows.Forms.RadioButton();
+            this.lblPesquisar = new System.Windows.Forms.Label();
+            this.txtPesquisaCliente = new System.Windows.Forms.TextBox();
             this.lblCadastroClientes = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.rbCnpj = new System.Windows.Forms.RadioButton();
-            this.rbCpf = new System.Windows.Forms.RadioButton();
-            this.dgClientes = new System.Windows.Forms.DataGridView();
-            this.txtPesquisaCliente = new System.Windows.Forms.TextBox();
-            this.lblPesquisar = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,6 +58,65 @@ namespace FarmaTech.View.Venda
             this.panel1.Size = new System.Drawing.Size(895, 417);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // rbCnpj
+            // 
+            this.rbCnpj.AutoSize = true;
+            this.rbCnpj.BackColor = System.Drawing.Color.Transparent;
+            this.rbCnpj.Checked = true;
+            this.rbCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCnpj.Location = new System.Drawing.Point(676, 43);
+            this.rbCnpj.Name = "rbCnpj";
+            this.rbCnpj.Size = new System.Drawing.Size(71, 24);
+            this.rbCnpj.TabIndex = 96;
+            this.rbCnpj.TabStop = true;
+            this.rbCnpj.Text = "CNPJ";
+            this.rbCnpj.UseVisualStyleBackColor = false;
+            this.rbCnpj.CheckedChanged += new System.EventHandler(this.rbCnpj_CheckedChanged);
+            // 
+            // dgClientes
+            // 
+            this.dgClientes.AllowUserToAddRows = false;
+            this.dgClientes.AllowUserToDeleteRows = false;
+            this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgClientes.Location = new System.Drawing.Point(43, 96);
+            this.dgClientes.Name = "dgClientes";
+            this.dgClientes.ReadOnly = true;
+            this.dgClientes.Size = new System.Drawing.Size(819, 291);
+            this.dgClientes.TabIndex = 94;
+            // 
+            // rbCpf
+            // 
+            this.rbCpf.AutoSize = true;
+            this.rbCpf.BackColor = System.Drawing.Color.Transparent;
+            this.rbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCpf.Location = new System.Drawing.Point(585, 43);
+            this.rbCpf.Name = "rbCpf";
+            this.rbCpf.Size = new System.Drawing.Size(61, 24);
+            this.rbCpf.TabIndex = 95;
+            this.rbCpf.Text = "CPF";
+            this.rbCpf.UseVisualStyleBackColor = false;
+            this.rbCpf.CheckedChanged += new System.EventHandler(this.rbCpf_CheckedChanged);
+            // 
+            // lblPesquisar
+            // 
+            this.lblPesquisar.AutoSize = true;
+            this.lblPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesquisar.Location = new System.Drawing.Point(152, 43);
+            this.lblPesquisar.Name = "lblPesquisar";
+            this.lblPesquisar.Size = new System.Drawing.Size(93, 20);
+            this.lblPesquisar.TabIndex = 92;
+            this.lblPesquisar.Text = "Pesquisar:";
+            // 
+            // txtPesquisaCliente
+            // 
+            this.txtPesquisaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisaCliente.Location = new System.Drawing.Point(251, 40);
+            this.txtPesquisaCliente.Name = "txtPesquisaCliente";
+            this.txtPesquisaCliente.Size = new System.Drawing.Size(300, 26);
+            this.txtPesquisaCliente.TabIndex = 93;
+            this.txtPesquisaCliente.TextChanged += new System.EventHandler(this.txtPesquisaCliente_TextChanged);
             // 
             // lblCadastroClientes
             // 
@@ -120,70 +179,12 @@ namespace FarmaTech.View.Venda
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // rbCnpj
-            // 
-            this.rbCnpj.AutoSize = true;
-            this.rbCnpj.BackColor = System.Drawing.Color.Transparent;
-            this.rbCnpj.Checked = true;
-            this.rbCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCnpj.Location = new System.Drawing.Point(676, 43);
-            this.rbCnpj.Name = "rbCnpj";
-            this.rbCnpj.Size = new System.Drawing.Size(71, 24);
-            this.rbCnpj.TabIndex = 96;
-            this.rbCnpj.TabStop = true;
-            this.rbCnpj.Text = "CNPJ";
-            this.rbCnpj.UseVisualStyleBackColor = false;
-            this.rbCnpj.CheckedChanged += new System.EventHandler(this.rbCnpj_CheckedChanged);
-            // 
-            // rbCpf
-            // 
-            this.rbCpf.AutoSize = true;
-            this.rbCpf.BackColor = System.Drawing.Color.Transparent;
-            this.rbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCpf.Location = new System.Drawing.Point(585, 43);
-            this.rbCpf.Name = "rbCpf";
-            this.rbCpf.Size = new System.Drawing.Size(61, 24);
-            this.rbCpf.TabIndex = 95;
-            this.rbCpf.Text = "CPF";
-            this.rbCpf.UseVisualStyleBackColor = false;
-            this.rbCpf.CheckedChanged += new System.EventHandler(this.rbCpf_CheckedChanged);
-            // 
-            // dgClientes
-            // 
-            this.dgClientes.AllowUserToAddRows = false;
-            this.dgClientes.AllowUserToDeleteRows = false;
-            this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Location = new System.Drawing.Point(43, 96);
-            this.dgClientes.Name = "dgClientes";
-            this.dgClientes.ReadOnly = true;
-            this.dgClientes.Size = new System.Drawing.Size(819, 291);
-            this.dgClientes.TabIndex = 94;
-            // 
-            // txtPesquisaCliente
-            // 
-            this.txtPesquisaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisaCliente.Location = new System.Drawing.Point(251, 40);
-            this.txtPesquisaCliente.Name = "txtPesquisaCliente";
-            this.txtPesquisaCliente.Size = new System.Drawing.Size(300, 26);
-            this.txtPesquisaCliente.TabIndex = 93;
-            this.txtPesquisaCliente.TextChanged += new System.EventHandler(this.txtPesquisaCliente_TextChanged);
-            // 
-            // lblPesquisar
-            // 
-            this.lblPesquisar.AutoSize = true;
-            this.lblPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.lblPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesquisar.Location = new System.Drawing.Point(152, 43);
-            this.lblPesquisar.Name = "lblPesquisar";
-            this.lblPesquisar.Size = new System.Drawing.Size(93, 20);
-            this.lblPesquisar.TabIndex = 92;
-            this.lblPesquisar.Text = "Pesquisar:";
-            // 
             // TelaConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 585);
+            this.ControlBox = false;
             this.Controls.Add(this.lblCadastroClientes);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnVoltar);
@@ -197,9 +198,9 @@ namespace FarmaTech.View.Venda
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaConsultaCliente_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

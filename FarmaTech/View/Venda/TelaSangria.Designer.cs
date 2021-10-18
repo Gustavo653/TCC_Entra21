@@ -30,6 +30,7 @@ namespace FarmaTech.View.Venda
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaSangria));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtInserir = new System.Windows.Forms.TextBox();
             this.lblInserir = new System.Windows.Forms.Label();
@@ -101,22 +102,30 @@ namespace FarmaTech.View.Venda
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(379, 262);
+            this.btnConfirma.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnConfirma.FlatAppearance.BorderSize = 0;
+            this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirma.Location = new System.Drawing.Point(356, 264);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(75, 75);
+            this.btnConfirma.Size = new System.Drawing.Size(98, 87);
             this.btnConfirma.TabIndex = 10;
-            this.btnConfirma.Text = "Confirma";
-            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.UseVisualStyleBackColor = false;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(256, 262);
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(233, 264);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 75);
+            this.btnVoltar.Size = new System.Drawing.Size(98, 87);
             this.btnVoltar.TabIndex = 9;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // txtRetirada

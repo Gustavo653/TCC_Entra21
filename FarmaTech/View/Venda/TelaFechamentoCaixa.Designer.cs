@@ -30,6 +30,7 @@ namespace FarmaTech.View.Principal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaFechamentoCaixa));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtValorDinheiro = new System.Windows.Forms.TextBox();
             this.txtValorDebito = new System.Windows.Forms.TextBox();
@@ -137,22 +138,30 @@ namespace FarmaTech.View.Principal
             // 
             // btnConfirma
             // 
-            this.btnConfirma.Location = new System.Drawing.Point(327, 361);
+            this.btnConfirma.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirma.BackgroundImage")));
+            this.btnConfirma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnConfirma.FlatAppearance.BorderSize = 0;
+            this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirma.Location = new System.Drawing.Point(303, 358);
             this.btnConfirma.Name = "btnConfirma";
-            this.btnConfirma.Size = new System.Drawing.Size(75, 75);
+            this.btnConfirma.Size = new System.Drawing.Size(98, 87);
             this.btnConfirma.TabIndex = 21;
-            this.btnConfirma.Text = "Confirma";
-            this.btnConfirma.UseVisualStyleBackColor = true;
+            this.btnConfirma.UseVisualStyleBackColor = false;
             this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(203, 361);
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.BackgroundImage")));
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(179, 358);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 75);
+            this.btnVoltar.Size = new System.Drawing.Size(98, 87);
             this.btnVoltar.TabIndex = 20;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // txtValorCredito
@@ -237,7 +246,7 @@ namespace FarmaTech.View.Principal
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblHora.Location = new System.Drawing.Point(487, 8);
+            this.lblHora.Location = new System.Drawing.Point(503, 8);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(34, 13);
             this.lblHora.TabIndex = 87;

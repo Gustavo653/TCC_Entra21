@@ -264,5 +264,10 @@ namespace FarmaTech.View
                 }
             }
         }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
