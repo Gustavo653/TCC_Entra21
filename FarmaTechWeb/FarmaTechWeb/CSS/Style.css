@@ -14,6 +14,9 @@ a {
     color: #fff;
     text-decoration: none;
     transition: 0.3s;
+    position: relative;
+    text-align: right;
+    left: 90px;
 }
 
     a:hover {
@@ -299,6 +302,14 @@ section.BoxDescri {
         background-size: cover;
         height: auto;
         overflow-x: hidden;
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+        position: relative;
+        text-align: right;
+        left: 0px;
     }
 
     .nav-list {
