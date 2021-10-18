@@ -21,7 +21,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_ValorTotalPedido");
+                    DAL.Model.Consultas.Log.GerarErro(e, "Vendas_ValorTotalPedido");
                 }
             }
             return teste;
@@ -41,7 +41,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_ValorTotal");
+                    DAL.Model.Consultas.Log.GerarErro(e, "Vendas_ValorTotal");
                 }
             }
             return teste;
@@ -57,7 +57,7 @@ namespace BAL.Control
             }
             catch (Exception e)
             {
-                DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_CalculaTotalConvenio");
+                DAL.Model.Consultas.Log.GerarErro(e, "Vendas_CalculaTotalConvenio");
                 return null;
             }
         }
@@ -79,7 +79,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_BAL_InsereVenda");
+                    DAL.Model.Consultas.Log.GerarErro(e, "Vendas_BAL_InsereVenda");
                     return 2; //Erro inesperado
                 }
             }
@@ -109,7 +109,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_BAL_InsereCupom");
+                    DAL.Model.Consultas.Log.GerarErro(e, "Vendas_BAL_InsereCupom");
                     return 2; //Erro inesperado
                 }
             }
@@ -127,7 +127,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_BAL_CancelaVenda");
+                    DAL.Model.Consultas.Log.GerarErro(e, "Vendas_BAL_CancelaVenda");
                     return 2; //Erro inesperado
                 }
             }
@@ -142,7 +142,7 @@ namespace BAL.Control
             }
             catch (Exception e)
             {
-                DAL.Model.Consultas.LogErros.GerarErro(e, "Vendas_BAL_CancelaCupom");
+                DAL.Model.Consultas.Log.GerarErro(e, "Vendas_BAL_CancelaCupom");
             }
         }
     }

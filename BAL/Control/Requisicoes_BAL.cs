@@ -39,7 +39,7 @@ namespace BAL.Control
                     }
                     catch (Exception e)
                     {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Requisicoes_Adicionar");
+                        DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Requisicoes_Adicionar");
                         return 2;
                     }
                 }
@@ -60,7 +60,7 @@ namespace BAL.Control
                     }
                     catch (Exception e)
                     {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Requisicoes_Responder");
+                        DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Requisicoes_Responder");
                         return 2;
                     }
                 }

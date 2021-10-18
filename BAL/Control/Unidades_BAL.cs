@@ -41,7 +41,7 @@ namespace BAL.Control
                     }
                     catch (Exception e)
                     {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Unidades_Adicionar");
+                        DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Unidades_Adicionar");
                         return 3; //Algo inesperado ocorreu
                     }
                 }
@@ -67,7 +67,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Unidades_Remover");
+                    DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Unidades_Remover");
                     return 2; //Algo inesperado ocorreu
                 }
             }
@@ -93,7 +93,7 @@ namespace BAL.Control
                     }
                     catch (Exception e)
                     {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Usuarios_Atualizar");
+                        DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Usuarios_Atualizar");
                         return 3; //Algo inesperado ocorreu
                     }
                 }

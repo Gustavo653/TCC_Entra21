@@ -394,5 +394,24 @@ namespace DAL.Model.Consultas
             }
             VerificaInternet = estadoAnterior;
         }
+        public static void ExecutarDelete()
+        {
+            string caminhoDelete = @"C:\Users\Public\Documents\Delete.txt";
+            if (File.Exists(caminhoDelete))
+            {
+                using (StreamReader sr = new StreamReader(caminhoDelete))
+                {
+                    string comando;
+                    while ((comando = sr.ReadLine()) != null)
+                    {
+                        VerificaInternet = 1;
+                        DbConnection.Execute(comando);
+                        VerificaInternet = 2;
+                        DbConnection.Execute(comando);
+                    }
+                }
+                File.Delete(caminhoDelete);
+            }
+        }
     }
 }

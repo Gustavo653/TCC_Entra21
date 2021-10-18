@@ -28,7 +28,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "CAIXA_Abrir");
+                    DAL.Model.Consultas.Log.GerarErro(e, "CAIXA_Abrir");
                     return 2;
                 }
             }
@@ -52,7 +52,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "CAIXA_Atualizar");
+                    DAL.Model.Consultas.Log.GerarErro(e, "CAIXA_Atualizar");
                     return 2;
                 }
             }
@@ -76,7 +76,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "Caixa_FecharCaixa");
+                    DAL.Model.Consultas.Log.GerarErro(e, "Caixa_FecharCaixa");
                     return 3;
                 }
             }

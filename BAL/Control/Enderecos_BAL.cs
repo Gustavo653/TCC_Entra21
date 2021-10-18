@@ -50,7 +50,7 @@ namespace BAL.Control
                     }
                     catch (Exception e)
                     {
-                        DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Adicionar");
+                        DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Enderecos_Adicionar");
                         return 3; //Algo inesperado ocorreu
                     }
                 }
@@ -69,7 +69,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Remover");
+                    DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Enderecos_Remover");
                     return 2; //Algo inesperado ocorreu
                 }
             }
@@ -86,7 +86,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_RemoverTodasTabelas");
+                    DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Enderecos_RemoverTodasTabelas");
                     return 2; //Algo inesperado ocorreu
                 }
             }
@@ -111,7 +111,7 @@ namespace BAL.Control
                 }
                 catch (Exception e)
                 {
-                    DAL.Model.Consultas.LogErros.GerarErro(e, "CRUD_Enderecos_Atualizar");
+                    DAL.Model.Consultas.Log.GerarErro(e, "CRUD_Enderecos_Atualizar");
                     return 3; //Algo inesperado ocorreu
                 }
             }

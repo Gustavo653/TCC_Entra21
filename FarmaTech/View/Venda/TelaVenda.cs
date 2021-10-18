@@ -84,7 +84,7 @@ namespace FarmaTech
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            DAL.Model.Consultas.LogErros.GerarCupom(BAL.Control.Vendas_BAL.Cupom, "Vendas_GerarCupom", cbNomeCliente.Text, cbCliente.Text, cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text, txtPrecoTotalProduto.Text, txtValorTotal.Text, cbFormaPagamento.Text);
+            DAL.Model.Consultas.Log.GerarCupom(BAL.Control.Vendas_BAL.Cupom, "Vendas_GerarCupom", cbNomeCliente.Text, cbCliente.Text, cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text, txtPrecoTotalProduto.Text, txtValorTotal.Text, cbFormaPagamento.Text);
 
             int resultado = BAL.Control.Vendas_BAL.InsereCupom(cbVendedor.Text, cbNomeCliente.Text, txtFormaValorTotal.Text, cbFormaPagamento.Text);
             if (resultado == 0)

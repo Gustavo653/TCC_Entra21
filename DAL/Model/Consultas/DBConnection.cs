@@ -27,6 +27,10 @@ namespace DAL.Model.Consultas
         {
             if (DBHibrido.VerificaInternet == 1)
             {
+                if (command.Contains("DELETE"))
+                {
+                    Log.GerarDelete(command);
+                }
                 command = command.Replace("dbo.", "");               
                 SqlCeCommand cmd = new SqlCeCommand(command, Objetos.ConnectionStatic.connLocal);
                 Objetos.ConnectionStatic.connLocal.Open();
@@ -35,6 +39,10 @@ namespace DAL.Model.Consultas
             }
             else
             {
+                if (command.Contains("DELETE"))
+                {
+                    Log.GerarDelete(command);
+                }
                 SqlCommand cmd = new SqlCommand(command, Objetos.ConnectionStatic.connRemoto);
                 Objetos.ConnectionStatic.connRemoto.Open();
                 cmd.ExecuteNonQuery();
