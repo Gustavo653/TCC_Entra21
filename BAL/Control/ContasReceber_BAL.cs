@@ -19,7 +19,11 @@ namespace BAL.Control
         }
         public static List<ContasReceber> GetContasReceberPorNome(string nome) //Obtem todas as contas a receber (pesquisando) por nome
         {
+            if(UsuarioStatic.NivelAcesso == 3)
+            {
             return DAL.Model.ContasReceber_DAL.GetContasReceberPorNome(nome);
+            }
+            return DAL.Model.ContasReceber_DAL.GetContasReceberPorNome(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         public static int AdicionarContasReceber(string nome, string valor, string vencimento) //Adiciona contas a receber caso as informacoes sejam coerentes
         {

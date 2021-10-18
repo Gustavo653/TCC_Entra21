@@ -14,7 +14,7 @@ namespace DAL.Model
     {
         public static List<Requisicao> GetRequisicoes()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Requisicoes";
                 List<Requisicao> lista = new List<Requisicao>();
@@ -51,7 +51,7 @@ namespace DAL.Model
         }
         public static List<Requisicao> GetRequisicoesPorNome(string nome)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Requisicoes WHERE NomeUsuario LIKE '%{nome}%'";
                 List<Requisicao> lista = new List<Requisicao>();
@@ -88,7 +88,7 @@ namespace DAL.Model
         }
         public static List<Requisicao> VerificaSeUsuarioTemRequisicaoRespondida(string nome, string filial)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Requisicoes WHERE NomeUsuario = '{nome}' AND Filial = '{filial}' AND RespostaRequisicao NOT LIKE 'SemResposta'";
                 List<Requisicao> lista = new List<Requisicao>();

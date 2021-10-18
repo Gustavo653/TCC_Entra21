@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -98,7 +99,7 @@ namespace FarmaTech.View.Principal
             graficoCustoVenda.Series[0].ChartType = SeriesChartType.Pie;
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private async void btnPesquisar_Click(object sender, EventArgs e)
         {
             if (chkTodasFiliais.Checked == true)
             {
@@ -154,7 +155,27 @@ namespace FarmaTech.View.Principal
             {
                 AtualizaControles();
             }
+            
+            progressBar1.Value = 0;
+            var progress = new Progress<int>(percent =>
+            {
+                progressBar1.Value = percent;
+
+            });
+            await Task.Run(() => DoSomething(progress));
+
+            AtualizaControles();
         }
+        public void DoSomething(IProgress<int> progress)
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                Thread.Sleep(1);
+                if (progress != null)
+                    progress.Report(i);
+            }
+        }
+
     }
 }
 

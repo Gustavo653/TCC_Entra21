@@ -19,20 +19,7 @@ namespace FarmaTech.View.Principal
         }
 
         private void TelaMovimentacaoFinanceira_Load(object sender, EventArgs e)
-        {
-            if (rbReceber.Checked)
-            {
-                AtualizaDG(1);
-            }
-            else if (rbPagar.Checked)
-            {
-                AtualizaDG(2);
-            }
-            else
-            {
-                AtualizaDG(3);
-            }
-                
+        {                
                 
         }
 
@@ -67,12 +54,12 @@ namespace FarmaTech.View.Principal
 
         private void btnContasReceber_Click(object sender, EventArgs e)
         {
-
+            new TelaCadastroContasReceber().Show();
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
-
+            new TelaGraficos().Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -98,7 +85,11 @@ namespace FarmaTech.View.Principal
 
         public void AtualizaDG(int num)
         {
-          
+            while (dgMovimentacao.Rows.Count > 0)
+            {
+                dgMovimentacao.Rows.RemoveAt(0);
+            }
+
             if (num == 1)
             {
                 List<DAL.Model.Objetos.ContasReceber> lista = BAL.Control.ContasReceber_BAL.GetContasReceber();
@@ -132,6 +123,37 @@ namespace FarmaTech.View.Principal
                 {
                     dgMovimentacao.Rows.Add(item.NomeFornecedor, "", item.Valor, item.Vencimento);
                 }
+            }
+        }
+
+        private void rbPagar_CheckedChanged(object sender, EventArgs e)
+        {
+            VerificaOpcao();
+        }
+
+        private void rbReceber_CheckedChanged(object sender, EventArgs e)
+        {
+            VerificaOpcao();
+        }
+
+        private void rbTudo_CheckedChanged(object sender, EventArgs e)
+        {
+            VerificaOpcao();
+        }
+
+        private void VerificaOpcao()
+        {
+            if (rbReceber.Checked)
+            {
+                AtualizaDG(1);
+            }
+            else if (rbPagar.Checked)
+            {
+                AtualizaDG(2);
+            }
+            else
+            {
+                AtualizaDG(3);
             }
         }
     }

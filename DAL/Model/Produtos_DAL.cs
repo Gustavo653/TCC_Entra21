@@ -14,7 +14,7 @@ namespace DAL.Model
     {
         public static List<string> GetUnidades(string filial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Unidades WHERE idFilial = '{filial}'";
                 List<string> lista = new List<string>();
@@ -49,7 +49,7 @@ namespace DAL.Model
         }
         public static List<Produto> GetProdutos()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Produtos";
                 List<Produto> lista = new List<Produto>();
@@ -86,7 +86,7 @@ namespace DAL.Model
         }
         public static List<Produto> GetTodosProdutos()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Produtos";
                 List<Produto> lista = new List<Produto>();
@@ -123,7 +123,7 @@ namespace DAL.Model
         }
         public static List<Produto> GetProdutos(string filial)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Produtos WHERE idFilial = '{filial}'";
                 List<Produto> lista = new List<Produto>();
@@ -161,7 +161,7 @@ namespace DAL.Model
         }
         public static List<Produto> GetProdutosPorNome(string nome)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Produtos WHERE Nome LIKE '%{nome}%'";
                 List<Produto> lista = new List<Produto>();
@@ -198,7 +198,7 @@ namespace DAL.Model
              }
         public static List<Produto> GetProdutosPorNome(string nome, string filial)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Produtos WHERE Nome LIKE '%{nome}%' AND idFilial = '{filial}'";
                 List<Produto> lista = new List<Produto>();

@@ -19,7 +19,11 @@ namespace BAL.Control
         }
         public static List<ContasPagar> GetContasPagarPorNome(string nome) //Obtem contas a pagar (pesquisando) por nome
         {
+            if(UsuarioStatic.NivelAcesso == 3)
+            {
             return DAL.Model.ContasPagar_DAL.GetContasPagarPorNome(nome);
+            }
+            return DAL.Model.ContasPagar_DAL.GetContasPagarPorNome(nome, DAL.Model.Objetos.UsuarioStatic.Filial);
         }
         public static int AdicionarContasPagar(string nome, string valor, string vencimento) //Adiciona uma conta a pagar caso todos os dados sejam coerentes
         {

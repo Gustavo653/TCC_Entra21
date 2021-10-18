@@ -104,6 +104,12 @@
     <Compile Include="View\Cadastros\TelaCadastroConvenios.Designer.cs">
       <DependentUpon>TelaCadastroConvenios.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Principal\TelaBancoDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Principal\TelaBancoDados.Designer.cs">
+      <DependentUpon>TelaBancoDados.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Principal\TelaConfirmacaoCancelamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     <EmbeddedResource Include="View\Cadastros\TelaCadastroConvenios.resx">
       <DependentUpon>TelaCadastroConvenios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Principal\TelaBancoDados.resx">
+      <DependentUpon>TelaBancoDados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Principal\TelaConfirmacaoCancelamento.resx">
       <DependentUpon>TelaConfirmacaoCancelamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +334,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotaoExcluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MicrosoftTeams-image %2819%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
