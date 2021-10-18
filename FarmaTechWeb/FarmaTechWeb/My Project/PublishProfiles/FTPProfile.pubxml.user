@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Esse arquivo é usado pelo processo de publicação/pacote do seu projeto Web. É possível personalizar o comportamento deste processo
+ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxLJSN7ZLRUW6AzdlsrgT+AAAAAACAAAAAAAQZgAAAAEAACAAAAD1Q3ORXwP7lL5o1OB6xZkYcHIdXQhQVeUeinEBxinxiAAAAAAOgAAAAAIAACAAAACYUbu6SvuP9DEcVqC0bcGlqVVVgj+l7UJq7TYNcDK2pyAAAAD2a4Ms2EIYMn2NxhqwM2I3Qy5e39eMkB4JGJobJ/TbDEAAAADU06/0hvOr8Z3PWdX9YLt0YTZMlvlOCD1t3Fm+esnmcqmDGMhP6T7kqsL7td8YqfnSvpzhPIaQs63v4jOqQC7m</EncryptedPassword>
+    <_PublishTargetUrl>ftp://155.254.244.34/www.FarmaTech.somee.com</_PublishTargetUrl>
+    <History>True|2021-10-18T18:02:17.3172439Z;True|2021-10-18T14:57:25.8369575-03:00;True|2021-10-18T14:44:15.6527418-03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/FarmaTechWeb.dll">
+      <publishTime>10/18/2021 14:40:15</publishTime>
+    </File>
+    <File Include="bin/FarmaTechWeb.pdb">
+      <publishTime>10/18/2021 14:40:15</publishTime>
+    </File>
+    <File Include="bin/FarmaTechWeb.xml">
+      <publishTime>10/18/2021 14:40:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>10/15/2021 22:04:07</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>10/15/2021 22:04:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>10/15/2021 22:04:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>10/15/2021 22:04:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>10/15/2021 22:04:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>10/15/2021 22:04:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>10/15/2021 22:04:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>10/15/2021 22:04:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Globalization.Calendars.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.ZipFile.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Net.Http.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Net.Sockets.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Tasks.Extensions.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>10/15/2021 22:04:09</publishTime>
+    </File>
+    <File Include="CSS/Style.css">
+      <publishTime>10/18/2021 14:31:59</publishTime>
+    </File>
+    <File Include="HTML/Equipe.html">
+      <publishTime>10/18/2021 14:31:59</publishTime>
+    </File>
+    <File Include="HTML/FarmaTech.html">
+      <publishTime>10/18/2021 14:58:23</publishTime>
+    </File>
+    <File Include="HTML/Sobre.html">
+      <publishTime>10/18/2021 14:31:59</publishTime>
+    </File>
+    <File Include="JS/FarmaTech.js">
+      <publishTime>10/15/2021 22:04:05</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/18/2021 14:40:29</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
