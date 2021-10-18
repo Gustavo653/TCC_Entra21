@@ -399,17 +399,16 @@ namespace DAL.Model.Consultas
             string caminhoDelete = @"C:\Users\Public\Documents\Delete.txt";
             if (File.Exists(caminhoDelete))
             {
-                using (StreamReader sr = new StreamReader(caminhoDelete))
+                StreamReader func2 = File.OpenText(caminhoDelete);
+                string[] linhas = File.ReadAllLines(caminhoDelete);
+                foreach (string linha in linhas)
                 {
-                    string comando;
-                    while ((comando = sr.ReadLine()) != null)
-                    {
-                        VerificaInternet = 1;
-                        DbConnection.Execute(comando);
-                        VerificaInternet = 2;
-                        DbConnection.Execute(comando);
-                    }
+                    VerificaInternet = 1;
+                    DbConnection.Execute(linha);
+                    VerificaInternet = 2;
+                    DbConnection.Execute(linha);
                 }
+                func2.Close();
                 File.Delete(caminhoDelete);
             }
         }

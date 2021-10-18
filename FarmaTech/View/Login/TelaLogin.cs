@@ -60,6 +60,7 @@ namespace FarmaTech
             DAL.Model.Consultas.DbConnection.SetConnectionString();
             DAL.Model.Consultas.DBHibrido.GerarDBTabelas(selecaoBD);
             DAL.Model.Consultas.DBHibrido.ExecutarDelete();
+            DAL.Model.Consultas.DbConnection.EstadoPrograma = 1;
             DAL.Model.Consultas.DBHibrido.ReceberDados(selecaoBD);
             if (!string.IsNullOrEmpty(txtLogin.Text) && !string.IsNullOrEmpty(txtSenha.Text))
             {
