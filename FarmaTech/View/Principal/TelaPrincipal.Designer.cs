@@ -79,7 +79,7 @@ namespace FarmaTech
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.MenuBancoDados = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,7 +149,8 @@ namespace FarmaTech
             // configuraçõesToolStripMenuItem
             // 
             this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuUnidades});
+            this.MenuUnidades,
+            this.MenuBancoDados});
             this.configuraçõesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.configuraçõesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Highlight;
             this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
@@ -160,7 +161,7 @@ namespace FarmaTech
             // 
             this.MenuUnidades.ForeColor = System.Drawing.SystemColors.Highlight;
             this.MenuUnidades.Name = "MenuUnidades";
-            this.MenuUnidades.Size = new System.Drawing.Size(152, 26);
+            this.MenuUnidades.Size = new System.Drawing.Size(202, 26);
             this.MenuUnidades.Text = "Unidades";
             this.MenuUnidades.Click += new System.EventHandler(this.MenuUnidades_Click);
             // 
@@ -606,15 +607,13 @@ namespace FarmaTech
             this.panel7.Size = new System.Drawing.Size(742, 459);
             this.panel7.TabIndex = 11;
             // 
-            // button6
+            // MenuBancoDados
             // 
-            this.button6.Location = new System.Drawing.Point(580, 623);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "SIncronizar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.MenuBancoDados.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.MenuBancoDados.Name = "MenuBancoDados";
+            this.MenuBancoDados.Size = new System.Drawing.Size(202, 26);
+            this.MenuBancoDados.Text = "Banco de Dados";
+            this.MenuBancoDados.Click += new System.EventHandler(this.MenuBancoDados_Click);
             // 
             // TelaPrincipal
             // 
@@ -624,7 +623,6 @@ namespace FarmaTech
             this.BackgroundImage = global::FarmaTech.Properties.Resources.lab__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1238, 749);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -706,6 +704,6 @@ namespace FarmaTech
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ToolStripMenuItem MenuBancoDados;
     }
 }

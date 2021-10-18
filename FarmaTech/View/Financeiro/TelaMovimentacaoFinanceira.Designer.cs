@@ -36,6 +36,10 @@ namespace FarmaTech.View.Principal
             this.btnContasPagar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.dgMovimentacao = new System.Windows.Forms.DataGridView();
+            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PagarCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbPagar = new System.Windows.Forms.RadioButton();
             this.rbReceber = new System.Windows.Forms.RadioButton();
             this.rbTudo = new System.Windows.Forms.RadioButton();
@@ -48,10 +52,6 @@ namespace FarmaTech.View.Principal
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PagarCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMovimentacao)).BeginInit();
             this.panel2.SuspendLayout();
@@ -139,6 +139,34 @@ namespace FarmaTech.View.Principal
             this.dgMovimentacao.Size = new System.Drawing.Size(831, 302);
             this.dgMovimentacao.TabIndex = 8;
             // 
+            // DescricaoCol
+            // 
+            this.DescricaoCol.HeaderText = "Descrição";
+            this.DescricaoCol.Name = "DescricaoCol";
+            this.DescricaoCol.ReadOnly = true;
+            this.DescricaoCol.Width = 200;
+            // 
+            // ReceberCol
+            // 
+            this.ReceberCol.HeaderText = "Receber";
+            this.ReceberCol.Name = "ReceberCol";
+            this.ReceberCol.ReadOnly = true;
+            this.ReceberCol.Width = 150;
+            // 
+            // PagarCol
+            // 
+            this.PagarCol.HeaderText = "Pagar";
+            this.PagarCol.Name = "PagarCol";
+            this.PagarCol.ReadOnly = true;
+            this.PagarCol.Width = 150;
+            // 
+            // DataCol
+            // 
+            this.DataCol.HeaderText = "Data";
+            this.DataCol.Name = "DataCol";
+            this.DataCol.ReadOnly = true;
+            this.DataCol.Width = 150;
+            // 
             // rbPagar
             // 
             this.rbPagar.AutoSize = true;
@@ -151,6 +179,7 @@ namespace FarmaTech.View.Principal
             this.rbPagar.TabStop = true;
             this.rbPagar.Text = "Pagar";
             this.rbPagar.UseVisualStyleBackColor = false;
+            this.rbPagar.CheckedChanged += new System.EventHandler(this.rbPagar_CheckedChanged);
             // 
             // rbReceber
             // 
@@ -164,6 +193,7 @@ namespace FarmaTech.View.Principal
             this.rbReceber.TabStop = true;
             this.rbReceber.Text = "Receber";
             this.rbReceber.UseVisualStyleBackColor = false;
+            this.rbReceber.CheckedChanged += new System.EventHandler(this.rbReceber_CheckedChanged);
             // 
             // rbTudo
             // 
@@ -177,6 +207,7 @@ namespace FarmaTech.View.Principal
             this.rbTudo.TabStop = true;
             this.rbTudo.Text = "Receber / Pagar";
             this.rbTudo.UseVisualStyleBackColor = false;
+            this.rbTudo.CheckedChanged += new System.EventHandler(this.rbTudo_CheckedChanged);
             // 
             // dateTimePicker2
             // 
@@ -265,34 +296,6 @@ namespace FarmaTech.View.Principal
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // DescricaoCol
-            // 
-            this.DescricaoCol.HeaderText = "Descrição";
-            this.DescricaoCol.Name = "DescricaoCol";
-            this.DescricaoCol.ReadOnly = true;
-            this.DescricaoCol.Width = 200;
-            // 
-            // ReceberCol
-            // 
-            this.ReceberCol.HeaderText = "Receber";
-            this.ReceberCol.Name = "ReceberCol";
-            this.ReceberCol.ReadOnly = true;
-            this.ReceberCol.Width = 150;
-            // 
-            // PagarCol
-            // 
-            this.PagarCol.HeaderText = "Pagar";
-            this.PagarCol.Name = "PagarCol";
-            this.PagarCol.ReadOnly = true;
-            this.PagarCol.Width = 150;
-            // 
-            // DataCol
-            // 
-            this.DataCol.HeaderText = "Data";
-            this.DataCol.Name = "DataCol";
-            this.DataCol.ReadOnly = true;
-            this.DataCol.Width = 150;
             // 
             // TelaMovimentacaoFinanceira
             // 

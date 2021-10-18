@@ -241,10 +241,10 @@ namespace FarmaTech
             graphics.FillRectangle(br, gradient_rect);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+
+        private void MenuBancoDados_Click(object sender, EventArgs e)
         {
-            DAL.Model.Consultas.DBHibrido.EnviarDados();
-            MessageBox.Show("OK");
+            new TelaBancoDados().Show();
         }
     }
 }

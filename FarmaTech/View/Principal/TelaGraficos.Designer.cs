@@ -52,6 +52,7 @@ namespace FarmaTech.View.Principal
             this.txtData = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.chkTodasFiliais = new System.Windows.Forms.CheckBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.graficoCustoVenda)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -216,12 +217,12 @@ namespace FarmaTech.View.Principal
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.ForeColor = System.Drawing.Color.Cyan;
-            this.btnPesquisar.Location = new System.Drawing.Point(819, 157);
+            this.btnPesquisar.BackColor = System.Drawing.Color.Silver;
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisar.Location = new System.Drawing.Point(818, 223);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(217, 145);
+            this.btnPesquisar.Size = new System.Drawing.Size(214, 50);
             this.btnPesquisar.TabIndex = 111;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
@@ -237,11 +238,19 @@ namespace FarmaTech.View.Principal
             this.chkTodasFiliais.Text = "Todas filiais";
             this.chkTodasFiliais.UseVisualStyleBackColor = true;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(818, 178);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(214, 23);
+            this.progressBar1.TabIndex = 113;
+            // 
             // TelaGraficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 622);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.chkTodasFiliais);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtData);
@@ -293,5 +302,6 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.CheckBox chkTodasFiliais;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
