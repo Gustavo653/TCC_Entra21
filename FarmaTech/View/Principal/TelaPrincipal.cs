@@ -243,8 +243,16 @@ namespace FarmaTech
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DAL.Model.Consultas.DBHibrido.EnviarDados();
-            MessageBox.Show("OK");
+            if (DAL.Model.Consultas.DBHibrido.VerificaConexaoInternet(10000000))
+            {
+                DAL.Model.Consultas.DBHibrido.EnviarDados();
+                DAL.Model.Consultas.DBHibrido.ReceberDados();
+                MessageBox.Show("OK");
+            }
+            else
+            {
+                MessageBox.Show("O mamaco ficou sem internet!");
+            }       
         }
     }
 }

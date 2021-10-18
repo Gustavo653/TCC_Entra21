@@ -14,7 +14,7 @@ namespace DAL.Model
     {
         public static List<ContasPagar> GetTodasContasPagar()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasPagar";
                 List<ContasPagar> lista = new List<ContasPagar>();
@@ -51,7 +51,7 @@ namespace DAL.Model
         }
         public static List<ContasPagar> GetContasPagar()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasPagar";
                 List<ContasPagar> lista = new List<ContasPagar>();
@@ -88,7 +88,7 @@ namespace DAL.Model
         }
         public static List<ContasPagar> GetContasPagar(string idFilial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasPagar WHERE idFilial = '{idFilial}'";
                 List<ContasPagar> lista = new List<ContasPagar>();
@@ -125,7 +125,7 @@ namespace DAL.Model
         }
         public static List<ContasPagar> GetContasPagarPorNome(string nome)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasPagar WHERE NomeFornecedor LIKE '%{nome}%'";
                 List<ContasPagar> lista = new List<ContasPagar>();
@@ -162,7 +162,7 @@ namespace DAL.Model
         }
         public static List<ContasPagar> GetContasPagarPorNome(string nome, string idFilial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from ContasPagar WHERE NomeFornecedor LIKE '%{nome}%' AND idFilial = '{idFilial}'";
                 List<ContasPagar> lista = new List<ContasPagar>();

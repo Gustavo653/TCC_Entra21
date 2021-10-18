@@ -55,13 +55,13 @@ namespace FarmaTech
         }
         public void VerificaLogin()
         {
-            string selecaoBD = Interaction.InputBox("Qual BD você deseja? \n1 - local, 2 - online", "Seleção de BD", "2", 400, 400);
-            DAL.Model.Consultas.DBHibrido.VerificaInternet = Convert.ToInt32(selecaoBD);
+
+            DAL.Model.Consultas.DBHibrido.EscolhaBD = 1;
             DAL.Model.Consultas.DbConnection.SetConnectionString();
-            DAL.Model.Consultas.DBHibrido.GerarDBTabelas(selecaoBD);
+            DAL.Model.Consultas.DBHibrido.GerarDBTabelas(DAL.Model.Consultas.DBHibrido.EscolhaBD.ToString());
             DAL.Model.Consultas.DBHibrido.ExecutarDelete();
             DAL.Model.Consultas.DbConnection.EstadoPrograma = 1;
-            DAL.Model.Consultas.DBHibrido.ReceberDados(selecaoBD);
+            DAL.Model.Consultas.DBHibrido.ReceberDados();
             if (!string.IsNullOrEmpty(txtLogin.Text) && !string.IsNullOrEmpty(txtSenha.Text))
             {
                 if (BAL.Control.Login_BAL.ValidaCredenciais(txtLogin.Text, txtSenha.Text))
@@ -88,7 +88,7 @@ namespace FarmaTech
         {
             if (BAL.Control.Login_BAL.ValidaCredenciais("Admin", "Senha"))
             {
-                new TelaPrincipal().Show();                
+                new TelaPrincipal().Show();
                 this.Hide();
             }
         }

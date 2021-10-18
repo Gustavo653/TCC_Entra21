@@ -14,7 +14,7 @@ namespace DAL.Model
     {
         public static string GetUsuarioPorContato(string contato)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT Nome from Usuarios WHERE Contato = '{contato}'";
                 List<string> lista = new List<string>();
@@ -63,7 +63,7 @@ namespace DAL.Model
         }
         public static List<Usuario> GetUsuarios()
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Usuarios";
                 List<Usuario> lista = new List<Usuario>();
@@ -112,7 +112,7 @@ namespace DAL.Model
         }
         public static List<Usuario> GetUsuarios(string filial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Usuarios WHERE Filial = '{filial}'";
                 List<Usuario> lista = new List<Usuario>();
@@ -161,7 +161,7 @@ namespace DAL.Model
         }
         public static List<Usuario> GetUsuariosPorNome(string nome)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Usuarios WHERE Nome LIKE '%{nome}%'";
                 List<Usuario> lista = new List<Usuario>();
@@ -210,7 +210,7 @@ namespace DAL.Model
         }
         public static List<Usuario> GetUsuariosPorNome(string nome, string filial)
         {
-            if(DBHibrido.VerificaInternet == 1)
+            if(DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Usuarios WHERE Nome LIKE '%{nome}%' AND Filial = '{filial}'";
                 List<Usuario> lista = new List<Usuario>();

@@ -14,7 +14,7 @@ namespace DAL.Model
         public static List<Objetos.Caixa> GetTodosOsCaixas()
         {
             List<Objetos.Caixa> caixas = new List<Objetos.Caixa>();
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT * from Caixa";
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
@@ -49,7 +49,7 @@ namespace DAL.Model
         }
         public static string GetValorCaixa(string data, string filial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string valor = null;
                 string select = $"SELECT Valor from Caixa WHERE Data = '{data}' AND idFilial = '{filial}'";
@@ -84,7 +84,7 @@ namespace DAL.Model
         }
         public static int GetCaixa(string data, string idFilial, int entradaSaida)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 List<int> caixas = new List<int>();
                 string select = $"SELECT Caixa from Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}'";
@@ -151,7 +151,7 @@ namespace DAL.Model
         }
         public static bool VerificaEstadoCaixa(string data, string idFilial)
         {
-            if (DBHibrido.VerificaInternet == 1)
+            if (DBHibrido.EscolhaBD == 1)
             {
                 string select = $"SELECT EstadoCaixa from Caixa WHERE Data = '{data}' AND idFilial = '{idFilial}' AND EstadoCaixa = '1'";
                 SqlCeCommand cmd = new SqlCeCommand(select, Objetos.ConnectionStatic.connLocal);
