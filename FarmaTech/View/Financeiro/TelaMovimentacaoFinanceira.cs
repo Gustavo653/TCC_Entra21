@@ -19,8 +19,9 @@ namespace FarmaTech.View.Principal
         }
 
         private void TelaMovimentacaoFinanceira_Load(object sender, EventArgs e)
-        {                
-                
+        {
+            cbMesInicio.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Meses));
+            cbMesFinal.DataSource = Enum.GetValues(typeof(DAL.Model.Enums.Meses));
         }
 
         private void TelaMovimentacaoFinanceira_FormClosed(object sender, FormClosedEventArgs e)

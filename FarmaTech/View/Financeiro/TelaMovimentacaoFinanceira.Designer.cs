@@ -34,7 +34,6 @@ namespace FarmaTech.View.Principal
             this.btnContasReceber = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnContasPagar = new System.Windows.Forms.Button();
-            this.btnVoltar = new System.Windows.Forms.Button();
             this.dgMovimentacao = new System.Windows.Forms.DataGridView();
             this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReceberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +42,6 @@ namespace FarmaTech.View.Principal
             this.rbPagar = new System.Windows.Forms.RadioButton();
             this.rbReceber = new System.Windows.Forms.RadioButton();
             this.rbTudo = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblAte = new System.Windows.Forms.Label();
             this.lblPeriodo = new System.Windows.Forms.Label();
             this.lblMovimentacaoFinanceira = new System.Windows.Forms.Label();
@@ -52,6 +49,9 @@ namespace FarmaTech.View.Principal
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.cbMesInicio = new System.Windows.Forms.ComboBox();
+            this.cbMesFinal = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMovimentacao)).BeginInit();
             this.panel2.SuspendLayout();
@@ -60,6 +60,8 @@ namespace FarmaTech.View.Principal
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
+            this.panel1.Controls.Add(this.cbMesFinal);
+            this.panel1.Controls.Add(this.cbMesInicio);
             this.panel1.Controls.Add(this.btnContasReceber);
             this.panel1.Controls.Add(this.btnRelatorio);
             this.panel1.Controls.Add(this.btnContasPagar);
@@ -68,8 +70,6 @@ namespace FarmaTech.View.Principal
             this.panel1.Controls.Add(this.rbPagar);
             this.panel1.Controls.Add(this.rbReceber);
             this.panel1.Controls.Add(this.rbTudo);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.lblAte);
             this.panel1.Controls.Add(this.lblPeriodo);
             this.panel1.Controls.Add(this.lblMovimentacaoFinanceira);
@@ -108,20 +108,6 @@ namespace FarmaTech.View.Principal
             this.btnContasPagar.Text = "Contas a Pagar";
             this.btnContasPagar.UseVisualStyleBackColor = true;
             this.btnContasPagar.Click += new System.EventHandler(this.btnContasPagar_Click);
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
-            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(285, 512);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 95);
-            this.btnVoltar.TabIndex = 90;
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // dgMovimentacao
             // 
@@ -209,20 +195,6 @@ namespace FarmaTech.View.Principal
             this.rbTudo.UseVisualStyleBackColor = false;
             this.rbTudo.CheckedChanged += new System.EventHandler(this.rbTudo_CheckedChanged);
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(392, 108);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 4;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(130, 107);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
             // lblAte
             // 
             this.lblAte.AutoSize = true;
@@ -297,6 +269,36 @@ namespace FarmaTech.View.Principal
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(285, 512);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(95, 95);
+            this.btnVoltar.TabIndex = 90;
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // cbMesInicio
+            // 
+            this.cbMesInicio.FormattingEnabled = true;
+            this.cbMesInicio.Location = new System.Drawing.Point(138, 109);
+            this.cbMesInicio.Name = "cbMesInicio";
+            this.cbMesInicio.Size = new System.Drawing.Size(189, 28);
+            this.cbMesInicio.TabIndex = 94;
+            // 
+            // cbMesFinal
+            // 
+            this.cbMesFinal.FormattingEnabled = true;
+            this.cbMesFinal.Location = new System.Drawing.Point(395, 109);
+            this.cbMesFinal.Name = "cbMesFinal";
+            this.cbMesFinal.Size = new System.Drawing.Size(189, 28);
+            this.cbMesFinal.TabIndex = 95;
+            // 
             // TelaMovimentacaoFinanceira
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -331,8 +333,6 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.RadioButton rbPagar;
         private System.Windows.Forms.RadioButton rbReceber;
         private System.Windows.Forms.RadioButton rbTudo;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblAte;
         private System.Windows.Forms.Label lblPeriodo;
         private System.Windows.Forms.Label lblMovimentacaoFinanceira;
@@ -348,5 +348,7 @@ namespace FarmaTech.View.Principal
         private System.Windows.Forms.DataGridViewTextBoxColumn ReceberCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn PagarCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataCol;
+        private System.Windows.Forms.ComboBox cbMesFinal;
+        private System.Windows.Forms.ComboBox cbMesInicio;
     }
 }

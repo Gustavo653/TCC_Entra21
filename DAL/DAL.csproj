@@ -111,6 +111,7 @@
     <Compile Include="Model\ContasReceber_DAL.cs" />
     <Compile Include="Model\Convenios_DAL.cs" />
     <Compile Include="Model\Enderecos_DAL.cs" />
+    <Compile Include="Model\Enums\Meses.cs" />
     <Compile Include="Model\Enums\NivelAcesso.cs" />
     <Compile Include="Model\Graficos_DAL.cs" />
     <Compile Include="Model\Objetos\Caixa.cs" />
