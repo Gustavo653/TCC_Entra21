@@ -34,6 +34,10 @@ namespace FarmaTech.View
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabProdutos = new System.Windows.Forms.TabPage();
             this.dgProdutos = new System.Windows.Forms.DataGridView();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LaboratorioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoProduto = new System.Windows.Forms.TabPage();
@@ -63,10 +67,6 @@ namespace FarmaTech.View
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LaboratorioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
@@ -115,6 +115,34 @@ namespace FarmaTech.View
             this.dgProdutos.Size = new System.Drawing.Size(852, 282);
             this.dgProdutos.TabIndex = 20;
             this.dgProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
+            // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 200;
+            // 
+            // LaboratorioCol
+            // 
+            this.LaboratorioCol.HeaderText = "Laboratorio";
+            this.LaboratorioCol.Name = "LaboratorioCol";
+            this.LaboratorioCol.ReadOnly = true;
+            this.LaboratorioCol.Width = 150;
+            // 
+            // QuantidadeCol
+            // 
+            this.QuantidadeCol.HeaderText = "Quantidade";
+            this.QuantidadeCol.Name = "QuantidadeCol";
+            this.QuantidadeCol.ReadOnly = true;
+            this.QuantidadeCol.Width = 150;
+            // 
+            // PrecoUnitarioCol
+            // 
+            this.PrecoUnitarioCol.HeaderText = "Preço Unit.";
+            this.PrecoUnitarioCol.Name = "PrecoUnitarioCol";
+            this.PrecoUnitarioCol.ReadOnly = true;
+            this.PrecoUnitarioCol.Width = 150;
             // 
             // txtPesquisaUsuario
             // 
@@ -326,7 +354,7 @@ namespace FarmaTech.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 570);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 30);
+            this.panel1.Size = new System.Drawing.Size(1068, 30);
             this.panel1.TabIndex = 89;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -443,40 +471,12 @@ namespace FarmaTech.View
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            this.NomeCol.Width = 200;
-            // 
-            // LaboratorioCol
-            // 
-            this.LaboratorioCol.HeaderText = "Laboratorio";
-            this.LaboratorioCol.Name = "LaboratorioCol";
-            this.LaboratorioCol.ReadOnly = true;
-            this.LaboratorioCol.Width = 150;
-            // 
-            // QuantidadeCol
-            // 
-            this.QuantidadeCol.HeaderText = "Quantidade";
-            this.QuantidadeCol.Name = "QuantidadeCol";
-            this.QuantidadeCol.ReadOnly = true;
-            this.QuantidadeCol.Width = 150;
-            // 
-            // PrecoUnitarioCol
-            // 
-            this.PrecoUnitarioCol.HeaderText = "Preço Unit.";
-            this.PrecoUnitarioCol.Name = "PrecoUnitarioCol";
-            this.PrecoUnitarioCol.ReadOnly = true;
-            this.PrecoUnitarioCol.Width = 150;
-            // 
             // TelaCadastroProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1028, 600);
+            this.ClientSize = new System.Drawing.Size(1068, 600);
             this.Controls.Add(this.lblProd);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);

@@ -21,7 +21,6 @@ namespace FarmaTech.View.Principal
 
         private async void btnSincronizar_Click(object sender, EventArgs e)
         {
-            //
             if (DAL.Model.Consultas.DBHibrido.VerificaConexaoInternet(10000000))
             {
                 progressBar1.Value = 0;
@@ -32,8 +31,14 @@ namespace FarmaTech.View.Principal
                 });
                 await Task.Run(() => DoSomething(progress));
 
+                DAL.Model.Consultas.DbConnection.EstadoPrograma = 0;
+
+                DAL.Model.Consultas.DBHibrido.ExecutarDelete();
                 DAL.Model.Consultas.DBHibrido.EnviarDados();
                 DAL.Model.Consultas.DBHibrido.ReceberDados();
+
+                DAL.Model.Consultas.DbConnection.EstadoPrograma = 1;
+
                 MessageBox.Show("OK");
 
             }

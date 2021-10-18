@@ -74,6 +74,9 @@ namespace DAL.Model.Consultas
         }
         public static void ReceberDados() //Clona do online para o local
         {
+            if (File.Exists(DbConnection.nomeArquivoBD))
+                File.Delete(DbConnection.nomeArquivoBD);
+            GerarDBTabelas(EscolhaBD.ToString());
             if (VerificaConexaoInternet(10000000))
             {
                 EscolhaBD = 2;
