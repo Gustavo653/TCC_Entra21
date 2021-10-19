@@ -158,7 +158,7 @@ namespace FarmaTech.View
             {
                 txtNome.Text = lista[0].Nome;
                 txtLogin.Text = lista[0].Login;
-                txtSenha.Clear();
+                txtSenha.Text = lista[0].Senha;
                 txtContato.Text = lista[0].Contato;
                 cbNivelAcesso.SelectedIndex = 0;
                 cbUsuarioFilial.SelectedItem = lista[0].Filial.ToString();
@@ -200,7 +200,7 @@ namespace FarmaTech.View
 
                 foreach (var item in lista)
                 {
-                    dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login);
+                    dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login, item.Senha);
                 }
 
             }
@@ -210,7 +210,7 @@ namespace FarmaTech.View
 
                 foreach (var item in lista)
                 {
-                    dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login);
+                    dgUsuarios.Rows.Add(item.Nome, item.Filial, item.Contato, item.NivelAcesso, item.Login, item.Senha);
                 }
 
 
