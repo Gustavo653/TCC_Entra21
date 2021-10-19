@@ -39,6 +39,8 @@ namespace FarmaTech.View
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabConvenios = new System.Windows.Forms.TabPage();
             this.dgConvenios = new System.Windows.Forms.DataGridView();
+            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescontoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoConvenio = new System.Windows.Forms.TabPage();
@@ -51,8 +53,6 @@ namespace FarmaTech.View
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescontoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabConvenios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgConvenios)).BeginInit();
@@ -170,6 +170,19 @@ namespace FarmaTech.View
             this.dgConvenios.Size = new System.Drawing.Size(626, 282);
             this.dgConvenios.TabIndex = 21;
             // 
+            // NomeCol
+            // 
+            this.NomeCol.HeaderText = "Nome";
+            this.NomeCol.Name = "NomeCol";
+            this.NomeCol.ReadOnly = true;
+            this.NomeCol.Width = 200;
+            // 
+            // DescontoCol
+            // 
+            this.DescontoCol.HeaderText = "Desconto";
+            this.DescontoCol.Name = "DescontoCol";
+            this.DescontoCol.ReadOnly = true;
+            // 
             // txtPesquisaUsuario
             // 
             this.txtPesquisaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,6 +227,7 @@ namespace FarmaTech.View
             this.txtDesconto.Size = new System.Drawing.Size(134, 29);
             this.txtDesconto.TabIndex = 68;
             this.txtDesconto.Text = "20%";
+            this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             // 
             // lblDesconto
             // 
@@ -233,6 +247,7 @@ namespace FarmaTech.View
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(482, 29);
             this.txtNome.TabIndex = 66;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblFornecedor
             // 
@@ -241,9 +256,9 @@ namespace FarmaTech.View
             this.lblFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFornecedor.Location = new System.Drawing.Point(42, 40);
             this.lblFornecedor.Name = "lblFornecedor";
-            this.lblFornecedor.Size = new System.Drawing.Size(106, 20);
+            this.lblFornecedor.Size = new System.Drawing.Size(88, 20);
             this.lblFornecedor.TabIndex = 65;
-            this.lblFornecedor.Text = "Fornecedor:";
+            this.lblFornecedor.Text = "Convênio:";
             // 
             // lblConv
             // 
@@ -296,19 +311,6 @@ namespace FarmaTech.View
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // NomeCol
-            // 
-            this.NomeCol.HeaderText = "Nome";
-            this.NomeCol.Name = "NomeCol";
-            this.NomeCol.ReadOnly = true;
-            this.NomeCol.Width = 200;
-            // 
-            // DescontoCol
-            // 
-            this.DescontoCol.HeaderText = "Desconto";
-            this.DescontoCol.Name = "DescontoCol";
-            this.DescontoCol.ReadOnly = true;
             // 
             // TelaCadastroConvenios
             // 

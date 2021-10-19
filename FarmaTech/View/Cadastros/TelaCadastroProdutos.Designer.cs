@@ -38,6 +38,7 @@ namespace FarmaTech.View
             this.LaboratorioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantidadeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecoUnitarioCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaUsuario = new System.Windows.Forms.TextBox();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoProduto = new System.Windows.Forms.TabPage();
@@ -67,7 +68,6 @@ namespace FarmaTech.View
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.CodigoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
@@ -146,6 +146,12 @@ namespace FarmaTech.View
             this.PrecoUnitarioCol.ReadOnly = true;
             this.PrecoUnitarioCol.Width = 150;
             // 
+            // CodigoCol
+            // 
+            this.CodigoCol.HeaderText = "Código";
+            this.CodigoCol.Name = "CodigoCol";
+            this.CodigoCol.ReadOnly = true;
+            // 
             // txtPesquisaUsuario
             // 
             this.txtPesquisaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,6 +217,7 @@ namespace FarmaTech.View
             this.txtGrupo.Name = "txtGrupo";
             this.txtGrupo.Size = new System.Drawing.Size(134, 29);
             this.txtGrupo.TabIndex = 80;
+            this.txtGrupo.TextChanged += new System.EventHandler(this.txtGrupo_TextChanged);
             // 
             // label7
             // 
@@ -230,6 +237,7 @@ namespace FarmaTech.View
             this.txtPrecoUnitario.Name = "txtPrecoUnitario";
             this.txtPrecoUnitario.Size = new System.Drawing.Size(134, 29);
             this.txtPrecoUnitario.TabIndex = 78;
+            this.txtPrecoUnitario.TextChanged += new System.EventHandler(this.txtPrecoUnitario_TextChanged);
             // 
             // label6
             // 
@@ -249,6 +257,7 @@ namespace FarmaTech.View
             this.txtPrecoCusto.Name = "txtPrecoCusto";
             this.txtPrecoCusto.Size = new System.Drawing.Size(134, 29);
             this.txtPrecoCusto.TabIndex = 76;
+            this.txtPrecoCusto.TextChanged += new System.EventHandler(this.txtPrecoCusto_TextChanged);
             // 
             // label3
             // 
@@ -268,6 +277,7 @@ namespace FarmaTech.View
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(160, 29);
             this.txtCodigo.TabIndex = 74;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // label4
             // 
@@ -287,6 +297,7 @@ namespace FarmaTech.View
             this.txtLaboratorio.Name = "txtLaboratorio";
             this.txtLaboratorio.Size = new System.Drawing.Size(318, 29);
             this.txtLaboratorio.TabIndex = 72;
+            this.txtLaboratorio.TextChanged += new System.EventHandler(this.txtLaboratorio_TextChanged);
             // 
             // label5
             // 
@@ -336,6 +347,7 @@ namespace FarmaTech.View
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(691, 29);
             this.txtNome.TabIndex = 66;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblRazaoSocial
             // 
@@ -472,12 +484,6 @@ namespace FarmaTech.View
             this.btnVoltar.TabIndex = 79;
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // CodigoCol
-            // 
-            this.CodigoCol.HeaderText = "Código";
-            this.CodigoCol.Name = "CodigoCol";
-            this.CodigoCol.ReadOnly = true;
             // 
             // TelaCadastroProdutos
             // 

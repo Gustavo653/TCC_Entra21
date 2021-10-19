@@ -219,6 +219,7 @@ namespace FarmaTech.View
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(645, 26);
             this.txtNome.TabIndex = 47;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // cbUsuarioFilial
             // 
@@ -257,6 +258,7 @@ namespace FarmaTech.View
             this.txtContato.Name = "txtContato";
             this.txtContato.Size = new System.Drawing.Size(294, 26);
             this.txtContato.TabIndex = 52;
+            this.txtContato.TextChanged += new System.EventHandler(this.txtContato_TextChanged);
             // 
             // cbNivelAcesso
             // 
@@ -278,6 +280,7 @@ namespace FarmaTech.View
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(294, 26);
             this.txtLogin.TabIndex = 55;
+            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // lblLogin
             // 
@@ -296,6 +299,7 @@ namespace FarmaTech.View
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(240, 26);
             this.txtSenha.TabIndex = 57;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // lblSenha
             // 

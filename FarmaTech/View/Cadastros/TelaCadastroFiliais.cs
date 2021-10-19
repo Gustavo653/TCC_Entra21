@@ -235,5 +235,69 @@ namespace FarmaTech.View
             lblHora.Text = DateTime.Now.ToLongTimeString();
             lblData.Text = DateTime.Now.ToLongDateString();
         }
+
+        private void txtRazaoSocial_TextChanged(object sender, EventArgs e)
+        {
+            if (txtRazaoSocial.Text.Length > 50)
+            {
+                txtRazaoSocial.Text = txtRazaoSocial.Text.Substring(0, txtRazaoSocial.TextLength - 1);
+            }
+        }
+
+        private void txtNomeFantasia_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNomeFantasia.Text.Length > 50)
+            {
+                txtNomeFantasia.Text = txtNomeFantasia.Text.Substring(0, txtNomeFantasia.TextLength - 1);
+            }
+        }
+
+        private void txtEndereco_TextChanged(object sender, EventArgs e)
+        {
+            if (txtEndereco.Text.Length > 30)
+            {
+                txtEndereco.Text = txtEndereco.Text.Substring(0, txtEndereco.TextLength - 1);
+            }
+        }
+
+        private void txtCompl_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCompl.Text.Length > 30)
+            {
+                txtCompl.Text = txtCompl.Text.Substring(0, txtCompl.TextLength - 1);
+            }
+        }
+
+        private void txtCidade_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCidade.Text.Length > 30)
+            {
+                txtCidade.Text = txtCidade.Text.Substring(0, txtCidade.TextLength - 1);
+            }
+        }
+
+        private void txtNumero_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNumero.Text.Length > 4)
+            {
+                txtNumero.Text = txtNumero.Text.Substring(0, txtNumero.TextLength - 1);
+            }
+        }
+
+        private void txtCnpj_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCnpj.Text.Length > 14)
+            {
+                txtCnpj.Text = txtCnpj.Text.Substring(0, txtCnpj.TextLength - 1);
+            }
+        }
+
+        private void txtContato_TextChanged(object sender, EventArgs e)
+        {
+            if (txtContato.Text.Length > 15)
+            {
+                txtContato.Text = txtContato.Text.Substring(0, txtContato.TextLength - 1);
+            }
+        }
     }
 }

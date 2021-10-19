@@ -260,5 +260,21 @@ namespace FarmaTech.View
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(139, 148, 250), Color.FromArgb(116, 186, 241), 45f);
             graphics.FillRectangle(br, gradient_rect);
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNome.Text.Length > 30)
+            {
+                txtNome.Text = txtNome.Text.Substring(0, txtNome.TextLength - 1);
+            }
+        }
+
+        private void txtAbreviacao_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAbreviacao.Text.Length > 15)
+            {
+                txtAbreviacao.Text = txtAbreviacao.Text.Substring(0, txtAbreviacao.TextLength - 1);
+            }
+        }
     }
 }

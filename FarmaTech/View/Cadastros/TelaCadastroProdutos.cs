@@ -307,5 +307,53 @@ namespace FarmaTech.View
         {
 
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNome.Text.Length > 50)
+            {
+                txtNome.Text = txtNome.Text.Substring(0, txtNome.TextLength - 1);
+            }
+        }
+
+        private void txtLaboratorio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtLaboratorio.Text.Length > 50)
+            {
+                txtLaboratorio.Text = txtLaboratorio.Text.Substring(0, txtLaboratorio.TextLength - 1);
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Length > 20)
+            {
+                txtCodigo.Text = txtCodigo.Text.Substring(0, txtCodigo.TextLength - 1);
+            }
+        }
+
+        private void txtGrupo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGrupo.Text.Length > 10)
+            {
+                txtGrupo.Text = txtGrupo.Text.Substring(0, txtGrupo.TextLength - 1);
+            }
+        }
+
+        private void txtPrecoCusto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPrecoCusto.Text.Length > 8)
+            {
+                txtPrecoCusto.Text = txtPrecoCusto.Text.Substring(0, txtPrecoCusto.TextLength - 1);
+            }
+        }
+
+        private void txtPrecoUnitario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPrecoUnitario.Text.Length > 8)
+            {
+                txtPrecoUnitario.Text = txtPrecoUnitario.Text.Substring(0, txtPrecoUnitario.TextLength - 1);
+            }
+        }
     }
 }

@@ -232,5 +232,21 @@ namespace FarmaTech.View
         {
             SetBackColorDegrade(sender, e);
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNome.Text.Length > 30)
+            {
+                txtNome.Text = txtNome.Text.Substring(0, txtNome.TextLength - 1);
+            }
+        }
+
+        private void txtDesconto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDesconto.Text.Length > 5)
+            {
+                txtDesconto.Text = txtDesconto.Text.Substring(0, txtDesconto.TextLength - 1);
+            }
+        }
     }
 }

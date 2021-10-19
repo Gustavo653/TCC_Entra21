@@ -176,7 +176,7 @@ namespace FarmaTech.View
                     MessageBox.Show("Você não pode remover o usuário ativo!", "Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 AtualizaDG();
             }
-           
+
         }
 
         private void TelaCadastroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
@@ -268,6 +268,40 @@ namespace FarmaTech.View
         private void lblUsuarios_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //        If textbox.text.length > 50
+        //Textbox.text = textbox.text.tostring.substring(0, textbox.length - 1)
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNome.Text.Length > 50)
+            {
+                txtNome.Text = txtNome.Text.Substring(0, txtNome.Text.Length - 1);
+            }
+        }
+        private void txtContato_TextChanged(object sender, EventArgs e)
+        {
+            if (txtContato.Text.Length > 14)
+            {
+                txtContato.Text = txtContato.Text.Substring(0, txtContato.TextLength - 1);
+            }
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+            if (txtLogin.Text.Length > 50)
+            {
+                txtLogin.Text = txtLogin.Text.Substring(0, txtLogin.TextLength - 1);
+            }
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSenha.Text.Length > 128)
+            {
+                txtSenha.Text = txtSenha.Text.Substring(0, txtSenha.TextLength - 1);
+            }
         }
     }
 }

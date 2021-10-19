@@ -147,6 +147,7 @@ namespace FarmaTech.View
             this.txtAbreviacao.Name = "txtAbreviacao";
             this.txtAbreviacao.Size = new System.Drawing.Size(93, 26);
             this.txtAbreviacao.TabIndex = 49;
+            this.txtAbreviacao.TextChanged += new System.EventHandler(this.txtAbreviacao_TextChanged);
             // 
             // lblAbreviacao
             // 
@@ -166,6 +167,7 @@ namespace FarmaTech.View
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(453, 26);
             this.txtNome.TabIndex = 47;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblNome
             // 

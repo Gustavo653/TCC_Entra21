@@ -202,5 +202,21 @@ namespace FarmaTech.View.Principal
                 }
             }
         }
+
+        private void txtNomeFornecedor_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNomeFornecedor.Text.Length > 50)
+            {
+                txtNomeFornecedor.Text = txtNomeFornecedor.Text.Substring(0, txtNomeFornecedor.TextLength - 1);
+            }
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            if (txtValor.Text.Length > 12)
+            {
+                txtValor.Text = txtValor.Text.Substring(0, txtValor.TextLength - 1);
+            }
+        }
     }
 }

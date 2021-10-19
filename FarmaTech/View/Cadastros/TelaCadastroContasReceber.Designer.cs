@@ -183,6 +183,7 @@ namespace FarmaTech.View.Principal
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(134, 29);
             this.txtValor.TabIndex = 68;
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // lblValor
             // 
@@ -202,6 +203,7 @@ namespace FarmaTech.View.Principal
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
             this.txtNomeFornecedor.Size = new System.Drawing.Size(618, 29);
             this.txtNomeFornecedor.TabIndex = 66;
+            this.txtNomeFornecedor.TextChanged += new System.EventHandler(this.txtNomeFornecedor_TextChanged);
             // 
             // lblFornecedor
             // 
