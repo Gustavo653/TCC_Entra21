@@ -256,6 +256,7 @@ namespace FarmaTech
             this.Name = "TelaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = ".:FarmaTech:.";
+            this.Load += new System.EventHandler(this.TelaLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

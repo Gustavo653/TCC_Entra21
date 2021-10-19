@@ -13,7 +13,7 @@ namespace DAL.Model.Consultas
         {
             string data = DateTime.Now.ToString().Replace(":", "-").Replace("/", "=");
             string nomeArquivo = "Local do erro - " + localErro + " - Horario e data - " + data;
-            string caminhoerro = @"C:\Users\Public\Documents\" + nomeArquivo + ".txt";
+            string caminhoerro = @"C:\Users\Public\Documents\FarmaTech\Erros\" + nomeArquivo + ".txt";
             StreamWriter erro;
             erro = File.CreateText(caminhoerro);
             erro.WriteLine("Erro detectado");
@@ -50,7 +50,7 @@ namespace DAL.Model.Consultas
         {
             string data = DateTime.Now.ToString().Replace(":", "-").Replace("/", "=");
             string nomeArquivo = "Local do cupom - " + localCupom + " - Horario e data - " + data;
-            string caminhoCupom = @"C:\Users\Public\Documents\" + nomeArquivo + ".txt";
+            string caminhoCupom = @"C:\Users\Public\Documents\FarmaTech\Cupom" + nomeArquivo + ".txt";
 
             StreamWriter cupomText;
             cupomText = File.CreateText(caminhoCupom);

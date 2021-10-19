@@ -11,8 +11,8 @@ namespace DAL.Model.Consultas
     public class DbConnection
     {
         public static int EstadoPrograma { get; set; } = 0;
-        public static string nomeArquivoBD = @"C:\Users\Public\Documents\DB.sdf";
-        public static string caminhoCommands = @"C:\Users\Public\Documents\Commands.txt";
+        public static string nomeArquivoBD = @"C:\Users\Public\Documents\FarmaTech\DB.sdf";
+        public static string caminhoCommands = @"C:\Users\Public\Documents\FarmaTech\Commands\Commands.txt";
         public static SqlConnection connRemota = new SqlConnection("workstation id=TCC-Entra21.mssql.somee.com;packet size=4096;user id=Gustavo10_SQLLogin_1;pwd=dg6kzsavsg;data source=TCC-Entra21.mssql.somee.com;persist security info=False;initial catalog=TCC-Entra21");
         public static SqlCeConnection connLocal = new SqlCeConnection(string.Format("DataSource=\"{0}\"; Password='{1}'", nomeArquivoBD, ""));
         public static string connLocalString = string.Format("DataSource=\"{0}\"; Password='{1}'", nomeArquivoBD, "");

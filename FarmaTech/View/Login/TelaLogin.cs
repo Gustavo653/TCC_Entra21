@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -110,6 +111,13 @@ namespace FarmaTech
                 new TelaPrincipal().Show();
                 this.Hide();
             }
+        }
+
+        private void TelaLogin_Load(object sender, EventArgs e)
+        {
+            Directory.CreateDirectory(@"C:\Users\Public\Documents\FarmaTech\Commands");
+            Directory.CreateDirectory(@"C:\Users\Public\Documents\FarmaTech\Erros");
+            Directory.CreateDirectory(@"C:\Users\Public\Documents\FarmaTech\Cupom");
         }
     }
 }
