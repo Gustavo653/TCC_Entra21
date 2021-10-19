@@ -183,8 +183,6 @@ namespace FarmaTech.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            // NÃO ESTÁ EXCLUINDO ************************
-
             if (dgProdutos.Rows.Count > 0)
             {
                 if (MessageBox.Show("Confirma a exclusão do registro?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

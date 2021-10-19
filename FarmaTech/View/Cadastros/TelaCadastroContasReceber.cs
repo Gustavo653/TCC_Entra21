@@ -177,8 +177,6 @@ namespace FarmaTech.View.Principal
         }
         public void AtualizaDG()
         {
-            // ao pesquisar está trazendo contas de outra filial *************
-
             while (dgContasReceber.Rows.Count > 0)
             {
                 dgContasReceber.Rows.RemoveAt(0);

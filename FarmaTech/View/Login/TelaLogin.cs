@@ -86,33 +86,6 @@ namespace FarmaTech
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (BAL.Control.Login_BAL.ValidaCredenciais("Admin", "Senha"))
-            {
-                new TelaPrincipal().Show();
-                this.Hide();
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (BAL.Control.Login_BAL.ValidaCredenciais("a2", "a2"))
-            {
-                new TelaPrincipal().Show();
-                this.Hide();
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (BAL.Control.Login_BAL.ValidaCredenciais("a", "a"))
-            {
-                new TelaPrincipal().Show();
-                this.Hide();
-            }
-        }
-
         private void TelaLogin_Load(object sender, EventArgs e)
         {
             Directory.CreateDirectory(@"C:\Users\Public\Documents\FarmaTech\Commands");
