@@ -72,29 +72,7 @@ namespace FarmaTech.View.Principal
             Rectangle gradient_rect = new Rectangle(0, 0, Width, Height);
             Brush br = new LinearGradientBrush(gradient_rect, Color.FromArgb(139, 148, 250), Color.FromArgb(94, 221, 231), 45f);
             graphics.FillRectangle(br, gradient_rect);
-        }
-
-        private void TelaBancoDados_Load(object sender, EventArgs e)
-        {
-            if(DAL.Model.Consultas.DBHibrido.EscolhaBD == 1)
-            {
-                rbLocal.Checked = true;
-            }
-            else
-            {
-                rbRemoto.Checked = true;
-            }
-        }
-
-        private void rbLocal_CheckedChanged(object sender, EventArgs e)
-        {
-            DAL.Model.Consultas.DBHibrido.EscolhaBD = 1;
-        }
-
-        private void rbRemoto_CheckedChanged(object sender, EventArgs e)
-        {
-            DAL.Model.Consultas.DBHibrido.EscolhaBD = 2;
-        }
+        }     
     }
 
 }

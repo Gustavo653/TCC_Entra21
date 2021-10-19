@@ -283,6 +283,7 @@ namespace FarmaTech.View.Principal
             this.ClientSize = new System.Drawing.Size(657, 551);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaFechamentoCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaFechamentoCaixa";

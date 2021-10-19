@@ -170,7 +170,7 @@ namespace FarmaTech.View.Principal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Houve um erro desconhecido! Tente novamente mais tarde");
+                MessageBox.Show("Houve um erro desconhecido! Tente novamente mais tarde", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 DAL.Model.Consultas.Log.GerarErro(ex, "Tela_Grafico");
             }
         }

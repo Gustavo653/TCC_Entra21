@@ -97,6 +97,7 @@ namespace FarmaTech
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaSair";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TelaSair_Paint);

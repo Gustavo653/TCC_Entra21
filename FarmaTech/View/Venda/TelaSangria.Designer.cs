@@ -234,6 +234,7 @@ namespace FarmaTech.View.Venda
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaSangria";
             this.Text = "TelaSangria";
             this.Load += new System.EventHandler(this.TelaSangria_Load);
