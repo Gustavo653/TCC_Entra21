@@ -33,8 +33,7 @@ namespace FarmaTech.View.Principal
 
                 DAL.Model.Consultas.DbConnection.EstadoPrograma = 0;
 
-                DAL.Model.Consultas.DBHibrido.ExecutarDelete();
-                DAL.Model.Consultas.DBHibrido.EnviarDados();
+                DAL.Model.Consultas.DBHibrido.ExecutarCommands();
                 DAL.Model.Consultas.DBHibrido.ReceberDados();
 
                 DAL.Model.Consultas.DbConnection.EstadoPrograma = 1;

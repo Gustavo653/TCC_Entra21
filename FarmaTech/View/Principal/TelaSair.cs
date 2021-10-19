@@ -27,7 +27,7 @@ namespace FarmaTech
         {
             if (DAL.Model.Objetos.UsuarioStatic.Contato != null)
             {
-                DAL.Model.Consultas.DBHibrido.EnviarDados();
+                DAL.Model.Consultas.DBHibrido.ExecutarCommands();
             }
             MessageBox.Show("Obrigado por utilizar FarmaTech.");
             Application.Exit();

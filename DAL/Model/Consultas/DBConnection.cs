@@ -12,6 +12,7 @@ namespace DAL.Model.Consultas
     {
         public static int EstadoPrograma { get; set; } = 0;
         public static string nomeArquivoBD = @"C:\Users\Public\Documents\DB.sdf";
+        public static string caminhoCommands = @"C:\Users\Public\Documents\Commands.txt";
         public static SqlConnection connRemota = new SqlConnection("workstation id=TCC-Entra21.mssql.somee.com;packet size=4096;user id=Gustavo10_SQLLogin_1;pwd=dg6kzsavsg;data source=TCC-Entra21.mssql.somee.com;persist security info=False;initial catalog=TCC-Entra21");
         public static SqlCeConnection connLocal = new SqlCeConnection(string.Format("DataSource=\"{0}\"; Password='{1}'", nomeArquivoBD, ""));
         public static string connLocalString = string.Format("DataSource=\"{0}\"; Password='{1}'", nomeArquivoBD, "");
@@ -27,9 +28,9 @@ namespace DAL.Model.Consultas
         {
             if (DBHibrido.EscolhaBD == 1)
             {
-                if (command.Contains("DELETE") && EstadoPrograma != 0)
+                if (EstadoPrograma != 0)
                 {
-                    Log.GerarDelete(command);
+                    Log.GerarCommands(command);
                 }
                 command = command.Replace("dbo.", "");               
                 SqlCeCommand cmd = new SqlCeCommand(command, Objetos.ConnectionStatic.connLocal);
@@ -38,11 +39,7 @@ namespace DAL.Model.Consultas
                 Objetos.ConnectionStatic.connLocal.Close();
             }
             else
-            {
-                if (command.Contains("DELETE") && EstadoPrograma != 0)
-                {
-                    Log.GerarDelete(command);
-                }
+            {  
                 SqlCommand cmd = new SqlCommand(command, Objetos.ConnectionStatic.connRemoto);
                 Objetos.ConnectionStatic.connRemoto.Open();
                 cmd.ExecuteNonQuery();

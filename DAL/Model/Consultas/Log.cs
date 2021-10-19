@@ -24,28 +24,26 @@ namespace DAL.Model.Consultas
             erro.Close();
         }
 
-        public static void GerarDelete(string command)
+        public static void GerarCommands(string command)
         {
-            string caminhoDelete = @"C:\Users\Public\Documents\Delete.txt";
-            if (!File.Exists(caminhoDelete))
+            if (!File.Exists(DbConnection.caminhoCommands))
             {
-                StreamWriter delete = File.CreateText(caminhoDelete);
-                delete.WriteLine(command);
-                delete.Close();
+                StreamWriter commands = File.CreateText(DbConnection.caminhoCommands);
+                commands.WriteLine(command);
+                commands.Close();
             }
             else
             {
-                StreamWriter delete = File.AppendText(caminhoDelete);
-                delete.WriteLine(command);
-                delete.Close();
+                StreamWriter commands = File.AppendText(DbConnection.caminhoCommands);
+                commands.WriteLine(command);
+                commands.Close();
             }
         }
 
-        public static void ApagarDelete()
-        {
-            string caminhoDelete = @"C:\Users\Public\Documents\Delete.txt";
-            if (File.Exists(caminhoDelete))
-                File.Delete(caminhoDelete);
+        public static void ApagarCommands()
+        {            
+            if (File.Exists(DbConnection.caminhoCommands))
+                File.Delete(DbConnection.caminhoCommands);
         }
 
         public static void GerarCupom(string codigoCupom, string localCupom, string razaoSocial, string cnpj, string produto, string quant, string precoUnit, string precoTotalProduto, string valorTotal, string formaPagamento)
