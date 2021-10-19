@@ -86,7 +86,7 @@ namespace DAL.Model.Consultas
                 List<Objetos.ContasReceber> contasReceberOnline = ContasReceber_DAL.GetTodasContasReceber();
                 List<Objetos.Convenio> conveniosOnline = Convenios_DAL.GetTodosConvenios();
                 List<Objetos.Endereco> enderecosOnline = Enderecos_DAL.GetTodosEnderecos();
-                List<Objetos.Produto> produtosOnline = Produtos_DAL.GetProdutos();
+                List<Objetos.Produto> produtosOnline = Produtos_DAL.GetTodosProdutos();
                 List<Objetos.Requisicao> requisicoesOnline = Requisicoes_DAL.GetRequisicoes();
                 List<Objetos.Unidades> unidadesOnline = Unidades_DAL.GetTodasUnidades();
                 List<Objetos.Usuario> usuariosOnline = Usuarios_DAL.GetUsuarios();
@@ -94,193 +94,50 @@ namespace DAL.Model.Consultas
                 List<Objetos.Venda> vendaOnline = Vendas_DAL.GetVendas();
 
                 EscolhaBD = 1; //Seleciona o BD local
-                List<Objetos.Caixa> caixasLocal = Caixa_DAL.GetTodosOsCaixas();
-                List<Objetos.ContasPagar> contasPagarLocal = ContasPagar_DAL.GetTodasContasPagar();
-                List<Objetos.ContasReceber> contasReceberLocal = ContasReceber_DAL.GetTodasContasReceber();
-                List<Objetos.Convenio> conveniosLocal = Convenios_DAL.GetTodosConvenios();
-                List<Objetos.Endereco> enderecosLocal = Enderecos_DAL.GetTodosEnderecos();
-                List<Objetos.Produto> produtosLocal = Produtos_DAL.GetProdutos();
-                List<Objetos.Requisicao> requisicoesLocal = Requisicoes_DAL.GetRequisicoes();
-                List<Objetos.Unidades> unidadesLocal = Unidades_DAL.GetTodasUnidades();
-                List<Objetos.Usuario> usuariosLocal = Usuarios_DAL.GetUsuarios();
-                List<Objetos.Cupom> cupomLocal = Vendas_DAL.GetCupoms();
-                List<Objetos.Venda> vendaLocal = Vendas_DAL.GetVendas();
                 //Percorre o BD remoto e preenche o BD local
                 for (int i = 0; i < caixasOnline.Count; i++)
                 {
-                    if (!caixasLocal.Contains(caixasOnline[i]))
-                    {
-                        Caixa_DAL.InsertCaixa(caixasOnline[i].Data, caixasOnline[i].NumCaixa, caixasOnline[i].UsuarioAbertura, caixasOnline[i].UsuarioFechamento, caixasOnline[i].Valor, caixasOnline[i].EstadoCaixa, caixasOnline[i].idFilial, caixasOnline[i].ValorDinheiro, caixasOnline[i].ValorCredito, caixasOnline[i].ValorDebito);
-                    }
-                    else
-                    {
-                        if (caixasOnline.Count > caixasLocal.Count && !caixasLocal.Contains(caixasOnline[i]))
-                        {
-                            Caixa_DAL.InsertCaixa(caixasOnline[i].Data, caixasOnline[i].NumCaixa, caixasOnline[i].UsuarioAbertura, caixasOnline[i].UsuarioFechamento, caixasOnline[i].Valor, caixasOnline[i].EstadoCaixa, caixasOnline[i].idFilial, caixasOnline[i].ValorDinheiro, caixasOnline[i].ValorCredito, caixasOnline[i].ValorDebito);
-                        }
-                        else
-                        {
-                            Caixa_DAL.UpdateCaixa(caixasOnline[i].Data, caixasOnline[i].NumCaixa, caixasOnline[i].UsuarioAbertura, caixasOnline[i].UsuarioFechamento, caixasOnline[i].Valor, caixasOnline[i].EstadoCaixa, caixasOnline[i].idFilial, caixasOnline[i].ValorDinheiro, caixasOnline[i].ValorCredito, caixasOnline[i].ValorDebito, caixasLocal[i].Data, caixasLocal[i].idFilial, caixasLocal[i].Valor);
-                        }
-                    }
+                    Caixa_DAL.InsertCaixa(caixasOnline[i].Data, caixasOnline[i].NumCaixa, caixasOnline[i].UsuarioAbertura, caixasOnline[i].UsuarioFechamento, caixasOnline[i].Valor, caixasOnline[i].EstadoCaixa, caixasOnline[i].idFilial, caixasOnline[i].ValorDinheiro, caixasOnline[i].ValorCredito, caixasOnline[i].ValorDebito);
                 }
                 for (int i = 0; i < contasPagarOnline.Count; i++)
                 {
-                    if (!contasPagarLocal.Contains(contasPagarOnline[i]))
-                    {
-                        ContasPagar_DAL.InsereContasPagar(contasPagarOnline[i].NomeFornecedor, contasPagarOnline[i].Valor, contasPagarOnline[i].Vencimento, contasPagarOnline[i].idFilial);
-                    }
-                    else
-                    {
-                        if (contasPagarOnline.Count > contasPagarLocal.Count && !contasPagarLocal.Contains(contasPagarOnline[i]))
-                        {
-                            ContasPagar_DAL.InsereContasPagar(contasPagarOnline[i].NomeFornecedor, contasPagarOnline[i].Valor, contasPagarOnline[i].Vencimento, contasPagarOnline[i].idFilial);
-                        }
-                        else
-                        {
-                            ContasPagar_DAL.UpdateContasPagar(contasPagarOnline[i].NomeFornecedor, contasPagarOnline[i].Valor, contasPagarOnline[i].Vencimento, contasPagarOnline[i].idFilial, contasPagarLocal[i].NomeFornecedor, contasPagarLocal[i].Valor, contasPagarLocal[i].idFilial);
-                        }
-                    }
+                    ContasPagar_DAL.InsereContasPagar(contasPagarOnline[i].NomeFornecedor, contasPagarOnline[i].Valor, contasPagarOnline[i].Vencimento, contasPagarOnline[i].idFilial);
                 }
                 for (int i = 0; i < contasReceberOnline.Count; i++)
                 {
-                    if (!contasReceberLocal.Contains(contasReceberOnline[i]))
-                    {
-                        ContasReceber_DAL.InsereContasReceber(contasReceberOnline[i].NomeFornecedor, contasReceberOnline[i].Valor, contasReceberOnline[i].Vencimento, contasReceberOnline[i].idFilial);
-                    }
-                    else
-                    {
-                        if (contasReceberOnline.Count > contasReceberLocal.Count && !contasReceberLocal.Contains(contasReceberOnline[i]))
-                        {
-                            ContasReceber_DAL.InsereContasReceber(contasReceberOnline[i].NomeFornecedor, contasReceberOnline[i].Valor, contasReceberOnline[i].Vencimento, contasReceberOnline[i].idFilial);
-                        }
-                        else
-                        {
-                            ContasReceber_DAL.UpdateContasReceber(contasReceberOnline[i].NomeFornecedor, contasReceberOnline[i].Valor, contasReceberOnline[i].Vencimento, contasReceberOnline[i].idFilial, contasReceberLocal[i].NomeFornecedor, contasReceberLocal[i].Valor, contasReceberLocal[i].idFilial);
-                        }
-                    }
+                    ContasReceber_DAL.InsereContasReceber(contasReceberOnline[i].NomeFornecedor, contasReceberOnline[i].Valor, contasReceberOnline[i].Vencimento, contasReceberOnline[i].idFilial);
                 }
                 for (int i = 0; i < conveniosOnline.Count; i++)
                 {
-                    if (!conveniosLocal.Contains(conveniosOnline[i]))
-                    {
-                        Convenios_DAL.InsereConvenio(conveniosOnline[i].Nome, conveniosOnline[i].Desconto, conveniosOnline[i].idFilial);
-                    }
-                    else
-                    {
-                        if (conveniosOnline.Count > conveniosLocal.Count && !conveniosLocal.Contains(conveniosOnline[i]))
-                        {
-                            Convenios_DAL.InsereConvenio(conveniosOnline[i].Nome, conveniosOnline[i].Desconto, conveniosOnline[i].idFilial);
-                        }
-                        else
-                        {
-                            Convenios_DAL.UpdateConvenio(conveniosOnline[i].Nome, conveniosOnline[i].Desconto, conveniosOnline[i].idFilial, conveniosLocal[i].Nome, conveniosLocal[i].idFilial);
-                        }
-                    }
+                    Convenios_DAL.InsereConvenio(conveniosOnline[i].Nome, conveniosOnline[i].Desconto, conveniosOnline[i].idFilial);
                 }
                 for (int i = 0; i < enderecosOnline.Count; i++)
                 {
-                    if (!enderecosLocal.Contains(enderecosOnline[i]))
-                    {
-                        Enderecos_DAL.InsereEndereco(enderecosOnline[i].enumEndereco, enderecosOnline[i].RazaoSocial, enderecosOnline[i].NomeFantasia, enderecosOnline[i].CNPJCPF, enderecosOnline[i].Contato, enderecosOnline[i].Rua, enderecosOnline[i].Numero, enderecosOnline[i].Complemento, enderecosOnline[i].Cidade, enderecosOnline[i].Estado, enderecosOnline[i].idFilial);
-                    }
-                    else
-                    {
-                        if (enderecosOnline.Count > enderecosLocal.Count && !enderecosLocal.Contains(enderecosOnline[i]))
-                        {
-                            Enderecos_DAL.InsereEndereco(enderecosOnline[i].enumEndereco, enderecosOnline[i].RazaoSocial, enderecosOnline[i].NomeFantasia, enderecosOnline[i].CNPJCPF, enderecosOnline[i].Contato, enderecosOnline[i].Rua, enderecosOnline[i].Numero, enderecosOnline[i].Complemento, enderecosOnline[i].Cidade, enderecosOnline[i].Estado, enderecosOnline[i].idFilial);
-                        }
-                        else
-                        {
-                            Enderecos_DAL.UpdateEndereco(enderecosOnline[i].enumEndereco, enderecosOnline[i].RazaoSocial, enderecosOnline[i].NomeFantasia, enderecosOnline[i].CNPJCPF, enderecosOnline[i].Contato, enderecosOnline[i].Rua, enderecosOnline[i].Numero, enderecosOnline[i].Complemento, enderecosOnline[i].Cidade, enderecosOnline[i].Estado, enderecosOnline[i].idFilial, enderecosLocal[i].Contato, enderecosLocal[i].enumEndereco);
-                        }
-                    }
+                    Enderecos_DAL.InsereEndereco(enderecosOnline[i].enumEndereco, enderecosOnline[i].RazaoSocial, enderecosOnline[i].NomeFantasia, enderecosOnline[i].CNPJCPF, enderecosOnline[i].Contato, enderecosOnline[i].Rua, enderecosOnline[i].Numero, enderecosOnline[i].Complemento, enderecosOnline[i].Cidade, enderecosOnline[i].Estado, enderecosOnline[i].idFilial);
                 }
                 for (int i = 0; i < produtosOnline.Count; i++)
                 {
-                    if (!produtosLocal.Contains(produtosOnline[i]))
-                    {
-                        Produtos_DAL.InsereProduto(produtosOnline[i].Nome, produtosOnline[i].Unidade, produtosOnline[i].Quantidade, produtosOnline[i].Codigo, produtosOnline[i].Laboratorio, produtosOnline[i].PrecoCusto, produtosOnline[i].PrecoUnitario, produtosOnline[i].Grupo, produtosOnline[i].idFilial);
-                    }
-                    else
-                    {
-                        if (produtosOnline.Count > produtosLocal.Count && !produtosLocal.Contains(produtosOnline[i]))
-                        {
-                            Produtos_DAL.InsereProduto(produtosOnline[i].Nome, produtosOnline[i].Unidade, produtosOnline[i].Quantidade, produtosOnline[i].Codigo, produtosOnline[i].Laboratorio, produtosOnline[i].PrecoCusto, produtosOnline[i].PrecoUnitario, produtosOnline[i].Grupo, produtosOnline[i].idFilial);
-                        }
-                        else
-                        {
-                            Produtos_DAL.UpdateProduto(produtosOnline[i].Nome, produtosOnline[i].Unidade, produtosOnline[i].Quantidade, produtosOnline[i].Codigo, produtosOnline[i].Laboratorio, produtosOnline[i].PrecoCusto, produtosOnline[i].PrecoUnitario, produtosOnline[i].Grupo, produtosOnline[i].idFilial, produtosLocal[i].Codigo, produtosLocal[i].idFilial);
-                        }
-                    }
+                    Produtos_DAL.InsereProduto(produtosOnline[i].Nome, produtosOnline[i].Unidade, produtosOnline[i].Quantidade, produtosOnline[i].Codigo, produtosOnline[i].Laboratorio, produtosOnline[i].PrecoCusto, produtosOnline[i].PrecoUnitario, produtosOnline[i].Grupo, produtosOnline[i].idFilial);
                 }
                 for (int i = 0; i < requisicoesOnline.Count; i++)
                 {
-                    if (!requisicoesLocal.Contains(requisicoesOnline[i]))
-                    {
-                        Requisicoes_DAL.InsertRequisicao(requisicoesOnline[i].Nome, requisicoesOnline[i].Filial, requisicoesOnline[i].Data, requisicoesOnline[i].Assunto, requisicoesOnline[i].Solicitacao, requisicoesOnline[i].Resposta);
-                    }
-                    else
-                    {
-                        if (requisicoesOnline.Count > requisicoesLocal.Count && !requisicoesLocal.Contains(requisicoesOnline[i]))
-                        {
-                            Requisicoes_DAL.InsertRequisicao(requisicoesOnline[i].Nome, requisicoesOnline[i].Filial, requisicoesOnline[i].Data, requisicoesOnline[i].Assunto, requisicoesOnline[i].Solicitacao, requisicoesOnline[i].Resposta);
-                        }
-                        else
-                        {
-                            Requisicoes_DAL.UpdateRequisicao(requisicoesOnline[i].Nome, requisicoesOnline[i].Filial, requisicoesOnline[i].Data, requisicoesOnline[i].Assunto, requisicoesOnline[i].Solicitacao, requisicoesOnline[i].Resposta, requisicoesLocal[i].Nome, requisicoesLocal[i].Filial, requisicoesLocal[i].Data, requisicoesLocal[i].Assunto);
-                        }
-                    }
+                    Requisicoes_DAL.InsertRequisicao(requisicoesOnline[i].Nome, requisicoesOnline[i].Filial, requisicoesOnline[i].Data, requisicoesOnline[i].Assunto, requisicoesOnline[i].Solicitacao, requisicoesOnline[i].Resposta);
                 }
                 for (int i = 0; i < unidadesOnline.Count; i++)
                 {
-                    if (!unidadesLocal.Contains(unidadesOnline[i]))
-                    {
-                        Unidades_DAL.InsereUnidade(unidadesOnline[i].Nome, unidadesOnline[i].idFilial);
-                    }
-                    else
-                    {
-                        if (unidadesOnline.Count > unidadesLocal.Count && !unidadesLocal.Contains(unidadesOnline[i]))
-                        {
-                            Unidades_DAL.InsereUnidade(unidadesOnline[i].Nome, unidadesOnline[i].idFilial);
-                        }
-                        else
-                        {
-                            Unidades_DAL.AtualizaTodasUnidades(unidadesOnline[i].Nome, unidadesOnline[i].idFilial, unidadesLocal[i].Nome, unidadesLocal[i].idFilial);
-                        }
-                    }
+                    Unidades_DAL.InsereUnidade(unidadesOnline[i].Nome, unidadesOnline[i].idFilial);
                 }
                 for (int i = 0; i < cupomOnline.Count; i++)
                 {
-                    if (!cupomLocal.Contains(cupomOnline[i]))
-                    {
-                        Vendas_DAL.InsereCupom(cupomOnline[i].Data, cupomOnline[i].CodigoCupom, cupomOnline[i].FormaPagamento, cupomOnline[i].Vendedor, cupomOnline[i].Cliente, cupomOnline[i].ValorTotal);
-                    }
+                    Vendas_DAL.InsereCupom(cupomOnline[i].Data, cupomOnline[i].CodigoCupom, cupomOnline[i].FormaPagamento, cupomOnline[i].Vendedor, cupomOnline[i].Cliente, cupomOnline[i].ValorTotal);
                 }
                 for (int i = 0; i < vendaOnline.Count; i++)
                 {
-                    if (!vendaLocal.Contains(vendaOnline[i]))
-                    {
-                        Vendas_DAL.InsertVenda(vendaOnline[i].CodigoCupom, vendaOnline[i].CodigoProduto, vendaOnline[i].Quantidade, vendaOnline[i].ValorUnitario);
-                    }
+                    Vendas_DAL.InsertVenda(vendaOnline[i].CodigoCupom, vendaOnline[i].CodigoProduto, vendaOnline[i].Quantidade, vendaOnline[i].ValorUnitario);
                 }
                 for (int i = 0; i < usuariosOnline.Count; i++)
                 {
-                    if (!usuariosLocal.Contains(usuariosOnline[i]))
-                    {
-                        Usuarios_DAL.InsereUsuario(usuariosOnline[i].Nome, usuariosOnline[i].Filial, usuariosOnline[i].Contato, usuariosOnline[i].NivelAcesso, usuariosOnline[i].Login, usuariosOnline[i].Senha);
-                    }
-                    else
-                    {
-                        if (usuariosOnline.Count > usuariosLocal.Count && !usuariosLocal.Contains(usuariosOnline[i]))
-                        {
-                            Usuarios_DAL.InsereUsuario(usuariosOnline[i].Nome, usuariosOnline[i].Filial, usuariosOnline[i].Contato, usuariosOnline[i].NivelAcesso, usuariosOnline[i].Login, usuariosOnline[i].Senha);
-                        }
-                        else
-                        {
-                            Usuarios_DAL.UpdateUsuario(usuariosOnline[i].Nome, usuariosOnline[i].Filial, usuariosOnline[i].Contato, usuariosOnline[i].NivelAcesso, usuariosOnline[i].Login, usuariosOnline[i].Senha, usuariosLocal[i].Contato, usuariosLocal[i].Login);
-                        }
-                    }
+                    Usuarios_DAL.InsereUsuario(usuariosOnline[i].Nome, usuariosOnline[i].Filial, usuariosOnline[i].Contato, usuariosOnline[i].NivelAcesso, usuariosOnline[i].Login, usuariosOnline[i].Senha);
                 }
                 DbConnection.EstadoPrograma = 1; //Volta ao estado normal da execução
             }

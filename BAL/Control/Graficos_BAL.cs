@@ -22,7 +22,7 @@ namespace BAL.Control
             List<DAL.Model.Objetos.Produto> produtos = BAL.Control.Produtos_BAL.GetProdutos();
             foreach (var item in codigosProdutos)
             {
-                DAL.Model.Objetos.Produto precoCusto = produtos.Where(x => x.Codigo == item.Codigo).ElementAt(0);
+                DAL.Model.Objetos.Produto precoCusto = produtos.Where(x => x.Codigo == item.Codigo).ElementAt(0); //
                 DAL.Model.Objetos.Produto precoUnitario = produtos.Where(x => x.Codigo == item.Codigo).ElementAt(0);
                 double lucroProduto = item.Quantidade * (Convert.ToDouble(precoUnitario.PrecoUnitario) - Convert.ToDouble(precoCusto.PrecoCusto));
                 lucroFuncionario += lucroProduto;

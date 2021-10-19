@@ -17,6 +17,8 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceme40.dl
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceqp40.dll
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcese40.dll
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe.config
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe.manifest
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.application
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.pdb
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
@@ -25,6 +27,7 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\System.Data.SqlS
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\PT\System.Data.SqlServerCe.resources.dll
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.AssemblyReference.cache
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFiliais.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
@@ -35,6 +38,7 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.T
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroContasPagar.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroConvenios.resources
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaBancoDados.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
@@ -52,305 +56,8 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.V
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.GenerateResource.cache
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe.manifest
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.application
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
-C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.AssemblyReference.cache
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\msvcr90.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\README_ENU.txt
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceca40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcecompact40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceer40EN.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceme40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceqp40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcese40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\msvcr90.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\README_ENU.txt
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceca40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcecompact40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceer40EN.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceme40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceqp40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcese40.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe.config
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.pdb
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\bin\Debug\PT\System.Data.SqlServerCe.resources.dll
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.AssemblyReference.cache
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFiliais.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroContasPagar.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroConvenios.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaCliente.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaProduto.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaPrincipal.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSair.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSobre.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaSangria.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.GenerateResource.cache
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\msvcr90.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\README_ENU.txt
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceca40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcecompact40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceer40EN.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceme40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceqp40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcese40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\msvcr90.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\README_ENU.txt
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceca40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcecompact40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceer40EN.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceme40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceqp40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcese40.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe.config
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.pdb
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\bin\Debug\PT\System.Data.SqlServerCe.resources.dll
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.AssemblyReference.cache
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFiliais.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroContasPagar.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroConvenios.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaCliente.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaProduto.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaPrincipal.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSair.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSobre.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaSangria.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.GenerateResource.cache
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
-C:\Users\marcus.pinto\Source\Repos\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaBancoDados.resources
-C:\Users\gustavo.silva22\Desktop\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaBancoDados.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csprojAssemblyReference.cache
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFiliais.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroContasPagar.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroConvenios.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaBancoDados.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaCliente.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaProduto.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaPrincipal.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSair.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSobre.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaSangria.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.GenerateResource.cache
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\msvcr90.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\README_ENU.txt
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceca40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcecompact40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceer40EN.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceme40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceqp40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcese40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\msvcr90.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\README_ENU.txt
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceca40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcecompact40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceer40EN.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceme40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceqp40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcese40.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe.config
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.pdb
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\System.Data.SqlServerCe.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\PT\System.Data.SqlServerCe.resources.dll
-D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
-<<<<<<< Updated upstream
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\msvcr90.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\README_ENU.txt
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceca40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcecompact40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceer40EN.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceme40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceqp40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcese40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\msvcr90.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\README_ENU.txt
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceca40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcecompact40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceer40EN.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceme40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceqp40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcese40.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe.config
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.pdb
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\bin\Debug\PT\System.Data.SqlServerCe.resources.dll
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csprojAssemblyReference.cache
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFiliais.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroContasPagar.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroConvenios.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaBancoDados.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaCliente.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaProduto.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaPrincipal.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSair.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSobre.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaSangria.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.GenerateResource.cache
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
-C:\Users\viviane.santos3\Desktop\Nova pasta\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
-=======
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\msvcr90.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\Microsoft.VC90.CRT\README_ENU.txt
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceca40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcecompact40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceer40EN.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceme40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlceqp40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\amd64\sqlcese40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\msvcr90.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\Microsoft.VC90.CRT\README_ENU.txt
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceca40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcecompact40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceer40EN.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceme40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlceqp40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\x86\sqlcese40.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe.config
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.exe
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\FarmaTech.pdb
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\BAL.pdb
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\DAL.pdb
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\bin\Debug\PT\System.Data.SqlServerCe.resources.dll
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.AssemblyReference.cache
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUsuarios.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFiliais.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaLogin.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.Properties.Resources.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroUnidades.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroFornecedores.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroCliente.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroProdutos.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroContasPagar.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.TelaCadastroConvenios.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaBancoDados.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaConfirmacaoCancelamento.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaCadastroContasReceber.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaMovimentacaoFinanceira.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaCliente.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaConsultaProduto.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaFechamentoCaixa.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaGraficos.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaPrincipal.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSair.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSobre.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaSangria.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.GenerateResource.cache
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CoreCompileInputs.cache
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
-C:\Users\giliarde.hausmann\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
->>>>>>> Stashed changes

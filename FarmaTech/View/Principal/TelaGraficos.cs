@@ -101,70 +101,78 @@ namespace FarmaTech.View.Principal
 
         private async void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if (chkTodasFiliais.Checked == true)
+            try
             {
-                string receitaFuncionarioTotal = "0";
-                Dictionary<string, int> produtosMaisVendidosTotal = new Dictionary<string, int>();
-                Dictionary<string, string> receitaFuncionarioTotal2 = new Dictionary<string, string>();
-                double[] valoresGrafico = new double[3];
-                foreach (var item in cbFilial.Items)
+                if (chkTodasFiliais.Checked == true)
                 {
-                    string lucroFuncionario = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, item.ToString());
-
-                    Dictionary<string, int> produtosMaisVendidos = BAL.Control.Graficos_BAL.ProdutosMaisVendidos(txtData.Text, item.ToString());
-
-                    Dictionary<string, string> receitaFuncionarios = BAL.Control.Graficos_BAL.ReceitaPorFuncionario(txtData.Text, item.ToString());
-
-                    double[] valores = new double[3];
-                    valores = BAL.Control.Graficos_BAL.RelacaoCompraVenda(txtData.Text, item.ToString());
-
-                    receitaFuncionarioTotal = (Convert.ToDouble(receitaFuncionarioTotal) + Convert.ToDouble(lucroFuncionario)).ToString();
-                    foreach (var item2 in produtosMaisVendidos)
+                    string receitaFuncionarioTotal = "0";
+                    Dictionary<string, int> produtosMaisVendidosTotal = new Dictionary<string, int>();
+                    Dictionary<string, string> receitaFuncionarioTotal2 = new Dictionary<string, string>();
+                    double[] valoresGrafico = new double[3];
+                    foreach (var item in cbFilial.Items)
                     {
-                        produtosMaisVendidosTotal.Add(item2.Key, produtosMaisVendidos[item2.Key]);
+                        string lucroFuncionario = BAL.Control.Graficos_BAL.LucroPorFuncionario(txtData.Text, item.ToString());
+
+                        Dictionary<string, int> produtosMaisVendidos = BAL.Control.Graficos_BAL.ProdutosMaisVendidos(txtData.Text, item.ToString());
+
+                        Dictionary<string, string> receitaFuncionarios = BAL.Control.Graficos_BAL.ReceitaPorFuncionario(txtData.Text, item.ToString());
+
+                        double[] valores = new double[3];
+                        valores = BAL.Control.Graficos_BAL.RelacaoCompraVenda(txtData.Text, item.ToString());
+
+                        receitaFuncionarioTotal = (Convert.ToDouble(receitaFuncionarioTotal) + Convert.ToDouble(lucroFuncionario)).ToString();
+                        foreach (var item2 in produtosMaisVendidos)
+                        {
+                            produtosMaisVendidosTotal.Add(item2.Key, produtosMaisVendidos[item2.Key]);
+                        }
+                        foreach (var item2 in receitaFuncionarios)
+                        {
+                            receitaFuncionarioTotal2.Add(item2.Key, receitaFuncionarios[item2.Key]);
+                        }
+                        for (int i = 0; i < 3; i++)
+                        {
+                            valoresGrafico[i] = Convert.ToDouble(valoresGrafico[i]) + Convert.ToDouble(valores[i]);
+                        }
                     }
-                    foreach (var item2 in receitaFuncionarios)
+
+                    txtReceitaFuncionario.Text = receitaFuncionarioTotal;
+                    lstProdMaisVendidos.Items.Clear();
+                    foreach (var item in produtosMaisVendidosTotal)
                     {
-                        receitaFuncionarioTotal2.Add(item2.Key, receitaFuncionarios[item2.Key]);
+                        lstProdMaisVendidos.Items.Add("Nome: " + item.Key + " - Quantidade: " + item.Value);
                     }
-                    for (int i = 0; i < 3; i++)
+                    lstReceitaFuncionario.Items.Clear();
+                    foreach (var item in receitaFuncionarioTotal2)
                     {
-                        valoresGrafico[i] = Convert.ToDouble(valoresGrafico[i]) + Convert.ToDouble(valores[i]);       
+                        lstReceitaFuncionario.Items.Add("Nome: " + item.Key + " - Receita: R$" + item.Value);
                     }
+                    string[] nomes = new string[3];
+                    nomes[0] = "Custo - R$" + valoresGrafico[0];
+                    nomes[1] = "Venda - R$" + valoresGrafico[1];
+                    nomes[2] = "Receita - R$" + valoresGrafico[2];
+                    graficoCustoVenda.Series[0].Points.DataBindXY(nomes, valoresGrafico);
+                    graficoCustoVenda.Series[0].ChartType = SeriesChartType.Pie;
+                }
+                else
+                {
+                    AtualizaControles();
                 }
 
-                txtReceitaFuncionario.Text = receitaFuncionarioTotal;
-                lstProdMaisVendidos.Items.Clear();
-                foreach (var item in produtosMaisVendidosTotal)
+                progressBar1.Value = 0;
+                var progress = new Progress<int>(percent =>
                 {
-                    lstProdMaisVendidos.Items.Add("Nome: " + item.Key + " - Quantidade: " + item.Value);
-                }
-                lstReceitaFuncionario.Items.Clear();
-                foreach (var item in receitaFuncionarioTotal2)
-                {
-                    lstReceitaFuncionario.Items.Add("Nome: " + item.Key + " - Receita: R$" + item.Value);
-                }
-                string[] nomes = new string[3];
-                nomes[0] = "Custo - R$" + valoresGrafico[0];
-                nomes[1] = "Venda - R$" + valoresGrafico[1];
-                nomes[2] = "Receita - R$" + valoresGrafico[2];
-                graficoCustoVenda.Series[0].Points.DataBindXY(nomes, valoresGrafico);
-                graficoCustoVenda.Series[0].ChartType = SeriesChartType.Pie;
+                    progressBar1.Value = percent;
+
+                });
+                await Task.Run(() => DoSomething(progress));
+
+                //AtualizaControles();
             }
-            else
+            catch (Exception ex)
             {
-                AtualizaControles();
+                MessageBox.Show("Houve um erro desconhecido! Tente novamente mais tarde");
+                DAL.Model.Consultas.Log.GerarErro(ex, "Tela_Grafico");
             }
-            
-            progressBar1.Value = 0;
-            var progress = new Progress<int>(percent =>
-            {
-                progressBar1.Value = percent;
-
-            });
-            await Task.Run(() => DoSomething(progress));
-
-            AtualizaControles();
         }
         public void DoSomething(IProgress<int> progress)
         {
