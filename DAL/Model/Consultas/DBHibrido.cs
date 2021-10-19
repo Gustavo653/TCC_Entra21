@@ -13,29 +13,29 @@ namespace DAL.Model.Consultas
     public class DBHibrido
     {
         public static int EscolhaBD { get; set; } = 1;//Inserir try catch para alterar seu valor
-        public static bool VerificaConexaoInternet(long minimumSpeed)
+        public static bool VerificaConexaoInternet(long velocidadeMinima)
         {
             if (!NetworkInterface.GetIsNetworkAvailable())
                 return false;
 
             foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
             {
-                // discard because of standard reasons
+                // descarta por razões comuns
                 if ((ni.OperationalStatus != OperationalStatus.Up) ||
                     (ni.NetworkInterfaceType == NetworkInterfaceType.Loopback) ||
                     (ni.NetworkInterfaceType == NetworkInterfaceType.Tunnel))
                     continue;
 
-                // this allow to filter modems, serial, etc.
-                if (ni.Speed < minimumSpeed)
+                // Permite filtrar modens
+                if (ni.Speed < velocidadeMinima)
                     continue;
 
-                // discard virtual cards (virtual box, virtual pc, etc.)
+                // Descarta placa de rede virtual (VM)
                 if ((ni.Description.IndexOf("virtual", StringComparison.OrdinalIgnoreCase) >= 0) ||
                     (ni.Name.IndexOf("virtual", StringComparison.OrdinalIgnoreCase) >= 0))
                     continue;
 
-                // discard "Microsoft Loopback Adapter", it will not show as NetworkInterfaceType.Loopback but as Ethernet Card.
+                // Descarta "Microsoft Loopback Adapter", mostrará se tem conexão via cabo de rede.
                 if (ni.Description.Equals("Microsoft Loopback Adapter", StringComparison.OrdinalIgnoreCase))
                     continue;
 
@@ -43,18 +43,16 @@ namespace DAL.Model.Consultas
             }
             return false;
         }
-        public static void GerarDBTabelas(string selecaoBD) //Cria o database e as tabelas
+        public static void GerarDBTabelas(string selecaoBD) //Cria o database e as tabelas no BD local
         {
-            //if (File.Exists(DbConnection.nomeArquivoBD))
-            //    File.Delete(DbConnection.nomeArquivoBD);
             if (!File.Exists(DbConnection.nomeArquivoBD))
             {
-                DbConnection.EstadoPrograma = 0;
-                EscolhaBD = 1;
+                DbConnection.EstadoPrograma = 0; //Muda o estado do programa para sincronização
+                EscolhaBD = 1; //Muda para o BD local
                 SqlCeEngine SqlEng = new SqlCeEngine(DbConnection.connLocalString);
-                SqlEng.CreateDatabase();
+                SqlEng.CreateDatabase(); //Cria o arquivo e o DataBase
 
-                List<string> tabelas = new List<string>();
+                List<string> tabelas = new List<string>(); //Cria as tabelas no BD local
                 tabelas.Add("create table Enderecos(idEndereco int not null identity(1, 1),enumEndereco int not null,RazaoSocial nvarchar(50) not null,NomeFantasia nvarchar(50) not null,Cnpj nvarchar(15) not null, Contato nvarchar(14) not null, Rua nvarchar(50) not null,Numero nvarchar(6) not null,Complemento nvarchar(50) not null,Cidade nvarchar(25),Estado nvarchar(2), idFilial nvarchar(50) not null)");
                 tabelas.Add("create table Caixa(idCaixa int not null identity(1, 1),Data nvarchar(10) not null,Caixa nvarchar(3) not null,UsuarioAbertura nvarchar(50) not null,UsuarioFechamento nvarchar(50) not null,Valor nvarchar(8) not null,EstadoCaixa int not null,idFilial nvarchar(50) not null,ValorDinheiro nvarchar(8) not null,ValorCredito nvarchar(8) not null,ValorDebito nvarchar(8) not null)");
                 tabelas.Add("create table Vendas(idVendas int not null identity(1, 1),CodigoCupom nvarchar(50) not null,CodigoProduto nvarchar(50) not null,Quantidade int not null,ValorUnitario nvarchar(8) not null)");
@@ -71,7 +69,7 @@ namespace DAL.Model.Consultas
                     DbConnection.Execute(item);
                 }
                 EscolhaBD = Convert.ToInt32(selecaoBD);
-                DbConnection.EstadoPrograma = 1;
+                DbConnection.EstadoPrograma = 1; //Muda o estado do programa para a utilização novamente
             }
         }
         public static void ReceberDados() //Clona do online para o local
@@ -79,10 +77,10 @@ namespace DAL.Model.Consultas
             if (VerificaConexaoInternet(10000000))
             {
                 if (File.Exists(DbConnection.nomeArquivoBD))
-                    File.Delete(DbConnection.nomeArquivoBD);
-                GerarDBTabelas(EscolhaBD.ToString());
-                DbConnection.EstadoPrograma = 0;
-                EscolhaBD = 2;
+                    File.Delete(DbConnection.nomeArquivoBD); //Descarta o BD local anterior 
+                GerarDBTabelas(EscolhaBD.ToString()); //Gera o BD local novamente
+                DbConnection.EstadoPrograma = 0; //Muda o estado para sincronização
+                EscolhaBD = 2; //Seleciona o BD  remoto
                 List<Objetos.Caixa> caixasOnline = Caixa_DAL.GetTodosOsCaixas();
                 List<Objetos.ContasPagar> contasPagarOnline = ContasPagar_DAL.GetTodasContasPagar();
                 List<Objetos.ContasReceber> contasReceberOnline = ContasReceber_DAL.GetTodasContasReceber();
@@ -95,7 +93,7 @@ namespace DAL.Model.Consultas
                 List<Objetos.Cupom> cupomOnline = Vendas_DAL.GetCupoms();
                 List<Objetos.Venda> vendaOnline = Vendas_DAL.GetVendas();
 
-                EscolhaBD = 1;
+                EscolhaBD = 1; //Seleciona o BD local
                 List<Objetos.Caixa> caixasLocal = Caixa_DAL.GetTodosOsCaixas();
                 List<Objetos.ContasPagar> contasPagarLocal = ContasPagar_DAL.GetTodasContasPagar();
                 List<Objetos.ContasReceber> contasReceberLocal = ContasReceber_DAL.GetTodasContasReceber();
@@ -107,7 +105,7 @@ namespace DAL.Model.Consultas
                 List<Objetos.Usuario> usuariosLocal = Usuarios_DAL.GetUsuarios();
                 List<Objetos.Cupom> cupomLocal = Vendas_DAL.GetCupoms();
                 List<Objetos.Venda> vendaLocal = Vendas_DAL.GetVendas();
-
+                //Percorre o BD remoto e preenche o BD local
                 for (int i = 0; i < caixasOnline.Count; i++)
                 {
                     if (!caixasLocal.Contains(caixasOnline[i]))
@@ -284,10 +282,10 @@ namespace DAL.Model.Consultas
                         }
                     }
                 }
-                DbConnection.EstadoPrograma = 1;
+                DbConnection.EstadoPrograma = 1; //Volta ao estado normal da execução
             }
         }
-        public static void ExecutarCommands()
+        public static void ExecutarCommands() //Executa os comandos pendentes
         {
             if (VerificaConexaoInternet(10000000))
             {

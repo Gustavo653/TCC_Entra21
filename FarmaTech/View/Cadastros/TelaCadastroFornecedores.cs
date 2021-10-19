@@ -308,5 +308,11 @@ namespace FarmaTech.View
                 txtContato.Text = txtContato.Text.Substring(0, txtContato.TextLength - 1);
             }
         }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Char.IsLetter(e.KeyChar)) || (Char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
+        }
     }
 }

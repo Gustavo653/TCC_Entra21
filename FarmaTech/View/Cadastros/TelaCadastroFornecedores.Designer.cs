@@ -393,6 +393,7 @@ namespace FarmaTech.View
             this.txtNumero.Size = new System.Drawing.Size(133, 29);
             this.txtNumero.TabIndex = 92;
             this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // txtEndereco
             // 

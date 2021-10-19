@@ -270,9 +270,6 @@ namespace FarmaTech.View
 
         }
 
-        //        If textbox.text.length > 50
-        //Textbox.text = textbox.text.tostring.substring(0, textbox.length - 1)
-
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
             if (txtNome.Text.Length > 50)
@@ -302,6 +299,12 @@ namespace FarmaTech.View
             {
                 txtSenha.Text = txtSenha.Text.Substring(0, txtSenha.TextLength - 1);
             }
+        }
+
+        private void txtContato_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Char.IsLetter(e.KeyChar)) || (Char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
         }
     }
 }
