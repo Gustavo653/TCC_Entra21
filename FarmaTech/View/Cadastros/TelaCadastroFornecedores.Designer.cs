@@ -474,7 +474,7 @@ namespace FarmaTech.View
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 569);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1097, 30);
+            this.panel1.Size = new System.Drawing.Size(1122, 30);
             this.panel1.TabIndex = 89;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -523,7 +523,7 @@ namespace FarmaTech.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1097, 599);
+            this.ClientSize = new System.Drawing.Size(1122, 599);
             this.Controls.Add(this.lblFornecedores);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNovo);

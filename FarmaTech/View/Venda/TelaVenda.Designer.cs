@@ -116,12 +116,16 @@ namespace FarmaTech
             // 
             // btnPesquisaProduto
             // 
+            this.btnPesquisaProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisaProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisaProduto.BackgroundImage")));
+            this.btnPesquisaProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisaProduto.FlatAppearance.BorderSize = 0;
+            this.btnPesquisaProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisaProduto.Location = new System.Drawing.Point(300, 11);
             this.btnPesquisaProduto.Name = "btnPesquisaProduto";
             this.btnPesquisaProduto.Size = new System.Drawing.Size(95, 95);
             this.btnPesquisaProduto.TabIndex = 14;
-            this.btnPesquisaProduto.Text = "Pesquisa Produto";
-            this.btnPesquisaProduto.UseVisualStyleBackColor = true;
+            this.btnPesquisaProduto.UseVisualStyleBackColor = false;
             this.btnPesquisaProduto.Click += new System.EventHandler(this.btnPesquisaProduto_Click);
             // 
             // btnPesquisaCliente

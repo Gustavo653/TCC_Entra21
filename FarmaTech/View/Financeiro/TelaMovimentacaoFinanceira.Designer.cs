@@ -30,10 +30,14 @@ namespace FarmaTech.View.Principal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaMovimentacaoFinanceira));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbMesFinal = new System.Windows.Forms.ComboBox();
+            this.cbMesInicio = new System.Windows.Forms.ComboBox();
             this.btnContasReceber = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnContasPagar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.dgMovimentacao = new System.Windows.Forms.DataGridView();
             this.DescricaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReceberCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +53,6 @@ namespace FarmaTech.View.Principal
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.cbMesInicio = new System.Windows.Forms.ComboBox();
-            this.cbMesFinal = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMovimentacao)).BeginInit();
             this.panel2.SuspendLayout();
@@ -79,35 +80,77 @@ namespace FarmaTech.View.Principal
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // cbMesFinal
+            // 
+            this.cbMesFinal.FormattingEnabled = true;
+            this.cbMesFinal.Location = new System.Drawing.Point(395, 109);
+            this.cbMesFinal.Name = "cbMesFinal";
+            this.cbMesFinal.Size = new System.Drawing.Size(189, 28);
+            this.cbMesFinal.TabIndex = 95;
+            // 
+            // cbMesInicio
+            // 
+            this.cbMesInicio.FormattingEnabled = true;
+            this.cbMesInicio.Location = new System.Drawing.Point(138, 109);
+            this.cbMesInicio.Name = "cbMesInicio";
+            this.cbMesInicio.Size = new System.Drawing.Size(189, 28);
+            this.cbMesInicio.TabIndex = 94;
+            // 
             // btnContasReceber
             // 
-            this.btnContasReceber.Location = new System.Drawing.Point(574, 539);
+            this.btnContasReceber.BackColor = System.Drawing.Color.Transparent;
+            this.btnContasReceber.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContasReceber.BackgroundImage")));
+            this.btnContasReceber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnContasReceber.FlatAppearance.BorderSize = 0;
+            this.btnContasReceber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContasReceber.Location = new System.Drawing.Point(576, 538);
             this.btnContasReceber.Name = "btnContasReceber";
-            this.btnContasReceber.Size = new System.Drawing.Size(93, 41);
+            this.btnContasReceber.Size = new System.Drawing.Size(105, 42);
             this.btnContasReceber.TabIndex = 93;
-            this.btnContasReceber.Text = "Contas a Receber";
-            this.btnContasReceber.UseVisualStyleBackColor = true;
+            this.btnContasReceber.UseVisualStyleBackColor = false;
             this.btnContasReceber.Click += new System.EventHandler(this.btnContasReceber_Click);
             // 
             // btnRelatorio
             // 
-            this.btnRelatorio.Location = new System.Drawing.Point(708, 539);
+            this.btnRelatorio.BackColor = System.Drawing.Color.Transparent;
+            this.btnRelatorio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.BackgroundImage")));
+            this.btnRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRelatorio.FlatAppearance.BorderSize = 0;
+            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorio.Location = new System.Drawing.Point(702, 538);
             this.btnRelatorio.Name = "btnRelatorio";
             this.btnRelatorio.Size = new System.Drawing.Size(105, 42);
             this.btnRelatorio.TabIndex = 92;
-            this.btnRelatorio.Text = "Relatório";
-            this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnRelatorio.UseVisualStyleBackColor = false;
             this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
             // 
             // btnContasPagar
             // 
-            this.btnContasPagar.Location = new System.Drawing.Point(441, 539);
+            this.btnContasPagar.BackColor = System.Drawing.Color.Transparent;
+            this.btnContasPagar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContasPagar.BackgroundImage")));
+            this.btnContasPagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnContasPagar.FlatAppearance.BorderSize = 0;
+            this.btnContasPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContasPagar.Location = new System.Drawing.Point(432, 539);
             this.btnContasPagar.Name = "btnContasPagar";
-            this.btnContasPagar.Size = new System.Drawing.Size(93, 41);
+            this.btnContasPagar.Size = new System.Drawing.Size(105, 42);
             this.btnContasPagar.TabIndex = 91;
-            this.btnContasPagar.Text = "Contas a Pagar";
-            this.btnContasPagar.UseVisualStyleBackColor = true;
+            this.btnContasPagar.UseVisualStyleBackColor = false;
             this.btnContasPagar.Click += new System.EventHandler(this.btnContasPagar_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(285, 512);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(95, 95);
+            this.btnVoltar.TabIndex = 90;
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // dgMovimentacao
             // 
@@ -236,7 +279,7 @@ namespace FarmaTech.View.Principal
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 703);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1028, 30);
+            this.panel2.Size = new System.Drawing.Size(1032, 30);
             this.panel2.TabIndex = 92;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -269,41 +312,11 @@ namespace FarmaTech.View.Principal
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::FarmaTech.Properties.Resources.BotaoHome;
-            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(285, 512);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 95);
-            this.btnVoltar.TabIndex = 90;
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // cbMesInicio
-            // 
-            this.cbMesInicio.FormattingEnabled = true;
-            this.cbMesInicio.Location = new System.Drawing.Point(138, 109);
-            this.cbMesInicio.Name = "cbMesInicio";
-            this.cbMesInicio.Size = new System.Drawing.Size(189, 28);
-            this.cbMesInicio.TabIndex = 94;
-            // 
-            // cbMesFinal
-            // 
-            this.cbMesFinal.FormattingEnabled = true;
-            this.cbMesFinal.Location = new System.Drawing.Point(395, 109);
-            this.cbMesFinal.Name = "cbMesFinal";
-            this.cbMesFinal.Size = new System.Drawing.Size(189, 28);
-            this.cbMesFinal.TabIndex = 95;
-            // 
             // TelaMovimentacaoFinanceira
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 733);
+            this.ClientSize = new System.Drawing.Size(1032, 733);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
