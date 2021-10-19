@@ -105,7 +105,6 @@
     <Compile Include="Model\Caixa_DAL.cs" />
     <Compile Include="Model\Consultas\DBConnection.cs" />
     <Compile Include="Model\Consultas\DBHibrido.cs" />
-    <Compile Include="Model\Consultas\HashLogin.cs" />
     <Compile Include="Model\Consultas\Log.cs" />
     <Compile Include="Model\ContasPagar_DAL.cs" />
     <Compile Include="Model\ContasReceber_DAL.cs" />

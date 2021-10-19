@@ -13,7 +13,6 @@ namespace DAL.Model
 {
     public class Login_DAL
     {
-        private static HashLogin hash = new HashLogin(SHA512.Create());
         public static bool VerificaCredenciais(string login, string senha)
         {
             if(DBHibrido.EscolhaBD == 1)
@@ -36,7 +35,7 @@ namespace DAL.Model
                 ConnectionStatic.connLocal.Close();
                 foreach (var item in senhas)
                 {
-                    if (hash.VerificarSenha(senha, item))
+                    if (senha == item)
                     {
                         return true;
                     }
@@ -64,7 +63,7 @@ namespace DAL.Model
                 ConnectionStatic.connRemoto.Close();
                 foreach (var item in senhas)
                 {
-                    if (hash.VerificarSenha(senha, item))
+                    if (senha == item)
                     {
                         return true;
                     }
@@ -77,7 +76,7 @@ namespace DAL.Model
         {
             if(DBHibrido.EscolhaBD == 1)
             {
-                string select = $"SELECT * from Usuarios WHERE Login = '{login}' AND Senha = '{hash.CriptografarSenha(senha)}'";
+                string select = $"SELECT * from Usuarios WHERE Login = '{login}' AND Senha = '{senha}'";
                 SqlCeCommand cmd = new SqlCeCommand(select, ConnectionStatic.connLocal);
                 ConnectionStatic.connLocal.Open();
                 SqlCeDataReader dr = cmd.ExecuteReader();
@@ -97,7 +96,7 @@ namespace DAL.Model
             }
             else
             {
-                string select = $"SELECT * from dbo.Usuarios WHERE Login = '{login}' AND Senha = '{hash.CriptografarSenha(senha)}'";
+                string select = $"SELECT * from dbo.Usuarios WHERE Login = '{login}' AND Senha = '{senha}'";
                 SqlCommand cmd = new SqlCommand(select, ConnectionStatic.connRemoto);
                 ConnectionStatic.connRemoto.Open();
                 SqlDataReader dr = cmd.ExecuteReader();

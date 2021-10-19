@@ -9,7 +9,6 @@ namespace BAL.Control
 {
     public class Usuarios_BAL
     {
-        public static DAL.Model.Consultas.HashLogin hash = new DAL.Model.Consultas.HashLogin(SHA512.Create()); //Criptografa a senha inserida pelo usuario
         public static List<DAL.Model.Objetos.Usuario> GetUsuarios() //Obtem todos os usuarios (de uma ou de todas as filiais)
         {
             if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso > 2)
@@ -55,7 +54,7 @@ namespace BAL.Control
                 {
                     try
                     {
-                        DAL.Model.Usuarios_DAL.InsereUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, hash.CriptografarSenha(senha));
+                        DAL.Model.Usuarios_DAL.InsereUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, senha);
                         return 0; //Deu tudo certo
                     }
                     catch (Exception e)
@@ -100,7 +99,7 @@ namespace BAL.Control
                 }
                 try
                 {
-                    DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, hash.CriptografarSenha(senha), where);
+                    DAL.Model.Usuarios_DAL.AtualizaUsuario(nome, filial, contato, ConfereNivelAcesso(nivelAcesso), login, senha, where);
                     return 0; //Deu tudo certo
                 }
                 catch (Exception e)
