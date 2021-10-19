@@ -101,7 +101,6 @@ namespace FarmaTech.View
             this.tabClientes.Size = new System.Drawing.Size(934, 480);
             this.tabClientes.TabIndex = 0;
             this.tabClientes.Text = "Clientes";
-            this.tabClientes.Click += new System.EventHandler(this.tabClientes_Click);
             this.tabClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.tabClientes_Paint);
             // 
             // rbCnpj
@@ -209,6 +208,7 @@ namespace FarmaTech.View
             this.txtContato.Name = "txtContato";
             this.txtContato.Size = new System.Drawing.Size(233, 29);
             this.txtContato.TabIndex = 114;
+            this.txtContato.TextChanged += new System.EventHandler(this.txtContato_TextChanged);
             // 
             // lblContato
             // 
@@ -228,6 +228,7 @@ namespace FarmaTech.View
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(311, 29);
             this.txtCnpj.TabIndex = 112;
+            this.txtCnpj.TextChanged += new System.EventHandler(this.txtCnpj_TextChanged);
             // 
             // txtNomeFantasia
             // 
@@ -236,6 +237,7 @@ namespace FarmaTech.View
             this.txtNomeFantasia.Name = "txtNomeFantasia";
             this.txtNomeFantasia.Size = new System.Drawing.Size(702, 29);
             this.txtNomeFantasia.TabIndex = 111;
+            this.txtNomeFantasia.TextChanged += new System.EventHandler(this.txtNomeFantasia_TextChanged);
             // 
             // lblNomeFantasia
             // 
@@ -255,6 +257,7 @@ namespace FarmaTech.View
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(284, 29);
             this.txtCidade.TabIndex = 109;
+            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             // 
             // txtCompl
             // 
@@ -263,6 +266,7 @@ namespace FarmaTech.View
             this.txtCompl.Name = "txtCompl";
             this.txtCompl.Size = new System.Drawing.Size(440, 29);
             this.txtCompl.TabIndex = 108;
+            this.txtCompl.TextChanged += new System.EventHandler(this.txtCompl_TextChanged);
             // 
             // txtNumero
             // 
@@ -271,6 +275,8 @@ namespace FarmaTech.View
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(142, 29);
             this.txtNumero.TabIndex = 107;
+            this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // txtEndereco
             // 
@@ -279,6 +285,7 @@ namespace FarmaTech.View
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(702, 29);
             this.txtEndereco.TabIndex = 105;
+            this.txtEndereco.TextChanged += new System.EventHandler(this.txtEndereco_TextChanged);
             // 
             // lblCidade
             // 
@@ -320,6 +327,7 @@ namespace FarmaTech.View
             this.txtRazaoSocial.Name = "txtRazaoSocial";
             this.txtRazaoSocial.Size = new System.Drawing.Size(702, 29);
             this.txtRazaoSocial.TabIndex = 101;
+            this.txtRazaoSocial.TextChanged += new System.EventHandler(this.txtRazaoSocial_TextChanged);
             // 
             // lblRazaoSocial
             // 

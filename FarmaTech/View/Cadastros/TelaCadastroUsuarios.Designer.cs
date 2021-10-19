@@ -40,6 +40,7 @@ namespace FarmaTech.View
             this.ContatoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NivelAcessoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoginCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SenhaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.tabNovoUsuario = new System.Windows.Forms.TabPage();
             this.lblFilial = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@ namespace FarmaTech.View
             this.lblData = new System.Windows.Forms.Label();
             this.lblUsuarios = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.SenhaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
@@ -158,6 +158,12 @@ namespace FarmaTech.View
             this.LoginCol.Name = "LoginCol";
             this.LoginCol.ReadOnly = true;
             this.LoginCol.Width = 150;
+            // 
+            // SenhaCol
+            // 
+            this.SenhaCol.HeaderText = "Senha";
+            this.SenhaCol.Name = "SenhaCol";
+            this.SenhaCol.ReadOnly = true;
             // 
             // lblPesquisar
             // 
@@ -261,6 +267,7 @@ namespace FarmaTech.View
             this.txtContato.Size = new System.Drawing.Size(294, 26);
             this.txtContato.TabIndex = 52;
             this.txtContato.TextChanged += new System.EventHandler(this.txtContato_TextChanged);
+            this.txtContato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContato_KeyPress);
             // 
             // cbNivelAcesso
             // 
@@ -441,12 +448,6 @@ namespace FarmaTech.View
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // SenhaCol
-            // 
-            this.SenhaCol.HeaderText = "Senha";
-            this.SenhaCol.Name = "SenhaCol";
-            this.SenhaCol.ReadOnly = true;
             // 
             // TelaCadastroUsuarios
             // 
