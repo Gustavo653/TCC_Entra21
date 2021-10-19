@@ -245,5 +245,67 @@ namespace FarmaTech
         {
             new TelaBancoDados().Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            new TelaNovaRequisicao().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new TelaCadastroCliente().Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new TelaCadastroProdutos().Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaCadastroConvenios().Show();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            bool estadoCaixa = BAL.Control.Caixa_BAL.GetEstadoCaixa(DAL.Model.Objetos.UsuarioStatic.Filial);
+            if (!estadoCaixa)
+            {
+                if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+                {
+                    MessageBox.Show("Você não é autorizado!");
+                }
+                else
+                {
+                    new TelaAberturaDeCaixa().Show();
+                }
+            }
+            else
+            {
+                if (estadoCaixa)
+                    new TelaVenda().Show();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (DAL.Model.Objetos.UsuarioStatic.NivelAcesso < 2)
+            {
+                MessageBox.Show("Você não é autorizado!");
+            }
+            else
+            {
+                new TelaGraficos().Show();
+            }
+        }
     }
 }

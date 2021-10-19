@@ -118,6 +118,7 @@ namespace FarmaTech.View.Principal
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(815, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
@@ -127,6 +128,7 @@ namespace FarmaTech.View.Principal
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(815, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 13);
@@ -136,6 +138,7 @@ namespace FarmaTech.View.Principal
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(816, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 13);
@@ -153,6 +156,7 @@ namespace FarmaTech.View.Principal
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(816, 452);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 13);
@@ -162,6 +166,7 @@ namespace FarmaTech.View.Principal
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(813, 314);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 13);
@@ -187,6 +192,7 @@ namespace FarmaTech.View.Principal
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(815, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
@@ -231,12 +237,13 @@ namespace FarmaTech.View.Principal
             // chkTodasFiliais
             // 
             this.chkTodasFiliais.AutoSize = true;
+            this.chkTodasFiliais.BackColor = System.Drawing.Color.Transparent;
             this.chkTodasFiliais.Location = new System.Drawing.Point(819, 131);
             this.chkTodasFiliais.Name = "chkTodasFiliais";
             this.chkTodasFiliais.Size = new System.Drawing.Size(81, 17);
             this.chkTodasFiliais.TabIndex = 112;
             this.chkTodasFiliais.Text = "Todas filiais";
-            this.chkTodasFiliais.UseVisualStyleBackColor = true;
+            this.chkTodasFiliais.UseVisualStyleBackColor = false;
             // 
             // progressBar1
             // 

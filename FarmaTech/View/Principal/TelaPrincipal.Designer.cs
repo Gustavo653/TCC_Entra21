@@ -72,14 +72,14 @@ namespace FarmaTech
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblDataCaixa = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.MenuPrincipal.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,7 +108,7 @@ namespace FarmaTech
             this.MenuPrincipal.Margin = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.MenuPrincipal.Name = "MenuPrincipal";
             this.MenuPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.MenuPrincipal.Size = new System.Drawing.Size(777, 33);
+            this.MenuPrincipal.Size = new System.Drawing.Size(657, 33);
             this.MenuPrincipal.Stretch = false;
             this.MenuPrincipal.TabIndex = 0;
             this.MenuPrincipal.Text = "MenuCadastros";
@@ -491,6 +491,7 @@ namespace FarmaTech
             this.button5.Size = new System.Drawing.Size(194, 108);
             this.button5.TabIndex = 10;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -503,6 +504,7 @@ namespace FarmaTech
             this.button4.Size = new System.Drawing.Size(194, 108);
             this.button4.TabIndex = 9;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -515,6 +517,7 @@ namespace FarmaTech
             this.button3.Size = new System.Drawing.Size(194, 108);
             this.button3.TabIndex = 8;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -527,24 +530,7 @@ namespace FarmaTech
             this.button2.Size = new System.Drawing.Size(194, 108);
             this.button2.TabIndex = 7;
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Location = new System.Drawing.Point(12, 411);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(271, 149);
-            this.panel5.TabIndex = 8;
-            // 
-            // panel6
-            // 
-            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel6.Location = new System.Drawing.Point(12, 588);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(271, 149);
-            this.panel6.TabIndex = 9;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
@@ -615,6 +601,32 @@ namespace FarmaTech
             this.panel7.Size = new System.Drawing.Size(742, 459);
             this.panel7.TabIndex = 11;
             // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(15, 411);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(271, 153);
+            this.button6.TabIndex = 12;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(12, 584);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(271, 153);
+            this.button7.TabIndex = 13;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,10 +635,10 @@ namespace FarmaTech
             this.BackgroundImage = global::FarmaTech.Properties.Resources.lab__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1238, 749);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.MenuPrincipal);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -696,8 +708,6 @@ namespace FarmaTech
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblDataCaixa;
         private System.Windows.Forms.Label label3;
@@ -705,5 +715,7 @@ namespace FarmaTech
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ToolStripMenuItem MenuBancoDados;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
