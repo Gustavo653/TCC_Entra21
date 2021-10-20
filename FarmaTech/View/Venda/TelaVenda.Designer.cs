@@ -208,7 +208,7 @@ namespace FarmaTech
             this.cbNomeCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbNomeCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbNomeCliente.FormattingEnabled = true;
-            this.cbNomeCliente.Location = new System.Drawing.Point(138, 88);
+            this.cbNomeCliente.Location = new System.Drawing.Point(138, 83);
             this.cbNomeCliente.Name = "cbNomeCliente";
             this.cbNomeCliente.Size = new System.Drawing.Size(531, 28);
             this.cbNomeCliente.TabIndex = 124;
@@ -242,7 +242,7 @@ namespace FarmaTech
             // txtObservacao
             // 
             this.txtObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObservacao.Location = new System.Drawing.Point(138, 148);
+            this.txtObservacao.Location = new System.Drawing.Point(138, 145);
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(531, 29);
             this.txtObservacao.TabIndex = 120;
@@ -264,7 +264,7 @@ namespace FarmaTech
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(60, 91);
+            this.lblNome.Location = new System.Drawing.Point(11, 91);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(60, 20);
             this.lblNome.TabIndex = 116;
@@ -288,7 +288,7 @@ namespace FarmaTech
             this.lblCpf.AutoSize = true;
             this.lblCpf.BackColor = System.Drawing.Color.Transparent;
             this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpf.Location = new System.Drawing.Point(70, 33);
+            this.lblCpf.Location = new System.Drawing.Point(11, 33);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(48, 20);
             this.lblCpf.TabIndex = 113;
@@ -350,7 +350,7 @@ namespace FarmaTech
             this.btnRemover.FlatAppearance.BorderSize = 0;
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(657, 39);
+            this.btnRemover.Location = new System.Drawing.Point(677, 45);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(76, 70);
             this.btnRemover.TabIndex = 67;
@@ -435,7 +435,7 @@ namespace FarmaTech
             this.btnAdiciona.FlatAppearance.BorderSize = 0;
             this.btnAdiciona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdiciona.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdiciona.Location = new System.Drawing.Point(575, 39);
+            this.btnAdiciona.Location = new System.Drawing.Point(593, 45);
             this.btnAdiciona.Name = "btnAdiciona";
             this.btnAdiciona.Size = new System.Drawing.Size(76, 70);
             this.btnAdiciona.TabIndex = 57;
@@ -677,6 +677,7 @@ namespace FarmaTech
             // 
             // btnVoltarVenda
             // 
+            this.btnVoltarVenda.BackColor = System.Drawing.Color.Transparent;
             this.btnVoltarVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVoltarVenda.BackgroundImage")));
             this.btnVoltarVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnVoltarVenda.FlatAppearance.BorderSize = 0;
@@ -685,7 +686,7 @@ namespace FarmaTech
             this.btnVoltarVenda.Name = "btnVoltarVenda";
             this.btnVoltarVenda.Size = new System.Drawing.Size(148, 83);
             this.btnVoltarVenda.TabIndex = 64;
-            this.btnVoltarVenda.UseVisualStyleBackColor = true;
+            this.btnVoltarVenda.UseVisualStyleBackColor = false;
             this.btnVoltarVenda.Click += new System.EventHandler(this.btnVoltarVenda_Click);
             // 
             // txtFormaValorParcial

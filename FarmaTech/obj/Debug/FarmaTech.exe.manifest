@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aqp9IJ5tmybzqMVqsu5IFJ3Qr8ZvygmG+1ehugDFJG8=</dsig:DigestValue>
+        <dsig:DigestValue>lNe2TTqvmJOoCZKqnI2vPNOTzeoAmzFMIuwJosCsQ2g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarmaTech.exe" size="18739616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarmaTech.exe" size="24918432">
       <assemblyIdentity name="FarmaTech" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bZICLe3GoFBQYPOwCccXofYJPMbTGghonWPOi2OShvM=</dsig:DigestValue>
+        <dsig:DigestValue>J0oaMBOyBLeqRW+48wAiKvPtGBcaxUD30mPZyERByy8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

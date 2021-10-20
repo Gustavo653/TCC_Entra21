@@ -42,9 +42,9 @@ namespace FarmaTech.View.Principal
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(90, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(516, 24);
+            this.label1.Size = new System.Drawing.Size(484, 24);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Sincronizar o Banco de Dados \"local\" com o \"remoto\":";
+            this.label1.Text = "Sincronizar o Banco de Dados local com o remoto:";
             // 
             // progressBar1
             // 
