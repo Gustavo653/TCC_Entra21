@@ -134,5 +134,11 @@ namespace FarmaTech.View.Venda
         {
             AtualizaDG();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblData.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }

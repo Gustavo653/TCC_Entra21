@@ -29,6 +29,7 @@ namespace FarmaTech.View.Venda
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaConsultaCliente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbCnpj = new System.Windows.Forms.RadioButton();
@@ -41,6 +42,7 @@ namespace FarmaTech.View.Venda
             this.lblHora = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.panel2.SuspendLayout();
@@ -220,5 +222,6 @@ namespace FarmaTech.View.Venda
         private System.Windows.Forms.RadioButton rbCpf;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.TextBox txtPesquisaCliente;
+        private System.Windows.Forms.Timer timer1;
     }
 }
