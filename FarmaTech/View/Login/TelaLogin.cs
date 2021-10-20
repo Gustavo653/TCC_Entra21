@@ -24,7 +24,23 @@ namespace FarmaTech
 
         private void btnSobre_Click(object sender, EventArgs e)
         {
-            new TelaSobre().Show();
+            if (!DAL.Model.Consultas.DBHibrido.VerificaConexaoInternet(10000000))
+            {
+                MessageBox.Show("Você não possui internet!");
+            }
+            else
+            {
+                string siteFarmaTech = "http://farmatech.somee.com/HTML/FarmaTech.html";
+                try
+                {
+                    System.Diagnostics.Process.Start(siteFarmaTech);
+                }
+                catch (Exception ex)
+                {
+                    DAL.Model.Consultas.Log.GerarErro(ex, "TelaLogin_SiteFarmaTech");
+                    MessageBox.Show("Houve um erro inesperado, tente novamente mais tarde!");
+                }
+            }
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

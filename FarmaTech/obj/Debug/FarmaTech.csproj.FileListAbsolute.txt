@@ -50,7 +50,6 @@ C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaPr
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Requisicoes.TelaNovaRequisicao.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaRequisicoes.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSair.resources
-C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaSobre.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Principal.TelaAberturaDeCaixa.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.View.Venda.TelaSangria.resources
 C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.TelaVenda.resources

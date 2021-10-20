@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarmaTech.exe" size="24918944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarmaTech.exe" size="24660384">
       <assemblyIdentity name="FarmaTech" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oVL8U8dM7q6g/fCM6rFJ2k1CAuZ9vAJBYjecWrRQXRw=</dsig:DigestValue>
+        <dsig:DigestValue>cWDQ7DZZMYceT9Mp8GjLxjjGIckpyZHMM1qAge3Rmrk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
