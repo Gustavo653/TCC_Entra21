@@ -90,6 +90,9 @@ namespace FarmaTech
             if (resultado == 0)
             {
                 MessageBox.Show("Cupom finalizado");
+                dgVenda.Rows.Clear();
+                txtValorTotal.Text = "0.00";
+                txtFormaValorTotal.Text = "0.00";
             }
             else if (resultado == 1)
             {

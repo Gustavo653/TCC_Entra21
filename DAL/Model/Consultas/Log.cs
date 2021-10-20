@@ -62,7 +62,7 @@ namespace DAL.Model.Consultas
             cupomText.WriteLine("-------------------------------------------------------------------- ");
             cupomText.WriteLine("-------------------------------------------------------------------- ");
             cupomText.WriteLine("Cliente: " + razaoSocial + "\tCPF/CNPJ: " + cnpj);
-            cupomText.WriteLine("=====================================================================");
+            cupomText.WriteLine("=====================================================================");            
             cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
             cupomText.WriteLine(produto + "\t\t" + quant + "\t\t" + precoTotalProduto);
             cupomText.WriteLine();
