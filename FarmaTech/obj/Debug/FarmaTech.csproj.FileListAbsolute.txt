@@ -122,3 +122,4 @@ D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.application
 D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete
 D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.exe
 D:\PICHAU\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.pdb
+C:\Users\ujipe\Documents\GitHub\TCC_Oficial\FarmaTech\obj\Debug\FarmaTech.csproj.CopyComplete

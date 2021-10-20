@@ -84,7 +84,13 @@ namespace FarmaTech
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            DAL.Model.Consultas.Log.GerarCupom(BAL.Control.Vendas_BAL.Cupom, "Vendas_GerarCupom", cbNomeCliente.Text, cbCliente.Text, cbProdutoVenda.Text, cbQuantidade.Text, txtPrecoUnitario.Text, txtPrecoTotalProduto.Text, txtValorTotal.Text, cbFormaPagamento.Text);
+            List<DAL.Model.Objetos.ProdutosCupom> produtos = new List<DAL.Model.Objetos.ProdutosCupom>();
+            foreach (DataGridViewRow dataGridViewRow in dgVenda.Rows)
+            {
+                DAL.Model.Objetos.ProdutosCupom produto = new DAL.Model.Objetos.ProdutosCupom(dataGridViewRow.Cells["NomeCol"].Value.ToString(), Convert.ToInt32(dataGridViewRow.Cells["QuantidadeCol"].Value), dataGridViewRow.Cells["PrecoUnitarioCol"].Value.ToString(), dataGridViewRow.Cells["PrecoTotalCol"].Value.ToString());
+                produtos.Add(produto);
+            }
+            DAL.Model.Consultas.Log.GerarCupom(produtos, BAL.Control.Vendas_BAL.Cupom, "Vendas_GerarCupom", cbNomeCliente.Text, cbCliente.Text, txtFormaValorTotal.Text,  cbFormaPagamento.Text);
 
             int resultado = BAL.Control.Vendas_BAL.InsereCupom(cbVendedor.Text, cbNomeCliente.Text, txtFormaValorTotal.Text, cbFormaPagamento.Text);
             if (resultado == 0)

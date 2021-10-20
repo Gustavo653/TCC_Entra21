@@ -46,7 +46,7 @@ namespace DAL.Model.Consultas
                 File.Delete(DbConnection.caminhoCommands);
         }
 
-        public static void GerarCupom(string codigoCupom, string localCupom, string razaoSocial, string cnpj, string produto, string quant, string precoUnit, string precoTotalProduto, string valorTotal, string formaPagamento)
+        public static void GerarCupom(List<Objetos.ProdutosCupom> produtos, string codigoCupom, string localCupom, string razaoSocial, string cnpj, string valorTotal, string formaPagamento)
         {
             string data = DateTime.Now.ToString().Replace(":", "-").Replace("/", "=");
             string nomeArquivo = "Local do cupom - " + localCupom + " - Horario e data - " + data;
@@ -58,13 +58,16 @@ namespace DAL.Model.Consultas
             cupomText.WriteLine();
             cupomText.WriteLine("Número: " + codigoCupom);
             cupomText.WriteLine();
-            cupomText.WriteLine("Fornecedor:  FarmaTech    " + "Filial:   " + "CNPJ: ");
+            cupomText.WriteLine("Fornecedor:  FarmaTech    " + "Filial: "+ Objetos.UsuarioStatic.Filial + " CNPJ: 000000000");
             cupomText.WriteLine("-------------------------------------------------------------------- ");
             cupomText.WriteLine("-------------------------------------------------------------------- ");
             cupomText.WriteLine("Cliente: " + razaoSocial + "\tCPF/CNPJ: " + cnpj);
             cupomText.WriteLine("=====================================================================");            
             cupomText.WriteLine("Produto:                       Quant.:          Unit. R$:            ");
-            cupomText.WriteLine(produto + "\t\t" + quant + "\t\t" + precoTotalProduto);
+            foreach (var item in produtos)
+            {
+                cupomText.WriteLine(item.Nome + "\t\t" + item.Quantidade + "\t\t" + item.ValorTotal);
+            }
             cupomText.WriteLine();
             cupomText.WriteLine("Valor Total: R$ " + valorTotal);
             cupomText.WriteLine("Forma de Pagamento: " + formaPagamento);

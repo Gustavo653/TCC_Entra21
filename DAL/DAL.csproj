@@ -120,6 +120,7 @@
     <Compile Include="Model\Objetos\Convenio.cs" />
     <Compile Include="Model\Objetos\Cupom.cs" />
     <Compile Include="Model\Objetos\Produto.cs" />
+    <Compile Include="Model\Objetos\ProdutosCupom.cs" />
     <Compile Include="Model\Objetos\Requisicao.cs" />
     <Compile Include="Model\Objetos\Unidades.cs" />
     <Compile Include="Model\Objetos\Venda.cs" />
