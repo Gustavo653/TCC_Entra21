@@ -123,7 +123,14 @@ namespace FarmaTech.View.Principal
                         receitaFuncionarioTotal = (Convert.ToDouble(receitaFuncionarioTotal) + Convert.ToDouble(lucroFuncionario)).ToString();
                         foreach (var item2 in produtosMaisVendidos)
                         {
-                            produtosMaisVendidosTotal.Add(item2.Key, produtosMaisVendidos[item2.Key]);
+                            if (produtosMaisVendidosTotal.ContainsKey(item2.Key))
+                            {
+                                produtosMaisVendidosTotal[item2.Key] += produtosMaisVendidos[item2.Key];
+                            }
+                            else
+                            {
+                                produtosMaisVendidosTotal.Add(item2.Key, produtosMaisVendidos[item2.Key]);
+                            }
                         }
                         foreach (var item2 in receitaFuncionarios)
                         {
